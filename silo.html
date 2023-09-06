@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>silo - IndieWeb</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"db4b9cd34e5156f14f763897","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"silo","wgTitle":"silo","wgCurRevisionId":87227,"wgRevisionId":87227,"wgArticleId":369,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["silo"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"silo","wgRelevantArticleId":369,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]};RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready","user.options":"loading",
+"skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1i9g4",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});</script>
+<link rel="stylesheet" href="/wiki/load.php?lang=en&amp;modules=skins.vector.styles.legacy&amp;only=styles&amp;skin=vector"/>
+<script async="" src="/wiki/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/wiki/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.38.4"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0"/>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/wiki/opensearch_desc.php" title="IndieWeb (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="https://indieweb.org/wiki/api.php?action=rsd"/>
+<link rel="license" href="/IndieWebCamp:Copyrights"/>
+<link rel="alternate" type="application/atom+xml" title="IndieWeb Atom feed" href="/wiki/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+<link rel="webmention" href="https://webmention.io/indiewebcamp/webmention">
+
+<link rel="pingback" href="https://webmention.io/indiewebcamp/xmlrpc">
+
+<script src="https://cdn.usefathom.com/script.js" site="ZPHFRYAA" defer></script>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-silo rootpage-silo skin-vector action-view skin--responsive skin-vector-legacy"><div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body h-entry" role="main">
+	<a id="top"></a>
+	<div id="siteNotice"></div>
+	<div class="mw-indicators">
+	</div>
+	<span class="p-name"><h1 id="firstHeading" class="firstHeading mw-first-heading">silo</h1></span>
+	<div id="bodyContent" class="vector-body">
+		<div id="siteSub" class="noprint">From IndieWeb</div>
+		<div id="contentSub"></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+		<a class="mw-jump-link" href="#searchInput">Jump to search</a>
+		<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr"><div class="mw-parser-output"><p><a href="/File:rotting-silos.png" class="image"><img alt="rotting-silos.png" src="/images/5/5c/rotting-silos.png" decoding="async" width="1024" height="512" /></a>
+</p><p><span class="p-summary">A <b><dfn>silo</dfn></b> or web content hosting silo (AKA <dfn>walled garden</dfn>), in the context of the IndieWeb, is a centralized web site (like most <a href="/social_media" title="social media">social media</a>) typically owned by a for-profit corporation that stakes some claim to content contributed to it and restricts access in some way (has walls).</span>
+</p><p>Silos are characterized by the following:
+</p>
+<ul><li>require you to create an <a href="/account" title="account">account</a> specific to that site to use it (silo identity)</li>
+<li>allow you to interact on the site <em>only</em> with others with accounts on the site (silo contacts / social network)</li>
+<li>allows you to post some type of content (text, hypertext, images, video)</li>
+<li>and typically one or more of the following:
+<ul><li>an access wall that prevents indexing of (at least some of the) content you contribute</li>
+<li>a restrictive terms of service (TOS)</li>
+<li>claims some ownership or license to any content you create within the silo</li>
+<li>restricts your ability to import/export your content, or content about your content (e.g. comments, tags)</li></ul></li></ul>
+<p><a class="external text" href="http://xkcd.com/1150/"><img style="max-width:100%" src="http&#58;//imgs.xkcd.com/comics/instagram.png" alt="XKCD comic 1150 about putting stuff in Chad&#39;s garage for free then being outraged when he sells it." /></a>
+</p><p>In contrast, see: <a href="/commons" title="commons">commons</a>.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Perspectives"><span class="tocnumber">1</span> <span class="toctext">Perspectives</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#History"><span class="tocnumber">2</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Popular_Silos"><span class="tocnumber">3</span> <span class="toctext">Popular Silos</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Specialized_Silos"><span class="tocnumber">4</span> <span class="toctext">Specialized Silos</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Silo_Flexibility"><span class="tocnumber">5</span> <span class="toctext">Silo Flexibility</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Silo_Innovations"><span class="tocnumber">6</span> <span class="toctext">Silo Innovations</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#User_Innovations_Inside"><span class="tocnumber">7</span> <span class="toctext">User Innovations Inside</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Criticism"><span class="tocnumber">8</span> <span class="toctext">Criticism</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#Linkwrapping"><span class="tocnumber">8.1</span> <span class="toctext">Linkwrapping</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Artificially_Slow_UI"><span class="tocnumber">8.2</span> <span class="toctext">Artificially Slow UI</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Perverse_Incentives_on_Content"><span class="tocnumber">8.3</span> <span class="toctext">Perverse Incentives on Content</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Silo_Quitting"><span class="tocnumber">9</span> <span class="toctext">Silo Quitting</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#Vaporware_Silos"><span class="tocnumber">10</span> <span class="toctext">Vaporware Silos</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Articles_and_Talks"><span class="tocnumber">11</span> <span class="toctext">Articles and Talks</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#See_Also"><span class="tocnumber">12</span> <span class="toctext">See Also</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Perspectives">Perspectives</span></h2>
+<blockquote><p>What are the silos? Control. The silos are computer-generated dream worlds built to keep us under control in order to change a human being into this. <br />[holds up chart showing clicks on ad units]<br />(with apologies to <a class="external autonumber" href="http://www.imdb.com/title/tt0133093/quotes?item=qt0324328">[1]</a>)</p></blockquote><p><a class="external autonumber" href="http://indiewebcamp.com/irc/2013-10-29/line/1383094754">[2]</a>
+</p><h2><span class="mw-headline" id="History">History</span></h2>
+<div style="text-indent:2em;font-style:italic">Main article: <a href="/History" class="mw-redirect" title="History">History</a></div>
+<p>For a brief history of the rise and fall of various silos, see the <a href="/History" class="mw-redirect" title="History">History</a> page for launch, acquisition, death, and zombification years/dates. See <a href="/site-deaths" title="site-deaths">site-deaths</a> for upcoming and past silo deaths in particular.
+</p>
+<h2><span class="mw-headline" id="Popular_Silos">Popular Silos</span></h2>
+<div style="float:right"><a class="external text" href="http://geekandpoke.typepad.com/geekandpoke/2010/12/the-free-model.html"><img src="http://geekandpoke.typepad.com/.a/6a00d8341d3df553ef0147e0e1aec2970b-300wi?x=.jpg" alt="6a00d8341d3df553ef0147e0e1aec2970b-300wi?x=.jpg" /></a></div>
+<p>These silos are both popular, and used by a number of indiewebcamp community members (often via <a href="/POSSE" title="POSSE">POSSE</a>) to stay in touch with their friends.
+</p>
+<ul><li><a href="/Facebook" title="Facebook">Facebook</a></li>
+<li><a href="/Flickr" title="Flickr">Flickr</a></li>
+<li><a href="/Google%2B" class="mw-redirect" title="Google+">Google+</a></li>
+<li><a href="/Instagram" title="Instagram">Instagram</a></li>
+<li><a href="/Medium" title="Medium">Medium</a></li>
+<li><a href="/Pinterest" title="Pinterest">Pinterest</a></li>
+<li><a href="/Tumblr" title="Tumblr">Tumblr</a></li>
+<li><a href="/Twitter" title="Twitter">Twitter</a></li>
+<li><a href="/WordPress.com" title="WordPress.com">WordPress.com</a> - of all these, WordPress.com has some of the best import/export support, very low walls as it were for a walled-garden.</li>
+<li>...</li></ul>
+<p>If you have friends that are active on a popular silo, feel free to add it to this list.
+</p>
+<h2><span class="mw-headline" id="Specialized_Silos">Specialized Silos</span></h2>
+<ul><li><a href="/Netflix" title="Netflix">Netflix</a> - Movie ratings and reviews</li>
+<li><a href="/Nike%2B" title="Nike+">Nike+</a> - tracks some <a href="/exercise" title="exercise">exercise</a> information</li>
+<li><a href="/Strava" title="Strava">Strava</a> - GPS sport tracking</li>
+<li><a href="/Geocaching.com" title="Geocaching.com">Geocaching.com</a> - <a href="/geocaching" title="geocaching">geocaching</a> activity tracking</li>
+<li>...</li></ul>
+<p>Add any silo to this list that you're an active user of and especially if you can document how to export data from it.
+</p>
+<h2><span class="mw-headline" id="Silo_Flexibility">Silo Flexibility</span></h2>
+<p>A few silos have given users tremendous flexibility in the look and feel of their experience and the content they post.
+</p><p>Currently:
+</p>
+<ul><li><a href="/Blogger" title="Blogger">Blogger</a> - quite a bit of control via templates</li>
+<li><a href="/Tumblr" title="Tumblr">Tumblr</a> - also lots of control via templates</li>
+<li><a href="/WordPress.com" title="WordPress.com">WordPress.com</a> - some choice of free templates, and more choices as a paid option</li></ul>
+<p>Historically (but no longer)
+</p>
+<ul><li><a href="/MySpace" title="MySpace">MySpace</a> (~2002-2009?) - so much control over the HTML and CSS of your profile page that many compared it to <a href="/GeoCities" title="GeoCities">GeoCities</a>, and not in a flattering way.</li></ul>
+<h2><span class="mw-headline" id="Silo_Innovations">Silo Innovations</span></h2>
+<p>Silos have innovated <a href="/UX" class="mw-redirect" title="UX">UX</a> since 2003 far more than the blogging/RSS/Atom "communities" (as much as there was such a thing).
+</p><p>Here are some examples of UX innovations that silos either created, popularized, or refined to be much more usable, in rough temporal order.
+</p>
+<ul><li><b><a href="/favorite" title="favorite">favorites</a></b> - <a href="/Flickr" title="Flickr">Flickr</a> (2004)</li>
+<li><b>Integrated <a href="/reading" class="mw-redirect" title="reading">reading</a>/<a href="/creating" class="mw-redirect" title="creating">creating</a> UI</b> - <a href="/LiveJournal" title="LiveJournal">LiveJournal</a>, <a href="/Delicious" title="Delicious">Delicious</a> (2004), <a href="/Tumblr" title="Tumblr">Tumblr</a>, <a href="/Twitter" title="Twitter">Twitter</a> (2006),  <a href="/Facebook" title="Facebook">Facebook</a> (2006? when did Facebook launch their Newsfeed?)</li>
+<li><b><a href="/checkin" title="checkin">checkins</a></b> - <a href="/Dodgeball" title="Dodgeball">Dodgeball</a> (2005), <a href="/Foursquare" title="Foursquare">Foursquare</a> (2009?), copied by <a href="/Facebook" title="Facebook">Facebook</a> (2010?)</li>
+<li><b><a href="/scrobble" title="scrobble">scrobbles</a></b> - <a href="/Last.fm" title="Last.fm">Last.fm</a> (2000-2005? what year exactly?)</li>
+<li><b><a href="/block" title="block">block</a></b> - <a href="/Flickr" title="Flickr">Flickr</a> (2005-07-27 per <a class="external autonumber" href="https://www.flickr.com/help/contacts/#96">[3]</a>, before that they had an <a href="/wiki/index.php?title=ignore&amp;action=edit&amp;redlink=1" class="new" title="ignore (page does not exist)">ignore</a> feature (superseded by block) which sounds like a harsher form of <a href="/mute" title="mute">mute</a>)</li>
+<li><b><a href="/like" title="like">likes</a></b> - introduced by <a href="/FriendFeed" title="FriendFeed">FriendFeed</a> 2007-10-03<a class="external autonumber" href="https://en.wikipedia.org/wiki/Like_button#Use_on_FriendFeed">[4]</a>, then copied soon after by <a href="/Facebook" title="Facebook">Facebook</a> which quickly popularized them.</li>
+<li><b><a href="/reply-context" title="reply-context">reply-context</a></b> - <a href="/Twitter" title="Twitter">Twitter</a> (20??-??-??). It was a small but important incremental step to go from <a href="/reply" title="reply">reply</a> posts on their own pages (see "User Innovation Inside Silos" below) to displaying the context of what those reply posts (tweets) were in reply to.
+<ul><li><b><a href="/recursive_reply-context" class="mw-redirect" title="recursive reply-context">recursive reply-contexts</a></b> - <a href="/Twitter" title="Twitter">Twitter</a>. Another incremental if obvious step, Twitter started displaying the reply contexts of reply contexts themselves, all the way on up to an original tweet.
+<ul><li>Aaron Swartz invented this first - <a class="external text" href="https://web.archive.org/web/20130623214501/twitter.theinfo.org/114718659942940672">example</a></li></ul></li></ul></li>
+<li><b><a href="/legacy_contact" title="legacy contact">legacy contact</a></b> - <a href="/Facebook" title="Facebook">Facebook</a> (<a class="external text" href="http://newsroom.fb.com/news/2015/02/adding-a-legacy-contact/">introduced 2015-02-12</a>)</li>
+<li>... add more and attribute the innovating silo</li></ul>
+<h2><span class="mw-headline" id="User_Innovations_Inside">User Innovations Inside</span></h2>
+<p>Despite silos typically exerting tight control over their look, feel, and overall user experience, users have found ways of innovating inside silos, which silos have often adopted and integrated into their UX.
+</p>
+<ul><li><b><a href="/reply" title="reply">reply</a> permalinks</b> - <a href="/Twitter" title="Twitter">Twitter</a> - reply posts on their own permalinks instead of just fragment links on a post.
+<ul><li>Specifically, @-replies, were previously "only" in comments (e.g. comments in MySpace and Flickr used @-name conventions to indicate who they were responding to in a thread). When Twitter <a class="external text" href="https://twitter.com/rsa/status/55281">users started using @-reply syntax</a><a class="external autonumber" href="https://web.archive.org/web/20121004103321/http://anarchogeek.com/2012/07/09/origin-of-the-reply-digging-through-twitters-history/">[5]</a><a class="external autonumber" href="http://log.maniacalrage.net/post/26935842947/the-real-history-of-the-reply-on-twitter">[6]</a> in tweets to <a class="external text" href="https://twitter.com/kapowaz/statuses/139453">intentionally direct their tweets</a> at particular people, Twitter adopted this in multiple ways:
+<ul><li><b>auto-link @-mentions</b> to profile pages (was in response to user-behavior)</li>
+<li><b>show @-reply tweets only to those who followed both</b> the replier <i>and</i> the user being replied to.<a class="external autonumber" href="https://blog.twitter.com/2008/how-replies-work-twitter-and-how-they-might">[7]</a></li>
+<li><b>auto-fill "Reply" textarea</b> underneath a tweet with @-mention of the tweet author</li>
+<li>auto-fill "Reply" textarea also with @-mentions of anyone else mentioned in the tweet.</li></ul></li></ul></li>
+<li><b><a href="/hashtags" title="hashtags">hashtags</a></b> - as <a class="external text" href="https://twitter.com/chrismessina/status/223115412">proposed by Chris Messina</a><a class="external autonumber" href="http://factoryjoe.com/blog/2007/08/25/groups-for-twitter-or-a-proposal-for-twitter-tag-channels/">[8]</a> on <a href="/Twitter" title="Twitter">Twitter</a>, then adopted by users, then eventually auto-linked by <a href="/Twitter" title="Twitter">Twitter</a> to search results for mentions of that hashtag.</li>
+<li><b><a href="/retweets" class="mw-redirect" title="retweets">retweets</a></b> - the "RT @-name:" syntax (<a class="external text" href="https://twitter.com/ericrice/status/31669791">originally ReTweet:</a>) was purely <a class="external text" href="https://twitter.com/TDavid/status/641334922">a user innovation</a> to indicate that they were passing along text/content from another user. <a href="/Twitter" title="Twitter">Twitter</a> both:
+<ul><li>codified "RT" into a one-click button (so easy to use as to cause million+ retweeted posts)</li>
+<li>showed the original author of the tweet, when presenting the retweet in others' reading views.</li></ul></li>
+<li><b>🍞 for <a href="/like" title="like">like</a></b> - <a href="/Ello" title="Ello">Ello</a> users in Germany adopted a convention of typing ":bread:" to generate a bread emoji (🍞) in a comment as a simple indicator of "liking" a post, since Ello lacks an explicit like/favorite feature.</li>
+<li>... add more user innovation inside silos with attribution to user(s) if known, and inside which silo.</li></ul>
+<h2><span class="mw-headline" id="Criticism">Criticism</span></h2>
+<p>See <a href="/why" title="why">why</a> for more common issues with silos in contrast to having your own website.
+</p>
+<h3><span class="mw-headline" id="Linkwrapping">Linkwrapping</span></h3>
+<p>Many silos wrap any links posted on them with their own domains or link-wrapping domains, sometimes in an attempt to make links shorter, sometimes to provide a bottleneck which they can use to mass disable spam/phishing links. 
+</p><p>Downsides:
+</p>
+<ul><li><b>Breaks link referrals</b> (you just see the silo wrapper, not the actual post that linked to your domain)</li>
+<li><b>Fragile</b> for all the usual link-shorteners by a site other than the owner are fragile problem. As well as their typical use of <a href="/database" title="database">database</a> ids.</li></ul>
+<p>Examples:
+</p>
+<ul><li><a href="/Facebook" title="Facebook">Facebook</a>: m.facebook.com/l.php...<a class="external autonumber" href="https://twitter.com/kyle_wm/status/446818317408280576">[9]</a></li>
+<li><a href="/Twitter" title="Twitter">Twitter</a>: t.co</li>
+<li><a href="/Feedly" title="Feedly">Feedly</a>: <a class="external text" href="http://indiewebcamp.com/File:silo-urls.jpg">Feedly Short URL fail</a></li>
+<li>... others?</li></ul>
+<h3><span class="mw-headline" id="Artificially_Slow_UI">Artificially Slow UI</span></h3>
+<ul><li>2016-07-06 <a class="external text" href="http://www.fastcodesign.com/3061519/evidence/the-ux-secret-that-will-ruin-apps-for-you/">The UX Secret That Will Ruin Apps For You</a> <blockquote><p>Facebook actually slows down its interface to make users feel safe, a Facebook spokesperson confirmed in an email.<br /><br />... various services on the web including travel sites, mortgage engines, and security checks are all making a conscious effort to slow down their omnipotent minds because our puny human brains expect things to take longer.<br /><br />... companies introduce what Kowitz calls an "artificial waiting" pattern into their interfaces. These are status bars, maybe a few update messages, to construct a facade of slow, hard, thoughtful work, even though the computer is done calculating your query.</p></blockquote></li></ul>
+<p>Another good reason to <a href="/eat_what_you_cook" title="eat what you cook">use your own tools</a> (if it's faster than expected, you feel accomplished, not distrusting), or at least re-use indieweb software etc. that others are eating what they cook because you know they won't be (or there's at least less chance of them) deliberately slowing it down.
+</p>
+<h3><span class="mw-headline" id="Perverse_Incentives_on_Content">Perverse Incentives on Content</span></h3>
+<ul><li>2021-08-29 <a class="external text" href="https://www.vanityfair.com/style/2021/08/onlyfans-and-the-myth-of-owning-your-hustle">OnlyFans and the Myth of Owning Your Hustle</a></li></ul>
+<blockquote><p> While it seems like platforms today are more interested in investing in the users responsible for their success via grants and creators programs aplenty, the reality is that the platform still dictates the terms. They’re not only the point of access to your audience; they’re also the ones deciding what metrics to use, and what counts as a success—and all of that is subject to change over any given quarter</p></blockquote>
+<blockquote><p> On Instagram, the idea that accounts should make use of all the features the platform promotes in order to be successful lies somewhere between an open secret and industry-accepted theory. (This is at least partly why your chef influencer friend keeps posting Reels…)</p></blockquote>
+<p>If you create content on someone else’s platform, they can force you to make your content using a certain style or method by ranking you based on their own performance metrics.
+</p>
+<h2><span class="mw-headline" id="Silo_Quitting">Silo Quitting</span></h2>
+<p>A number of individuals, prominent and otherwise, have publicly "quit" various silos
+</p>
+<ul><li><a href="/silo-quits" title="silo-quits">silo-quits</a></li></ul>
+<h2><span class="mw-headline" id="Vaporware_Silos">Vaporware Silos</span></h2>
+<p>From time to time, silo projects are announced without shipping, and often never ship. As this list grows we can consider creating a separate <a href="/wiki/index.php?title=vaporware-silos&amp;action=edit&amp;redlink=1" class="new" title="vaporware-silos (page does not exist)">vaporware-silos</a> page.
+</p>
+<ul><li><a class="external text" href="http://www.cybe.com/">Cybe</a> appears to be a splash screen and silo at cybe.me with a ton of rhetoric ("manifesto", "vision", etc.) but <b>no product</b>. <a class="external text" href="https://twitter.com/MyCybe">Their Twitter</a> hasn't been updated in over a year.</li>
+<li>... add other silos that have been announced but not shipped, preferably with a citation to the announcement, preferably date-stamped.</li></ul>
+<h2><span class="mw-headline" id="Articles_and_Talks">Articles and Talks</span></h2>
+<ul><li>2017-04-18 Maciej Cegłowski talk: <a class="external text" href="http://idlewords.com/talks/build_a_better_monster.htm">Build a Better Monster: Morality, Machine Learning, and Mass Surveillance</a></li>
+<li>2017-05-23 Eric Petitt: <a class="external text" href="https://medium.com/the-official-unofficial-firefox-blog/browse-against-the-machine-e793c0fee917">Browse Against the Machine</a></li></ul>
+<h2><span class="mw-headline" id="See_Also">See Also</span></h2>
+<ul><li><a href="/site_deaths" class="mw-redirect" title="site deaths">site deaths</a></li>
+<li><a href="/silo-quits" title="silo-quits">silo-quits</a></li>
+<li><a href="/bulshytt" title="bulshytt">bulshytt</a></li>
+<li><a href="/history" title="history">history</a></li>
+<li><a href="/sites_with_data_portability" class="mw-redirect" title="sites with data portability">sites with data portability</a></li>
+<li><a href="/commons" title="commons">commons</a></li>
+<li><a href="/monoculture" title="monoculture">monoculture</a></li>
+<li><a href="/wiki/index.php?title=site_changes&amp;action=edit&amp;redlink=1" class="new" title="site changes (page does not exist)">site changes</a></li>
+<li>2017-12-03 Joshua Topolsky / The Outline: <a class="external text" href="https://theoutline.com/post/2558/death-of-the-internet-net-neutrality-donald-trump-alt-right-gamergate-facebook-twitter">The death of the internet / If we lose this, we lose everything.</a></li>
+<li><a class="external free" href="https://www.eff.org/the-story-of-wael-abbas">https://www.eff.org/the-story-of-wael-abbas</a></li>
+<li>2017-10-30 <a class="external text" href="https://staltz.com/the-web-began-dying-in-2014-heres-how.html">The Web began dying in 2014, here's how</a></li>
+<li><a class="external free" href="https://twitter.com/MattWilcox/status/1069716096410882048">https://twitter.com/MattWilcox/status/1069716096410882048</a>
+<ul><li>"If there is one thing we need to reassess as good stewards of the web, it is that we were right to be wary of centralised services. Easy personal websites and RSS were great ideas, and we need those revisiting. Censorship is harder when we have the control that was ceded." <a class="external text" href="https://mattwilcox.net">@MattWilcox</a> December 3, 2018</li></ul></li>
+<li>Criticism: cultural mismatch with reality: <a class="external free" href="https://twitter.com/internetrebecca/status/1098005600909307904">https://twitter.com/internetrebecca/status/1098005600909307904</a>
+<ul><li>"basically every day someone tells me they figured it out &amp; all the gov data should be on 1 enterprise system &amp; according to 1 standard &amp; linked &amp; that’s it, no specific goal after that <br /><br />🤔 fascinating idea w no understanding of reality or why things happen, ty for that, again" <a class="external text" href="https://rebeccawilliams.us">@internetrebecca</a> February 19, 2019</li></ul></li>
+<li>“they absolutely have a cost: the cost is complexity, outsourced agency, and brittleness. The cost of ownership is up front and visible; the cost of access is back-dated and hidden.” <a class="external free" href="https://alexdanco.com/2019/10/26/everything-is-amazing-but-nothing-is-ours/">https://alexdanco.com/2019/10/26/everything-is-amazing-but-nothing-is-ours/</a></li>
+<li><a class="external free" href="https://tosdr.org/">https://tosdr.org/</a> Terms of Service; Didn't Read has a ranking system and describes features that might serve as a proxy for defining a silo</li>
+<li>Criticism: <a class="external free" href="https://twitter.com/generativist/status/1216770253264322568">https://twitter.com/generativist/status/1216770253264322568</a>
+<ul><li>"I've been researching social media developer ecosystems for a few days now. The one and only constant seems to be an obvious (and damning to me) one:<br /><br />        Inevitably the drawbridge gets pulled up." <a class="external text" href="http://jbn.abreka.com/">@generativist</a> January 13, 2020</li></ul></li>
+<li>making indie site scaling harder by buying up operations as a service companies <a class="external free" href="https://www.eff.org/deeplinks/2020/06/technical-excellence-and-scale">https://www.eff.org/deeplinks/2020/06/technical-excellence-and-scale</a> (<span class="h-card" style="white-space:nowrap"><img src="https&#58;//snarfed.org/ryan_profile_square_thumb.jpg" class="" style="height:1.1em;vertical-align:-.1em" alt="" /> <a href="/User:Snarfed.org" title="User:Snarfed.org">Ryan Barrett</a></span>: this article seems out of touch. it feels like we've never seen more operations as service offerings. definitely way more than 20-30y ago, and probably also more than 10y ago. hell, the big shift over the last 10+y is that the big companies mentioned in the article all offer more of their own stuff as cloud services, which were often purely internal before. obviously google, amazon, MS, but also even FB and apple, etc)</li>
+<li><a href="/corporate_web" title="corporate web">corporate web</a></li>
+<li><a class="external free" href="https://twitter.com/eevee/status/1459956937202626560">https://twitter.com/eevee/status/1459956937202626560</a>
+<ul><li>"silos took over because they're massively convenient in a lot of ways.  the web3 folks don't seem to understand that (even as they cluster around convenient silos like opensea) and don't have answers to any of the compelling reasons people use silos in the first place" <a class="external text" href="https://eev.ee/">@eevee</a> November 14, 2021</li></ul></li>
+<li>Why: thread: <a class="external free" href="https://twitter.com/danyork/status/1463273749407571972">https://twitter.com/danyork/status/1463273749407571972</a>
+<ul><li>"Centralization happened to the web as platforms emerged that made it even *easier* to post, share, and discover content. <br /><br />You didn't need a web server or learn HTML.<br /><br />You could just go on the platform and start creating content and sharing it with other people.<br /><br />2/" <a class="external text" href="http://danyork.me">@danyork</a> November 23, 2021</li></ul></li>
+<li>Why: <a class="external free" href="https://twitter.com/danyork/status/1463273760941817865">https://twitter.com/danyork/status/1463273760941817865</a>
+<ul><li>"The platforms' success is because they made it EASIER than the "web 1.0" services to:<br /><br />- discover, connect with, and message people (&amp; avoid spammers)<br />- create content<br />- share content with other people<br />- discover new content<br />- make money (minus the platform's share of course)<br /><br />8/" <a class="external text" href="http://danyork.me">@danyork</a> November 23, 2021</li></ul></li>
+<li>^ <a class="external free" href="https://twitter.com/danyork/status/1463273762812571658">https://twitter.com/danyork/status/1463273762812571658</a>
+<ul><li>"The platforms made it "free" for all of us to have:<br /><br />- publishing<br />- storage of content (text, images, videos)<br />- messaging and real-time communication in text, voice and video<br />- identity / authorization<br />- discovery through a centralized directory<br /><br />All "free".  AND... <br /><br />9/" <a class="external text" href="http://danyork.me">@danyork</a> November 23, 2021</li></ul></li>
+<li><a class="external free" href="https://twitter.com/whitingdev/status/1472074920670629891">https://twitter.com/whitingdev/status/1472074920670629891</a>
+<ul><li>"primary motivators for centralization:<br /><br />a) they copyrighted it<br />b) they scaled it first<br />c) their protocol isn't user controlled and needs central/federated servers<br />d) network-effect user collab<br />e) site-specific search outperforms crawlers" <a class="external text" href="http://whiting.dev">@whitingdev</a> December 18, 2021</li></ul></li>
+<li>Needs to be a pull quote near the top: <a class="external free" href="https://twitter.com/tveastman/status/1069674780826071040">https://twitter.com/tveastman/status/1069674780826071040</a>
+<ul><li>"I'm old enough to remember when the Internet wasn't a group of five websites, each consisting of screenshots of text from the other four." <a class="external text" href="http://tom.eastman.nz">@tveastman</a> December 3, 2018</li></ul></li>
+<li>Criticism: <a class="external free" href="https://twitter.com/jack/status/1510314535671922689">https://twitter.com/jack/status/1510314535671922689</a>
+<ul><li>"the days of usenet, irc, the web...even email (w PGP)...were amazing. centralizing discovery and identity into corporations really damaged the internet.<br /><br />I realize I'm partially to blame, and regret it." <a class="external text" href="https://twitter.com/jack">@jack</a> April 2, 2022</li></ul></li>
+<li><a class="external free" href="https://twitter.com/thecodetrotter/status/1537020929045413888">https://twitter.com/thecodetrotter/status/1537020929045413888</a>
+<ul><li>"@spolsky welcome to the ShittyWeb@tm<br />@WeAreDevs #WeAreDevs" <a class="external text" href="https://github.com/ayxos">@thecodetrotter</a> June 15, 2022</li></ul></li>
+<li>^ <img src="https://pbs.twimg.com/media/FVSYTiTWIAIXLfn.jpg" alt="FVSYTiTWIAIXLfn.jpg" /></li>
+<li>“I am shifting my participation so that I only participate in commercial silos when absolutely necessary” <a class="external text" href="https://ariadne.space/2022/07/01/a-silo-can-never-provide-digital-autonomy-to-its-users/">a silo can never provide digital autonomy to its users</a></li>
+<li>Possible new silo header image, even a few of the names are defunct: <img src="https://www.ibiblio.org/hhalpin/homepage/presentations/tpac2010/walledgardens.jpg" alt="walledgardens.jpg" /></li>
+<li>Walled Garden graphic: <a class="external free" href="https://twitter.com/dug/status/1612483420365459465">https://twitter.com/dug/status/1612483420365459465</a>
+<ul><li>"This: <a class="external free" href="https://tantek.com/2023/005/t3/indieweb-simpler-approach">https://tantek.com/2023/005/t3/indieweb-simpler-approach</a> <br />reminded me of this...<br />which reminded me why I maintain this:-) <a class="external free" href="https://donkeyontheedge.com">https://donkeyontheedge.com</a>" <a class="external text" href="https://twitter.com/dug">@dug</a> January 9, 2023</li></ul></li>
+<li>^ more like comic by Hugh: <img src="https://pbs.twimg.com/media/FmCwuVXXgAE1Bn-.jpg" alt="FmCwuVXXgAE1Bn-.jpg" /></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20230905153827
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.034 seconds
+Real time usage: 0.070 seconds
+Preprocessor visited node count: 140/1000000
+Post‐expand include size: 407/2097152 bytes
+Template argument size: 56/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   16.391      1 -total
+ 66.40%   10.884      1 Template:snarfed
+ 34.67%    5.682      1 Template:sparkline
+ 32.79%    5.375      1 Template:main
+-->
+
+<!-- Saved in parser cache with key indieweb_wiki:pcache:idhash:369-0!canonical and timestamp 20230905153827 and revision id 87227. Serialized with JSON.
+ -->
+</div>
+<div class="printfooter">Retrieved from "<a dir="ltr" href="https://indieweb.org/wiki/index.php?title=silo&amp;oldid=87227">https://indieweb.org/wiki/index.php?title=silo&amp;oldid=87227</a>"</div></div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="/Category:silo" title="Category:silo">silo</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Navigation menu</h2>
+	<div id="mw-head">
+		
+<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-user-menu-legacy vector-menu" aria-labelledby="p-personal-label" role="navigation" 
+	 >
+	<label id="p-personal-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Personal tools</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="pt-login" class="mw-list-item"><a href="https://sso.indieweb.org/login?url=https%3A%2F%2Findieweb.org%2Fsilo" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o"><span>Log in</span></a></li></ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			
+<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu vector-menu-tabs" aria-labelledby="p-namespaces-label" role="navigation" 
+	 >
+	<label id="p-namespaces-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Namespaces</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="ca-nstab-main" class="selected mw-list-item"><a href="/silo" title="View the content page [c]" accesskey="c"><span>Page</span></a></li><li id="ca-talk" class="new mw-list-item"><a href="/wiki/index.php?title=Talk:silo&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li></ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown-noicon vector-menu vector-menu-dropdown" aria-labelledby="p-variants-label" role="navigation" 
+	 >
+	<input type="checkbox"
+		id="p-variants-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-variants"
+		class="vector-menu-checkbox" aria-labelledby="p-variants-label" />
+	<label id="p-variants-label" aria-label="Change language variant" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">English</span>
+			<span class="vector-menu-checkbox-expanded">expanded</span>
+			<span class="vector-menu-checkbox-collapsed">collapsed</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			
+<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu vector-menu-tabs" aria-labelledby="p-views-label" role="navigation" 
+	 >
+	<label id="p-views-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Views</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="ca-view" class="selected mw-list-item"><a href="/silo"><span>Read</span></a></li><li id="ca-viewsource" class="mw-list-item"><a href="/wiki/index.php?title=silo&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e"><span>View source</span></a></li><li id="ca-history" class="mw-list-item"><a href="/wiki/index.php?title=silo&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li></ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown-noicon vector-menu vector-menu-dropdown" aria-labelledby="p-cactions-label" role="navigation"  title="More options"
+	 >
+	<input type="checkbox"
+		id="p-cactions-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-cactions"
+		class="vector-menu-checkbox" aria-labelledby="p-cactions-label" />
+	<label id="p-cactions-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">More</span>
+			<span class="vector-menu-checkbox-expanded">expanded</span>
+			<span class="vector-menu-checkbox-collapsed">collapsed</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<div>
+			<h3 >
+				<label for="searchInput">Search</label>
+			</h3>
+		<form action="/wiki/index.php" id="searchform"
+			class="vector-search-box-form">
+			<div id="simpleSearch"
+				class="vector-search-box-inner"
+				 data-search-loc="header-navigation">
+				<input class="vector-search-box-input"
+					 type="search" name="search" placeholder="Search IndieWeb" aria-label="Search IndieWeb" autocapitalize="none" title="Search IndieWeb [f]" accesskey="f" id="searchInput"
+				/>
+				<input type="hidden" name="title" value="Special:Search"/>
+				<input id="mw-searchButton"
+					 class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Search the pages for this text" value="Search" />
+				<input id="searchButton"
+					 class="searchButton" type="submit" name="go" title="Go to a page with this exact name if it exists" value="Go" />
+			</div>
+		</form>
+	</div>
+</div>
+
+		</div>
+	</div>
+	
+
+<div id="mw-panel">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="/Main_Page"
+			title="Visit the main page"></a>
+	</div>
+	
+<nav id="p-Recent_&amp;_Upcoming" class="mw-portlet mw-portlet-Recent_Upcoming vector-menu vector-menu-portal portal" aria-labelledby="p-Recent_&amp;_Upcoming-label" role="navigation" 
+	 >
+	<label id="p-Recent_&amp;_Upcoming-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Recent &amp; Upcoming</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-🎁-2022-Gift-Calendar!" class="mw-list-item"><a href="/IndieWeb_Gift_Calendar"><span>🎁 2022 Gift Calendar!</span></a></li><li id="n-✨-2023-Commitments!" class="mw-list-item"><a href="/2023-01-01-commitments"><span>✨ 2023 Commitments!</span></a></li><li id="n-📰News-Podcast-Video" class="mw-list-item"><a href="/Posts_about_the_IndieWeb"><span>📰News Podcast Video</span></a></li><li id="n-📅-Events" class="mw-list-item"><a href="https://events.indieweb.org/"><span>📅 Events</span></a></li><li id="n-👥--Next-HWCs:-2023-09-06" class="mw-list-item"><a href="https://events.indieweb.org/tag/hwc"><span>👥  Next HWCs: 2023-09-06</span></a></li><li id="n-Camps-&amp;-Pop-ups:" class="mw-list-item"><a href="/IndieWebCamps"><span>Camps &amp; Pop-ups:</span></a></li><li id="n-🎪-Summit-2023" class="mw-list-item"><a href="/2023"><span>🎪 Summit 2023</span></a></li><li id="n-❤️-Sponsor" class="mw-list-item"><a href="/how-to-sponsor"><span>❤️ Sponsor</span></a></li></ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-Resources" class="mw-portlet mw-portlet-Resources vector-menu vector-menu-portal portal" aria-labelledby="p-Resources-label" role="navigation" 
+	 >
+	<label id="p-Resources-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Resources</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-🌈-Code-of-conduct" class="mw-list-item"><a href="/code-of-conduct"><span>🌈 Code of conduct</span></a></li><li id="n-💬-Discuss" class="mw-list-item"><a href="/discuss"><span>💬 Discuss</span></a></li><li id="n-📜-Chat-log" class="mw-list-item"><a href="https://chat.indieweb.org/"><span>📜 Chat log</span></a></li><li id="n-🎉-Get-started" class="mw-list-item"><a href="/Getting_Started"><span>🎉 Get started</span></a></li><li id="n-ℹ️-FAQ" class="mw-list-item"><a href="/FAQ"><span>ℹ️ FAQ</span></a></li><li id="n-🧰-Standards" class="mw-list-item"><a href="https://spec.indieweb.org/"><span>🧰 Standards</span></a></li><li id="n-✳️-Recent-changes" class="mw-list-item"><a href="/Special:RecentChanges"><span>✳️ Recent changes</span></a></li><li id="n-🎲-Random-page" class="mw-list-item"><a href="/Special:Random"><span>🎲 Random page</span></a></li><li id="n-©-Wiki-content-is-CC0" class="mw-list-item"><a href="/IndieWebCamp:Copyrights"><span>© Wiki content is CC0</span></a></li></ul>
+		
+	</div>
+</nav>
+
+<nav id="p-Developers" class="mw-portlet mw-portlet-Developers vector-menu vector-menu-portal portal" aria-labelledby="p-Developers-label" role="navigation" 
+	 >
+	<label id="p-Developers-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Developers</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-🔩-building-blocks" class="mw-list-item"><a href="/Category:building-blocks"><span>🔩 building blocks</span></a></li><li id="n-📑-projects" class="mw-list-item"><a href="/Projects"><span>📑 projects</span></a></li><li id="n-🗽-principles" class="mw-list-item"><a href="/principles"><span>🗽 principles</span></a></li></ul>
+		
+	</div>
+</nav>
+
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu vector-menu-portal portal" aria-labelledby="p-tb-label" role="navigation" 
+	 >
+	<label id="p-tb-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Tools</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="t-whatlinkshere" class="mw-list-item"><a href="/Special:WhatLinksHere/silo" title="A list of all wiki pages that link here [j]" accesskey="j"><span>What links here</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/Special:RecentChangesLinked/silo" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k"><span>Related changes</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q"><span>Special pages</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Printable version of this page [p]" accesskey="p"><span>Printable version</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/wiki/index.php?title=silo&amp;oldid=87227" title="Permanent link to this revision of the page"><span>Permanent link</span></a></li><li id="t-info" class="mw-list-item"><a href="/wiki/index.php?title=silo&amp;action=info" title="More information about this page"><span>Page information</span></a></li></ul>
+		
+	</div>
+</nav>
+
+	
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" role="contentinfo" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> This page was last edited on 28 March 2023, at 13:18.</li>
+	<li id="footer-info-copyright">Content is available under <a href="/IndieWebCamp:Copyrights" class="mw-redirect" title="IndieWebCamp:Copyrights">a CC0 public domain dedication</a> unless otherwise noted.</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="/IndieWeb:Privacy_policy" class="mw-redirect" title="IndieWeb:Privacy policy">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="/IndieWeb:About" class="mw-redirect" title="IndieWeb:About">About IndieWeb</a></li>
+	<li id="footer-places-disclaimer"><a href="/IndieWeb:General_disclaimer" title="IndieWeb:General disclaimer">Disclaimers</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="http://creativecommons.org/publicdomain/zero/1.0/"><img src="https://i.creativecommons.org/p/zero/1.0/88x31.png" alt="a CC0 public domain dedication" width="88" height="31" loading="lazy"/></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img src="/wiki/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/wiki/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /wiki/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" loading="lazy"/></a></li>
+</ul>
+
+
+
+
+
+
+<style type="text/css">
+.sponsor-logo-block {
+	margin-left: -12px;
+	margin-top: 50px;
+	margin-right: -12px;
+}
+@media screen and (min-width: 982px) {
+	.sponsor-logo-block {
+		margin-left: -1.25em;
+		margin-right: -1.25em;
+	}
+}
+@media screen and (max-width: 720px) {
+	.sponsor-logo-block {
+		margin-top: 0;
+	}  
+}
+.sponsor-logo-block .inner {
+	background-color: #d9d9d9; 
+	padding: 30px;
+}
+
+.page-Main_Page .sponsor-logo-block {
+	background-color: #d9d9d9; 
+	padding-left: 30px;
+}
+.page-Main_Page .sponsor-logo-block .inner {
+	border: 0;
+}
+
+div#footer {
+	background-image: none;
+}
+
+.sponsor-logo-block .logo {
+	float: left;
+	margin: 10px;
+	height: 70px;
+	zoom: 0.5;
+	-moz-transform: scale(0.5);
+}
+.page-Main_Page .sponsor-logo-block .logo {
+	zoom: 1;
+	-moz-transform: scale(1);
+}
+.sponsor-logo-block .logo div {
+	padding: 6px;
+	background-color: #d9d9d9;
+	border-radius: 0;
+}
+.sponsor-logo-block .thanks {
+	color: #777;
+	font-size: 16px;
+	font-weight: bold;
+}
+.sponsor-logo-block .thanks.small {
+	font-size: 14px;
+	text-align: right;
+}
+.sponsor-logo-block .thanks.small a {
+	color: #777;
+}
+</style>
+<div class="sponsor-logo-block"><div class="inner">
+	<div class="thanks">Thank you to our sponsors of IndieWeb events!</div>
+	<div ><div><a href="http://mozilla.org/"><img src="/sponsor-logos/mozilla.png" alt="Mozilla"></a></div></div>
+	<div ><div><a href="https://developer.okta.com/"><img src="/sponsor-logos/okta.png" alt="Okta"></a></div></div>
+	<div ><div><a href="http://sipgate.de/"><img src="/sponsor-logos/sipgate.png" alt="sipgate"></a></div></div>
+	<div ><div><a href="https://www.brid.gy/"><img src="/sponsor-logos/bridgy.png" alt="Bridgy"></a></div></div>
+	<div ><div><a href="https://beyondtellerrand.com"><img src="/sponsor-logos/beyondtellerrand.png" alt="Beyond Tellerrand"></a></div></div>
+	<div ><div><a href="http://tollwerk.de/"><img src="/sponsor-logos/tollwerk.png" alt="Tollwerk"></a></div></div>
+	<div ><div><a href="https://www.opensuse.org/"><img src="/sponsor-logos/opensuse.png" alt="OpenSuse"></a></div></div>
+	<div ><div><a href="http://idno.co/"><img src="/sponsor-logos/idno.png" alt="Idno"></a></div></div>
+	<div ><div><a href="http://google.com"><img src="/sponsor-logos/google.png" alt="Google"></a></div></div>
+	<div ><div><a href="http://clearleft.com/"><img src="/sponsor-logos/clearleft.png" alt="ClearLeft"></a></div></div>
+	<div ><div><a href="https://cgi.com/"><img src="/sponsor-logos/cgi.png" alt="CGI"></a></div></div>
+
+	<div style="clear: both;"></div>
+	<div class="thanks small"><a href="https://opencollective.com/indieweb">become a supporter!</a></div>
+</div></div>
+
+
+</footer>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.034","walltime":"0.070","ppvisitednodes":{"value":140,"limit":1000000},"postexpandincludesize":{"value":407,"limit":2097152},"templateargumentsize":{"value":56,"limit":2097152},"expansiondepth":{"value":4,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":0,"limit":5000000},"timingprofile":["100.00%   16.391      1 -total"," 66.40%   10.884      1 Template:snarfed"," 34.67%    5.682      1 Template:sparkline"," 32.79%    5.375      1 Template:main"]},"cachereport":{"timestamp":"20230905153827","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":512});});</script>
+</body>
+</html>

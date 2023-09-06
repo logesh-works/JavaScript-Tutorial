@@ -1,0 +1,167 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" />
+<title>When you setup your site with Bridgy Fed^1, it creates a dashboard with a form for others to follow you site. E.g. mine: https://fed.brid.gy/user/tantek.com
+
+Copying that Follow form to your site sets up cross-instance following directly from your #IndieWeb site!
+
+Starting with the Follow form markup on the dashboard, copy it and make any necessary changes for its HTML &amp; CSS to fit in with your own, e.g.
+
+&lt;form method=&quot;post&quot; action=&quot;https://fed.brid.gy/remote-follow&quot;&gt;
+ &lt;label for=&quot;follow-address&quot;&gt;🐘 Follow 
+  &lt;kbd&gt;@tantek.com@tantek.com&lt;/kbd&gt;:&lt;br /&gt; 
+  enter your @-@ fediverse address:&lt;/label&gt;
+ &lt;input id=&quot;follow-address&quot; name=&quot;address&quot; type=&quot;text&quot; required=&quot;required&quot;
+        placeholder=&quot;@you@instance.social&quot; alt=&quot;fediverse address&quot; value=&quot;&quot; /&gt;
+ &lt;input name=&quot;domain&quot; type=&quot;hidden&quot; value=&quot;tantek.com&quot; /&gt;
+ &lt;input name=&quot;protocol&quot; type=&quot;hidden&quot; value=&quot;web&quot; /&gt;
+ &lt;button type=&quot;submit&quot;&gt;Follow&lt;/button&gt;
+&lt;/form&gt;
+
+After adding the Follow form to my site, I added more instructions and screenshots to the IndieWeb wiki to hopefuly enable more developers to setup Follow buttons:
+* https://indieweb.org/Bridgy_Fed#How_to_add_a_follow_form
+
+See that section for a sample rendering of the form, and what happens when someone else clicks the Follow button on your site while they’re logged into a Mastodon instance.
+
+They get prompted to FOLLOW you, and when they click that button, they get a follow confirmation.
+
+A functioning cross-instance “Follow” button is one step closer to a universal cross-site “Follow button”.
+
+
+This is day 19 of #100DaysOfIndieWeb #100Days, written the night after.
+
+← Day 18: https://tantek.com/2023/019/t5/reply-domain-above-address-and-silo
+→ Day 20: https://tantek.com/2023/022/t1/indieweb-eat-what-you-cook
+
+
+^1 https://tantek.com/2023/008/t7/bridgy-indieweb-posse-backfeed - Tantek</title>
+<link rel="icon" href="/logo.jpg" />
+<meta name="viewport" content="initial-scale=0.7"/>
+<link rel="webmention" href="//webmention.io/tantek.com/webmention" />
+<style type="text/css">/*<![CDATA[*/ 
+@import "/2023/simple.css";
+form.search { width:34%; float:right; white-space:nowrap; font-size:1.3em; text-align:right }
+input,button { font-size:1em }
+button { margin: 0 0.5em 0 0; padding:0 0.5em }
+form.search input[type=search] { width:62% }
+/*]]>*/</style>
+</head>
+<body class=" post hentry h-entry as-note">
+<header><div class="header">
+<h1><a href="/" rel="author home">tantek.com</a></h1>
+
+<form class="search" action="https://duckduckgo.com/html/" method="get">
+<input type="hidden" name="type" value="list" />
+<input type="search" value="site:tantek.com " name="q" />
+<button type="submit">Search</button>
+</form>
+
+</div></header>
+
+<div class="sidestuff">
+<ul class="snav">
+<li><a href="/2023/020/t1/" id="previtem" title="View the previous (older) item in the stream." rel="prev"><abbr>&#x2190;</abbr></a></li><li><a href="/2023/022/t1/indieweb-eat-what-you-cook" id="nextitem" title="View the next (newer) item in the stream" rel="next"><abbr>&#x2192;</abbr></a></li>
+</ul>
+</div>
+<span class="p-author h-card"><a href="/" class="u-url author-icon" rel="author" title="Tantek Çelik"><img class="u-photo p-name" src="/logo.jpg" alt="Tantek Çelik" /></a></span>
+
+<a href="https://fed.brid.gy/" aria-hidden="true"></a> <p class="p-name entry-title e-content entry-content article">When you setup your site with Bridgy Fed<a id="t5Nx2_ref-1" href="#t5Nx2_note-1">¹</a>, it creates a dashboard with a form for others to follow you site. E.g. mine: <a class="auto-link" href="https://fed.brid.gy/user/tantek.com">https://fed.brid.gy/user/tantek.com</a><br class="auto-break"/><br class="auto-break"/>Copying that Follow form to your site sets up cross-instance following directly from your <a href="https://indieweb.social/tags/IndieWeb" class="auto-link-hashtag">#<span class="p-category auto-tag">IndieWeb</span></a> site!<br class="auto-break"/><br class="auto-break"/>Starting with the Follow form markup on the dashboard, copy it and make any necessary changes for its HTML &amp; CSS to fit in with your own, e.g.<br class="auto-break"/><br class="auto-break"/>&lt;form method=&quot;post&quot; action=&quot;https://fed.brid.gy/remote-follow&quot;&gt;<br class="auto-break"/>&#xA0;&lt;label for=&quot;follow-address&quot;&gt;🐘 Follow <br class="auto-break"/>&#xA0; &lt;kbd&gt;@tantek.com@tantek.com&lt;/kbd&gt;:&lt;br /&gt; <br class="auto-break"/>&#xA0; enter your @-@ fediverse address:&lt;/label&gt;<br class="auto-break"/>&#xA0;&lt;input id=&quot;follow-address&quot; name=&quot;address&quot; type=&quot;text&quot; required=&quot;required&quot;<br class="auto-break"/>&#xA0; &#xA0; &#xA0; &#xA0; placeholder=&quot;@you@instance.social&quot; alt=&quot;fediverse address&quot; value=&quot;&quot; /&gt;<br class="auto-break"/>&#xA0;&lt;input name=&quot;domain&quot; type=&quot;hidden&quot; value=&quot;tantek.com&quot; /&gt;<br class="auto-break"/>&#xA0;&lt;input name=&quot;protocol&quot; type=&quot;hidden&quot; value=&quot;web&quot; /&gt;<br class="auto-break"/>&#xA0;&lt;button type=&quot;submit&quot;&gt;Follow&lt;/button&gt;<br class="auto-break"/>&lt;/form&gt;<br class="auto-break"/><br class="auto-break"/>After adding the Follow form to my site, I added more instructions and screenshots to the IndieWeb wiki to hopefuly enable more developers to setup Follow buttons:<br class="auto-break"/>* <a class="auto-link" href="https://indieweb.org/Bridgy_Fed#How_to_add_a_follow_form">https://indieweb.org/Bridgy_Fed#How_to_add_a_follow_form</a><br class="auto-break"/><br class="auto-break"/>See that section for a sample rendering of the form, and what happens when someone else clicks the Follow button on your site while they’re logged into a Mastodon instance.<br class="auto-break"/><br class="auto-break"/>They get prompted to FOLLOW you, and when they click that button, they get a follow confirmation.<br class="auto-break"/><br class="auto-break"/>A functioning cross-instance “Follow” button is one step closer to a universal cross-site “Follow button”.<br class="auto-break"/><br class="auto-break"/><br class="auto-break"/>This is day 19 of <a href="https://indieweb.social/tags/100DaysOfIndieWeb" class="auto-link-hashtag">#<span class="p-category auto-tag">100DaysOfIndieWeb</span></a> <a href="https://indieweb.social/tags/100Days" class="auto-link-hashtag">#<span class="p-category auto-tag">100Days</span></a>, written the night after.<br class="auto-break"/><br class="auto-break"/>← Day 18: <a class="auto-link" href="https://tantek.com/2023/019/t5/reply-domain-above-address-and-silo">https://tantek.com/2023/019/t5/reply-domain-above-address-and-silo</a><br class="auto-break"/>→ Day 20: <a class="auto-link" href="https://tantek.com/2023/022/t1/indieweb-eat-what-you-cook">https://tantek.com/2023/022/t1/indieweb-eat-what-you-cook</a><br class="auto-break"/><br class="auto-break"/><br class="auto-break"/><a id="t5Nx2_note-1" href="#t5Nx2_ref-1">¹</a> <a class="auto-link" href="https://tantek.com/2023/008/t7/bridgy-indieweb-posse-backfeed">https://tantek.com/2023/008/t7/bridgy-indieweb-posse-backfeed</a></p><span class="info footer">
+  <span class="dt-published published dt-updated updated">
+  <time class="value" datetime="23:54-0800">23:54</time> on <time class="value">2023-01-20</time>  </span>
+ <span class="lt">
+ (ttk.me t5Nx2) </span>
+  using <span class="using">BBEdit</span> </span> 
+<div class="info footer">
+<form action="//tantek.com/2023/020/t2/bridgy-fed-follow-form"><div>
+<label><span class="lt">URL:</span>
+<input class="u-url url u-uid uid bookmark" type="url" size="70" style="max-width:100%" value="https://tantek.com/2023/020/t2/bridgy-fed-follow-form" />
+</label>
+</div></form>
+</div>
+<div class="info footer">
+<a class="u-syndication" rel="syndication" style="float:right; clear:right; height:2em"
+   href="https://twitter.com/t/status/1616725288746119168">
+   <img src="/icon/twitter.png" style="vertical-align:-30%;margin:-3px -6px -4px 0" alt=""/> 
+   View 
+      on Twitter
+</a><div style="line-height:2.6em; font-size:1em;">
+<indie-action do="like" with="//tantek.com/2023/020/t2/bridgy-fed-follow-form">
+<a class="action favorite" target="_blank" href="https://twitter.com/intent/favorite?tweet_id=1616725288746119168">♥ Like</a>
+</indie-action>
+<indie-action do="repost" with="//tantek.com/2023/020/t2/bridgy-fed-follow-form">
+<a class="action reply" target="_blank" href="https://twitter.com/intent/retweet?tweet_id=1616725288746119168">♺ Repost</a>
+</indie-action>
+<indie-action do="reply" with="//tantek.com/2023/020/t2/bridgy-fed-follow-form">
+<a class="action reply" target="_blank" href="https://twitter.com/intent/tweet?in_reply_to=1616725288746119168">↵ Reply</a>
+</indie-action>
+</div>
+
+</div>
+ </li>
+<script type="text/javascript">/*<![CDATA[*/
+function select_all(e) {
+ e = e ? e : window.event;
+ var el = targetelement(e);
+ el.focus();
+ /* el.select(); // fails in Mobile Safari */
+ el.selectionStart=0;
+ el.selectionEnd=el.value.length;
+}
+
+var fs = document.forms, i = 0, j = 0, es;
+for (i = 0; i<fs.length; i++) {
+  es = document.forms[i].elements;
+  if (es) {
+    for (j=0;j<es.length;j++) {
+      switch (es[j].type) {
+      case "text":
+      case "url":
+        es[j].onclick = select_all;
+      }
+    }
+  }
+}
+
+
+document.onkeyup = keyup;
+
+function clearactive() {
+  var e = document.getElementById("previtem");
+  if (e) { e.className = ""; }
+  e = document.getElementById("nextitem");
+  if (e) { e.className = ""; }
+}
+
+function keyup(e)
+{
+   var kid = (window.event) ? event.keyCode : e.keyCode;
+   var nid = "";
+   if (document.activeElement !== document.body) {
+     return;
+   }
+   switch(kid) {
+    case 37:
+    case 74:
+      nid = "previtem";
+      break;
+    case 39:
+    case 75:
+      nid = "nextitem";
+      break;
+   }
+   if (nid!="") {
+      ne = document.getElementById(nid);
+      if (ne) {
+        ne.className = "active";
+        doevent(ne,"click");
+        window.onunload = clearactive;
+        return false;
+      }
+   }
+}
+
+/*]]>*/</script>
+<script src="/fragmention.min.js"></script>
+<script src="/scripts/indieconfig.js"></script> 
+<script src="/scripts/webaction.js"></script>
+<script src="cassis.js"></script>
+</body>
+</html>

@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://simonwillison.net/">
+<title>Simon Willison’s Weblog</title>
+<script defer data-domain="simonwillison.net" src="https://plausible.io/js/plausible.js"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1090368-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)}; gtag('js', new Date());gtag('config', 'UA-1090368-1', {send_page_view: false });
+(function() {
+    var m = /#atom\-(\w+)/.exec(location.hash);
+    if (m) {
+        gtag('event', 'page_view', {dimension1: m[1]});
+        history.replaceState && history.replaceState(null, '', location.href.split('#')[0]);
+    } else {
+        gtag('event', 'page_view');
+    }
+})();
+</script>
+
+<link rel="alternate" type="application/atom+xml" title="Atom" href="/atom/everything/">
+<link rel="stylesheet" type="text/css" href="/static/css/all.f0dc0c7a2496.css">
+<link rel="webmention" href="https://webmention.io/simonwillison.net/webmention">
+<link rel="pingback" href="https://webmention.io/simonwillison.net/xmlrpc">
+
+<link href="https://github.com/simonw" rel="me">
+<link href="https://twitter.com/simonw" rel="me">
+<link href="https://fedi.simonwillison.net/@simon" rel="me">
+<link rel="authorization_endpoint" href="https://indieauth.com/auth">
+
+
+
+</head>
+<body class="homepage">
+
+<div id="bighead">
+  <a id="atomfeedlink" href="/atom/everything/" title="My Atom feed"><svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 256 256"><defs><linearGradient id="a" x1=".1" x2=".9" y1=".1" y2=".9"><stop offset="0" stop-color="#E3702D"/><stop offset=".1" stop-color="#EA7D31"/><stop offset=".4" stop-color="#F69537"/><stop offset=".5" stop-color="#FB9E3A"/><stop offset=".7" stop-color="#EA7C31"/><stop offset=".9" stop-color="#DE642B"/><stop offset="1" stop-color="#D95B29"/></linearGradient></defs><rect width="256" height="256" fill="#CC5D15" rx="55" ry="55"/><rect width="246" height="246" x="5" y="5" fill="#F49C52" rx="50" ry="50"/><rect width="236" height="236" x="10" y="10" fill="url(#a)" rx="47" ry="47"/><circle cx="68" cy="189" r="24" fill="#FFF"/><path fill="#FFF" d="M160 213h-34a82 82 0 0 0-82-82V97a116 116 0 0 1 116 116z"/><path fill="#FFF" d="M184 213A140 140 0 0 0 44 73V38a175 175 0 0 1 175 175z"/></svg></a> 
+  <div id="h1-nav-wrapper">
+    <h1>Simon Willison’s Weblog</h1>
+    <nav>
+      <ul>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/about/#subscribe">Subscribe</a></li>
+        <li><a href="https://til.simonwillison.net/">TILs</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div id="bigheadcontainer">
+  <p id="currenttags">On <a href="/tags/llm/" class="item-tag">llm <span>17</span></a> <a href="/tags/chatgpt/" class="item-tag">chatgpt <span>68</span></a> <a href="/tags/openai/" class="item-tag">openai <span>85</span></a> <a href="/tags/opensource/" class="item-tag">opensource <span>171</span></a> <a href="/tags/weeknotes/" class="item-tag">weeknotes <span>165</span></a> <a href="/tags/" class="more">...</a></p>
+  <form action="/search/" method="GET"><div>
+    <input type="search" placeholder="Search this site" class="search-input" name="q" value="" style="max-width: 560px; margin-top: 0.5em">
+    <input type="submit" class="search-submit" value="Search">
+  </div></form>
+  </div><!-- #bigheadcontainer -->
+</div><!-- #bighead -->
+
+<div id="band">&nbsp;</div>
+
+<div id="wrapper">
+<div id="primary">
+
+<h2 class="overband">Recent entries <a href="/atom/entries/" class="small-atom" title="Atom feed of new entries"><svg width="14px" height="14px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><circle cx="68" cy="189" r="24" fill="#FFF"/><path fill="#FFF" d="M160 213h-34a82 82 0 0 0-82-82V97a116 116 0 0 1 116 116z"/><path fill="#FFF" d="M184 213A140 140 0 0 0 44 73V38a175 175 0 0 1 175 175z"/></svg></a></h2>
+
+
+<div class="entry segment" data-date="2023-09-04T20:32:39+00:00">
+<h3><a href="/2023/Sep/4/llm-embeddings/" rel="bookmark">LLM now provides tools for working with embeddings</a> <span class="textago" title="4th September 2023">one day ago</span></h3>
+<p><a href="https://llm.datasette.io/">LLM</a> is my Python library and command-line tool for working with language models. I just released <a href="https://llm.datasette.io/en/stable/changelog.html#v0-9">LLM 0.9</a> with a new set of features that extend LLM to provide tools for working with <em>embeddings</em>.</p>
+<p>This is a long post with a lot of theory and background. If you already know what embeddings are, here’s a TLDR you can try out straight away:</p>
+<div class="highlight highlight-source-shell"><pre><span class="pl-c"><span class="pl-c">#</span> Install LLM</span>
+pip install llm
+
+<span class="pl-c"><span class="pl-c">#</span> If you already installed via Homebrew/pipx you can upgrade like this:</span>
+llm install -U llm
+
+<span class="pl-c"><span class="pl-c">#</span> Install the llm-sentence-transformers plugin</span>
+llm install llm-sentence-transformers
+
+<span class="pl-c"><span class="pl-c">#</span> Install the all-MiniLM-L6-v2 embedding model</span>
+llm sentence-transformers register all-MiniLM-L6-v2
+
+<span class="pl-c"><span class="pl-c">#</span> Generate and store embeddings for every README.md in your home directory, recursively</span>
+llm embed-multi readmes \
+  --model sentence-transformers/all-MiniLM-L6-v2 \
+  --files <span class="pl-k">~</span>/ <span class="pl-s"><span class="pl-pds">'</span>**/README.md<span class="pl-pds">'</span></span>
+  <span class="pl-c"><span class="pl-c">#</span> Add --store to store the text content as well</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Run a similarity search for "sqlite" against those embeddings</span>
+llm similar readmes -c sqlite</pre></div>
+<p>For everyone else, read on and the above example should hopefully all make sense.</p>
+<h4>Embeddings</h4>
+<p>Embeddings are a fascinating concept within the larger world of language models.</p>
+<p>I explained embeddings in my recent talk, <a href="https://simonwillison.net/2023/Aug/27/wordcamp-llms/">Making Large Language Models work for you</a>. The relevant section of the slides and transcript <a href="https://simonwillison.net/2023/Aug/27/wordcamp-llms/#embeddings">is here</a>, or you can <a href="https://www.youtube.com/watch?v=aC7UQcZN6y8&amp;t=2189s">jump to that section on YouTube</a>.</p>
+<p>An embedding model lets you take a string of text—a word, sentence, paragraph or even a whole document—and turn that into an array of floating point numbers called an <em>embedding vector</em>.</p>
+<p><img src="https://static.simonwillison.net/static/2023/wordcamp-llms/llm-work-for-you.055.jpeg" alt="On the left is a text post from one of my sites: Storing and serving related documents with openai-to-sqlite and embeddings. An arrow points to a huge JSON array on the right, with the label 1536 floating point numbers." style="max-width: 100%;"></p>
+<p>A model will always produce the same length of array—1,536 numbers for the <a href="https://platform.openai.com/docs/guides/embeddings">OpenAI embedding model</a>, 384 for <a href="https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2">all-MiniLM-L6-v2</a>—but the array itself is inscrutable. What are you meant to do with it?</p>
+<p>The answer is that you can compare them. I like to think of an embedding vector as a location in 1,536-dimensional space. The distance between two vectors is a measure of how semantically similar they are in meaning, at least according to the model that produced them.</p>
+<p><img src="https://static.simonwillison.net/static/2023/wordcamp-llms/llm-work-for-you.056.jpeg" alt="A location in 1,536 dimension space  There's a 3D plot with 400 red dots arranged randomly across 3 axis." style="max-width: 100%;"></p>
+<p>“One happy dog” and “A playful hound” will end up close together, even though they don’t share any keywords. The embedding vector represents the language model’s interpretation of the meaning of the text.</p>
+<p>Things you can do with embeddings include:</p>
+<ol>
+<li>Find <strong>related items</strong>. I use this on <a href="https://til.simonwillison.net/">my TIL site</a> to display related articles, as described in <a href="https://til.simonwillison.net/llms/openai-embeddings-related-content">Storing and serving related documents with openai-to-sqlite and embeddings</a>.</li>
+<li>Build <strong>semantic search</strong>. As shown above, an embeddings-based search engine can find content relevant to the user’s search term even if none of the keywords match.</li>
+<li>Implement <strong>retrieval augmented generation</strong>—the trick where you take a user’s question, find relevant documentation in your own corpus and use that to get an LLM to spit out an answer. More on that <a href="https://simonwillison.net/2023/Aug/27/wordcamp-llms/#retrieval-augmented-generation">here</a>.</li>
+<li>
+<strong>Clustering</strong>: you can find clusters of nearby items and identify patterns in a corpus of documents.</li>
+<li><strong>Classification</strong>: calculate the embedding of a piece of text and compare it to pre-calculated “average” embeddings for different categories.</li>
+</ol>
+<h4>LLM’s new embedding features</h4>
+<p>My goal with LLM is to provide a plugin-driven abstraction around a growing collection of language models. I want to make installing, using and comparing these models as easy as possible.</p>
+<p>The new release adds several command-line tools for working with embeddings, plus a new Python API for working with embeddings in your own code.</p>
+<p>It also adds support for installing additional embedding models via plugins. I’ve released one plugin for this so far: <a href="https://github.com/simonw/llm-sentence-transformers">llm-sentence-transformers</a>, which adds support for new models based on the <a href="https://www.sbert.net/">sentence-transformers</a> library.</p>
+<p>The example above shows how to use <code>sentence-transformers</code>. LLM also supports API-driven access to the OpenAI <code>ada-002</code> model.</p>
+<p>Here’s how to embed some text using <code>ada-002</code>, assuming you have <a href="https://llm.datasette.io/en/stable/setup.html">installed LLM already</a>:</p>
+<div class="highlight highlight-source-shell"><pre><span class="pl-c"><span class="pl-c">#</span> Set your OpenAI API key</span>
+llm keys <span class="pl-c1">set</span> openai
+<span class="pl-c"><span class="pl-c">#</span> &lt;paste key here&gt;</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Embed some text</span>
+llm embed -m ada-002 -c <span class="pl-s"><span class="pl-pds">"</span>Hello world<span class="pl-pds">"</span></span></pre></div>
+<p>This will output a huge JSON list of floating point numbers to your terminal. You can add <code>-f base64</code> (or <code>-f hex</code>) to get that back in a different format, though none of these outputs are instantly useful.</p>
+<p>Embeddings are much more interesting when you store them.</p>
+<p>LLM already uses SQLite to <a href="https://llm.datasette.io/en/stable/logging.html">store prompts and responses</a>. It was a natural fit to use SQLite to store embeddings as well.</p>
+<h4>Embedding collections</h4>
+<p>LLM 0.9 introduces the concept of a <strong>collection</strong> of embeddings. A collection has a name—like <code>readmes</code>—and contains a set of embeddings, each of which has an ID and an embedding vector.</p>
+<p>All of the embeddings in a collection are generated by the same model, to ensure they can be compared with each others.</p>
+<p>The <code>llm embed</code> command can store the vector in the database instead of returning it to the console. Pass it the name of an existing (or to-be-created) collection and the ID to use to store the embedding.</p>
+<p>Here we’ll store the embedding for the phrase “Hello world” in a collection called <code>phrases</code> with the ID <code>hello</code>, using that <code>ada-002</code> embedding model:</p>
+<div class="highlight highlight-source-shell"><pre>llm embed phrases hello -m ada-002 -c <span class="pl-s"><span class="pl-pds">"</span>Hello world<span class="pl-pds">"</span></span></pre></div>
+<p>Future phrases can be added without needing to specify the model again, since it is remembered by the collection:</p>
+<div class="highlight highlight-source-shell"><pre>llm embed phrases goodbye -c <span class="pl-s"><span class="pl-pds">"</span>Goodbye world<span class="pl-pds">"</span></span></pre></div>
+<p>The <code>llm embed-db collections</code> shows a list of collections:</p>
+<div class="highlight highlight-source-shell"><pre>phrases: ada-002
+  2 embeddings
+readmes: sentence-transformers/all-MiniLM-L6-v2
+  16796 embeddings</pre></div>
+<p>The data is stored in a SQLite <code>embeddings</code> table with the following schema:</p>
+<div class="highlight highlight-source-sql"><pre>CREATE TABLE [collections] (
+   [id] <span class="pl-k">INTEGER</span> <span class="pl-k">PRIMARY KEY</span>,
+   [name] <span class="pl-k">TEXT</span>,
+   [model] <span class="pl-k">TEXT</span>
+);
+<span class="pl-k">CREATE</span> <span class="pl-k">TABLE</span> "<span class="pl-en">embeddings</span>" (
+   [collection_id] <span class="pl-k">INTEGER</span> <span class="pl-k">REFERENCES</span> [collections]([id]),
+   [id] <span class="pl-k">TEXT</span>,
+   [embedding] BLOB,
+   [content] <span class="pl-k">TEXT</span>,
+   [content_hash] BLOB,
+   [metadata] <span class="pl-k">TEXT</span>,
+   [updated] <span class="pl-k">INTEGER</span>,
+   <span class="pl-k">PRIMARY KEY</span> ([collection_id], [id])
+);
+
+CREATE UNIQUE INDEX [idx_collections_name]
+    <span class="pl-k">ON</span> [collections] ([name]);
+CREATE INDEX [idx_embeddings_content_hash]
+    <span class="pl-k">ON</span> [embeddings] ([content_hash]);</pre></div>
+<p>By default this is the SQLite database at the location revealed by <a href="">llm embed-db path</a>, but you can pass <code>--database my-embeddings.db</code> to various LLM commands to use a different database.</p>
+<p>Each embedding vector is stored as a binary BLOB in the <code>embedding</code> column, consisting of those floating point numbers packed together as 32 bit floats.</p>
+<p>The <code>content_hash</code> column contains a MD5 hash of the content. This helps avoid re-calculating the embedding (which can cost actual money for API-based embedding models like <code>ada-002</code>) unless the content has changed.</p>
+<p>The <code>content</code> column is usually <code>null</code>, but can contain a copy of the original text content if you pass the <code>--store</code> option to the <code>llm embed</code> command.</p>
+<p><code>metadata</code> can contain a JSON object with metadata, if you pass <code>--metadata '{"json": "goes here"}</code>.</p>
+<p>You don’t have to pass content using <code>-c</code>—you can instead pass a file path using the <code>-i/--input</code> option:</p>
+<div class="highlight highlight-source-shell"><pre>llm embed docs llm-setup -m ada-002 -i llm/docs/setup.md</pre></div>
+<p>Or pipe things to standard input like this:</p>
+<div class="highlight highlight-source-shell"><pre>cat llm/docs/setup.md <span class="pl-k">|</span> llm embed docs llm-setup -m ada-002 -i -</pre></div>
+<h4>Embedding similarity search</h4>
+<p>Once you’ve built a collection, you can search for similar embeddings using the <code>llm similar</code> command.</p>
+<p>The <code>-c "term"</code> option will embed the text you pass in using the embedding model for the collection and use that as the comparison vector:</p>
+<div class="highlight highlight-source-shell"><pre>llm similar readmes -c sqlite</pre></div>
+<p>You can also pass the ID of an object in that collection to use that embedding instead. This gets you related documents, for example:</p>
+<div class="highlight highlight-source-shell"><pre>llm similar readmes sqlite-utils/README.md</pre></div>
+<p>The output from this command is currently newline-delimited JSON.</p>
+<h4>Embedding in bulk</h4>
+<p>The <code>llm embed</code> command embeds a single string at a time. <code>llm embed-multi</code> is much more powerful: you can feed a CSV or JSON file, a SQLite database or even have it read from a directory of files in order to embed multiple items at once.</p>
+<p>Many embeddings models are optimized for batch operations, so embedding multiple items at a time can provide a significant speed boost.</p>
+<p>The <code>embed-multi</code> command is described <a href="https://llm.datasette.io/en/stable/embeddings/cli.html#llm-embed-multi">in detail in the documentation</a>. Here are a couple of fun things you can do with it.</p>
+<p>First, I’m going to create embeddings for every single one of my Apple Notes.</p>
+<p>My <a href="https://datasette.io/tools/apple-notes-to-sqlite">apple-notes-to-sqlite</a> tool can export Apple Notes to a SQLite database. I’ll run that first:</p>
+<div class="highlight highlight-source-shell"><pre>apple-notes-to-sqlite notes.db</pre></div>
+<p>This took quite a while to run on my machine and generated a 828M SQLite database containing 6,462 records!</p>
+<p>Next, I’m going to embed the content of all of those notes using the <code>sentence-transformers/all-MiniLM-L6-v2</code> model:</p>
+<div class="highlight highlight-source-shell"><pre>llm embed-multi notes \
+  -d notes.db \
+  --sql <span class="pl-s"><span class="pl-pds">'</span>select id, title, body from notes<span class="pl-pds">'</span></span> \
+  -m sentence-transformers/all-MiniLM-L6-v2</pre></div>
+<p>This took around 15 minutes to run, and increased the size of my database by 13MB.</p>
+<p>The <code>--sql</code> option here specifies a SQL query. The first column must be an <code>id</code>, then any subsequent columns will be concatenated together to form the content to embed.</p>
+<p>In this case the embeddings are written back to the same <code>notes.db</code> database that the content came from.</p>
+<p>And now I can run embedding similarity operations against all of my Apple notes!</p>
+<div class="highlight highlight-source-shell"><pre>llm similar notes -d notes.db -c <span class="pl-s"><span class="pl-pds">'</span>ideas for blog posts<span class="pl-pds">'</span></span></pre></div>
+<h4>Embedding files in a directory</h4>
+<p>Let’s revisit the example from the top of this post. In this case, I’m using the <code>--files</code> option to search for files on disk and embed each of them:</p>
+<div class="highlight highlight-source-shell"><pre>llm embed-multi readmes \
+  --model sentence-transformers/all-MiniLM-L6-v2 \
+  --files <span class="pl-k">~</span>/ <span class="pl-s"><span class="pl-pds">'</span>**/README.md<span class="pl-pds">'</span></span></pre></div>
+<p>The <code>--files</code> option takes two arguments: a path to a directory and a pattern to match against filenames. In this case I’m searching my home directory recursively for any files named <code>README.md</code>.</p>
+<p>Running this command gives me embeddings for all of my README.md files, which I can then search against like this:</p>
+<div class="highlight highlight-source-shell"><pre>llm similar readmes -c sqlite</pre></div>
+<h4>Embeddings in Python</h4>
+<p>So far I’ve only covered the command-line tools. LLM 0.9 also introduces a new Python API for working with embeddings.</p>
+<p>There are two aspects to this. If you just want to embed content and handle the resulting vectors yourself, you can use <code>llm.get_embedding_model()</code>:</p>
+<pre><span class="pl-k">import</span> <span class="pl-s1">llm</span>
+
+<span class="pl-c"># This takes model IDs and aliases defined by plugins:</span>
+<span class="pl-s1">model</span> <span class="pl-c1">=</span> <span class="pl-s1">llm</span>.<span class="pl-en">get_embedding_model</span>(<span class="pl-s">"sentence-transformers/all-MiniLM-L6-v2"</span>)
+<span class="pl-s1">vector</span> <span class="pl-c1">=</span> <span class="pl-s1">model</span>.<span class="pl-en">embed</span>(<span class="pl-s">"This is text to embed"</span>)</pre>
+<p><code>vector</code> will then be a Python list of floating point numbers.</p>
+<p>You can serialize that to the same binary format that LLM uses like this:</p>
+<pre><span class="pl-s1">binary_vector</span> <span class="pl-c1">=</span> <span class="pl-s1">llm</span>.<span class="pl-en">encode</span>(<span class="pl-s1">vector</span>)
+<span class="pl-c"># And to deserialize:</span>
+<span class="pl-s1">vector</span> <span class="pl-c1">=</span> <span class="pl-s1">llm</span>.<span class="pl-en">decode</span>(<span class="pl-s1">binary_vector</span>)</pre>
+<p>The second aspect of the Python API is the <code>llm.Collection</code> class, for working with collections of embeddings. This example code is quoted <a href="https://llm.datasette.io/en/stable/embeddings/python-api.html#working-with-collections">from the documentation</a>:</p>
+<pre><span class="pl-k">import</span> <span class="pl-s1">sqlite_utils</span>
+<span class="pl-k">import</span> <span class="pl-s1">llm</span>
+
+<span class="pl-c"># This collection will use an in-memory database that will be</span>
+<span class="pl-c"># discarded when the Python process exits</span>
+<span class="pl-s1">collection</span> <span class="pl-c1">=</span> <span class="pl-s1">llm</span>.<span class="pl-v">Collection</span>(<span class="pl-s">"entries"</span>, <span class="pl-s1">model_id</span><span class="pl-c1">=</span><span class="pl-s">"ada-002"</span>)
+
+<span class="pl-c"># Or you can persist the database to disk like this:</span>
+<span class="pl-s1">db</span> <span class="pl-c1">=</span> <span class="pl-s1">sqlite_utils</span>.<span class="pl-v">Database</span>(<span class="pl-s">"my-embeddings.db"</span>)
+<span class="pl-s1">collection</span> <span class="pl-c1">=</span> <span class="pl-s1">llm</span>.<span class="pl-v">Collection</span>(<span class="pl-s">"entries"</span>, <span class="pl-s1">db</span>, <span class="pl-s1">model_id</span><span class="pl-c1">=</span><span class="pl-s">"ada-002"</span>)
+
+<span class="pl-c"># You can pass a model directly using model= instead of model_id=</span>
+<span class="pl-s1">embedding_model</span> <span class="pl-c1">=</span> <span class="pl-s1">llm</span>.<span class="pl-en">get_embedding_model</span>(<span class="pl-s">"ada-002"</span>)
+<span class="pl-s1">collection</span> <span class="pl-c1">=</span> <span class="pl-s1">llm</span>.<span class="pl-v">Collection</span>(<span class="pl-s">"entries"</span>, <span class="pl-s1">db</span>, <span class="pl-s1">model</span><span class="pl-c1">=</span><span class="pl-s1">embedding_model</span>)
+
+<span class="pl-c"># Store a string in the collection with an ID:</span>
+<span class="pl-s1">collection</span>.<span class="pl-en">embed</span>(<span class="pl-s">"hound"</span>, <span class="pl-s">"my happy hound"</span>)
+
+<span class="pl-c"># Or to store content and extra metadata:</span>
+<span class="pl-s1">collection</span>.<span class="pl-en">embed</span>(
+    <span class="pl-s">"hound"</span>,
+    <span class="pl-s">"my happy hound"</span>,
+    <span class="pl-s1">metadata</span><span class="pl-c1">=</span>{<span class="pl-s">"name"</span>: <span class="pl-s">"Hound"</span>},
+    <span class="pl-s1">store</span><span class="pl-c1">=</span><span class="pl-c1">True</span>
+)
+
+<span class="pl-c"># Or embed things in bulk:</span>
+<span class="pl-s1">collection</span>.<span class="pl-en">embed_multi</span>(
+    [
+        (<span class="pl-s">"hound"</span>, <span class="pl-s">"my happy hound"</span>),
+        (<span class="pl-s">"cat"</span>, <span class="pl-s">"my dissatisfied cat"</span>),
+    ],
+    <span class="pl-c"># Add this to store the strings in the content column:</span>
+    <span class="pl-s1">store</span><span class="pl-c1">=</span><span class="pl-c1">True</span>,
+)</pre>
+<p>As with everything else in LLM, the goal is that anything you can do with the CLI can be done with the Python API, and vice-versa.</p>
+<h4 id="llm-cluster">Clustering with llm-cluster</h4>
+<p>Another interesting application of embeddings is that you can use them to cluster content—identifying patterns in a corpus of documents.</p>
+<p>I’ve started exploring this area with a new plugin, called <strong><a href="https://github.com/simonw/llm-cluster">llm-cluster</a>.</strong></p>
+<p>You can install it like this:</p>
+<div class="highlight highlight-source-shell"><pre>llm install llm-cluster</pre></div>
+<p>Let’s create a new collection using data pulled from GitHub. I’m going to import all of the <a href="https://github.com/simonw/llm/issues">LLM issues</a> from the GitHub API, using my <a href="https://github.com/simonw/paginate-json">paginate-json</a> tool:</p>
+<div class="highlight highlight-source-shell"><pre>paginate-json <span class="pl-s"><span class="pl-pds">'</span>https://api.github.com/repos/simonw/llm/issues?state=all&amp;filter=all<span class="pl-pds">'</span></span> \
+  <span class="pl-k">|</span> jq <span class="pl-s"><span class="pl-pds">'</span>[.[] | {id: .id, title: .title}]<span class="pl-pds">'</span></span> \
+  <span class="pl-k">|</span> llm embed-multi llm-issues - \
+    --database issues.db \
+    --model sentence-transformers/all-MiniLM-L6-v2 \
+    --store</pre></div>
+<p>Running this gives me a <code>issues.db</code> SQLite database with 218 embeddings contained in a collection called <code>llm-issues</code>.</p>
+<p>Now let’s try out the <code>llm-cluster</code> command, requesting ten clusters from that collection:</p>
+<div class="highlight highlight-source-shell"><pre>llm cluster llm-issues --database issues.db 10</pre></div>
+<p>The output from this command, truncated, looks like this:</p>
+<div class="highlight highlight-source-json"><pre>[
+  {
+    <span class="pl-ent">"id"</span>: <span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"items"</span>: [
+      {
+        <span class="pl-ent">"id"</span>: <span class="pl-s"><span class="pl-pds">"</span>1784149135<span class="pl-pds">"</span></span>,
+        <span class="pl-ent">"content"</span>: <span class="pl-s"><span class="pl-pds">"</span>Tests fail with pydantic 2<span class="pl-pds">"</span></span>
+      },
+      {
+        <span class="pl-ent">"id"</span>: <span class="pl-s"><span class="pl-pds">"</span>1837084995<span class="pl-pds">"</span></span>,
+        <span class="pl-ent">"content"</span>: <span class="pl-s"><span class="pl-pds">"</span>Allow for use of Pydantic v1 as well as v2.<span class="pl-pds">"</span></span>
+      },
+      {
+        <span class="pl-ent">"id"</span>: <span class="pl-s"><span class="pl-pds">"</span>1857942721<span class="pl-pds">"</span></span>,
+        <span class="pl-ent">"content"</span>: <span class="pl-s"><span class="pl-pds">"</span>Get tests passing against Pydantic 1<span class="pl-pds">"</span></span>
+      }
+    ]
+  },
+  {
+    <span class="pl-ent">"id"</span>: <span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"items"</span>: [
+      {
+        <span class="pl-ent">"id"</span>: <span class="pl-s"><span class="pl-pds">"</span>1724577618<span class="pl-pds">"</span></span>,
+        <span class="pl-ent">"content"</span>: <span class="pl-s"><span class="pl-pds">"</span>Better ways of storing and accessing API keys<span class="pl-pds">"</span></span>
+      },
+      {
+        <span class="pl-ent">"id"</span>: <span class="pl-s"><span class="pl-pds">"</span>1772024726<span class="pl-pds">"</span></span>,
+        <span class="pl-ent">"content"</span>: <span class="pl-s"><span class="pl-pds">"</span>Support for `-o key value` options such as `temperature`<span class="pl-pds">"</span></span>
+      },
+      {
+        <span class="pl-ent">"id"</span>: <span class="pl-s"><span class="pl-pds">"</span>1784111239<span class="pl-pds">"</span></span>,
+        <span class="pl-ent">"content"</span>: <span class="pl-s"><span class="pl-pds">"</span>`--key` should be used in place of the environment variable<span class="pl-pds">"</span></span>
+      }
+    ]
+  },
+  {
+    <span class="pl-ent">"id"</span>: <span class="pl-s"><span class="pl-pds">"</span>8<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"items"</span>: [
+      {
+        <span class="pl-ent">"id"</span>: <span class="pl-s"><span class="pl-pds">"</span>1835739724<span class="pl-pds">"</span></span>,
+        <span class="pl-ent">"content"</span>: <span class="pl-s"><span class="pl-pds">"</span>Bump the python-packages group with 1 update<span class="pl-pds">"</span></span>
+      },
+      {
+        <span class="pl-ent">"id"</span>: <span class="pl-s"><span class="pl-pds">"</span>1848143453<span class="pl-pds">"</span></span>,
+        <span class="pl-ent">"content"</span>: <span class="pl-s"><span class="pl-pds">"</span>Python library support for adding aliases<span class="pl-pds">"</span></span>
+      },
+      {
+        <span class="pl-ent">"id"</span>: <span class="pl-s"><span class="pl-pds">"</span>1857268563<span class="pl-pds">"</span></span>,
+        <span class="pl-ent">"content"</span>: <span class="pl-s"><span class="pl-pds">"</span>Bump the python-packages group with 1 update<span class="pl-pds">"</span></span>
+      }
+    ]
+  }
+]</pre></div>
+<p>These look pretty good! But wouldn’t it be neat if we had a snappy title for each one?</p>
+<p>The <code>--summary</code> option can provide exactly that, by piping the members of each cluster through a call to another LLM in order to generate a useful summary.</p>
+<div class="highlight highlight-source-shell"><pre>llm cluster llm-issues --database issues.db 10 --summary</pre></div>
+<p>This uses <code>gpt-3.5-turbo</code> to generate a summary for each cluster, with this default prompt:</p>
+<blockquote>
+<p>Short, concise title for this cluster of related documents.</p>
+</blockquote>
+<p>The results I got back are pretty good, including:</p>
+<ul>
+<li>Template Storage and Management Improvements</li>
+<li>Package and Dependency Updates and Improvements</li>
+<li>Adding Conversation Mechanism and Tools</li>
+</ul>
+<p>I tried the same thing using a Llama 2 model <a href="https://simonwillison.net/2023/Aug/1/llama-2-mac/">running on my own laptop</a>, with a custom prompt:</p>
+<pre><code>llm cluster llm-issues --database issues.db 10 \
+  --summary --model mlc-chat-Llama-2-13b-chat-hf-q4f16_1 \
+  --prompt 'Concise title for this cluster of related documents, just return the title'
+</code></pre>
+<p>I didn’t quite get what I wanted! Llama 2 is proving a lot harder to prompt, so each cluster came back with something that looked like this:</p>
+<blockquote>
+<p>Sure! Here’s a concise title for this cluster of related documents:</p>
+<p>“Design Improvements for the Neat Prompt System”</p>
+<p>This title captures the main theme of the documents, which is to improve the design of the Neat prompt system. It also highlights the focus on improving the system’s functionality and usability</p>
+</blockquote>
+<p><a href="https://github.com/simonw/llm-cluster">llm-cluster</a> only took a few hours to throw together, which I’m seeing as a positive indicator that the LLM library is developing in the right direction.</p>
+<h4>Future plans</h4>
+<p>The two future features I’m most excited about are indexing and chunking.</p>
+<h5>Indexing</h5>
+<p>The <a href="https://llm.datasette.io/en/stable/embeddings/cli.html#llm-similar">llm similar</a> command and <a href="https://llm.datasette.io/en/stable/embeddings/python-api.html#retrieving-similar-items">collection.similar()</a> Python method currently use effectively the slowest brute force approach possible: calculate a cosine difference between input vector and every other embedding in the collection, then sort the results.</p>
+<p>This works fine for collections with a few hundred items, but will start to suffer for collections of 100,000 or more.</p>
+<p>There are plenty of potential ways of speeding this up: you can run a vector index like <a href="https://github.com/facebookresearch/faiss">FAISS</a> or <a href="https://github.com/nmslib/hnswlib">hnswlib</a>, use a database extension like <a href="https://github.com/asg017/sqlite-vss">sqlite-vss</a> or <a href="https://github.com/pgvector/pgvector">pgvector</a>, or turn to a hosted vector database like <a href="https://www.pinecone.io/">Pinecone</a> or <a href="https://milvus.io/">Milvus</a>.</p>
+<p>With this many potential solutions, the obvious answer for LLM is to address this with plugins.</p>
+<p>I’m still thinking through the details, but the core idea is that users should be able to define an index against one or more collections, and LLM will then coordinate updates to that index. These may not happen in real-time—some indexes can be expensive to rebuild, so there are benefits to applying updates in batches.</p>
+<p>I experimented with FAISS earlier this year in <a href="https://datasette.io/plugins/datasette-faiss">datasette-faiss</a>. That’s likely to be the base for my first implementation.</p>
+<p>The <a href="https://llm.datasette.io/en/stable/embeddings/python-api.html#sql-schema">embeddings table</a> has an <code>updated</code> timestamp column to support this use-case—so indexers can run against just the items that have changed since the last indexing run.</p>
+<p>Follow <a href="https://github.com/simonw/llm/issues/216">issue #216</a> for updates on this feature.</p>
+<h5>Chunking</h5>
+<p>When building an embeddings-based search engine, the hardest challenge is deciding how best to “chunk” the documents.</p>
+<p>Users will type in short phrases or questions. The embedding for a four word question might not necessarily map closely to the embedding of a thousand word article, even if the article itself should be a good match for that query.</p>
+<p>To maximize the chance of returning the most relevant content, we need to be smarter about what we embed.</p>
+<p>I’m still trying to get a good feeling for the strategies that make sense here. Some that I’ve seen include:</p>
+<ul>
+<li>Split a document up into fixed length shorter segments.</li>
+<li>Split into segments but including a ~10% overlap with the previous and next segments, to reduce problems caused by words and sentences being split in a way that disrupts their semantic meaning.</li>
+<li>Splitting by sentence, using NLP techniques.</li>
+<li>Splitting into higher level sections, based on things like document headings.</li>
+</ul>
+<p>Then there are more exciting, LLM-driven approaches:</p>
+<ul>
+<li>Generate an LLM summary of a document and embed that.</li>
+<li>Ask an LLM “What questions are answered by the following text?” and then embed each of the resulting questions!</li>
+</ul>
+<p>It’s possible to try out these different techniques using LLM already: write code that does the splitting, then feed the results to <a href="https://llm.datasette.io/en/stable/embeddings/python-api.html#storing-embeddings-in-bulk">Collection.embed_multi()</a> or <a href="https://llm.datasette.io/en/stable/embeddings/cli.html#llm-embed-multi">llm embed-multi</a>.</p>
+<p>But... it would be really cool if LLM could split documents for you—with the splitting techniques themselves defined by plugins, to make it easy to try out new approaches.</p>
+<h4>Get involved</h4>
+<p>It should be clear by now that the potential scope of the LLM project is enormous. I’m trying to use plugins to tie together an enormous and rapidly growing ecosystem of models and techniques into something that’s as easy for people to work with and build on as possible.</p>
+<p>There are plenty of ways you can help!</p>
+<ul>
+<li>
+<a href="https://datasette.io/discord-llm">Join the #llm Discord</a> to talk about the project.</li>
+<li>Try out plugins and run different models with them. There are <a href="https://llm.datasette.io/en/stable/plugins/directory.html">12 plugins already</a>, and several of those can be used to run dozens if not hundreds of models (<a href="https://github.com/simonw/llm-mlc">llm-mlc</a>, <a href="https://github.com/simonw/llm-gpt4all">llm-gpt4all</a> and <a href="https://github.com/simonw/llm-llama-cpp">llm-llama-cpp</a> in particular). I’ve hardly scratched the surface of these myself, and I’m testing exclusively on Apple Silicon. I’m really keen to learn more about which models work well, which models don’t and which perform the best on different hardware.</li>
+<li>Try <a href="https://llm.datasette.io/en/stable/plugins/tutorial-model-plugin.html">building a plugin</a> for a new model. My dream here is that every significant Large Language Model will have an LLM plugin that makes it easy to install and use.</li>
+<li>Build stuff using LLM and let me know what you’ve built. Nothing fuels an open source project more than stories of cool things people have built with it.</li>
+</ul>
+<div class="entryFooter">
+<a href="/2023/Sep/4/llm-embeddings/" title="Permalink for &quot;LLM now provides tools for working with embeddings&quot;">8:32 pm</a> / <a href="/2023/Sep/4/">4th September 2023</a> / <a href="/tags/llm/">llm</a>, <a href="/tags/sqlite/">sqlite</a>, <a href="/tags/ai/">ai</a>, <a href="/tags/llms/">llms</a>, <a href="/tags/opensource/">opensource</a>, <a href="/tags/generativeai/">generativeai</a>, <a href="/tags/projects/">projects</a>, <a href="/tags/embeddings/">embeddings</a>
+</div>
+</div> <!-- end div.entry -->
+
+<div class="entry segment" data-date="2023-08-30T14:33:35+00:00">
+<h3><a href="/2023/Aug/30/datasette-plus-weeknotes/" rel="bookmark">Datasette 1.0a4 and 1.0a5, plus weeknotes</a> <span class="textago" title="30th August 2023">six days ago</span></h3>
+<p>Two new alpha releases of Datasette, plus a keynote at WordCamp, a new LLM release, two new LLM plugins and a flurry of TILs.</p>
+<h4>Datasette 1.0a5</h4>
+<p>Released this morning, <a href="https://docs.datasette.io/en/1.0a5/changelog.html">Datasette 1.0a5</a> has some exciting new changes driven by Datasette Cloud and the ongoing march towards Datasette 1.0.</p>
+<p><a href="https://alexgarcia.xyz/">Alex Garcia</a> is working with me on Datasette Cloud and Datasette generally, generously sponsored by <a href="https://fly.io/">Fly</a>.</p>
+<p>Two of the changes in 1.0a5 were driven by Alex:</p>
+<blockquote>
+<p>New <code>datasette.yaml</code> (or <code>.json</code>) configuration file, which can be specified using <code>datasette -c path-to-file</code>. The goal here to consolidate settings, plugin configuration, permissions, canned queries, and other Datasette configuration into a single single file, separate from <code>metadata.yaml</code>. The legacy <code>settings.json</code> config file used for <a href="https://docs.datasette.io/en/1.0a5/settings.html#config-dir">Configuration directory mode</a> has been removed, and <code>datasette.yaml</code> has a <code>"settings"</code> section where the same settings key/value pairs can be included. In the next future alpha release, more configuration such as plugins/permissions/canned queries will be moved to the <code>datasette.yaml</code> file. See <a href="https://github.com/simonw/datasette/issues/2093">#2093</a> for more details.</p>
+</blockquote>
+<p>Right from the very start of the project, Datasette has supported specifying metadata about databases—sources, licenses, etc, as a <code>metadata.json</code> file that can be passed to Datasette like this:</p>
+<div class="highlight highlight-source-shell"><pre>datasette data.db -m metadata.json</pre></div>
+<p>Over time, the purpose and uses of that file has expanded in all kinds of different directions. It can be used <a href="https://docs.datasette.io/en/1.0a5/plugins.html#plugin-configuration">for plugin settings</a>, and to set preferences for a table default page size, <a href="https://docs.datasette.io/en/1.0a5/facets.html#facets-in-metadata">default facets</a> etc), and even to <a href="https://docs.datasette.io/en/1.0a5/authentication.html#access-permissions-in-metadata">configure access permissions</a> for who can view what.</p>
+<p>The name <code>metadata.json</code> is entirely inappropriate for what the file actually does. It’s a mess.</p>
+<p>I’ve always had a desire to fix this before Datasette 1.0, but it never quite got high up enough the priority list for me to spend time on it.</p>
+<p>Alex <a href="https://github.com/simonw/datasette/issues/2093">expressed interest in fixing it</a>, and has started to put a plan into motion for cleaning it up.</p>
+<p>More details <a href="https://github.com/simonw/datasette/issues/2093">in the issue</a>.</p>
+<blockquote>
+<p>The Datasette <code>_internal</code> database has had some changes. It no longer shows up in the <code>datasette.databases</code> list by default, and is now instead available to plugins using the <code>datasette.get_internal_database()</code>. Plugins are invited to use this as a private database to store configuration and settings and secrets that should not be made visible through the default Datasette interface. Users can pass the new <code>--internal internal.db</code> option to persist that internal database to disk. (<a href="https://github.com/simonw/datasette/issues/2157">#2157</a>).</p>
+</blockquote>
+<p>This was the other initiative driven by Alex. In working on Datasette Cloud we realized that it’s actually quite common for plugins to need somewhere to store data that shouldn’t necessarily be visible to regular users of a Datasette instance—things like tokens created by <a href="https://datasette.io/plugins/datasette-auth-tokens">datasette-auth-tokens</a>, or the progress bar mechanism used by <a href="https://datasette.io/plugins/datasette-upload-csvs">datasette-upload-csvs</a>.</p>
+<p>Alex pointed out that the existing <code>_internal</code> database for Datasette could be expanded to cover these use-cases as well. <a href="https://github.com/simonw/datasette/issues/2157">#2157</a> has more details on how we agreed this should work.</p>
+<p>The other changes in 1.0a5 were driven by me:</p>
+<blockquote>
+<p>When restrictions are applied to <a href="https://docs.datasette.io/en/1.0a5/authentication.html#createtokenview">API tokens</a>, those restrictions now behave slightly differently: applying the <code>view-table</code> restriction will imply the ability to <code>view-database</code> for the database containing that table, and both <code>view-table</code> and <code>view-database</code> will imply <code>view-instance</code>. Previously you needed to create a token with restrictions that explicitly listed <code>view-instance</code> and <code>view-database</code> and <code>view-table</code> in order to view a table without getting a permission denied error. (<a href="https://github.com/simonw/datasette/issues/2102">#2102</a>)</p>
+</blockquote>
+<p>I <a href="https://simonwillison.net/2022/Dec/15/datasette-1a2/#finely-grained-permissions">described finely-grained permissions</a> for access tokens in my annotated release notes for 1.0a2.</p>
+<p>They provide a mechanism for creating an API token that’s only allowed to perform a subset of actions on behalf of the user.</p>
+<p>In trying these out for Datasette Cloud I came across a nasty usability flaw. You could create a token that was restricted to <code>view-table</code> access for a specific table... and it wouldn’t work. Because the access code for that view would check for <code>view-instance</code> and <code>view-database</code> permission first.</p>
+<p>1.0a5 fixes that, by adding logic that says that if a token can <code>view-table</code> that implies it can <code>view-database</code> for the database containing that table, and <code>view-instance</code> for the overall instance.</p>
+<p>This change took quite some time to develop, because any time I write code involving permissions I like to also include extremely comprehensive automated tests.</p>
+<blockquote>
+<p>The <code>-s/--setting</code> option can now take dotted paths to nested settings. These will then be used to set or over-ride the same options as are present in the new configuration file. (<a href="https://github.com/simonw/datasette/issues/2156">#2156</a>)</p>
+</blockquote>
+<p>This is a fun little detail inspired by Alex’s configuration work.</p>
+<p>I run a lot of different Datasette instances, often on an ad-hoc basis.</p>
+<p>I sometimes find it frustrating that to use certain features I need to create a <code>metadata.json</code> (soon to be <code>datasette.yml</code>) configuration file, just to get something to work.</p>
+<p>Wouldn’t it be neat if every possible setting for Datasette could be provided both in a configuration file or as command-line options?</p>
+<p>That’s what the new <code>--setting</code> option aims to solve. Anything that can be represented as a JSON or YAML configuration can now also be represented as key/value pairs on the command-line.</p>
+<p>Here’s an example <a href="https://github.com/simonw/datasette/issues/2143#issuecomment-1690792514">from my initial issue comment</a>:</p>
+<div class="highlight highlight-source-shell"><pre>datasette \
+  -s settings.sql_time_limit_ms 1000 \
+  -s plugins.datasette-auth-tokens.manage_tokens <span class="pl-c1">true</span> \
+  -s plugins.datasette-auth-tokens.manage_tokens_database tokens \
+  -s plugins.datasette-ripgrep.path <span class="pl-s"><span class="pl-pds">"</span>/home/simon/code-to-search<span class="pl-pds">"</span></span> \
+  -s databases.mydatabase.tables.example_table.sort created \
+  mydatabase.db tokens.db</pre></div>
+<p>Once this feature is complete, the above will behave the same as a <code>datasette.yml</code> file containing this:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">plugins</span>:
+  <span class="pl-ent">datasette-auth-tokens</span>:
+    <span class="pl-ent">manage_tokens</span>: <span class="pl-c1">true</span>
+    <span class="pl-ent">manage_tokens_database</span>: <span class="pl-s">tokens</span>
+  <span class="pl-ent">datasette-ripgrep</span>:
+    <span class="pl-ent">path</span>: <span class="pl-s">/home/simon/code-to-search</span>
+<span class="pl-ent">databases</span>:
+  <span class="pl-ent">mydatabase</span>:
+    <span class="pl-ent">tables</span>:
+      <span class="pl-ent">example_table</span>:
+        <span class="pl-ent">sort</span>: <span class="pl-s">created</span>
+<span class="pl-ent">settings</span>:
+  <span class="pl-ent">sql_time_limit_ms</span>: <span class="pl-c1">1000</span></pre></div>
+<p>I’ve experimented with ways of turning key/value pairs into nested JSON objects before, with my <a href="https://github.com/simonw/json-flatten">json-flatten</a> library.</p>
+<p>This time I took a slightly different approach. In particular, if you need to pass a nested JSON object (such as an array) which isn’t easily represented using <code>key.nested</code> notation, you can pass it like this instead:</p>
+<div class="highlight highlight-source-shell"><pre>datasette data.db \
+  -s plugins.datasette-complex-plugin.configs \
+  <span class="pl-s"><span class="pl-pds">'</span>{"foo": [1,2,3], "bar": "baz"}<span class="pl-pds">'</span></span></pre></div>
+<p>Which would convert to the following equivalent YAML:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">plugins</span>:
+  <span class="pl-ent">datasette-complex-plugin</span>:
+    <span class="pl-ent">configs</span>:
+      <span class="pl-ent">foo</span>:
+        - <span class="pl-c1">1</span>
+        - <span class="pl-c1">2</span>
+        - <span class="pl-c1">3</span>
+      <span class="pl-ent">bar</span>: <span class="pl-s">baz</span></pre></div>
+<p>These examples don’t quite work yet, because the plugin configuration hasn’t migrated to <code>datasette.yml</code>—but it should work for the next alpha.</p>
+<blockquote>
+<p>New <code>--actor '{"id": "json-goes-here"}'</code> option for use with <code>datasette --get</code> to treat the simulated request as being made by a specific actor, see <a href="https://docs.datasette.io/en/1.0a5/cli-reference.html#cli-datasette-get">datasette --get</a>. (<a href="https://github.com/simonw/datasette/issues/2153">#2153</a>)</p>
+</blockquote>
+<p>This is a fun little debug helper I built while working on restricted tokens.</p>
+<p>The <code>datasette --get /...</code> option is a neat trick that can be used to simulate an HTTP request through the Datasette instance, without even starting a server running on a port.</p>
+<p>I use it for things like <a href="https://til.simonwillison.net/shot-scraper/social-media-cards">generating social media card images</a> for my TILs website.</p>
+<p>The new <code>--actor</code> option lets you add a simulated <a href="https://docs.datasette.io/en/latest/authentication.html#actors">actor</a> to the request, which is useful for testing out things like configured authentication and permissions.</p>
+<h4>A security fix in Datasette 1.0a4</h4>
+<p><a href="https://docs.datasette.io/en/latest/changelog.html#a4-2023-08-21">Datasette 1.0a4</a> has a security fix: I realized that the API explorer I added in the 1.0 alpha series was exposing the names of databases and tables (though not their actual content) to unauthenticated users, even for Datasette instances that were protected by authentication.</p>
+<p>I issued a GitHub security advisory for this: <a href="https://github.com/simonw/datasette/security/advisories/GHSA-7ch3-7pp7-7cpq">Datasette 1.0 alpha series leaks names of databases and tables to unauthenticated users</a>, which has since been issued a CVE, <a href="https://nvd.nist.gov/vuln/detail/CVE-2023-40570">CVE-2023-40570</a>—GitHub is <a href="https://docs.github.com/en/code-security/security-advisories/repository-security-advisories/about-repository-security-advisories#cve-identification-numbers">a CVE Numbering Authority</a> which means their security team are trusted to review such advisories and issue CVEs where necessary.</p>
+<p>I expect the impact of this vulnerability to be very small: outside of <a href="https://www.datasette.cloud/">Datasette Cloud</a> very few people are running the Datasette 1.0 alphas on the public internet, and it’s possible that the set of those users who are also authenticating their instances to provide authenticated access to private data—especially where just the database and table names of that data is considered sensitive—is an empty set.</p>
+<p>Datasette Cloud itself has detailed access logs primarily to help evaluate this kind of threat. I’m pleased to report that those logs showed no instances of an unauthenticated user accessing the pages in question prior to the bug being fixed.</p>
+<h4>A keynote at WordCamp US</h4>
+<p>Last Friday I gave a keynote at <a href="https://us.wordcamp.org/2023/">WordCamp US</a> on the subject of Large Language Models.</p>
+<p>I used <a href="https://goodsnooze.gumroad.com/l/macwhisper">MacWhisper</a> and my <a href="https://simonwillison.net/2023/Aug/6/annotated-presentations/">annotated presentation tool</a> to turn that into a detailed transcript, complete with additional links and context: <a href="https://simonwillison.net/2023/Aug/27/wordcamp-llms/">Making Large Language Models work for you</a>.</p>
+<h4>llm-openrouter and llm-anyscale-endpoints</h4>
+<p>I released two new plugins for <a href="https://llm.datasette.io/">LLM</a>, which lets you run large language models either locally or via APIs, as both a CLI tool and a Python library.</p>
+<p>Both plugins provide access to API-hosted models:</p>
+<ul>
+<li>
+<strong><a href="https://github.com/simonw/llm-openrouter">llm-openrouter</a></strong> provides access to <a href="https://openrouter.ai/docs#models">models</a> hosted by <a href="https://openrouter.ai/">OpenRouter</a>. Of particular interest here is Claude—I’m still on the waiting list for the official Claude API, but in the meantime I can pay for access to it via OpenRouter and it works just fine. Claude has a 100,000 token context, making it a really great option for working with larger documents.</li>
+<li>
+<strong><a href="https://github.com/simonw/llm-anyscale-endpoints">llm-anyscale-endpoints</a></strong> is a similar plugin that instead works with <a href="https://app.endpoints.anyscale.com/">Anyscale Endpoints</a>. Anyscale provide Llama 2 and Code Llama at extremely low prices—between $0.25 and $1 per million tokens, depending on the model.</li>
+</ul>
+<p>These plugins were very quick to develop.</p>
+<p>Both OpenRouter and Anyscale Endpoints provide API endpoints that emulate the official OpenAI APIs, including the way the handle streaming tokens.</p>
+<p>LLM already has code for talking to those endpoints via the <a href="https://github.com/openai/openai-python">openai</a> Python library, which can be re-pointed to another backend using the officially supported <code>api_base</code> parameter.</p>
+<p>So the core code for the plugins ended up being less than 30 lines each: <a href="https://github.com/simonw/llm-openrouter/blob/main/llm_openrouter.py">llm_openrouter.py</a> and <a href="https://github.com/simonw/llm-anyscale-endpoints/blob/main/llm_anyscale_endpoints.py">llm_anyscale_endpoints.py</a>.</p>
+<h4>llm 0.8</h4>
+<p>I shipped <a href="https://llm.datasette.io/en/stable/changelog.html#v0-8">LLM 0.8</a> a week and a half ago, with a bunch of small changes.</p>
+<p>The most significant of these was a change to the default <code>llm logs</code> output, which shows the logs (recorded in SQLite) of the previous prompts and responses you have sent through the tool.</p>
+<p>This output used to be JSON. It’s <a href="https://github.com/simonw/llm/issues/160#issuecomment-1682991314">now Markdown</a>, which is both easier to read and can be pasted into GitHub Issue comments or Gists or similar to share the results with other people.</p>
+<p><a href="https://llm.datasette.io/en/stable/changelog.html#v0-8">The release notes for 0.8</a> describe all of the other improvements.</p>
+<h4>sqlite-utils 3.35</h4>
+<p>The <a href="https://github.com/simonw/sqlite-utils/releases/tag/3.35">3.35 release of sqlite-utils</a> was driven by LLM.</p>
+<p><code>sqlite-utils</code> has a mechanism for adding foreign keys to an existing table—something that’s not supported by SQLite out of the box.</p>
+<p>That implementation used to work using a deeply gnarly hack: it would switch the <code>sqlite_master</code> table over to being writable (using <code>PRAGMA writable_schema = 1</code>), update that schema in place to reflect the new foreign keys and then toggle <code>writable_schema = 0</code> back again.</p>
+<p>It turns out there are Python installations out there—most notably the system Python on macOS—which completely disable the ability to write to that table, no matter what the status of the various pragmas.</p>
+<p>I was getting bug reports from LLM users who were running into this. I realized that I had a solution for this mostly implemented already: the <a href="https://sqlite-utils.datasette.io/en/stable/python-api.html#transforming-a-table">sqlite-utils transform() method</a>, which can apply all sorts of complex schema changes by creating a brand new table, copying across the old data and then renaming it to replace the old one.</p>
+<p>So I dropped the old <code>writable_schema</code> mechanism entirely in favour of <code>.transform()</code>—it’s slower, because it requires copying the entire table, but it doesn’t have weird edge-cases where it doesn’t work.</p>
+<p>Since <a href="https://simonwillison.net/2023/Jul/24/sqlite-utils-plugins/">sqlite-utils supports plugins now</a>, I realized I could set a healthy precedent by making the removed feature available in a new plugin: <a href="https://github.com/simonw/sqlite-utils-fast-fks">sqlite-utils-fast-fks</a>, which provides the following command for adding foreign keys the fast, old way (provided your installation supports it):</p>
+<div class="highlight highlight-source-shell"><pre>sqlite-utils install sqlite-utils-fast-fks
+sqlite-utils fast-fks my_database.db places country_id country id</pre></div>
+<p>I’ve always admired how <a href="https://jquery.com/">jQuery</a> uses plugins to keep old features working on an opt-in basis after major version upgrades. I’m excited to be able to apply the same pattern for <code>sqlite-utils</code>.</p>
+<h4>paginate-json 1.0</h4>
+<p><a href="https://github.com/simonw/paginate-json">paginate-json</a> is a tiny tool I first released a few years ago to solve a very specific problem.</p>
+<p>There’s a neat pattern in some JSON APIs where the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link">HTTP link header</a> is used to indicate subsequent pages of results.</p>
+<p>The best example I know of this is the GitHub API. Run this to see what it looks like here I’m using the <a href="https://docs.github.com/en/rest/activity/events?apiVersion=2022-11-28#list-public-events-for-a-user">events API</a>):</p>
+<div class="highlight highlight-source-shell"><pre>curl -i \
+  https://api.github.com/users/simonw/events</pre></div>
+<p>Here’s a truncated example of the output:</p>
+<pre><code>HTTP/2 200 
+server: GitHub.com
+content-type: application/json; charset=utf-8
+link: &lt;https://api.github.com/user/9599/events?page=2&gt;; rel="next", &lt;https://api.github.com/user/9599/events?page=9&gt;; rel="last"
+
+[
+  {
+    "id": "31467177730",
+    "type": "PushEvent",
+</code></pre>
+<p>The <code>link</code> header there specifies a <code>next</code> and <code>last</code> URL that can be used for pagination.</p>
+<p>To fetch all available items, you can follow the <code>next</code> link repeatedly until it runs out.</p>
+<p>My <code>paginate-json</code> tool can follow these links for you. If you run it like this:</p>
+<div class="highlight highlight-source-shell"><pre>paginate-json \
+  https://api.github.com/users/simonw/events</pre></div>
+<p>It will output a single JSON array consisting of the results from every available page.</p>
+<p>The 1.0 release adds <a href="https://github.com/simonw/paginate-json/releases/tag/1.0">a bunch of small features</a>, but also marks my confidence in the stability of the design of the tool.</p>
+<p>The <a href="https://docs.datasette.io/en/latest/json_api.html">Datasette JSON API</a> has supported <a href="https://docs.datasette.io/en/latest/json_api.html#pagination">link pagination</a> for a while—you can use <code>paginate-json</code> with Datasette like this, taking advantage of the new <code>--key</code> option to paginate over the array of objects returned in the <code>"rows"</code> key:</p>
+<div class="highlight highlight-source-shell"><pre>paginate-json \
+  <span class="pl-s"><span class="pl-pds">'</span>https://datasette.io/content/pypi_releases.json?_labels=on<span class="pl-pds">'</span></span> \
+  --key rows \
+  --nl</pre></div>
+<p>The <code>--nl</code> option here causes <code>paginate-json</code> to output the results as newline-delimited JSON, instead of bundling them together into a JSON array.</p>
+<p>Here’s how to use <a href="https://sqlite-utils.datasette.io/en/stable/cli.html#inserting-newline-delimited-json">sqlite-utils insert</a> to insert that data directly into a fresh SQLite database:</p>
+<div class="highlight highlight-source-shell"><pre>paginate-json \
+  <span class="pl-s"><span class="pl-pds">'</span>https://datasette.io/content/pypi_releases.json?_labels=on<span class="pl-pds">'</span></span> \
+  --key rows \
+  --nl <span class="pl-k">|</span> \
+    sqlite-utils insert data.db releases - \
+      --nl --flatten</pre></div>
+<h4>Releases this week</h4>
+<ul>
+<li>
+<strong><a href="https://github.com/simonw/paginate-json/releases/tag/1.0">paginate-json 1.0</a></strong>—2023-08-30<br>Command-line tool for fetching JSON from paginated APIs</li>
+<li>
+<strong><a href="https://github.com/simonw/datasette-auth-tokens/releases/tag/0.4a2">datasette-auth-tokens 0.4a2</a></strong>—2023-08-29<br>Datasette plugin for authenticating access using API tokens</li>
+<li>
+<strong><a href="https://github.com/simonw/datasette/releases/tag/1.0a5">datasette 1.0a5</a></strong>—2023-08-29<br>An open source multi-tool for exploring and publishing data</li>
+<li>
+<strong><a href="https://github.com/simonw/llm-anyscale-endpoints/releases/tag/0.2">llm-anyscale-endpoints 0.2</a></strong>—2023-08-25<br>LLM plugin for models hosted by Anyscale Endpoints</li>
+<li>
+<strong><a href="https://github.com/simonw/datasette-jellyfish/releases/tag/2.0">datasette-jellyfish 2.0</a></strong>—2023-08-24<br>Datasette plugin adding SQL functions for fuzzy text matching powered by Jellyfish</li>
+<li>
+<strong><a href="https://github.com/simonw/datasette-configure-fts/releases/tag/1.1.2">datasette-configure-fts 1.1.2</a></strong>—2023-08-23<br>Datasette plugin for enabling full-text search against selected table columns</li>
+<li>
+<strong><a href="https://github.com/simonw/datasette-ripgrep/releases/tag/0.8.1">datasette-ripgrep 0.8.1</a></strong>—2023-08-21<br>Web interface for searching your code using ripgrep, built as a Datasette plugin</li>
+<li>
+<strong><a href="https://github.com/simonw/datasette-publish-fly/releases/tag/1.3.1">datasette-publish-fly 1.3.1</a></strong>—2023-08-21<br>Datasette plugin for publishing data using Fly</li>
+<li>
+<strong><a href="https://github.com/simonw/llm-openrouter/releases/tag/0.1">llm-openrouter 0.1</a></strong>—2023-08-21<br>LLM plugin for models hosted by OpenRouter</li>
+<li>
+<strong><a href="https://github.com/simonw/llm/releases/tag/0.8">llm 0.8</a></strong>—2023-08-21<br>Access large language models from the command-line</li>
+<li>
+<strong><a href="https://github.com/simonw/sqlite-utils-fast-fks/releases/tag/0.1">sqlite-utils-fast-fks 0.1</a></strong>—2023-08-18<br>Fast foreign key addition for sqlite-utils</li>
+<li>
+<strong><a href="https://github.com/simonw/datasette-edit-schema/releases/tag/0.5.3">datasette-edit-schema 0.5.3</a></strong>—2023-08-18<br>Datasette plugin for modifying table schemas</li>
+<li>
+<strong><a href="https://github.com/simonw/sqlite-utils/releases/tag/3.35">sqlite-utils 3.35</a></strong>—2023-08-18<br>Python CLI utility and library for manipulating SQLite databases</li>
+</ul>
+<h4>TIL this week</h4>
+<ul>
+<li>
+<a href="https://til.simonwillison.net/json/streaming-indented-json-array">Streaming output of an indented JSON array</a>—2023-08-30</li>
+<li>
+<a href="https://til.simonwillison.net/macos/downloading-partial-youtube-videos">Downloading partial YouTube videos with ffmpeg</a>—2023-08-26</li>
+<li>
+<a href="https://til.simonwillison.net/sqlite/sqlite-version-macos-python">Compile and run a new SQLite version with the existing sqlite3 Python library on macOS</a>—2023-08-22</li>
+<li>
+<a href="https://til.simonwillison.net/fly/django-sql-dashboard">Configuring Django SQL Dashboard for Fly PostgreSQL</a>—2023-08-22</li>
+<li>
+<a href="https://til.simonwillison.net/sqlite/database-file-size">Calculating the size of a SQLite database file using SQL</a>—2023-08-21</li>
+<li>
+<a href="https://til.simonwillison.net/readthedocs/stable-docs">Updating stable docs in ReadTheDocs without pushing a release</a>—2023-08-21</li>
+<li>
+<a href="https://til.simonwillison.net/bash/go-script">A shell script for running Go one-liners</a>—2023-08-20</li>
+<li>
+<a href="https://til.simonwillison.net/sqlite/python-sqlite-environment">A one-liner to output details of the current Python’s SQLite</a>—2023-08-19</li>
+<li>
+<a href="https://til.simonwillison.net/python/inlining-binary-data">A simple pattern for inlining binary content in a Python script</a>—2023-08-19</li>
+<li>
+<a href="https://til.simonwillison.net/bash/multiple-servers">Running multiple servers in a single Bash script</a>—2023-08-17</li>
+</ul>
+<div class="entryFooter">
+<a href="/2023/Aug/30/datasette-plus-weeknotes/" title="Permalink for &quot;Datasette 1.0a4 and 1.0a5, plus weeknotes&quot;">2:33 pm</a> / <a href="/2023/Aug/30/">30th August 2023</a> / <a href="/tags/llm/">llm</a>, <a href="/tags/projects/">projects</a>, <a href="/tags/datasette/">datasette</a>, <a href="/tags/plugins/">plugins</a>, <a href="/tags/sqliteutils/">sqliteutils</a>, <a href="/tags/alexgarcia/">alexgarcia</a>, <a href="/tags/weeknotes/">weeknotes</a>
+</div>
+</div> <!-- end div.entry -->
+
+<div class="entry segment" data-date="2023-08-27T14:35:07+00:00">
+<h3><a href="/2023/Aug/27/wordcamp-llms/" rel="bookmark">Making Large Language Models work for you</a> <span class="textago" title="27th August 2023">nine days ago</span></h3>
+<p>I gave <a href="https://us.wordcamp.org/2023/session/making-large-language-models-work-for-you/">an invited keynote</a> at <a href="https://us.wordcamp.org/2023/">WordCamp 2023</a> in National Harbor, Maryland on Friday.</p>
+<p>I was invited to provide a practical take on Large Language Models: what they are, how they work, what you can do with them and what kind of things you can build with them that could not be built before.</p>
+<p>As a long-time fan of WordPress and the WordPress community, which I think represents the very best of open source values, I was delighted to participate.</p>
+<p>You can watch my talk <a href="https://www.youtube.com/watch?v=aC7UQcZN6y8">on YouTube here</a>. Here are the slides and an annotated transcript, prepared using the custom tool <a href="https://simonwillison.net/2023/Aug/6/annotated-presentations/">I described in this post</a>.</p>
+
+<iframe style="max-width: 100%" width="560" height="315" src="https://www.youtube.com/embed/aC7UQcZN6y8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"> </iframe>
+
+<ul style="margin-top: 2em; margin-bottom: 2em">
+  <li><a href="https://simonwillison.net/2023/Aug/27/wordcamp-llms/#what-they-are">What they are</a></li>
+  <li><a href="https://simonwillison.net/2023/Aug/27/wordcamp-llms/#how-they-work">How they work</a></li>
+  <li><a href="https://simonwillison.net/2023/Aug/27/wordcamp-llms/#how-to-use-them">How to use them</a></li>
+  <li><a href="https://simonwillison.net/2023/Aug/27/wordcamp-llms/#personal-ai-ethics">Personal AI ethics</a></li>
+  <li><a href="https://simonwillison.net/2023/Aug/27/wordcamp-llms/#what-we-can-build">What we can build with them</a></li>
+  <li><a href="https://simonwillison.net/2023/Aug/27/wordcamp-llms/#access-to-tools">Giving them access to tools</a></li>
+  <li><a href="https://simonwillison.net/2023/Aug/27/wordcamp-llms/#retrieval-augmented-generation">Retrieval augmented generation</a></li>
+  <li><a href="https://simonwillison.net/2023/Aug/27/wordcamp-llms/#embeddings">Embeddings and semantic search</a></li>
+  <li><a href="https://simonwillison.net/2023/Aug/27/wordcamp-llms/#chatgpt-code-interpreter">ChatGPT Code Interpreter</a></li>
+  <li><a href="https://simonwillison.net/2023/Aug/27/wordcamp-llms/#how-they-are-trained">How they’re trained</a></li>
+  <li><a href="https://simonwillison.net/2023/Aug/27/wordcamp-llms/#openly-licensed-models">Openly licensed models</a></li>
+  <li><a href="https://simonwillison.net/2023/Aug/27/wordcamp-llms/#prompt-injection">Prompt injection</a></li>
+  <li><a href="https://simonwillison.net/2023/Aug/27/wordcamp-llms/#helping-everyone">Helping everyone program computers</a></li>
+</ul>
+
+
+<div class="entryFooter">
+<a href="/2023/Aug/27/wordcamp-llms/" title="Permalink for &quot;Making Large Language Models work for you&quot;">2:35 pm</a> / <a href="/2023/Aug/27/">27th August 2023</a> / <a href="/tags/llm/">llm</a>, <a href="/tags/generativeai/">generativeai</a>, <a href="/tags/annotatedtalks/">annotatedtalks</a>, <a href="/tags/wordpress/">wordpress</a>, <a href="/tags/ai/">ai</a>, <a href="/tags/speaking/">speaking</a>, <a href="/tags/llms/">llms</a>
+</div>
+</div> <!-- end div.entry -->
+
+<div class="entry segment" data-date="2023-08-16T23:19:41+00:00">
+<h3><a href="/2023/Aug/16/datasette-cloud-weeknotes/" rel="bookmark">Datasette Cloud, Datasette 1.0a3, llm-mlc and more</a> <span class="textago" title="16th August 2023">20 days ago</span></h3>
+<p>Datasette Cloud is now a significant step closer to general availability. The Datasette 1.03 alpha release is out, with a mostly finalized JSON format for 1.0. Plus new plugins for LLM and sqlite-utils and a flurry of things I’ve learned.</p>
+<h4>Datasette Cloud</h4>
+<p>Yesterday morning we unveiled the new <a href="https://www.datasette.cloud/blog/">Datasette Cloud blog</a>, and kicked things off there with two posts:</p>
+<ul>
+<li>
+<a href="https://www.datasette.cloud/blog/2023/welcome/">Welcome to Datasette Cloud</a> provides an introduction to the product: what it can do so far, what’s coming next and how to sign up to try it out.</li>
+<li>
+<a href="https://www.datasette.cloud/blog/2023/datasette-write-ui/">Introducing datasette-write-ui: a Datasette plugin for editing, inserting, and deleting rows</a> introduces a brand new plugin, <a href="https://datasette.io/plugins/datasette-write-ui">datasette-write-ui</a>—which finally adds a user interface for editing, inserting and deleting rows to Datasette.</li>
+</ul>
+<p>Here’s a screenshot of the interface for creating a new private space in Datasette Cloud:</p>
+<img src="https://static.simonwillison.net/static/2023/pick-region.jpg" style="max-width: 100%" alt="Create a space A space is a private area where you can import, explore and analyze data and share it with invited collaborators. Space name Subdomain Region  .datasette.cloud  Your data will be hosted in a region. Pick somewhere geographically close to you for optimal performance.">
+<p><code>datasette-write-ui</code> is particularly notable because it was written by Alex Garcia, who is now working with me to help get Datasette Cloud ready for general availability.</p>
+<p>Alex’s work on the project is being supported by <a href="https://fly.io/">Fly.io</a>, in a particularly exciting form of open source sponsorship. Datasette Cloud is already being built on Fly, but as part of Alex’s work we’ll be extensively documenting what we learn along the way about using Fly to build a multi-tenant SaaS platform.</p>
+<p>Alex has some very cool work with Fly’s <a href="https://litestream.io/">Litestream</a> in the pipeline which we hope to talk more about shortly.</p>
+<p>Since this is my first time building a blog from scratch in quite a while, I also put together a new TIL on <a href="https://til.simonwillison.net/django/building-a-blog-in-django">Building a blog in Django</a>.</p>
+<p>The Datasette Cloud work has been driving a lot of improvements to other parts of the Datasette ecosystem, including improvements to <a href="https://datasette.io/plugins/datasette-upload-dbs">datasette-upload-dbs</a> and the other big news this week: Datasette 1.0a3.</p>
+<h4>Datasette 1.0a3</h4>
+<p>Datasette 1.0 is the first version of Datasette that will be marked as “stable”: if you build software on top of Datasette I want to guarantee as much as possible that it won’t break until Datasette 2.0, which I hope to avoid ever needing to release.</p>
+<p>The three big aspects of this are:</p>
+<ul>
+<li>A stable <a href="https://docs.datasette.io/en/1.0a3/plugin_hooks.html">plugins interface</a>, so custom plugins continue to work</li>
+<li>A stable <a href="https://docs.datasette.io/en/1.0a3/json_api.html">JSON API format</a>, for integrations built against Datasette</li>
+<li>Stable template contexts, so that <a href="https://docs.datasette.io/en/1.0a3/custom_templates.html">custom templates</a> won’t be broken by minor changes</li>
+</ul>
+<p>The <a href="https://docs.datasette.io/en/1.0a3/changelog.html#a3-2023-08-09">1.0 alpha 3 release</a> primarily focuses on the JSON support. There’s a new, much more intuitive default shape for both the table and the arbitrary query pages, which looks like this:</p>
+<div class="highlight highlight-source-json"><pre>{
+  <span class="pl-ent">"ok"</span>: <span class="pl-c1">true</span>,
+  <span class="pl-ent">"rows"</span>: [
+    {
+      <span class="pl-ent">"id"</span>: <span class="pl-c1">3</span>,
+      <span class="pl-ent">"name"</span>: <span class="pl-s"><span class="pl-pds">"</span>Detroit<span class="pl-pds">"</span></span>
+    },
+    {
+      <span class="pl-ent">"id"</span>: <span class="pl-c1">2</span>,
+      <span class="pl-ent">"name"</span>: <span class="pl-s"><span class="pl-pds">"</span>Los Angeles<span class="pl-pds">"</span></span>
+    },
+    {
+      <span class="pl-ent">"id"</span>: <span class="pl-c1">4</span>,
+      <span class="pl-ent">"name"</span>: <span class="pl-s"><span class="pl-pds">"</span>Memnonia<span class="pl-pds">"</span></span>
+    },
+    {
+      <span class="pl-ent">"id"</span>: <span class="pl-c1">1</span>,
+      <span class="pl-ent">"name"</span>: <span class="pl-s"><span class="pl-pds">"</span>San Francisco<span class="pl-pds">"</span></span>
+    }
+  ],
+  <span class="pl-ent">"truncated"</span>: <span class="pl-c1">false</span>
+}</pre></div>
+<p>This is a huge improvement on the old format, which featured a vibrant mess of top-level keys and served the rows up as an array-of-arrays, leaving the user to figure out which column was which by matching against <code>"columns"</code>.</p>
+<p>The new format is <a href="https://docs.datasette.io/en/1.0a3/json_api.html#json-api-default">documented here</a>. I wanted to get this in place as soon as possible for Datasette Cloud (which is running this alpha), since I don’t want to risk paying customers building integrations that would later break due to 1.0 API changes.</p>
+<h4>llm-mlc</h4>
+<p>My <a href="https://llm.datasette.io/">LLM</a> tool provides a CLI utility and Python library for running prompts through Large Language Models. I <a href="https://simonwillison.net/2023/Jul/12/llm/">added plugin support</a> to it a few weeks ago, so now it can support additional models through plugins—including a variety of models that can run directly on your own device.</p>
+<p>For a while now I’ve been trying to work out the easiest recipe to get a Llama 2 model running on my M2 Mac with GPU acceleration.</p>
+<p>I finally figured that out the other week, using the excellent <a href="https://mlc.ai/mlc-llm/docs/deploy/python.html">MLC Python library</a>.</p>
+<p>I built a new plugin for LLM called <a href="https://github.com/simonw/llm-mlc">llm-mlc</a>. I think this may now be one of the easiest ways to run Llama 2 on an Apple Silicon Mac with GPU acceleration.</p>
+<p>Here are the steps to try it out. First, install LLM—which is easiest with Homebrew:</p>
+<div class="highlight highlight-source-shell"><pre>brew install llm</pre></div>
+<p>If you have a Python 3 environment you can run <code>pip install llm</code> or <code>pipx install llm</code> instead.</p>
+<p>Next, install the new plugin:</p>
+<div class="highlight highlight-source-shell"><pre>llm install llm-mlc</pre></div>
+<p>There’s an additional installation step which I’ve not yet been able to automate fully—on an M1/M2 Mac run the following:</p>
+<div class="highlight highlight-source-shell"><pre>llm mlc pip install --pre --force-reinstall \
+  mlc-ai-nightly \
+  mlc-chat-nightly \
+  -f https://mlc.ai/wheels</pre></div>
+<p>Instructions for other platforms <a href="https://mlc.ai/package/">can be found here</a>.</p>
+<p>Now run this command to finish the setup (which configures <code>git-lfs</code> ready to download the models):</p>
+<div class="highlight highlight-source-shell"><pre>llm mlc setup</pre></div>
+<p>And finally, you can download the Llama 2 model using this command:</p>
+<div class="highlight highlight-source-shell"><pre>llm mlc download-model Llama-2-7b-chat --alias llama2</pre></div>
+<p>And run a prompt like this:</p>
+<div class="highlight highlight-source-shell"><pre>llm -m llama2 <span class="pl-s"><span class="pl-pds">'</span>five names for a cute pet ferret<span class="pl-pds">'</span></span></pre></div>
+<p>It’s still more steps than I’d like, but it seems to be working for people!</p>
+<p>As always, my goal for LLM is to grow a community of enthusiasts who write plugins like this to help support new models as they are released. That’s why I put a lot of effort into building this tutorial about <a href="https://llm.datasette.io/en/stable/plugins/tutorial-model-plugin.html">Writing a plugin to support a new model</a>.</p>
+<p>Also out now: <a href="https://github.com/simonw/llm/releases/tag/0.7">llm 0.7</a>, which mainly adds a new mechanism for adding custom aliases to existing models:</p>
+<div class="highlight highlight-source-shell"><pre>llm aliases <span class="pl-c1">set</span> turbo gpt-3.5-turbo-16k
+llm -m turbo <span class="pl-s"><span class="pl-pds">'</span>An epic Greek-style saga about a cheesecake that builds a SQL database from scratch<span class="pl-pds">'</span></span></pre></div>
+<h4>openai-to-sqlite and embeddings for related content</h4>
+<p>A smaller release this week: <a href="https://github.com/simonw/openai-to-sqlite/releases/tag/0.4">openai-to-sqlite 0.4</a>, an update to my CLI tool for loading data from various OpenAI APIs into a SQLite database.</p>
+<p>My inspiration for this release was a desire to add better related content to my <a href="https://til.simonwillison.net/">TIL website</a>.</p>
+<p>Short version: I did exactly that! Each post on that site now includes a list of related posts that are generated using OpenAI embeddings, which help me plot posts that are semantically similar to each other.</p>
+<p>I wrote up a full TIL about how that all works: <a href="https://til.simonwillison.net/llms/openai-embeddings-related-content">Storing and serving related documents with openai-to-sqlite and embeddings</a>—scroll to the bottom of that post to see the new related content in action.</p>
+<p>I’m fascinated by embeddings. They’re not difficult to run using locally hosted models either—I hope to add a feature to LLM to help with that soon.</p>
+<p><a href="https://wattenberger.com/thoughts/yay-embeddings-math">Getting creative with embeddings</a> by Amelia Wattenberger is a great example of some of the more interesting applications they can be put to.</p>
+<h4>sqlite-utils-jq</h4>
+<p>A tiny new plugin for <a href="https://sqlite-utils.datasette.io/">sqlite-utils</a>, inspired by <a href="https://news.ycombinator.com/item?id=37083501">this Hacker News comment</a> and written mainly as an excuse for me to exercise that <a href="https://simonwillison.net/2023/Jul/24/sqlite-utils-plugins/">new plugins framework</a> a little more.</p>
+<p><a href="https://github.com/simonw/sqlite-utils-jq">sqlite-utils-jq</a> adds a new <code>jq()</code> function which can be used to execute <a href="https://jqlang.github.io/jq/">jq</a> programs as part of a SQL query.</p>
+<p>Install it like this:</p>
+<div class="highlight highlight-source-shell"><pre>sqlite-utils install sqlite-utils-jq</pre></div>
+<p>Now you can do things like this:</p>
+<div class="highlight highlight-source-shell"><pre>sqlite-utils memory <span class="pl-s"><span class="pl-pds">"</span>select jq(:doc, :expr) as result<span class="pl-pds">"</span></span> \
+  -p doc <span class="pl-s"><span class="pl-pds">'</span>{"foo": "bar"}<span class="pl-pds">'</span></span> \
+  -p expr <span class="pl-s"><span class="pl-pds">'</span>.foo<span class="pl-pds">'</span></span></pre></div>
+<p>You can also use it in combination with <a href="https://github.com/simonw/sqlite-utils-litecli">sqlite-utils-litecli</a> to run that new function as part of an interactive shell:</p>
+<pre><code>sqlite-utils install sqlite-utils-litecli
+sqlite-utils litecli data.db
+# ...
+Version: 1.9.0
+Mail: https://groups.google.com/forum/#!forum/litecli-users
+GitHub: https://github.com/dbcli/litecli
+data.db&gt; select jq('{"foo": "bar"}', '.foo')
++------------------------------+
+| jq('{"foo": "bar"}', '.foo') |
++------------------------------+
+| "bar"                        |
++------------------------------+
+1 row in set
+Time: 0.031s
+</code></pre>
+<h4>Other entries this week</h4>
+<p><a href="https://simonwillison.net/2023/Aug/6/annotated-presentations/">How I make annotated presentations</a> describes the process I now use to create annotated presentations like this one for <a href="https://simonwillison.net/2023/Aug/3/weird-world-of-llms/">Catching up on the weird world of LLMs</a> (now up to over 17,000 views <a href="https://www.youtube.com/watch?v=h8Jth_ijZyY">on YouTube</a>!) using a new custom annotation tool I put together with the help of GPT-4.</p>
+<p>A couple of highlights from my TILs:</p>
+<ul>
+<li>
+<a href="https://til.simonwillison.net/cosmopolitan/ecosystem">Catching up with the Cosmopolitan ecosystem</a> describes my latest explorations of Cosmopolitan and Actually Portable Executable, based on an update I heard from Justine Tunney.</li>
+<li>
+<a href="https://til.simonwillison.net/github/django-postgresql-codespaces">Running a Django and PostgreSQL development environment in GitHub Codespaces</a> shares what I’ve learned about successfully running a Django and PostgreSQL development environment entirely through the browser using Codespaces.</li>
+</ul>
+<h4>Releases this week</h4>
+<ul>
+<li>
+<strong><a href="https://github.com/simonw/openai-to-sqlite/releases/tag/0.4">openai-to-sqlite 0.4</a></strong>—2023-08-15<br>Save OpenAI API results to a SQLite database</li>
+<li>
+<strong><a href="https://github.com/simonw/llm-mlc/releases/tag/0.5">llm-mlc 0.5</a></strong>—2023-08-15<br>LLM plugin for running models using MLC</li>
+<li>
+<strong><a href="https://github.com/simonw/datasette-render-markdown/releases/tag/2.2.1">datasette-render-markdown 2.2.1</a></strong>—2023-08-15<br>Datasette plugin for rendering Markdown</li>
+<li>
+<strong><a href="https://github.com/simonw/db-build/releases/tag/0.1">db-build 0.1</a></strong>—2023-08-15<br>Tools for building SQLite databases from files and directories</li>
+<li>
+<strong><a href="https://github.com/simonw/paginate-json/releases/tag/0.3.1">paginate-json 0.3.1</a></strong>—2023-08-12<br>Command-line tool for fetching JSON from paginated APIs</li>
+<li>
+<strong><a href="https://github.com/simonw/llm/releases/tag/0.7">llm 0.7</a></strong>—2023-08-12<br>Access large language models from the command-line</li>
+<li>
+<strong><a href="https://github.com/simonw/sqlite-utils-jq/releases/tag/0.1">sqlite-utils-jq 0.1</a></strong>—2023-08-11<br>Plugin adding a jq() SQL function to sqlite-utils</li>
+<li>
+<strong><a href="https://github.com/simonw/datasette-upload-dbs/releases/tag/0.3">datasette-upload-dbs 0.3</a></strong>—2023-08-10<br>Upload SQLite database files to Datasette</li>
+<li>
+<strong><a href="https://github.com/simonw/datasette/releases/tag/1.0a3">datasette 1.0a3</a></strong>—2023-08-09<br>An open source multi-tool for exploring and publishing data</li>
+</ul>
+<h4>TIL this week</h4>
+<ul>
+<li>
+<a href="https://til.simonwillison.net/json/ijson-stream">Processing a stream of chunks of JSON with ijson</a>—2023-08-16</li>
+<li>
+<a href="https://til.simonwillison.net/django/building-a-blog-in-django">Building a blog in Django</a>—2023-08-15</li>
+<li>
+<a href="https://til.simonwillison.net/llms/openai-embeddings-related-content">Storing and serving related documents with openai-to-sqlite and embeddings</a>—2023-08-15</li>
+<li>
+<a href="https://til.simonwillison.net/jq/combined-github-release-notes">Combined release notes from GitHub with jq and paginate-json</a>—2023-08-12</li>
+<li>
+<a href="https://til.simonwillison.net/cosmopolitan/ecosystem">Catching up with the Cosmopolitan ecosystem</a>—2023-08-10</li>
+<li>
+<a href="https://til.simonwillison.net/github/django-postgresql-codespaces">Running a Django and PostgreSQL development environment in GitHub Codespaces</a>—2023-08-10</li>
+<li>
+<a href="https://til.simonwillison.net/html/scroll-to-text">Scroll to text fragments</a>—2023-08-08</li>
+</ul>
+<div class="entryFooter">
+<a href="/2023/Aug/16/datasette-cloud-weeknotes/" title="Permalink for &quot;Datasette Cloud, Datasette 1.0a3, llm-mlc and more&quot;">11:19 pm</a> / <a href="/2023/Aug/16/">16th August 2023</a> / <a href="/tags/weeknotes/">weeknotes</a>, <a href="/tags/sqliteutils/">sqliteutils</a>, <a href="/tags/llm/">llm</a>, <a href="/tags/datasettecloud/">datasettecloud</a>, <a href="/tags/plugins/">plugins</a>, <a href="/tags/datasette/">datasette</a>, <a href="/tags/projects/">projects</a>
+</div>
+</div> <!-- end div.entry -->
+
+<div class="entry segment" data-date="2023-08-06T17:15:33+00:00">
+<h3><a href="/2023/Aug/6/annotated-presentations/" rel="bookmark">How I make annotated presentations</a> <span class="textago" title="6th August 2023">one month ago</span></h3>
+<p>Giving a talk is a lot of work. I go by a rule of thumb I learned from <a href="https://en.wikipedia.org/wiki/Damian_Conway">Damian Conway</a>: a minimum of ten hours of preparation for every one hour spent on stage.</p>
+<p>If you’re going to put that much work into something, I think it’s worth taking steps to maximize the value that work produces—both for you and for your audience.</p>
+<p>One of my favourite ways of getting “paid” for a talk is when the event puts in the work to produce a really good video of that talk, and then shares that video online. <a href="https://2023.northbaypython.org">North Bay Python</a> is a fantastic example of an event that does this well: they team up with <a href="https://nextdayvideo.com">Next Day Video</a> and <a href="https://whitecoatcaptioning.com">White Coat Captioning</a> and have talks professionally recorded, captioned and uploaded to YouTube within 24 hours of the talk being given.</p>
+<p>Even with that quality of presentation, I don’t think a video on its own is enough. My most recent talk was 40 minutes long—I’d love people to watch it, but I myself watch very few 40m long YouTube videos each year.</p>
+<p>So I like to publish my talks with a text and image version of the talk that can provide as much of the value as possible to people who don’t have the time or inclination to sit through a 40m talk (or 20m if you run it at 2x speed, which I do for many of the talks I watch myself).</p>
+<h4>Annotated presentations</h4>
+<p>My preferred format for publishing these documents is as an <em>annotated presentation</em>—a single document (no clicking “next” dozens of times) combining key slides from the talk with custom written text to accompany each one, plus additional links and resources.</p>
+<p>Here’s my most recent example: <a href="https://simonwillison.net/2023/Aug/3/weird-world-of-llms/">Catching up on the weird world of LLMs</a>, from North Bay Python last week.</p>
+<p>More examples:</p>
+<ul>
+<li>
+<a href="https://simonwillison.net/2023/May/2/prompt-injection-explained/">Prompt injection explained, with video, slides, and a transcript</a> for a LangChain webinar in May 2023.</li>
+<li>
+<a href="https://simonwillison.net/2022/Nov/26/productivity/">Coping strategies for the serial project hoarder</a> for DjangoCon US 2022.</li>
+<li>
+<a href="https://simonwillison.net/2021/Nov/4/publish-open-source-python-library/">How to build, test and publish an open source Python library</a> for PyGotham 2021</li>
+<li><a href="https://simonwillison.net/2021/Feb/7/video/">Video introduction to Datasette and sqlite-utils</a> for FOSDEM February 2021</li>
+<li>
+<a href="https://simonwillison.net/2021/Jul/22/small-data/">Datasette—an ecosystem of tools for working with small data</a> for PyGotham 2020.</li>
+<li>
+<a href="https://simonwillison.net/2020/Nov/14/personal-data-warehouses/">Personal Data Warehouses: Reclaiming Your Data</a> for the GitHub OCTO speaker series in November 2020.</li>
+<li>
+<a href="https://static.simonwillison.net/static/2010/redis-tutorial/">Redis tutorial</a> for NoSQL Europe 2010 (my first attempt at this format).</li>
+</ul>
+<p>I don’t tend to write a detailed script for my talks in advance. If I did, I might use that as a starting point, but I usually prepare the outline of the talk and then give it off-the-cuff on the day. I find this fits my style (best described as “enthusiastic rambling”) better.</p>
+<p>Instead, I’ll assemble notes for each slide from re-watching the video after it has been released.</p>
+<p>I don’t just cover the things I said in the the talk—I’ll also add additional context, and links to related resources. The annotated presentation isn’t just for people who didn’t watch the talk, it’s aimed at providing extra context for people who did watch it as well.</p>
+<h4>A custom tool for building annotated presentations</h4>
+<p>For this most recent talk I finally built something I’ve been wanting for <em>years</em>: a custom tool to help me construct the annotated presentation as quickly as possible.</p>
+<p>Annotated presentations look deceptively simple: each slide is an image and one or two paragraphs of text.</p>
+<p>There are a few extra details though:</p>
+<ul>
+<li>The images really need good <code>alt=</code> text—a big part of the information in the presentation is conveyed by those images, so they need to have good descriptions both for screen reader users and to index in search engines / for retrieval augmented generation.</li>
+<li>Presentations might have dozens of slides in—just assembling the image tags in the correct order can be a frustrating task.</li>
+<li>For editing the annotations I like to use Markdown, as it’s quicker to write than HTML. Making this as easy as possible encourages me to add more links, bullet points and code snippets.</li>
+</ul>
+<p>One of my favourite use-cases for tools like ChatGPT is to quickly create one-off custom tools. This was a perfect fit for that.</p>
+<p>You can see the tool I create here: <a href="https://til.simonwillison.net/tools/annotated-presentations">Annotated presentation creator</a> (<a href="https://github.com/simonw/til/blob/main/templates/pages/tools/annotated-presentations.html">source code here</a>).</p>
+<p>The first step is to export the slides as images, being sure to have filenames which sort alphabetically in the correct order. I use Apple Keynote for my slides and it has an “Export” feature which does this for me.</p>
+<p>Next, open those images using the annotation tool.</p>
+<p>The tool is written in JavaScript and works entirely in your browser—it asks you to select images but doesn’t actually upload them to a server, just displays them directly inline in the page.</p>
+<p>Anything you type in a <code>textarea</code> as work-in-progress will be saved to <code>localStorage</code>, so a browser crash or restart shouldn’t lose any of your work.</p>
+<p>It uses <a href="https://tesseract.projectnaptha.com/">Tesseract.js</a> to run OCR against your images, providing a starting point for the <code>alt=</code> attributes for each slide.</p>
+<p>Annotations can be entered in Markdown and are rendered to HTML as a live preview using the <a href="https://marked.js.org/">Marked</a> library.</p>
+<p>Finally, it offers a templating mechanism for the final output, which works using JavaScript template literals. So once you’ve finished editing the <code>alt=</code> text and writing the annotations, click “Execute template” at the bottom of the page and copy out the resulting HTML.</p>
+<p>Here’s an animated GIF demo of the tool in action:</p>
+<p><img src="https://static.simonwillison.net/static/2023/annotated-presentation-creator.gif" alt="Animated demo of the tool. I load 90 images, each one of which becomes a slide. Then I click the OCR button and it starts populating the alt textareas with OCR text from the slides. I type some markdown into an annotation box, then scroll to the bottom and click the Execute template button to get back the final HTML." style="max-width: 100%;"></p>
+<p>I ended up putting this together with the help of multiple different ChatGPT sessions. You can see those here:</p>
+<ul>
+<li><a href="https://chat.openai.com/share/61cd85f6-7002-4676-b204-0349a723232a">HTML and JavaScript in a single document to create an app that lets me do the following...</a></li>
+<li><a href="https://chat.openai.com/share/5218799e-0423-49ad-88ba-c72ee27e3fe3">JavaScript and HTML app on one page. User can select multiple image files on their own computer...</a></li>
+<li><a href="https://chat.openai.com/share/7867657b-aa29-4ad0-8ab3-1d353c29a224">JavaScript that runs once every 1s and builds a JavaScript object of every textarea on the page where the key is the name= attribute of that textarea and the value is its current contents. That whole object is then stored in localStorage in a key called savedTextAreas...</a></li>
+<li><a href="https://chat.openai.com/share/4e6fd644-de57-4597-a1cc-412483c2adf3">Write a JavaScript function like this: executeTemplates(template, arrayOfObjects)...</a></li>
+</ul>
+<h4>Cleaning up the transcript with Claude</h4>
+<p>Since the video was already up on YouTube when I started writing the annotations, I decided to see if I could get a head start on writing them using the YouTube generated transcript.</p>
+<p>I used my <a href="https://simonwillison.net/2022/Sep/30/action-transcription/">Action Transcription</a> tool to extract the transcript, but it was pretty low quality—you can see <a href="https://gist.github.com/simonw/3d8a335244711c675c456db147aa05fa">a copy of it here</a>. A sample:</p>
+<pre><code>okay hey everyone it's uh really
+exciting to be here so yeah I call this
+court talk catching up on the weird
+world of llms I'm going to try and give
+you the last few years of of llm
+developments in 35 minutes this is
+impossible so uh hopefully I'll at least
+give you a flavor of some of the weirder
+corners of the space because the thing
+about language models is the more I look
+at the more I think they're practically
+interesting any particular aspect of
+them anything at all if you zoom in
+there are just more questions there are
+just more unknowns about it there are
+more interesting things to get into lots
+of them are deeply disturbing and
+unethical lots of them are fascinating
+it's um I've called it um it's it's
+impossible to tear myself away from this
+I I just keep on keep on finding new
+aspects of it that are interesting
+</code></pre>
+<p>It’s basically one big run-on sentence, with no punctuation, little capitalization and lots of umms and ahs.</p>
+<p>Anthropic’s <a href="https://claude.ai">Claude 2</a> was <a href="https://www.anthropic.com/index/claude-2">released last month</a> and supports up to 100,000 tokens per prompt—a huge improvement on ChatGPT (4,000) and GPT-4 (8,000). I decided to see if I could use that to clean up my transcript.</p>
+<p>I pasted it into Claude and tried a few prompts... until I hit upon this one:</p>
+<blockquote>
+<p>Reformat this transcript into paragraphs and sentences, fix the capitalization and make very light edits such as removing ums</p>
+</blockquote>
+<p><img src="https://static.simonwillison.net/static/2023/claude-transcript.jpg" alt="Claude interface: Taming Large Language Models. I have pasted in a paste.txt file with 42KB of data, then prompted it to reformat. It outputs Here is the reformatted transcript: followed by that transcript." style="max-width: 100%;"></p>
+<p>This worked really, really well! Here’s the first paragraph it produced, based on the transcript I show above:</p>
+<blockquote>
+<p>Okay everyone, it’s really exciting to be here. Yeah I call this talk “Catching Up on the Weird World of LLMs.” I’m going to try and give you the last few years of LLMs developments in 35 minutes. This is impossible, so hopefully I’ll at least give you a flavor of some of the weirder corners of the space. The thing about language models is the more I look at them, the more I think they’re practically interesting. Focus on any particular aspect, and there are just more questions, more unknowns, more interesting things to get into.</p>
+</blockquote>
+<p>Note that I said “fractally interesting”, not “practically interesting”—but that error was there in the YouTube transcript, so Claude picked it up from there.</p>
+<p>Here’s the <a href="https://gist.github.com/simonw/f6d83d69cca018c07b58aaadfb4c918c">full generated transcript</a>.</p>
+<p>It’s really impressive! At one point it even turns my dialogue into a set of bullet points:</p>
+<blockquote>
+<p>Today the best are ChatGPT (aka GPT-3.5 Turbo), GPT-4 for capability, and Claude 2 which is free. Google has PaLM 2 and Bard. Llama and Claude are from Anthropic, a splinter of OpenAI focused on ethics. Google and Meta are the other big players.</p>
+<p>Some tips:</p>
+<ul>
+<li>OpenAI models cutoff at September 2021 training data. Anything later isn’t in there. This reduces issues like recycling their own text.</li>
+<li>Claude and Palm have more recent data, so I’ll use them for recent events.</li>
+<li>Always consider context length. GPT has 4,000 tokens, GPT-4 has 8,000, Claude 100,000.</li>
+<li>If a friend who read the Wikipedia article could answer my question, I’m confident feeding it in directly. The more obscure, the more likely pure invention.</li>
+<li>Avoid superstitious thinking. Long prompts that “always work” are usually mostly pointless.</li>
+<li>Develop an immunity to hallucinations. Notice signs and check answers.</li>
+</ul>
+</blockquote>
+<p>Compare that to <a href="https://gist.github.com/simonw/3d8a335244711c675c456db147aa05fa#file-transcription-txt-L327-L469">my rambling original</a> to see quite how much of an improvement this is.</p>
+<p>But, all of that said... I specified “make very light edits” and it clearly did a whole lot more than just that.</p>
+<p>I didn’t use the Claude version directly. Instead, I copied and pasted chunks of it into my annotation tool that made the most sense, then directly edited them to better fit what I was trying to convey.</p>
+<p>As with so many things in LLM/AI land: a significant time saver, but no silver bullet.</p>
+<h4>For workshops, publish the handout</h4>
+<p>I took the Software Carpentries <a href="https://carpentries.org/become-instructor/">instructor training</a> a few years ago, which was a really great experience.</p>
+<p>A key idea I got from that is that a great way to run a workshop is to prepare an extensive, detailed handout in advance—and then spend the actual workshop time working through that handout yourself, at a sensible pace, in a way that lets the attendees follow along.</p>
+<p>A bonus of this approach is that it forces you to put together a really high quality handout which you can distribute after the event.</p>
+<p>I used this approach for the 3 hour workshop I ran at PyCon US 2023: <a href="https://datasette.io/tutorials/data-analysis">Data analysis with SQLite and Python</a>. I turned that into a new official tutorial on the Datasette website, accompanied by the video but also useful for people who don’t want to spend three hours watching me talk!</p>
+<h4>More people should do this</h4>
+<p>I’m writing this in the hope that I can inspire more people to give their talks this kind of treatment. It’s not a zero amount of work—it takes me 2-3 hours any time I do this—but it greatly increases the longevity of the talk and ensures that the work I’ve already put into it provides maximum value, both to myself (giving talks is partly a selfish act!) and to the people I want to benefit from it.</p>
+<div class="entryFooter">
+<a href="/2023/Aug/6/annotated-presentations/" title="Permalink for &quot;How I make annotated presentations&quot;">5:15 pm</a> / <a href="/2023/Aug/6/">6th August 2023</a> / <a href="/tags/projects/">projects</a>, <a href="/tags/ai/">ai</a>, <a href="/tags/speaking/">speaking</a>, <a href="/tags/llms/">llms</a>, <a href="/tags/tools/">tools</a>, <a href="/tags/generativeai/">generativeai</a>, <a href="/tags/ocr/">ocr</a>, <a href="/tags/talks/">talks</a>, <a href="/tags/anthropic/">anthropic</a>, <a href="/tags/claude/">claude</a>, <a href="/tags/annotatedtalks/">annotatedtalks</a>
+</div>
+</div> <!-- end div.entry -->
+
+<div class="entry segment" data-date="2023-08-05T00:32:38+00:00">
+<h3><a href="/2023/Aug/5/weeknotes-plugins/" rel="bookmark">Weeknotes: Plugins for LLM, sqlite-utils and Datasette</a> <span class="textago" title="5th August 2023">one month ago</span></h3>
+<p>The principle theme for the past few weeks has been plugins.</p>
+<h4>Llama 2 in LLM via plugins</h4>
+<p>I added the ability to support models other than the OpenAI ones to my <a href="https://llm.datasette.io/">LLM</a> command-line tool <a href="https://simonwillison.net/2023/Jul/12/llm/">last month</a>. The timing on this could not have been better: <a href="https://ai.meta.com/llama/">Llama 2</a> (the first commercially usable version of Meta’s LLaMA language model) was released on July 18th, and I was able to add support to prompting it via LLM that very morning thanks to <a href="https://simonwillison.net/2023/Jul/18/accessing-llama-2/">the llm-replicate plugin</a> I had released the day before that launch.</p>
+<p>(I had heard a tip that a new exciting LLM was about to be released on <a href="https://replicate.com/">Replicate</a>, though I didn’t realize it was Llama 2 until after the announcement.)</p>
+<p>A few days ago I took that a step further: the new <a href="https://github.com/simonw/llm-llama-cpp">llm-llama-cpp</a> plugin can now be used to run a GGML quantized version of the Llama 2 model directly on your own hardware.</p>
+<p>LLM is <a href="https://formulae.brew.sh/formula/llm">available in Homebrew core now</a>, so getting Llama 2 working is as simple as:</p>
+<div class="highlight highlight-source-shell"><pre>brew install llm
+llm install llm-llama-cpp llama-cpp-python
+llm llama-cpp download-model \
+  https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGML/resolve/main/llama-2-7b-chat.ggmlv3.q8_0.bin \
+  --alias llama2-chat --alias l2c --llama2-chat</pre></div>
+<p>Then:</p>
+<div class="highlight highlight-source-shell"><pre>llm -m l2c <span class="pl-s"><span class="pl-pds">'</span>Tell me a joke about a llama<span class="pl-pds">'</span></span></pre></div>
+<p>I wrote more about this in <a href="https://simonwillison.net/2023/Aug/1/llama-2-mac/">Run Llama 2 on your own Mac using LLM and Homebrew</a>—including instructions for calling Llama 2 using the LLM Python API as well.</p>
+<h4>Plugins for sqlite-utils</h4>
+<p>My <a href="https://sqlite-utils.datasette.io/">sqlite-utils</a> project, similar to LLM, is a combined CLI tool and Python library. Based on requests from the community I <a href="https://simonwillison.net/2023/Jul/24/sqlite-utils-plugins/">adding plugin support to it</a> too.</p>
+<p>There are two categories of plugins so far: plugins that add extra commands to the <code>sqlite-utils</code> CLI tool, and plugins that add extra custom SQL functions that can be executed against SQLite.</p>
+<p>There are quite a few plugins <a href="https://github.com/simonw/sqlite-utils-plugins">listed in the sqlite-utils plugins directory</a> already.</p>
+<p>I built <a href="https://github.com/simonw/sqlite-utils-shell">sqlite-utils-shell</a> in time for the initial launch, to help demonstrate the new system by adding a <code>sqlite-utils shell</code> command that opens an interactive shell enabling any SQL functions that have been installed by other plugins.</p>
+<p>Alex Garcia suggested I look at <a href="https://github.com/dbcli/litecli">litecli</a> by Amjith Ramanujam, which is a much more sophisticated terminal shell for SQLite, incorporating auto-completion against tables and columns.</p>
+<p>I used that to build a better alternative to my <code>sqlite-utils-shell</code> plugin: <a href="https://github.com/simonw/sqlite-utils-litecli">sqlite-utils-litecli</a>, which lets you run the following command to get a full <code>litecli</code> shell with all of the custom SQL functions from other plugins:</p>
+<div class="highlight highlight-source-shell"><pre>sqlite-utils litecli mydatabase.db</pre></div>
+<p><img src="https://static.simonwillison.net/static/2023/sqlite-utils-litecli.jpg" alt="Screenshot showing the plugin in action - it includes autocomplete of SQLite table names" style="max-width: 100%;"></p>
+<h4>datasette-auth-tokens and dclient</h4>
+<p>Meanwhile, in Datasette land... I’ve been investing more time building <a href="https://www.datasette.cloud/">Datasette Cloud</a>, the SaaS cloud hosted version of Datasette.</p>
+<p>The Datasette 1.0 alphas introduced a write API. I wanted a mechanism for Datasette Cloud users to be able to setup automatic imports of data into their instances, taking advantage of that API.</p>
+<p>This meant I needed an API key mechanism that allowed tokens to be both created and revoked interactively.</p>
+<p>I ended up building that into the existing <code>datasette-auth-tokens</code> plugin, released in preview in the <a href="https://github.com/simonw/datasette-auth-tokens/releases/tag/0.4a0">datasette-auth-tokens 0.4a0</a> alpha.</p>
+<p>I’ve been quietly working on a new CLI utility for interacting with Datasette instances via the API, called <code>dcloud</code>. I shipped <a href="https://github.com/simonw/dclient/releases/tag/0.2">dcloud 0.2</a> with a new <code>dclient insert</code> command that can read CSV, TSV or JSON data and write it to an external Datasette instance using that new <a href="https://docs.datasette.io/en/1.0a2/json_api.html#the-json-write-api">1.0 write API</a>.</p>
+<p>I’ll have more news to share about Datasette Cloud soon!</p>
+<h4>Large Language Model talk at North Bay Python</h4>
+<p>On Sunday I gave the closing talk at <a href="https://2023.northbaypython.org/">North Bay Python</a>, titled <a href="https://simonwillison.net/2023/Aug/3/weird-world-of-llms/">Catching up on the weird world of LLMs</a>.</p>
+<p>I tried to summarize the last few years of development in the field of LLMs in just 40 minutes. I’m pretty happy with how it turned out! I’ve since published a full annotated transcript of the talk, with slides, additional links and notes—so even if you don’t want to watch the full talk you can still read through a thorough summary of what I covered.</p>
+<p>I’ve given a few of my talks this treatment now and I really like it—it’s a great way to unlock as much value as possible from the time I spend putting one of these things together.</p>
+<p>Examples of this format:</p>
+<ul>
+<li>
+<a href="https://simonwillison.net/2023/Aug/3/weird-world-of-llms/">Catching up on the weird world of LLMs</a>—from this Sunday.</li>
+<li>
+<a href="https://simonwillison.net/2023/May/2/prompt-injection-explained/">Prompt injection explained, with video, slides, and a transcript</a> for a LangChain webinar in May 2023.</li>
+<li>
+<a href="https://simonwillison.net/2022/Nov/26/productivity/">Coping strategies for the serial project hoarder</a> for DjangoCon US 2022.</li>
+<li>
+<a href="https://simonwillison.net/2021/Nov/4/publish-open-source-python-library/">How to build, test and publish an open source Python library</a> for PyGotham in November 2021</li>
+<li>
+<a href="https://simonwillison.net/2021/Jul/22/small-data/">Datasette—an ecosystem of tools for working with small data</a> for PyGotham 2020.</li>
+<li>
+<a href="https://simonwillison.net/2020/Nov/14/personal-data-warehouses/">Personal Data Warehouses: Reclaiming Your Data</a> for the GitHub OCTO speaker series in November 2020.</li>
+<li>
+<a href="https://static.simonwillison.net/static/2010/redis-tutorial/">Redis tutorial at NoSQL Europe</a>—this was the first time I put together annotated slides like this, for a three hour tutorial on Redis presented at NoSQL Europe back in 2010.</li>
+</ul>
+<p>This time round I <a href="https://til.simonwillison.net/tools/annotated-presentations">built a small tool</a> to help me assemble the notes and alt attributes for the video—I hope to write more about that soon.</p>
+<h4>Blog entries these weeks</h4>
+<ul>
+<li><a href="https://simonwillison.net/2023/Aug/3/weird-world-of-llms/">Catching up on the weird world of LLMs</a></li>
+<li><a href="https://simonwillison.net/2023/Aug/1/llama-2-mac/">Run Llama 2 on your own Mac using LLM and Homebrew</a></li>
+<li><a href="https://simonwillison.net/2023/Jul/24/sqlite-utils-plugins/">sqlite-utils now supports plugins</a></li>
+<li><a href="https://simonwillison.net/2023/Jul/18/accessing-llama-2/">Accessing Llama 2 from the command-line with the llm-replicate plugin</a></li>
+</ul>
+<h4>Releases these weeks</h4>
+<ul>
+<li>
+<strong><a href="https://github.com/simonw/llm-llama-cpp/releases/tag/0.1a0">llm-llama-cpp 0.1a0</a></strong>—2023-08-01<br>LLM plugin for running models using llama.cpp</li>
+<li>
+<strong><a href="https://github.com/simonw/datasette-upload-dbs/releases/tag/0.2">datasette-upload-dbs 0.2</a></strong>—2023-08-01<br>Upload SQLite database files to Datasette</li>
+<li>
+<strong><a href="https://github.com/simonw/sqlite-utils-litecli/releases/tag/0.1.1">sqlite-utils-litecli 0.1.1</a></strong>—2023-07-26<br>Interactive shell for sqlite-utils using litecli</li>
+<li>
+<strong><a href="https://github.com/simonw/llm-gpt4all/releases/tag/0.1.1">llm-gpt4all 0.1.1</a></strong>—2023-07-25<br>Plugin for LLM adding support for the GPT4All collection of models</li>
+<li>
+<strong><a href="https://github.com/simonw/dclient/releases/tag/0.2">dclient 0.2</a></strong>—2023-07-24<br>A client CLI utility for Datasette instances</li>
+<li>
+<strong><a href="https://github.com/simonw/llm/releases/tag/0.6.1">llm 0.6.1</a></strong>—2023-07-24<br>Access large language models from the command-line</li>
+<li>
+<strong><a href="https://github.com/simonw/asgi-replay/releases/tag/0.1a0">asgi-replay 0.1a0</a></strong>—2023-07-24<br>Record and replay ASGI web page loads</li>
+<li>
+<strong><a href="https://github.com/simonw/sqlite-utils-shell/releases/tag/0.2">sqlite-utils-shell 0.2</a></strong>—2023-07-24<br>Interactive shell for sqlite-utils</li>
+<li>
+<strong><a href="https://github.com/simonw/sqlite-utils-dateutil/releases/tag/0.1">sqlite-utils-dateutil 0.1</a></strong>—2023-07-24<br>Date utility functions for sqlite-utils</li>
+<li>
+<strong><a href="https://github.com/simonw/sqlite-migrate/releases/tag/0.1a1">sqlite-migrate 0.1a1</a></strong>—2023-07-23<br>A simple database migration system for SQLite, based on sqlite-utils</li>
+<li>
+<strong><a href="https://github.com/simonw/sqlite-utils/releases/tag/3.34">sqlite-utils 3.34</a></strong>—2023-07-22<br>Python CLI utility and library for manipulating SQLite databases</li>
+<li>
+<strong><a href="https://github.com/simonw/llm-replicate/releases/tag/0.3">llm-replicate 0.3</a></strong>—2023-07-20<br>LLM plugin for models hosted on Replicate</li>
+<li>
+<strong><a href="https://github.com/simonw/symbex/releases/tag/1.3">symbex 1.3</a></strong>—2023-07-19<br>Find the Python code for specified symbols</li>
+<li>
+<strong><a href="https://github.com/simonw/datasette-auth-tokens/releases/tag/0.4a0">datasette-auth-tokens 0.4a0</a></strong>—2023-07-17<br>Datasette plugin for authenticating access using API tokens</li>
+</ul>
+<h4>TIL these weeks</h4>
+<ul>
+<li>
+<a href="https://til.simonwillison.net/python/callable">Checking if something is callable or async callable in Python</a>—2023-08-04</li>
+<li>
+<a href="https://til.simonwillison.net/shot-scraper/axe-core">axe-core and shot-scraper for accessibility audits</a>—2023-07-30</li>
+<li>
+<a href="https://til.simonwillison.net/overture-maps/overture-maps-parquet">Exploring the Overture Maps places data using DuckDB, sqlite-utils and Datasette</a>—2023-07-27</li>
+<li>
+<a href="https://til.simonwillison.net/python/protocols">Protocols in Python</a>—2023-07-26</li>
+<li>
+<a href="https://til.simonwillison.net/datasette/pytest-httpx-datasette">Using pytest-httpx to run intercepted requests through an in-memory Datasette instance</a>—2023-07-25</li>
+</ul>
+<div class="entryFooter">
+<a href="/2023/Aug/5/weeknotes-plugins/" title="Permalink for &quot;Weeknotes: Plugins for LLM, sqlite-utils and Datasette&quot;">12:32 am</a> / <a href="/2023/Aug/5/">5th August 2023</a> / <a href="/tags/llm/">llm</a>, <a href="/tags/projects/">projects</a>, <a href="/tags/datasette/">datasette</a>, <a href="/tags/plugins/">plugins</a>, <a href="/tags/sqliteutils/">sqliteutils</a>, <a href="/tags/talks/">talks</a>, <a href="/tags/weeknotes/">weeknotes</a>
+</div>
+</div> <!-- end div.entry -->
+
+
+</div> <!-- #primary -->
+
+<div id="secondary">
+
+<h2 class="overband">Elsewhere <a href="/atom/links/" class="small-atom" title="Atom feed of new links"><svg xmlns="http://www.w3.org/2000/svg"  width="14px" height="14px" viewBox="0 0 256 256"><circle cx="68" cy="189" r="24" fill="#FFF"/><path fill="#FFF" d="M160 213h-34a82 82 0 0 0-82-82V97a116 116 0 0 1 116 116z"/><path fill="#FFF" d="M184 213A140 140 0 0 0 44 73V38a175 175 0 0 1 175 175z"/></svg></a></h2>
+
+<div class="day">
+<h3><a href="/2023/Sep/6/" title="6th September 2023">Today</a></h3>
+
+
+<ul>
+  <li data-date="2023-09-06T03:33:05+00:00">
+      <a href="https://perplexity.vercel.app/">Perplexity: interactive LLM visualization</a> (<a href="https://twitter.com/thesephist/status/1699190649096933474" title="@thesephist">via</a>) I linked to a video of Linus Lee’s GPT visualization tool the other day. Today he’s released a new version of it that people can actually play with: it runs entirely in a browser, powered by a 120MB version of the GPT-2 ONNX model loaded using the brilliant Transformers.js JavaScript library. <a href="/2023/Sep/6/perplexity/" rel="bookmark">#</a><span class="elsewhere-date"> &mdash; <a href="/2023/Sep/6/">6th September 2023</a>, 3:33&nbsp;am</span>
+      
+  </li>
+  
+</ul>
+
+</div> <!-- .day -->
+
+<div class="day">
+<h3><a href="/2023/Sep/5/" title="5th September 2023">Yesterday</a></h3>
+
+
+<ul>
+  <li data-date="2023-09-05T17:29:25+00:00">
+      <a href="https://github.com/simonw/symbex/releases/tag/1.4">Symbex 1.4</a>. New release of my Symbex tool for finding symbols (functions, methods and classes) in a Python codebase. Symbex can now output matching symbols in JSON, CSV or TSV in addition to plain text.<br><br>I designed this feature for compatibility with the new “llm embed-multi” command—so you can now use Symbex to find every Python function in a nested directory and then pipe them to LLM to calculate embeddings for every one of them.<br><br>I tried it on my projects directory and embedded over 13,000 functions in just a few minutes! Next step is to figure out what kind of interesting things I can do with all of those embeddings. <a href="/2023/Sep/5/symbex/" rel="bookmark">#</a><span class="elsewhere-date"> &mdash; <a href="/2023/Sep/5/">5th September 2023</a>, 5:29&nbsp;pm</span>
+      
+  </li>
+  
+  <li data-date="2023-09-05T03:39:47+00:00">
+      <a href="https://twitter.com/thesephist/status/1617747154231259137">A token-wise likelihood visualizer for GPT-2</a>. Linus Lee built a superb visualization to help demonstrate how Large Language Models work, in the form of a video essay where each word is coloured to show how “surprising” it is to the model. It’s worth carefully reading the text in the video as each term is highlighted to get the full effect. <a href="/2023/Sep/5/a-token-wise-likelihood-visualizer-for-gpt-2/" rel="bookmark">#</a><span class="elsewhere-date"> &mdash; <a href="/2023/Sep/5/">5th September 2023</a>, 3:39&nbsp;am</span>
+      
+  </li>
+  
+</ul>
+
+</div> <!-- .day -->
+
+<div class="day">
+<h3><a href="/2023/Sep/4/" title="4th September 2023">4th September 2023</a></h3>
+
+
+<ul>
+  <li data-date="2023-09-04T21:13:50+00:00">
+      <a href="https://www.leebutterman.com/2023/06/01/offline-realtime-embedding-search.html">Wikipedia search-by-vibes through millions of pages offline</a> (<a href="https://twitter.com/leebutterman/status/1697645296963006698" title="@leebutterman">via</a>) Really cool demo by Lee Butterman, who built embeddings of 2 million Wikipedia pages and figured out how to serve them directly to the browser, where they are used to implement “vibes based” similarity search returning results in 250ms. Lots of interesting details about how he pulled this off, using Arrow as the file format and ONNX to run the model in the browser. <a href="/2023/Sep/4/wikipedia-search-by-vibes-through-millions-of-pages-offline/" rel="bookmark">#</a><span class="elsewhere-date"> &mdash; <a href="/2023/Sep/4/">4th September 2023</a>, 9:13&nbsp;pm</span>
+      
+  </li>
+  
+  <li data-date="2023-09-04T13:43:03+00:00">
+      <a href="https://askdala.substack.com/p/a-pratical-guide-to-deploying-llms">A practical guide to deploying Large Language Models Cheap, Good *and* Fast</a>. Joel Kang’s extremely comprehensive notes on what he learned trying to run Vicuna-13B-v1.5 on an affordable cloud GPU server (a T4 at $0.615/hour). The space is in so much flux right now—Joel ended up using MLC but the best option could change any minute.<br><br>Vicuna 13B quantized to 4-bit integers needed 7.5GB of the T4’s 16GB of VRAM, and returned tokens at 20/second.<br><br>An open challenge running MLC right now is around batching and concurrency: “I did try making 3 concurrent requests to the endpoint, and while they all stream tokens back and the server doesn’t OOM, the output of all 3 streams seem to actually belong to a single prompt.” <a href="/2023/Sep/4/a-practical-guide-to-deploying-large-language-models-cheap-good/" rel="bookmark">#</a><span class="elsewhere-date"> &mdash; <a href="/2023/Sep/4/">4th September 2023</a>, 1:43&nbsp;pm</span>
+      
+  </li>
+  
+</ul>
+
+</div> <!-- .day -->
+
+<div class="day">
+<h3><a href="/2023/Aug/30/" title="30th August 2023">30th August 2023</a></h3>
+
+
+<ul>
+  <li data-date="2023-08-30T16:30:46+00:00">
+      <a href="https://excalidraw.com/">excalidraw.com</a> (<a href="https://news.ycombinator.com/item?id=37322025#37323895" title="haki on Hacker News">via</a>) Really nice browser-based editor for simple diagrams using a pleasing hand-sketched style, with the ability to export them as SVG or PNG. <a href="/2023/Aug/30/excalidrawcom/" rel="bookmark">#</a><span class="elsewhere-date"> &mdash; <a href="/2023/Aug/30/">30th August 2023</a>, 4:30&nbsp;pm</span>
+      
+  </li>
+  
+  <li data-date="2023-08-30T14:41:26+00:00">
+      <a href="https://webllm.mlc.ai/">WebLLM supports Llama 2 70B now</a>. The WebLLM project from MLC uses WebGPU to run large language models entirely in the browser. They recently added support for Llama 2, including Llama 2 70B, the largest and most powerful model in that family.<br><br>To my astonishment, this worked! I used a M2 Mac with 64GB of RAM and Chrome Canary and it downloaded many GBs of data... but it worked, and spat out tokens at a slow but respectable rate of 3.25 tokens/second. <a href="/2023/Aug/30/webllm-supports-llama-2-70b-now/" rel="bookmark">#</a><span class="elsewhere-date"> &mdash; <a href="/2023/Aug/30/">30th August 2023</a>, 2:41&nbsp;pm</span>
+      
+  </li>
+  
+  <li data-date="2023-08-30T14:37:27+00:00">
+      <a href="https://www.anyscale.com/blog/llama-2-is-about-as-factually-accurate-as-gpt-4-for-summaries-and-is-30x-cheaper">Llama 2 is about as factually accurate as GPT-4 for summaries and is 30X cheaper</a>. Anyscale offer (cheap, fast) API access to Llama 2, so they’re not an unbiased source of information—but I really hope their claim here that Llama 2 70B provides almost equivalent summarization quality to GPT-4 holds up. Summarization is one of my favourite applications of LLMs, partly because it’s key to being able to implement Retrieval Augmented Generation against your own documents—where snippets of relevant documents are fed to the model and used to answer a user’s question. Having a really high performance openly licensed summarization model is a very big deal. <a href="/2023/Aug/30/llama-2-summaries/" rel="bookmark">#</a><span class="elsewhere-date"> &mdash; <a href="/2023/Aug/30/">30th August 2023</a>, 2:37&nbsp;pm</span>
+      
+  </li>
+  
+</ul>
+
+</div> <!-- .day -->
+
+<div class="day">
+<h3><a href="/2023/Aug/26/" title="26th August 2023">26th August 2023</a></h3>
+
+
+<ul>
+  <li data-date="2023-08-26T12:08:43+00:00">
+      <a href="https://codeconfessions.substack.com/p/understanding-immortal-objects-in">Understanding Immortal Objects in Python 3.12</a>. Abhinav Upadhyay provides a clear and detailed explanation of immortal objects coming in Python 3.12, which ensure Python no longer updates reference counts for immutable objects such as True, False, None and low-values integers. The trick (which maintains ABI compatibility) is pretty simple: a reference count value of 4294967295 now means an object is immortal, and the existing Py_INCREF and Py_DECREF macros have been updated to take that into account. <a href="/2023/Aug/26/understanding-immortal-objects-in-python-312/" rel="bookmark">#</a><span class="elsewhere-date"> &mdash; <a href="/2023/Aug/26/">26th August 2023</a>, 12:08&nbsp;pm</span>
+      
+  </li>
+  
+</ul>
+
+</div> <!-- .day -->
+
+<div class="day">
+<h3><a href="/2023/Aug/25/" title="25th August 2023">25th August 2023</a></h3>
+
+
+<ul>
+  <li data-date="2023-08-25T18:31:50+00:00">
+      <blockquote><p>Would I forbid the teaching (if that is the word) of my stories to computers? Not even if I could. I might as well be King Canute, forbidding the tide to come in. Or a Luddite trying to stop industrial progress by hammering a steam loom to pieces.</p></blockquote><p class="cite">&mdash; <a href="https://www.theatlantic.com/books/archive/2023/08/stephen-king-books-ai-writing/675088/">Stephen King</a> <a href="/2023/Aug/25/stephen-king/" rel="bookmark">#</a> <span class="elsewhere-date">&mdash; <a href="/2023/Aug/25/">25th August 2023</a>, 6:31&nbsp;pm</span></p>
+      
+  </li>
+  
+</ul>
+
+</div> <!-- .day -->
+
+<div class="day">
+<h3><a href="/2023/Aug/24/" title="24th August 2023">24th August 2023</a></h3>
+
+
+<ul>
+  <li data-date="2023-08-24T22:31:57+00:00">
+      <a href="https://github.com/jondurbin/airoboros#lmoe">airoboros LMoE</a>. airoboros provides a system for fine-tuning Large Language Models. The latest release adds support for LMoE—LoRA Mixture of Experts. GPT-4 is strongly rumoured to work as a mixture of experts—several (maybe 8?) 220B models each with a different specialty working together to produce the best result. This is the first open source (Apache 2) implementation of that pattern that I’ve seen. <a href="/2023/Aug/24/airoboros-lmoe/" rel="bookmark">#</a><span class="elsewhere-date"> &mdash; <a href="/2023/Aug/24/">24th August 2023</a>, 10:31&nbsp;pm</span>
+      
+  </li>
+  
+  <li data-date="2023-08-24T17:54:53+00:00">
+      <a href="https://ai.meta.com/blog/code-llama-large-language-model-coding/">Introducing Code Llama, a state-of-the-art large language model for coding</a> (<a href="https://github.com/facebookresearch/codellama" title="facebookresearch/codellama">via</a>) New LLMs from Meta built on top of Llama 2, in three shapes: a foundation Code Llama model, Code Llama Python that’s specialized for Python, and a Code Llama Instruct model fine-tuned for understanding natural language instructions. <a href="/2023/Aug/24/introducing-code-llama-a-state-of-the-art-large-language-model-f/" rel="bookmark">#</a><span class="elsewhere-date"> &mdash; <a href="/2023/Aug/24/">24th August 2023</a>, 5:54&nbsp;pm</span>
+      
+  </li>
+  
+  <li data-date="2023-08-24T06:16:18+00:00">
+      <blockquote><p>And the notion that security updates, for every user in the world, would need the approval of the U.K. Home Office just to make sure the patches weren’t closing vulnerabilities that the government itself is exploiting — it boggles the mind. Even if the U.K. were the only country in the world to pass such a law, it would be madness, but what happens when other countries follow?</p></blockquote><p class="cite">&mdash; <a href="https://daringfireball.net/2023/08/kouvakas_uk_surveillance">John Gruber</a> <a href="/2023/Aug/24/john-gruber/" rel="bookmark">#</a> <span class="elsewhere-date">&mdash; <a href="/2023/Aug/24/">24th August 2023</a>, 6:16&nbsp;am</span></p>
+      
+  </li>
+  
+</ul>
+
+</div> <!-- .day -->
+
+<div class="day">
+<h3><a href="/2023/Aug/23/" title="23rd August 2023">23rd August 2023</a></h3>
+
+
+<ul>
+  <li data-date="2023-08-23T14:26:15+00:00">
+      <blockquote><p>Here’s the thing: if nearly all of the time the machine does the right thing, the human “supervisor” who oversees it becomes incapable of spotting its error. The job of “review every machine decision and press the green button if it’s correct” inevitably becomes “just press the green button,” assuming that the machine is usually right.</p></blockquote><p class="cite">&mdash; <a href="https://pluralistic.net/2023/08/23/automation-blindness/">Cory Doctorow</a> <a href="/2023/Aug/23/cory-doctorow/" rel="bookmark">#</a> <span class="elsewhere-date">&mdash; <a href="/2023/Aug/23/">23rd August 2023</a>, 2:26&nbsp;pm</span></p>
+      
+  </li>
+  
+  <li data-date="2023-08-23T04:11:23+00:00">
+      <a href="https://llm-tracker.info/">llm-tracker</a>. Leonard Lin’s constantly updated encyclopedia of all things Large Language Model: lists of models, opinions on which ones are the most useful, details for running Speech-to-Text models, code assistants and much more. <a href="/2023/Aug/23/llm-tracker/" rel="bookmark">#</a><span class="elsewhere-date"> &mdash; <a href="/2023/Aug/23/">23rd August 2023</a>, 4:11&nbsp;am</span>
+      
+  </li>
+  
+  <li data-date="2023-08-23T03:08:54+00:00">
+      <a href="https://pglocks.org/">PostgreSQL Lock Conflicts</a> (<a href="https://news.ycombinator.com/item?id=37229030" title="Hacker News">via</a>) I absolutely love how extremely specific and niche this documentation site is. It details every single lock that PostgreSQL implements, and shows exactly which commands acquire that lock. That’s everything. I can imagine this becoming absurdly useful at extremely infrequent intervals for advanced PostgreSQL work. <a href="/2023/Aug/23/postgresql-lock-conflicts/" rel="bookmark">#</a><span class="elsewhere-date"> &mdash; <a href="/2023/Aug/23/">23rd August 2023</a>, 3:08&nbsp;am</span>
+      
+  </li>
+  
+</ul>
+
+</div> <!-- .day -->
+
+<div class="day">
+<h3><a href="/2023/Aug/22/" title="22nd August 2023">22nd August 2023</a></h3>
+
+
+<ul>
+  <li data-date="2023-08-22T19:56:09+00:00">
+      <a href="https://datasette.substack.com/p/datasette-cloud-and-the-datasette">Datasette Cloud and the Datasette 1.0 alphas</a>. I sent out the Datasette Newsletter for the first time in quite a while, with updates on Datasette Cloud, the Datasette 1.0 alphas, a note about the security vulnerability in those alphas and a summary of some of my research into combining LLMs with Datasette. <a href="/2023/Aug/22/datasette-newsletter/" rel="bookmark">#</a><span class="elsewhere-date"> &mdash; <a href="/2023/Aug/22/">22nd August 2023</a>, 7:56&nbsp;pm</span>
+      
+  </li>
+  
+  <li data-date="2023-08-22T17:44:31+00:00">
+      <a href="https://github.com/simonw/datasette/security/advisories/GHSA-7ch3-7pp7-7cpq">Datasette 1.0 alpha series leaks names of databases and tables to unauthenticated users</a>. I found and fixed a security vulnerability in the Datasette 1.0 alpha series, described in this GitHub security advisory.<br><br>The vulnerability allowed unauthenticated users to see the names of the databases and tables in an otherwise private Datasette instance—though not the actual table contents.<br><br>The fix is now shipped in Datasette 1.0a4.<br><br>The vulnerability affected Datasette Cloud as well, but thankfully I was able to analyze the access logs and confirm that no unauthenticated requests had been made against any of the affected endpoints. <a href="/2023/Aug/22/datasette-alpha/" rel="bookmark">#</a><span class="elsewhere-date"> &mdash; <a href="/2023/Aug/22/">22nd August 2023</a>, 5:44&nbsp;pm</span>
+      
+  </li>
+  
+</ul>
+
+</div> <!-- .day -->
+
+<div class="day">
+<h3><a href="/2023/Aug/21/" title="21st August 2023">21st August 2023</a></h3>
+
+
+<ul>
+  <li data-date="2023-08-21T20:32:51+00:00">
+      <blockquote><p>When many business people talk about “AI” today, they treat it as a continuum with past capabilities of the CNN/RNN/GAN world. In reality it is a step function in new capabilities and products enabled, and marks the dawn of a new era of tech.<br><br>It is almost like cars existed, and someone invented an airplane and said “an airplane is just another kind of car—but with wings”—instead of mentioning all the new use cases and impact to travel, logistics, defense, and other areas. The era of aviation would have kicked off, not the “era of even faster cars”.</p></blockquote><p class="cite">&mdash; <a href="https://blog.eladgil.com/p/early-days-of-ai">Elad Gil</a> <a href="/2023/Aug/21/elad-gil/" rel="bookmark">#</a> <span class="elsewhere-date">&mdash; <a href="/2023/Aug/21/">21st August 2023</a>, 8:32&nbsp;pm</span></p>
+      
+  </li>
+  
+  <li data-date="2023-08-21T19:38:23+00:00">
+      <blockquote><p>If you visit (often NSFW, beware!) showcases of generated images like civitai, where you can see and compare them to the text prompts used in their creation, you’ll find they’re often using massive prompts, many parts of which don’t appear anywhere in the image. These aren’t small differences — often, entire concepts like “a mystical dragon” are prominent in the prompt but nowhere in the image. These users are playing a gacha game, a picture-making slot machine. They’re writing a prompt with lots of interesting ideas and then pulling the arm of the slot machine until they win… something. A compelling image, but not really the image they were asking for.</p></blockquote><p class="cite">&mdash; <a href="https://sambleckley.com/writing/dont-fire-your-illustrator.html">Sam Bleckley</a> <a href="/2023/Aug/21/sam-bleckley/" rel="bookmark">#</a> <span class="elsewhere-date">&mdash; <a href="/2023/Aug/21/">21st August 2023</a>, 7:38&nbsp;pm</span></p>
+      
+  </li>
+  
+  <li data-date="2023-08-21T18:13:35+00:00">
+      <a href="https://tersesystems.com/blog/2020/11/26/queryable-logging-with-blacklite/">Queryable Logging with Blacklite</a> (<a href="https://github.com/simonw/asgi-log-to-sqlite/issues/1#issuecomment-1518714493" title="asgi-log-to-sqlite/issues/1">via</a>) Will Sargent describes how he built Blacklite, a Java library for diagnostic logging that writes log events (as zstd compressed JSON objects) to a SQLite database and maintains 5,000 entries in a “live” database while entries beyond that range are cycled out to an archive.db file, which is cycled to archive.timestamp.db when it reaches 500,000 items.<br><br>Lots of interesting notes here on using SQLite for high performance logging.<br><br>“SQLite databases are also better log files in general. Queries are faster than parsing through flat files, with all the power of SQL. A vacuumed SQLite database is only barely larger than flat file logs. They are as easy to store and transport as flat file logs, but work much better when merging out of order or interleaved data between two logs.” <a href="/2023/Aug/21/queryable-logging-with-blacklite/" rel="bookmark">#</a><span class="elsewhere-date"> &mdash; <a href="/2023/Aug/21/">21st August 2023</a>, 6:13&nbsp;pm</span>
+      
+  </li>
+  
+</ul>
+
+</div> <!-- .day -->
+
+<script>
+/* Rearrange content on smaller screens */
+window.hasBeenRearrangedForMobile = false;
+function rearrangeForMobile() {
+  document.querySelector('#secondary').classList.add('hide-secondary-on-mobile');
+  const items = Array.from(document.querySelectorAll('*[data-date]'));
+  items.sort((a, b) => {
+    const aDate = a.getAttribute('data-date');
+    const bDate = b.getAttribute('data-date');
+    if (aDate < bDate) {
+      return 1;
+    }
+    if (aDate > bDate) {
+      return -1;
+    }
+    return 0;
+  });
+  const primary = document.querySelector('#primary');
+  items.forEach(el => {
+    if (el.tagName == 'LI') {
+      // Turn this into a <div>
+      var div = document.createElement('div');
+      div.classList.add('segment');
+      div.classList.add('elsewhere-in-primary');
+      if (el.querySelector('blockquote')) {
+        div.classList.add('quote');
+      }
+      div.innerHTML = el.innerHTML;
+      primary.appendChild(div);
+    } else {
+      primary.appendChild(el);
+    }
+  });
+}
+function conditionalRearrange(m) {
+  if (m.matches && !window.hasBeenRearrangedForMobile) {
+    rearrangeForMobile();
+    window.hasBeenRearrangedForMobile = true;
+  }
+}
+var mediaMatcher = window.matchMedia('(max-width: 800px)');
+conditionalRearrange(mediaMatcher);
+mediaMatcher.addListener(conditionalRearrange);
+</script>
+
+</div> <!-- #secondary -->
+</div> <!-- #wrapper -->
+
+
+
+<div id="ft">
+    <ul>
+      <li><a href="https://github.com/simonw/simonwillisonblog">Source code</a></li>
+      <li>&copy;</li>
+      <li><a href="/2002/">2002</a></li>
+      <li><a href="/2003/">2003</a></li>
+      <li><a href="/2004/">2004</a></li>
+      <li><a href="/2005/">2005</a></li>
+      <li><a href="/2006/">2006</a></li>
+      <li><a href="/2007/">2007</a></li>
+      <li><a href="/2008/">2008</a></li>
+      <li><a href="/2009/">2009</a></li>
+      <li><a href="/2010/">2010</a></li>
+      <li><a href="/2011/">2011</a></li>
+      <li><a href="/2012/">2012</a></li>
+      <li><a href="/2013/">2013</a></li>
+      <li><a href="/2014/">2014</a></li>
+      <li><a href="/2015/">2015</a></li>
+      <li><a href="/2016/">2016</a></li>
+      <li><a href="/2017/">2017</a></li>
+      <li><a href="/2018/">2018</a></li>
+      <li><a href="/2019/">2019</a></li>
+      <li><a href="/2020/">2020</a></li>
+      <li><a href="/2021/">2021</a></li>
+      <li><a href="/2022/">2022</a></li>
+      <li><a href="/2023/">2023</a></li>
+    </ul>
+</div>
+
+</body>
+</html>

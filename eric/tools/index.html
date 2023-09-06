@@ -1,0 +1,237 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+  "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+<title>Tools</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="shortcut icon" href="/favicon.ico"><link rel="home" href="http://meyerweb.com/" title="Home" ><link rel="openid.server" href="http://www.myopenid.com/server"><link rel="openid.delegate" href="http://emeyer.myopenid.com/"><meta name="google-site-verification" content="I_JFi4WrY6bW7AE2ya5sSlruVvgvrIeRa1IsqO0GB78" /><link rel="alternate" type="application/rss+xml" title="Thoughts From Eric" href="/eric/thoughts/rss2/full"><link rel="alternate" type="application/rss+xml" title="Thoughts From Eric (only technical posts)" href="/eric/thoughts/category/tech/rss2/full"><link rel="alternate" type="application/rss+xml" title="Thoughts From Eric (only personal posts)" href="/eric/thoughts/category/personal/rss2/full"><link rel="alternate" type="application/rss+xml" title="Excuse of the Day" href="/feeds/excuse/rss20.xml"><link rel="stylesheet" href="/ui/meyerweb.css" type="text/css"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@meyerweb"><meta name="twitter:title" content="meyerweb.com"><meta name="twitter:description" content="The web home of Eric A. Meyer, CSS guy; and his wife Kathryn, doctor of nursing."><meta name="twitter:url" content="https://meyerweb.com/"><meta name="twitter:image" content="https://meyerweb.com/ui/i/heart/663399love.png"><meta name="twitter:image:width" content="192"><meta name="twitter:image:height" content="192"><meta property="og:type" content="website"><meta property="og:image" content="https://meyerweb.com/ui/i/hamonshu/fb-og-image.png">
+<style type="text/css">
+
+section {
+	display: grid;
+	grid-template-columns: 1fr;
+	margin-top: 2.5em;
+}
+section > div {
+	position: relative;
+}
+section > div h2 {
+	margin: 0;
+	padding: 0.25em;
+	font-size: 1.33em;
+	line-height: 1.1;
+}
+section > div h2 a {
+	display: block;
+}
+section > div p {
+	margin: 0 0.5em 1em 1.5em;
+	line-height: 1.2;
+}
+div.color-blender img {
+	display: none;
+}
+div.ksp-roc {
+	background:
+		url(i/ksp-roc.png) 125% 1.85em / 50% auto no-repeat;
+	;
+}
+div.ksp-roc p {
+	margin-right: 33%;
+}
+div.matrix {
+	background:
+		url(i/matrix.png) 100% 3em / 15% auto no-repeat;
+	;
+}
+div.matrix p {
+	margin-right: 15%;
+}
+div.xfn {
+	background:
+		url(i/xfn.png) 100% 2em / 15px auto no-repeat;
+	;
+}
+div.xfn p {
+	margin-right: 15%;
+}
+
+
+@media (min-width: 30em) {
+	section {
+		grid-template-columns: repeat(auto-fill,minmax(20ch,1fr));
+		grid-template-rows: repeat(10, min-content min-content);
+		grid-auto-flow: row dense;
+	}
+	section > div.bigger {
+		grid-column-end: span 2;
+	}
+	section > div {
+		grid-row-end: span 2;
+		display: grid;
+		grid-template-rows: subgrid;
+		grid-template-columns: 100%;
+		margin: 0 3vw 1em 0;
+	}
+	section > div h2 {
+		grid-row: 1;
+		display: flex;
+		align-items: flex-end;
+		padding: 0;
+	}
+	section > div h2 a[href] {
+		text-decoration: none;
+		display: block;
+		flex-grow: 1;
+	}
+	section > div h2 a[href]:hover {
+		text-decoration: underline;
+	}
+	section > div p {
+		grid-row: 2;
+		position: relative;
+		margin-left: 0;
+		overflow: hidden;
+		border-top: 1px solid rgba(0,0,0,0.33);
+		margin-top: 0;
+		padding-top: 0.33em;
+	}
+	div.color-blender img {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 25%;
+	}
+	div.color-blender p {
+		margin-right: 0;
+		padding-right: 25%;
+	}
+}
+
+@media (min-width: 45em) {
+	section > div {
+		margin-bottom: 3em;
+	}
+	section > div.ksp-roc {
+		grid-column-start: -3;
+		grid-row-start: 3;
+	}
+	div.xfn {
+		background-position: 100% 0;
+	}
+}
+
+</style>
+</head>
+<body id="www-meyerweb-com" class="tools">
+
+<header role="banner" id="sitemast"><a href="/">meyerweb.com</a><nav role="navigation" aria-label="page" id="skiplinks"><a href="#main">Main content</a><a href="#navigate">Navigation links</a><a href="#footer">Footer</a></nav></header><nav role="navigation" aria-label="site" id="navigate"><ul id="navlinks"><li id="archLink"><a href="/eric/thoughts/">Post Archives</a></li><li id="cssLink"><a href="/eric/css/">CSS Work</a></li><li id="toolsLink"><a href="/eric/tools/">Toolbox</a></li><li id="writeLink"><a href="/eric/writing.html">Writing</a></li><li id="speakLink"><a href="/eric/talks/">Speaking</a></li><li id="otherLink"><a href="/other/">Other Stuff</a></li><li id="aboutsite"><a href="/ui/about.html">About this site</a></li></ul></nav><div id="main">
+
+<h1>Toolbox</h1>
+
+<p>
+A collection of tools, plugins, and other hacks that I've put together.  In most cases, these are solutions to problems I faced, or else enhancements I wanted but couldn't find elsewhere.  If they're useful to you, great!  Have a blast.
+</p>
+
+<section>
+
+<div class="color-blender bigger">
+<h2><a href="/eric/tools/color-blend/">Color Blender</a></h2>
+<p>This is the one the kids all love.  Supply two color values in either hex, short hex, RGB percentages, or RGB decimals and get as many as ten colors shades between the two you supplied.  Great for finding a color halfway between two shades you like, or mixing two colors together in various proportions.
+<img src="i/color-blender.png" alt="">
+</p>
+</div>
+
+<div class="dencoder">
+<h2><a href="/eric/tools/dencoder/">URL Decoder/Encoder</a></h2>
+<p>Not nearly as cool or flashy as the Color Blender, it's still useful for situations where a massively long encoded URL needs to be decoded.  I wrote this one for me, but figured I'd throw it up here for anyone else who needed it.</p>
+</div>
+
+<div class="css">
+<h2><a href="/eric/tools/css/">CSS</a></h2>
+<p>A small collection of stylesheets that you can use as web development tools. Home of the (in)famous “meyerweb reset”.</p>
+</div>
+
+<div class="s5">
+<h2><a href="/eric/tools/s5/">S5</a></h2>
+<p>A simple slide show system that uses one (X)HTML file, some CSS, and a bit of JavaScript.  You can have your presentation slides and printed handouts generated from the same file&mdash;it's easy!</p>
+</div>
+
+<div class="matrix">
+<h2><a href="/eric/tools/matrix/">The Matrix Resolutions</a></h2>
+<p>A tool <a href="https://www.aaron-gustafson.com/" rel="friend colleague met">Aaron Gustafson</a> and I hacked together one night during the inaugural Retreats 4 Geeks, this takes any string of CSS transform functions and gives you the matrix-math equivalent of the endpoint.</p>
+</div>
+
+<div class="ksp-roc bigger">
+<h2><a href="/eric/ksp/resonant-orbits/">KSP Resonant Orbit Calculator</a></h2>
+<p>This will be of interest to people who play <a href="http://kerbalspaceprogram.com/">Kerbal Space Program</a> with the CommNet setting enabled: it helps find resonant orbits for carrier craft to set up satellite constellations.</p>
+</div>
+
+<div class="gmap">
+<h2><a href="/eric/tools/gmap/">Google Maps-based Tools</a></h2>
+<p>I love maps, and I enjoy programming.  Here's where the two interests collide.  Home of the surprisingly famous <a href="gmap/hydesim.html">HYDEsim</a>.</p>
+</div>
+
+<div class="wp">
+<h2><a href="/eric/tools/wordpress/">WordPress Plugins and Hacks</a></h2>
+<p>Small(ish) PHP files you can add to your <a href="http://www.wordpress.org/">WordPress</a> plugins directory to make WP better, or at least different, than the default install.</p>
+</div>
+
+<div class="nnw">
+<h2><a href="/eric/tools/nnw2/">NetNewsWire 2 Themes</a></h2>
+<p>A small collection of themes I've created for NetNewsWire, which uses good old CSS to drive its themes.  It's amazing the places CSS knowledge can come in handy these days, eh?</p>
+</div>
+
+<div class="favelets">
+<h2><a href="/eric/tools/favelets/">Favelets</a></h2>
+<p>Small JavaScript links that can be added to your favorites toolbar and used for diagnosing layout problems.  Includes a "favelet creator" that will set up a favelet to point to a style sheet.</p>
+</div>
+
+<div class="xfn">
+<h2><a href="/eric/tools/xfn/">XFN Tools</a></h2>
+<p>Tools I've created or modified that center around the <a href="http://gmpg.org/xfn/">XHTML Friends Network</a>.  When I wrote this, the sole entry was a favelet (or bookmarklet) that creates a list of all the XFN-friendly links in the current page.</p>
+</div>
+
+</section>
+
+</div>
+
+<footer id="global">
+
+<div>
+
+<div id="archipelago">
+<h4>Identity Archipelago</h4>
+<ul>
+<li><a rel="me" href="https://twitter.com/meyerweb"><img src="/pix/icons/twitter.png" alt="Twitter"></a></li>
+<li><a rel="me" href="https://mastodon.social/@meyerweb"><img src="/pix/icons/mastodon.svg" alt="Mastodon"></a></li>
+<li><a rel="me" href="https://github.com/meyerweb"><img src="/pix/icons/github.png" alt="GitHub"></a></li>
+<li><a rel="me" href="https://flickr.com/photos/meyerweb/"><img src="/pix/icons/flickr.png" alt="Flickr"></a></li>
+<li><a rel="me" href="https://dribbble.com/meyerweb"><img src="/pix/icons/dribbble.png" alt="Dribbble"></a></li>
+<li><a rel="me" href="https://facebook.com/meyerweb"><img src="/pix/icons/facebook.png" alt="Facebook"></a></li>
+<li><a rel="me" href="https://www.linkedin.com/in/meyerweb"><img src="/pix/icons/linkedin.png" alt="LinkedIn"></a></li>
+</ul>
+</div>
+
+<div id="excuse">
+<?php include ($_SERVER["DOCUMENT_ROOT"] . '/feeds/excuse/current.html') ?>
+<div class="panel" id="excuse">
+<h4>The <a href="/feeds/excuse/">excuse of the day</a> is</h4>
+<p>ozone depletion</p>
+</div>
+
+</div>
+
+<div class="sosumi">
+All contents of this site, unless otherwise noted, are &copy;1993-<?php echo date('Y') ?>2023 <strong>Eric A. and Kathryn S. Meyer</strong>.  All Rights Reserved.</div>
+
+<div id="wordpress" class="credits">"<a href="/eric/thoughts/">Thoughts From Eric</a>" is powered by <a href="http://wordpress.org/">WordPress</a>.  Most of the rest of the site is hand-authored.</div>
+
+<div id="design" class="credits">The ink-sketch images used in this site’s design are adapted from <a href="https://archive.org/search.php?query=creator%3A%22Mori%2C+Yu%CC%84zan%2C+-1917%22">Yūzan Mori’s <cite><dfn title="In English: Wave Forms">Hamonshū</dfn></cite>, Volumes 1-3</a>, published in 1903 and made available for public use by the <a href="https://library.si.edu/">Smithsonian Libraries</a> and the <a href="https://archive.org/">Internet Archive</a>.</div>
+
+</div>
+
+</footer>
+
+</body>
+</html>

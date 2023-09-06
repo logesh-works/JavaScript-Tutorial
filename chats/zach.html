@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/i/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/i/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/i/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/web-app/site.webmanifest">
+<link rel="mask-icon" href="/assets/i/icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/i/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="msapplication-config" content="/assets/web-app/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+
+  <title>Igalia Chats: 11ty, Open Source and Funding | Igalia - Open Source Consultancy and Development</title>
+  <meta name="description" content="Igalia is an open source consultancy specialised in the development of innovative projects and solutions. Our engineers have expertise in a wide range of technological areas, including browsers and client-side web technologies, graphics pipeline, compilers and virtual machines. We have the most WPE, WebKit, Chromium/Blink and Firefox expertise found in the consulting business, including many reviewers and committers. Igalia designs, develops, customises and optimises GNU/Linux-based solutions for companies across the globe. Our work and contributions are present in many projects such as GStreamer, Mesa 3D, WebKit, Chromium, etc.">
+  <meta name="keywords" content="igalia, free software, free software engineering, development, consultancy, webkit consultancy, consulting, webkit consulting, programming, hackers, cooperative organization, organization, company, assembly, igalia.com, igalia sl, webkit, webkitgtk, a11y, v8, jsc, training, GNOME, webkit consultants, chromium consulting, chromium consultants, chromium consultancy, blink consultants, blink consultancy, gstreamer consultancy, gstreamer consulting">
+  <meta name="author" content="Igalia">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" id="main-stylesheet" href="/assets/main.css" data-main="/assets/main.css" data-aria="/assets/aria.css">
+  <link rel="canonical" href="https://www.igalia.com/chats/zach">
+  <link rel="alternate" type="application/rss+xml" title="Igalia" href="/feed.xml">
+
+  
+
+  <!-- Open Graph metadata -->
+  <meta content="Igalia" property="og:site_name">
+  <meta content="Igalia Chats: 11ty, Open Source and Funding | Igalia - Open Source Consultancy and Development" property="og:title">
+  <meta content="https://www.igalia.com/assets/i/logo200x200Margin.png" property="og:image">
+  <meta content="https://www.igalia.com/assets/i/logoSimple200x200.png" property="og:logo">
+  
+    <meta content="website" property="og:type">
+  
+  
+    <meta content="Igalia is an open source consultancy specialised in the development of innovative projects and solutions. Our engineers have expertise in a wide range of technological areas, including browsers and client-side web technologies, graphics pipeline, compilers and virtual machines. We have the most WPE, WebKit, Chromium/Blink and Firefox expertise found in the consulting business, including many reviewers and committers. Igalia designs, develops, customises and optimises GNU/Linux-based solutions for companies across the globe. Our work and contributions are present in many projects such as GStreamer, Mesa 3D, WebKit, Chromium, etc." property="og:description">
+  
+  
+    <meta content="https://www.igalia.com/chats/zach" property="og:url">
+  
+  
+</head>
+
+
+  <body class="aria-contrast" data-json-base="/assets/json">
+    <header id="header" role="banner">
+  <div class="container-fluid-1440">
+    <div class="wrapper">
+      
+      
+      
+      <h1 class="site-title logos">
+        <a href="/" title="Igalia">
+          <img src="/assets/i/logo.png" alt="Igalia" />
+        </a>
+      </h1>
+
+      <nav role="navigation" class="site-nav hidden-xs hidden-sm">
+        <ol class="main-menu">
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/about" title="About Us">
+              About Us
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/technologies" title="Technologies">
+              Technologies
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/services" title="Services">
+              Services
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/industries" title="Industries">
+              Industries
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/24-7/home" title="24/7">
+              24/7
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/jobs" title="Jobs">
+              Jobs
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/contact" title="Contact">
+              Contact
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/public-funding" title="Feder">
+              Feder
+            </a>
+          </li>
+          
+        </ol>
+      </nav>
+
+      <div aria-hidden="true" id="menu-toggle-wrapper" class="visible-xs visible-sm">
+        <a href="#" id="menu-toggle" title="Toggle menu">
+          <i aria-hidden="true" class="fas fa-bars"></i>
+          <span hidden>Toggle menu</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div id="mobile-menu-wrapper">
+  <div id="mobile-menu">
+    <ul role="navigation" class="nav">
+      
+      <li>
+        <a class="page-link" href="/about" title="About Us">
+          About Us
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/technologies" title="Technologies">
+          Technologies
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/services" title="Services">
+          Services
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/industries" title="Industries">
+          Industries
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/24-7/home" title="24/7">
+          24/7
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/jobs" title="Jobs">
+          Jobs
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/contact" title="Contact">
+          Contact
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/public-funding" title="Feder">
+          Feder
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+    <main class="page-content" aria-label="Content">
+        <article class="page page--chats">
+  <header class="page-header" style="background-image: url(/assets/i/headers/header-technologies.jpg); ">
+    <div class="container-fluid-1440">
+      <div class="grid-row">
+        <div class="col-xs-12 col-sm-10-center">
+          <h1 class="page-title" itemprop="name headline">Igalia Chats: 11ty, Open Source and Funding</h1>
+          
+        </div>
+      </div>
+    </div>
+    <div class="cover"></div>
+  </header>
+
+  <div class="container-fluid-1440">
+    <div class="page-content">
+      <div class="grid-row">
+        <div class="col-xs-12">
+          <div class="grid-row">
+            <div class="col-xs-12 col-lg-8">
+              <h2 class="chat-title">
+                <a href="/24-7/chats" class="chat-title__back">
+                  <img src="/assets/i/arrowBackBlue.png" alt="Back to chats">
+                </a>
+                Igalia&#39;s Brian Kardell and Eric Meyer chat with 11ty creator Zach Leatherman about the project&#39;s shift from hobby work to a sponsor-funded full-time job and back again to hobby work, and his evolving thoughts on open source and how to support it.
+              </h2>
+              <div class="chat-date">
+                <time datetime="2023-07-27T00:00:00+00:00" itemprop="datePublished">
+                  
+                  Jul 27, 2023
+                </time>
+              </div>
+              <div class="chat-audio">
+                <div class="chat-audio__player">
+                  <div class="audio-player" data-src="/downloads/interviews/zach.mp3">
+                    <div class="controls">
+                      <div class="play-container">
+                        <div class="toggle-play play">
+                        </div>
+                      </div>
+                      <div class="time-container">
+                        <div class="time">
+                          <div class="current">0:00</div>
+                          <div class="length"></div>
+                        </div>
+                        <div class="timeline">
+                          <div class="progress"></div>
+                        </div>
+                      </div>
+                      <div class="volume-container">
+                        <div class="volume-button">
+                          <div class="volume c-icon-volumeMed"></div>
+                        </div>
+                        <div class="volume-slider">
+                          <div class="volume-percentage"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <ul class="chat-audio__links">
+                  <li><a href="/downloads/interviews/zach.mp3" title="Download Chat" target="_blank"><i class="c-icon-download"></i></a></li>
+                  
+                  <li><a href="/chats.xml" title="Open podcast RSS feed" target="_blank"><i class="c-icon-podcast"></i></a></li>
+                  
+                  
+                  <li><a href="https://youtu.be/cO-9oIk7Wvs" title="Open in Youtube" target="_blank"><i class="c-icon-youtube"></i></a></li>
+                  
+                  
+                  <li><a href="https://open.spotify.com/show/0XZ4hqB5ogePKOumi4daDm" title="Open in Spotify" target="_blank"><i class="c-icon-spotify"></i></a></li>
+                  
+                  
+                  <li><a href="https://podcasts.apple.com/us/podcast/igalia/id1533323588" title="Open in iTunes" target="_blank"><i class="c-icon-itunes"></i></a></li>
+                  
+                  
+                  <li><a href="https://podcasts.google.com/feed/aHR0cHM6Ly93d3cuaWdhbGlhLmNvbS9jaGF0cy54bWw" title="Open in Google Podcasts" target="_blank"><i class="c-icon-gpod"></i></a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12">
+          <div class="grid-row grid-row--between">
+            <div class="col-xs-12 col-lg-3 col-lg-order-3">
+              <ul class="c-participants">
+                
+                <li class="c-participants__item  c-participants__item--1">
+                  
+                  
+                  <img src="/assets/i/logoSimple.png" alt="Igalian" class="c-participants__igalian">
+                  <a href="/team/bkardell" class="c-participants__link">
+                    <img src="/assets/i/igalians/brian-kardell.jpg"
+                      alt="Brian Kardell's avatar"
+                      class="c-participants__image">
+                    Brian Kardell
+                    <i class="fas fa-plus"></i>
+                  </a>
+                  
+                </li>
+                
+                <li class="c-participants__item  c-participants__item--2">
+                  
+                  
+                  <img src="/assets/i/logoSimple.png" alt="Igalian" class="c-participants__igalian">
+                  <a href="/team/emeyer" class="c-participants__link">
+                    <img src="/assets/i/igalians/emeyer.jpg"
+                      alt="Eric Meyer's avatar"
+                      class="c-participants__image">
+                    Eric Meyer
+                    <i class="fas fa-plus"></i>
+                  </a>
+                  
+                </li>
+                
+                <li class="c-participants__item  c-participants__item--3">
+                  
+                  <a href="https://www.zachleat.com/" class="c-participants__link">
+                    
+                    <img src="/assets/i/chats/zach-leatherman.png" alt="Zach Leatherman's avatar"
+                    class="c-participants__image">
+                    
+                    Zach Leatherman
+                    <i class="fas fa-plus"></i>
+                  </a>
+                  
+                </li>
+                
+              </ul>
+            </div>
+            <div class="col-lg-1 col-lg-order-2"></div>
+
+            <div class="col-xs-12 col-lg-8 col-lg-order-1">
+              
+
+
+              <h2 class="chat-subtitle">Transcription</h2>
+              <ul class="c-chat">
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Okay, so hi. I am Brian Kardell. I'm developer advocate at Igalia. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  And I'm Eric Meyer, also a developer advocate at Igalia. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  And today we have invited a guest on. You want to introduce yourself? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah. Hi, my name is Zach Leatherman. I'm a staff engineer at Netlify. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  Nice. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  A lot of people probably know Zach from a project that he works on. How do you say the name of that? Something with a number? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah, it's 11ty. It was named many, many years ago by my grandma, I think, before I was even a software developer. But yeah. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  I'm just kidding. I love the name 11ty. Yeah, it's a really good name. I think part of its popularity is probably that it has such a great name. Also, it's really great. We use it actually for multiple websites at Igalia, so it's not just lip service. We really like it. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  But the name is really its best selling point. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  It really is pretty good. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  I mean, branding is important. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  I've heard that, yeah. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  Yeah. Between 11ty and opossums, I think you've got the brand on lock. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah, for sure. I wonder if we were an early adopter of possum culture generally. It seems like possums have grown in popularity recently. And it's great to see it. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  I think that's all down to 11ty. Why did you pick possums, out of curiosity? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  I just kind of see the mindset of the possum to be very similar to just an open-source maintainer mindset in that you're just sort of rooting through trash to try and find some sustenance to keep you moving forward. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Interesting, interesting. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  I love it. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  So Zach, you wrote a blog post fairly recently talking about some things that happened along the way with 11ty. I don't know, would you like to give us a high level if anybody hasn't read it? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah, for sure. So 11ty started I think in late 2017. And for many years it was a side project. I worked on it in my free time. Yeah, I just maintained it with however many hours in the day that I could fit into the project outside of my normal 9:00 to 5:00. I think in early 2022, that scenario changed in that I was sponsored by Netlify specifically to work on 11ty full time. So 11ty graduated from a side project to my full-time job. Working on 11ty was my full-time job. So yeah, it was awesome. And then probably a month or two ago, that scenario changed. And yeah, it's back as a side project again. So I have a 9:00 to 5:00 job and navigating the complexity of downgrading the amount of time that I have to work on it every week. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Yeah, it's a familiar story, the start of that. I mean, everybody starts a project because they have an interest. They think there's a need. I don't know if you set out to make a super great thing or you just set out to say, 'I have some ideas. I think these would be useful to me. I want to play with it and see where it goes.' Or you just really set out to sort of conquer the world from day one. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  I think it was a little bit of a mixture of both. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Really? Okay. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  I saw some maybe larger trends at the time when I started working on the project in terms of just the complexity of front end and front-end technology stacks. And I thought I could simplify it. I think that that came to fruition in some ways. And I think you can kind of see some of those echoes reverberating in different projects that exist now. So I think that there is a huge push for- </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Like what? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Well, just in terms of the single-page application thing, I think was a huge driver of 11ty originally. I think 11ty and Gatsby started in the same year, which is interesting to think back on. But yeah, I think there was a huge push to do more single-page application framework things. And front end really tried to move into that space exclusively. I thought that there was just room for sort of classic way to build websites that didn't require heavier front ends. I think that reverberated with a lot of folks too. And that's why 11ty took off. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  So you're saying websites should have more than a single page? Is that what we're getting at here? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  I think that there is a certain complexity that comes with trying to shoehorn everything into a single page, for sure. And- </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  At least two. You should have at least two, I think is what Zach's saying. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah, I mean, if you're getting paid by the page, you definitely want multiple pages just to pad your paycheck, for sure. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  It's a good idea. It's a good idea. So what you're describing though is a challenge. And what you talk about a lot in the post is, boy, this has me thinking a lot about open source and how it's funded. And it feels to me like you have evolved your thinking on this a little bit. Am I wrong? Am I wrong? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  Part of the reason that we wanted to talk to you is because we also think a lot about open source and funding of projects, Brian and I individually and also at Igalia. And to have the perspective of someone who's actually done that. You actually did get your open-source project funded both as a side project and then as a full-time project and now back as a side project again. And yeah, some of the stuff you wrote about, like Brian says, it did seem like your thinking has evolved a bit. And we really wanted to talk to you about that and get your perspective. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah, I don't know that I actually have the most clarity on the subject too. I think everything is still very fresh. Yeah, it's kind of raw right now. And so yeah, it really has me sort of rethinking a lot of things that I brought into the project originally. I think that when you have funding, it's great. And you build as many things as you can in that time that you're given. But I think looking back on the things that I built, I wonder if I built some things that maybe were not as sustainable and things that were maybe more of an attention play or trying to get more market share rather than things that were long-term sustainable. Because I think I kind of knew going into it that if your open-source project is fully funded, it isn't necessarily the most secure financial position to be in terms of company support. I think that if your project is not necessarily directly tied to a company's bottom line, and that way you almost become the most expendable when the market gets rough. I mean, that isn't even necessarily a bad reflection on Netlify either. It's just times change and business priorities change. And everybody's just trying to navigate the best way they can. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Yeah. I mean, we've talked about this in terms of all different sorts of things. But primarily on our show we talk about the open-source things that Igalia works on, which is a lot. I mean, it's a lot. We work on the web engines. But we also work on open-source graphics drivers and multimedia and just so many things. But it's interesting to think about because on the one hand open source is this great commons. But it's a commons with no inherent funding model. Also, it powers everything. It powers just everything. And it's interesting to think about. A bajillion people use 11ty now, right? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  I don't know if the number is quite that much, but I'm not quite- </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  I measured. It was a little over a bajillion. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  At least 11ty people. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  I thought it was 11ty bajillion. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Exactly. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Yeah, yeah. At least 11ty bajillion people. A lot of people use the software. And how long can you really keep it going? I mean, that's the question. I mean, inevitably you need more than a single person even. You need other people because you burn out. Just like you're saying about Netlify, your life will change. I mean, I don't know. You have life events where your priorities in life change. And you go, 'Boy, I mean, I love of this project, but I'm kind of past it now. And I just want to move forward. I would like to have some advisory role in it maybe.' But yeah. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah, I think that that's maybe common for a lot of folks working on open-source projects. I don't know that that's necessarily the case for 11ty specifically. I still have this incredible passion for the project and a desire for 11ty to continue forward. I think that, I don't know, some of the things that I've been thinking about as this situation for 11ty changed was how would the scenario have been different if I had talked to investors when they wanted to talk to me a few years ago? And I sort of wanted to keep 11ty as an independent thing that didn't have a lot of external roadmap or a lot of tight coupling to business cases that were maybe tied to things that I wasn't interested in. Or maybe going down roads that would've burned me out much quicker. I think that just burnout is, I feel like, tied very closely to having to work on things that you don't want to work on. And I've really tried to organize 11ty in such a way that I don't have to make hard decisions in that space at least. So yeah, I think that just on the flip side of that coin is that I think that will probably retire a few 11ty plugins that we developed last year that don't have the desire from the original maintainer, namely me, to work on them. And we put out a survey for folks to participate and tell us what plugins they wanted to see continue forward. And we're trying to narrow things down to avoid that long-term burnout that I think would be very easy to encounter with just a severe reduction in time to work on the project. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  Yeah, yeah. What do you plan to do with the plugins that don't make the cut? You just put them up and encourage someone else to pick them up or ... </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah. I mean, that's one option. I think that the really weird scenario that I'm in is that some of the least popular ones are the ones that are tightly coupled or more tightly coupled to Netlify-specific features. And so it becomes this very awkward conversation of am I going to work on Netlify things as an open-source project even though I am employed by Netlify, but they aren't paying me to work on this stuff specifically? So it almost becomes a monetary conversation with Netlify to say, 'Hey, if my current employer wants these integrations to continue existing and they have customers that are using these integrations, then we need to figure something else out,' which I think is just kind of an awkward thing to talk about. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Yeah, yeah, I can appreciate that. But you're right, you should have that conversation. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah, because not going to do it for free in my spare time. Yeah. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  We've talked about this a bunch of times on the show is there are unbelievably good things about open source, right? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Mm-hmm. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  I mean, it lets us stand on top of each other's shoulders. It lets us build a commons. It lets us rapidly prototype things. And it lets some companies even become fantastically wealthy, but it doesn't demand anything back necessarily. That is also a little bit a problem, because when things become fantastically successful and fantastically wealthy, companies and products are built on them, suddenly they have demands on maintainers that even the maintainers didn't mean to sign up for. You know what I mean? They don't have a monetary model behind it, and it's really challenging. I know in your piece you wrote about how all these other frameworks, you looked specifically at a slice of similar-ish frameworks. Is that fair to say or ... </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah, in the open-source monetization post? Is that what you're talking about? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Yeah, yeah. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah, for sure. The JavaScript ecosystem in a way. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Yeah. And it's tricky. There's lots of Open Collectives now. I haven't looked at them. Do you know how well they're doing? I can tell you some things do really pretty well and others not so much. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah. I don't know if I know the best way to bifurcate the projects that are doing well on Open Collective and on ones that aren't. I would say that 11ty is doing well in that we have a lot of individual contributors donating to the project, which I think will be good as we enter our next phase of not having full-time sponsorship. We can then leverage that money to pay for contributions to the project, which I think is good. And it's a little awkward, because in some respects, I feel like if a project has full-time maintenance, it almost hurts its ability to have individual contributor donations come in. I mean, to me, a similar parallel is when you think about climate change in a way, that all of these super mega corporations are doing most of the polluting. But all of the marketing you hear around it is that we need everyone to do their fair share when it's really like 10 companies are doing the lion's share of the pollution. And it's almost a same reflection in the open-source monetization space. Everyone's saying, 'Oh, if we could just chip in $5 a month, then we can fund this project if we get enough people.' But just as someone that's done the math on that, $5 a month is not enough. Even when you have hundreds of contributors, $5 is not enough for a full-time salary, and there's a bunch of other variables that go into that. I'm a staff engineer. I'm fairly well along in my career. If I were at the beginning of my career, it might be easier to fund a full-time salary. I think the other thing that ties into it is where folks live. If your cost of living is New York City in the United States, it becomes a completely different thing. But I think the other sort of weird aspect of that that I've been thinking about a lot is just living in the United States generally, there's a higher cost of living associated with that. I got to pay for my own insurance if I don't have an employer. I have to pay for health insurance, which is very expensive in the US. So in some ways, it feels like if I lived in a country that had, I don't know, more options for health insurance to pay for it, that it would make it easier to transition to a community-funded salary for 11ty. But that is what it is. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  Yeah. I've had Europeans say, 'How does anyone ever do anything independent in the US when your health care isn't covered? How does anybody ever strike out on their own?' I was like, 'Yeah.' </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  By taking a huge risk, yeah. Just the money is not really there for the risks that folks would be taking to do that. So I mean, in my mind, that answers the question that you need to be coupled to a business. You need to have some sort of business or monetization strategy around your open-source project, otherwise it won't succeed. I feel like the other maybe interesting piece of this is that there's this maybe feeling of meritocracy. And meritocracy is what decides what projects are successful. I do not think that that is true. I don't think that could be any further from the truth. I think the things that you hear about in the projects that are successful are just really tied to the business case around them and how much money they have behind them and how much economic momentum they've built up. So yeah, I don't know. I have learned a lot about just open-source maintenance in general. And sort of opened my eyes in a way to just sustainability, generally speaking, I don't think that most projects will not be able to be successful from small Open Collective donations. I don't think that is a sustainable way forward, unfortunately. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Yeah, there's so much in what you said there. One is about meritocracy. Yeah. I mean, sure there's something to it has to be decent. But the best technology never wins, really. Really. No, I mean, I know I've had a lot of people even cut me off from saying this because I say it so much. And they're like, 'I know. We've heard you say this a bunch of times.' But it is a lot like evolution in you wind up with all these things that are weirdly imperfect. But they just happen to fill the right niche. And they just happen to be in the right place at the right time. I think it's a lot like that with, not just software, but every product. I mean, VHS was not the best at the time, and it won, you know? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah. But I mean, don't get me wrong. The reason folks have heard about 11ty is because, in many respects, it was in the right place at the right time. And we had a lot of luck that went into that, because it did just start as just a thing to scratch my own itch. And it scratched, I guess, similar itches in other people at the same time. And it was really as the complexity in front end had started to get away from a lot of projects. So I mean, it's just hard to have awareness of both sides of the thing and try to try and keep your perspective in a way that doesn't make you cynical moving forward. I feel like the number one emotion that I battle in my day-to-day life is just cynicism. And I'm just really trying to not end up in a cynical place. So yeah, that is what it is also. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  In your post, you compared a particular slice of frameworks. But they're not even the only slice. I mean, there's also corresponding ones in PHP and there's the corresponding ones in Java and the corresponding ones in .NET. And sometimes they have sort of a spinoff version for some other ... this is the one for Go, this is the one for Python. But they're the same, but not really. They're actually separate code bases, but they're just very, very similar. So who is going to invest in this project is largely a subset of who sees the value in it. It's tricky. You got to tap into a really huge audience to see the value in your thing to get any real money. So 11ty has done honestly pretty well. I look at the Open Collective. But you're right. I mean, if you have hundreds of people currently, I think you have 400 or 500 people or 400 or 500 individual contributors that in some cases are companies or other open-source projects or whatever. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah, not active. I think we have a couple hundred active monthly contributors. I mean, that's the other math thing that goes into this is that some folks like to do a one-time donation. And those are extremely hard to rely on. How do you do the math of trying to sustain your project from a one-time donation? To me, I would rather see 100 tiny monthly donations than a one-time donation because it's just easier to sustain moving forward. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Products that have some kind of business model, they do this. They figure it out, and they make a profit. Here, we don't even need to make a profit. We just need to figure out a way to pay the bills and keep the lights on. So it's tricky to make people see the value in that. So we think about this a lot for the web engines. Currently, we have this model where we have three. And they all have a steward, but the stewards are two really, really giant companies. Different kinds of companies too. They're very different kinds of companies, and a foundation. And the foundation kind of gets all of its money from one of those companies. So other people do contribute. And it's important that the other people contribute it. We see great things when that happens. But it's not enough. I mean, there's still hundreds of proposals and improvements and things that are just sitting there, even some old ones. We want to get really good print support, but who's investing in that, for example? We want to keep MathML going. That's actually a great example. Igalia worked on MathML, and we worked from multiple funding sources, including an Open Collective. We got two big individual donations from MathML, 1 for $50,000 and 1 for $25,000. These are from people, single people, not companies. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Oh, wow. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Yeah. I mean, there's maybe 20 or something of people who give $5 a month or $10 a month or something like that. But at that rate, you can't sustain something based on that. It's completely unpredictable because it's just not enough. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah. Yeah, and what's the pricing difference between the initial investment and what it takes for maintenance of that specific feature? I think original development might be what folks would consider the huge piece of the project that goes into it at the beginning. But software is never done and you have to maintain it. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  That's absolutely true. We need to get past level one in all the browsers that we don't have good parity on a couple of things yet. But it's just the most basic stuff. And we need to get past that to get other stuff. And even if we didn't have that, just to keep the software functioning to prevent bit rot as things happen in the other layers of the platform and things are re-architected. That introduces bugs, and you have to catch those bugs. You have to fix those bugs. If everybody's like, 'Well, MathML, it's not really important ... ' Or SVG is another example. It's also ran to HTML. There's not a lot of investment in those, and it's kind of a shame. We invest in those. And we try our best to find other companies who can invest in them and even individual contributors. We realize what a hard thing that is to raise that kind of money for- </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah, the MathML-to-SVG comparison feels very interesting to me because it would almost seem like SVG investment, it would be so much more easier to crowdsource that just because the usage of SVG is so much more popular. And MathML is maybe a little bit more esoteric. And it's just not as widely used, I think, in day-to-day web stuff. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  Yeah, that's probably true. But I think the difficulty would be, 'Hey, we have an Open Collective for SVG implementation.' And I think most people would think, 'Why are you asking me? Why should I be contributing money to SVG? I didn't contribute any money to JPEG or PNG implementations. Those happened. Those seem to be okay. What's this about?' Yes, I think a lot of people would get it. But there's still that barrier of, as a web developer, it's not my job to fund browsers' development. It's my job to develop things in those browsers and actually get paid for that. Unfortunately, it is difficult sometimes to make the clear argument that it's an ecosystem. It's not a hierarchy. And I expect you probably ran into that sum in trying to get support for 11ty from the community. I mean, there are people who, of course, immediately get it. And they're happy to pitch in 5 bucks, 10 bucks, whatever, a month to see a thing that they want progress. But there are probably plenty of people, and I would imagine plenty of companies, who said, 'When I pay for software, it's software that has support contracts and licenses and stuff. And open source is free, 'commie', et cetera. Why would we pay for that?' </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  I feel like with web browsers specifically, or web engines specifically, I am sort of the old-school mindset too. I remember just folks forming businesses on the backs of web browsers. I remember Netscape originally was a company. I think that just the historical perspective of that now seems very strange. We have a couple of engines that serve giant business use cases that are sort of orthogonal to the engine itself. And so there's almost two different classes of projects that we're talking about now. Because I feel like with 11ty specifically, it's maybe easier to sell to an individual contributor because the individual contributor is sort of using it to build things that they're maybe making money from. I don't know. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Yeah, it's a strange ... I don't know, paradox is the wrong word. But it's a strange juxtaposition though, because almost every company in the world at this point does rely on those engines. Even the ones that you don't think about. When you get in your car, when you drive down the road, and you see digital signage, point of sale systems, everything is web engines, everything. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  Yeah, to an astonishing degree. The James Webb Space Telescope runs on JavaScript. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Nice. Yeah. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  So I mean, it's an astounding number of things that rely on that. And we rely on these really centralized sources for funding them. Yeah, I mean, it's interesting to think about too, because like you were saying, well, it's no comment on Netlify. The business changed. Their priorities changed. It wasn't a guarantee. It's not a core part of their business. They didn't integrate it into, 'No, this is Netlify.' But Safari isn't Apple, and Chrome isn't Google. Do you know what I mean? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  They're their own businesses. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah, absolutely. I mean, the web is just this giant group project that we're all sort of participating on. And engines are one piece of that, and frameworks are another piece of that. Yeah, companies come and go over the years. And I've been in the game long enough to see many of those larger trends happen. And yeah, I don't know if I have a point other than just to say that I feel like that's natural. And the reason the web has had so much longevity is because it is insulated in that way. But when it comes to web engine monoculture, it's a scary thing to think about that we have just a couple of engines. And it seems scarier and scarier if we go down to a single engine that the money behind that could dry up. And that would be a very dangerous thing for the web. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Yeah. I mean, I would posit that ... well, the money for the two at least ... will disappear at some point. It's inevitable because no company remains at the position that they're at forever. Now, it might be in 50 years. But inevitably, inevitably that will change. There's another project that we could maybe mention and talk about and think about, which is Open Web Docs. Do you know Open Web Docs? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  I do, yeah. Their website runs on 11ty. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Yes, it does. That is an effort that uses Open Collective as well. It takes in a goodly amount of money. And I think that it helps solve some of those problems that you were talking about, about it's hard to not work for a company and to work on stuff like this. But it's interesting because there is no single company behind it. Now, what happens there is that still, you get a few big ones, a few big fish that are paying for most of it. But at least there's a few. Microsoft has given $750,000. Google has given $750,000. Facebook has given $250,000. Coil gave $100,000 when it was still around. Igalia has given, I don't know, $60,000. Yeah, I mean, what do you think about- </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  What was the fundraising strategy behind that? How was that pitched to those large companies? I'd be very interested to learn, because in many respects, it feels like a marketing play in some way. Because you're putting your name alongside the maintenance of this sort of web documentation that's a resource for everyone. But how do we get away from the idea that that is an altruistic thing and have it tied more to this is a thing that we need for the web to survive? Because when a company thinks of open source as altruism, it's not going to be sustainable long term. And so yeah, maybe you'll get almost $2 million in donations from large companies. But how many years is that going to buy us for maintenance of that project? I don't know. I don't know the answer to that question. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  And it is very hard to plan, right? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  You can't know exactly what's going to come in. But what you have to do is aim for certain kinds of things. And always keep being out there talking about it in a way. Yeah, how was it sold? I mean, I think it was sold largely by people ... So basically people from Google and Microsoft and Apple contribute to MDN. All the browsers contributed to MDN. And there were even efforts at different times to create a thing like MDN to even replace MDN. At W3C, there was an effort called Web Platform Docs. I don't know if you remember that. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Oh yeah, a little bit. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  But that was a W3C effort. And then it just became like, well, I mean, why MDN has kind of won this. They're employing staff writers. They have the thing. Every search engine indexes to them for things now. There are no longer W3Schools winning everything. So that's a hard-fought battle to get those things, and why fight that? So the funding for it from Mozilla was like all the staff writers were getting laid off. And that is actually a really big chunk of the work is people who are employed to just maintain and write content, you know? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah. It would be a great disservice to adopt a Wikipedia-style model where it's just anyone can contribute anything. And the pay goes in as at the moderator level where it's just community written, but business moderated. And they just ask for money every year. I don't know. It's in some respects, I feel almost like a politician in a way that is just trying to raise money most of the time. And then doing the actual job of writing code very little. But I feel like that's a common thing as you get more senior in your career that I wish were not true. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Yeah. I'm really glad that you said a politician, because there's another aspect of this that I wanted to talk about. Several people have cited me for this, but the idea was not mine. It's not even new. The reason I brought it up in some other cases was because Nicholas Zakas ... You know Slicknet? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  ... said it to me in a private conversation. And I thought, 'Well, yeah, why is nobody pushing that button?' Which is are there things that the government can do for this? Because it is a commons, right? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Mm-hmm. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  I mean, we make this case that it's a commons, that these things are like the roads and bridges. They're infrastructure. They're depended on by everybody. How can we not fund them? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah. I think the German government does actually have a program going right now. I forget what the program is called off the top of my head. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  They have a fund. I think last year the US did something where they did some fund for security stuff on open-source projects. That was after that Log4j issue in Java. That was bad. But short of that, the actual idea that I was mentioning is if you could get tax credits, you get a tax write-off for donating to some of these projects, more businesses would do it. And it's revenue neutral for them, you know? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  Yeah. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  So it really would feather out the thing that you're talking about where it's like, well, this is not our core business. So it's all cost for us. It's the first thing on the chopping block. Actually, open source would have an advantage if that was the case. The challenge is how do you identify which things qualify for that? It probably couldn't be everything, right? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  Yeah. Yeah, although I don't know, because I suppose there would probably have to be a parallel structure to the way nonprofits are structured in various countries where you register as a ... in the US, it's a 501(c) something or other (c)(3), (c)(4). And then you can report on your taxes that you donated to a 501(c)(3) or (4) or whatever it is. And the government has a record of, 'Oh, yes, that's a thing that we recognize.' So you'd end up having to have projects registering with the open-source project registry, whatever, with a government-issued ID number of some sort. So that people on their taxes could then say, 'Well, I donated to this thing, this project. And it has this number.' And then the projects would probably have to report their yearly ... Yeah. I mean, if you make that possible, there's infrastructure that has to be set up. But I feel like it would be worth it, to be honest, because there is so much that is based on open source. So much not-open-source stuff that's based on open source. If you rub the magic lamp and the genie comes out and gives you three wishes, and one of your wishes is I want all open source-software to disappear, civilization might be well and truly over it. Or at least the first world would be crippled for years because basically everything that we do, nothing is 100% completely closed proprietary. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah. Yeah, I was just looking at this Open Collective Foundation. It seems like that there's a subset of Open Collective projects that are participating in the Open Collective Foundation that is a 501(c)(3). </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Yeah. So if you were to go to our podcast and go back to February 4th, 2021, I talked with Jory. Do you know Jory Burson? She's from the Linux Foundation. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  I know of them. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  And OpenJS Foundation. And Pia Mancini. I don't know if you know who she is, but she's- </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  For sure. Yeah. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  She's one of the people behind Open Collective. And if you ever heard her, she had a TED Talk on the origins of this. This was originally about government. There are places in the world where citizens can do this. It's a very interesting idea, this sort of smashing together of these ideas. But the idea of ... I think Eric is sort of right ... if we created something that was a little bit paper heavy and maybe involved some minor legal fees or something, it would prevent just every weekend project I have from applying for this. I don't know. What do you think, Zach? If there was some government program that was a little bit heavy on the paper, but would cost you maybe a couple of weekends and $150 in legal fees or something like that, but the advantage is then you could get donations that were tax write-offs, do you think that that would be worth it to you? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  I mean, I feel like it's a very hard, almost golden handcuff situation with any funding source where it almost becomes an all-or-nothing scenario. If it's enough to have a full-time salary, then great. But if I don't have a full-time salary, I can't go halfsies on a full-time salary. You know what I mean? It's very hard to get paid enough. I can't get half a job, I guess, is what I'm trying to say. It's very hard to get half a job and then use the rest of that time in a way that I'm able to monetize the rest of that time. So yeah, it almost becomes an all-or-nothing. If it's enough to sustain a salary, great. I'm in. Let's do it. I'll fill out a month's worth of paperwork to do that. But if it halfsies, then there's no way to make that leap. It's a binary thing. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Yeah. So the way I think about it is right now you have your full-time job. But then you're putting in, I don't know, another 5%, 10%. I don't know how many hours you spend. So if you could get that 10% covered ... I mean, you might have that 10% covered already in the Open Collective. But at least you're getting paid for that work. It's not free. I dig what you're saying though, that it's like, okay, so what happens when now suddenly it's like 50% comes in. Now I have this glut of money, but it's not enough for me to quit my job and do this. But I feel like there's all this money sitting there, and now I feel bad that I can't spend it. I think actually maybe some other projects do have exactly that problem. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah, I think maybe the super interesting thing that I've been thinking about recently is how a four-day work week might affect that. Because if you're in a four-day work week, then you suddenly have this fifth day to decide to do with what you want. That creates a great opportunity for open-source participation. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Does it change perspectives though as time goes on? Because at one point we had a seven-day work week. Do you think that if we were to zoom- </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Do you think we'll trend down to a three-day work week? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  No. No. Do you think that if we were to zoom this into the past, people would've been like, 'Imagine if we could get a five-day work week, because then you would have two days that you could work at home as far as ... ' </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Well, just think about it this way. In the first four years of 11ty's life, I was working that sixth day in many respects. I was putting hours in on the weekend, hours at night, hours in the morning, on top of my 40-hour-a-week job. And so open source is already sort of cannibalizing the free time of people outside of their five-day-a-week jobs. And so yeah, I think it would be great to have a four-day work week and then fifth day can be open source. That would be awesome. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Yeah. So different places in the world also have different work hour requirements. So at Igalia, we have seven-hour days. So you could choose to spend an hour ... You could choose to say, 'Yeah, but I've always lived my life with eight hours and I'm comfortable with eight hours. So I'm going to spend that other hour on stuff I care about.' If that's maybe another avenue toward the same kind of thing that you're saying. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah, for sure. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  I don't know. This is all really fascinating. I mean, because there's just so much. And we didn't even cover ... We talked about 11ty and that it's this slice of, well, what about Java and .NET and all these other things that are pervasive? I mean, there's so many. And none of that gets you to shareable components, which you also have Seven Minute Tabs. That's just the cleverest name ever. You're really good with names. I think I would like to hire you to name my next project. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Maybe that's how I should monetize. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  That is how you should monetize. You would probably clean up. So everybody needs components. Everybody needs components. Even less than that, people want just nice-ish, I don't know, atoms to work with, you know? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Nice-ish design tokens to work with and things. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah. I mean, I think there's a couple of success stories in terms of software project monetization that are worth looking at. I think Tailwind has done a great job of monetizing their Tailwind Pro component set, which I think maybe fulfills some of that same thing. I think the other aspect that a lot of folks are having success monetizing right now is CMSs. It feels like there's a lot of money in CMSs right now. And businesses are willing to pay for that. So yeah. I mean, shareable components is one piece of it. But I think there's a couple of other success stories too. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Yeah, absolutely. The point that I was going at with UI toolkits and things is that if you ... whatever you want. You want tabs? Everybody says they want tabs. But there's a lot to tabs. I mean, we worked together just very briefly on the Open UI tabs effort. And you could see there's so many different avenues and perspectives to that. They multiply, essentially. You can imagine this is a like tree. So whatever the low level thing is, then on top of that, you get 10 things that depend on that. And on top of that, each one of those gets 10 things that depend on that. So the higher level you go, the more you need to reinvest again and again and again, right? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Mm-hmm. Yeah. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  So you would think to some extent that that top-level thing would be people would be like, 'Man, we just need that and we would be willing to just invest in at one time, really, really good,' you know? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  And whatever- </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah, platform affirmatives. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Yeah. How do we manage this? I think we just haven't figured it out. I mean, there's also BackYourStack. Have you heard of those kinds of things? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Is that like a package JSON analyzer? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Yeah. It's kind of like one of those things that tries to pay downstream. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  I think my question, Zach, is if you could open the magic genie lamp and get the genie wishes, what would you wish for to fix this problem? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Ooh. That is a very good question. My initial reaction was, open source just generally needs more leverage against folks that are making money from open source. And I think a lot of folks are discussing licensing options there, but when you restrict the license, that restricts just the core nature and the core power of open source generally. And so it's this very difficult tension between these two groups where we want everything to be open, we want everything to be approachable, but we also want to make money from it in a way that's sustainable. So I wish I could fund or figure out how to fund open source in a way that's sustainable from a business standpoint. If I had the answer, I don't think I would be in the current situation that I'm in. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  Right. Well, but I figure with a genie magic wand, you get to change attitudes or whatever, those sorts of things that are very difficult to do. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah. I think the best idea that I've come up with over the years is that most companies offer an education stipend. So when you join the company, you get a certain budgetary amount to buy educational resources or go to conferences or what have you. I would like to see the same stipend and folks to argue for the same stipend for open-source donations because that money is not nothing. It's somewhat expensive to buy a conference ticket. And so even if folks were able to use their existing stipend to donate to open-source projects, I feel like it would be a huge boon to the sustainability story. Yeah, I think that would be just a great first step, just opening those budgets up to let folks decide how they want to spend their money. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  Right. Okay. So your genie wish is to have it be suddenly a business cultural norm that employees have an open-source support budget or a software ... whatever you want to call it? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  Okay. Yeah, because that's different than the one I was thinking. The thing I was thinking, which sort of was leveraging off of the licensing thing you were talking about was the genie suddenly makes it so that it's a norm that open source licenses have a revenue threshold where it's open source below a certain revenue threshold. And above a certain revenue threshold, it's $1 per million ... I don't even know, right? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  The genie would also create the- </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  The tiniest amount would still be so good. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  The genie will create the actual licensing terms so that they actually worked out long term. I do not know what that is, but yeah. And also, because it's a genie, it would magically be legally airtight and all that sort of thing. But I mean, I like your idea. I don't know. Both ideas appeal to me, but in different ways. The licensing one is more formal, obviously. It's a sort of thing that open-source maintainers could use to take action as it were if they needed to. But I like the distributed nature or the community nature of your funding budget, the budgetary idea where companies are just like, 'Every person that we hire in addition to $2,500 a year for training, they get $1,000 a year for open source support,' or whatever amount it is. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah. I feel like I maybe have a some somewhat unique perspective on this just in terms of before 11ty, I just did a ton of just analysis and study on web fonts generally. And I remember just being so frustrated with font licensing. And how hard it was to just get a hobbyist license for a font and use it on your website, because a lot of web font licenses are set up per page view. And that becomes very hard to then use that on your hobbyist site. I remember being just so frustrated with that at the time. But looking back on it, I feel like I just have a completely different perspective in that those fonts would have not existed if they weren't licensed in such a way. I feel like just the font creation industry in general has a better idea of how to monetize their work than the larger software and maybe the 'commie' open-source world does at the same time. And yeah, I guess I feel like I respect that in a way that I did not at the time. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  Yeah, that's interesting. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  I think all of the above, because in a way, what we need to do is admit that we don't know the answers. But we need to kind of bend the arc of history in this direction. I think the only way we do that is by lots of people continuing to talk about it and blog about it like you did, Zach. And tweet about it and toot about it and skeet about it. Is there one for ... </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  Threads? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  ... Threads? Yeah. What's the Threads equivalent of ... They need their own word, I suppose. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  Sewing, but I'll leave it up to you to decide whether that's with an E or an O in sewing. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  I think noodling is what they do on there. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  There you go. Well, actually, we need something from you, Brian. Zach and I each had our genie-wish way to fix this. What's your genie-wish way to fix this? If you could have a genie magically change things or create something that would help with this? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  I think what I would wish for is for more people to understand the problem or problems. And then I think we'll get somewhere. I mean, the thing is we're not seeing action on making these things tax-deductible, for example, because there's not enough people, the right people, reaching and proposing things to their senators and their congressmen. And there's not enough companies doing things. Some do the thing that Zach said, where here's some money, you can allocate it to your open-source projects. But yeah, I think we would see a lot more experimentation and money flowing through the system if we could make people understand and actually appreciate the problem. I think until we really raise awareness, we are very much in the late '90s web where it's just a comparatively small number of people trying to convince everybody that this is a thing we got to do, and we got to do it. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Early stages. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Yeah. So is there anything, Zach, that you would like to throw out? Any observations or things you were hoping we would talk about that we didn't talk about? Or bold statements that you want to make, predictions for the future, anything? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah. I feel like the one thought that I keep having is that I don't want open source and open-source sustainability to be a gig economy thing. I feel like the temptation is very great to have an Uber for open source where folks show up, fix an issue, get a bounty for it, and then go on their merry way. I don't think that that is a healthy or sustainable endpoint for open source generally. We need to be able to have careers that let us live our lives in a way that we're not worried about paycheck to paycheck, what's going on. And there will always be some risk to every job or in every sort of opportunity. But yeah, it would be very, very sad if the end goal of all this sustainability talk were to be a sort of more gig economy-based thing. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Yeah. Do you think that that's likely? I sort of don't see it happening because of things that you said. There are some people who I think that model will suit them really well. Maybe at a certain point in your life that's just exactly great for you. You work your own hours, you pick your own things, you cash a nice check, and then you don't work for a while. Yeah, I don't know. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah. I think, I don't know, just in my own career and in my own life, I have found myself tempted by that. Just even thinking about the four-day work week thing that we've talked about in this discussion. That fifth day suddenly becomes the gig economy day where I get to take some of my free time and donate it to the project. And you can almost see the end goal of that. If you have 40 hours a week to then dole out as you want, then you have no stability of the job backing the project. But you have the most amount of freedom. So it's always going to be this balance between the two that everyone's going to have to manage in their own lives and individually, which is a hard thing. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Definitely. Eric, do you have anything else? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  No, I think it's time to say thank you. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Okay. Zach, thanks so much for coming on and having this conversation that meandered all through everything, open source and funding. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah. Thanks for having me. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Thanks for entertaining it. Definitely. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Zach Leatherman</cite>:  Yeah, it was delightful. Hope I didn't say anything that will get me in trouble.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  ... Just a closing note that in between the recording and release of this chat, the situation for 11ty changed again, as Zach announced he'd taken a new job with CloudCannon as a developer advocate, which would include paid development and support time for the project! Congratulations to CloudCannon. </blockquote></li>
+                
+              </ul>
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+<script src="/assets/chat.js"></script>
+
+    </main>
+
+    <footer id="site-footer" role="contentinfo">
+
+  <a class="site-title" href="/">
+    <img src="/assets/i/logo.png" alt="Igalia" />
+  </a>
+
+  <div>
+    <h2>Igalia.com</h2>
+    <ul class="main-menu" role="navigation">
+      
+      <li>
+        <a class="page-link" href="/about" title="About Us">
+          About Us
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/technologies" title="Technologies">
+          Technologies
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/services" title="Services">
+          Services
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/industries" title="Industries">
+          Industries
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/24-7/home" title="24/7">
+          24/7
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/jobs" title="Jobs">
+          Jobs
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/contact" title="Contact">
+          Contact
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div>
+    <h2>Igalia, S.L. © 2023. All rights reserved.</h2>
+    <ul class="footer-menu" role="navigation">
+      
+      <li>
+        <a class="page-link" href="/coc" title="Code of Conduct">
+          Code of Conduct
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/legal" title="Legal Terms">
+          Legal Terms
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/press" title="Press">
+          Press
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/privacy" title="Privacy Policy">
+          Privacy Policy
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/public-funding" title="Public funding (Fondos públicos)">
+          Public funding (Fondos públicos)
+        </a>
+        </li>
+        
+    </ul>
+  </div>
+
+  <div role="contentinfo">
+    <h2>Headquarters</h2>
+    <ul class="contact-list">
+      
+      <li>Bugallal Marchesi, 22, 1º</li>
+      
+      <li>15008 A Coruña</li>
+      
+      <li>Galicia (Spain)</li>
+      
+      <li>Pho.: +34 981 913991</li>
+      
+      <li>
+        <a href="mailto:info(at)igalia.com">
+          info(at)igalia.com
+        </a>
+      </li>
+      
+    </ul>
+    <div class="social">
+      
+      
+
+      <a class="social-link" href="https://twitter.com/igalia" target="_blank" title="twitter" rel="me">
+        <i aria-hidden="true" class="fab fa-twitter"></i>
+        <span hidden>twitter</span>
+      </a>
+      
+      
+
+      <a class="social-link" href="https://floss.social/@igalia" target="_blank" title="mastodon" rel="me">
+        <i aria-hidden="true" class="fab fa-mastodon"></i>
+        <span hidden>mastodon</span>
+      </a>
+      
+      
+
+      <a class="social-link" href="https://youtube.com/igalia" target="_blank" title="youtube" rel="me">
+        <i aria-hidden="true" class="fab fa-youtube"></i>
+        <span hidden>youtube</span>
+      </a>
+      
+    </div>
+
+</footer>
+
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+    <script src="/assets/app.js"></script>
+    
+    
+
+    <!-- Piwik -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+      _paq.push(['disableCookies']);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+         var u="//stats.igalia.com/";
+         _paq.push(['setTrackerUrl', u+'piwik.php']);
+         _paq.push(['setSiteId', '1']);
+         var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+         g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+       })();
+    </script>
+    <noscript><p><img src="//stats.igalia.com/piwik.php?idsite=1&rec=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Piwik Code -->
+
+  </body>
+</html>

@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/i/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/i/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/i/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/web-app/site.webmanifest">
+<link rel="mask-icon" href="/assets/i/icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/i/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="msapplication-config" content="/assets/web-app/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+
+  <title>Igalia Chats: Steam Powered Open Source | Igalia - Open Source Consultancy and Development</title>
+  <meta name="description" content="Igalia is an open source consultancy specialised in the development of innovative projects and solutions. Our engineers have expertise in a wide range of technological areas, including browsers and client-side web technologies, graphics pipeline, compilers and virtual machines. We have the most WPE, WebKit, Chromium/Blink and Firefox expertise found in the consulting business, including many reviewers and committers. Igalia designs, develops, customises and optimises GNU/Linux-based solutions for companies across the globe. Our work and contributions are present in many projects such as GStreamer, Mesa 3D, WebKit, Chromium, etc.">
+  <meta name="keywords" content="igalia, free software, free software engineering, development, consultancy, webkit consultancy, consulting, webkit consulting, programming, hackers, cooperative organization, organization, company, assembly, igalia.com, igalia sl, webkit, webkitgtk, a11y, v8, jsc, training, GNOME, webkit consultants, chromium consulting, chromium consultants, chromium consultancy, blink consultants, blink consultancy, gstreamer consultancy, gstreamer consulting">
+  <meta name="author" content="Igalia">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" id="main-stylesheet" href="/assets/main.css" data-main="/assets/main.css" data-aria="/assets/aria.css">
+  <link rel="canonical" href="https://www.igalia.com/chats/steam-powered-open-source">
+  <link rel="alternate" type="application/rss+xml" title="Igalia" href="/feed.xml">
+
+  
+
+  <!-- Open Graph metadata -->
+  <meta content="Igalia" property="og:site_name">
+  <meta content="Igalia Chats: Steam Powered Open Source | Igalia - Open Source Consultancy and Development" property="og:title">
+  <meta content="https://www.igalia.com/assets/i/logo200x200Margin.png" property="og:image">
+  <meta content="https://www.igalia.com/assets/i/logoSimple200x200.png" property="og:logo">
+  
+    <meta content="website" property="og:type">
+  
+  
+    <meta content="Igalia is an open source consultancy specialised in the development of innovative projects and solutions. Our engineers have expertise in a wide range of technological areas, including browsers and client-side web technologies, graphics pipeline, compilers and virtual machines. We have the most WPE, WebKit, Chromium/Blink and Firefox expertise found in the consulting business, including many reviewers and committers. Igalia designs, develops, customises and optimises GNU/Linux-based solutions for companies across the globe. Our work and contributions are present in many projects such as GStreamer, Mesa 3D, WebKit, Chromium, etc." property="og:description">
+  
+  
+    <meta content="https://www.igalia.com/chats/steam-powered-open-source" property="og:url">
+  
+  
+</head>
+
+
+  <body class="aria-contrast" data-json-base="/assets/json">
+    <header id="header" role="banner">
+  <div class="container-fluid-1440">
+    <div class="wrapper">
+      
+      
+      
+      <h1 class="site-title logos">
+        <a href="/" title="Igalia">
+          <img src="/assets/i/logo.png" alt="Igalia" />
+        </a>
+      </h1>
+
+      <nav role="navigation" class="site-nav hidden-xs hidden-sm">
+        <ol class="main-menu">
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/about" title="About Us">
+              About Us
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/technologies" title="Technologies">
+              Technologies
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/services" title="Services">
+              Services
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/industries" title="Industries">
+              Industries
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/24-7/home" title="24/7">
+              24/7
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/jobs" title="Jobs">
+              Jobs
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/contact" title="Contact">
+              Contact
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/public-funding" title="Feder">
+              Feder
+            </a>
+          </li>
+          
+        </ol>
+      </nav>
+
+      <div aria-hidden="true" id="menu-toggle-wrapper" class="visible-xs visible-sm">
+        <a href="#" id="menu-toggle" title="Toggle menu">
+          <i aria-hidden="true" class="fas fa-bars"></i>
+          <span hidden>Toggle menu</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div id="mobile-menu-wrapper">
+  <div id="mobile-menu">
+    <ul role="navigation" class="nav">
+      
+      <li>
+        <a class="page-link" href="/about" title="About Us">
+          About Us
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/technologies" title="Technologies">
+          Technologies
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/services" title="Services">
+          Services
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/industries" title="Industries">
+          Industries
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/24-7/home" title="24/7">
+          24/7
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/jobs" title="Jobs">
+          Jobs
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/contact" title="Contact">
+          Contact
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/public-funding" title="Feder">
+          Feder
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+    <main class="page-content" aria-label="Content">
+        <article class="page page--chats">
+  <header class="page-header" style="background-image: url(/assets/i/headers/header-technologies.jpg); ">
+    <div class="container-fluid-1440">
+      <div class="grid-row">
+        <div class="col-xs-12 col-sm-10-center">
+          <h1 class="page-title" itemprop="name headline">Igalia Chats: Steam Powered Open Source</h1>
+          
+        </div>
+      </div>
+    </div>
+    <div class="cover"></div>
+  </header>
+
+  <div class="container-fluid-1440">
+    <div class="page-content">
+      <div class="grid-row">
+        <div class="col-xs-12">
+          <div class="grid-row">
+            <div class="col-xs-12 col-lg-8">
+              <h2 class="chat-title">
+                <a href="/24-7/chats" class="chat-title__back">
+                  <img src="/assets/i/arrowBackBlue.png" alt="Back to chats">
+                </a>
+                Eric Meyer and Brian Kardell sit down to chat with fellow Igalians Samuel Iglesias and Clayton Craft about the Steam Deck and interesting work that Igalia does to power it.
+              </h2>
+              <div class="chat-date">
+                <time datetime="2023-05-15T00:00:00+00:00" itemprop="datePublished">
+                  
+                  May 15, 2023
+                </time>
+              </div>
+              <div class="chat-audio">
+                <div class="chat-audio__player">
+                  <div class="audio-player" data-src="/downloads/interviews/steam-powered-open-source.mp3">
+                    <div class="controls">
+                      <div class="play-container">
+                        <div class="toggle-play play">
+                        </div>
+                      </div>
+                      <div class="time-container">
+                        <div class="time">
+                          <div class="current">0:00</div>
+                          <div class="length"></div>
+                        </div>
+                        <div class="timeline">
+                          <div class="progress"></div>
+                        </div>
+                      </div>
+                      <div class="volume-container">
+                        <div class="volume-button">
+                          <div class="volume c-icon-volumeMed"></div>
+                        </div>
+                        <div class="volume-slider">
+                          <div class="volume-percentage"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <ul class="chat-audio__links">
+                  <li><a href="/downloads/interviews/steam-powered-open-source.mp3" title="Download Chat" target="_blank"><i class="c-icon-download"></i></a></li>
+                  
+                  <li><a href="/chats.xml" title="Open podcast RSS feed" target="_blank"><i class="c-icon-podcast"></i></a></li>
+                  
+                  
+                  <li><a href="https://youtu.be/il7l8OPx5Nw" title="Open in Youtube" target="_blank"><i class="c-icon-youtube"></i></a></li>
+                  
+                  
+                  <li><a href="https://open.spotify.com/show/0XZ4hqB5ogePKOumi4daDm" title="Open in Spotify" target="_blank"><i class="c-icon-spotify"></i></a></li>
+                  
+                  
+                  <li><a href="https://podcasts.apple.com/us/podcast/igalia/id1533323588" title="Open in iTunes" target="_blank"><i class="c-icon-itunes"></i></a></li>
+                  
+                  
+                  <li><a href="https://podcasts.google.com/feed/aHR0cHM6Ly93d3cuaWdhbGlhLmNvbS9jaGF0cy54bWw" title="Open in Google Podcasts" target="_blank"><i class="c-icon-gpod"></i></a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12">
+          <div class="grid-row grid-row--between">
+            <div class="col-xs-12 col-lg-3 col-lg-order-3">
+              <ul class="c-participants">
+                
+                <li class="c-participants__item  c-participants__item--1">
+                  
+                  
+                  <img src="/assets/i/logoSimple.png" alt="Igalian" class="c-participants__igalian">
+                  <a href="/team/bkardell" class="c-participants__link">
+                    <img src="/assets/i/igalians/brian-kardell.jpg"
+                      alt="Brian Kardell's avatar"
+                      class="c-participants__image">
+                    Brian Kardell
+                    <i class="fas fa-plus"></i>
+                  </a>
+                  
+                </li>
+                
+                <li class="c-participants__item  c-participants__item--1">
+                  
+                  
+                  <img src="/assets/i/logoSimple.png" alt="Igalian" class="c-participants__igalian">
+                  <a href="/team/emeyer" class="c-participants__link">
+                    <img src="/assets/i/igalians/emeyer.jpg"
+                      alt="Eric Meyer's avatar"
+                      class="c-participants__image">
+                    Eric Meyer
+                    <i class="fas fa-plus"></i>
+                  </a>
+                  
+                </li>
+                
+                <li class="c-participants__item  c-participants__item--2">
+                  
+                  
+                  <img src="/assets/i/logoSimple.png" alt="Igalian" class="c-participants__igalian">
+                  <a href="/team/siglesias" class="c-participants__link">
+                    <img src="/assets/i/igalians/samuel-iglesias.jpg"
+                      alt="Samuel Iglesias's avatar"
+                      class="c-participants__image">
+                    Samuel Iglesias
+                    <i class="fas fa-plus"></i>
+                  </a>
+                  
+                </li>
+                
+                <li class="c-participants__item  c-participants__item--3">
+                  
+                  
+                  <img src="/assets/i/logoSimple.png" alt="Igalian" class="c-participants__igalian">
+                  <a href="/team/clayton" class="c-participants__link">
+                    <img src="/assets/i/igalians/clayton.jpg"
+                      alt="Clayton Craft's avatar"
+                      class="c-participants__image">
+                    Clayton Craft
+                    <i class="fas fa-plus"></i>
+                  </a>
+                  
+                </li>
+                
+              </ul>
+            </div>
+            <div class="col-lg-1 col-lg-order-2"></div>
+
+            <div class="col-xs-12 col-lg-8 col-lg-order-1">
+              
+
+
+              <h2 class="chat-subtitle">Transcription</h2>
+              <ul class="c-chat">
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Hi, I am Brian Kardell. I'm a developer advocate at Igalia.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: And I'm Eric Meyer, also a developer advocate at Igalia.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Today, we have two other guests on our show also from Igalia.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Samuel Iglesias</cite>: I'm Samuel Iglesias. I'm a manager at Igalia.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--4">
+                  <blockquote><cite>Clayton Craft</cite>: And I'm Clayton Craft. I am a software developer at Igalia.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Normally on our show, we talk mostly about the web platform, because that's so key to so many things that Igalia works on. But it's not all we work on. We're going to use this as a jumping-off point, but let's talk about games. I don't know. Do you like games?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Games are fun.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: I play games a lot, actually, if you count by the hours. But not a lot of games. Very few games. Just games that I'm really into. But none of those are particularly ... They're usually a little older. I have a PS4. I guess the PS5 is better, but to me, my PS4 is good. But apparently, even your PS4, often you can't get as good games as you can for PC. Until very recently, at least, gaming on Linux was also not super great. I remember a long time ago I used Wine to play Railroad Tycoon on Linux.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: I think half the people I've heard from who used Wine used it to play Railroad Tycoon specifically.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: It worked pretty well and there were not a lot of games at the time I could think of that you could say that about. I don't know.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Samuel Iglesias</cite>: This shows your age, if you are mentioning that specific game.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Sure. When I think about game systems though, I also think about proprietary stuff. I don't think anybody really tended to think about Nintendo or Sega or PlayStation or the Dreamcast. That was another one.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Yep.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: That's all kind of changed a little bit with the Steam Deck.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Samuel Iglesias</cite>: Actually, the Steam Deck is a portable handset console. I think it is ideal for parents, because at the end, you can play around without having to have access to the TV.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: It's a console, but it's handheld. Sort of like the Nintendo Switch. Right?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Samuel Iglesias</cite>: Right.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--4">
+                  <blockquote><cite>Clayton Craft</cite>: It's very similar in size.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: It seems really successful and I guess you can play some pretty comparatively high-end games on it.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Samuel Iglesias</cite>: Indeed. Actually, the good thing about the Steam Deck is it's very similar to a computer. It's arguable if we are talking about a console or a computer, because of these specs. They are AMD CPU and GPU. It's very comparable to a normal computer. Actually, the Steam Deck has very nice features. One is the, let's say, the console view. The launcher that they have to launch the games. But also, it has the desktop view. It runs a normal Linux desktop. At the end, you plug it into a docking station and you have a normal computer like any other computer in your home. Regarding this, a lot of software development mainly target to add support to it... At the end, it's generic. It could be beneficial to any Linux user. For example, we can talk about work in the kernel, work in the graphics drivers, work in the system integration in Linux. It's an amazing device. Fortunately for us, Igalia is working in many of these areas. Clayton, for example, you can explain all the work that you have been doing lately.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--4">
+                  <blockquote><cite>Clayton Craft</cite>: Most of my work has been in the operating system itself, which as you mentioned is running Linux. I believe a lot of other consoles that exist do use some open source components here and there. I'm not aware of any of them that are actually running a full Linux distribution. The one that Valve is developing is based on Arch Linux. A lot of my work has been fixing issues with hardware initialization, enabling some security related stuff in the OS. Some pretty low level OS stuff. But the actual Steam Deck, the way it can run a lot of these PC games is through a compatibility layer. It's actually very similar to your experience, Brian, with running Railroad Tycoon on Wine. It is using Wine for a lot of these games that were designed for Windows only in order to run them on Linux. And so, a lot of the work that I'm doing and some of my colleagues is basically to get this Linux distribution that runs on the Steam Deck in shape enough to be able to execute these games that were designed originally for an entirely different operating system, Windows, to run on the console in a way that is very playable.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Samuel Iglesias</cite>: Not only that. For example, at the end, the Steam Deck is a product that uses hardware. You need to add driver support for it. One of the areas that we have been working, it's about the kernel in Linux. For example, it's usually a problem when you are playing a game. I say, 'Usually,' because it happens to me in the past. You are playing a game and you are beating the boss, and once you are in the very last bones to it, it hangs the console. It happens to me in the past, with my old Xbox, the poor console died at that moment. The red light thing. For example, one of the works there was to recover gracefully from that, to try to gather all the logs and issues. Of course, push it to the Valve server. They have some developers or somebody analyzing the error. But also, putting a screen to the user saying, 'There is an error. Don't worry. Don't panic. We are going to reboot the console.' And that's it. This is one of the works that we have been doing, one of the tasks that we have been working on was the performance. Because sometimes, there are applications that are slowing down the system, but you don't know which. That is a problem, because Valve always wants to squeeze all the hardware performance. And it's a problem when you don't know which was the culprit. At the end, there is a feature in the kernel, which is called Splitlock, which is to punish these kinds of applications that are not doing the right thing architectural-wise in order to detect them. Of course, there are games that are legacy games. As they are proprietary, there is no possibility to fix their behavior or the source code. And that's normal. That's fine. Our work was, for example, to tell the user space to tell the operating system that this is happening, so the application can continue to punish the application or can forget about it and say, 'Okay. That's normal,' and come back to full performance. Another thing is about power management with a handset console. It's very important having as many hours of battery as you can. There is one feature that powers off part of the GPU when it's not running 3D applications on a demand way. Again, what we are working on was to offer that feature to user space, so the scheduler or any other application in SteamOS can decide if they can switch off the GPU, because it's safe to do that. Or not. As you see, we are working in performance, in power management, recovering from errors. These kinds of things. They were there, but they are put in there in a usable way, so the SteamOS operating system can use it without any problem. At the end, it improves the experience of the users.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Does any of you actually use the Steam Deck?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--4">
+                  <blockquote><cite>Clayton Craft</cite>: Yes. Not only for my day job, but I also own one that I've had for a while and I use it a lot to play. I've been a big PC gamer for pretty much my whole life and have been trying to game on Linux for well over 15 years now, I think. The situation improved dramatically when Valve released their Steam client, which is what they used for distributing games. When they released a native Steam client for Linux around 10 years ago, suddenly, there were tons of games that were not available on Linux that you could then get and run on your system. And so, the Steam Deck is kind of a continuation of that. It's using the same Steam client that they released on Linux for desktops to run the same games on this console. A lot of the work that Samuel mentioned and the work that I'm doing, and the work that my colleagues are doing, and pretty much everybody that's working on the Steam Deck for Valve, is making improvements to the Linux kernel to Linux applications. Just general stuff around distributions. And a lot of this also benefits Linux desktops and laptops and other devices that are running these operating systems. It's cool. We might make a change that improves performance when running a certain game, but it also might make your desktop run faster too. Because a lot of the same problems exist over there and it's targeting the same hardware and stuff. It's not like we're just making changes for a very specific product that will never benefit anything else. By helping this product and making changes to help it run better and run games and stuff, our changes are contributing back to the general experience of running Linux on totally unrelated hardware, which I think is really cool.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Samuel Iglesias</cite>: Something that amazed me is how Valve is tackling this. They are very aligned with the open source movement. A lot of our work is purely upstreamed later on. At the end, as Clayton was saying, everybody benefits from it. It's amazing. They consider Linux as a first-class citizen, with the release of this Steam client 10 years ago. Something like that. Nowadays, with this product ... It's amazing to me.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: I think this as a topic really aligns with things that we talk about a lot. Because we talk about the commons that everything else is built on. Igalia's role in trying to make that a healthier situation. The things that you're saying, a lot of these are echoed in a talk that one of our colleagues gave that was just recently posted to YouTube. It was called Hacking the Linux Kernel to Get Moar FPS. It's from FOSDEM 2023.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--4">
+                  <blockquote><cite>Clayton Craft</cite>: I was there. Good talk.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: It was a good talk. I would recommend people go give it a watch, because a lot of it is also about this. He highlights a ton of the things that were done in pursuit of something for gaming that are wildly applicable and helpful in other things. This is the thing that interests me a lot about any kind of invention at all. Whatever you deliver makes other things suddenly possible. There's an interplay here. You can have things that were not developed for gaming that make it more possible to bring gaming. But then, you can have things that are done in the interest of gaming that are wildly helpful for other things. Finding companies like Valve who are supporting things there are really helpful. I think also, in the graphics world, we recently did the Mesa Vulkan drivers. The Raspberry Pi Foundation, I believe, that funded that work. But a similar thing there.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Samuel Iglesias</cite>: Yeah. For example, in the case of the graphics, we have been working in the kernel drivers for AMD GPU. Some examples of this work is improving the color adjustments and how they do the color correction or calibration of the displays. It is automatically done, for example, taking into account the lighting, the saving in real time. Or adaptive color management. Things like that. At the end, this is again making usable something that is supported by the hardware. We have been working on other areas that are somehow related to graphics as well. This is coming back to the previous topic, which was Valve investing a lot in open source and actually improving the overall experience in Linux desktop. A lot of the work that, for example, Igalia was doing also involves very different areas. And at the end, everything is influenced by the Steam Deck. For example, Clayton was commenting before about the translation layers to be able to run Windows games on Linux. They are using a fork of Wine. To do this translation from Direct3D to Vulkan to OpenGL or to whatsoever, they're using a set of libraries. It's amazing. Because this work also drives the innovation in the Vulkan specification itself. There are many Vulkan extensions that have been developed and released in the last years that is about adding a compatibility layer with Direct3D in order to facilitate that translation of the games. The other thing is about the graphics. Of course, graphics drivers, they need to be very solid, very reliable. Because any bug, any visual glitch is going to be immediately noticed by the user. We have been working in a CI system, a continuous integration system, in order to test in-depth all the graphics drivers that are being used by the Steam Deck, but also in Mesa. These are just some examples of work that goes beyond drivers. Hardware support via drivers or system integration, but this is at the end improving a lot the experience in the Linux system.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Our show has been traditionally about the web platform, but then more largely about the commons and the ecosystem around it. I constantly say that Igalia works on that and why I think that's important, why it's important to have a model that supports it. But I think also a lot of the work that we do ... The web platform or commons is ultimately in many ways built on this other commons, which is Linux in a lot of cases. For example, we have all kinds of things coming to the web that this low level work will enable for higher level browser stuff. Can anybody speak to that a little bit?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Samuel Iglesias</cite>: One good example, I think is the HDR thing. Nowadays, we are working on identity support in the graphics drivers. And at the end, this will benefit other applications such as web browsers. This is a very interesting feature that could improve a lot the quality of reproducing videos, for example, or content in the web.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: I think a lot of people have not really dug into or thought about this really hard, but the web is ... Everything about the web, CSS, Canvas, everything is based on basically sRGB. Now, we're getting into other color spaces like HDR. For that to work, it has to be built on things like these graphic drivers at the core.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Samuel Iglesias</cite>: Indeed. Another example for this is also the web GPU thing. At the end, it's kind of a standard to run things. The thing is they are using the web browser for running them. I remember some projects about ... I don't know. They were, if I recall correctly, compiling Doom or one game of that time on web GPU, and then running it in the browser. This is very interesting stuff.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: There have been a lot of really interesting things like that. Especially also, WebAssembly makes that maybe even better. We have compilers folks working on the open source stuff for WebAssembly as well. I just think that this is really great and important that we as workers at Igalia, but also the people who support us and the other people who work on all of these open source projects, we are contributing to a commons that benefits all of us. It's amazing to me the potential of this as we begin to collectively realize how much is there. I don't think that anybody would have 15 years ago said, 'You could make a product that was a computer that was gaming that was geared toward just regular consumers.' Not really just extremely niche Linux aficionados, but something that your kids would go, 'That is cool and I want it.' But you see? We can do that, and when we do that, we also make all these other amazing things more possible too. I think that's just phenomenal.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Samuel Iglesias</cite>: Actually, one thing related to this is you see very separate development works. For example, things that are happening in the web browser, then things that are happening in the graphics drivers, and then somehow they're interconnected and improve a lot the whole experience. You can develop new products. You can run things that were not expected five years, 10 years ago. That's amazing. Actually, if you tell me 20 years ago, for example, that the web is going to be everywhere ... You are going to run user interface using web browser, HTML5, and things like that. You are going to have a lot of products that are just running on web browser. Linux can, mostly. You will have operating systems like ChromeOs. You will have things like that. It's like, 'Wow.' Things that are apparently completely related, then you can stick them together and create a great product. Again, the Steam Deck is a very good example of this. You have everything there already. You have a Linux kernel, you have the Linux desktop, you have graphics drivers. You have everything there. But then, a company like Valve can just put them together, put a nice case there, and then sell millions of them. They just found a way to make it flashy to the end users. And that's great that this is happening.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Super cool. I'm going to go order myself a Steam Deck now.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--4">
+                  <blockquote><cite>Clayton Craft</cite>: You won't regret it.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: You sold me. I have actually wanted one for a while and this has only convinced me more that I should buy one.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--4">
+                  <blockquote><cite>Clayton Craft</cite>: Goodbye free time.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Samuel Iglesias</cite>: Actually, I was a retired gamer. Now that I am parent of two kids, I am playing games again thanks to the Steam Deck, actually. It's just switching it on and five minutes later I'm playing a really good game. And then, half an hour later I can switch it off and continue the next day. That's great.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--4">
+                  <blockquote><cite>Clayton Craft</cite>: I can't speak towards other consoles and what contributions they've made back towards web related stuff, but what I can say is I have a lot of experience dealing with other embedded devices. Specifically, running Linux. A common pattern I see in the industry is that companies will take the Linux kernel or other components that they need for their product. They will make changes to it within a private repository or something. Because during platform enabling and when you're building a product, you need to move fast. Usually, faster than upstream can keep up with merging your changes. You can't rely on 100% upstream stuff to get your product out the door in most cases. Because you're fixing hardware bugs and whatever. And so, they'll make these improvements in their own fork of whatever components they need, and oftentimes they will not submit those changes back upstream. They'll just kind of live off on the side and people will forget about them. Or they may not even comply with the license that the component was under and they may not even release the source code unless they're really hounded for it. A lot of these improvements that they might be making to make their product run faster or use less power or just be better may not find their way upstream. And so, I don't know if that's the case with consoles in particular, but it's a very common pattern I see with phones and set-top boxes and other embedded devices that use open source components.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Finding organizations that are funding the work upstream is great and refreshing. Eric, did you have something you were going to say?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: No, I was agreeing with what you were saying. It's great, but it's also fortunate to find clients who are not only willing to fund work, but also allow what's done for them to be pushed upstream. Because then, the entire community benefits.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Who did it and why did they do it? It gets maybe lost to the history books, but it's really important.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: I'd be curious to know. Do you have some specific examples of things that got upstreamed that you're particularly excited about being available to the wider community?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--4">
+                  <blockquote><cite>Clayton Craft</cite>: The first thing that comes to mind is all of the improvements to the graphics drivers for the GPU used in the Steam Deck. As Samuel mentioned, it is a GPU by a company called AMD who also makes processors. And so, I own an AMD GPU on my desktop that I use for gaming, and it uses the exact same driver that we're currently packing on for the Steam Deck. Any improvements that get made there eventually find their way to my desktop and help my gaming experience. From a completely selfish perspective, I'm really excited about that one, because I get to benefit from it pretty much directly, which is really nice. I know there's a lot of other improvements in the kernel that are a little more low level that help with performance in particular. I'm not sure if we want to get into that much detail here. Actually, some of it was mentioned in Andre's talk, Hacking the Linux Kernel For Moar FPS. Again, if you're interested in this stuff, that talk is really great at showing some of the low level changes that were made to the Linux kernel for the Steam Deck specifically. But it'll also help greatly with performance elsewhere on other systems. And so, I'm excited about that too. Because it's all upstream. It's all in the kernel now. And if you go and get a system with a recent Linux kernel, you're more than likely going to be using some of those things that were added specifically for this project, but you get to also benefit from it.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Samuel Iglesias</cite>: I agree with Clayton. Also, it's important to say that Valve, although they are sponsoring work to improve the Steam Deck, their ultimate goal is to improve the Linux desktop in order to be a reference gaming platform. That's important. As I said before, we are working on very different areas. At first glance, it's like they are completely unrelated. But at the end, you look at the big picture and you see that overall they are improving the Linux desktop a lot. Another example that I could think about is recovering from GPU hangs. I commented before about logging the errors and so on, but there is the possibility of recovering gracefully for a hang of the GPU. Usually, you need to reboot the machine. The idea is to try to avoid that as much as possible, so at the end, the gamer can continue playing their game without any problem after some seconds of delay. That's the kind of experience that at the end will make Linux desktop as a really competitive gaming platform. Until now, Linux was gaining on server side, on mobile with Android. The market share of Android is huge, but we were lacking the Linux system. And it looks like this effort from Valve, probably not in the short-term future, but I think in the long-term future, will position Linux as a very competitive gaming platform. I don't know if you see that as well?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--4">
+                  <blockquote><cite>Clayton Craft</cite>: Were you asking me? Or who are you asking?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Samuel Iglesias</cite>: All of you. Come on. The thing here is sometimes, because I'm working at Igalia, I think that we are living in a bubble where we are seeing Linux improving a lot. For example, the Steam Deck was the first product that I have been seeing used by my networks. It's awesome. My relatives. It's like, 'Wow.' This is mainstream stuff.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--4">
+                  <blockquote><cite>Clayton Craft</cite>: I've been trying to get my relatives and friends to use Linux for many years and this is the first thing that I can throw in front of them. Then, most of them are like, 'I can use this. It's usable and it's intuitive.' From, again, a totally selfish perspective, I think it's great. Because I can finally start converting some of these folks to using Linux in some capacity.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: I think one of the things that is great about the Steam Deck thing is that all the people, all the organizations that we work with ... Obviously, they make money. They have to make money from something to provide money to sponsor this work. I think that one of the really cool, exciting things about Valve is that they're making a product which itself is tied to Linux. They're both very invested in the success of that, but also they have a monetary model to support it. It's sort of core to your product. Do you know what I mean? I think that is a really hard-to-measure positive thing that will ultimately be a really big deal.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--4">
+                  <blockquote><cite>Clayton Craft</cite>: I can only hope that it encourages more companies to follow the same path.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Samuel Iglesias</cite>: I know. I hope more Steam Deck-like consoles or devices will appear in the future. Because at the end, that's going to show that Linux is ready for managing these kinds of products.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--4">
+                  <blockquote><cite>Clayton Craft</cite>: There's the whole console part, but also if this could serve as an example for other devices. Humans are making ... We're putting chips in everything. I think you could buy clothing now that's quote, unquote, 'Smart,' or whatever. I hope it encourages more companies looking to productize things to choose this sort of model that's like, 'Use Linux or a similar open source-based distribution.'Most importantly, any changes you make to support your product, you contribute those back to the upstream. That way, when you go to make version two of your product or someone else wants to build upon your work, it's available and they can do that. Who knows? Maybe your original product benefits from changes that people in the community or other companies have made to your original code. Everyone wins.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: I have to admit. I'm speculating here a little bit, but I would presume that this is why Valve picked Linux in the first place is that it's open source. And so, there's a lot of flexibility there. You don't have the same kind of vendor lock-in, as it were, using a proprietary operating system like Windows or something like that. It's interesting to me that there are so many consoles that are, like you said, Samuel, going the Windows route. Part of me thinks that Valve would've done that. Because they made video games and they made a lot of Windows video games. And so, you would think that they might say, 'Well, we know Windows. Let's make our console based on Windows.' But instead, they had the foresight to say, 'Hey. We should do this in a more open way, using more open technologies, because that's more robust over time.'</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Samuel Iglesias</cite>: Actually, I think the point here is not only about the games. It's about the store. They have the Steam store. Imagine in the future ... I don't know. Let's say, Microsoft. They say, 'I forbid any store from my operating system and only it's accessible mine.'</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Right.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Samuel Iglesias</cite>: We have seen that with Apple iOS and we have been seeing that in other operating systems as well. It's not a crazy hypothesis. I think Valve is protecting themselves by investing on Linux in that sense. I think it makes sense from their point of view. They have a product. They don't pay any kind of license to anybody. They don't rely on third parties to release a new version. They don't depend on others. I think this is very good advice for other companies. Relying on open source, you make yourself more robust for the future. You don't depend on others. You don't have a vendor lock-in. From the user point of view, also, imagine a future where this version of the Steam Deck is not supported anymore. At the end, you can flush another Linux distribution and still use it as a normal computer. Like all the laptops that we have at home.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Is this Steam Deck customizable or hackable in that way? Easily?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--4">
+                  <blockquote><cite>Clayton Craft</cite>: The hardware? Not so much. You can replace some components, I believe. Mainly, you can repair it to some degree. Replace the fan, I think. The local storage device can be replaced or upgraded too, which is nice. Because hardware components do die. Being able to repair it is important. But from a software perspective ... Speaking specifically to your question about how much can you hack around on this, it is incredibly hackable for being a console. Kind of more like what you would expect for a laptop or a desktop or something. You can install Windows on it. I've seen people do that. I personally would never do that, but it is an option. You can install other Linux distributions. There's one that I currently maintain, and I was able to install it in an afternoon on the Steam Deck. That's basically unheard of with other console things. In pretty much every case that I know of, it's the manufacturer doing everything they can to prevent you from running any software on there that they don't want you to run. Including the operating system. I had a PlayStation 3 specifically so I could run Linux on it. And then, one day Sony was like, 'Nope. You can't do that anymore,' and they killed it with an update. The ability to boot a Linux distribution on it. I immediately put mine on Craigslist to sell it, because I was like, 'This is a useless thing to me now.' Most manufacturers don't want you to modify it or do anything. In the case of the Steam Deck, it's like another computer that just happens to have controls on it that make it really useful for handheld gaming.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: That's cool. It's really interesting to me that we could collectively choose to make Linux really great. It's very much within our power to outdo everything, really. We just have to get people to decide to do it, and when they do, great things happen. That's part of my takeaway from this. We're talking a whole lot about the great things that some of the companies that we work with, but the more we do of this, the greater everything gets for everyone. That's really positive, because it's not really beholden to any one company or anything.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--4">
+                  <blockquote><cite>Clayton Craft</cite>: Definitely. Maybe I'm a bit biased, because I pretty much only work on open source projects and have been for years. But I very strongly believe this is the right model for software development. Not only are you able to hack on stuff ... Like I said before, during product development, things move fast. You need to fix problems as they come up very quickly in order to have a product that you can sell when you need to. By using components that are open source, you have the ability to hack on those things as much as you need, which is great. You don't get that with proprietary components. You might submit a bug to the company that provided the component and they may or may not get to it. Depending on how much revenue they think that you're going to bring them as a customer and what your agreements are with them and whatever. As Samuel was saying, you're kind of at their discretion or whatever. Maybe they can't help you fast enough. But if you're choosing components that are open source that you can go and modify as you need, it's great. And if you submit those changes back to the upstream projects, then those changes will always be there. If you need to build upon it in the future, it's there and you can do it and you can find it. In the meantime, everybody else is able to improve upon it. Even your customers. There's patches and changes that I've come across in the wild for the Steam Deck that were created by gamers and people in the community. Not by Valve and not by Igalia and not by other contractors that they're paying for this, but just people who ran into a problem or something and they found a workaround. They were able to do that because all the stuff is open source. They can go and poke around the code and write patches for it. To me, that's very powerful. I think the Steam Deck and products that follow a model like this will likely live well beyond their design lifetimes, because you can take the hardware and run whatever you want on it. You actually truly own the thing as opposed to owning it for as long as the manufacturer decides to release software updates for it. There's a lot of products that ship with an operating system that don't get updates after two years, and that's that. You throw it away and get another one. And that's a mess.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Definitely. Hey. I'm really glad that we got a chance to do this episode. I hope that we do some more like this that are not entirely about just the web platform, but do manage to show the connections and how they're related. I just wanted to say thanks for coming on and talking about Steam-powered open source with us and graphics and games and game systems and open source. Thanks so much.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Samuel Iglesias</cite>: Thanks for having us.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--4">
+                  <blockquote><cite>Clayton Craft</cite>: Thank you for having us.</blockquote></li>
+                
+              </ul>
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+<script src="/assets/chat.js"></script>
+
+    </main>
+
+    <footer id="site-footer" role="contentinfo">
+
+  <a class="site-title" href="/">
+    <img src="/assets/i/logo.png" alt="Igalia" />
+  </a>
+
+  <div>
+    <h2>Igalia.com</h2>
+    <ul class="main-menu" role="navigation">
+      
+      <li>
+        <a class="page-link" href="/about" title="About Us">
+          About Us
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/technologies" title="Technologies">
+          Technologies
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/services" title="Services">
+          Services
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/industries" title="Industries">
+          Industries
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/24-7/home" title="24/7">
+          24/7
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/jobs" title="Jobs">
+          Jobs
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/contact" title="Contact">
+          Contact
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div>
+    <h2>Igalia, S.L. © 2023. All rights reserved.</h2>
+    <ul class="footer-menu" role="navigation">
+      
+      <li>
+        <a class="page-link" href="/coc" title="Code of Conduct">
+          Code of Conduct
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/legal" title="Legal Terms">
+          Legal Terms
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/press" title="Press">
+          Press
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/privacy" title="Privacy Policy">
+          Privacy Policy
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/public-funding" title="Public funding (Fondos públicos)">
+          Public funding (Fondos públicos)
+        </a>
+        </li>
+        
+    </ul>
+  </div>
+
+  <div role="contentinfo">
+    <h2>Headquarters</h2>
+    <ul class="contact-list">
+      
+      <li>Bugallal Marchesi, 22, 1º</li>
+      
+      <li>15008 A Coruña</li>
+      
+      <li>Galicia (Spain)</li>
+      
+      <li>Pho.: +34 981 913991</li>
+      
+      <li>
+        <a href="mailto:info(at)igalia.com">
+          info(at)igalia.com
+        </a>
+      </li>
+      
+    </ul>
+    <div class="social">
+      
+      
+
+      <a class="social-link" href="https://twitter.com/igalia" target="_blank" title="twitter" rel="me">
+        <i aria-hidden="true" class="fab fa-twitter"></i>
+        <span hidden>twitter</span>
+      </a>
+      
+      
+
+      <a class="social-link" href="https://floss.social/@igalia" target="_blank" title="mastodon" rel="me">
+        <i aria-hidden="true" class="fab fa-mastodon"></i>
+        <span hidden>mastodon</span>
+      </a>
+      
+      
+
+      <a class="social-link" href="https://youtube.com/igalia" target="_blank" title="youtube" rel="me">
+        <i aria-hidden="true" class="fab fa-youtube"></i>
+        <span hidden>youtube</span>
+      </a>
+      
+    </div>
+
+</footer>
+
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+    <script src="/assets/app.js"></script>
+    
+    
+
+    <!-- Piwik -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+      _paq.push(['disableCookies']);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+         var u="//stats.igalia.com/";
+         _paq.push(['setTrackerUrl', u+'piwik.php']);
+         _paq.push(['setSiteId', '1']);
+         var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+         g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+       })();
+    </script>
+    <noscript><p><img src="//stats.igalia.com/piwik.php?idsite=1&rec=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Piwik Code -->
+
+  </body>
+</html>

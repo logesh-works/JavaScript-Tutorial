@@ -1,0 +1,154 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" />
+<title>Feature request: support &quot;Add to Home Screen&quot; on iOS/iPadOS 16.4 - Tantek</title>
+<link rel="canonical" href="https://tantek.com/2023/114/b1/" />
+<link rel="icon" href="/logo.jpg" />
+<meta name="viewport" content="initial-scale=0.7"/>
+<link rel="webmention" href="//webmention.io/tantek.com/webmention" />
+<style type="text/css">/*<![CDATA[*/ 
+@import "/2023/simple.css";
+form.search { width:34%; float:right; white-space:nowrap; font-size:1.3em; text-align:right }
+input,button { font-size:1em }
+button { margin: 0 0.5em 0 0; padding:0 0.5em }
+form.search input[type=search] { width:62% }
+/*]]>*/</style>
+</head>
+<body class=" post hentry h-entry as-article">
+<header><div class="header">
+<h1><a href="/" rel="author home">tantek.com</a></h1>
+
+<form class="search" action="https://duckduckgo.com/html/" method="get">
+<input type="hidden" name="type" value="list" />
+<input type="search" value="site:tantek.com " name="q" />
+<button type="submit">Search</button>
+</form>
+
+</div></header>
+
+<div class="sidestuff">
+<ul class="snav">
+<li><a href="/2023/113/t4/" id="previtem" title="View the previous (older) item in the stream." rel="prev"><abbr>&#x2190;</abbr></a></li><li><a href="/2023/114/t1/venues-reviews-personal-pages" id="nextitem" title="View the next (newer) item in the stream" rel="next"><abbr>&#x2192;</abbr></a></li>
+</ul>
+</div>
+<div class="reply-context" style="border: 1px solid #f5f5f5;font-size:1.5em;text-indent:1em">
+New issue on<p style="text-indent:3em; margin-bottom:0"><a class="u-in-reply-to h-cite" rel="in-reply-to" href="https://github.com/mozilla-mobile/firefox-ios/issues">GitHub project “firefox-ios”</a></p>
+<hr />
+</div>
+<span class="p-author h-card"><a href="/" class="u-url author-icon" rel="author" title="Tantek Çelik"><img class="u-photo p-name" src="/logo.jpg" alt="Tantek Çelik" /></a></span>
+
+<div class="article">
+<header><div class="header"><h1 class="entry-title p-name">
+Feature request: support "Add to Home Screen" on iOS/iPadOS 16.4
+</h1><span class="info"><span class="dt-published published dt-updated updated"><time class="value" datetime="06:32-0700">06:32</time> on <time class="value">2023-04-24</time></span> <span class="lt">(ttk.me b/5QX1)</span> using <span class="using">BBEdit</span></span></div></header><div class="entry-content e-content">
+<p>
+iOS/iPadOS 16.4 (released 2023-03-27) have APIs for third-party browsers to support an “Add to Home Screen” menu item / share option like the same feature in Mobile Safari. Several iOS browsers have already shipped with support including Microsoft Edge for iOS, according to:
+<a href="https://ios.gadgethacks.com/how-to/these-browsers-let-you-add-web-apps-and-bookmarks-your-iphones-home-screen-0385351/">https://ios.gadgethacks.com/how-to/these-browsers-let-you-add-web-apps-and-bookmarks-your-iphones-home-screen-0385351/</a>. Firefox for iOS &amp; iPadOS should similarly support "Add to Home Screen", preferably as a menu item in the existing menu shown after choosing "Share" from the main ≡ menu in the bottom right corner.
+</p>
+<p>
+See prototype and implementation details explored in discussion
+<a href="https://github.com/mozilla-mobile/firefox-ios/discussions/13281">Add to Home Screen support in iOS 16.4 #13281</a> for feasibility.
+</p>
+<p>
+Chrome on iOS does not yet (as of version 112) have an "Add to Home Screen" feature. I would expect it to be implemented soon however, as it’s a path to installable web apps which Chrome on Android and desktop already support: 
+<a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Installing#add_to_home_screen">MDN: Installing and uninstalling web apps: Add to home screen</a>.
+</p>
+<p>
+This feature is both useful for users and helps incremental user interface parity with Safari and Edge on iOS (and likely soon Chrome).
+</p>
+<p>
+In addition, adding a web app to the home screen is a necessary step towards implementing the user interaction aspects of Web Push API and Notifications API support for web apps launched in Firefox. These two APIs were recently added to WebKit, also in iOS 16.4: 
+<a href="https://webkit.org/blog/13878/web-push-for-web-apps-on-ios-and-ipados/">2023-02-16 Web Push for Web Apps on iOS and iPadOS</a>
+</p>
+</div></div>
+<div class="info footer">
+<form action="//tantek.com/2023/114/b1/"><div>
+<label><span class="lt">URL:</span>
+<input class="u-url url u-uid uid bookmark" type="url" size="70" style="max-width:100%" value="https://tantek.com/2023/114/b1/" />
+</label>
+<label><span class="lt">HTML:</span>
+<input class="code" type="text" size="70" value='&lt;cite class="h-cite"&gt;&lt;a class="u-url p-name" href="https://tantek.com/2023/114/b1/"&gt;Feature request: support &amp;quot;Add to Home Screen&amp;quot; on iOS/iPadOS 16.4&lt;/a&gt; (&lt;abbr class="p-author h-card" title="Tantek Çelik"&gt;Çelik&lt;/abbr&gt; &lt;time class="dt-published"&gt;2023-04-24&lt;/time&gt;)&lt;/cite&gt;' />
+</label>
+
+<indie-action do="post" with="//tantek.com/2023/114/b1/">
+<span class="tweet-button">
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://tantek.com/2023/114/b1/" data-text="Feature request: support &quot;Add to Home Screen&quot; on iOS/iPadOS 16.4:" data-count="horizontal" data-via="t" data-related="indiewebcamp:microformats">Tweet</a><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+</span>
+</indie-action>
+</div></form>
+</div>
+<div class="info footer">
+<a class="u-syndication" rel="syndication" style="float:right; clear:right; margin-left:1em; height:2em"
+   href="https://github.com/mozilla-mobile/firefox-ios/issues/14095">
+   View on Github</a>
+
+</div>
+ </li>
+<script type="text/javascript">/*<![CDATA[*/
+function select_all(e) {
+ e = e ? e : window.event;
+ var el = targetelement(e);
+ el.focus();
+ /* el.select(); // fails in Mobile Safari */
+ el.selectionStart=0;
+ el.selectionEnd=el.value.length;
+}
+
+var fs = document.forms, i = 0, j = 0, es;
+for (i = 0; i<fs.length; i++) {
+  es = document.forms[i].elements;
+  if (es) {
+    for (j=0;j<es.length;j++) {
+      switch (es[j].type) {
+      case "text":
+      case "url":
+        es[j].onclick = select_all;
+      }
+    }
+  }
+}
+
+
+document.onkeyup = keyup;
+
+function clearactive() {
+  var e = document.getElementById("previtem");
+  if (e) { e.className = ""; }
+  e = document.getElementById("nextitem");
+  if (e) { e.className = ""; }
+}
+
+function keyup(e)
+{
+   var kid = (window.event) ? event.keyCode : e.keyCode;
+   var nid = "";
+   if (document.activeElement !== document.body) {
+     return;
+   }
+   switch(kid) {
+    case 37:
+    case 74:
+      nid = "previtem";
+      break;
+    case 39:
+    case 75:
+      nid = "nextitem";
+      break;
+   }
+   if (nid!="") {
+      ne = document.getElementById(nid);
+      if (ne) {
+        ne.className = "active";
+        doevent(ne,"click");
+        window.onunload = clearactive;
+        return false;
+      }
+   }
+}
+
+/*]]>*/</script>
+<script src="/fragmention.min.js"></script>
+<script src="/scripts/indieconfig.js"></script> 
+<script src="/scripts/webaction.js"></script>
+<script src="cassis.js"></script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</body>
+</html>

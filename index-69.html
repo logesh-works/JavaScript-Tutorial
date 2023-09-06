@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Gravity Wars Redux v1.1</title>
+<style type="text/css">
+body {background: #CCC; font: smaller sans-serif;}
+#game {width: 800px; height: 500px; border: 1px solid #BBB; position: relative; margin: 0 auto; background: #EEE;}
+canvas {position: absolute; top: 0; left: 0;}
+#planets {z-index: 100;}
+#ships {z-index: 10;}
+#animate {z-index: 5;}
+#trails {z-index: 1;}
+
+#inputs {display: flex; display: -webkit-flex; width: 800px; margin: 0 auto; background: #DDD; padding: 0.5em 0; border: 1px solid #BBB; border-top: 0;}
+#inputs > div {display: flex; flex-direction: row; flex: auto;}
+#inputs > div {display: -webkit-flex; -webkit-flex-direction: row; -webkit-flex: auto;}
+#player1 {order: 1; -webkit-order: 1;}
+#controls {order: 2; -webkit-order: 2;}
+#player2 {order: 3; -webkit-order: 3;}
+#inputs > div > ul {margin: 0; padding: 0.5em; width: 50%;}
+#inputs > div#controls > ul {width: 100%;}
+#inputs > div > ul > li {list-style: none; text-align: center;}
+
+#notes {width: 800px; margin: 2em auto;}
+
+footer {margin: 5em 1.5em 0; padding: 1em 0.5em; border-top: 1px solid #999; font-style: italic; color: #666; text-align: center;}
+
+</style>
+<script type="text/javascript" src="js/gw.js"></script>
+<script type="text/javascript" src="js/incremental.js"></script>
+
+<script type="text/javascript">
+window.onload = init;
+</script>
+</head>
+<body>
+
+<!-- *********************************************************************** -->
+
+<div id="game">
+<canvas id="planets" width="800" height="500"></canvas>
+<canvas id="ships" width="800" height="500"></canvas>
+<canvas id="animate" width="800" height="500"></canvas>
+<canvas id="trails" width="800" height="500"></canvas>
+<div id="output"></div>
+</div>
+
+
+<div id="inputs">
+
+<div id="player1">
+<ul>
+<li>Angle</li>
+<li><input type="text" size="8" value="90" id="p1-angle" tabindex="1" oninput="playerControl(this);"></li>
+</ul>
+<ul>
+<li>Power</li>
+<li><input type="text" size="8" min="0" max="100" value="50" tabindex="2" id="p1-power" oninput="playerControl(this);"></li>
+</ul>
+</div>
+
+<div id="player2">
+<ul>
+<li>Angle</li>
+<li><input type="text" size="8" value="270" id="p2-angle" tabindex="3" oninput="playerControl(this);"></li>
+</ul>
+<ul>
+<li>Power</li>
+<li><input type="text" size="8" min="0" max="100" value="50" id="p2-power" tabindex="4" oninput="playerControl(this);"></li>
+</ul>
+</div>
+
+<div id="controls">
+<ul>
+<li>Gravimetric display</li>
+<li><input type="range" min="0" max="30" value="0" step="0.1" id="gravimetrics" oninput="gravimetrics();"></li>
+<li><button onclick="shotsFired();" id="fire" tabindex="5">Fire!</button></li>
+</ul>
+</div>
+
+</div>
+
+</div>
+
+<!-- *********************************************************************** -->
+
+<ul id="notes">
+<li>You can use the arrow keys to increment/decrement values ±1 (shift-arrow ±10; control-arrow ±0.1).</li>
+<li>Unlike most ‘artillery’ games, here both ships fire simultaneously, so get all the values entered before you hit “Fire!”.</li>
+<li>Shots become “live” after about a quarter-second, meaning your own shot can kill you.</li>
+<li>Shots that are still in flight after about half a minute will self-destruct.</li>
+<li>The “GAME OVER” screen lasts five seconds.  Then you’re thrown back into battle.  Neverending battle.</li>
+<li>If you get a boring game layout, which happens, just reload the page.</li>
+</ul>
+
+<footer>
+Gravity Wars Redux v1.1 • A <a href="http://meyerweb.com/">meyerweb</a> production • Special thanks to <a href="http://appliedphysics.yale.edu/sohrab-ismail-beigi">Sohrab Ismail-Beigi</a> and <code><a href="http://pascal.sources.ru/">pascal.sources.ru</a></code>
+</footer>
+
+</body>
+</html>

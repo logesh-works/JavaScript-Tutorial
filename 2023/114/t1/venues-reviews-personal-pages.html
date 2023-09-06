@@ -1,0 +1,243 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" />
+<title>🌱 I have long been a fan of @Foursquare.com and @Swarmapp.com, having created many venues, posted many tips, and (checks profile) over 45,000 checkins. I recently joined @happycow.net and before I start posting new vegan (friendly) venues or reviews there, I really need to figure out my own personal site venue pages (including URL design) and review posts design and authoring workflow.
+
+I’m pretty sure I can and should post h-review posts as a variant of articles (with usual h-entry markup) with an explicit article name, since most review destinations request a title (name) for the review (e.g. HappyCow, TripAdvisor), and for others with only review text (e.g. Google Maps), I can include the name at the start.
+
+Different review destinations have different text requirements (minimum and/or maximum lengths), and I’ll take time to document those first.
+
+The first destination I’ll likely try automatically syndicating to is a site created by #IndieWeb community member @jamesg.blog (@capjamesg@indieweb.social): @breakfastand.coffee
+
+It’s still quite new, but the thing that makes Breakfast &amp; Coffee innovative and unique is that it encourages you to post your venue (e.g. cafe) description or review on your own site with a meaningful slug, link to https://breakfastand.coffee/ and then send a Webmention to indicate that you’d like to syndicate your venue or review into Breakfast &amp; Coffee, like into an aggregator.
+
+Before I get to that point however, I feel there’s quite a few challenges in publishing a “decent” restaurant / cafe venue page, because there really is a dearth of good examples of doing so with simple semantic HTML + CSS. You really don’t need JS to post info about a restaurant.
+
+Setting aside the economic / intermediation challenges of &quot;delivery apps&quot; for now, people really want a few simple things from a restaurant site / page that could all be marked up with simple semantic HTML (thus resulting in good web search rankings) and styled in a quickly readable and mobile-friendly way.
+
+* hours open (perhaps kitchen hours if different)
+* location (address that links to a map UI or map embed w/o cookies/tracking)
+* nearest bus/tram/rail stop
+* payment restrictions (e.g. if only cash, or only credit) or options if you prefer
+* contact info (including a note about catering if that’s an option)
+* links to social media profiles
+* links to restaurant review sites/aggregator pages (e.g. venue permalink on Google Maps, TripAdvisor, Foursquare, Swarm, HappyCow)
+* menu with item name, description, price, optional-thumbnail, and dietary/allergy notations
+
+No you really don’t need the full mess of made-up things at schema-org.
+
+The community at OpenStreetMap has done A LOT (most? nearly all?) of the work figuring out the ways to express the above types of information, e.g.:
+
+https://wiki.openstreetmap.org/wiki/Key:opening_hours
+
+Yet has anyone actually seen a simple semantic HTML page that publishes this kind of information? 
+
+I’ve web searched many search terms and phrases and found nothing good. 
+
+Stylistically dated templates for sale. Examples with numerous unnecessary scripts (no your typical user does not care about your clever animated 3D-carousel of pretty photos, certainly not waiting for a megabyte of framework scripts for it). Something built on Bootstrap, unnecessary for today’s mobile-friendly HTML+CSS.
+
+I did find one (ONE) blog post from 2007 (those were the days) for semantic markup for a restaurant menu: https://jonchristopher.us/blog/a-semantic-breakdown-of-restaurant-menus/ 
+
+Unless I find an existing solution soon, I’m going to create something from scratch with h-card (since a restaurant is an organization / venue) and add semantic HTML &amp; class names for various fields, re-using from OpenStreetMap Keys whenever possible.
+
+That leaves the URL design, where to publish my restaurant pages on my own site, and rather than rethink it, I will likely go with what I decided in my Whistle short URL design^1 many years ago, which is /v/ at the top level of my site, followed by a slug of my short name for the venue. This way I can play with static HTML pages there, with a shared style sheet in that same directory, without impacting anything else on my site.
+
+I have some other thoughts around iconography for various diet preferences / allergen warnings for menu items that I’ve tried (or considered), though perhaps I’ll leave those for another post. 
+
+Or maybe I’ll braindump them now, however incomplete, to see if they resonate or anyone has better suggestions (restaurants and menus really have no standard for these)
+
+Edit: already updated lists &amp; descriptions based on feedback:
+
+Individual icons/emoji:
+🌱 — plant-based (no animal meat or meat broth/oils whatsover)
++🌾 — has gluten
++🥜 — has nuts
++🍫 — has chocolate
++🌶 — is spicy
++🍯 — has honey
++🧈 — has butter
++🥛 — has milk, cream, or yogurt
++🧀 — has cheese
++🥚 — has egg
+
+When present in a menu item (with no other food-related icons)
+🌱 = vegan &amp; gluten-free
+🌱🌾 = vegan with gluten
+🌱🥜 = vegan with nuts
+🌱🍫 = vegan with chocolate
+🌱🌶 = vegan and spicy
+🌱🍯 = vegetarian with honey
+🌱🧈 = vegetarian with butter
+🌱🥛 = vegetarian with milk, cream, or yogurt
+🌱🧀 = vegetarian with cheese
+🌱🥚 = vegetarian with egg
+
+with additional combinations as necessary. 
+
+For example:
+
+A breakfast sandwich at Devil’s Teeth Bakery^2:
+* Regular Breakfast Sandwich (no bacon!) $10.00 🌱🌾🧈🧀🥚
+
+Or a chocolate croissant at Arsicault^3:
+* Chocolate Croissant $5.75 🌱🌾🧈🍫
+
+Judahlicious^4 jungle açai bowl:
+* Jungle Style Açaí Bowl $12.75 🌱
+
+Arizmendi^5 mint chocolate cookie:
+* Mint Chocolate Chip Cookie $2.75 🌱🌾
+
+
+Non-vegetarian items would omit the plant 🌱 icon/emoji, but could still include allergen icons.
+
+If you are posting restaurants (or any other venues) to your personal site, please add a few of their permalinks to the IndieWeb Examples here: https://indieweb.org/venue#Indieweb_Examples
+
+
+This is day 40 of #100DaysOfIndieWeb. #100Days
+
+← Day 39: https://tantek.com/2023/112/t2/account-migration-post-blog-archive-format
+→ Day 41: https://tantek.com/2023/139/t1/wikipedia-supports-indieweb-rel-me
+
+
+Glossary
+
+article
+ https://indieweb.org/article
+checkin
+ https://indieweb.org/checkin
+h-card
+ https://microformats.org/wiki/h-card
+h-entry
+ https://microformats.org/wiki/h-entry
+h-review
+ https://microformats.org/wiki/h-review
+POSSE
+ https://indieweb.org/POSSE
+review 
+ https://indieweb.org/review
+URL design
+ https://indieweb.org/URL_design
+venue
+ https://indieweb.org/venue
+
+References
+
+^1 https://tantek.com/w/Whistle#design 
+^2 https://www.devilsteethbakingcompany.com/menu
+^3 https://arsicault-bakery.com/menus
+^4 https://judahlicious.com/menu/
+^5 https://store.arizmendibakery.com/menu-today - Tantek</title>
+<link rel="icon" href="/logo.jpg" />
+<meta name="viewport" content="initial-scale=0.7"/>
+<link rel="webmention" href="//webmention.io/tantek.com/webmention" />
+<style type="text/css">/*<![CDATA[*/ 
+@import "/2023/simple.css";
+form.search { width:34%; float:right; white-space:nowrap; font-size:1.3em; text-align:right }
+input,button { font-size:1em }
+button { margin: 0 0.5em 0 0; padding:0 0.5em }
+form.search input[type=search] { width:62% }
+/*]]>*/</style>
+</head>
+<body class=" post hentry h-entry as-note">
+<header><div class="header">
+<h1><a href="/" rel="author home">tantek.com</a></h1>
+
+<form class="search" action="https://duckduckgo.com/html/" method="get">
+<input type="hidden" name="type" value="list" />
+<input type="search" value="site:tantek.com " name="q" />
+<button type="submit">Search</button>
+</form>
+
+</div></header>
+
+<div class="sidestuff">
+<ul class="snav">
+<li><a href="/2023/114/b1/" id="previtem" title="View the previous (older) item in the stream." rel="prev"><abbr>&#x2190;</abbr></a></li><li><a href="/2023/116/b1/" id="nextitem" title="View the next (newer) item in the stream" rel="next"><abbr>&#x2192;</abbr></a></li>
+</ul>
+</div>
+<span class="p-author h-card"><a href="/" class="u-url author-icon" rel="author" title="Tantek Çelik"><img class="u-photo p-name" src="/logo.jpg" alt="Tantek Çelik" /></a></span>
+
+<a href="https://fed.brid.gy/" aria-hidden="true"></a> <p class="p-name entry-title e-content entry-content article">🌱 I have long been a fan of <a class="auto-link" href="https://Foursquare.com">@Foursquare.com</a> and <a class="auto-link" href="https://Swarmapp.com">@Swarmapp.com</a>, having created many venues, posted many tips, and (checks profile) over 45,000 checkins. I recently joined <a class="auto-link" href="https://happycow.net">@happycow.net</a> and before I start posting new vegan (friendly) venues or reviews there, I really need to figure out my own personal site venue pages (including URL design) and review posts design and authoring workflow.<br class="auto-break"/><br class="auto-break"/>I’m pretty sure I can and should post h-review posts as a variant of articles (with usual h-entry markup) with an explicit article name, since most review destinations request a title (name) for the review (e.g. HappyCow, TripAdvisor), and for others with only review text (e.g. Google Maps), I can include the name at the start.<br class="auto-break"/><br class="auto-break"/>Different review destinations have different text requirements (minimum and/or maximum lengths), and I’ll take time to document those first.<br class="auto-break"/><br class="auto-break"/>The first destination I’ll likely try automatically syndicating to is a site created by <a href="https://indieweb.social/tags/IndieWeb" class="auto-link-hashtag">#<span class="p-category auto-tag">IndieWeb</span></a> community member <a class="auto-link" href="https://jamesg.blog">@jamesg.blog</a> (<a class="auto-link" href="https://indieweb.social/@capjamesg">@capjamesg@indieweb.social</a>): <a class="auto-link" href="https://breakfastand.coffee">@breakfastand.coffee</a><br class="auto-break"/><br class="auto-break"/>It’s still quite new, but the thing that makes Breakfast &amp; Coffee innovative and unique is that it encourages you to post your venue (e.g. cafe) description or review on your own site with a meaningful slug, link to <a class="auto-link" href="https://breakfastand.coffee/">https://breakfastand.coffee/</a> and then send a Webmention to indicate that you’d like to syndicate your venue or review into Breakfast &amp; Coffee, like into an aggregator.<br class="auto-break"/><br class="auto-break"/>Before I get to that point however, I feel there’s quite a few challenges in publishing a “decent” restaurant / cafe venue page, because there really is a dearth of good examples of doing so with simple semantic HTML + CSS. You really don’t need JS to post info about a restaurant.<br class="auto-break"/><br class="auto-break"/>Setting aside the economic / intermediation challenges of &quot;delivery apps&quot; for now, people really want a few simple things from a restaurant site / page that could all be marked up with simple semantic HTML (thus resulting in good web search rankings) and styled in a quickly readable and mobile-friendly way.<br class="auto-break"/><br class="auto-break"/>* hours open (perhaps kitchen hours if different)<br class="auto-break"/>* location (address that links to a map UI or map embed w/o cookies/tracking)<br class="auto-break"/>* nearest bus/tram/rail stop<br class="auto-break"/>* payment restrictions (e.g. if only cash, or only credit) or options if you prefer<br class="auto-break"/>* contact info (including a note about catering if that’s an option)<br class="auto-break"/>* links to social media profiles<br class="auto-break"/>* links to restaurant review sites/aggregator pages (e.g. venue permalink on Google Maps, TripAdvisor, Foursquare, Swarm, HappyCow)<br class="auto-break"/>* menu with item name, description, price, optional-thumbnail, and dietary/allergy notations<br class="auto-break"/><br class="auto-break"/>No you really don’t need the full mess of made-up things at schema-org.<br class="auto-break"/><br class="auto-break"/>The community at OpenStreetMap has done A LOT (most? nearly all?) of the work figuring out the ways to express the above types of information, e.g.:<br class="auto-break"/><br class="auto-break"/><a class="auto-link" href="https://wiki.openstreetmap.org/wiki/Key:opening_hours">https://wiki.openstreetmap.org/wiki/Key:opening_hours</a><br class="auto-break"/><br class="auto-break"/>Yet has anyone actually seen a simple semantic HTML page that publishes this kind of information? <br class="auto-break"/><br class="auto-break"/>I’ve web searched many search terms and phrases and found nothing good. <br class="auto-break"/><br class="auto-break"/>Stylistically dated templates for sale. Examples with numerous unnecessary scripts (no your typical user does not care about your clever animated 3D-carousel of pretty photos, certainly not waiting for a megabyte of framework scripts for it). Something built on Bootstrap, unnecessary for today’s mobile-friendly HTML+CSS.<br class="auto-break"/><br class="auto-break"/>I did find one (ONE) blog post from 2007 (those were the days) for semantic markup for a restaurant menu: <a class="auto-link" href="https://jonchristopher.us/blog/a-semantic-breakdown-of-restaurant-menus/">https://jonchristopher.us/blog/a-semantic-breakdown-of-restaurant-menus/</a> <br class="auto-break"/><br class="auto-break"/>Unless I find an existing solution soon, I’m going to create something from scratch with h-card (since a restaurant is an organization / venue) and add semantic HTML &amp; class names for various fields, re-using from OpenStreetMap Keys whenever possible.<br class="auto-break"/><br class="auto-break"/>That leaves the URL design, where to publish my restaurant pages on my own site, and rather than rethink it, I will likely go with what I decided in my Whistle short URL design<a id="t5QX1_ref-1" href="#t5QX1_note-1">¹</a> many years ago, which is /v/ at the top level of my site, followed by a slug of my short name for the venue. This way I can play with static HTML pages there, with a shared style sheet in that same directory, without impacting anything else on my site.<br class="auto-break"/><br class="auto-break"/>I have some other thoughts around iconography for various diet preferences / allergen warnings for menu items that I’ve tried (or considered), though perhaps I’ll leave those for another post. <br class="auto-break"/><br class="auto-break"/>Or maybe I’ll braindump them now, however incomplete, to see if they resonate or anyone has better suggestions (restaurants and menus really have no standard for these)<br class="auto-break"/><br class="auto-break"/>Edit: already updated lists &amp; descriptions based on feedback:<br class="auto-break"/><br class="auto-break"/>Individual icons/emoji:<br class="auto-break"/>🌱 — plant-based (no animal meat or meat broth/oils whatsover)<br class="auto-break"/>+🌾 — has gluten<br class="auto-break"/>+🥜 — has nuts<br class="auto-break"/>+🍫 — has chocolate<br class="auto-break"/>+🌶 — is spicy<br class="auto-break"/>+🍯 — has honey<br class="auto-break"/>+🧈 — has butter<br class="auto-break"/>+🥛 — has milk, cream, or yogurt<br class="auto-break"/>+🧀 — has cheese<br class="auto-break"/>+🥚 — has egg<br class="auto-break"/><br class="auto-break"/>When present in a menu item (with no other food-related icons)<br class="auto-break"/>🌱 = vegan &amp; gluten-free<br class="auto-break"/>🌱🌾 = vegan with gluten<br class="auto-break"/>🌱🥜 = vegan with nuts<br class="auto-break"/>🌱🍫 = vegan with chocolate<br class="auto-break"/>🌱🌶 = vegan and spicy<br class="auto-break"/>🌱🍯 = vegetarian with honey<br class="auto-break"/>🌱🧈 = vegetarian with butter<br class="auto-break"/>🌱🥛 = vegetarian with milk, cream, or yogurt<br class="auto-break"/>🌱🧀 = vegetarian with cheese<br class="auto-break"/>🌱🥚 = vegetarian with egg<br class="auto-break"/><br class="auto-break"/>with additional combinations as necessary. <br class="auto-break"/><br class="auto-break"/>For example:<br class="auto-break"/><br class="auto-break"/>A breakfast sandwich at Devil’s Teeth Bakery<a id="t5QX1_ref-2" href="#t5QX1_note-2">²</a>:<br class="auto-break"/>* Regular Breakfast Sandwich (no bacon!) $10.00 🌱🌾🧈🧀🥚<br class="auto-break"/><br class="auto-break"/>Or a chocolate croissant at Arsicault<a id="t5QX1_ref-3" href="#t5QX1_note-3">³</a>:<br class="auto-break"/>* Chocolate Croissant $5.75 🌱🌾🧈🍫<br class="auto-break"/><br class="auto-break"/>Judahlicious<a id="t5QX1_ref-4" href="#t5QX1_note-4">⁴</a> jungle açai bowl:<br class="auto-break"/>* Jungle Style Açaí Bowl $12.75 🌱<br class="auto-break"/><br class="auto-break"/>Arizmendi<a id="t5QX1_ref-5" href="#t5QX1_note-5">⁵</a> mint chocolate cookie:<br class="auto-break"/>* Mint Chocolate Chip Cookie $2.75 🌱🌾<br class="auto-break"/><br class="auto-break"/><br class="auto-break"/>Non-vegetarian items would omit the plant 🌱 icon/emoji, but could still include allergen icons.<br class="auto-break"/><br class="auto-break"/>If you are posting restaurants (or any other venues) to your personal site, please add a few of their permalinks to the IndieWeb Examples here: <a class="auto-link" href="https://indieweb.org/venue#Indieweb_Examples">https://indieweb.org/venue#Indieweb_Examples</a><br class="auto-break"/><br class="auto-break"/><br class="auto-break"/>This is day 40 of <a href="https://indieweb.social/tags/100DaysOfIndieWeb" class="auto-link-hashtag">#<span class="p-category auto-tag">100DaysOfIndieWeb</span></a>. <a href="https://indieweb.social/tags/100Days" class="auto-link-hashtag">#<span class="p-category auto-tag">100Days</span></a><br class="auto-break"/><br class="auto-break"/>← Day 39: <a class="auto-link" href="https://tantek.com/2023/112/t2/account-migration-post-blog-archive-format">https://tantek.com/2023/112/t2/account-migration-post-blog-archive-format</a><br class="auto-break"/>→ Day 41: <a class="auto-link" href="https://tantek.com/2023/139/t1/wikipedia-supports-indieweb-rel-me">https://tantek.com/2023/139/t1/wikipedia-supports-indieweb-rel-me</a><br class="auto-break"/><br class="auto-break"/><br class="auto-break"/>Glossary<br class="auto-break"/><br class="auto-break"/>article<br class="auto-break"/>&#xA0;<a class="auto-link" href="https://indieweb.org/article">https://indieweb.org/article</a><br class="auto-break"/>checkin<br class="auto-break"/>&#xA0;<a class="auto-link" href="https://indieweb.org/checkin">https://indieweb.org/checkin</a><br class="auto-break"/>h-card<br class="auto-break"/>&#xA0;<a class="auto-link" href="https://microformats.org/wiki/h-card">https://microformats.org/wiki/h-card</a><br class="auto-break"/>h-entry<br class="auto-break"/>&#xA0;<a class="auto-link" href="https://microformats.org/wiki/h-entry">https://microformats.org/wiki/h-entry</a><br class="auto-break"/>h-review<br class="auto-break"/>&#xA0;<a class="auto-link" href="https://microformats.org/wiki/h-review">https://microformats.org/wiki/h-review</a><br class="auto-break"/>POSSE<br class="auto-break"/>&#xA0;<a class="auto-link" href="https://indieweb.org/POSSE">https://indieweb.org/POSSE</a><br class="auto-break"/>review <br class="auto-break"/>&#xA0;<a class="auto-link" href="https://indieweb.org/review">https://indieweb.org/review</a><br class="auto-break"/>URL design<br class="auto-break"/>&#xA0;<a class="auto-link" href="https://indieweb.org/URL_design">https://indieweb.org/URL_design</a><br class="auto-break"/>venue<br class="auto-break"/>&#xA0;<a class="auto-link" href="https://indieweb.org/venue">https://indieweb.org/venue</a><br class="auto-break"/><br class="auto-break"/>References<br class="auto-break"/><br class="auto-break"/><a id="t5QX1_note-1" href="#t5QX1_ref-1">¹</a> <a class="auto-link" href="https://tantek.com/w/Whistle#design">https://tantek.com/w/Whistle#design</a> <br class="auto-break"/><a id="t5QX1_note-2" href="#t5QX1_ref-2">²</a> <a class="auto-link" href="https://www.devilsteethbakingcompany.com/menu">https://www.devilsteethbakingcompany.com/menu</a><br class="auto-break"/><a id="t5QX1_note-3" href="#t5QX1_ref-3">³</a> <a class="auto-link" href="https://arsicault-bakery.com/menus">https://arsicault-bakery.com/menus</a><br class="auto-break"/><a id="t5QX1_note-4" href="#t5QX1_ref-4">⁴</a> <a class="auto-link" href="https://judahlicious.com/menu/">https://judahlicious.com/menu/</a><br class="auto-break"/><a id="t5QX1_note-5" href="#t5QX1_ref-5">⁵</a> <a class="auto-link" href="https://store.arizmendibakery.com/menu-today">https://store.arizmendibakery.com/menu-today</a></p><span class="info footer">
+  <span class="dt-published published dt-updated updated">
+  <time class="value" datetime="13:34-0700">13:34</time> on <time class="value">2023-04-24</time>  </span>
+ <span class="lt">
+ (ttk.me t5QX1) </span>
+  using <span class="using">BBEdit</span> </span> 
+<div class="info footer">
+<form action="//tantek.com/2023/114/t1/venues-reviews-personal-pages"><div>
+<label><span class="lt">URL:</span>
+<input class="u-url url u-uid uid bookmark" type="url" size="70" style="max-width:100%" value="https://tantek.com/2023/114/t1/venues-reviews-personal-pages" />
+</label>
+</div></form>
+</div>
+</li>
+<script type="text/javascript">/*<![CDATA[*/
+function select_all(e) {
+ e = e ? e : window.event;
+ var el = targetelement(e);
+ el.focus();
+ /* el.select(); // fails in Mobile Safari */
+ el.selectionStart=0;
+ el.selectionEnd=el.value.length;
+}
+
+var fs = document.forms, i = 0, j = 0, es;
+for (i = 0; i<fs.length; i++) {
+  es = document.forms[i].elements;
+  if (es) {
+    for (j=0;j<es.length;j++) {
+      switch (es[j].type) {
+      case "text":
+      case "url":
+        es[j].onclick = select_all;
+      }
+    }
+  }
+}
+
+
+document.onkeyup = keyup;
+
+function clearactive() {
+  var e = document.getElementById("previtem");
+  if (e) { e.className = ""; }
+  e = document.getElementById("nextitem");
+  if (e) { e.className = ""; }
+}
+
+function keyup(e)
+{
+   var kid = (window.event) ? event.keyCode : e.keyCode;
+   var nid = "";
+   if (document.activeElement !== document.body) {
+     return;
+   }
+   switch(kid) {
+    case 33:
+    case 37:
+    case 74:
+      nid = "previtem";
+      break;
+    case 34:
+    case 39:
+    case 75:
+      nid = "nextitem";
+      break;
+   }
+   if (nid!="") {
+      ne = document.getElementById(nid);
+      if (ne) {
+        ne.className = "active";
+        doevent(ne,"click");
+        window.onunload = clearactive;
+        return false;
+      }
+   }
+}
+
+/*]]>*/</script>
+<script src="/fragmention.min.js"></script>
+<script src="/scripts/indieconfig.js"></script> 
+<script src="/scripts/webaction.js"></script>
+<script src="cassis.js"></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" />
+<title>One of the fun things about #IndieWeb notes &amp; replies is that how we post is actively evolving! Like how should we @ someone?
+
+#socialMedia aliases (e.g. @Twitter) were obvious, with prior @-name usage on Flickr etc.
+
+Now, some have a domain, or an @-@ (pronounced at-at, yes, just like the abbreviation for Imperial All Terrain Armored Transport^1), or some have both.
+
+We can ask questions like why do we @-someone? What are the use-cases?
+* In a reply to a public post, clearly express that you’re speaking to that person
+* In a reply to a reply, that you’re speaking to everyone upthread (AKA a https://indieweb.org/canoe)
+* When attributing something to someone (photo/post/cool thing by so-and-so), giving credit
+* Distinguish a person (or something that can be followed) from “just” a site
+* For all the above, notifying someone accordingly
+
+Some ideas:
+
+1. Ideally, if/when everyone has their own domain (where they receive Webmention notifications, and a feed you can follow), we can @-name their domain, which your auto-linker^2 should hyperlink accordingly, e.g.
+* @aaronparecki.com @anomalily.net @Martymcgui.re‎ @david.shanske.com @voxpelli.com @adactio.com @marcthiele.com @mxb.dev
+
+These all look close enough to social media aliases/names that they’re immediately recognizable as readable @-names, a good consideration when choosing a domain name.^3
+
+2. As a fallback (e.g. for non-@-domain-auto-linking destinations) we can use someone’s plain domain (explicitly with https:), especially if their home page still has a stream or feed you can follow, or maybe if they don’t receive homepage Webmentions (yet), e.g.:
+* https://jacky.wtf/ https://tmichellemoore.com/ https://crowdersoup.com/
+
+3. Some folks with personal sites have (for now) created separate Mastodon accounts (or installed an instance on a subdomain), and for them, we can reference their @-@ parenthetically after their domain, like:
+* https://kevinmarks.com/ (@kevinmarks@xoxo.zone), https://dangillmor.com/ (@dangillmor@mastodon.social), https://simonwillison.net/ (@simon@simonwillison.net) 
+
+Rather than using social media silo @-names (except when explicitly replying to a silo), I’m now experimenting with all three of these (1-3) instead, both to elevate people’s IndieWeb identities, and for Mastodon viewers, provide a convenient way to follow @-@ addresses.
+
+If someone’s homepage receives Webmentions, they will get notified when I @-mention them by domain.
+
+I recently implemented syntactic auto-linking of @-@ addresses like this:
+* @user@example.com --&gt; https://example.com/@user
+with a special case for @-domain@-domain to just link to the domain, e.g.:
+* @tantek.com@tantek.com --&gt; https://tantek.com/
+
+I also made a recent policy decision to auto-link all @-@ (and @-domain) mentions to https:, the reasoning being that identities on the web should be using https.
+* Testing in production here: https://tantek.com/cassis.js, search for &quot;auto_link(&quot;
+
+Some questions: 
+* Does/do Mastodon (or other ActivityPub servers) notify people when you @-@ mention them in a post? How? Who’s responsible for that?
+* Will Bridgy Fed notify the servers (deliver to AP inboxes) of folks I merely @-@ mention (rather than explicit replies, reposts)? Should it?
+
+So many people are switching to using their personal domains to post (or at least a Mastodon account) that I no longer feel compelled to @-mention people’s Twitter handles in posts, which feels refreshing. 
+
+Now the fun part is experimenting and figuring out what combination of @-domain, plain domain, or @-@ mentions looks good, makes sense to people, and sends notifications to people the way they want to receive them.
+
+This is day 11 of #100DaysOfIndieWeb #100Days.
+
+← Day 10: https://tantek.com/2023/010/t2/build-use-services
+→ Day 12: https://tantek.com/2023/012/t1/six-years-webmention-w3c
+
+^1 https://en.wikipedia.org/wiki/AT-AT
+^2 My https://tantek.com/github/cassis/blob/master/cassis.js auto_link() function supports @example.com auto-linking, yours should too.
+^3 https://tantek.com/2023/004/t1/choosing-domain-name-indieweb - Tantek</title>
+<link rel="icon" href="/logo.jpg" />
+<meta name="viewport" content="initial-scale=0.7"/>
+<link rel="webmention" href="//webmention.io/tantek.com/webmention" />
+<style type="text/css">/*<![CDATA[*/ 
+@import "/2023/simple.css";
+form.search { width:34%; float:right; white-space:nowrap; font-size:1.3em; text-align:right }
+input,button { font-size:1em }
+button { margin: 0 0.5em 0 0; padding:0 0.5em }
+form.search input[type=search] { width:62% }
+/*]]>*/</style>
+</head>
+<body class=" post hentry h-entry as-note">
+<header><div class="header">
+<h1><a href="/" rel="author home">tantek.com</a></h1>
+
+<form class="search" action="https://duckduckgo.com/html/" method="get">
+<input type="hidden" name="type" value="list" />
+<input type="search" value="site:tantek.com " name="q" />
+<button type="submit">Search</button>
+</form>
+
+</div></header>
+
+<div class="sidestuff">
+<ul class="snav">
+<li><a href="/2023/010/t2/build-use-services" id="previtem" title="View the previous (older) item in the stream." rel="prev"><abbr>&#x2190;</abbr></a></li><li><a href="/2023/012/t1/six-years-webmention-w3c" id="nextitem" title="View the next (newer) item in the stream" rel="next"><abbr>&#x2192;</abbr></a></li>
+</ul>
+</div>
+<span class="p-author h-card"><a href="/" class="u-url author-icon" rel="author" title="Tantek Çelik"><img class="u-photo p-name" src="/logo.jpg" alt="Tantek Çelik" /></a></span>
+
+<a href="https://fed.brid.gy/" aria-hidden="true"></a> <p class="p-name entry-title e-content entry-content article">One of the fun things about <a href="https://indieweb.social/tags/IndieWeb" class="auto-link-hashtag">#<span class="p-category auto-tag">IndieWeb</span></a> notes &amp; replies is that how we post is actively evolving! Like how should we @ someone?<br class="auto-break"/><br class="auto-break"/><a href="https://indieweb.social/tags/socialMedia" class="auto-link-hashtag">#<span class="p-category auto-tag">socialMedia</span></a> aliases (e.g. <a class="auto-link h-cassis-username" href="https://twitter.com/Twitter">@Twitter</a>) were obvious, with prior @-name usage on Flickr etc.<br class="auto-break"/><br class="auto-break"/>Now, some have a domain, or an @-@ (pronounced at-at, yes, just like the abbreviation for Imperial All Terrain Armored Transport<a id="t5No1_ref-1" href="#t5No1_note-1">¹</a>), or some have both.<br class="auto-break"/><br class="auto-break"/>We can ask questions like why do we @-someone? What are the use-cases?<br class="auto-break"/>* In a reply to a public post, clearly express that you’re speaking to that person<br class="auto-break"/>* In a reply to a reply, that you’re speaking to everyone upthread (AKA a <a class="auto-link" href="https://indieweb.org/canoe">https://indieweb.org/canoe</a>)<br class="auto-break"/>* When attributing something to someone (photo/post/cool thing by so-and-so), giving credit<br class="auto-break"/>* Distinguish a person (or something that can be followed) from “just” a site<br class="auto-break"/>* For all the above, notifying someone accordingly<br class="auto-break"/><br class="auto-break"/>Some ideas:<br class="auto-break"/><br class="auto-break"/>1. Ideally, if/when everyone has their own domain (where they receive Webmention notifications, and a feed you can follow), we can @-name their domain, which your auto-linker<a id="t5No1_ref-2" href="#t5No1_note-2">²</a> should hyperlink accordingly, e.g.<br class="auto-break"/>* <a class="auto-link" href="https://aaronparecki.com">@aaronparecki.com</a> <a class="auto-link" href="https://anomalily.net">@anomalily.net</a> <a class="auto-link" href="https://Martymcgui.re">@Martymcgui.re</a>‎ <a class="auto-link" href="https://david.shanske.com">@david.shanske.com</a> <a class="auto-link" href="https://voxpelli.com">@voxpelli.com</a> <a class="auto-link" href="https://adactio.com">@adactio.com</a> <a class="auto-link" href="https://marcthiele.com">@marcthiele.com</a> <a class="auto-link" href="https://mxb.dev">@mxb.dev</a><br class="auto-break"/><br class="auto-break"/>These all look close enough to social media aliases/names that they’re immediately recognizable as readable @-names, a good consideration when choosing a domain name.<a id="t5No1_ref-3" href="#t5No1_note-3">³</a><br class="auto-break"/><br class="auto-break"/>2. As a fallback (e.g. for non-@-domain-auto-linking destinations) we can use someone’s plain domain (explicitly with https:), especially if their home page still has a stream or feed you can follow, or maybe if they don’t receive homepage Webmentions (yet), e.g.:<br class="auto-break"/>* <a class="auto-link" href="https://jacky.wtf/">https://jacky.wtf/</a> <a class="auto-link" href="https://tmichellemoore.com/">https://tmichellemoore.com/</a> <a class="auto-link" href="https://crowdersoup.com/">https://crowdersoup.com/</a><br class="auto-break"/><br class="auto-break"/>3. Some folks with personal sites have (for now) created separate Mastodon accounts (or installed an instance on a subdomain), and for them, we can reference their @-@ parenthetically after their domain, like:<br class="auto-break"/>* <a class="auto-link" href="https://kevinmarks.com/">https://kevinmarks.com/</a> (<a class="auto-link" href="https://xoxo.zone/@kevinmarks">@kevinmarks@xoxo.zone</a>), <a class="auto-link" href="https://dangillmor.com/">https://dangillmor.com/</a> (<a class="auto-link" href="https://mastodon.social/@dangillmor">@dangillmor@mastodon.social</a>), <a class="auto-link" href="https://simonwillison.net/">https://simonwillison.net/</a> (<a class="auto-link" href="https://simonwillison.net/@simon">@simon@simonwillison.net</a>) <br class="auto-break"/><br class="auto-break"/>Rather than using social media silo @-names (except when explicitly replying to a silo), I’m now experimenting with all three of these (1-3) instead, both to elevate people’s IndieWeb identities, and for Mastodon viewers, provide a convenient way to follow @-@ addresses.<br class="auto-break"/><br class="auto-break"/>If someone’s homepage receives Webmentions, they will get notified when I @-mention them by domain.<br class="auto-break"/><br class="auto-break"/>I recently implemented syntactic auto-linking of @-@ addresses like this:<br class="auto-break"/>* <a class="auto-link" href="https://example.com/@user">@user@example.com</a> --&gt; <a class="auto-link" href="https://example.com/@user">https://example.com/@user</a><br class="auto-break"/>with a special case for @-domain@-domain to just link to the domain, e.g.:<br class="auto-break"/>* <a class="auto-link" href="https://tantek.com">@tantek.com@tantek.com</a> --&gt; <a class="auto-link" href="https://tantek.com/">https://tantek.com/</a><br class="auto-break"/><br class="auto-break"/>I also made a recent policy decision to auto-link all @-@ (and @-domain) mentions to https:, the reasoning being that identities on the web should be using https.<br class="auto-break"/>* Testing in production here: <a class="auto-link" href="https://tantek.com/cassis.js">https://tantek.com/cassis.js</a>, search for &quot;auto_link(&quot;<br class="auto-break"/><br class="auto-break"/>Some questions: <br class="auto-break"/>* Does/do Mastodon (or other ActivityPub servers) notify people when you @-@ mention them in a post? How? Who’s responsible for that?<br class="auto-break"/>* Will Bridgy Fed notify the servers (deliver to AP inboxes) of folks I merely @-@ mention (rather than explicit replies, reposts)? Should it?<br class="auto-break"/><br class="auto-break"/>So many people are switching to using their personal domains to post (or at least a Mastodon account) that I no longer feel compelled to @-mention people’s Twitter handles in posts, which feels refreshing. <br class="auto-break"/><br class="auto-break"/>Now the fun part is experimenting and figuring out what combination of @-domain, plain domain, or @-@ mentions looks good, makes sense to people, and sends notifications to people the way they want to receive them.<br class="auto-break"/><br class="auto-break"/>This is day 11 of <a href="https://indieweb.social/tags/100DaysOfIndieWeb" class="auto-link-hashtag">#<span class="p-category auto-tag">100DaysOfIndieWeb</span></a> <a href="https://indieweb.social/tags/100Days" class="auto-link-hashtag">#<span class="p-category auto-tag">100Days</span></a>.<br class="auto-break"/><br class="auto-break"/>← Day 10: <a class="auto-link" href="https://tantek.com/2023/010/t2/build-use-services">https://tantek.com/2023/010/t2/build-use-services</a><br class="auto-break"/>→ Day 12: <a class="auto-link" href="https://tantek.com/2023/012/t1/six-years-webmention-w3c">https://tantek.com/2023/012/t1/six-years-webmention-w3c</a><br class="auto-break"/><br class="auto-break"/><a id="t5No1_note-1" href="#t5No1_ref-1">¹</a> <a class="auto-link" href="https://en.wikipedia.org/wiki/AT-AT">https://en.wikipedia.org/wiki/AT-AT</a><br class="auto-break"/><a id="t5No1_note-2" href="#t5No1_ref-2">²</a> My <a class="auto-link" href="https://tantek.com/github/cassis/blob/master/cassis.js">https://tantek.com/github/cassis/blob/master/cassis.js</a> auto_link() function supports <a class="auto-link" href="https://example.com">@example.com</a> auto-linking, yours should too.<br class="auto-break"/><a id="t5No1_note-3" href="#t5No1_ref-3">³</a> <a class="auto-link" href="https://tantek.com/2023/004/t1/choosing-domain-name-indieweb">https://tantek.com/2023/004/t1/choosing-domain-name-indieweb</a></p><span class="info footer">
+  <span class="dt-published published dt-updated updated">
+  <time class="value" datetime="23:59-0800">23:59</time> on <time class="value">2023-01-11</time>  </span>
+ <span class="lt">
+ (ttk.me t5No1) </span>
+  using <span class="using">BBEdit</span> </span> 
+<div class="info footer">
+<form action="//tantek.com/2023/011/t1/indieweb-evolving-at-mention"><div>
+<label><span class="lt">URL:</span>
+<input class="u-url url u-uid uid bookmark" type="url" size="70" style="max-width:100%" value="https://tantek.com/2023/011/t1/indieweb-evolving-at-mention" />
+</label>
+</div></form>
+</div>
+<div class="info footer">
+<a class="u-syndication" rel="syndication" style="float:right; clear:right; height:2em"
+   href="https://twitter.com/t/status/1613496611149352960">
+   <img src="/icon/twitter.png" style="vertical-align:-30%;margin:-3px -6px -4px 0" alt=""/> 
+   View 
+      on Twitter
+</a><div style="line-height:2.6em; font-size:1em;">
+<indie-action do="like" with="//tantek.com/2023/011/t1/indieweb-evolving-at-mention">
+<a class="action favorite" target="_blank" href="https://twitter.com/intent/favorite?tweet_id=1613496611149352960">♥ Like</a>
+</indie-action>
+<indie-action do="repost" with="//tantek.com/2023/011/t1/indieweb-evolving-at-mention">
+<a class="action reply" target="_blank" href="https://twitter.com/intent/retweet?tweet_id=1613496611149352960">♺ Repost</a>
+</indie-action>
+<indie-action do="reply" with="//tantek.com/2023/011/t1/indieweb-evolving-at-mention">
+<a class="action reply" target="_blank" href="https://twitter.com/intent/tweet?in_reply_to=1613496611149352960">↵ Reply</a>
+</indie-action>
+</div>
+
+</div>
+ </li>
+<script type="text/javascript">/*<![CDATA[*/
+function select_all(e) {
+ e = e ? e : window.event;
+ var el = targetelement(e);
+ el.focus();
+ /* el.select(); // fails in Mobile Safari */
+ el.selectionStart=0;
+ el.selectionEnd=el.value.length;
+}
+
+var fs = document.forms, i = 0, j = 0, es;
+for (i = 0; i<fs.length; i++) {
+  es = document.forms[i].elements;
+  if (es) {
+    for (j=0;j<es.length;j++) {
+      switch (es[j].type) {
+      case "text":
+      case "url":
+        es[j].onclick = select_all;
+      }
+    }
+  }
+}
+
+
+document.onkeyup = keyup;
+
+function clearactive() {
+  var e = document.getElementById("previtem");
+  if (e) { e.className = ""; }
+  e = document.getElementById("nextitem");
+  if (e) { e.className = ""; }
+}
+
+function keyup(e)
+{
+   var kid = (window.event) ? event.keyCode : e.keyCode;
+   var nid = "";
+   if (document.activeElement !== document.body) {
+     return;
+   }
+   switch(kid) {
+    case 37:
+    case 74:
+      nid = "previtem";
+      break;
+    case 39:
+    case 75:
+      nid = "nextitem";
+      break;
+   }
+   if (nid!="") {
+      ne = document.getElementById(nid);
+      if (ne) {
+        ne.className = "active";
+        doevent(ne,"click");
+        window.onunload = clearactive;
+        return false;
+      }
+   }
+}
+
+/*]]>*/</script>
+<script src="/fragmention.min.js"></script>
+<script src="/scripts/indieconfig.js"></script> 
+<script src="/scripts/webaction.js"></script>
+<script src="cassis.js"></script>
+</body>
+</html>

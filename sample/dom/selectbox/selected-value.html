@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Selected Value</title>
+    <link href="css/selectbox.css" rel="stylesheet">
+</head>
+<body>
+    <div id="container">
+        <form>
+            <label for="framework">Select a JS Framework:</label>
+            <select id="framework">
+                <option value="">Angular</option>
+                <option value="1">React</option>
+                <option value="2">Vue.js</option>
+                <option>Ember.js</option>
+            </select>
+            <button id="btn">Get the Selected Value</button>
+        </form>
+    </div>
+    <script>
+        const btn = document.querySelector('#btn');
+        const sb = document.querySelector('#framework')
+        btn.onclick = (event) => {
+            event.preventDefault();
+            alert(sb.value);
+        };
+    </script>
+</body>
+</html>

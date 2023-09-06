@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>OpenID</title>
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="redirect_uri" href="https://indieauth.com/auth/indieauth/redirect" />
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-16359758-31']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="/js/mustache.js"></script>
+  </head>
+  <body class="  openid">
+
+    <nav class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">IndieAuth.com</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/setup">Setup</a></li>
+            <li><a href="/pgp">PGP</a></li>
+            <li><a href="/openid">OpenID</a></li>
+            <li><a href="/developers">Developers</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/history">History</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    
+<div class="hero-unit">
+  <h1>Use indieauth.com as your OpenID Provider</h1>
+</div>
+
+<div class="container">
+
+  <div class="section">
+
+    <h2>OpenID Provider Setup Instructions</h2>
+
+    <div class="row">
+      <div class="col-lg-8">
+        <h3>1. Delegate to indieauth.com</h3>
+
+        <p>To use indieauth.com as an OpenID delegate for the OpenID identifier of your site, add the following two link tags to the HTML (inside the &lt;head&gt; element) of your website, replacing "example.com" with your domain.</p>
+
+        <pre><code>&lt;link rel="openid.delegate" href="https://example.com/" /&gt;
+&lt;link rel="openid.server" href="https://openid.indieauth.com/openid" /&gt;</code></pre>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-8">
+        <h3>2. Configure a login provider for indieauth.com</h3>
+
+        <p>Follow the <a href="/setup">setup instructions</a> to set up one or more login provider for indieauth.com. (indieauth.com does not provide its own accounts, instead it relies on you having accounts at other providers.)</p>
+
+        <p>To use Twitter as your login provider, simply add a link like the following to your home page.</p>
+
+        <pre><code>&lt;a href=&quot;https://twitter.com/aaronpk&quot; rel=&quot;me&quot;&gt;@aaronpk on Twitter&lt;/a&gt;</code></pre>
+
+        <p>Additionally, you can avoid needing an account with a third party by using either the email or <a href="/pgp">PGP</a> providers.</p>
+
+        <pre><code>&lt;link rel=&quot;pgpkey&quot; href=&quot;/key.txt&quot;&gt;
+&lt;a href=&quot;mailto:me@example.com&quot; rel=&quot;me&quot;&gt;me@example.com&lt;/a&gt;</code></pre>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-8">
+        <h3>3. You're Done!</h3>
+
+        <p>Try signing in on a website that supports OpenID! The website will discover your OpenID server (openid.indieauth.com) and redirect you here. You'll be presented with a challenge to authenticate using one of the providers you've configured.</p>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+
+    <div class="tinyfooter">
+      This server is hosted by <a href="https://indieweb.org/sponsors">sponsors</a> of IndieWebCamp events. v17.207.1 2.4.3-p205
+    </div>
+  </body>
+</html>

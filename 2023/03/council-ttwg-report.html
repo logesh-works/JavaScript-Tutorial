@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang=en>
+<meta charset=utf-8>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+<link href="https://www.w3.org/StyleSheets/TR/2021/base.css" rel=stylesheet>
+<style>
+.todo { background: yellow; }
+q { font-style: italic; }
+.pack {
+	columns: 10em;
+}
+</style>
+<title>W3C Council Report on the Formal Objections Against the Timed Text Working Charter</title>
+
+<div class="head">
+	<p data-fill-with="logo"><a  href="https://www.w3.org/"> <img alt="W3C" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72" height="48"> </a>
+	<h1>W3C Council Report on the Formal Objections Against the Timed Text Working Charter</h1>
+	<p id="w3c-state"><time class="dt-updated" datetime="2023-03-27">27 March 2023</time>
+	<p class="copyright" data-fill-with="copyright"><a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2023 <a href="https://www.w3.org/">World Wide Web Consortium</a>. <abbr title="World Wide Web Consortium">W3C</abbr><sup>®</sup> <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document" rel="license">permissive document license</a> rules apply.
+	<hr title="Separator for header">
+</div>
+
+<h2 id="prologue">
+Prologue</h2>
+
+	<p>
+	In preparation for formal proposal and adoption of a version of the <a href="https://www.w3.org/Consortium/Process/">W3C Process</a>
+	which does not rely on the Director for handling Formal Objections,
+	W3C has been experimenting with resolving Formal Objections
+	through a body, named “W3C Council”, combining the capabilities and perspectives of the AB, the TAG, and the Team.
+	Operating under delegation from the Director,
+	the AB, TAG, and Team have been following <a href="https://www.w3.org/Consortium/Process/Drafts/#addressing-fo">the terms of a draft version of the W3C Process</a>.
+
+<nav id="toc">
+	<h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
+	<ol class="toc" role="directory">
+		<li><a href="#prologue"> <span class="content"> Prologue</span></a>
+		<li><a href="#intro"><span class="secno">1</span> <span class="content"> Introduction</span></a>
+		<li><a href="#obj"><span class="secno">2</span> <span class="content"> Objection</span></a>
+		<li><a href="#decision"><span class="secno">3</span> <span class="content"> Decision</span></a>
+		<li><a href="#rationale"><span class="secno">4</span> <span class="content"> Rationale</span></a>
+			<ol class="toc">
+				<li><a href="#receivability"><span class="secno">4.1</span> <span class="content"> Receivability of the Formal Objections</span></a>
+					<ol class="toc">
+						<li><a href="#timeliness"><span class="secno">4.1.1</span> <span class="content"> Timeliness</span></a>
+						<li><a href="#advancement"><span class="secno">4.1.2</span> <span class="content"> Documenting Requirements for Advancement</span></a>
+					</ol>
+				<li><a href="#substance"><span class="secno">4.2</span> <span class="content"> Substance of the Formal Objection</span></a>
+				</ol>
+		<li><a href="#recommendations"><span class="secno">5</span> <span class="content"> Additional Recommendations</span></a>
+		<li><a href="#participation"><span class="secno">6</span> <span class="content"> Council Participation</span></a>
+		<li><a href="#council-operations"><span class="content">Appendix: Remarks on Operations of the Council</span></a>
+	</ol>
+</nav>
+
+<h2 id="intro">
+<span class="secno">1</span>
+Introduction</h2>
+
+	<p>
+	Mozilla, Apple, and Google objected to a <a href="https://www.w3.org/2022/02/proposed-timed-text-wg-charter.html">proposed rechartering</a> for the Timed Text Working Group.
+	Prior to the formation of a Council,
+	the Working Group and Google found a <a href="https://github.com/w3c/charter-timed-text/pull/80">mutually satisfactory solution</a>,
+	and Google <a href="https://github.com/w3c/charter-timed-text/pull/80#issuecomment-1194796139">withdrew their objection</a>.
+
+	<p>
+	A Council was then formed to rule on the remaining objections.
+	A detailed exposition of this case may be found in the <a href="https://www.w3.org/2022/09/ttwg-charter-fo-report.html">Report</a> prepared by the W3C Team.
+
+	<p>
+	In its early discussions about these Formal Objections,
+	the Council identified a potential avenue for consensus between the Objectors and the Working Group.
+	As <a href="https://www.w3.org/Consortium/Process/Drafts/#broker-consensus">indicated by the Draft Process</a>,
+	<q>The Council may further attempt to broker consensus, which, if successful, disposes the formal objection.</q>.
+	Accordingly, the Council <a href="https://lists.w3.org/Archives/Public/public-tt/2022Nov/0008.html">made a suggestion</a>.
+	The Working Group quickly <a href="https://github.com/w3c/charter-timed-text/pull/84">adopted part of that suggestion</a>,
+	and after further discussions with Apple,
+	<a href="https://github.com/w3c/charter-timed-text/pull/86">agreed to the rest of that suggestion as well</a>,
+	and Apple <a href="https://github.com/w3c/charter-timed-text/pull/86#issuecomment-1478140972">withdrew their objection</a>.
+
+	<p>
+	Along the way,
+	Mozilla <a href="https://lists.w3.org/Archives/Member/member-charters-review/2023Jan/0014.html">indicated</a> that
+	it considered the changes envisioned by the Council's suggestion to insufficient to resolve their objection.
+
+	<p>
+	As not all the Formal Objections were resolved,
+	the need for a Council decision remains.
+	This <a href="https://www.w3.org/Consortium/Process/Drafts/#council-report">Council Report</a> documents the conclusions of this Council.
+
+<h2 id="obj">
+<span class="secno">2</span>
+Objection</h2>
+
+	<p>
+	The <a href="https://lists.w3.org/Archives/Public/public-new-work/2022Mar/0011.html">Formal Objection from Mozilla</a>
+	to re-chartering the Timed Text Working Group
+	requested either changes to the <i>Requirements for advancing the maturity level of features</i> section of the charter,
+	or replacing the Working Group with a Community Group.
+
+<h2 id="decision">
+<span class="secno">3</span>
+Decision</h2>
+
+	<p>
+	The Council resolved, by consensus, to <strong>overrule</strong> the remaining objection:
+	with the changes which led to the withdrawal of Apple and Google’s Formal Objections <a href="https://www.w3.org/Consortium/Process/Drafts/#ACReviewAfter">integrated</a>,
+	the charter may proceed.
+
+<h2 id="rationale">
+<span class="secno">4</span>
+Rationale</h2>
+
+<h3 id=receivability>
+<span class="secno">4.1</span>
+Receivability of the Formal Objection</h3>
+
+<h4 id="timeliness">
+<span class="secno">4.1.1</span>
+Timeliness</h4>
+
+	<p>
+	The Working Group noted that some of the objectors were part of the Working Group
+	and had had the opportunity to raise their concerns early on,
+	but had not done so prior to Formally Objecting.
+	It also noted that the Formal Objection from Mozilla
+	came after the formal end of the Advisory Committee Review Period on the Charter,
+	and some regrettable confusion as to whether late objections were admissible.
+
+	<p>
+	The Council itself also observed tardiness from the Objectors
+	when the Working Group sought to confirm with them
+	whether some proposed changes would be sufficient to satisfy their concerns.
+
+	<p>
+	The Council’s view is that all Formal Objections made prior to a decision being enacted are admissible,
+	regardless of whether the Objector failed to make their concerns known earlier,
+	or of whether the Objection met a particular deadline such as the close of an Advisory Committee Review.
+	Failure to comment or respond in a timely manner does not inherently make the arguments invalid.
+	Nevertheless,
+	raising concerns early and responding quickly to comments
+	are important contributors to successful consensus building,
+	and are more conductive to obtaining significant changes.
+
+<h4 id=advancement>
+<span class="secno">4.1.2</span>
+Documenting Requirements for Advancement</h4>
+
+	<p>
+	As documented in the Team Report,
+	the Working Group felt it could be inappropriate to use Formal Objections
+	to impose additional specification success requirements beyond what is stated in the Process.
+	However, the Council has consensus
+	that the Process actually does not contain any hard requirements for success criteria,
+	but rather expresses guidance on the kinds of things to consider
+	when making a judgment about sufficient implementation experience for a particular specification or feature.
+	Thus, we see the Process as a baseline upon which Working Group charters build
+	to clarify their implementation expectations in their particular context.
+	In particular, since Charters often go beyond the guidance of the Process,
+	it is within scope of an AC review for AC representatives to express an objection
+	if they believe that for a particular charter there should be tighter criteria.
+
+	<p>
+	In this context, the Council felt that the Working Group should be commended
+	for including in its draft charter specific criteria tailored to its deliverables.
+	Although the criteria in question were a source of friction and Formal Objections,
+	it is much preferable to have such discussions at chartering time than later in the process.
+
+<h3 id=substance>
+<span class="secno">4.2</span>
+Substance of the Formal Objection</h3>
+
+	<p>
+	The W3C Process only gives high level guidance
+	about how <a href="https://www.w3.org/2021/Process-20211102/#implementation-experience">implementation experience</a>
+	for a specification will be judged.
+	However,
+	it is a commonly accepted best practice in W3C to expect two independent implementations of each feature,
+	verified by tests,
+	as a good way of confirming that the expectations laid out by the Process for advancement to Recommendation are satisfied.
+	Deviating from this could be justified in certain contexts,
+	but the reasons for needing this exception would need to be clear,
+	and satisfaction of the same expectations would still need to be demonstrated,
+	albeit through different means.
+
+	<p>
+	The original phrasing of the <a href="https://www.w3.org/2022/02/proposed-timed-text-wg-charter.html#advancement">Requirements for advancing the maturity level of features</a> section of the proposed charter,
+	was in some ways stronger than <a href="https://www.w3.org/2020/12/timed-text-wg-charter.html#success">that of the previous charter</a>;
+	notably, it switched from SHOULD to MUST about having two factors of verifications.
+	However, its overall phrasing was ambiguous,
+	giving rise to the concern shared by all 3 objectors
+	as well by 2 other Advisory Committee Representatives who had not formally objected,
+	but has expressed similar reservations.
+	The Council considered this concern legitimate:
+	the phrasing could be seen as enabling advancement on the basis of a single implementation,
+	without providing either a reason for why relaxing the two-implementation expectation would be necessary,
+	nor indicating alternative means to ascertain sufficient implementation experience.
+
+	<p>
+	After incorporation of the changes that were deemed sufficient by two of the objectors,
+	the section now reads as follows:
+
+	<blockquote>
+		<p>
+		Within the requirements of the Process
+		each new normative feature will be considered as ready to advance to a higher maturity level
+		if its implementability has been demonstrated.
+
+		<p>
+		When considering suitability to advance any feature beyond Candidate Recommendation,
+		at least two independent factors of verification for each normative requirement MUST be demonstrated,
+		which may come, as relevant for that requirement, from any of:
+
+		<ul>
+			<li>Presentation implementation
+			<li>Content-producing implementation
+			<li>Validating implementation
+		</ul>
+
+		<p>
+		For example, a feature may be advanced beyond Candidate Recommendation
+		if it has been demonstrated to be implementable
+		on the basis of an open source implementation
+		that successfully processes content from an independent implementation.
+	</blockquote>
+
+	<p>
+	The Council believes that the above phrasing could be further improved
+	to make it even clearer,
+	but deems it adequate to support the typical practice mentioned earlier
+	of requiring two independent implementations for advancement.
+	Importantly,
+	while verification can come from any of the three factors listed,
+	they are required to be relevant for the feature being tested.
+	Here are some examples.
+	A specification can contain normative requirements on validators;
+	for those requirements,
+	two validating implementations would be acceptable factors of verifications.
+	The specification can contain normative requirements on content creation;
+	for those requirements,
+	two independent content-producing implementations would be acceptable factors of verifications.
+	A specification can also contain requirements on presentations;
+	for those requirements,
+	two presentation implementations would be required.
+	A validating implementation and a presenting implementation
+	(which first needs to parse the content before displaying it)
+	could be considered as two factors of verification for parsing requirements,
+	but would not be sufficient for normative requirements pertaining to presentation.
+	Based on the criteria expressed in this section of the Charter,
+	a specification which included both parsing and presentation requirements
+	would not be able to advance beyond Candidate Recommendation
+	if there existed, for example, only one validating implementation and only one presentation implementation,
+	because there wouldn't be two relevant factors of verification <em>for each feature</em>.
+
+	<p>
+	Mozilla, despite <a href="https://lists.w3.org/Archives/Member/member-charters-review/2023Jan/0014.html">agreeing</a>
+	that conditions along the lines of those outlined in the above paragraph would be appropriate,
+	disagreed that the text adopted in the charter was sufficient
+	to show that the Working Group did intend to fulfill these criteria
+	or to hold it to them.
+
+	<p>
+	The Council disagrees,
+	and notes that even if the Working Group were to attempt a transition on questionable grounds,
+	both the Team during the Transition Request
+	and the Advisory Committee during the Advisory Committee Review
+	would be able to insist on upholding the expectations.
+	Recognizing the importance of timeliness,
+	the Council does not believe it would be appropriate to spend additional time
+	in pursuit of better phrasing,
+	and judges that the level of mutual understanding achieved is adequate.
+
+	<p id=implementations-at-charter-time>
+	Further, in its Formal Objection,
+	Mozilla argues that:
+
+	<blockquote>
+		Alternately,
+		if the Team no longer believes
+		that the Working Group can publish standards
+		supported by multiple interoperable implementations,
+		or rather, believes that only a single open source implementation is expected,
+		then this charter proposal should be changed to a Community Group proposal
+		to reflect that expectation which fits incubation and prototyping,
+		not standardization,
+		and the Working Group closed
+		until such time as there is a change in expectations of multiple interoperable implementation support.
+	</blockquote>
+
+	<p>
+	Similarly to its previous ruling in the <a href="https://www.w3.org/2022/11/council-das-report.html">2022 Devices and Sensors Council Report</a>,
+	the Council judges that demanding,
+	at charter time,
+	the presence or imminent presence of two implementations
+	goes beyond the general expectations of the community.
+
+	<p>
+	In conclusion,
+	the Council judges that the part of Mozilla's Objection
+	which coincided with the concerns of others
+	has been sufficiently addressed,
+	and overrules the remainder.
+
+	<p>
+	Some additional <a href="https://www.w3.org/2021/Process-20211102/#Member-only">Member-only</a> remarks
+	were made in connection with the Objections.
+	These do not change the Council's conclusion.
+	To respect confidentiality,
+	they cannot be discussed in this report,
+	but are covered in a
+	<a href="council-ttwg-suplemental-report.html">Supplemental Member-only Council Report</a>.
+
+<h2 id=recommendations>
+<span class="secno">5</span>
+Additional Recommendations</h2>
+
+	<p>
+	<a href="https://www.w3.org/TR/imsc-hrm/">IMSC-HRM</a> is fairly distinct from the other deliverables of the Working Group,
+	in that it does not define a distinct format or profile of a file format,
+	but a model for evaluating and validating a property (presentation complexity)
+	of a preexisting format (documents that conform to any of the TTML Profiles for Internet Media Subtitles and Captions).
+
+	<p>
+	It seems to the Council that this specification would lend itself well to being implemented in terms of validators
+	(either standalone or as a feature of another piece of software)
+	processing document instances according to the model,
+	where interoperability would be demonstrated
+	by having multiple independent validators produce the same specification-compliant diagnostic
+	when presented with the same content.
+
+	<p>
+	The Council understands that the Working Group intends to present
+	a significant body of content, produced by various implementations,
+	that is successfully validated by the model.
+	This—or even preferably, evidence of content that would fail the criteria being modified to pass it—would support claims of market relevance,
+	and is very much welcome.
+
+	<p>
+	To the extent that the specification makes normative requirements on content-producing implementations,
+	it makes sense to use such implementations as verification factors for those requirements.
+	If the specification does not specifically make requirements of validators,
+	and it can be shown that the content-producing implementations actually implement the model,
+	they would also be a relevant verification factor.
+
+	<p>
+	It would be hard, however, to claim that content that satisfies the criteria, on its own,
+	demonstrates interoperable implementation of the model,
+	as such content could well be created fortuitously by someone entirely unaware of IMSC-HRM,
+	or by trial and error, without reference to the specification or understanding of the model,
+	by adjusting content (or the software producing it)
+	until the right response is received from a pre-existing validator.
+
+	<p>
+	The Council invites the Working Group,
+	as it matures this specification and associated test suites,
+	to be cognisant of the difference between validating content,
+	showing market relevance,
+	and demonstrating interoperability.
+
+<h2 id="participation">
+<span class="secno">6</span>
+Council Participation</h2>
+
+	<p>
+	Information on participation, as <a href="https://www.w3.org/Consortium/Process/Drafts/director-free/#council-decision">required</a> by the draft Process on Councils.
+
+	<p>
+	The following individuals were potential Council members, due to either being participants in the TAG or the AB, or to being the W3C CEO:</p>
+
+	<ul class=pack>
+		<li>Amy Guy
+		<li>Avneesh Singh
+		<li>Chris Wilson
+		<li>Daniel Appelquist
+		<li>Dapeng (Max) Liu
+		<li>David Singer
+		<li>Eric Siow
+		<li>Florian Rivoal
+		<li>Hadley Beeman
+		<li>Heejin Chung
+		<li>Hongru (Judy) Zhu
+		<li>Jeff Jaffe
+		<li>Lea Verou
+		<li>Léonie Watson
+		<li>Peter Linss
+		<li>Rossen Atanassov
+		<li>Sangwhan Moon
+		<li>Tatsuya Igarashi
+		<li>Theresa O'Connor
+		<li>Tim Berners-Lee
+		<li>Tzviya Siegman
+		<li>Wei Ding
+	</ul>
+
+	<p>
+	None of the them <a href="https://www.w3.org/Consortium/Process/Drafts/director-free/#renounce">renounced</a> their seat on the Council;
+	none of them were <a href="https://www.w3.org/Consortium/Process/Drafts/director-free/#dismissed">dismissed</a>.
+	Therefore, all were qualified to serve.
+	Note, however, that Jeff Jaffe’s tenure as the W3C CEO ended while this Council was ongoing.
+
+	<p>Amy Guy was chair from 2022-11-03 to 2023-03-02,
+	and Florian Rivoal was chair thereafter.
+
+	<p>
+	Of those qualified to serve, the following participated in the final decision:
+	<ul class=pack>
+		<li>Amy Guy
+		<li>Chris Wilson
+		<li>David Singer
+		<li>Eric Siow
+		<li>Florian Rivoal
+		<li>Heejin Chung
+		<li>Lea Verou
+		<li>Léonie Watson
+		<li>Peter Linss
+		<li>Daniel Appelquist
+		<li>Rossen Atanassov
+		<li>Tatsuya Igarashi
+		<li>Theresa O’Connor
+		<li>Tzviya Siegman
+	</ul>
+
+<hr>
+
+<h2 id="council-operations">
+Appendix: Remarks on Operations of the Council</h2>
+
+	<p>
+	<i>This section is not part of the formal Council Report.
+	It is provided for informative purposes only.</i>
+
+	<p>The handling of these Formal Objections was an unfortunately lengthy process.
+	This appendix offers some insights about what took so long,
+	and about the various steps taken to ensure faster response time
+	in subsequent Councils.
+
+	<p>
+	The timeline below summarizes key dates.
+
+	<ol>
+		<li><time>2022-02-24</time>:
+			Apple files its <strong>Formal Objection</strong>.
+		<li><time>2022-03-23</time>:
+			Google files its Formal Objection.
+		<li><time>2022-03-23</time>:
+			The AC Review closes.
+		<li><time>2022-03-25</time>:
+			Mozilla files its Formal Objection.
+		<li><time>2022-09-27</time>:
+			<strong>Council Formation initiated</strong>,
+			with the dismissal process being started by the Team
+		<li><time>2022-10-04</time>:
+			Team report is first made public
+		<li><time>2022-10-11</time>:
+			Team report incorporates feedback from Working Group chairs
+		<li><time>2022-11-03</time>:
+			<strong>The Council is <a href="https://www.w3.org/Consortium/Process/Drafts/#council-convention">convened</a></strong>,
+			as the dismissal process is complete and the chair is selected.
+		<li><time>2022-11-21</time>:
+			The Council has its first meeting.
+		<li><time>2022-11-23</time>:
+			The Council makes a suggestion to try and find consensus.
+		<li><time>2022-12-09</time>:
+			The Working Group adopts part of the suggestion.
+		<li><time>2023-01-13</time>:
+			Mozilla maintains its objection
+		<li><time>2023-01-24</time>:
+			Apple maintains its objection.
+		<li><time>2023-02-27</time>:
+			The Council has its second meeting.
+		<li><time>2023-03-02</time>:
+			Amy Guy <a href="https://lists.w3.org/Archives/Public/public-tt/2023Mar/0000.html">steps down</a> as chair of the Council
+			and Florian Rivoal is appointed <a href="https://lists.w3.org/Archives/Public/public-tt/2023Mar/0001.html">as new chair</a>.
+		<li><time>2023-03-06</time>:
+			The Council has its third meeting.
+		<li><time>2023-03-09</time>:
+			The Working Group requests that the Council put its deliberations on hold
+			to give it time to further discuss the objection with Apple.
+		<li><time>2023-03-17</time>:
+			The Working Group adopts the rest of the earlier suggestion by the Council,
+			<a href="https://github.com/w3c/charter-timed-text/pull/86#issuecomment-1478140972">resolving</a> Apple’s Formal Objection,
+			and requests resumption of the Council's deliberations.
+		<li><time>2023-03-27</time>:
+			<strong>The Council concludes</strong> and announces its decision via this report.
+	</ol>
+
+	<p>
+	The draft Process requires a maximum of 90 days
+	between step 1 (closure of the AC Review)
+	and step 5 (Council formation being initiated),
+	but 215 days elapsed.
+	Some of it was used,
+	as is appropriate,
+	for (attempts at) discussion between the Working Group,
+	the Objectors,
+	and the Team,
+	but that is nevertheless too long.
+	The following measures were taken to prevent that from reoccurring:
+	<ul>
+		<li>Spring 2022:
+			AB and Team developed a checklist of the practical steps to run in order to set up a Council.
+			Prior to that, there was a high risk of delays in the preparations
+			leading to the Council being convened
+			due to lack of clarity of who was supposed to do what next.
+		<li><time>2020-08-16</time> (Berlin AB <abbr title="face to face">F2F</abbr>):
+			AB requested that the Team assumes that a Council should be created for each Formal Objection by default
+			(without asking confirmation of the AB every time),
+			and processes Formal Objections in parallel
+			(rather than waiting for a Council to conclude before starting the next one).
+			Prior to that, a significant backlog of Formal Objections had been accumulated.
+	</ul>
+
+	<p>
+	The draft Process expects a maximum of 45 days between
+	step 5 (Council formation being initiated),
+	and step 8 (Council being convened),
+	which was respected,
+	as 37 days elapsed.
+
+	<p>
+	The draft Process expects a maximum of 45 days between step 8 (Council being convened) and step 19 (Council publishing its conclusions)
+	requiring the Chair to inform to the Advisory Committee about the delay otherwise.
+	However, 144 days elapsed.
+	(The AC was updated on the delay on <a href="https://lists.w3.org/Archives/Member/w3c-ac-forum/2023JanMar/0077.html">2023-01-25</a> and <a href="https://lists.w3.org/Archives/Public/public-tt/2023Mar/0000.html">2023-03-02</a>.)
+	Some of this time was well used,
+	but some periods stretched for longer than they should.
+	The following measures were taken to prevent that from reoccurring:
+	<ul>
+		<li><time>2023-02-09</time>:
+			The draft Process was amended,
+			per AB resolution,
+			to enable <a href="https://github.com/w3c/w3process/pull/709">changing chairs</a>.
+			Prior to that, as ended up being the case with this Council,
+			there was a risk that if the Chair's availability changed for the worse,
+			the whole Council would be slowed down with no clear recourse
+			nor any clear person in charge of addressing the issue.
+
+		<li><time>2023-02-09</time>:
+			The draft Process was amended,
+			per AB resolution,
+			to <a href="https://github.com/w3c/w3process/pull/702">include the Team Contact in the confidence of the Council</a>.
+			This helps in several ways:
+			<ul>
+				<li>
+					The Team Contact can help schedule meetings,
+					reducing delays such as
+					the time between step 6 and 7 (18 days)
+					or the time between step 11 and 12 (34 days).
+				<li>
+					The Team Contact can help with coordinating discussions
+					and gathering responses from the Working Group and the Objectors,
+					This would likely have reduced the 62 day period
+					between the Council making a suggestion attempting to broken consensus (step 8)
+					and resuming its discussions after observing that the attempt had failed (step 11)
+					to maybe a couple of weeks,
+					either through better coordination of the discussion between parties
+					or by prompting the Council to resume its deliberations
+					when the responses from the Objectors were not be obtained in a timely manner.
+				<li>
+					The Team Contact can remind the Council and its Chair of incoming deadlines and the need to make timely progress.
+			</ul>
+	</ul>
+

@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/i/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/i/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/i/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/web-app/site.webmanifest">
+<link rel="mask-icon" href="/assets/i/icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/i/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="msapplication-config" content="/assets/web-app/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+
+  <title>Igalia Chats: Undersea Infrastructure | Igalia - Open Source Consultancy and Development</title>
+  <meta name="description" content="Igalia is an open source consultancy specialised in the development of innovative projects and solutions. Our engineers have expertise in a wide range of technological areas, including browsers and client-side web technologies, graphics pipeline, compilers and virtual machines. We have the most WPE, WebKit, Chromium/Blink and Firefox expertise found in the consulting business, including many reviewers and committers. Igalia designs, develops, customises and optimises GNU/Linux-based solutions for companies across the globe. Our work and contributions are present in many projects such as GStreamer, Mesa 3D, WebKit, Chromium, etc.">
+  <meta name="keywords" content="igalia, free software, free software engineering, development, consultancy, webkit consultancy, consulting, webkit consulting, programming, hackers, cooperative organization, organization, company, assembly, igalia.com, igalia sl, webkit, webkitgtk, a11y, v8, jsc, training, GNOME, webkit consultants, chromium consulting, chromium consultants, chromium consultancy, blink consultants, blink consultancy, gstreamer consultancy, gstreamer consulting">
+  <meta name="author" content="Igalia">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" id="main-stylesheet" href="/assets/main.css" data-main="/assets/main.css" data-aria="/assets/aria.css">
+  <link rel="canonical" href="https://www.igalia.com/chats/undersea">
+  <link rel="alternate" type="application/rss+xml" title="Igalia" href="/feed.xml">
+
+  
+
+  <!-- Open Graph metadata -->
+  <meta content="Igalia" property="og:site_name">
+  <meta content="Igalia Chats: Undersea Infrastructure | Igalia - Open Source Consultancy and Development" property="og:title">
+  <meta content="https://www.igalia.com/assets/i/logo200x200Margin.png" property="og:image">
+  <meta content="https://www.igalia.com/assets/i/logoSimple200x200.png" property="og:logo">
+  
+    <meta content="website" property="og:type">
+  
+  
+    <meta content="Igalia is an open source consultancy specialised in the development of innovative projects and solutions. Our engineers have expertise in a wide range of technological areas, including browsers and client-side web technologies, graphics pipeline, compilers and virtual machines. We have the most WPE, WebKit, Chromium/Blink and Firefox expertise found in the consulting business, including many reviewers and committers. Igalia designs, develops, customises and optimises GNU/Linux-based solutions for companies across the globe. Our work and contributions are present in many projects such as GStreamer, Mesa 3D, WebKit, Chromium, etc." property="og:description">
+  
+  
+    <meta content="https://www.igalia.com/chats/undersea" property="og:url">
+  
+  
+</head>
+
+
+  <body class="aria-contrast" data-json-base="/assets/json">
+    <header id="header" role="banner">
+  <div class="container-fluid-1440">
+    <div class="wrapper">
+      
+      
+      
+      <h1 class="site-title logos">
+        <a href="/" title="Igalia">
+          <img src="/assets/i/logo.png" alt="Igalia" />
+        </a>
+      </h1>
+
+      <nav role="navigation" class="site-nav hidden-xs hidden-sm">
+        <ol class="main-menu">
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/about" title="About Us">
+              About Us
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/technologies" title="Technologies">
+              Technologies
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/services" title="Services">
+              Services
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/industries" title="Industries">
+              Industries
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/24-7/home" title="24/7">
+              24/7
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/jobs" title="Jobs">
+              Jobs
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/contact" title="Contact">
+              Contact
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/public-funding" title="Feder">
+              Feder
+            </a>
+          </li>
+          
+        </ol>
+      </nav>
+
+      <div aria-hidden="true" id="menu-toggle-wrapper" class="visible-xs visible-sm">
+        <a href="#" id="menu-toggle" title="Toggle menu">
+          <i aria-hidden="true" class="fas fa-bars"></i>
+          <span hidden>Toggle menu</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div id="mobile-menu-wrapper">
+  <div id="mobile-menu">
+    <ul role="navigation" class="nav">
+      
+      <li>
+        <a class="page-link" href="/about" title="About Us">
+          About Us
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/technologies" title="Technologies">
+          Technologies
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/services" title="Services">
+          Services
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/industries" title="Industries">
+          Industries
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/24-7/home" title="24/7">
+          24/7
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/jobs" title="Jobs">
+          Jobs
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/contact" title="Contact">
+          Contact
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/public-funding" title="Feder">
+          Feder
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+    <main class="page-content" aria-label="Content">
+        <article class="page page--chats">
+  <header class="page-header" style="background-image: url(/assets/i/headers/header-technologies.jpg); ">
+    <div class="container-fluid-1440">
+      <div class="grid-row">
+        <div class="col-xs-12 col-sm-10-center">
+          <h1 class="page-title" itemprop="name headline">Igalia Chats: Undersea Infrastructure</h1>
+          
+        </div>
+      </div>
+    </div>
+    <div class="cover"></div>
+  </header>
+
+  <div class="container-fluid-1440">
+    <div class="page-content">
+      <div class="grid-row">
+        <div class="col-xs-12">
+          <div class="grid-row">
+            <div class="col-xs-12 col-lg-8">
+              <h2 class="chat-title">
+                <a href="/24-7/chats" class="chat-title__back">
+                  <img src="/assets/i/arrowBackBlue.png" alt="Back to chats">
+                </a>
+                Igalia&#39;s Brian Kardell and Eric Meyer chat with CNET Principal writer Stephen Shankland about the undersea cables that help power the internet
+              </h2>
+              <div class="chat-date">
+                <time datetime="2023-08-11T00:00:00+00:00" itemprop="datePublished">
+                  
+                  Aug 11, 2023
+                </time>
+              </div>
+              <div class="chat-audio">
+                <div class="chat-audio__player">
+                  <div class="audio-player" data-src="/downloads/interviews/500-cables.mp3">
+                    <div class="controls">
+                      <div class="play-container">
+                        <div class="toggle-play play">
+                        </div>
+                      </div>
+                      <div class="time-container">
+                        <div class="time">
+                          <div class="current">0:00</div>
+                          <div class="length"></div>
+                        </div>
+                        <div class="timeline">
+                          <div class="progress"></div>
+                        </div>
+                      </div>
+                      <div class="volume-container">
+                        <div class="volume-button">
+                          <div class="volume c-icon-volumeMed"></div>
+                        </div>
+                        <div class="volume-slider">
+                          <div class="volume-percentage"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <ul class="chat-audio__links">
+                  <li><a href="/downloads/interviews/500-cables.mp3" title="Download Chat" target="_blank"><i class="c-icon-download"></i></a></li>
+                  
+                  <li><a href="/chats.xml" title="Open podcast RSS feed" target="_blank"><i class="c-icon-podcast"></i></a></li>
+                  
+                  
+                  <li><a href="https://youtu.be/X7LXMsSVB5E" title="Open in Youtube" target="_blank"><i class="c-icon-youtube"></i></a></li>
+                  
+                  
+                  <li><a href="https://open.spotify.com/show/0XZ4hqB5ogePKOumi4daDm" title="Open in Spotify" target="_blank"><i class="c-icon-spotify"></i></a></li>
+                  
+                  
+                  <li><a href="https://podcasts.apple.com/us/podcast/igalia/id1533323588" title="Open in iTunes" target="_blank"><i class="c-icon-itunes"></i></a></li>
+                  
+                  
+                  <li><a href="https://podcasts.google.com/feed/aHR0cHM6Ly93d3cuaWdhbGlhLmNvbS9jaGF0cy54bWw" title="Open in Google Podcasts" target="_blank"><i class="c-icon-gpod"></i></a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12">
+          <div class="grid-row grid-row--between">
+            <div class="col-xs-12 col-lg-3 col-lg-order-3">
+              <ul class="c-participants">
+                
+                <li class="c-participants__item  c-participants__item--">
+                  
+                  
+                  <img src="/assets/i/logoSimple.png" alt="Igalian" class="c-participants__igalian">
+                  <a href="/team/bkardell" class="c-participants__link">
+                    <img src="/assets/i/igalians/brian-kardell.jpg"
+                      alt="Brian Kardell's avatar"
+                      class="c-participants__image">
+                    Brian Kardell
+                    <i class="fas fa-plus"></i>
+                  </a>
+                  
+                </li>
+                
+                <li class="c-participants__item  c-participants__item--">
+                  
+                  
+                  <img src="/assets/i/logoSimple.png" alt="Igalian" class="c-participants__igalian">
+                  <a href="/team/emeyer" class="c-participants__link">
+                    <img src="/assets/i/igalians/emeyer.jpg"
+                      alt="Eric Meyer's avatar"
+                      class="c-participants__image">
+                    Eric Meyer
+                    <i class="fas fa-plus"></i>
+                  </a>
+                  
+                </li>
+                
+                <li class="c-participants__item  c-participants__item--3">
+                  
+                  <a href="https://www.cnet.com/profiles/shankland/" class="c-participants__link">
+                    
+                    <img src="/assets/i/chats/stephen-shankland.png" alt="Stephen Shankland's avatar"
+                    class="c-participants__image">
+                    
+                    Stephen Shankland
+                    <i class="fas fa-plus"></i>
+                  </a>
+                  
+                </li>
+                
+              </ul>
+            </div>
+            <div class="col-lg-1 col-lg-order-2"></div>
+
+            <div class="col-xs-12 col-lg-8 col-lg-order-1">
+              
+
+
+              <h2 class="chat-subtitle">Transcription</h2>
+              <ul class="c-chat">
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Okay. Hi, I am Brian Kardell. I'm developer advocate at Igalia. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  And I'm Eric Meyer, also developer advocate at Igalia. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  And today we have another guest on our show. Do you want to introduce yourself? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  Yeah, sure. My name is Stephen Shankland. I'm a principal writer for CNET, and I cover all kinds of technology issues, stuff that's coming down the pike, quantum computers, drone delivery, microprocessor manufacturing, and internet infrastructure, web browsers, really a lot of things that just capture my attention. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  You wrote recently an article called The Secret Life of the 500 Plus Cables That Run the Internet. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  Yes. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  It was such a great read that I wanted to reach out and invite you to come on because I feel like there is actually... First of all, it's just very interesting, but I feel like there's also a lot of interesting overlap because we're talking about infrastructure and how that gets built and who maintains and everything. So thanks so much for coming on. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  Yeah, happy to be on the podcast. I've been listening to it a little while. I like what you guys are doing. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  Thanks. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  When I brought this up to Eric, he mentioned to me in a much older article... Do you want to... </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  Yeah. So back in 1996, Neil Stevenson, who may be familiar to listeners, is a author of a number of novels, including Snow Crash, wrote a 42,000 word piece for Wired Magazine called Mother Earth Motherboard, which is about undersea cables. At the time, it wasn't 500 plus cables. It's a long sort of narrative exploration of the secret life of the 50 cables, or whatever it was back in 1996. For me, it was interesting to compare not the differences so much as the similarities between what you were saying and what Neil was saying about the nature of undersea cables. And what would be really great is for you to sort of describe how does the internet actually run. I think most people think it runs off of satellites, but no. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  Yeah. It's a very common misconception. The satellites are important and they're getting more important, but they tend to be more for retail broadband, for people in rural environments, or people on ships or something like that. So that'll provide one little skinny pipe down to one little terminal, and that's important for a lot of people, millions of people. But the subsea cables are really where the bulk of the data goes. Something like 99% of the traffic between continents or to island nations, and there are a lot of those, goes over the subsea cables. So the satellites are nice and they're useful. They're good fallback, and they're fast to set up, but the subsea cables really do the heavy lifting here. There are 554 of them. When I wrote the piece a few weeks ago, there were 552, a couple more now are on the list. I should say that's actually in operation and planned over the next couple years. So there are a lot of them. And there's kind of a building surge going on right now because the companies that build them need more of them </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  And they need more of them. We keep watching more YouTube, is that basically the deal? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  We need more YouTube, but also a lot of these cables connect data centers. So things like Amazon Web Services or Microsoft Azure, there are fallbacks from one zone to another. So if somebody's business, if they want to keep it running and there's a problem in geography A, then the business picks up from geography B. So it's not just YouTube videos and emails and TikTok videos and things like that. There's a lot of business data that gets shuttled around here as well. But yeah, video is obviously a huge piece of it. It's very heavy file formats. A lot of data goes around this video. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  From what you're saying, it sounds like the driving factor is redundancy not streaming, or not delivery so much as it is redundancy? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  Well, it's both delivery and redundancy really. So the data demands are increasing at something like 40, 50, 60% per year for the companies that operate these cables. So that's pretty heavy growth to try to keep up with. But a lot of the design of the cables is around resilience and redundancy, and for lots of different reasons. We can get into that obviously later. But these cables are not perfect. They fail. They get cut by fishing equipment and by dragging anchors. And so there is a big need for more resilience and for more capacity. Both of those are pushing the build out here that's going on right now. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  So actually, let's start with what's in a cable. What is the construction of a cable? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Can you say something too about the capacity of the newest cables, because that's really fascinating. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  Sure. Yeah. This happened literally the day I was filing the last version of my story, putting it into our publishing system. The top capacity, the cable increased from 250 terabits per second to 400 terabits per second. So it bumped up significantly because a new cable operated by meta and Microsoft and some other companies came online. So they almost put my story out of date just the day before it was published. So that was kind of entertaining. But yeah, 400 terabytes per second, that's 400,000 times faster than fast gigabit broadband at your house if you're lucky enough to have gigabit broadband. So this is a lot faster. And the data capacities are going up. There are different, a lot of research, new technologies coming online to push that higher. So we'll probably see petabit cables pretty soon. And then perhaps the fastest roadmap I saw went up to five petabits per second. So that's an order of magnitude more than what we're looking at right now today. So pretty impressive speeds. You asked what the cables are made of. So at the core are a bundle of fiber optic strands. Fiber optics have been around for decades, and the technology continues to improve. The thing that surprised me the most learning about this was that... Obviously fiber optics are good for long haul data transmission. They've been around for a long time. But the problem with subsea cables is actually you can't transmit data across an entire ocean just through a single glass strand. You have to boost the signal. So periodically, about maybe every 50 or 100 miles, depends on the cable. You have to put in these sort of bulges that looks like where a snake ate a hamster, a little bulge in the cable with the repeater, and the repeater boosts the signal. So the innermost layer of the cable is a little bundle of strands of fiber optics, maybe eight, maybe 12, 16. We're going to 24 of these little strands. And then there's a protective layer of plastic around that, and then there's a little copper sheath. And that copper sheath, its job is to carry high voltage power to all these repeaters. And it turns out that that's really the limiting factor for the data. I thought it's fiber optics. It doesn't take much power. Why not just put a bunch of more fiber optic strands in there? And the answer is because you're limited by the power that you can send to the repeaters. So that's why we're only at 24 strands right now. And curiously, the data rates, the most recent increases in data capacity have been by adding more fiber pairs, but dialing down the speed. So you use your power budget to support more cables that they don't operate at the peak possible capacity, but they operate a little bit lower, but you can fit more fiber optic strands in there. So there's a lot of work to improve the capacity. Getting back to the description, the ingredients of the cable, so you have the fiber optic strands in the middle, then you have a little plastic protection, then you have some metal steel cables around that, which is for strength and protection. Then you have the copper sheath layer to send the power along. And then outside that, you have a plastic protective layer. And then this is very curious when you actually lay these cables outside that, you have some tar. This is very old protective technology. It's been around for centuries. So that's the basic ingredient. And one of the things that surprised me, a lot of people think these cables are going to be huge, big fat things, but they're not. They're about the width of a garden hose across the central parts of the ocean. They get thicker toward the ends because they're armored there, so they get more steel cabling and more armor sheathing. So they get about as thick as your arm perhaps, but they're pretty thin. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  Yeah, considering... I'm just thinking. So we made a garden hose, and then we strung it across the Pacific Ocean. That's... </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  20,000 kilometers. Yeah. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  Yeah. So it sounds like structurally, it's not like there's a 20,000 kilometer fiber optics train. There's 100 mile fiber optics trains that go from repeater to repeater? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  That's right. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  Still, a 100 mile fiber optic cable, that's kind of an amazing feat of technical engineering all on its own. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  Yeah, it is. And there's a lot of high tech that goes into this. One of the things that really intrigued me about this story though, is there's also a lot of low tech that goes into it. I mentioned the tar coating that's there. The ships that lay these cables haven't changed that much. The plows that they use to bury the cables toward the shore ends of the cable route, there are these little plows that get dragged behind the ship, those haven't changed fundamentally in several decades. And one of the most curious things is the top US manufacturer and installer of these cables is a company called SubCom. And they evolved from a rope maker and their facilities are in a deep water port because their biggest customers in the olden days were people who bought ropes, which was the Navy or other shipping companies. And if they weren't the direct customers, that's how the rope got shipped somewhere else. So they're already right there by a deep water port, and the same technology that was used to warehouse the ropes now warehouses, very expensive fiber optic cables. So there's a lot of actually continuity, way, way, way back to the old days. The communications cable business itself goes back to the 1850s. And of course, that was initially with telegraph cables, and then later to phone cables. But of course, now it's all internet data. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  An interesting thing from the Neil Stevenson article is about when they laid the first cables in the late 1850s, they really didn't know what they were doing. It was still very like, we hope this is going to work, and there was a lot of things to figure out. I guess the capacity of some of those early cables was maybe one word per day. They were not very good in a whole bunch of ways. And a lot of it had to do with understanding things about the noise, the interference, and the fact that you had this really long cable and the repeaters. They didn't have those yet. And so the interesting little anecdote here that's mentioned in there is that one of the guys devised like, 'Well, let's just really jam it with a lot of power,' and fried the undersea cable. This is an interesting little stat, that it said as of 1861, some 17,500 kilometers of submarine cable had been laid in various places around the world, of which only about 5,000 kilometers still worked. And that was all the way back in 1861. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  Yeah, it was pretty flaky technology back in the old days, and there were a lot of challenges. One of the ones was figuring out what to protect the cables with. They actually settled on sort of a rubber like natural material called gutta-percha, and that was what was used for some decades before people figured out plastic and polyethylene. So it was pretty hard. The initial days, there were lots of problems. One of the biggest problems actually was just the mechanical difficulties of making a wire. So these guys, they would lay a wire from mainland France to Sicily or something like that. And partway through, just the weight of the cable pulling down, the weight of the cable that was already laid down on the bottom of the Mediterranean Sea was just too heavy and it would pull down and snap the cable. And they'd have to go back and try again. One of the things that interested me about the history was just how persistent, is mostly private sector efforts, just how persistent the entrepreneurs were. And obviously there's a huge economic interest to be gained. If you can send telegraph signals that get across the Atlantic Ocean or across the English Channel or something like that very fast. That's a big deal compared to sending ships that take two weeks or something like that. So there was a very strong economic incentive, and it was difficult technology. The first transatlantic cable was fired up in 1858. It lasted three months. So that was a failure in the scheme of things, but it laid the way for... It showed people what could be done. More people subscribed to more investments. And another cable showed up, and slowly the technology got more reliable. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  I'm hoping today's technology is doing better than you have to lay a cable six or seven times to make it work and it only lasts three months. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  It is much more reliable. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  What is the reliability these days? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  It's kind of a hard question to answer. I will say that overall, about every two or three days, one of these 500 or so cables around the world gets cut. The vast majority of those cuts are from anchor dragging or from fishing equipment that gets tangled up in the subsea cables. That's the biggest problems. Even though the locations of these cables is mostly pretty well advertised, you still have fishing, sometimes illegal fishing, and you have ships often during storms. They drop anchor to try to ride out a storm. And so even if they know where the cable is, their anchors will drag over cables and cut them. So it's pretty common for these cables to be cut, and it's part of the standard operating practice of the companies that run the cables to contract with somebody. They have ships ready to deploy to go out and repair the cables. It's part of the standard operating procedure for these subsea cables. Cuts will happen. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  I'm kind of curious about how one goes about repairing it undersea cable. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  Sure. Well, like I say, there are companies dedicated to it. It's a tricky business because it's usually super high priority for the company or the telecommunications company, or sometimes they're state owned, or the private company like Meta, Google, Amazon that are operating the cable. So they'll contract with somebody to fix it, but sometimes there's a backlog, and not all contractors are created equal. So for example, Vietnam early this year had all five of its subsea cables were severed for a while, or not operational for a while, and it took months to get them all back online because they weren't in the front of the queue for repairs. So it can be pretty fast, or it can take a while. Microsoft says on average, it's about two weeks to get it repaired. So the way it gets repaired is they can tell from the properties of the cable where the cut occurred, and they obviously know very precisely where across the ocean floor the cable runs. So they can dispatch a ship to a pretty specific location. And then one of these old low tech solutions from the maritime industry, a grappler is sent down on a cable that actually grabs the severed end of the cable and pulls it up. So they pull one severed end of the cable up, and they float it there with buoys. And then they go and they fish up the other end of the severed cable with the same technique, and then they splice in a new stretch of fiber optics. And that's not trivial, obviously. It can be pretty difficult on a pitching deck. And one of the complications is obviously you have to match the characteristics of the existing cable. So it's not just like going to Home Depot and getting a piece of garden hose and splicing it in. It has to be the right equipment. So that's mostly how they do it. Now, although it's complicated, most of the cuts do take place toward the shore ends of the cable. Cuts in the deep Pacific or something like that are pretty rare. There are still other problems there though. You have volcanoes, you have earthquakes, rock slides underwater. So there are risks even in the middle of the ocean as well. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Yeah, there's was more of those deep ones that I was curious about, but the grappler thing probably works there. I was imagining, you must have to pull it out to fix it, right? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  Yeah, they pull it all the way to the surface to fix it. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  That indicates there must be a certain amount of slack in the cable. Because especially if something is three miles down in the Pacific and you got to float both ends, if there's no slack, they're going to float like nine miles apart, and that's not going to work. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  No, although you can move the ship while you're pulling it up. So these guys have pretty precise control over the speeds of the ships because they have to... When they're initially laying the cable, they have to be very careful about the rate at which the ship is moving and the cable is being dropped down, and they sometimes have weights and floats on the cable to control how it drops exactly. So I'm not going to say it's simple, but it's an understood problem. So when you're splicing in a new patch of cable that's maybe a few kilometers long, that's why they put a buoy on one end, and then go fetch the other end so that they get that flexibility. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  So I gave you this statistic that I saw from the nineties when that was quoting something from the late 1800s. Do you have a grip on how much total cable is down there now? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  Yeah. So the latest statistics, this is from an analyst firm called TeleGeography, 870,000 miles. That's 1.4 million kilometers. So there's a lot of cable down there. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Yeah. I had to put that. Big numbers are problematic because they're big, right? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  Yeah. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  You need somebody to put it in context. So you said 870,000 miles. So for some kind of mental context, the circumference of the earth is about 25,000 miles or 40,000 kilometers. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  And the distance of the moon is about 240,000 miles. So this is to the moon and back three times. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  So we know these are the ones in use? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  That's correct. They have a lifespan of typically about 25 years, and then they become obsolete. At some point, some of them get retrieved once they're at the end of life because there's a lot of copper in there, and they can be salvaged. Some of them get contributed to scientific use. Various projects can benefit from having even a small amount of data capacity. So some of them stick around, sort of get repurposed. Some of them I'm sure just get discarded and just sit there. They're pretty environmentally benign, so that's not a huge problem. But yeah, like I say, a lifespan of about 25 years. One of the reasons actually we're seeing a build out right now is there was another big build out back in the early days of the .com excitement back in the late 90s and early 2000s, and a lot of fiber optic got deployed around the world. And so there was a surge of that building, and now those are coming to their end of life. So that's one of the reasons there's sort of a sprint right now to install new cables. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  You said earlier that there's a new cable that came online that's owned by Meta and Microsoft. Is that who's deploying cables now? It's just massive tech firms. It's not governments or... </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Telecom companies. Yeah, it was, for a while, telecom companies that were... </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  Yeah, so telecom companies are still involved, for sure, but a lot of them pulled back about 10 years ago. They decided that building cell phone networks was more important and more lucrative. And at the same time, the hyperscalers, the big tech companies were seeing increasing need for this data. And they didn't want to pay somebody else to do it also, but who needed to support their profit margin. As long as they were paying tens of millions, hundreds of millions of dollars, they might as well do it themselves. So starting about 10 years ago, I think mostly... I think Google was the first on board, then meta, Amazon, and Microsoft all joined up. They all are building these cables, operating them themselves, and it's a pretty significant shift in how these cables are funded, and it's because they're the ones who have the highest data demands. And so it's been this gradual shift from the telecoms to the hyperscalers. Now, the telecom companies are still involved. Often, these cables are operated by consortia, by groups that join a whole lot of different companies together. And for example, Meta and Microsoft partner, there's a big cable going from France to, I think Indonesia. It stops at 19 different countries along the way. From an organizational perspective, it's remarkable. It's being built. Just the number of players involved is huge, but the incentives to be connected are also huge. So although most of it is from... Most of the new cable expansion is being funded by these tech giants. A lot of it still isn't involvement from state or private owned telecom companies, but most of it is the tech giants right now. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  What does it cost them to do this? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  They're very expensive. So a transatlantic cable, which is still popular, even though that's a well traversed route, there's still more growth there, transatlantic cable costs about $250 million to $300 million. So transpacific ones obviously are more expensive. They go longer. And there are a lot of shorter haul ones that are cheaper. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  I saw somewhere, I don't know if it was in your post or somewhere else, where there was some estimations about how long it takes to recoup their investment basically. When will the thing sort of pay for itself? And that's a big number. And I was surprised. I can't remember how long, I think it was not very long, like five years or something like that. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  I didn't look at the EOI myself, so I can't address that specifically. But when they are looking at data increases of 60% per year, then that's a pretty strong indicator that there's a really heavy need for new cables. And I guess that's a lot of their core business, a lot of these web services, sorts of cloud computing data center to data center connections. Obviously, it makes financial sense for them. Building the cables in the first place is expensive, but also we have to maintain them. The operational costs are not insignificant too, but I guess the return on investment is obviously the bean counters approve it. So far, they're justifiable. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  And then you said there was a cable running from France to Indonesia, stops at 19 places. When we talk about submarine cables and we say things like transatlantic cable, I think there's this view in mind of New York to London and Washington, DC to London, and then maybe there's one from London to Paris or whatever. But one of the things that you wrote about is that it's not just to major metropolitan centers anymore. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  Yeah, there's been a big change in recent decades, last decade in particular. The nature of the network has changed a lot. So yeah, the initial buildout was from one major metro area to another major metro area because that was where the heaviest data demands were. So yeah, New York to London was a big candidate. But there are several reasons that people have been diversifying it. One is that better data routing technology within the cables has arrived. So you can have cables that have these multiple hops. So you now see cables going north and south along South America, along Africa, the coastlines of Africa. They might stop at some islands. They stop at a whole bunch of different countries on the way. And so instead of being just a point to point connection, we're moving more toward a mesh approach. So it's starting to look like the rest of the internet, where you have multiple routes and more redundancy in the network. Another big change is the push toward geographic diversity. So for example, hurricane Sandy in 2012 cut 11 of the 12 high capacity cables between the US and Europe. Most of those came out of New York, and that was a big wake up call to the industry. So now the new cables are often coming from somewhere else. Boston, Virginia, South Carolina, lot go from Florida. Florida's a popular for heading toward point south. So the network of cables is becoming more geographically diversified, as well as this multi-point architecture where cable will make lots of different hops along the way. The nature of the network is really changing from sort of a few trunk lines to more of a globe spanning series of different connections all over the place. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  So a lot less hub and spoke, and a lot more redundancy. When you have the mesh, you can route around damage. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  That's right. Actually, there's a lot of redundancy in the design. Since the operators know that these cables are going to be cut, they plan for that. And so for example, different companies will exchange fiber pairs with each other. So one company will have access to a fiber pair on some other companies cable, so that if the main one goes down, they have some backup capacity elsewhere. And also, they build a lot of overhead into each of the cables. So they don't... It might have 400 terabit per second capacity, but they don't run it at that most of the time. So they have a lot of headroom for when something else goes wrong somewhere else in the system. So that's because there are... 550 cables is a lot, but it's still not enough so they build more capacity in the case to account for failures. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  What I think is really fascinating about this is that this is the undersea infrastructure of the internet. If we were to Thanos blip out half the cables, we would be in big trouble, right? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  Yes. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Because we build them because there's a need, right? And it's a lot like highways where if you build more, then use grows, and then you have to build more. But currently, this is navigating this really fascinating complex gambit of big tech companies and telecom companies and even countries and little telecom companies inside of countries, and international waterways. And it's very, very complex, and yet somehow it works. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  Yeah, there's a big financial incentive to getting it to work. So if you are one of these countries who thinking about being part of some cable, you might have a lot of bureaucratic issues. You might have territorial water issues, you might have marine sanctuaries and preserves and things like that, but you're also looking at a potential three to 4% boost in employment when one of these cables drops into your country, and that's a big number, or a five to 7% boost in economic activity. Your GDP goes up when you get one of these connections. So there's a huge incentive to overcoming the difficulties of working with these consortia and the difficulties of making all the routing decisions. So yeah, it's enormously complicated, but there's a powerful incentive. And somebody's putting in a cable, and they have the option to drop off in your country or not, you think, well, let's push some levers and make it happen. So there's a good reason to have one of these connections. So even though there are lots of worries about the reliability of the network, there's been a lot of geopolitical tension that has recently crept into the industry, thanks to Russia and China, but at the same time, there's still more incentive to be part of the network than to be isolated. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  You talked about that there are these consortia conglomerate of companies that pay for this, and I guess negotiate. Do you know what's the governance of that? Because when you come to these geopolitical things, I imagine it's possible that they could have different feelings. They could have very different opinions. And how do they make decisions? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  Yeah, that's a good question. I'm not expert in that much detail, so I'm not sure I can give you a really rich answer. But for example, there was a cable that was being put in somewhere in Southeast Asia and HMN Tech that Huawei spinoff company was the one that was going to be the contractor. And that got effectively blocked because some of the consortium players said, 'Nope.' And that's because of US State Department pressure. So the consortium got rejiggered, and I think it's now SubCom that's laying that cable. So if you have a lot of different companies, different countries involved, government involved, it gets really complicated really fast, and that's a barrier to installing these cables. But at the same time, there are multiple cable efforts going on. The US does not influence or control all of them by any stretch of the imagination. So there are still new routes going in and new opportunities to be involved if you're not seen as politically compatible with one consortium. Or if there's some objection you have with another consortium, there are others you can get involved in. So it's not just one single cable, one single effort. There are several proceeding in parallel. So there are kind of different ways you can participate. But the fundamental primary driving factor in all of this is that there's such a strong incentive to be connected that that overcomes a lot of whatever resistance, bureaucratic governmental difficulties, cultural problems, permitting problems. At least for now, the incentives outweigh the disincentives, and so people are able to work out their differences. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  I wonder if it's possible... In my mind, I can draw parallels to other physical infrastructure. You have electricity. At some point, governments had to step in and say, 'Oh, we need to add this program to make sure that electricity can get to all the rural areas,' and created some really interesting government things and hybrid things. Can we think about, are there impacts to this or things where governments need to play a role to almost lobby the big tech companies to please get service for us, give us good quality? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  That's a good question, and the answer is yes. Even these cables operated by these tech giants, they're typically not exclusive to one particular customer another. So they will get other partners on board often. France Telecom, [inaudible 00:33:06] or somebody like that. We will jump in and get a couple of fiber pairs, because this is not just serving the interests of Google or Meta or whoever. So there often our consortia and partnerships, even with the big tech giants running the show because there's kind of a cooperative interest here. I do agree with you that, as with the electrical grid or the railroad network, it's a maturing industry. And it started very wild west. My grandfather on a farm in Ohio, my great grandfathers put in a local loop telephone network between their farm and the neighbors farms, and it was this transformative thing for them and their neighbors. But now the telecom industry is enormous, country spanning operations. That's the nature of the beast. I think one of the fascinating things about the subsea cables, it is by definition global, and it's hard to run around some of the political issues. You can't avoid it to some degree if you're in China and you're trying to block Facebook or Google or whatever, things like that that happened at a political level. This is kind of a lower level of the infrastructure. And although there are complications, the connections are still growing. There's some worries that there's moved to some splinter net. But so far, it's the same old internet, the same old border gateway protocol, BGP, and all those protocols at the low level are still in effect. So even though there are some geopolitical complications, it's still one network out there. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  I know that with other kinds of physical infrastructure, there were... I'm not sure what they're called. But today, they would just be called corporations. They're basically corporations that were formed to do this. And they would be made up of other companies basically, and maybe some very wealthy individuals or whatever. But those made a profit somehow. And I'm wondering, what... Do you know what is the relationship of those? Is there a kind of landlord game here where... Do they receive something back for being part of this consortium, in terms of we laid this cable, and now somehow charge rent? Or is that mainly at the data centers and the ability to process? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  I don't have a great answer for that question. I would say most of the reason that the tech bigs are installing these cables is for their own data needs. So they're not seeing it as an opportunity to gouge other people or to get them to be dependent on their infrastructure. It's because they themselves have to get the data from one data center to another ASAP. I suspect that there are lots of inter-organizational complexities at play with the partnerships and the consortia and the data sharing. But fundamentally, this is I think, more lots of big data wholesalers working with each other, not sort of retail small bit players who trying to get a piece of the action. Now, I'm sure there are lots of situations where some relatively small country is trying to get a piece of the action, and they might not have as much influence or sway as they would like to have. I think T was ever. Thus, the big players get to have more say in what happens with the routing and the operation and all those technology decisions. So fundamentally, the driving force behind these cables is the tech giants need more capacity, and they're buying it for themselves. So this is mostly them buying what they need for their own operations. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  So I have another question about this. We talked about the end of life of these cables. What happens to them? Do they just stay down there or does somebody come and collect them for the copper or whatever? An interesting part of that is when does it stop being useful enough to the people who are paying for it? And how does that happen with consortium? So this also happens with open source sometimes, right? Where we have a company that gets behind it in a really big way and another company comes along and they also get behind it in a fairly significant way, and maybe get two or three partners. And then lots of other people also contribute. But if you look at a pie graph of how much the lion's share is a relatively small number of companies, companies are... They don't last forever. They don't keep the current focus and everything forever. And I wonder, we're laying a lot of these things with meta and Google, and those are the ones that I remember. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  Amazon and Microsoft. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Amazon and Microsoft. Yeah, thank you. And I just wonder what happens if Microsoft says, nah, we're kind of done with that. I guess as long as there are people to pay for repairs and the energy going into them, then they continue, right? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  My guess is yes, that either they could find some substitute benefactor to take over... If you are Google and you're looking at 60% data growth per year, and Microsoft says, 'Hey, we're going to bug out of this cable,' somebody at Google might say, 'Oh, well, we'll pick up the slack on that one and we'll get the capacity off of that cable.' Or I don't know, TikTok, some newcomer that you've never heard of that's just being founded today might have the need for it because they are expensive to install, and even a decade old cable still has very significant capacity. So my guess is you'd be able to find some other steward to come in and take over. And a lot of them already have a consortium operated ownership structure or some partnership agreements to share capacity, so they don't operate in complete isolation. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  So it feels very similar in a lot of ways to the open source ecosystem where we have similar drivers and shares of things, and hopes that somebody will pick up if a steward were to drop off. Do you see the parallel that I'm trying to draw or... </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  Yeah, I guess it's not quite such a shared resource or common collective good as you see with open source, where some people put in a bunch of labor, and then a lot larger population benefits. It doesn't quite have that same cooperative ethos, I guess. But I think certainly there is to a certain extent, as I see it, the parallel is you build a more robust internet, which is it's kind of a commons that everybody can benefit from, and the more you can assume the internet is going to be there, the more deeply it gets embedded into everything you do, every corner of your life and business and academia and government and everything. So I definitely see some interesting curious cooperation among some pretty fierce technology rivals, and that's always notable to see. If you imagine some of the biggest cloud computing services saying, 'Sure, you give me some of your capacity. I'll give you some of my capacity. It's a deal.' It's kind of funny to see that cooperation, but I think that mostly, it's kind of more of a crass commercial calculation. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  But it benefits everybody. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  Oh, yes, for sure. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Yeah. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  Yeah. We all benefit from having a more robust internet foundation, world spanning internet foundation. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Yeah, that's really the interesting thing about infrastructure, is that it has clear benefits to weigh more than the people who have the specific economic interest in setting it up in the first place. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  Yeah. And once you build whatever infrastructure you do, often you get a lot of unanticipated benefits. Like the military, the US military built GPS, their global positioning system for military operations, and now look at how much private sector activity there is because you can know pretty much where you are on the planet by having your phone talk to some satellites. It's remarkably useful infrastructure. The internet is the same way. So you definitely have huge benefit when the internet spreads to your country. And if you look at what happened to Tonga, for example, when the volcanic eruption there a few months ago, it knocked that country offline because the eruption severed their subsea cable and there was a big scramble to reconnect it, but for a long time there. They were really disconnected from the world, and that's crippling for a little island nation. So you look at the subsea cable infrastructure in general, there's a lot of work to make it reliable and robust so that you don't have those problems and so that you can rely on it globally. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Yeah, interesting little comparison that I have in my mind is that you gave the price of a transatlantic cable in 2020 $to be 250 to $300 million, and I was just noting that that's less than the default search deal of Google and Mozilla in 2023. So, significantly, what a deal. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  Yeah, it's always fun to scale those out in terms of monthly revenue of the tech giants, or excuse me, quarterly revenue or profit. It's a lot of money for most of us, but those guys do their math in the billions and tens of billions. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Trillions now, yeah. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  Yeah. Market cap is pretty scary for some of those companies. It's not like pocket change lost in the couch, but they can afford to think and invest on a different scale from most companies. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Yeah, especially when they're sharing it. If you're splitting the cost of that transatlantic cable with many companies, what a bargain by comparison to the default search deals. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  Yeah, it's interesting. I was fascinated talking to these companies about why it's in their interest to do it, and it's an interesting look into this world. Talking to the Google person involved, who oversees theirs, he's got a big console in front of him that shows double digit cable cuts in all the different cables they use and the status of everything. He's got his fingers on the pulse of everything. Microsoft is looking at all the geographic diversification issues. They're worried about what happens with climate change and more storms, more cable cuts. There's a lot of work looking into the future of these cables as well. Actually, this was an interesting development. Microsoft acquired a startup that's working on hollow core fiber optics, so these fiber optic STRs are really skinny., They're about the width of a human hair, but the startup was designing fiber optic cables that has a hollow core with air at the center of that little strand that the speed of light in air is 47% faster than the speed of light in glass. So that would dramatically decrease the latency of communications. And if you can do that, then you can connect things that are farther apart. That was an interesting development. Of course, there are lots of efforts to improve the cables themselves with squeezing more fibers in there, or actually double core fibers reminded me of computing change went from single core processors to dual core processors and many multi-core processors. So a lot of the traditional computing industry dynamic is at work. It's very clear to me that we're not done with the technology or with the network. It's going to be sustained investment for many years to come. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  That's amazing that the speed of different properties is now coming into play. Light over glass, not fast enough. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  It's amazing watching the technology develop. I would just like to throw in there, the geopolitical stuff is kind of messy. The reason I wrote this article... I've been wanting to write it for five or six years or something like that. I've been interested in this technology, but the reason I wrote it now was initially because of the Russian invasion of Ukraine, the internet infrastructure became politically very sensitive. And so you saw US internet infrastructure companies pulling back their connections. And then with the sabotage of the Nord Stream gas pipeline in the North Sea, you saw allies of Vladimir Putin saying, 'Well, now subsea cables are a fair game for military attack.' And of course, people have been worried about Taiwan, which is an island nation, and they're very dependent on their... They have a large number of subsea cables with more on the way, but people fear that China would attack them. So it's got sort of some new angles beyond just the technology domain. It's become political. And so I'm sure you guys are familiar with the US effort to kind of cut off Huawei, the Chinese networking giant. Well, one of their subsidiaries that got spun off, it's called HMN Tech. They built and install fiber optic cables. And right now, they're basically being shut out of any US deal. Any cable that comes to the US can't be built by HMN Tech. They can't be part of the consortium. And so that political pressure is extending to the subsea realm as well. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  Amazing. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  Yeah, so it's somewhat fraught, but like I say, it's still one big internet. You can still get your data in and out of China. You just might have to hop through some other country along the way. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  We like to think technology is politically neutral, and yet never is. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  It never is. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  I'm curious, was there anything that particularly fascinated you that we haven't touched on so far that you've discovered in all of this? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  We've covered most of the stuff that interests me. A couple little things that jumped out at me. One of the fascinating tidbits was in the installation of these cables, that can be kind of a surprisingly analog phenomenon. So the ships that lay the cables, they can carry a few thousand kilometers worth of cables and they coil up in these giant drums, they call them tanks, and of course the cable gets spooled in there reverse direction from the expected direction of actually laying the cable. But sometimes they have to change their priorities because maybe they don't have a permit for some particular patch of water, or maybe the weather is bad, so they're going to lay a different stretch first. That's an extremely expensive decision to make because re-spooling one of these cables from one drum to another takes a long time and a lot of work. And if you're doing it in the middle of choppy seas from one ship to another, it's really complicated. So there's actually... At SubCom, this US company that installs these cables on behalf of the tech giants, they actually have a guy who does it all with string. He models it out by hand with string. They said they've tried various computer programs that's supposed to be able to manage it. But they plan it all out with string, so that was kind of entertaining for me. Another piece of information that really struck me was that climate change and all the melting of the Arctic sea ice, it's possible that pretty soon we're going to get a North Pole subsea cable route leading from Asia to Europe across the North Pole, because obviously right now there's sea ice. You can't get a ship across there. But if you could do that, that would dramatically decrease the communication latency for that communication pathway. I thought that was an interesting element that I had not even thought of. I'm a little weary about that because I'm not sure how you deal with cable cuts, because the Arctic Sea ice, even though it's retreating, it's still pretty significant in the winter. And so I don't know exactly how near term that is, but the folks I talked to said, oh no, there's very serious evaluation of that route. So that looks like it'll happen at some point. So overall, even though I've been looking at this for a few years, I was very interested to actually talk to some of the people involved. It's a fascinating, and I think mostly invisible piece of the internet that we obviously all rely on it. All global communication and commerce, it's central to it. And the build out continues a pace because it's getting more important, not less important. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  Yeah. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>:  Really, really fascinating, the whole conversation. I hope you don't mind that I peppered you with lots of probably unusual questions. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  No, that's great. I like it. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>:  Yeah, thanks very much for coming on, Stephen. It's a favorite subject, the whole cable thing, and I was really glad to be able to talk to you about it. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Stephen Shankland</cite>:  Yeah. Well, I'm glad I finally got to write about it, and I'm glad you guys were interested. And you gave a format where we could talk about it in more than two minutes, so I appreciate that.</blockquote></li>
+                
+              </ul>
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+<script src="/assets/chat.js"></script>
+
+    </main>
+
+    <footer id="site-footer" role="contentinfo">
+
+  <a class="site-title" href="/">
+    <img src="/assets/i/logo.png" alt="Igalia" />
+  </a>
+
+  <div>
+    <h2>Igalia.com</h2>
+    <ul class="main-menu" role="navigation">
+      
+      <li>
+        <a class="page-link" href="/about" title="About Us">
+          About Us
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/technologies" title="Technologies">
+          Technologies
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/services" title="Services">
+          Services
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/industries" title="Industries">
+          Industries
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/24-7/home" title="24/7">
+          24/7
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/jobs" title="Jobs">
+          Jobs
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/contact" title="Contact">
+          Contact
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div>
+    <h2>Igalia, S.L. © 2023. All rights reserved.</h2>
+    <ul class="footer-menu" role="navigation">
+      
+      <li>
+        <a class="page-link" href="/coc" title="Code of Conduct">
+          Code of Conduct
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/legal" title="Legal Terms">
+          Legal Terms
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/press" title="Press">
+          Press
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/privacy" title="Privacy Policy">
+          Privacy Policy
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/public-funding" title="Public funding (Fondos públicos)">
+          Public funding (Fondos públicos)
+        </a>
+        </li>
+        
+    </ul>
+  </div>
+
+  <div role="contentinfo">
+    <h2>Headquarters</h2>
+    <ul class="contact-list">
+      
+      <li>Bugallal Marchesi, 22, 1º</li>
+      
+      <li>15008 A Coruña</li>
+      
+      <li>Galicia (Spain)</li>
+      
+      <li>Pho.: +34 981 913991</li>
+      
+      <li>
+        <a href="mailto:info(at)igalia.com">
+          info(at)igalia.com
+        </a>
+      </li>
+      
+    </ul>
+    <div class="social">
+      
+      
+
+      <a class="social-link" href="https://twitter.com/igalia" target="_blank" title="twitter" rel="me">
+        <i aria-hidden="true" class="fab fa-twitter"></i>
+        <span hidden>twitter</span>
+      </a>
+      
+      
+
+      <a class="social-link" href="https://floss.social/@igalia" target="_blank" title="mastodon" rel="me">
+        <i aria-hidden="true" class="fab fa-mastodon"></i>
+        <span hidden>mastodon</span>
+      </a>
+      
+      
+
+      <a class="social-link" href="https://youtube.com/igalia" target="_blank" title="youtube" rel="me">
+        <i aria-hidden="true" class="fab fa-youtube"></i>
+        <span hidden>youtube</span>
+      </a>
+      
+    </div>
+
+</footer>
+
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+    <script src="/assets/app.js"></script>
+    
+    
+
+    <!-- Piwik -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+      _paq.push(['disableCookies']);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+         var u="//stats.igalia.com/";
+         _paq.push(['setTrackerUrl', u+'piwik.php']);
+         _paq.push(['setSiteId', '1']);
+         var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+         g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+       })();
+    </script>
+    <noscript><p><img src="//stats.igalia.com/piwik.php?idsite=1&rec=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Piwik Code -->
+
+  </body>
+</html>

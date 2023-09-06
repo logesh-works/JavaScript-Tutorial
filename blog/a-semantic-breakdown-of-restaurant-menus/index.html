@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+<script type="text/javascript">
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,initializeOnLoaded:function(o){gform.domLoaded&&gform.scriptsLoaded?o():!gform.domLoaded&&gform.scriptsLoaded?window.addEventListener("DOMContentLoaded",o):document.addEventListener("gform_main_scripts_loaded",o)},hooks:{action:{},filter:{}},addAction:function(o,n,r,t){gform.addHook("action",o,n,r,t)},addFilter:function(o,n,r,t){gform.addHook("filter",o,n,r,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,n){gform.removeHook("action",o,n)},removeFilter:function(o,n,r){gform.removeHook("filter",o,n,r)},addHook:function(o,n,r,t,i){null==gform.hooks[o][n]&&(gform.hooks[o][n]=[]);var e=gform.hooks[o][n];null==i&&(i=n+"_"+e.length),gform.hooks[o][n].push({tag:i,callable:r,priority:t=null==t?10:t})},doHook:function(n,o,r){var t;if(r=Array.prototype.slice.call(r,1),null!=gform.hooks[n][o]&&((o=gform.hooks[n][o]).sort(function(o,n){return o.priority-n.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==n?t.apply(null,r):r[0]=t.apply(null,r)})),"filter"==n)return r[0]},removeHook:function(o,n,t,i){var r;null!=gform.hooks[o][n]&&(r=(r=gform.hooks[o][n]).filter(function(o,n,r){return!!(null!=i&&i!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][n]=r)}});
+</script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" title="Jon Christopher" href="https://jonchristopher.us/feed/" />
+	<script>window.koko_analytics = {"url":"https:\/\/jonchristopher.us\/koko-analytics-collect.php","post_id":79,"use_cookie":1,"cookie_path":"\/","dnt":true};</script><meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v21.1 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>A Semantic Breakdown of Restaurant Menus - Jon Christopher</title>
+	<link rel="canonical" href="https://jonchristopher.us/blog/a-semantic-breakdown-of-restaurant-menus/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="A Semantic Breakdown of Restaurant Menus - Jon Christopher" />
+	<meta property="og:description" content="This article takes into consideration a restaurant menu and discusses what makes the most semantic sense when marking one up using HTML." />
+	<meta property="og:url" content="https://jonchristopher.us/blog/a-semantic-breakdown-of-restaurant-menus/" />
+	<meta property="og:site_name" content="Jon Christopher" />
+	<meta property="article:published_time" content="2007-05-14T12:14:21+00:00" />
+	<meta property="article:modified_time" content="2018-09-25T20:20:22+00:00" />
+	<meta name="author" content="Jon" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="Jon" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="6 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://jonchristopher.us/blog/a-semantic-breakdown-of-restaurant-menus/","url":"https://jonchristopher.us/blog/a-semantic-breakdown-of-restaurant-menus/","name":"A Semantic Breakdown of Restaurant Menus - Jon Christopher","isPartOf":{"@id":"https://jonchristopher.us/#website"},"datePublished":"2007-05-14T12:14:21+00:00","dateModified":"2018-09-25T20:20:22+00:00","author":{"@id":"https://jonchristopher.us/#/schema/person/b10c506312f6a8c38fa9bf29808cb023"},"breadcrumb":{"@id":"https://jonchristopher.us/blog/a-semantic-breakdown-of-restaurant-menus/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://jonchristopher.us/blog/a-semantic-breakdown-of-restaurant-menus/"]}]},{"@type":"BreadcrumbList","@id":"https://jonchristopher.us/blog/a-semantic-breakdown-of-restaurant-menus/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jonchristopher.us/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://jonchristopher.us/blog/"},{"@type":"ListItem","position":3,"name":"A Semantic Breakdown of Restaurant Menus"}]},{"@type":"WebSite","@id":"https://jonchristopher.us/#website","url":"https://jonchristopher.us/","name":"Jon Christopher","description":"Believer. Husband. Dad. Builder.","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://jonchristopher.us/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Person","@id":"https://jonchristopher.us/#/schema/person/b10c506312f6a8c38fa9bf29808cb023","name":"Jon","url":"https://jonchristopher.us/blog/author/7666pwpadmin/"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="alternate" type="application/rss+xml" title="Jon Christopher &raquo; A Semantic Breakdown of Restaurant Menus Comments Feed" href="https://jonchristopher.us/blog/a-semantic-breakdown-of-restaurant-menus/feed/" />
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/jonchristopher.us\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.3.1"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!n(e,"\ud83e\udef1\ud83c\udffb\u200d\ud83e\udef2\ud83c\udfff","\ud83e\udef1\ud83c\udffb\u200b\ud83e\udef2\ud83c\udfff")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css' href='https://jonchristopher.us/wp-includes/css/dist/block-library/style.min.css?ver=6.3.1' type='text/css' media='all' />
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='wptally-css' href='https://jonchristopher.us/wp-content/plugins/wp-tally-master/assets/css/style.css?ver=6.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='jonchristopher-style-css' href='https://jonchristopher.us/wp-content/themes/jonchristopher/style.css?ver=1.0.19' type='text/css' media='all' />
+<link rel='stylesheet' id='searchwp-forms-css' href='https://jonchristopher.us/wp-content/plugins/searchwp/assets/css/frontend/search-forms.css?ver=4.3.3' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-featherlight-css' href='https://jonchristopher.us/wp-content/plugins/wp-featherlight/css/wp-featherlight.min.css?ver=1.3.4' type='text/css' media='all' />
+<script type='text/javascript' src='https://jonchristopher.us/wp-includes/js/jquery/jquery.min.js?ver=3.7.0' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://jonchristopher.us/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='https://jonchristopher.us/wp-content/plugins/wp-tally-master/assets/js/wptally.js?ver=6.3.1' id='wptally-js'></script>
+<link rel="https://api.w.org/" href="https://jonchristopher.us/wp-json/" /><link rel="alternate" type="application/json" href="https://jonchristopher.us/wp-json/wp/v2/posts/79" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://jonchristopher.us/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.3.1" />
+<link rel='shortlink' href='https://jonchristopher.us/?p=79' />
+<link rel="alternate" type="application/json+oembed" href="https://jonchristopher.us/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fjonchristopher.us%2Fblog%2Fa-semantic-breakdown-of-restaurant-menus%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://jonchristopher.us/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fjonchristopher.us%2Fblog%2Fa-semantic-breakdown-of-restaurant-menus%2F&#038;format=xml" />
+		<style type="text/css" id="wp-custom-css">
+			body {
+	min-height: 100vh;
+}
+
+.searchwp-related {
+ display: none;
+}		</style>
+			<script>
+		( function() {
+		var ua = navigator.userAgent.toLowerCase();
+
+		if ( ( ua.indexOf( 'webkit' ) > -1 || ua.indexOf( 'opera' ) > -1 || ua.indexOf( 'msie' ) > -1 ) &&
+			document.getElementById && window.addEventListener ) {
+
+			window.addEventListener( 'hashchange', function() {
+				var element = document.getElementById( location.hash.substring( 1 ) );
+
+				if ( element ) {
+					if ( ! /^(?:a|select|input|button|textarea)$/i.test( element.nodeName ) ) {
+						element.tabIndex = -1;
+					}
+
+					element.focus();
+				}
+			}, false );
+		}
+	} )();
+	</script>
+</head>
+
+<body class="post-template-default single single-post postid-79 single-format-standard wp-featherlight-captions">
+<div id="page" class="hfeed site">
+
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+	<div class="bonus">
+		<div class="email-list">
+			<h5>Email List</h5>
+			<script type="text/javascript"></script>
+                <div class='gf_browser_unknown gform_wrapper gform_legacy_markup_wrapper gform-theme--no-framework' data-form-theme='legacy' data-form-index='0' id='gform_wrapper_2' ><div id='gf_2' class='gform_anchor' tabindex='-1'></div>
+                        <div class='gform_heading'>
+                            <p class='gform_description'></p>
+                        </div><form method='post' enctype='multipart/form-data' target='gform_ajax_frame_2' id='gform_2'  action='/blog/a-semantic-breakdown-of-restaurant-menus/#gf_2' data-formid='2' >
+                        <div class='gform-body gform_body'><ul id='gform_fields_2' class='gform_fields top_label form_sublabel_below description_below'><li id="field_2_1"  class="gfield gfield--type-email gfield_contains_required field_sublabel_below gfield--no-description field_description_below gfield_visibility_visible"  data-js-reload="field_2_1"><label class='gfield_label gform-field-label' for='input_2_1' >Email<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_email'>
+                            <input name='input_1' id='input_2_1' type='text' value='' class='large'   placeholder='Email address' aria-required="true" aria-invalid="false"  />
+                        </div></li></ul></div>
+        <div class='gform_footer top_label'> <input type='submit' id='gform_submit_button_2' class='gform_button button' value='Submit'  onclick='if(window["gf_submitting_2"]){return false;}  window["gf_submitting_2"]=true;  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_2"]){return false;} window["gf_submitting_2"]=true;  jQuery("#gform_2").trigger("submit",[true]); }' /> <input type='hidden' name='gform_ajax' value='form_id=2&amp;title=&amp;description=1&amp;tabindex=0' />
+            <input type='hidden' class='gform_hidden' name='is_submit_2' value='1' />
+            <input type='hidden' class='gform_hidden' name='gform_submit' value='2' />
+            
+            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+            <input type='hidden' class='gform_hidden' name='state_2' value='WyJbXSIsIjA1MjUzM2Y5N2MxY2JjM2JiYzMzNGZjYzUyNTNjYjQ2Il0=' />
+            <input type='hidden' class='gform_hidden' name='gform_target_page_number_2' id='gform_target_page_number_2' value='0' />
+            <input type='hidden' class='gform_hidden' name='gform_source_page_number_2' id='gform_source_page_number_2' value='1' />
+            <input type='hidden' name='gform_field_values' value='' />
+            
+        </div>
+                        </form>
+                        </div>
+		                <iframe style='display:none;width:0px;height:0px;' src='about:blank' name='gform_ajax_frame_2' id='gform_ajax_frame_2' title='This iframe contains the logic required to handle Ajax powered Gravity Forms.'></iframe>
+		                <script type="text/javascript">
+gform.initializeOnLoaded( function() {gformInitSpinner( 2, 'https://jonchristopher.us/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery('#gform_ajax_frame_2').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_2');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_2').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_2').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_2').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_2').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_2').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_2').val();gformInitSpinner( 2, 'https://jonchristopher.us/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery(document).trigger('gform_page_loaded', [2, current_page]);window['gf_submitting_2'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}setTimeout(function(){jQuery('#gform_wrapper_2').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_2').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [2]);window['gf_submitting_2'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_2').text());}, 50);}else{jQuery('#gform_2').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger('gform_post_render', [2, current_page]);gform.utils.trigger({ event: 'gform/postRender', native: false, data: { formId: 2, currentPage: current_page } });} );} );
+</script>
+		</div>
+		<div class="search">
+			<h5>Search</h5>
+			<form role="search" method="get" class="search-form" action="https://jonchristopher.us/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form>		</div>
+	</div>
+
+	<header id="masthead" class="site-header" role="banner">
+		<p class="link-home">
+			<a href="https://jonchristopher.us">Home</a>
+		</p>
+					<nav id="site-navigation" class="main-navigation" role="navigation">
+				<div class="menu-primary-menu-container"><ul id="menu-primary-menu" class="nav-menu"><li id="menu-item-6808" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6808"><a href="https://jonchristopher.us/projects/">Projects</a></li>
+<li id="menu-item-6753" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-6753"><a href="https://jonchristopher.us/blog/">Blog</a></li>
+<li id="menu-item-6752" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6752"><a href="https://jonchristopher.us/uses/">Uses</a></li>
+<li id="menu-item-6754" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6754"><a href="https://jonchristopher.us/contact/">Contact</a></li>
+</ul></div>			</nav><!-- .main-navigation -->
+			</header>
+
+	<div id="content" class="site-content">
+
+<h1>A Semantic Breakdown of Restaurant Menus</h1>
+
+<div class="post">
+	<p class="meta"><strong>Posted: May 14, 2007</strong> <a id="header-comment-trigger" style="position: relative; top: -1px; font-size: 0.9em;" href="#comments">Comments(11)</a></p>
+	<div class="hentry">
+		
+		<p>Personally, one of my biggest interests in <abbr title="HyperText Markup Language">HTML</abbr> is the semantic nature of the language when used correctly to mark up a document.  I enjoy thinking about what markup is most appropriate for a given piece.  <abbr title="HyperText Markup Language">HTML</abbr> has been long abused by many Web developers who do not understand the concept of semantics, and how much weight a tag you use can carry when used for its true purpose.  Improper semantic use of <abbr title="HyperText Markup Language">HTML</abbr> tags is the root of many problems of the modern Web.  The most widely spread problem that comes to mind is the use of <code>tables</code> to structure a site design.  Web developers now (should) know that there are more appropriate ways to structure their design using <abbr title="Cascading Style Sheets">CSS</abbr>.  Semantics goes far beyond not using a <code>table</code> for your layout, and by nature semantics can be debated.  The call for discussion associated with semantics is another reason I enjoy Web development as much as I do.  When speaking with intelligent developers, lots of great conversation can be had regarding specific examples of semantic markup.</p>
+<p>When browsing around the Web lately, I&#8217;ve been excited to read that many other developers seem to feel the same way as me.  A new discussion has been brewing among Web developers on the topic of <abbr title="Plain Old Semantic HTML">POSH</abbr>.  This recent revival seemed to at least partially stem from an article written by Jeremy Keith entitled <a href="http://adactio.com/journal/1287"><abbr title="Plain Old Semantic HTML">POSH</abbr> Patterns</a>.  <a href="http://microformats.org/wiki/posh">POSH</a> (Plain Old Semantic <abbr title="HyperText Markup Language">HTML</abbr>) has the potential of becoming a buzzword much like &#8220;Ajax&#8221; and &#8220;Web 2.0&#8221;, but to me, this buzzword stands out from the rest.  Should <abbr title="Plain Old Semantic HTML">POSH</abbr> catch on in the same way, it would benefit not only each and every developer who researches it, but any website they work on as well.  It is, by nature, difficult to abuse or misuse.</p>
+<p>I&#8217;d like to start doing my part in spreading the word about <abbr title="Plain Old Semantic HTML">POSH</abbr> in starting a sporadic series of articles on the subject, much like the &#8216;<a href="https://jonchristopher.us/blog/improving-your-process-css-techniques-part-1/"">Improving your Process</a>&#8216; series.  In the articles I&#8217;ll take a real world example that will hopefully be found useful by developers at some point in their career.  I&#8217;m also hoping that the articles will spark some lively conversation in both agreement and opposition to anything I bring up.  I don&#8217;t want the articles to be looked at as the final word in the least, I&#8217;d just like to offer my opinions and be completely open to any and all reactions.</p>
+<p>The first article in this series, had I thought of it at the time, would have to be my <a href="https://jonchristopher.us/blog/calendar-semantics-table-or-list/"">questioning of calendar semantics</a>, an article in which I ask which is more appropriate for marking up a calendar: a table or a list?  There were some great comments in response to that article and I hope a similar situation results from those upcoming in the series.</p>
+<h2>Applying <abbr title="Plain Old Semantic HTML">POSH</abbr> to restaurant menus</h2>
+<p>The first official article in this series is going to take a close look at how you could mark up a menu for a client running a restaurant.  When you think about a menu, most of the time the name of the dish is offered, as well as a description and of course, a price.  When you break down what needs to be marked up, we&#8217;re given the ability to analyze how elements can be used in cooperation with semantic <abbr title="HyperText Markup Language">HTML</abbr>.</p>
+<p>There are a number of ways you could mark up a restaurant menu, the most simple that comes to mind is a group of headings and paragraphs which hold the dish name and description/price, respectively.  That&#8217;s not the worst way to go about things, but there is something better that can be done.  <a href="http://www.w3.org/TR/html#h-10.3">Definition lists</a> seem like a perfect way to handle marking up a restaurant menu.</p>
+<h3>Definition lists are, in my opinion, underrated</h3>
+<p><a href="http://www.w3.org/TR/html#h-10.3">Definition lists</a> are something I find myself using all the time since discovering their usefulness.  If you take a look at a project you&#8217;re currently working on, there&#8217;s a good possibility a list you&#8217;re using could be considered a definition list.  Definition lists are not strictly limited to terms and their definitions.  Definition lists are used to list items that consist of two parts: a term and a description.  There are many times that a list of items consists of two parts that are directly related.</p>
+<p><span id="more-79"></span></p>
+<p>Beyond their semantic usefulness, definition lists are quite a blessing when it comes to styling them.  The elements are structured in a way which allows you to achieve a very organized and tidy look without bloating your markup.  If you aren&#8217;t currently making use of definition lists on a fairly consistent basis, I&#8217;d highly recommend it <em>where applicable</em>.</p>
+<h3>Applying a definition list to a menu</h3>
+<p>When marking up a restaurant menu, I would include the dish name as a <code>dt</code> element, and then the description and price as separate <code>dd</code> elements.  To me this makes sense because both the description and price are directly related to the dish title.  Keeping <abbr title="Plain Old Semantic HTML">POSH</abbr> in mind helps us to also provide meaningful <code>class</code> names for the elements by applying <code>class="price"</code> and <code>class="description"</code> to each <code>dd</code> not only to distinguish a difference between the two, but will also help out with styling the list.</p>
+<pre><code>&lt;dl>
+  &lt;dt>A Sample Dish Du Jour&lt;/dt>
+  &lt;dd class="price">$8.99&lt;/dd>
+  &lt;dd class="description">&lt;p>Lorem ipsum dolor sit amet,
+    consectetuer adipiscing elit. Morbi suscipit urna placerat
+    turpis. Vivamus id sapien eu augue pellentesque tincidunt.
+    Proin vel ante aliquet pede congue porta.&lt;/p>&lt;/dd>
+&lt;/dl></code></pre>
+<p>There are also some items on a menu that may not have either a price listed (if the prices are noted elsewhere) or a description (for something like the soup du jour).  Those items can simply be left out, and the associated <code>class</code> will help to keep your styles in tact.</p>
+<h4>Other elements required by a restaurant menu</h4>
+<p>Not everything included in a restaurant menu can be marked up using a single definition list.  In actuality, multiple definition lists, headings, and other lists will be needed to effectively mark up an entire menu.  The different menu sections can be included in their own <code>div</code> including their own heading, as well as class to help distinguish a lunch menu from a dinner menu for example.</p>
+<p>Going further, every list in a menu won&#8217;t always be a definition list.  There is often a need for an unordered list for one reason or another in a restaurant menu.  What counts is that each section is taken into consideration and ends up using what makes the most semantic sense.  There will also more than likely be an appropriate place to use an <code>address</code> element, providing any location details or phone numbers for the restaurant.</p>
+<p>I&#8217;ve attempted to be mildly general in taking restaurant menus into consideration.  It&#8217;s very likely that there will be more to take into consideration when actually implementing a menu, but hopefully this article has set the wheels in motion as far as a thought track is considered.  Have you had to implement a menu online before?  What markup did you use?  Do you agree that a definition list is the way to go from here on out?  Or do you think I&#8217;m completely wrong and feel that there&#8217;s a better way?  What other opinions do you have on the matter?</p>
+
+    <div class="searchwp-related">
+        <h4>Related Content</h4>
+        <ol>
+                            <li>
+                    <a href="https://jonchristopher.us/blog/at-what-point-do-semantics-not-apply/">
+                                                <span>At What Point Do Semantics Not Apply?</span>
+                    </a>
+                </li>
+                            <li>
+                    <a href="https://jonchristopher.us/blog/posh-semantic-markup-for-driving-directions/">
+                                                <span>POSH: Semantic Markup for Driving Directions</span>
+                    </a>
+                </li>
+                            <li>
+                    <a href="https://jonchristopher.us/blog/semantic-image-use/">
+                                                <span>Semantic Image Use</span>
+                    </a>
+                </li>
+                    </ol>
+    </div>
+
+        <style type="text/css">
+        .searchwp-related > ol {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            align-items: stretch;
+            margin: 0 0 0 -1em;
+        }
+
+        .searchwp-related > ol > li {
+            flex: 1;
+            padding: 0 0 0 1em;
+            display: flex;
+            align-items: stretch;
+        }
+
+        .searchwp-related > ol > li > a {
+            display: block;
+            width: 100%;
+            text-decoration: none;
+            background-color: #f7f7f7;
+            border: 1px solid #e7e7e7;
+            border-radius: 2px;
+        }
+
+        .searchwp-related > ol > li > a > span {
+            display: block;
+            padding: 1em;
+        }
+
+        .searchwp-related > ol > li > a > img {
+            display: block;
+            max-width: 100%;
+            height: auto !important;
+        }
+
+        .searchwp-related > ol > li > a:hover {
+            border: 1px solid #e7e7e7;
+        }
+    </style>
+
+	</div>
+</div>
+
+<div class="post-meta section">
+	<h4>Categories</h4><p class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://jonchristopher.us/blog/category/accessibility/" rel="category tag">Accessibility</a>, <a href="https://jonchristopher.us/blog/category/development/" rel="category tag">Development</a>, <a href="https://jonchristopher.us/blog/category/opinion/" rel="category tag">Opinion</a></p><h4>Tags</h4><p class="tags-links"><span class="screen-reader-text">Tags </span><a href="https://jonchristopher.us/blog/tag/definition-list/" rel="tag">definition-list</a>, <a href="https://jonchristopher.us/blog/tag/html/" rel="tag">HTML</a>, <a href="https://jonchristopher.us/blog/tag/menu/" rel="tag">menu</a>, <a href="https://jonchristopher.us/blog/tag/posh/" rel="tag">POSH</a>, <a href="https://jonchristopher.us/blog/tag/semantics/" rel="tag">Semantics</a>, <a href="https://jonchristopher.us/blog/tag/tip/" rel="tag">tip</a></p></div>
+
+<div class="update">
+	
+                <div class='gf_browser_unknown gform_wrapper gform_legacy_markup_wrapper gform-theme--no-framework' data-form-theme='legacy' data-form-index='0' id='gform_wrapper_3' ><div id='gf_3' class='gform_anchor' tabindex='-1'></div>
+                        <div class='gform_heading'>
+                            <h3 class="gform_title">Get my newsletter</h3>
+                            <p class='gform_description'>Receive periodic updates right in the mail!</p>
+                        </div><form method='post' enctype='multipart/form-data' target='gform_ajax_frame_3' id='gform_3'  action='/blog/a-semantic-breakdown-of-restaurant-menus/#gf_3' data-formid='3' >
+                        <div class='gform-body gform_body'><ul id='gform_fields_3' class='gform_fields top_label form_sublabel_below description_below'><li id="field_3_1"  class="gfield gfield--type-email gfield_contains_required field_sublabel_below gfield--no-description field_description_below gfield_visibility_visible"  data-js-reload="field_3_1"><label class='gfield_label gform-field-label' for='input_3_1' >Email<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_email'>
+                            <input name='input_1' id='input_3_1' type='text' value='' class='large'   placeholder='Email address' aria-required="true" aria-invalid="false"  />
+                        </div></li><li id="field_3_2"  class="gfield gfield--type-honeypot gform_validation_container field_sublabel_below gfield--has-description field_description_below gfield_visibility_visible"  data-js-reload="field_3_2"><label class='gfield_label gform-field-label' for='input_3_2' >Email</label><div class='ginput_container'><input name='input_2' id='input_3_2' type='text' value='' /></div><div class='gfield_description' id='gfield_description_3_2'>This field is for validation purposes and should be left unchanged.</div></li></ul></div>
+        <div class='gform_footer top_label'> <input type='submit' id='gform_submit_button_3' class='gform_button button' value='Submit'  onclick='if(window["gf_submitting_3"]){return false;}  window["gf_submitting_3"]=true;  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_3"]){return false;} window["gf_submitting_3"]=true;  jQuery("#gform_3").trigger("submit",[true]); }' /> <input type='hidden' name='gform_ajax' value='form_id=3&amp;title=1&amp;description=1&amp;tabindex=0' />
+            <input type='hidden' class='gform_hidden' name='is_submit_3' value='1' />
+            <input type='hidden' class='gform_hidden' name='gform_submit' value='3' />
+            
+            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+            <input type='hidden' class='gform_hidden' name='state_3' value='WyJbXSIsIjA1MjUzM2Y5N2MxY2JjM2JiYzMzNGZjYzUyNTNjYjQ2Il0=' />
+            <input type='hidden' class='gform_hidden' name='gform_target_page_number_3' id='gform_target_page_number_3' value='0' />
+            <input type='hidden' class='gform_hidden' name='gform_source_page_number_3' id='gform_source_page_number_3' value='1' />
+            <input type='hidden' name='gform_field_values' value='' />
+            
+        </div>
+                        </form>
+                        </div>
+		                <iframe style='display:none;width:0px;height:0px;' src='about:blank' name='gform_ajax_frame_3' id='gform_ajax_frame_3' title='This iframe contains the logic required to handle Ajax powered Gravity Forms.'></iframe>
+		                <script type="text/javascript">
+gform.initializeOnLoaded( function() {gformInitSpinner( 3, 'https://jonchristopher.us/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery('#gform_ajax_frame_3').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_3');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_3').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_3').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_3').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_3').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_3').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_3').val();gformInitSpinner( 3, 'https://jonchristopher.us/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery(document).trigger('gform_page_loaded', [3, current_page]);window['gf_submitting_3'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}setTimeout(function(){jQuery('#gform_wrapper_3').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_3').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [3]);window['gf_submitting_3'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_3').text());}, 50);}else{jQuery('#gform_3').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger('gform_post_render', [3, current_page]);gform.utils.trigger({ event: 'gform/postRender', native: false, data: { formId: 3, currentPage: current_page } });} );} );
+</script>
+</div>
+
+<div id="comments" class="comments-area section">
+
+			<button class="button" id="toggle-comments">
+			View 11 comments		</button>
+
+		<div id="comment-list">
+			<h3>Comments</h3>
+			<ol class="comment-list">
+						<li id="comment-9857" class="comment even thread-even depth-1">
+			<article id="div-comment-9857" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+												<b class="fn"><a href="http://www.simonjobling.com" class="url" rel="ugc external nofollow">Si Jobling</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://jonchristopher.us/blog/a-semantic-breakdown-of-restaurant-menus/#comment-9857"><time datetime="2007-05-14T09:49:23-04:00">May 14, 2007 at 9:49 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>I think this is one of the few real-world situations where definition lists are actually appropriate. TV listings are another that should be considered as definition lists (although, in theory, this is also an ordered list).</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-9863" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-9863" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+												<b class="fn"><a href="http://bohemianalps.com/blog" class="url" rel="ugc external nofollow">Simanek</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://jonchristopher.us/blog/a-semantic-breakdown-of-restaurant-menus/#comment-9863"><time datetime="2007-05-14T10:43:59-04:00">May 14, 2007 at 10:43 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Wow. I&#8217;ve never heard of definition lists. Interesting article and thanks for bringing my attention to what is apparently a little-used html element. Just when I thought I had a handle on xhtml.</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-9859" class="comment even thread-even depth-1">
+			<article id="div-comment-9859" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+												<b class="fn">Jon</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://jonchristopher.us/blog/a-semantic-breakdown-of-restaurant-menus/#comment-9859"><time datetime="2007-05-14T11:44:57-04:00">May 14, 2007 at 11:44 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>@Simanek: I&#8217;m glad you found the article useful!</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-9860" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-9860" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+												<b class="fn">Jon</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://jonchristopher.us/blog/a-semantic-breakdown-of-restaurant-menus/#comment-9860"><time datetime="2007-05-14T11:46:18-04:00">May 14, 2007 at 11:46 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>@Si Jobling: I&#8217;m glad to hear you agree with my assessment.  TV listings are another interesting real-world example to analyze.  I&#8217;d like to take some time to think about the semantic value of television listings and perhaps write a piece on it in the near future if you wouldn&#8217;t mind.</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-9858" class="comment even thread-even depth-1">
+			<article id="div-comment-9858" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+												<b class="fn"><a href="http://arjaneising.nl" class="url" rel="ugc external nofollow">Arjan Eising</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://jonchristopher.us/blog/a-semantic-breakdown-of-restaurant-menus/#comment-9858"><time datetime="2007-05-14T14:27:37-04:00">May 14, 2007 at 2:27 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>About semantic web documents, a class <code>description</code> is <em>too</em> semantic, I think. The second &#8216;d&#8217; stands for description. I think the classname <code>price</code> is good, and with <abbr title="Cascading Style Sheets">CSS</abbr> the other <code>dd</code> can also be styled.</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-9856" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-9856" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+												<b class="fn"><a href="http://blog.html.it" class="url" rel="ugc external nofollow">Alessandro Fulciniti</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://jonchristopher.us/blog/a-semantic-breakdown-of-restaurant-menus/#comment-9856"><time datetime="2007-05-14T18:36:00-04:00">May 14, 2007 at 6:36 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Jon, it&#8217;s nice to see someone shares my same opinion to markup a restaurant menu.. a while ago I&#8217;ve written something about it in <a href="http://web-graphics.com/mtarchive/001622.php" rel="nofollow">How to style a Restaurant Menu</a>, which is, btw, more focused on the presentation and the CSS. Nice read indeed, thanks for sharing!</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-9855" class="comment even thread-even depth-1">
+			<article id="div-comment-9855" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+												<b class="fn">Jon</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://jonchristopher.us/blog/a-semantic-breakdown-of-restaurant-menus/#comment-9855"><time datetime="2007-05-15T08:27:05-04:00">May 15, 2007 at 8:27 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>@Arjan Eising:  That&#8217;s a fantastic point, and you&#8217;re illustrating exactly why I enjoy talking about semantics as much as I do!  Your solution is absolutely acceptable, and also allows you to trim your markup at the same time.  Thanks very much for offering your thoughts.</p>
+<p>@Alessandro Fulciniti: Wow, it&#8217;s amusing how similar our conclusions were!  I hadn&#8217;t seen your article before but if I had I would have absolutely been sure to include it in my write-up.</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-9862" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-9862" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+												<b class="fn">Julie Hathaway</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://jonchristopher.us/blog/a-semantic-breakdown-of-restaurant-menus/#comment-9862"><time datetime="2007-05-15T20:02:24-04:00">May 15, 2007 at 8:02 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>This article couldn&#8217;t have been more timely for me. I&#8217;m actually working on a restaurant menu right now and trying to hash out (pun intended) the best way to mark it up. Definition lists intuitively make the most sense, for sure, but couldn&#8217;t you also argue that it&#8217;s tabular data? Isn&#8217;t the true purpose of a table to show the relationship between pieces of data (such as items, prices, and descriptions)? Imagine if the page were completely unstyled. If you used definition lists the menu would be hard to understand, but if you use tables it would be obvious. I think that&#8217;s a good clue that tables are appropriate. Also, I must confess, I&#8217;m worrying about the print stylesheet, which will be very simple if I use tables.</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-9864" class="comment even thread-even depth-1">
+			<article id="div-comment-9864" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+												<b class="fn">Jon</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://jonchristopher.us/blog/a-semantic-breakdown-of-restaurant-menus/#comment-9864"><time datetime="2007-05-17T08:30:16-04:00">May 17, 2007 at 8:30 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>@Julie Hathaway: I&#8217;m really glad you found the article useful! Thinking about it, yes, I think that a menu could be considered tabular, should the proper headings be provided.  Yes, tables are used to show data relationships, but on the same side of things, definition lists too show a relationship between pieces of data.  In my personal opinion, I think a definition list better suits this particular example, but your idea is very well received.  Regarding your worry about a print style, it should be no problem if you <a href="https://jonchristopher.us/2006/05/01/beautify-your-print-css/" rel="nofollow">beautify your print CSS</a> 🙂</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-9854" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-9854" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+												<b class="fn">Julie</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://jonchristopher.us/blog/a-semantic-breakdown-of-restaurant-menus/#comment-9854"><time datetime="2007-05-19T14:32:16-04:00">May 19, 2007 at 2:32 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Definition lists, though, only show one relationship: the term and the definition. Tables, on the other hand, show two relationships: the rows and the columns. When you&#8217;re looking at a menu it&#8217;s equally likely that you&#8217;d want to scan &#8220;across&#8221; to see the price, or &#8220;down&#8221; to see the next item. Imagine the menu with CSS turned off: a definition list would be a lot harder to read than a table. I think that in the case of tabular data the presentation IS the content. The physical layout of the table gives meaning to the data within, and that&#8217;s why XHTML provides th tags and so forth &#8212; to allow visually-impaired users to &#8220;see&#8221; the structure of the table and therefore understand it.</p>
+<p>Regarding the print stylesheet &#8212; and please correct me if I&#8217;m wrong, I haven&#8217;t done too many of them &#8212; my understanding is that you&#8217;re supposed to avoid the kind of CSS positioning that would be required to make a definition list look like&#8230;  a table.</p>
+<p>Whew! I don&#8217;t know about you, but I think I&#8217;ve convinced myself anyway. And it&#8217;s a funny thing because I love definition lists and use them whenever I can. Go figure. 🙂</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-9861" class="comment even thread-even depth-1">
+			<article id="div-comment-9861" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+												<b class="fn">Jon</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://jonchristopher.us/blog/a-semantic-breakdown-of-restaurant-menus/#comment-9861"><time datetime="2007-05-21T08:35:57-04:00">May 21, 2007 at 8:35 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>@Julie:  You&#8217;re right in that definition lists show a specific relationship between a term and a description.  The fact still remains, however, that each pairing is also contained in a single group as a list.  Your arguments are quite strong in supporting that a menu could be considered tabular data, but definition lists seem to make a bit more sense to me, just as a personal preference however.  Your comments have shown that it can be acceptable to use a <code>table</code> to mark up a menu, however.</p>
+<p>There are many time&#8217;s that I&#8217;ll use CSS to style a document so that some elements appear tabular even though they aren&#8217;t, as the organization is usually aesthetically pleasing.</p>
+<p>I&#8217;m really glad you&#8217;ve included your thoughts here, and that helping you to come to your conclusion is completely great!</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+			</ol>
+		</div>
+
+			<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply</h3><form action="https://jonchristopher.us/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate><p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message">Required fields are marked <span class="required">*</span></span></p><p class="comment-form-comment"><label for="comment">Comment <span class="required">*</span></label> <textarea autocomplete="new-password"  id="e1ca4b1950"  name="e1ca4b1950"   cols="45" rows="8" maxlength="65525" required></textarea><textarea id="comment" aria-label="hp-comment" aria-hidden="true" name="comment" autocomplete="new-password" style="padding:0 !important;clip:rect(1px, 1px, 1px, 1px) !important;position:absolute !important;white-space:nowrap !important;height:1px !important;width:1px !important;overflow:hidden !important;" tabindex="-1"></textarea><script data-noptimize>document.getElementById("comment").setAttribute( "id", "a73f01bef87246603b8de702b8f3f3ee" );document.getElementById("e1ca4b1950").setAttribute( "id", "comment" );</script></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" autocomplete="url" /></p>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" /> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='79' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p></form>	</div><!-- #respond -->
+	
+</div><!-- #comments -->
+
+	</div><!-- .site-content -->
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		Copyright &copy; 2023 Jon Christopher
+	</footer><!-- .site-footer -->
+
+</div><!-- .site -->
+
+			<script>
+				jQuery(document).ready(function($){
+					$('#comment-list').hide();
+					$('#toggle-comments').click(function(e){
+						e.preventDefault();
+						$('#toggle-comments').hide();
+						$('#comment-list').show();
+					});
+					$('#header-comment-trigger').click(function(){
+						$('#toggle-comments').trigger('click');
+						return true;
+					});
+				});
+			</script>
+			<link rel='stylesheet' id='gravity_forms_theme_foundation-css' href='https://jonchristopher.us/wp-content/plugins/gravityforms/assets/css/dist/gravity-forms-theme-foundation.min.css?ver=2.7.13' type='text/css' media='all' />
+<link rel='stylesheet' id='gravity_forms_theme_reset-css' href='https://jonchristopher.us/wp-content/plugins/gravityforms/assets/css/dist/gravity-forms-theme-reset.min.css?ver=2.7.13' type='text/css' media='all' />
+<link rel='stylesheet' id='gravity_forms_theme_framework-css' href='https://jonchristopher.us/wp-content/plugins/gravityforms/assets/css/dist/gravity-forms-theme-framework.min.css?ver=2.7.13' type='text/css' media='all' />
+<link rel='stylesheet' id='gravity_forms_orbital_theme-css' href='https://jonchristopher.us/wp-content/plugins/gravityforms/assets/css/dist/gravity-forms-orbital-theme.min.css?ver=2.7.13' type='text/css' media='all' />
+<link rel='stylesheet' id='gforms_reset_css-css' href='https://jonchristopher.us/wp-content/plugins/gravityforms/legacy/css/formreset.min.css?ver=2.7.13' type='text/css' media='all' />
+<link rel='stylesheet' id='gforms_formsmain_css-css' href='https://jonchristopher.us/wp-content/plugins/gravityforms/legacy/css/formsmain.min.css?ver=2.7.13' type='text/css' media='all' />
+<link rel='stylesheet' id='gforms_ready_class_css-css' href='https://jonchristopher.us/wp-content/plugins/gravityforms/legacy/css/readyclass.min.css?ver=2.7.13' type='text/css' media='all' />
+<link rel='stylesheet' id='gforms_browsers_css-css' href='https://jonchristopher.us/wp-content/plugins/gravityforms/legacy/css/browsers.min.css?ver=2.7.13' type='text/css' media='all' />
+<script type='text/javascript' defer src='https://jonchristopher.us/wp-content/plugins/koko-analytics/assets/dist/js/script.js?ver=1.0.39' id='koko-analytics-js'></script>
+<script type='text/javascript' src='https://jonchristopher.us/wp-content/plugins/fitvids-for-wordpress/jquery.fitvids.js?ver=1.1' id='fitvids-js'></script>
+<script type='text/javascript' src='https://jonchristopher.us/wp-content/plugins/wp-featherlight/js/wpFeatherlight.pkgd.min.js?ver=1.3.4' id='wp-featherlight-js'></script>
+<script type='text/javascript' src='https://jonchristopher.us/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?ver=3.1.2' id='wp-polyfill-inert-js'></script>
+<script type='text/javascript' src='https://jonchristopher.us/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.11' id='regenerator-runtime-js'></script>
+<script type='text/javascript' src='https://jonchristopher.us/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type='text/javascript' src='https://jonchristopher.us/wp-includes/js/dist/dom-ready.min.js?ver=392bdd43726760d1f3ca' id='wp-dom-ready-js'></script>
+<script type='text/javascript' src='https://jonchristopher.us/wp-includes/js/dist/hooks.min.js?ver=c6aec9a8d4e5a5d543a1' id='wp-hooks-js'></script>
+<script type='text/javascript' src='https://jonchristopher.us/wp-includes/js/dist/i18n.min.js?ver=7701b0c3857f914212ef' id='wp-i18n-js'></script>
+<script id="wp-i18n-js-after" type="text/javascript">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script type='text/javascript' src='https://jonchristopher.us/wp-includes/js/dist/a11y.min.js?ver=7032343a947cfccf5608' id='wp-a11y-js'></script>
+<script type='text/javascript' defer='defer' src='https://jonchristopher.us/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=2.7.13' id='gform_json-js'></script>
+<script type='text/javascript' id='gform_gravityforms-js-extra'>
+/* <![CDATA[ */
+var gform_i18n = {"datepicker":{"days":{"monday":"Mo","tuesday":"Tu","wednesday":"We","thursday":"Th","friday":"Fr","saturday":"Sa","sunday":"Su"},"months":{"january":"January","february":"February","march":"March","april":"April","may":"May","june":"June","july":"July","august":"August","september":"September","october":"October","november":"November","december":"December"},"firstDay":0,"iconText":"Select date"}};
+var gf_legacy_multi = [];
+var gform_gravityforms = {"strings":{"invalid_file_extension":"This type of file is not allowed. Must be one of the following:","delete_file":"Delete this file","in_progress":"in progress","file_exceeds_limit":"File exceeds size limit","illegal_extension":"This type of file is not allowed.","max_reached":"Maximum number of files reached","unknown_error":"There was a problem while saving the file on the server","currently_uploading":"Please wait for the uploading to complete","cancel":"Cancel","cancel_upload":"Cancel this upload","cancelled":"Cancelled"},"vars":{"images_url":"https:\/\/jonchristopher.us\/wp-content\/plugins\/gravityforms\/images"}};
+var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","symbol_right":"","symbol_padding":"","thousand_separator":",","decimal_separator":".","decimals":2,"code":"USD"},"base_url":"https:\/\/jonchristopher.us\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/jonchristopher.us\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","version_hash":"7f480fc2d1ef9ac41384bb600c36bf5c","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","symbol_right":"","symbol_padding":"","thousand_separator":",","decimal_separator":".","decimals":2,"code":"USD"},"base_url":"https:\/\/jonchristopher.us\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/jonchristopher.us\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","version_hash":"7f480fc2d1ef9ac41384bb600c36bf5c","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+/* ]]> */
+</script>
+<script type='text/javascript' defer='defer' src='https://jonchristopher.us/wp-content/plugins/gravityforms/js/gravityforms.min.js?ver=2.7.13' id='gform_gravityforms-js'></script>
+<script type='text/javascript' defer='defer' src='https://jonchristopher.us/wp-content/plugins/gravityforms/js/placeholders.jquery.min.js?ver=2.7.13' id='gform_placeholder-js'></script>
+<script type='text/javascript' defer='defer' src='https://jonchristopher.us/wp-content/plugins/gravityforms/assets/js/dist/utils.min.js?ver=59d951b75d934ae23e0ea7f9776264aa' id='gform_gravityforms_utils-js'></script>
+<script type='text/javascript' defer='defer' src='https://jonchristopher.us/wp-content/plugins/gravityforms/assets/js/dist/vendor-theme.min.js?ver=4ef53fe41c14a48b294541d9fc37387e' id='gform_gravityforms_theme_vendors-js'></script>
+<script type='text/javascript' id='gform_gravityforms_theme-js-extra'>
+/* <![CDATA[ */
+var gform_theme_config = {"common":{"form":{"honeypot":{"version_hash":"7f480fc2d1ef9ac41384bb600c36bf5c"}}},"hmr_dev":"","public_path":"https:\/\/jonchristopher.us\/wp-content\/plugins\/gravityforms\/assets\/js\/dist\/"};
+/* ]]> */
+</script>
+<script type='text/javascript' defer='defer' src='https://jonchristopher.us/wp-content/plugins/gravityforms/assets/js/dist/scripts-theme.min.js?ver=f4d12a887a23a8c5755fd2b956bc8fcf' id='gform_gravityforms_theme-js'></script>
+		<script type="text/javascript">
+		jQuery(document).ready(function () {
+			jQuery('body').fitVids();
+		});
+		</script>   <!-- Fathom - beautiful, simple website analytics -->
+      <script src="https://cdn.usefathom.com/script.js" site="DJOHIPPX" data-no-minify=""></script>
+      <!-- / Fathom -->
+   <script type="text/javascript">
+gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 2) {if(typeof Placeholders != 'undefined'){
+                        Placeholders.enable();
+                    }} } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );
+</script>
+<script type="text/javascript">
+gform.initializeOnLoaded( function() {jQuery(document).trigger('gform_post_render', [2, 1]);gform.utils.trigger({ event: 'gform/postRender', native: false, data: { formId: 2, currentPage: 1 } });} );
+</script>
+<script type="text/javascript">
+gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 3) {if(typeof Placeholders != 'undefined'){
+                        Placeholders.enable();
+                    }} } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );
+</script>
+<script type="text/javascript">
+gform.initializeOnLoaded( function() {jQuery(document).trigger('gform_post_render', [3, 1]);gform.utils.trigger({ event: 'gform/postRender', native: false, data: { formId: 3, currentPage: 1 } });} );
+</script>
+
+</body>
+</html>

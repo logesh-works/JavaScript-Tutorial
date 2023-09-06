@@ -1,0 +1,415 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://gmpg.org/xfn/1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+          trainedmonkey: keyboard bangings about living, working, and playing
+        </title>
+  <link rel="shortcut icon" href="/common/fav.ico" />
+  <link rel="stylesheet" type="text/css" media="screen"
+        href="/common/screen.css?59" />
+  <link rel="stylesheet" type="text/css" media="screen"
+        href="/common/sh_style.css" />
+  <link rel="alternate" type="application/atom+xml" title="atom feed" href="http://trainedmonkey.com/index.atom" />
+<link rel="shortcut icon" href="/common/fav.ico" />
+<meta name="ICBM" content="34.0480,-118.2473" />
+<meta name="geo.position" content="34.0480;-118.2473" />
+  <script type="text/javascript" src="/common/sh_main.min.js"></script>
+  <script type="text/javascript" src="/common/sh_sql.min.js"></script>
+</head>
+
+<body onload="sh_highlightDocument();">
+
+<ul class="hide">
+  <li><a href="#sidebar">skip to sidebar</a></li>
+  <li><a href="#search">skip to search box</a></li>
+</ul>
+
+<div class="left-sidebar-grid">
+  <div class="main-content">
+      <h1>
+          trained<b>monkey</b>
+      </h1>
+
+    
+
+<div class="entry" id="n 3285 code php point of sale oscommerce woocommerce ">
+      <h3>thought i missed one: oscommerce</h3>
+    <p>
+    i ran across a reference to <a href="https://www.oscommerce.com/">oscommerce</a> in the <a href="http://talks.php.net/show/pragmatic">slides of a tutorial i presented at o’really oscon in 2002(!)</a> where i ran through of a survey of major php applications, and i thought that meant i had missed one in my round-up of open-source php point-of-sale applications.</p><p>but it’s an ecommerce platform, not a point-of-sale system and it doesn’t look like it has a module or add-on to provide a point-of-sale interface.</p><p>speaking of that, there are some point-of-sale add-ons for <a href="https://www.woocommerce.com/">woocommerce</a>, which is itself the ecommerce add-on to wordpress. it looks like the only open-source/free ones are built specifically for use with square or paypal terminals.
+  </p>
+  <div class="details">
+    &raquo; 
+    <a class="permalink"
+       href="/2023/8/24/thought_i_missed_one__oscommerce">      august 24 (thursday) 4:44pm
+  </a>
+          &raquo;
+              <a href="/tag/code"
+           >code</a>, 
+              <a href="/tag/php"
+           >php</a>, 
+              <a href="/tag/point of sale"
+           >point of sale</a>, 
+              <a href="/tag/oscommerce"
+           >oscommerce</a>, 
+              <a href="/tag/woocommerce"
+           >woocommerce</a>
+              &raquo;
+    <a href="/2023/8/24/thought_i_missed_one__oscommerce">
+                    comment
+          </a>
+  </div>
+</div>
+  
+
+<div class="entry" id="n 3284 code php sql titi ">
+      <h3>titi, a simple database toolkit</h3>
+    <p>
+    at some point in my life i got tired of writing all my SQL queries by hand, and was casting about for a database abstraction that simplified things. but i didn’t care for anything that required that i specify my actual SQL tables in code or another format. i wanted something that would just work on top of whatever tables i already had.</p><p>i don’t know what i considered at the time, but where i landed was using <a href="http://j4mie.github.io/idiormandparis/">Idiorm and Paris</a>, which bills itself as a “minimalist database toolkit for PHP5” which gives you a sense of its age. it was long ago put into maintenance-only mode by its developers, and eventually i ran across something that i wanted to fix or otherwise do that i knew would never be accepted upstream.</p><p>so i took the code that was in two distinct repositories, merged it together, tossed it in a new namespace, and renamed it <a href="https://github.com/jimwins/titi">Titi</a>. i haven’t really done much with it beyond that, but i know there is code that i should be pulling back in from scat. an advantage to being a solo developer is you can kind of punch through abstraction layers to get things done, but that also leaves cleanup work to be tackled eventually.</p><p>should anybody else use this? maybe not. but it has been useful for me in my projects, and it’s also been a good playground to learn more about new php language features and tools.</p><p>(like most of my open source projects, this is named for a type of monkey, the <a href="https://en.wikipedia.org/wiki/Titi_monkey">titi monkey</a>.)
+  </p>
+  <div class="details">
+    &raquo; 
+    <a class="permalink"
+       href="/2023/8/22/titi,_a_simple_database_toolkit">      august 22 (tuesday) 5:24pm
+  </a>
+          &raquo;
+              <a href="/tag/code"
+           >code</a>, 
+              <a href="/tag/php"
+           >php</a>, 
+              <a href="/tag/sql"
+           >sql</a>, 
+              <a href="/tag/titi"
+           >titi</a>
+              &raquo;
+    <a href="/2023/8/22/titi,_a_simple_database_toolkit">
+                    comment
+          </a>
+  </div>
+</div>
+  
+
+<div class="entry" id="n 3283 code mysql php scat tailscale ">
+      <h3>scat is scatter-brained</h3>
+    <p>
+    while i folded all of the website/ecommerce parts of <a href="https://www.scatpos.org/">scat</a> into the same repository as the point-of-sale system itself, it doesn’t really work out of the box and it is because of the odd way in which we run it for our store. the website used to be a separate application that was called ordure, so there’s a little legacy of that in some class names. i still think of the point-of-sale side as “scat” and the website side as “ordure”.</p><p>the point-of-sale system itself runs on a server here at the store (a dell poweredge t30), but our website runs on a virtual server hosted by <a href="https://www.linode.com/">linode</a>. they run semi-independently, and they’re on a shared <a href="https://tailscale.com/">tailscale</a> network.</p><p>ordure calls back to scat for user and gift card information, to send SMS messages, and to get shipment tracking information. so if the store is off-line, it mostly works and customers can still place orders. (but things will go wrong if they try to log in or use gift cards.)</p><p>there are scheduled jobs on the scat side that:</p><p><ul>
+  <li>push a file of the current inventory and pricing (every minute)
+  <li>pull new user signups (every minute)
+  <li>check for new completed orders and pull them over (every minute)
+  <li>push the product catalog and web content if a flag was set (checked every minute)
+  <li>push updated google/facebook/pinterest data feeds (daily)
+  <li>send out abandoned cart emails (daily)
+</ul></p><p>so ordure has a copy of scat’s catalog data that only gets updated on demand but does get a slightly-delayed update of pricing and inventory levels. the catalog data gets transferred using ssh and mysqldump. (basically: it get dumped, copied over, loaded into a staging database, and a generated 'rename table' query swaps the tables with the current database, and the old tables get dropped so the staging area is clear for next time.)</p><p>not all of this is reflected within the scat code repository, and this post is just sort of my thinking through out loud where it has ended up. part of the reason for this setup is that the store used to have a janky DSL connection so i was minimizing any dependencies on both sides being available for the other to work.</p><p>as a side note, all of the images used in the catalog are stored in a <a href="https://www.backblaze.com/cloud-storage-v1">backblaze b2</a> bucket and we use <a href="https://www.gumlet.com/image-optimization/">gumlet</a> to do image optimizing, resizing, etc. when we add images to our catalog, it can be done by pulling from an external URL and the scat side actually calls out to the ordure side to do that work because when we were on that crappy DSL connection, pulling and pushing large images through that pipe was <i>painful</i>.
+  </p>
+  <div class="details">
+    &raquo; 
+    <a class="permalink"
+       href="/2023/8/22/scat_is_scatter-brained">      august 22 (tuesday) 12:24pm
+  </a>
+          &raquo;
+              <a href="/tag/code"
+           >code</a>, 
+              <a href="/tag/mysql"
+           >mysql</a>, 
+              <a href="/tag/php"
+           >php</a>, 
+              <a href="/tag/scat"
+           >scat</a>, 
+              <a href="/tag/tailscale"
+           >tailscale</a>
+              &raquo;
+    <a href="/2023/8/22/scat_is_scatter-brained">
+                    comment
+          </a>
+  </div>
+</div>
+  
+
+<div class="entry" id="n 3282 code php point of sale scat ">
+      <h3>php pieces of what?</h3>
+    <p>
+    <a href="https://trainedmonkey.com/2010/7/20/piece_of_what_">back in july 2010</a> i wrote about how i was frustrated with our point of sale system (Checkout, a Mac application which changed hands once or twice and is no longer being developed) and had taken a quick survey around to see what open source solutions there were.</p><p>the one that i mentioned there (<a href="http://www.phppointofsale.com/">PHP Point of Sale</a>) is still around, but is no longer open source. here is <a href="https://github.com/deenseth/PHP-Point-Of-Sale">a very early fork of it</a> that still survives. i know at least one art supply store out there is using it (the closed-source version, not that early fork), but i haven’t really looked at it since 2010.</p><p>there are <a href="https://github.com/search?q=php+point+of+sale&type=repositories">a few more php point of sale systems now</a>.</p><p>the biggest is called <a href="http://www.opensourcepos.org/">Open Source Point of Sale</a> and appears to be undergoing an upgrade from CodeIgniter 3 to CodeIgniter 4 right now. i spent a few minutes poking around the demo online, and i don’t think i would be happy using it. it is under an MIT license.</p><p>another big one is <a href="https://my.nexopos.com/">NexoPOS</a>, which is GPL-licensed. i have not played around with the demo, but the supporting website looks pretty slick.</p><p>most of the others look like they are just experimental projects or not being actively used or developed.</p><p>something i think about a lot is whether i should be trying to take <a href="https://www.scatpos.org/">Scat POS</a> beyond just using it ourselves. part of me feels like i am a seasoned enough developer to know that the work that would be required to give it the level of polish and durability to survive usage outside of our own doors could be substantial.
+  </p>
+  <div class="details">
+    &raquo; 
+    <a class="permalink"
+       href="/2023/8/16/php_pieces_of_what_">      august 16 (wednesday) 5:10pm
+  </a>
+          &raquo;
+              <a href="/tag/code"
+           >code</a>, 
+              <a href="/tag/php"
+           >php</a>, 
+              <a href="/tag/point of sale"
+           >point of sale</a>, 
+              <a href="/tag/scat"
+           >scat</a>
+              &raquo;
+    <a href="/2023/8/16/php_pieces_of_what_">
+                    comment
+          </a>
+  </div>
+</div>
+  
+
+<div class="entry" id="n 3281 code php sidekiq gearman ">
+      <h3>sidekiq for php?</h3>
+    <p>
+    it is a little strange still developing in php and having done it for so long, because you look at how other systems are built today and it isn’t always clear how that translates to php.</p><p>mastodon (the server software) is built primarily with ruby-on-rails, and uses a system called <a href="https://sidekiq.org">sidekiq</a> to handle job processing. when you post to your mastodon server, it queues up a bunch of jobs that push it out to your subscribers, creates thumbnails of web pages, and all sorts of other stuff that may take a while so it makes no sense to make the web request hang around for it.</p><p>for <a href="https://www.scatpos.org/">scat pos</a>, there are a few queue-like tasks that just get processed by special handlers that i use cron jobs to trigger. for example, when a transaction is completed it reports the tax information to our tax compliance service, but if that fails (because of connectivity issues or whatever) there’s a cron job that runs every night to re-try.</p><p>as best i can tell, the state of the art for php applications that want to have some sort of job queue system like sidekiq is <a href="http://gearman.org">Gearman</a> and <a href="https://github.com/brianlmoon/GearmanManager">GearmanManager</a> and it is wild to me that projects i remember starting up in 2008 are still just chugging along like that.
+  </p>
+  <div class="details">
+    &raquo; 
+    <a class="permalink"
+       href="/2023/8/11/sidekiq_for_php_">      august 11 (friday) 1:03pm
+  </a>
+          &raquo;
+              <a href="/tag/code"
+           >code</a>, 
+              <a href="/tag/php"
+           >php</a>, 
+              <a href="/tag/sidekiq"
+           >sidekiq</a>, 
+              <a href="/tag/gearman"
+           >gearman</a>
+              &raquo;
+    <a href="/2023/8/11/sidekiq_for_php_">
+                    comment
+          </a>
+  </div>
+</div>
+  
+
+<div class="entry" id="n 3280 politics downtown los angeles skid row ">
+      <h3>getting your metaphor wrong</h3>
+    <p>
+    <a href="https://therealdeal.com/la/2023/07/31/ktgy-proposes-modular-buildings-on-skid-row-for-las-homeless/">KTGY Proposes 14 Modular Buildings on LA’s Skid Row</a></p><p><blockquote>Architecture firm KTGY has designed 14 apartment buildings that could house 4,690 people on L.A.’s Skid Row, the epicenter of the homeless crisis.</blockquote></p><p>skid row is not the epicenter of the homeless crisis, it is the black hole to which everyone wants to abandon the homeless. these buildings sound great. build them all over the city, the state, and country.
+  </p>
+  <div class="details">
+    &raquo; 
+    <a class="permalink"
+       href="/2023/8/2/getting_your_metaphor_wrong">      august 2 (wednesday) 10:31am
+  </a>
+          &raquo;
+              <a href="/tag/politics"
+           >politics</a>, 
+              <a href="/tag/downtown"
+           >downtown</a>, 
+              <a href="/tag/los angeles"
+           >los angeles</a>, 
+              <a href="/tag/skid row"
+           >skid row</a>
+              &raquo;
+    <a href="/2023/8/2/getting_your_metaphor_wrong">
+                    comment
+          </a>
+  </div>
+</div>
+  
+
+<div class="entry" id="n 3279 code mysql php linux ">
+      <h3>stable and well-understood technologies</h3>
+    <p>
+    <a href="https://addyosmani.com/blog/boring-architecture/">AddyOsmani.com - Stick to boring architecture for as long as possible</a></p><p><blockquote>Prioritize delivering value by initially leaning on stable and well-understood technologies. </blockquote></p><p>i appreciate this sentiment. it is a little funny to me that what i can claim the most expertise in would probably be considered some of the most stable and well-understood technologies out there right now, but i have been working with them since they were neither. perhaps i have crossed from where as long as possible becomes too long, at least as far as employability is concerned.</p><p>a <a href="https://twitter.com/Pinboard/status/1683470281711706112">related tweet from maciej ceglowski</a>.
+  </p>
+  <div class="details">
+    &raquo; 
+    <a class="permalink"
+       href="/2023/7/25/stable_and_well-understood_technologies">      july 25 (tuesday) 7:18pm
+  </a>
+          &raquo;
+              <a href="/tag/code"
+           >code</a>, 
+              <a href="/tag/mysql"
+           >mysql</a>, 
+              <a href="/tag/php"
+           >php</a>, 
+              <a href="/tag/linux"
+           >linux</a>
+              &raquo;
+    <a href="/2023/7/25/stable_and_well-understood_technologies">
+                    comment
+          </a>
+  </div>
+</div>
+  
+
+<div class="entry" id="n 3277 code logs logging ">
+      <h3>logging with context</h3>
+    <p>
+    i have had this blog post about <a href="https://albisetti.org/2023/06/24/moving-from-logs-to-metrics/">moving from logs to metrics</a> open for a while, since i know one of the weak points in our systems right now is some pretty basic stuff like logging and monitoring. and then <a href="https://www.jwz.org/blog/2023/07/php-fpm-logs/">jwz ran into a problem with logging errors from php-fpm</a> and what it reminded me about is how logs need to carry enough context so you can pull the threads together from something like a single request.</p><p>i have not wrapped my head around the idea of just using metrics, because that sounds like rather a lot of data to be storing. maybe i’m just an on-prem brain in a cloud world.
+  </p>
+  <div class="details">
+    &raquo; 
+    <a class="permalink"
+       href="/2023/7/18/logging_with_context">      july 18 (tuesday) 5:54pm
+  </a>
+          &raquo;
+              <a href="/tag/code"
+           >code</a>, 
+              <a href="/tag/logs"
+           >logs</a>, 
+              <a href="/tag/logging"
+           >logging</a>
+              &raquo;
+    <a href="/2023/7/18/logging_with_context">
+                    comment
+          </a>
+  </div>
+</div>
+  
+
+<div class="entry" id="n 3276 code php point of sale scat screencast ">
+      <h3>scat pos proof of life (screencasts)</h3>
+    <p>
+    i recorded a couple of quick screencasts to show <a href="https://www.flickr.com/photos/jimwinstead/53048163549/in/album-72177720309787630/">cloning it from github and starting it up with docker-compose</a> and <a href="https://www.flickr.com/photos/jimwinstead/53047977841/in/album-72177720309787630/">going through the initial database setup and processing a sale with sample data</a>.</p><p>like the <a href="https://www.scatpos.org/">website</a> says, the system is a work in progress and not suitable for use by anyone, but we have been using it for more than ten years.</p><p>i am not sure if it is something that anyone else would want to use, but i figure one way to find that out is to at least start pushing it towards where that is even be feasible.
+  </p>
+  <div class="details">
+    &raquo; 
+    <a class="permalink"
+       href="/2023/7/15/scat_pos_proof_of_life__screencasts_">      july 15 (saturday) 12:32pm
+  </a>
+          &raquo;
+              <a href="/tag/code"
+           >code</a>, 
+              <a href="/tag/php"
+           >php</a>, 
+              <a href="/tag/point of sale"
+           >point of sale</a>, 
+              <a href="/tag/scat"
+           >scat</a>, 
+              <a href="/tag/screencast"
+           >screencast</a>
+              &raquo;
+    <a href="/2023/7/15/scat_pos_proof_of_life__screencasts_">
+                    comment
+          </a>
+  </div>
+</div>
+  
+
+<div class="entry" id="n 3275 downtown los angeles dtla housing ">
+      <h3>not so fab yet</h3>
+    <p>
+    the property at first and broadway in downtown that was supposed to be turned into a park now <a href="https://la.urbanize.city/post/stalled-first-and-broadway-park-site-could-be-used-temporary-homeless-housing">could be used for temporary homeless housing</a>. it’s just an even dirt lot right now, not really used for much of anything. it was a food truck parking lot during the recent july 4th festivities, and there are usually encampments on at least a couple of the adjoining sidewalks. i have a feeling that it being adjacent to grand park will make it impractical to use for temporary housing.</p><p>this is what it looked like almost 18 years ago:</p><p><a data-flickr-embed="true" href="https://www.flickr.com/photos/jimwinstead/78718112/in/photolist-dateposted-public" title="footprint of the old state building"><img src="https://live.staticflickr.com/6/78718112_42c5fbf741_c.jpg" width="533" height="800" alt="footprint of the old state building"/>
+  </p>
+  <div class="details">
+    &raquo; 
+    <a class="permalink"
+       href="/2023/7/10/not_so_fab_yet">      july 10 (monday) 5:55pm
+  </a>
+          &raquo;
+              <a href="/tag/downtown"
+           >downtown</a>, 
+              <a href="/tag/los angeles"
+           >los angeles</a>, 
+              <a href="/tag/dtla"
+           >dtla</a>, 
+              <a href="/tag/housing"
+           >housing</a>
+              &raquo;
+    <a href="/2023/7/10/not_so_fab_yet">
+                    comment
+          </a>
+  </div>
+</div>
+  
+
+<div class="entry" id="n 3274 blo.gs code fads talapoin ">
+      <h3>pinging blo.gs again</h3>
+    <p>
+    i guess it only makes sense that i should ping blo.gs when i post things here.</p><p>hard to believe that thing has been running for over twenty years now.
+  </p>
+  <div class="details">
+    &raquo; 
+    <a class="permalink"
+       href="/2023/7/8/pinging_blo_gs_again">      july 8 (saturday) 1:54pm
+  </a>
+          &raquo;
+              <a href="/tag/blo.gs"
+           >blo.gs</a>, 
+              <a href="/tag/code"
+           >code</a>, 
+              <a href="/tag/fads"
+           >fads</a>, 
+              <a href="/tag/talapoin"
+           >talapoin</a>
+              &raquo;
+    <a href="/2023/7/8/pinging_blo_gs_again">
+                    comment
+          </a>
+  </div>
+</div>
+  
+
+<div class="entry" id="n 3273 fonts css ">
+      <h3>modern font stack cheat sheet</h3>
+    <p>
+    <a href="https://modernfontstacks.com/">Modern Font Stacks</a></p><p><blockquote>
+System font stack CSS organized by typeface classification for every modern OS</p><p>The fastest fonts available. No downloading, no layout shifts, no flashes — just instant renders.
+</blockquote></p><p>even though you can get fancy with fonts on the web now, i like to keep it pretty simple so this breakdown of the different basic font families that are available on most systems is nice to know.</p><p>this site uses georgia for most body text, and the “Neo-Grotesque” stack for other stuff and block quotes.
+  </p>
+  <div class="details">
+    &raquo; 
+    <a class="permalink"
+       href="/2023/7/7/modern_font_stack_cheat_sheet">      july 7 (friday) 4:04pm
+  </a>
+          &raquo;
+              <a href="/tag/fonts"
+           >fonts</a>, 
+              <a href="/tag/css"
+           >css</a>
+              &raquo;
+    <a href="/2023/7/7/modern_font_stack_cheat_sheet">
+                    comment
+          </a>
+  </div>
+</div>
+  </div>
+
+  <div class="left-sidebar">
+          <ul id="navigation">
+        <li><a rel="home" href="/">home</a></li>
+        <li><a rel="about" href="/about/">about</a></li>
+        <li><a rel="toc" href="/archive/">archive</a></li>
+        <li><a href="/projects/">projects</a></li>
+        <li><a href=//www.flickr.com/photos/jimwinstead/">photos</a></li>
+        <li><a href="http://www.5thandspring.com/">celia</a></li>
+        <li><a href="http://213dog.blogspot.com/">wonton</a></li>
+        <li><a href="//rawmaterialsla.com/">raw materials</a></li>
+        <li><a rel="me" href="https://mefi.social/@jimw">@jimw@mefi.social</a></li>
+      </ul>
+
+      <form id="search" method="get" action="/search">
+        <fieldset>
+          <legend>search</legend>
+          <input type="search" accesskey="4" id="livesearch" name="q"
+                 value="" size="10"
+                 style="width:100%"
+                 placeholder="search"
+                 autosave="tm_search"
+                 results="10">
+        </fieldset>
+      </form>
+      </div>
+
+  <ul id="links" class="footer">
+    <li><a rel="copyright" href="//creativecommons.org/licenses/publicdomain"><img src="/common/norights.png" width="88" height="31" alt="dedicated to the public domain" /></a></li>
+  </ul>
+
+</div>
+
+</body>
+</html>
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <Work rdf:about="">
+  <license rdf:resource="http://web.resource.org/cc/PublicDomain" />
+ </Work>
+ <License rdf:about="http://web.resource.org/cc/PublicDomain">
+  <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+  <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+  <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+ </License>
+</rdf:RDF>
+-->

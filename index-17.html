@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
+	<link rel="profile" href="http://microformats.org/profile/specs" />
+	<link rel="profile" href="http://microformats.org/profile/hatom" />
+
+	<title>Microformats &#8211; building blocks for data-rich web pages</title>
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Microformats &raquo; Feed" href="https://microformats.org/feed" />
+<link rel="alternate" type="application/rss+xml" title="Microformats &raquo; Comments Feed" href="https://microformats.org/comments/feed" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/microformats.org\/wordpress\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.4.13"}};
+			/*! This file is auto-generated */
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='openid-css'  href='https://microformats.org/wordpress/wp-content/plugins/openid/f/openid.css?ver=519' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://microformats.org/wordpress/wp-includes/css/dist/block-library/style.min.css?ver=5.4.13' type='text/css' media='all' />
+<link rel='stylesheet' id='microformatsorg-style-css'  href='https://microformats.org/wordpress/wp-content/themes/microformats/style.css?ver=1.0' type='text/css' media='screen' />
+<link rel='stylesheet' id='microformatsorg-print-style-css'  href='https://microformats.org/wordpress/wp-content/themes/microformatscss/print.css?ver=1.0' type='text/css' media='print' />
+<link rel='https://api.w.org/' href='https://microformats.org/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://microformats.org/wordpress/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://microformats.org/wordpress/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.4.13" />
+<link rel="icon" href="https://microformats.org/media/2020/06/microformats-logo-150x150.png" sizes="32x32" />
+<link rel="icon" href="https://microformats.org/media/2020/06/microformats-logo.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://microformats.org/media/2020/06/microformats-logo.png" />
+<meta name="msapplication-TileImage" content="https://microformats.org/media/2020/06/microformats-logo.png" />
+</head>
+<body class="home blog">
+
+<div id="wrap">
+	<div id="header">
+		<h1>
+					<img src="https://microformats.org/wordpress/wp-content/themes/microformats/img/logo.gif" width="144" height="36" alt="microformats" />
+		</h1>
+
+					<nav id="nav">
+			<ul id="menu-main-navigation" class="primary-menu"><li id="menu-item-501" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-501"><a href="/blog">Blog</a></li>
+<li id="menu-item-511" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-511"><a href="/wiki">Wiki</a></li>
+<li id="menu-item-512" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-512"><a href="/wiki/irc">Discuss</a></li>
+<li id="menu-item-513" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-513"><a href="/wiki/about">About</a></li>
+<li id="menu-item-514" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-514"><a href="/wiki/code-tools">Code &#038; Tools</a></li>
+<li id="menu-item-515" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-515"><a href="/wiki/get-started">Get Started</a></li>
+</ul>			</nav>
+			</div>
+
+	<hr class="hide" />
+
+	<div id="content" class="hfeed">
+		<h2 id="home-title">Latest microformats news <a href="https://microformats.org/feed" title="link to RSS feed" id="feed-link"><img src="https://microformats.org/wordpress/wp-content/themes/microformats/img/xml.gif" width="23" height="13" alt="Feed" /></a></h2>
+			
+		<article id="post-524" class="entry post-524 post type-post status-publish format-standard hentry category-news">
+	<h3 class="entry-title" id="post-524"><a href="https://microformats.org/2022/02/19/how-to-consume-microformats-2-data" rel="bookmark" title="Permanent Link to How to Consume Microformats 2 Data">How to Consume Microformats 2 Data</a></h3>
+	<div class="entry-content">
+		
+<p>A (very) belated follow up to <a href="https://waterpigs.co.uk/articles/getting-started-with-microformats2/">Getting Started with Microformats 2</a>, covering the basics of consuming and using microformats 2 data. Originally posted <a class="u-repost-of" href="https://waterpigs.co.uk/articles/consuming-microformats/">on waterpigs.co.uk</a>.</p>
+
+<p>More and more people are using microformats 2 to mark up profiles, posts, events and other data on their personal sites, enabling developers to build applications which use this data in useful and interesting ways. Whether you want to add basic support for webmention comments to your personal site, or have ambitious plans for a structured-data-aware-social-graph-search-engine-super-feed-reader, you’re going to need a solid grasp of how to parse and handle microformats 2 data.</p>
+
+<h2 id="choose-a-parser">Choose a Parser</h2>
+
+<p>To turn a web page containing data marked up with microformats 2 (or classic microformats, if supported) into a canonical MF2 JSON data structure, you’ll need a parser.</p>
+
+<p>At the time of writing, there are actively supported <a href="https://microformats.org/wiki/microformats2#Parsers">microformats 2 parsers</a> available for the following programming languages:</p>
+
+<ul>
+<li><a href="https://pkg.go.dev/willnorris.com/go/microformats">Go</a></li>
+<li><a href="https://github.com/microformats/microformats-parser">Javascript (server-side and browser)</a></li>
+<li><a href="https://github.com/indieweb/php-mf2">PHP</a></li>
+<li><a href="https://github.com/microformats/mf2py">Python</a></li>
+<li><a href="https://github.com/microformats/microformats-ruby">Ruby</a></li>
+<li><a href="https://crates.io/crates/microformats/0.2.0">Rust</a></li>
+</ul>
+
+<p>Parsers for various other languages exist, but might not be actively supported or support recent changes to the parsing specification.</p>
+
+<p>There are also various websites which you can use to experiment with microformats markup without having to download a library and write any code:</p>
+
+<ul>
+<li>My own live-updating <a href="https://waterpigs.co.uk/php-mf2/">php-mf2 sandbox</a></li>
+<li>The various parser comparison tools hosted on <a href="https://microformats.io/">microformats.io</a></li>
+<li><a class="h-card" href="https://aaronparecki.com">Aaron Parecki</a>’s <a href="http://pin13.net/mf2/">pin13.net microformats parser</a> for parsing either URLs or HTML fragments</li>
+</ul>
+
+<p>If there’s not currently a parser available for your language of choice, you have a few options:</p>
+
+<ul>
+<li>Call the command-line tools provided by one of the existing libraries from your code, and consume the JSON they provide</li>
+<li>Make use of one of the online mf2 parsers capable of parsing sites, and consume the JSON it returns (only recommended for very low volume usage!)</li>
+<li>Write your own microformats 2 parser! There are plenty of people <a href="https://indieweb.org/discuss">happy to help</a>, and a language-agnostic test suite you can plug your implementation into for testing.</li>
+</ul>
+
+<h2 id="considerations-during-fetching-and-parsing">Considerations During Fetching and Parsing</h2>
+
+<p>Most real-world microformats data is fetched from a URL, which could potentially redirect to a different URL one or more times. The final URL in the redirect chain is called the “effective URL”. HTML often contains relative URLs, which need to be resolved against a base URL in order to be useful out of context.</p>
+
+
+<p>If your parser has a function for “parsing microformats from a URL”, it should deal with all of this for you. If you’re making the request yourself (e.g. to use custom caching or network settings) and then passing the response HTML and base URL to the parser, make sure to <strong>use the effective URL, not the starting URL!</strong> The parser will handle relative URL resolution, but it needs to know the correct base URL.</p>
+
+<p>When parsing microformats, an HTTP request which returns a non-200 value doesn’t necessarily mean that there’s nothing to parse! For example, a <code>410 Gone</code> response might contain a h-entry with a message explaining the deletion of whatever was there before.
+
+<h2 id="storing-raw-html-vs-parsed-mf2-json-vs-derived-data">Storing Raw HTML vs Parsed Canonical JSON vs Derived Data</h2>
+
+<p>When consuming microformats 2 data, you’ll most often be fetching raw HTML from a URL, parsing it to canonical JSON, then finally processing it into a simpler, cleaned and sanitised format ready for use in your website or application. That’s three different representations of the same data — you’ll most likely end up storing the derived data somewhere for quick access, but what about the other two?</p>
+
+<p>Experience shows that, over time:</p>
+
+<ul>
+<li>the way a particular application cleans up mf2 data will be tweaked and improved as you add new features and handle unexpected edge-cases</li>
+<li>mf2 parsers gradually get improved, fixing bugs and occasionally adding entirely new features.</li>
+</ul>
+
+<p>Therefore, if it makes sense for your use case, I recommend archiving a copy of the original HTML as well as your derived data, leaving out the intermediate canonical JSON. That way, you can easily create scripts or background jobs to update all the derived data based on the original HTML, taking advantage of both parser improvements and improvements to your own code at the same time, without having to re-fetch potentially hundreds of potentially broken links.</p>
+
+<p>As mentioned in the previous section, if you archive original HTML for re-parsing, you’ll need to additionally store the effective URL for correct relative URL resolution.</p>
+
+<p>For some languages, there are already libraries (such as <a href="https://github.com/aaronpk/XRay/">XRay</a> for PHP) which will perform common cleaning and sanitisation for you. If the assumptions with which these libraries are built suit your applications, you may be able to avoid a lot of the hard work of handling raw microformats 2 data structures!</p>
+
+<p>If not, read on…</p>
+
+<h2 id="microformat-structures">Navigating Microformat Structures</h2>
+
+<p>A parsed page may contain a number of microformat data structures (mf structs), in various different places.</p>
+
+<p>Take a look at <a href="http://pin13.net/mf2/?url=https%3A%2F%2Fwaterpigs.co.uk%2Farticles%2Fconsuming-microformats%2F">the parsed canonical microformats JSON for the article you’re reading right now</a>, for example.</a></p>
+
+<p><code>items</code> is a list of top-level mf structs, each of which may contain nested mf structs either under their <code>properties</code> or <code>children</code> keys.</p>
+
+<p>Each individual mf struct is guaranteed to have at least two keys, <code>type</code> and <code>properties</code>. <code>type</code> is the primary way of identifying what sort of thing that struct represents (e.g. a person, a post, an event). Structs can have more than one type if they represent multiple things at once without wanting to nest them — for example, a post detailing an event might be both a h-entry and a h-event at the same time. Structs can also have additional top-level keys such as <code>id</code> and <code>lang</code>.</p>
+
+<p>Generally speaking, <code>type</code> information is most useful when dealing with top-level mf structs, and mf structs nested under a <code>children</code> key. Nested mf structs found in <code>properties</code> will also have <code>type</code> information, but their usage is usually implied by the property name they’re found under.</p>
+
+<p>For many common use cases (e.g. a homepage feed and profile) there are several different ways people might nest mf structs to achieve the same goals, so it’s important that your code is capable of searching the entire tree, rather than just looking at the top-level mf structs. <strong>Never assume that the microformat struct you’re looking for will be in the top-level of the <code>items</code> list!</strong> You need to search the whole tree.</p>
+
+<p>I recommend writing some functions which can traverse a mf tree and return all structs which match a filtering callback. This can then be used as a basis for writing more specific convenience functions for common tasks such as finding all microformats on a page of a particular type, or where a certain property matches a certain value.</p>
+
+<p>See <a href="https://github.com/barnabywalters/php-mf-cleaner/blob/master/src/BarnabyWalters/Mf2/Functions.php">my microformats2 PHP functions</a> for some working examples.</p>
+
+<h2 id="possible-property-values">Possible Property Values</h2>
+
+<p>Each key in a mf struct’s <code>properties</code> dict maps to a list of values for that property. Every property may map to multiple values, and those values may be a mixture of any of the following:</p>
+
+<p>A plain string value, containing no HTML, and leaving HTML entities unescaped (e.g. <code>&lt;</code>)</p>
+
+<pre><code>{
+  <span class="hljs-attr">"items"</span>: [{
+    <span class="hljs-attr">"type"</span>: [<span class="hljs-string">"h-card"</span>],
+    <span class="hljs-attr">"properties"</span>: {
+      <span class="hljs-attr">"name"</span>: [<span class="hljs-string">"Barnaby Walters"</span>]
+    }
+  }]
+}
+</code></pre>
+
+<p>(In future examples I will leave out the encapsulating <code>{&quot;items&quot;: [{&quot;type&quot;: [•••], •••}]}</code> for brevity, focusing on the <code>properties</code> key of a single mf struct.)</p>
+
+<p>An embedded HTML struct, containing two keys: <code>html</code>, which maps to an HTML representation of the property, and <code>value</code>, mapping to a plain text version.</p>
+
+<pre><code>"properties": {
+  "content": [{
+    "html": "&lt;p&gt;The content <span class="hljs-keyword">of</span> a post, <span class="hljs-keyword">as</span> &lt;strong&gt;raw HTML&lt;/strong&gt; (<span class="hljs-keyword">or</span> <span class="hljs-keyword">not</span>).&lt;/p&gt;",
+    "value": "The content <span class="hljs-keyword">of</span> a post, <span class="hljs-keyword">as</span> raw HTML (<span class="hljs-keyword">or</span> <span class="hljs-keyword">not</span>)."
+  }]
+}
+</code></pre>
+<p>An img/alt struct, containing the URL of a parsed image under <code>value</code>, and its alt text under <code>alt</code>.</p>
+
+<pre><code><span class="hljs-string">"properties"</span>: {
+  <span class="hljs-string">"photo"</span>: [{
+    <span class="hljs-string">"value"</span>: <span class="hljs-string">"https://example.com/profile-photo.jpg"</span>,
+    <span class="hljs-string">"alt"</span>: <span class="hljs-string">"Example Person"</span>
+  }]
+}
+</code></pre>
+<p>A nested microformat data structure, with an additional <code>value</code> key containing a plaintext representation of the data contained within.</p>
+
+<pre><code><span class="hljs-string">"properties"</span>: {
+  <span class="hljs-string">"author"</span>: [{
+    <span class="hljs-string">"type"</span>: [<span class="hljs-string">"h-card"</span>],
+    <span class="hljs-string">"properties"</span>: {
+      <span class="hljs-string">"name"</span>: [<span class="hljs-string">"Barnaby Walters"</span>]
+    },
+    <span class="hljs-string">"value"</span>: <span class="hljs-string">"Barnaby Walters</span>
+  }]
+}
+</code></pre>
+<p>All properties may have more than one value. In cases where you expect a single property value (e.g. <code>name</code>), simply take the first one you find, and in cases where you expect multiple values, use all values you consider valid. There are also some cases where it may make sense to use multiple values, but to prioritise one based on some heuristic — for example, an h-card may have multiple <code>url</code> values, in which case the first one is usually the “canonical” URL, and further URLs refer to external profiles.</p>
+
+<p>Let’s look at the implications of each of the potential property value structures in turn.</p>
+
+<p>Firstly, <strong>Never assume that a property value will be a plaintext string</strong>. Microformats publishers can nest microformats, embedded content and img/alt structures in a variety of different ways, and your consuming code should be as flexible as possible.</p>
+
+<p>To partially make up for this complexity, you can <strong>always rely on the <code>value</code> key of nested structs to provide you with an equivalent plaintext value</strong>, regardless of what type of struct you’ve found.</p>
+
+<p>When you start consuming microformats 2, write a function like this, and get into the habit of using it <strong>every time</strong> you want a single, plaintext value from a property:</p>
+
+<pre><code><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_first_plaintext</span><span class="hljs-params">(mf_struct, property_name)</span>:</span>
+  <span class="hljs-keyword">try</span>:
+    first_val = mf_struct[<span class="hljs-string">'properties'</span>][property_name][<span class="hljs-number">0</span>]
+    <span class="hljs-keyword">if</span> isinstance(first_val, str):
+      <span class="hljs-keyword">return</span> first_val
+    <span class="hljs-keyword">else</span>:
+      <span class="hljs-keyword">return</span> first_val[<span class="hljs-string">'value'</span>]
+  <span class="hljs-keyword">except</span> (IndexError, KeyError):
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">None</span>
+</code></pre>
+
+<p>Secondly, <strong>Never assume that a particular property will contain an embedded HTML struct</strong> — this usually applies to <code>content</code>, but is relevant anywhere your application expects embedded HTML. If you want to reliably get a value encoded as raw HTML, then you need to:</p>
+
+<ol>
+<li>Check whether the first property value is an embedded HTML struct (i.e. has an <code>html</code> key). If so, take the value of the <code>html</code> key</li>
+<li>Otherwise, get the first plaintext property value using the approach above, and HTML-escape it</li>
+<li>If neither is found, the property has no value.</li>
+</ol>
+
+<p>In Python 3.5+, that could look something like this:</p>
+
+<pre><code><span class="hljs-keyword">from</span> html <span class="hljs-keyword">import</span> escape
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_first_html</span><span class="hljs-params">(mf_struct, property_name)</span>:</span>
+  <span class="hljs-keyword">try</span>:
+    first_val = mf_struct[<span class="hljs-string">'properties'</span>][property_name][<span class="hljs-number">0</span>]
+    <span class="hljs-keyword">if</span> isinstance(first_val, dict) <span class="hljs-keyword">and</span> <span class="hljs-string">'html'</span> <span class="hljs-keyword">in</span> first_val:
+      <span class="hljs-keyword">return</span> first_val[<span class="hljs-string">'html'</span>]
+    <span class="hljs-keyword">else</span>:
+      plaintext_val = get_first_plaintext(mf_struct, property_name)
+
+      <span class="hljs-keyword">if</span> plaintext_val <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">None</span>:
+        plaintext_val = escape(plaintext_val)
+
+      <span class="hljs-keyword">return</span> plaintext_val
+  <span class="hljs-keyword">except</span> (IndexError, KeyError):
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">None</span>
+</code></pre>
+<p>In some cases, it may make sense for your application to be aware of whether a value was parsed as embedded HTML or a plain text string, and to store/treat them differently. In all other cases, <strong>always</strong> use a function like this when you’re expecting embedded HTML data.</p>
+
+<p>Thirdly, when expecting an image URL, check for an img/alt structure, falling back to the plain text value (and either assuming an empty alt text or inferring an appropriate one, depending on your specific use case). Something like this could be a good starting point:</p>
+
+<pre><code><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_img_alt</span><span class="hljs-params">(mf_struct, property_name)</span>:</span>
+  <span class="hljs-keyword">try</span>:
+    first_val = mf_struct[<span class="hljs-string">'properties'</span>][property_name][<span class="hljs-number">0</span>]
+    <span class="hljs-keyword">if</span> isinstance(first_val, dict) <span class="hljs-keyword">and</span> <span class="hljs-string">'alt'</span> <span class="hljs-keyword">in</span> first_val:
+      <span class="hljs-keyword">return</span> first_val
+    <span class="hljs-keyword">else</span>:
+      plaintext_val = get_first_plaintext(mf_struct, property_name)
+
+      <span class="hljs-keyword">if</span> plaintext_val <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">None</span>:
+        <span class="hljs-keyword">return</span> {<span class="hljs-string">'value'</span>: plaintext_val, <span class="hljs-string">'alt'</span>: <span class="hljs-string">''</span>}
+
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">None</span>
+  <span class="hljs-keyword">except</span> (IndexError, KeyError):
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">None</span>
+</code></pre>
+<p>Finally, in cases where you expect a nested microformat, you might end up getting something else. This is the hardest case to deal with, and the one which depends the most on the specific data and use-case you’re dealing with. For example, if you’re expecting a nested h-card under an <code>author</code> property, but get something else, you could use any of the following approaches:</p>
+
+<ul>
+<li>If you got a plain string which doesn’t look like a URL, treat it as the <code>name</code> property of an implied h-card structure with no other properties (and if you need a URL, you could potentially take the hostname of the effective URL, if it works in context as a useful fallback value)</li>
+<li>If you got an img alt struct, you could treat the <code>value</code> as the <code>photo</code> property, the <code>alt</code> as the <code>name</code> property, and potentially even take the hostname of the <code>photo</code> URL to be the implied fallback <code>url</code> property (although that’s pushing it a bit, and in most cases it’s probably better to just leave out the <code>url</code>)</li>
+<li>If you got an embedded HTML struct, take its plaintext <code>value</code> and use one of the first two approaches</li>
+<li>If you got a plain string, check to see if it looks like a URL. If so, fetch that URL and look for a representative h-card to use as the author value</li>
+<li>If you get an embedded mf struct with a <code>url</code> property but no <code>photo</code>, you could fetch the <code>url</code>, look for a representative h-card (more on that in the next section) and see if it has a <code>photo</code> property</li>
+<li>Treat the <code>author</code> property as invalid and run the h-entry (or entire page if relevant) through the <a href="https://indieweb.org/authorship-spec">authorship algorithm</a></li>
+</ul>
+
+<p>The first three are general principles which can be applied to many scenarios where you expect an embedded mf struct but find something else. The last three, however, are examples of a common trend in consuming microformats 2 data: for many common use-cases, there are well-thought-through algorithms you can use to interpret data in a standardised way.</p>
+
+<h2 id="know-your-algorithms-and-vocabularies">Know Your Algorithms and Vocabularies</h2>
+
+<p>The authorship algorithm mentioned above is one of several more-or-less formally established algorithms used to solve common problems in indieweb usages of microformats 2. Some others which are worth knowing about include:</p>
+
+<ul>
+<li>“Who wrote this post?”: <a href="https://indieweb.org/authorship-spec">authorship algorithm</a></li>
+<li>“There’s more than one h-card on this page, which one should I use?”: <a href="https://microformats.org/wiki/representative-h-card-parsing">representative h-card</a></li>
+<li>“I want to get a paginated feed of posts from this page”: <a href="https://indieweb.org/feed#How_To_Consume">How to consume h-feed</a></li>
+<li>“How do I find and display the main post on this page?”: <a href="https://indieweb.org/authorship-spec">How to consume h-entry</a></li>
+<li>“I received a response to one of my posts via webmention, how do I display it?”: <a href="https://indieweb.org/comments#How_to_display">How to display comments</a></li>
+</ul>
+
+<p>Library implementations of these algorithms exist for some languages, although they often deviate slightly from the exact text. See if you can find one which meets your needs, and if not, write your own and share it with the community!</p>
+
+<p>In addition to the formal consumption algorithms, it’s worth looking through the definitions of the microformats vocabularies you’re using (as well as testing with real-world data) and adding support for properties or publishing techniques you might not have thought of the first time around. Some examples to get you started:</p>
+
+<ul>
+<li>If an h-card has no valid <code>photo</code>, see if there’s a valid <code>logo</code> you can use instead</li>
+<li>When presenting a h-entry with a featured photo, check both the <code>photo</code> property and the <code>featured</code> property, as one or the other might be used in different scenarios</li>
+<li>When dealing with address or location data (e.g. on an h-card, h-entry or h-event), be aware that either might be present in various different forms. Co-ordinates might be separate <code>latitude</code> and <code>longitude</code> properties, a combined plaintext <code>geo</code> property, or an embedded <code>h-geo</code>. Addresses might be separate top-level properties or an embedded h-adr. There are many variations which are totally valid to publish, and your consuming code should be as liberal as possible in what it accepts.</li>
+<li>If a h-entry contains images which are marked up with <code>u-photo</code> within the <code>e-content</code>, they’ll be present both in the <code>content</code> <code>html</code> key and also under the <code>photo</code> property. If your app shows the embedded <code>content</code> HTML rather than using the plaintext version, and also supports <code>photo</code> properties (which may also be present outside the <code>content</code>), you may have to sniff the presence of photos within the <code>content</code>, and either remove them from it or ignore the corresponding <code>photo</code> properties to avoid showing photos twice.</li>
+</ul>
+
+<h2 id="sanitise-validate-and-truncate">Sanitise, Validate, and Truncate</h2>
+
+<p>In the vast majority of cases, consuming microformats 2 data involves handling, storing and potentially re-publishing untrusted and potentially dangerous input data. Preventing XSS and other attacks is out of the scope of the microformats parsing algorithm, so the data your parser gives you is just as dangerous as the original source. You need to take your own measures for sanitising and truncating it so you can store and display it safely.</p>
+
+<p>Covering every possible injection and XSS attack is out of the scope of this article, so I highly recommend referring to the OWASP resources on <a href="https://owasp.org/www-community/attacks/xss/">XSS Prevention</a>, <a href="https://owasp.org/www-community/attacks/Unicode_Encoding">Unicode Attacks</a> and <a href="https://owasp.org/Top10/A03_2021-Injection/">Injection Attacks</a> for more information.</p>
+
+<p>Other than that, the following ideas are a good start:</p>
+
+<ul>
+<li>Use plaintext values where possible, only using embedded HTML when absolutely necessary</li>
+<li>Pass everything (HTML or not) through a well-respected HTML sanitizer such as PHP’s <a href="https://github.com/ezyang/htmlpurifier">HTML Purifier</a>. Configure it to make sure that embedded HTML can’t interfere with your own markup or CSS. It probably shouldn’t contain any javascript ever, either.</li>
+<li>In any case where you’re expecting a value with a specific format, validate it as appropriate.</li>
+<li>More specifically, everywhere that you expect a URL, check that what you got was actually a URL. If you’re using the URL as an image, consider fetching it an checking its content type</li>
+<li>Consider either proxying resource such as images, or storing local copies of them (reducing size and resolution as necessary), to avoid mixed content issues, potential attacks, and missing images if the links break in the future.</li>
+<li>Decide on relevant maximum length values for each separate piece of external content, and truncate them as necessary. Ideally, use a language-aware truncation algorithm to avoid breaking words apart. When the content of a post is truncated, consider adding a “Read More” link for convenience.</li>
+</ul>
+
+<h2 id="test-with-real-world-data">Test with Real-World Data</h2>
+
+<p>The web is a diverse place, and microformats are a flexible, permissive method of marking up structured data. There are often several different yet perfectly valid ways to achieve the same goal, and as a good consumer of mf2 data, your application should strive to accept as many of them as possible!</p>
+
+<p>The best way to test this is with <em>real world data</em>. If your application is built with a particular source of data in mind, then start off with testing it against that. If you want to be able to handle a wider variety of sources, the best way is to determine what vocabularies and publishing use-cases your application consumes, and look at the Examples sections of the relevant <a href="https://indieweb.org">indieweb.org</a> wiki pages for real-world sites to test your code against.</p>
+
+<p>Don’t forget to test your code against examples you’ve published on your own personal site!</p>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<p>Hopefully this article helped you avoid a lot of common gotchas, and gave you a good head-start towards successfully consuming real-world microformats 2 data.</p>
+
+<p>If you have questions or issues, or want to share something cool you’ve built, come and join us in the <a href="https://indieweb.org/discuss">indieweb chat room</a>.</p>
+	</div>
+					
+	<ul class="post-info">
+		<li><a class="updated" href="https://microformats.org/2022/02/19/how-to-consume-microformats-2-data" rel="bookmark" title="Permanent Link to How to Consume Microformats 2 Data">
+			<span class="value-title" title="2022-02-19T11:48:15"> </span>
+			February 19th, 2022		</a>
+		</li>
+		<li>
+			<address class="author vcard">                
+				<a class="url fn" href="">
+				<img alt='' src='https://secure.gravatar.com/avatar/4a57cddee3c50aefa893005dcdd33b64?s=16&#038;d=mm&#038;r=pg' srcset='https://secure.gravatar.com/avatar/4a57cddee3c50aefa893005dcdd33b64?s=32&#038;d=mm&#038;r=pg 2x' class='avatar avatar-16 photo' height='16' width='16' />					waterpigs.co.uk/				</a>
+			</address>
+		</li>
+		<li><span>Comments Off<span class="screen-reader-text"> on How to Consume Microformats 2 Data</span></span></li>
+		<li>
+		 			</li>
+	</ul>
+</article>
+<article id="post-491" class="entry post-491 post type-post status-publish format-standard hentry category-news tag-indieweb tag-microformats2">
+	<h3 class="entry-title" id="post-491"><a href="https://microformats.org/2020/03/04/google-confirms-microformats-are-still-a-recommended-metadata-format-for-content" rel="bookmark" title="Permanent Link to Google confirms Microformats are still a recommended metadata format for content">Google confirms Microformats are still a recommended metadata format for content</a></h3>
+	<div class="entry-content">
+		<div>
+<p>This post <a href="https://www.jvt.me/posts/2020/03/02/google-microformats-support/" rel="canonical">originally appeared on Jamie Tanna&#8217;s site</a>.</p>
+<p>Google announced that they are <a href="https://webmasters.googleblog.com/2020/01/data-vocabulary.html">removing support for the data-vocabulary metadata</a> markup that could be used to provide rich search results on its Search Engine.</p>
+<p>In a Twitter exchange, John Mueller, a Webmaster Trends Analyst at Google, confirmed that <a href="https://microformats.io">Microformats</a> are still being supported by Google at this time:</p>
+<blockquote>
+<p lang="en" dir="ltr">Yes, we still support them.</p>
+<p>— 🍌 John 🍌 (@JohnMu) <a href="https://twitter.com/JohnMu/status/1219739919268155392?ref_src=twsrc%5Etfw">January 21, 2020</a></p></blockquote>
+<p>John also confirmed that he knows of no upcoming plans to deprecate Microformats:</p>
+<blockquote>
+<p lang="en" dir="ltr">We don&#8217;t have any plans for changes to announce there at the moment. I don&#8217;t know off-hand how broadly microformats are used, my guess is it&#8217;s much more than data-vocabulary. That said &#8230; <a href="https://t.co/ZCE7rTKmPa">https://t.co/ZCE7rTKmPa</a></p>
+<p>— 🍌 John 🍌 (@JohnMu) <a href="https://twitter.com/JohnMu/status/1219597542318538752?ref_src=twsrc%5Etfw">January 21, 2020</a></p></blockquote>
+<p>This is an especially great result due to the way that Google is quite happy to abandon various metadata formats, as noted in our <a href="http://microformats.org/2012/06/25/microformats-org-at-7#challenges">7th anniversary blog post</a>, almost 8 years ago. With this announcement, Microformats are now the longest-supported metadata format that Google parses, <a href="http://microformats.org/wiki/google-search">since at least 2009</a>!</p>
+<p>With the continued growth of Microformats across the <a href="https://indieweb.org">IndieWeb</a>, we expect that Google will extend its Microformats support accordingly.</p>
+</div>
+	</div>
+			<div class="post-tags">
+			<h4>Tags for this entry</h4>
+			<ul><li><a href="https://microformats.org/tag/indieweb" rel="tag">indieweb</a>, </li><li><a href="https://microformats.org/tag/microformats2" rel="tag">microformats2</a></li></ul>		</div>
+					
+	<ul class="post-info">
+		<li><a class="updated" href="https://microformats.org/2020/03/04/google-confirms-microformats-are-still-a-recommended-metadata-format-for-content" rel="bookmark" title="Permanent Link to Google confirms Microformats are still a recommended metadata format for content">
+			<span class="value-title" title="2020-03-04T10:48:02"> </span>
+			March 4th, 2020		</a>
+		</li>
+		<li>
+			<address class="author vcard">                
+				<a class="url fn" href="">
+				<img alt='' src='https://secure.gravatar.com/avatar/702c2c3657b87396c41f14251af663c4?s=16&#038;d=mm&#038;r=pg' srcset='https://secure.gravatar.com/avatar/702c2c3657b87396c41f14251af663c4?s=32&#038;d=mm&#038;r=pg 2x' class='avatar avatar-16 photo' height='16' width='16' />					jamietanna				</a>
+			</address>
+		</li>
+		<li><a href="https://microformats.org/2020/03/04/google-confirms-microformats-are-still-a-recommended-metadata-format-for-content#comments">1 Comment</a></li>
+		<li>
+		 			</li>
+	</ul>
+</article>
+<article id="post-480" class="entry post-480 post type-post status-publish format-standard hentry category-news tag-microformats2">
+	<h3 class="entry-title" id="post-480"><a href="https://microformats.org/2018/06/22/microformats-org-year-14-welcome-new-admins" rel="bookmark" title="Permanent Link to microformats.org Year 14 — Welcome New Admins">microformats.org Year 14 — Welcome New Admins</a></h3>
+	<div class="entry-content">
+		<p>In microformats.org year 14, we welcome <a href="http://microformats.org/wiki/admins">new admins</a>: <a href="https://aaronparecki.com/">Aaron Parecki</a>, <a href="https://gregorlove.com/">Gregor Morrill</a>, <a href="https://vanderven.se/martijn/">Martijn van der Ven</a>, and <a href="https://www.svenknebel.de/">Sven Knebel</a>! All have been active for years, helping welcome new members and doing essential wiki gardening &#038; <a href="http://microformats.org/wiki/microformats2#Implementations">microformats2 parser updates</a>!</p>
+<p>Originally posted at: <a href="http://tantek.com/2018/173/t2/microformats-welcome-new-admins">tantek.com</a></p>
+	</div>
+			<div class="post-tags">
+			<h4>Tags for this entry</h4>
+			<ul><li><a href="https://microformats.org/tag/microformats2" rel="tag">microformats2</a></li></ul>		</div>
+					
+	<ul class="post-info">
+		<li><a class="updated" href="https://microformats.org/2018/06/22/microformats-org-year-14-welcome-new-admins" rel="bookmark" title="Permanent Link to microformats.org Year 14 — Welcome New Admins">
+			<span class="value-title" title="2018-06-22T15:14:41"> </span>
+			June 22nd, 2018		</a>
+		</li>
+		<li>
+			<address class="author vcard">                
+				<a class="url fn" href="">
+				<img alt='' src='https://secure.gravatar.com/avatar/02cd45622e90350cc061aaaa02229195?s=16&#038;d=mm&#038;r=pg' srcset='https://secure.gravatar.com/avatar/02cd45622e90350cc061aaaa02229195?s=32&#038;d=mm&#038;r=pg 2x' class='avatar avatar-16 photo' height='16' width='16' />					Tantek				</a>
+			</address>
+		</li>
+		<li><span>Comments Off<span class="screen-reader-text"> on microformats.org Year 14 — Welcome New Admins</span></span></li>
+		<li>
+		 			</li>
+	</ul>
+</article>
+<article id="post-475" class="entry post-475 post type-post status-publish format-standard hentry category-news tag-indieweb tag-microformats2">
+	<h3 class="entry-title" id="post-475"><a href="https://microformats.org/2018/06/21/happy-13th-to-microformats-org" rel="bookmark" title="Permanent Link to Happy 13th to microformats.org!">Happy 13th to microformats.org!</a></h3>
+	<div class="entry-content">
+		<p>With more use of <a href="http://microformats.org/wiki/microformats2">microformats2</a>, especially among the growing <a href="https://indieweb.org/">indieweb</a> network of websites, we’ve iterated <a href="http://microformats.org/wiki/microformats2-parsing">key</a> <a href="http://microformats.org/wiki/h-feed">specs</a> for real-world needs and are seeing more active community members. More updates &#038; posts coming up!</p>
+<p>Originally posted on <a href="http://tantek.com/2018/171/t2/happy-13th-microformats-org">tantek.com</a>.</p>
+	</div>
+			<div class="post-tags">
+			<h4>Tags for this entry</h4>
+			<ul><li><a href="https://microformats.org/tag/indieweb" rel="tag">indieweb</a>, </li><li><a href="https://microformats.org/tag/microformats2" rel="tag">microformats2</a></li></ul>		</div>
+					
+	<ul class="post-info">
+		<li><a class="updated" href="https://microformats.org/2018/06/21/happy-13th-to-microformats-org" rel="bookmark" title="Permanent Link to Happy 13th to microformats.org!">
+			<span class="value-title" title="2018-06-21T08:40:46"> </span>
+			June 21st, 2018		</a>
+		</li>
+		<li>
+			<address class="author vcard">                
+				<a class="url fn" href="">
+				<img alt='' src='https://secure.gravatar.com/avatar/02cd45622e90350cc061aaaa02229195?s=16&#038;d=mm&#038;r=pg' srcset='https://secure.gravatar.com/avatar/02cd45622e90350cc061aaaa02229195?s=32&#038;d=mm&#038;r=pg 2x' class='avatar avatar-16 photo' height='16' width='16' />					Tantek				</a>
+			</address>
+		</li>
+		<li><span>Comments Off<span class="screen-reader-text"> on Happy 13th to microformats.org!</span></span></li>
+		<li>
+		 			</li>
+	</ul>
+</article>
+<article id="post-469" class="entry post-469 post type-post status-publish format-standard hentry category-news">
+	<h3 class="entry-title" id="post-469"><a href="https://microformats.org/2017/06/22/improving-the-php-mf2-parser" rel="bookmark" title="Permanent Link to Improving the php-mf2 parser">Improving the php-mf2 parser</a></h3>
+	<div class="entry-content">
+		<p>During the past year, the popular <a href="https://github.com/indieweb/php-mf2">php-mf2</a> microformats parser has received quite a few improvements. My site runs ProcessWire and one of the plugins for it uses php-mf2, so I have been spending some time on it.</p>
+<p>My own experience with microformats started when I discovered the <a href="http://microformats.org/wiki/hcard">hCard microformat</a>. I was impressed with the novelty of adding some simple HTML classes around contact information and having a browser extension parse it into an address book. Years later, when I started to get involved in the IndieWeb community, I learned a lot more about microformats2 and they became a key building block of my personal site.</p>
+<p>php-mf2 is now much better at backwards-compatible parsing of microformats1. This is important because software should be able to consistently consume content whether it’s marked up with microformats1, microformats2, or a combination. An experimental feature for parsing language attributes has also been added. Finally, it’s now using the microformats test suite. Several other parsers use this test suite as well. This will make it easier to catch bugs and improve all of the different parsers.</p>
+<p>php-mf2 is a stable library that’s ready to be installed in your software to start consuming microformats. It is currently used in <a href="https://withknown.com">Known</a>, <a href="https://wordpress.org/plugins/semantic-linkbacks/">WordPress plugins</a>, and <a href="https://modules.processwire.com/modules/webmention/">ProcessWire plugins</a> for richer social interactions. It’s also used in tools like <a href="https://github.com/aaronpk/XRay">XRay</a> and <a href="https://microformats.io">microformats.io</a>. I’m looking forward to more improvements to php-mf2 in the coming year as well as more software using it!</p>
+<p>Original published at: <a href="https://gregorlove.com/2017/06/improving-the-php-mf2-parser/" rel="canonical">https://gregorlove.com/2017/06/improving-the-php-mf2-parser/</a></p>
+	</div>
+					
+	<ul class="post-info">
+		<li><a class="updated" href="https://microformats.org/2017/06/22/improving-the-php-mf2-parser" rel="bookmark" title="Permanent Link to Improving the php-mf2 parser">
+			<span class="value-title" title="2017-06-22T09:13:53"> </span>
+			June 22nd, 2017		</a>
+		</li>
+		<li>
+			<address class="author vcard">                
+				<a class="url fn" href="">
+				<img alt='' src='https://secure.gravatar.com/avatar/aca81ab5bf69a4626c91edc811cea208?s=16&#038;d=mm&#038;r=pg' srcset='https://secure.gravatar.com/avatar/aca81ab5bf69a4626c91edc811cea208?s=32&#038;d=mm&#038;r=pg 2x' class='avatar avatar-16 photo' height='16' width='16' />					gRegor Morrill				</a>
+			</address>
+		</li>
+		<li><span>Comments Off<span class="screen-reader-text"> on Improving the php-mf2 parser</span></span></li>
+		<li>
+		 			</li>
+	</ul>
+</article>
+		
+		
+	<h3 id="archive-link">Browse all entries by month in the <a href="/blog/" class="more">blog archive</a></h3>
+
+	</div>
+
+<hr class="hide" />
+   
+<div id="sidebar">    
+<div id="text-137140391" class="box widget widget_text"><div class="box-inner"><h3>What are microformats?</h3>			<div class="textwidget"><p><img src="/wordpress/wp-content/themes/microformats/img/mf-lg-ora.gif" alt="" id="about-logo" />Designed for humans first and machines second, microformats are a set of simple, open data formats built upon existing and widely adopted standards. <a href="/wiki/about" class="more">Learn more about microformats</a></p></div>
+		</div></div><div id="text-137140392" class="box widget widget_text"><div class="box-inner"><h3>Microformat specifications</h3>			<div class="textwidget"><dl id="mf-list">
+               <dt>People and Organizations </dt>
+               <dd><a href="/wiki/h-card">h-card</a>, <a href="http://microformats.org/wiki/xfn"><abbr title="XHTML Friends Network">XFN</abbr></a></dd>
+               <dt>Calendars and Events</dt> 
+               <dd><a href="/wiki/h-calendar">h-calendar</a></dd>
+               <dt>Opinions, Ratings and Reviews</dt>
+               <dd><a href="/wiki/h-review">h-review</a></dd>
+               <dt>Licenses:</dt>
+               <dd><a href="/wiki/rel-license">rel-license</a></dd>
+               
+               <dt>Tags, Keywords, Categories</dt>
+               <dd><a href="/wiki/rel-tag">rel-tag</a></dd>
+               <dt>Lists and Outlines</dt>
+               <dd><a href="/wiki/xoxo">XOXO</a></dd>
+               <dt>More…</dt>
+               <dd>See <a href="/wiki/">the list of all microformats</a></dd>
+            </dl></div>
+		</div></div><div id="text-137140393" class="box widget widget_text"><div class="box-inner"><h3>Upcoming Events</h3>			<div class="textwidget"><ul>
+    <li><a href="http://microformats.org/wiki/events">See microformats events on the wiki</a></li>
+    <li><a href="http://indiewebcamp.com/events">See also <strong>IndieWebCamp Events!</strong></a></li>
+</ul></div>
+		</div></div><div id="categories-137139891" class="box widget widget_categories"><div class="box-inner"><h3>Post Categories</h3>		<ul>
+				<li class="cat-item cat-item-22"><a href="https://microformats.org/category/events" title="Events about or including microformats; parties, conferences and hack days.">Events</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="https://microformats.org/category/news">News</a>
+</li>
+	<li class="cat-item cat-item-39"><a href="https://microformats.org/category/this-week" title="This Week in Microformats is a semi-regular update of what&#039;s happened on the microformats.org wiki and mailing lists.">This Week in Microformats</a>
+</li>
+		</ul>
+			</div></div>	  
+	<div class="box">
+		<div class="box-inner">
+			<form method="get" id="search" action="/index.php">
+	<div>
+		<input type="text" value="search blog" name="s" id="search-text" onfocus="if(this.value=='' || this.value=='search blog'){this.value='';}" onblur="if(this.value==''){this.value='search blog';}" />
+		<input type="image" id="search-submit" alt="Search" src="https://microformats.org/wordpress/wp-content/themes/microformats/img/btn-search.gif" />
+	</div>
+</form>
+		</div>
+	</div>
+
+	<div class="box">
+		<div class="box-inner">
+					</div>
+	</div>
+
+</div> <!-- end #sidebar -->
+
+<hr class="hide" />
+
+<div id="footer">
+	<p>Powered by <a href="http://wordpress.org">WordPress</a> | Hosting sponsored by <a href="https://www.linode.com/?r=f27e4bad029e8c2a2bf8737bf12439133dd4b977">Linode</a> | <a href="http://no-www.org/">No WWW</a>.	
+	</p>
+</div>
+
+</div> <!-- end #wrap -->
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript" />
+	<script type="text/javascript"> 
+		_uacct = "UA-1889385-1";
+		urchinTracker();
+	</script>
+	<script type='text/javascript' src='https://microformats.org/wordpress/wp-includes/js/wp-embed.min.js?ver=5.4.13'></script>
+</body>
+</html>

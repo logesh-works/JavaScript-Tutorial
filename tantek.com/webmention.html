@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hosted Webmention Service</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/mentions.css" />
+    <link rel="pingback" href="https://webmention.io/pingback/xmlrpc" />
+    <link rel="webmention" href="https://webmention.io/pingback/webmention" />
+  </head>
+  <body class="  tantek.com webmention">
+
+    <div class="container">
+
+<div class="row" style="margin: 40px auto 0 auto; max-width: 600px;">
+
+  <form action="/tantek.com/webmention" method="post">
+    <label for="source">Source URL:</label>
+    <input type="url" name="source" id="source" placeholder="The page sending this webmention (probably yours)" style="margin-bottom: 14px; width: 90%; display: block;">
+    <label for="target">Target URL:</label>
+    <input type="url" name="target" id="target" placeholder="The page that should receive this webmention" style="margin-bottom: 14px; width: 90%; display: block;">
+    <div style="margin-top: 16px;">
+      <input type="submit" class="button" value="Send Webmention">
+    </div>
+  </form>
+
+
+  <p>Webmention is a simple way to notify any URL when you link to it on your site.</p>
+
+  <p>This is the webmention endpoint for <strong>tantek.com</strong>.</p>
+
+  <p><a href="https://webmention.net/">Learn more about Webmention</a></p>
+
+</div><!-- row -->
+
+</div><!-- container -->
+
+    <div style="margin-top: 40px;"></div>
+
+<div class="footer">
+  <div class="container">
+    <div class="item">Open Source: <a href="https://github.com/aaronpk/webmention.io">github.com/aaronpk/webmention.io</a></div>
+    <div class="item">Made by <a href="https://aaronparecki.com">aaronpk</a></div>
+    <div class="item">Read more: <a href="https://indieweb.org/webmention.io">indieweb.org/webmention.io</a></div>
+  </div>
+</div>
+
+
+  </body>
+</html>

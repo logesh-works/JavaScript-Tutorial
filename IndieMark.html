@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>IndieMark - IndieWeb</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"ae994d185b73bd3db80b5605","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"IndieMark","wgTitle":"IndieMark","wgCurRevisionId":87226,"wgRevisionId":87226,"wgArticleId":246,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"IndieMark","wgRelevantArticleId":246,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]};RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready","user.options":"loading"
+,"skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1i9g4",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});</script>
+<link rel="stylesheet" href="/wiki/load.php?lang=en&amp;modules=skins.vector.styles.legacy&amp;only=styles&amp;skin=vector"/>
+<script async="" src="/wiki/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/wiki/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.38.4"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0"/>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/wiki/opensearch_desc.php" title="IndieWeb (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="https://indieweb.org/wiki/api.php?action=rsd"/>
+<link rel="license" href="/IndieWebCamp:Copyrights"/>
+<link rel="alternate" type="application/atom+xml" title="IndieWeb Atom feed" href="/wiki/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+<link rel="webmention" href="https://webmention.io/indiewebcamp/webmention">
+
+<link rel="pingback" href="https://webmention.io/indiewebcamp/xmlrpc">
+
+<script src="https://cdn.usefathom.com/script.js" site="ZPHFRYAA" defer></script>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-IndieMark rootpage-IndieMark skin-vector action-view skin--responsive skin-vector-legacy"><div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body h-entry" role="main">
+	<a id="top"></a>
+	<div id="siteNotice"></div>
+	<div class="mw-indicators">
+	</div>
+	<span class="p-name"><h1 id="firstHeading" class="firstHeading mw-first-heading">IndieMark</h1></span>
+	<div id="bodyContent" class="vector-body">
+		<div id="siteSub" class="noprint">From IndieWeb</div>
+		<div id="contentSub"></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+		<a class="mw-jump-link" href="#searchInput">Jump to search</a>
+		<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr"><div class="mw-parser-output"><p><span class="p-logo" style="float:right;height:192px;font-size:192px;margin:-32px 0 32px; padding-bottom: 50px;">✅</span>
+<span class="p-summary"><b><dfn>IndieMark</dfn></b> is an in-progress set of metrics for measuring the indieweb-ness of a site, and a step-by-step approach to incrementally building IndieWeb features for your site, and as such is currently written for folks who are comfortable with web development.</span>
+</p><p>IndieMark helps us as a community measure our progress both individually and collectively.
+</p>
+<div style="background: #fffbe3; padding: 4px 8px; border: 1px #faeead solid; border-radius: 4px">Is this your first visit to the IndieWeb wiki? Go start with <b><a href="/Getting_Started" title="Getting Started">Getting Started</a></b></div>
+<hr />
+<div style="background: #fffbe3; padding: 4px 8px; border: 1px #faeead solid; border-radius: 4px">IndieMark is only one very rough and in-progress metric, please do not use it to determine if your site "is a member of the IndieWeb". There’s a bunch <a href="#To_Do">to do</a>, some <a href="#Brainstorming">brainstorming</a> for improving the presentation, and <a href="/IndieMark#Criticism" title="IndieMark"> criticism</a> that needs to be addressed. See <a href="/Getting_Started#IndieWeb_self-starters" title="Getting Started">Getting Started</a> for a more detailed 'onboarding' experience.</div>
+<p>Levels in general are ordered roughly by both immediate practicality to the indieweb site owner (somewhat by community interop), and somewhat by incremental difficulty.
+</p><p>Levels within each axis are ordered by both increasing utility and difficulty so that each step should be a reasonable amount of incremental work from the previous step, and when complete, provide some additional functionality that you can both be proud of, and enjoy using yourself on a daily basis.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#How_to"><span class="tocnumber">1</span> <span class="toctext">How to</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#How_to_get_IndieMark_features"><span class="tocnumber">1.1</span> <span class="toctext">How to get IndieMark features</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#How_to_build_IndieMark_features"><span class="tocnumber">1.2</span> <span class="toctext">How to build IndieMark features</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#draft_levels"><span class="tocnumber">2</span> <span class="toctext">draft levels</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Level_0"><span class="tocnumber">2.1</span> <span class="toctext">Level 0</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Level_1"><span class="tocnumber">2.2</span> <span class="toctext">Level 1</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Level_2"><span class="tocnumber">2.3</span> <span class="toctext">Level 2</span></a>
+<ul>
+<li class="toclevel-3 tocsection-8"><a href="#Level_2_identity"><span class="tocnumber">2.3.1</span> <span class="toctext">Level 2 identity</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#Level_2_posts"><span class="tocnumber">2.3.2</span> <span class="toctext">Level 2 posts</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#Level_2_syndication"><span class="tocnumber">2.3.3</span> <span class="toctext">Level 2 syndication</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#Level_2_posting_UI"><span class="tocnumber">2.3.4</span> <span class="toctext">Level 2 posting UI</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#Level_2_navigation"><span class="tocnumber">2.3.5</span> <span class="toctext">Level 2 navigation</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#Level_2_search"><span class="tocnumber">2.3.6</span> <span class="toctext">Level 2 search</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#Level_2_aggregation"><span class="tocnumber">2.3.7</span> <span class="toctext">Level 2 aggregation</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="#Level_2_interactivity"><span class="tocnumber">2.3.8</span> <span class="toctext">Level 2 interactivity</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-16"><a href="#Level_3"><span class="tocnumber">2.4</span> <span class="toctext">Level 3</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Level_4"><span class="tocnumber">2.5</span> <span class="toctext">Level 4</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Level_5"><span class="tocnumber">2.6</span> <span class="toctext">Level 5</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Level_6"><span class="tocnumber">2.7</span> <span class="toctext">Level 6</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-20"><a href="#draft_axes"><span class="tocnumber">3</span> <span class="toctext">draft axes</span></a>
+<ul>
+<li class="toclevel-2 tocsection-21"><a href="#identity"><span class="tocnumber">3.1</span> <span class="toctext">identity</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#authentication"><span class="tocnumber">3.2</span> <span class="toctext">authentication</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#posts"><span class="tocnumber">3.3</span> <span class="toctext">posts</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#syndication"><span class="tocnumber">3.4</span> <span class="toctext">syndication</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#posting_UI"><span class="tocnumber">3.5</span> <span class="toctext">posting UI</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#navigation"><span class="tocnumber">3.6</span> <span class="toctext">navigation</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#search"><span class="tocnumber">3.7</span> <span class="toctext">search</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#aggregation"><span class="tocnumber">3.8</span> <span class="toctext">aggregation</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#interactivity"><span class="tocnumber">3.9</span> <span class="toctext">interactivity</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#security"><span class="tocnumber">3.10</span> <span class="toctext">security</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#handling_responses"><span class="tocnumber">3.11</span> <span class="toctext">handling responses</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-32"><a href="#idea_capture"><span class="tocnumber">4</span> <span class="toctext">idea capture</span></a>
+<ul>
+<li class="toclevel-2 tocsection-33"><a href="#ideas"><span class="tocnumber">4.1</span> <span class="toctext">ideas</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="#design_principles"><span class="tocnumber">4.2</span> <span class="toctext">design principles</span></a>
+<ul>
+<li class="toclevel-3 tocsection-35"><a href="#start_at_level_1"><span class="tocnumber">4.2.1</span> <span class="toctext">start at level 1</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-36"><a href="#levels"><span class="tocnumber">4.3</span> <span class="toctext">levels</span></a></li>
+<li class="toclevel-2 tocsection-37"><a href="#motivations"><span class="tocnumber">4.4</span> <span class="toctext">motivations</span></a></li>
+<li class="toclevel-2 tocsection-38"><a href="#challenges"><span class="tocnumber">4.5</span> <span class="toctext">challenges</span></a></li>
+<li class="toclevel-2 tocsection-39"><a href="#projects"><span class="tocnumber">4.6</span> <span class="toctext">projects</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-40"><a href="#FAQ"><span class="tocnumber">5</span> <span class="toctext">FAQ</span></a>
+<ul>
+<li class="toclevel-2 tocsection-41"><a href="#Not_just_a_rank"><span class="tocnumber">5.1</span> <span class="toctext">Not just a rank</span></a></li>
+<li class="toclevel-2 tocsection-42"><a href="#What_is_omitted"><span class="tocnumber">5.2</span> <span class="toctext">What is omitted</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-43"><a href="#To_Do"><span class="tocnumber">6</span> <span class="toctext">To Do</span></a></li>
+<li class="toclevel-1 tocsection-44"><a href="#Brainstorming"><span class="tocnumber">7</span> <span class="toctext">Brainstorming</span></a>
+<ul>
+<li class="toclevel-2 tocsection-45"><a href="#Visualization_like_RingMark"><span class="tocnumber">7.1</span> <span class="toctext">Visualization like RingMark</span></a></li>
+<li class="toclevel-2 tocsection-46"><a href="#Visualization_like_pie_slices"><span class="tocnumber">7.2</span> <span class="toctext">Visualization like pie slices</span></a></li>
+<li class="toclevel-2 tocsection-47"><a href="#Badges"><span class="tocnumber">7.3</span> <span class="toctext">Badges</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-48"><a href="#Sessions"><span class="tocnumber">8</span> <span class="toctext">Sessions</span></a></li>
+<li class="toclevel-1 tocsection-49"><a href="#Criticism"><span class="tocnumber">9</span> <span class="toctext">Criticism</span></a></li>
+<li class="toclevel-1 tocsection-50"><a href="#See_Also"><span class="tocnumber">10</span> <span class="toctext">See Also</span></a></li>
+</ul>
+</div>
+
+<p><b>IndieMark Levels</b> summary:
+</p>
+<ol>
+<li value="0">Own your domain, make it show some of your content
+</li><li><b>#ownyourdata </b>#ownyouridentity<b></b>
+</li><li>TBD (was: post <b><a href="/notes" class="mw-redirect" title="notes">notes</a></b> and <b><a href="/POSSE" title="POSSE">POSSE</a></b>)
+</li><li>TBD (was: post <b><a href="/replies" class="mw-redirect" title="replies">replies</a></b> and <b>send <a href="/webmentions" class="mw-redirect" title="webmentions">webmentions</a></b>)
+</li><li>TBD (was: <b>receive &amp; display <a href="/comments" title="comments">comments</a></b>)
+</li><li>TBD: (was: <b>comments CRUD</b>)
+</li><li>...
+</li><li><a href="/business-models" title="business-models">Profit</a>!
+</li></ol>
+<h2><span class="mw-headline" id="How_to">How to</span></h2>
+<h3><span class="mw-headline" id="How_to_get_IndieMark_features">How to get IndieMark features</span></h3>
+<p>People using more full-featured <a href="/CMS" class="mw-redirect" title="CMS">CMSs</a> like <a href="/WordPress" title="WordPress">WordPress</a> or <a href="/Known" title="Known">Known</a>, or services like <a href="/micro.blog" class="mw-redirect" title="micro.blog">micro.blog</a> will have many IndieWeb features without additional effort, or by installing pre-existing plugins, while others may need to build features themselves. 
+</p>
+<h3><span class="mw-headline" id="How_to_build_IndieMark_features">How to build IndieMark features</span></h3>
+<p>IndieMark can help people building <a href="/projects" title="projects">projects</a> from scratch plan out common site features, however everyone is certainly free to build and implement features in any order, based on their needs and wants per the <a href="/make_what_you_need" title="make what you need">make what you need</a> principle.
+</p><p>First, consider which features interest you, then browse their pages for existing implementations or open source libraries to help get you further/faster without completely reinventing the wheel.
+</p><p>Browse <a href="/projects" title="projects">projects</a> and subpages for IndieWeb examples of people using various methods potentially similar to what you’re interested in.
+</p><p>Consider existing <a href="/UX" class="mw-redirect" title="UX">UX</a> examples of what has worked well in the past or what hasn’t, though don't let this prevent you from experimenting if you think you can create a better experience (and ask the community for feedback if you'd like). 
+</p><p>If you have questions, or need help, don’t hesitate to ask in <a class="external text" href="https://indieweb.org/discuss">chat</a>, where you’re sure to find some helpful folks.
+</p>
+<h2><span class="mw-headline" id="draft_levels">draft levels</span></h2>
+<h3><span class="mw-headline" id="Level_0">Level 0</span></h3>
+<p>(draft 2022-03-18)
+</p><p>IndieMark Level 0 has the general theme of <strong>owning your own domain</strong> and <strong>publishing some of your own content</strong> there. 
+</p>
+<div style="text-indent:2em;font-style:italic">Main article: <a href="/Get_Started" class="mw-redirect" title="Get Started">Get Started</a></div>
+<p>Having your own domain name and using it to serve content that is under your control starts establishing your identity on the web. It does not mean you have to self-host. You can use a service that allows domain-hosting (like <a href="/micro.blog" class="mw-redirect" title="micro.blog">micro.blog</a>, <a href="/WordPress.com" title="WordPress.com">WordPress.com</a>, <a href="/GitHub_Pages" title="GitHub Pages">GitHub Pages</a>), or you can pay a <a href="/webhost" class="mw-redirect" title="webhost">webhosting</a> service.
+</p>
+<ul><li>register a domain name</li>
+<li>have a personal web site at that domain</li></ul>
+<p>Follow steps in <a href="/Getting_Started" title="Getting Started">Getting Started</a> to achieve IndieMark Level 0.
+</p>
+<h3><span class="mw-headline" id="Level_1">Level 1</span></h3>
+<p>IndieMark Level 1 has the general theme of <strong>using your own domain as your identity</strong>, for <strong>sign-in</strong>, and <strong>publishing posts</strong>
+</p><p>Level 1 summary: the classic independent web + IndieAuth
+</p>
+<ul><li>have a <strong>personal web site</strong></li>
+<li><strong>usable for sign-in</strong></li>
+<li>with at least a couple of <strong>searchable posts</strong></li></ul>
+<p>IndieMark level 1 captures the core minimum of what it means to be / have an indieweb site, based on classic blogs and independent sites, with modern indieweb identity added in.
+</p><p>These (numbered items) are all requirements for IndieMark Level 1. Total of 1.0 points from:
+</p>
+<ol><li>0.2 pts <b>identity</b> - #ownyouridentity
+<ul><li><b><a href="/personal-domain" title="personal-domain">Personal domain</a></b> that you use as your primary identity on the web.
+<ul><li>Subdomain of a domain you own is ok, e.g. <kbd>foo.example.com</kbd>.</li></ul></li></ul></li>
+<li>0.2 pts <b>authentication</b> - #useyourownidentity
+<ul><li><b>Setup <a href="/Web_sign-in" title="Web sign-in">Web sign-in</a></b> for login, sign-in to <a class="external free" href="https://indieweb.org/">https://indieweb.org/</a>, and <a href="/wikifying#How_to_Join_the_IndieWeb_Wiki" title="wikifying">create your user page</a>, linking to your personal domain.
+<ul><li>Easy: <a href="/rel-me" title="rel-me">rel-me</a> links to your "other profiles" on the web (e.g. at <a href="/silos" class="mw-redirect" title="silos">silos</a>) and have them link back. <a href="/How_to_set_up_web_sign-in_on_your_own_domain" title="How to set up web sign-in on your own domain">How to setup rel-me links</a>.</li>
+<li>Harder: Local <a href="/IndieAuth" title="IndieAuth">IndieAuth</a> provider support in your own site.</li></ul></li></ul></li>
+<li>0.4 pts <b><a href="/posts" title="posts">posts</a></b> - #ownyourdata - <b>Post some kind of original content</b> on your own site, split into:
+<ul><li>0.2 pts <b><a href="/permalinks" class="mw-redirect" title="permalinks">permalinks</a></b> - multiple <a href="/posts" title="posts">posts</a> with permalinks for the content on your own site
+<ul><li>0.1 point per permalink up to 0.2 points</li></ul></li>
+<li>0.2 pts <b><a href="/h-entry" title="h-entry">h-entry</a> markup</b> of those posts
+<ul><li>0.1 point per post with h-entry up to 0.2 points</li>
+<li>with e.g. p-name, p-content, dt-published, u-url properties</li>
+<li><a class="external text" href="https://indiewebify.me/validate-h-entry/">Test your h-entry support!</a></li></ul></li></ul></li>
+<li>0.2 pts <b><span id="level-1-search"><span id="level-0-search"><a href="/search" title="search">search</a></span></span></b> - searchability is required for level 1. You must do all of these for the 0.2 pts:
+<ul><li><b>allow robots to index</b>. Permissive or no robots.txt. Either don't have /robots.txt, or if you have one, it MUST allow search engines to index the abovementioned posts.</li>
+<li><b>post content in HTML</b>. Your post content MUST be in the visible HTML of the page retrieved from your post permalink. No depending on <a href="/Javascript" class="mw-redirect" title="Javascript">Javascript</a> to render your post content - if you can't <kbd>curl</kbd> it, it's not on the web.</li>
+<li><b>site-specific searchability</b>. Be able to use "site:yoursite.example.com search-term" in <a href="/Google" title="Google">Google</a> and other search engines (that support site-specific searches) directly to find and display your posts in search results.
+<ul><li><b>Note:</b> no actual search UI on your site is required for level 1. That's in level 2.</li></ul></li></ul></li></ol>
+<p>Each of those four areas (<a href="/identity" class="mw-redirect" title="identity">identity</a>, <a href="/authentication" class="mw-redirect" title="authentication">authentication</a>, <a href="/posts" title="posts">posts</a>, <a href="/search" title="search">search</a> - see each for how to and why details) helps fill out your Level 1 "ring". Completing all four completes your Level 1 ring and then you can claim IndieMark Level 1.
+</p>
+<h3><span class="mw-headline" id="Level_2">Level 2</span></h3>
+<p>IndieMark Level 2 has the general theme of improving your personal identity, and <strong>posting multiple types of posts on your own site</strong>, one of which <em>should</em> be <b><a href="/notes" class="mw-redirect" title="notes">notes</a></b> posted to your own site instead of Twitter (and <a href="/POSSE" title="POSSE">POSSEing</a> to Twitter if you have an account there).
+</p><p>Level 2 is based on all Level 1 requirements, plus:
+</p>
+<ul><li><b><a href="/h-card" title="h-card">h-card</a></b> contact info and representative <b><a href="/icon" title="icon">icon</a></b> on home page. <a class="external text" href="https://indiewebify.me/validate-h-card/">Validate your h-card!</a></li>
+<li>post <strong>multiple types of <a href="/posts" title="posts">posts</a></strong> on your own site, including <strong>auto-linked <a href="/notes" class="mw-redirect" title="notes">notes</a></strong> (e.g. instead of tweeting directly)</li>
+<li><strong><a href="/POSSE" title="POSSE">POSSE</a> to <a href="/silos" class="mw-redirect" title="silos">silos</a></strong> that you used to use or where your friends still read stuff, and provide at least a <strong>link to those copies and/or buttons</strong>  to perform actions on your posts accordingly.</li>
+<li>can <strong>navigate across posts</strong> on your site</li>
+<li>have a <strong>UI for searching</strong> your posts (ok to use external search services)</li></ul>
+<p>Achieving IndieMark Level 2 with your personal site demonstrates solid implementation of fundamentals that distinguish the indieweb from both "just blogging", and other similar/related efforts like <a href="/FSW" class="mw-redirect" title="FSW">FSW</a>.
+</p><p>In principle it means you've enabled yourself to start posting on your own site <em>instead of</em> silos (declaring some level of independence), while still staying in touch with your friends, and providing just nice/rich enough of a user experience on your site to feel good about sending people there rather than to a silo profile.
+</p><p>Level 2 is much more than just "I started a blog". That might have been good enough 10 years ago, but no longer. We've raised the bar on what it means to be an indie web site.
+</p><p>1.0 points total from the axes below:
+</p>
+<h4><span class="mw-headline" id="Level_2_identity">Level 2 identity</span></h4>
+<p>0.1 points
+</p>
+<ul><li><b><a href="/h-card" title="h-card">h-card</a> contact info and <a href="/icon" title="icon">icon</a> of yourself</b> on home page, suitable for others to add to their mobile device home screen.
+<ul><li><code>name</code>, <code>url</code>, and <code>photo</code> at a minimum. More info would be great. Ok to use a separate <a href="/about" title="about">about</a> page for more info as well.</li></ul></li></ul>
+<h4><span class="mw-headline" id="Level_2_posts">Level 2 posts</span></h4>
+<p>0.2 points
+</p>
+<ul><li>multiple post types (2+) required</li></ul>
+<p>0.1 for each post type you post to your own site from this list (up to 0.2 points total).<br />I.e. <strong>Implement any two or more of:</strong>
+</p>
+<ul><li><a href="/notes" class="mw-redirect" title="notes">notes</a> - like tweets or status updates. You really SHOULD do notes as one of your post types.</li>
+<li><a href="/articles" class="mw-redirect" title="articles">articles</a> - like a blog</li>
+<li><a href="/replies" class="mw-redirect" title="replies">replies</a></li>
+<li><a href="/bookmarks" title="bookmarks">bookmarks</a></li>
+<li><a href="/rsvp" title="rsvp">rsvp</a></li>
+<li><a href="/checkins" class="mw-redirect" title="checkins">checkins</a> (indicating presence at a <a href="/location" title="location">location</a>)</li>
+<li><a href="/photos" class="mw-redirect" title="photos">photos</a></li>
+<li><a href="/videos" class="mw-redirect" title="videos">videos</a></li>
+<li><a href="/audio" title="audio">audio</a></li>
+<li><a href="/event" title="event">event</a></li>
+<li><a href="/comics" title="comics">comics</a></li></ul>
+<p>This list is roughly ordered by the number of indieweb community members who have implemented each.
+</p><p>See <a href="/posts" title="posts">posts</a> for a longer list of possible post types, that we may incrementally add to this set.
+</p><p>In general, we're trying to require more than one person implement a post type "for real" (not just experiment or humor), before including it in the set above to qualify for IndieMark points.
+</p>
+<h4><span class="mw-headline" id="Level_2_syndication">Level 2 syndication</span></h4>
+<p>0.1 points
+</p>
+<ol><li>POSSE support multiple post types to applicable <a href="/silos" class="mw-redirect" title="silos">silos</a> that you list as "other profiles" as part of <b>authentication</b>, with either proper "u-url u-uid" links back to originals, and/or proper POSSE permashortlinks/permashortcitations back to originals, to enable <a href="/original-post-discovery" title="original-post-discovery">original-post-discovery</a>.
+<ul><li>0.1 more for each post type you <a href="/POSSE" title="POSSE">POSSE</a> to <a href="/silos" class="mw-redirect" title="silos">silos</a> and to which you only <a href="/POSSE" title="POSSE">POSSE</a>, that is never post directly to a silo (up to 0.2 points total)
+<ul><li>e.g. all your tweets (posts to <a href="/Twitter" title="Twitter">Twitter</a>) are <em>always</em> just POSSE copies of posts from your site, then you get 0.1 points for each post type that you POSSE from your site to tweets up to the max total POSSE points.</li></ul></li></ul></li></ol>
+<p>If you are POSSEing to all of the following sites <em>on which you have accounts</em>, then you automatically get the full 0.1 POSSE points. We don't want this measure to incentivize creating additional silo accounts that you weren't already participating with. This also means, that if you're not on ANY of the following <a href="/silos" class="mw-redirect" title="silos">silos</a>, then you are excused from the POSSE requirement, and are automatically granted the full points for <strong>silo independence</strong> (which in practice is much harder to achieve, see and add yourself to <a href="/silo-quits" title="silo-quits">silo-quits</a> accordingly).
+</p>
+<ul><li><a href="/Twitter" title="Twitter">Twitter</a> - for <a href="/notes" class="mw-redirect" title="notes">notes</a>. optionally for blog posts / <a href="/articles" class="mw-redirect" title="articles">articles</a> - e.g. post name, permalink</li>
+<li><a href="/Facebook" title="Facebook">Facebook</a> - indirectly through Twitter integration is fine</li>
+<li><a href="/Flickr" title="Flickr">Flickr</a> - if you have <a href="/photo" title="photo">photo</a> posts</li>
+<li><a href="/Foursquare" title="Foursquare">Foursquare</a> - if you have <a href="/checkin" title="checkin">checkin</a> posts</li>
+<li><a href="/Tumblr" title="Tumblr">Tumblr</a> - indirectly through Twitter integration is fine</li></ul>
+<h4><span class="mw-headline" id="Level_2_posting_UI">Level 2 posting UI</span></h4>
+<p>0.1 points for minimal POSSE posting UI
+</p>
+<ul><li>minimal UI to <b>cause POSSEing</b> to happen if you POSSE semi-automatically (i.e. automatically compose POSSE content, post to <a href="/silo" title="silo">silo</a> via their API, or at least bring up a form where all you have to is click one button/link to complete the POSSE).</li>
+<li>OR minimal POSSE configuration/meta-info for POSSEing automatically (per-post, or default for all posts)</li></ul>
+<h4><span class="mw-headline" id="Level_2_navigation">Level 2 navigation</span></h4>
+<p>0.1 points for 
+</p>
+<ul><li>simple linear previous/next <a href="/navigation" title="navigation">navigation</a> between posts</li></ul>
+<h4><span class="mw-headline" id="Level_2_search">Level 2 search</span></h4>
+<p>0.1 points for
+</p>
+<ul><li>Search UI and results for your content using an external search provider UI (e.g. <a href="/Google" title="Google">Google</a>) to provide time ordered results
+<ul><li>This is a very highly demanded end user feature of folks reading indieweb sites</li></ul></li></ul>
+<h4><span class="mw-headline" id="Level_2_aggregation">Level 2 aggregation</span></h4>
+<p>0.1 points for: aggregation / syndication in - showing/browsing others' content you link to on your site
+</p>
+<ul><li>autolinking of URLs, @-names</li>
+<li>simple embeds of external resources (images, link previews), e.g. in <a href="/notes" class="mw-redirect" title="notes">notes</a> posts</li></ul>
+<h4><span class="mw-headline" id="Level_2_interactivity">Level 2 interactivity</span></h4>
+<p>TBD
+</p>
+<h3><span class="mw-headline" id="Level_3">Level 3</span></h3>
+<p>IndieMark Level 3 has the general theme of <strong>posting and sending <a href="/replies" class="mw-redirect" title="replies">replies</a> from your own site</strong>, to both other sites, and to silos.
+</p><p>Level 3 builds on all of Level 2, and adds the ability to post replies on and from your site, and everything that requires for a good user experience.
+</p><p><b>Needs updating sync/merge with axis-specific Level 3 requirements.</b>
+</p><p><b>Very coarse overview here:</b>
+</p>
+<ul><li><b>posts:</b> publish <a href="/reply" title="reply">reply</a> posts and send <a href="/webmentions" class="mw-redirect" title="webmentions">webmentions</a> (even manually) to the originals, having them show up as comments across the indieweb.</li>
+<li><b>syndication:</b> <a href="/PuSH" class="mw-redirect" title="PuSH">PuSH</a> 0.4 support, and <a href="/POSSE" title="POSSE">POSSE</a> thread reply posts
+<ul><li><a href="/POSSE" title="POSSE">POSSE</a> copies of your replies to wherever you <a href="/POSSE" title="POSSE">POSSE</a> notes, and thread them with POSSE copies of originals with <a href="/u-syndication" title="u-syndication">u-syndication</a> links to any POSSE replies from your replies</li>
+<li><a href="/PubSubHubbub" class="mw-redirect" title="PubSubHubbub">PubSubHubbub</a> 0.4 support of your home page posts in HTML+h-entry</li>
+<li>PubSubHubbub (PuSH) support for all posts.</li>
+<li>Use your choice of feed format your PuSH hub supports:
+<ul><li>For now that's only <a href="/Atom" title="Atom">Atom</a></li>
+<li>but when hubs support JSON or HTML+h-entry, then that's fine too, without Atom support.</li></ul></li></ul></li>
+<li><b><a href="/search" title="search">search</a>:</b> show search results on your own site (results URLs with your domain), but wrapping an external search provider's results/UI on your own domain is ok</li></ul>
+<ul><li>bonus: display <a href="/reply-context" title="reply-context">reply-context</a></li></ul>
+<p>TBD: <a href="/rating" title="rating">rating</a> or <a href="/review" title="review">review</a> of posts.
+</p>
+<h3><span class="mw-headline" id="Level_4">Level 4</span></h3>
+<p>IndieMark Level 4 has the general theme of <strong>receiving and showing <a href="/comments" title="comments">comments</a></strong>: receiving replies from other indieweb sites and displaying indieweb comments on your posts.
+</p>
+<ul><li>plus multiple responses, including <b><a href="/rsvp" title="rsvp">rsvp</a> posts!</b></li></ul>
+<p><b>Needs updating sync/merge with axis-specific Level 4 requirements.</b>
+</p><p>Requirements:
+</p>
+<ul><li>posts: automatic <a href="/webmentions" class="mw-redirect" title="webmentions">webmentions</a>, publish multiple response types including <a href="/RSVP" class="mw-redirect" title="RSVP">RSVPs</a>
+<ul><li>automatically send webmentions for all links in all your posts</li>
+<li>publish <a href="/RSVP" class="mw-redirect" title="RSVP">RSVP</a> posts and send webmentions to indieweb events (as a required addition from Level 3)
+<ul><li>many indieweb community members have implemented <a href="/rsvps" title="rsvps">rsvps</a>, even before receiving and showing comments</li>
+<li>very community-useful/friendly to be able to rsvp to indieweb event posts</li>
+<li>helps start everyone weaning off use of <a href="/silos" class="mw-redirect" title="silos">silos</a> for events (e.g. <a href="/Facebook" title="Facebook">Facebook</a> events)</li></ul></li>
+<li>multiple response types, in addition to <a href="/reply" title="reply">reply</a> and <a href="/RSVP" class="mw-redirect" title="RSVP">RSVP</a> posts, at least one more of
+<ul><li><a href="/like" title="like">like</a> of <a href="/favorite" title="favorite">favorite</a></li>
+<li><a href="/repost" title="repost">repost</a></li></ul></li></ul></li>
+<li>handling responses: receive <a href="/webmentions" class="mw-redirect" title="webmentions">webmentions</a> and display <a href="/comments" title="comments">comments</a> on every post type you publish, e.g.:
+<ul><li>show <a href="/comments" title="comments">comments</a> on your <a href="/notes" class="mw-redirect" title="notes">notes</a>/<a href="/articles" class="mw-redirect" title="articles">articles</a></li></ul></li>
+<li>aggregation: display full content rich <a href="/reply-contexts" class="mw-redirect" title="reply-contexts">reply-contexts</a>, use that info to do <a href="/original-post-discovery" title="original-post-discovery">original-post-discovery</a>
+<ul><li>reply-contexts with author name, image, content summary (more than just URL of the thing you're replying to)</li>
+<li><a href="/reply" title="reply">reply</a> posts should <a href="/original-post-discovery" title="original-post-discovery">reply to original posts</a> instead of or at least in addition to (<a href="/multireply" class="mw-redirect" title="multireply">multireply</a>) replying to POSSE copies of those posts, while still threading POSSE reply copies. See: <a href="/comment#POSSE_a_comment" title="comment">How to POSSE a reply</a></li></ul></li>
+<li><a href="/search" title="search">search</a> on your own site with your own search backend - <em>better</em> than "just using Google", and just plain default MySQL full text search is insufficient, it fails for 3 letter or fewer words for example.</li></ul>
+<ul><li>bonus: display multiple other types of replies, e.g.:
+<ul><li><a href="/likes" title="likes">likes</a>/<a href="/favorites" class="mw-redirect" title="favorites">favorites</a> on all posts</li>
+<li><a href="/reposts" title="reposts">reposts</a> on all posts</li>
+<li><a href="/rsvps" title="rsvps">rsvps</a> on <a href="/event" title="event">event</a> posts</li></ul></li></ul>
+<ul><li>bonus: accept <a href="/backfeed" title="backfeed">backfeed</a> of comments, likes, etc. from <a href="/silos" class="mw-redirect" title="silos">silos</a>. A few ways to do this:
+<ul><li><a href="/Bridgy" title="Bridgy">Bridgy</a></li>
+<li>server-side code, e.g. <a href="/backfeed#WordPress_Plugins" title="backfeed">backfeed#WordPress_Plugins</a></li>
+<li>roll your own!</li></ul></li></ul>
+<p>TBD
+</p>
+<h3><span class="mw-headline" id="Level_5">Level 5</span></h3>
+<p>IndieMark Level 5 has the general theme of <strong>comments CRUD support</strong> - for replies from indieweb sites and updates to comments presentation on your posts in realtime.
+</p>
+<ul><li>plus: <b><a href="/event" title="event">event</a> posts that receive &amp; show rsvps!</b></li></ul>
+<p>(Perhaps make Level 5 about CRUD in general, e.g. beyond CRUD for comments, also <a href="/POSSE#CRUD" title="POSSE">POSSE#CRUD</a>, and <a href="/reply-context" title="reply-context">reply-context</a> CRUD - sending of webmentions down to replies so that replies may choose to update their displayed reply-context or potentially indicate that an original post was deleted).
+</p><p><b>Needs updating sync/merge with axis-specific Level 5 requirements.</b>
+</p><p><b>Very coarse overview here:</b>
+</p><p>Level 5 requires all the optional stuff of previous levels:
+</p>
+<ul><li>rich reply-context</li>
+<li>posting even more content types
+<ul><li><a href="/event" title="event">event</a> posts required - core use case of comments/receiving RSVPs and CRUD on those (e.g. updating an RSVP from maybe to yes or no).</li></ul></li>
+<li>receiving/displaying multiple types of comments/replies
+<ul><li>receive and display <a href="/rsvps" title="rsvps">rsvps</a> required</li></ul></li></ul>
+<p>And:
+</p>
+<ul><li>indieweb comment CRUD - both posting and receiving</li></ul>
+<p>Full comment CRUD is a major addition, since any comment CRUD at all is optional in previous levels. e.g.
+</p>
+<ul><li>support creating, updating, deleting your own reply posts and sending webmentions accordingly.</li>
+<li>support receiving webmentions of comments that have been created, updated, deleted, and update your syndicated copies of them accordingly.</li></ul>
+<p>TBD
+</p>
+<h3><span class="mw-headline" id="Level_6">Level 6</span></h3>
+<p><b>Needs updating sync/merge with axis-specific Level 6 requirements.</b>
+</p><p><b>Very coarse overview here:</b>
+</p><p>Possibly integrated personal <a href="/reader" title="reader">reader</a> support?
+</p><p>Can't figure out Level 6 without first figuring out Level 5. Etc. What Level 6 is we might not know yet, because we haven't figured out what matters to folks who <a href="/eat_what_they_cook" class="mw-redirect" title="eat what they cook">eat what they cook</a> above and beyond what's in the previous levels. So for now, let's just capture ideas for level 6 in the "idea capture" section.
+</p>
+<h2><span class="mw-headline" id="draft_axes">draft axes</span></h2>
+<p>IndieMark is a multidimensional rating/ranking system for evaluating the IndieWebness of a personal site.
+</p><p>Thus there are different axes that one can advance along. This section documents each axis (or feature area) and what incremental improvements can be made to each (including how each contributes to what level).
+</p>
+<ol><li>posts - #ownyourdata - posting your own content (<a href="/posts" title="posts">posts</a>) with permalinks on your own site. <b>Post *some* kind of content</b> on your own site that you own and control
+<ul><li><a href="/h-entry" title="h-entry">h-entry</a> posts of some sort (at least 2 posts, with p-name, e-content, dt-published, u-url)</li></ul></li></ol>
+<h3><span class="mw-headline" id="identity">identity</span></h3>
+<div style="text-indent:2em;font-style:italic">Main article: <a href="/Getting_Started" title="Getting Started">Getting Started</a></div>
+<ol><li>ownyouridentity</li></ol>
+<ul><li>Level 1: <b>Personal domain</b> (subdomain foo.example.com ok) that you use as your primary identity on the web.</li>
+<li>Level 2: <b><a href="/h-card" title="h-card">h-card</a> contact info</b> and <a href="/icon" title="icon">icon</a> on home page, suitable for others to add to their mobile device home screen.</li></ul>
+<p>Possible futures:
+</p>
+<ul><li><a href="/h-card" title="h-card">h-card</a> contact info styled/scripted into <b>people-focused <a href="/communication" title="communication">communication</a> links / buttons</b></li>
+<li><b>expanded <a href="/h-card" title="h-card">h-card</a> contact info for authenticated users</b> - support consuming <a href="/IndieAuth" title="IndieAuth">IndieAuth</a> (letting people sign-into your site with their site, and <a href="/sign-in-use-cases#show_personal_info" title="sign-in-use-cases">show more contact info</a> accordingly (e.g. some for all signed in users, more for friends, etc.) . E.g. see IndieWeb Examples:
+<ul><li><a class="external free" href="https://ben.thatmustbe.me/">https://ben.thatmustbe.me/</a> - supports <a href="/IndieAuth" title="IndieAuth">IndieAuth</a> sign-in and showing more "Elsewhere" contact methods to a white-list of domains as of 2014-08-13.</li></ul></li>
+<li>simple <a href="/h-resume" title="h-resume">h-resume</a> abbreviated bio/summary</li></ul>
+<h3><span class="mw-headline" id="authentication">authentication</span></h3>
+<div style="text-indent:2em;font-style:italic">Main article: <a href="/IndieAuth" title="IndieAuth">IndieAuth</a></div>
+<ol><li>useyourownidentity</li></ol>
+<ul><li>Level 1: <b>Setup <a href="/IndieAuth" title="IndieAuth">IndieAuth</a></b> with 1+ <a href="/RelMeAuth" title="RelMeAuth">RelMeAuth</a> providers
+<ul><li><a href="/rel-me" title="rel-me">rel-me</a> links to your "other profiles" on the web (e.g. at <a href="/silos" class="mw-redirect" title="silos">silos</a>) and have them link back.</li>
+<li>sign-in to <a class="external free" href="https://indiewebcamp.com/">https://indiewebcamp.com/</a>, and create your user page, linking to your personal domain.</li></ul></li>
+<li>Level 2: none defined so far.</li></ul>
+<p>Possible futures:
+</p>
+<ul><li>native OAuth and/or 2-factor auth support on your own domain without depending on any outside providers.</li></ul>
+<h3><span class="mw-headline" id="posts">posts</span></h3>
+<div style="text-indent:2em;font-style:italic">Main article: <a href="/posts" title="posts">posts</a></div>
+<p>posting different types of content
+</p>
+<ul><li>Level 1: post 2+ posts of any kind with permalink pages</li>
+<li>Level 2: post 2+ <em>kinds</em> of posts with permalink pages</li>
+<li>Level 3: <a href="/reply" title="reply">reply</a> posts, post 6+ kinds of posts</li>
+<li>Level 4: <a href="/RSVP" class="mw-redirect" title="RSVP">RSVP</a> posts, post 3+ kinds of responses</li></ul>
+<ul><li><a href="/articles" class="mw-redirect" title="articles">articles</a> - like a blog</li>
+<li><a href="/notes" class="mw-redirect" title="notes">notes</a></li>
+<li><a href="/replies" class="mw-redirect" title="replies">replies</a></li>
+<li><a href="/rsvp" title="rsvp">rsvp</a></li>
+<li><a href="/checkins" class="mw-redirect" title="checkins">checkins</a></li>
+<li><a href="/photos" class="mw-redirect" title="photos">photos</a></li>
+<li><a href="/event" title="event">event</a></li></ul>
+<p>See <a href="/posts" title="posts">posts</a> for a longer list of possible post types, that we may incrementally add to this set.
+</p><p>In general, we're trying to require more than one person implement a post type "for real" (not just experiment or humor), before including it in the set above to qualify for IndieMark points. E.g. <a href="/comics" title="comics">comics</a> does not qualify yet, since there's only one site/implementation supporting it.
+</p><p>Possible futures:
+</p>
+<ul><li>Level 4: post all or 9 (whichever is fewer) kinds of posts. Or n (at least 1+?) more kinds of posts for each level.</li></ul>
+<h3><span class="mw-headline" id="syndication">syndication</span></h3>
+<p>syndicating your own content to other sites (e.g. <a href="/silos" class="mw-redirect" title="silos">silos</a>) per <a href="/POSSE" title="POSSE">POSSE</a>
+</p>
+<ul><li>Level 1: no requirement</li>
+<li>Level 2:
+<ol><li>POSSE all your supported post types to applicable <a href="/silos" class="mw-redirect" title="silos">silos</a> that you list as "other profiles" with either proper "u-url u-uid" links back to originals, and/or proper POSSE permashortlinks/permashortcitations back to originals, to enable <a href="/original-post-discovery" title="original-post-discovery">original-post-discovery</a>.
+<ul><li>0.1 more for each post type you <a href="/POSSE" title="POSSE">POSSE</a> to other sites. (max 0.2)</li>
+<li>0.1 more for each post type you only <a href="/POSSE" title="POSSE">POSSE</a> and never post directly to a silo. (max 0.2)</li>
+<li>e.g. all your tweets (posts to <a href="/Twitter" title="Twitter">Twitter</a>) are <em>always</em> just POSSE copies of posts from your site, then you get 0.1 points for each post type that you POSSE from your site to tweets up to the max total POSSE points.</li>
+<li>total max POSSE points: 0.4</li></ul></li></ol></li></ul>
+<p>If you are POSSEing to all of the following sites <em>on which you have accounts</em>, then you automatically get the full 0.4 POSSE points. We don't want this measure to incentivize creating additional silo accounts that you weren't already participating with. This also means, that if you're not on ANY of the following <a href="/silos" class="mw-redirect" title="silos">silos</a>, then you are excused from the POSSE requirement, and are automatically granted the 0.3 points for <strong>silo independence</strong> (which in practice is much harder to achieve, see and add yourself to <a href="/silo-quits" title="silo-quits">silo-quits</a> accordingly).
+</p>
+<ul><li><a href="/Facebook" title="Facebook">Facebook</a></li>
+<li><a href="/Flickr" title="Flickr">Flickr</a></li>
+<li><a href="/Foursquare" title="Foursquare">Foursquare</a></li>
+<li><a href="/Tumblr" title="Tumblr">Tumblr</a></li>
+<li><a href="/Twitter" title="Twitter">Twitter</a></li></ul>
+<p><br />
+Optional (because there is no current indieweb nor indieweb-to-indieweb use case for it)
+</p>
+<ul><li>Level 3:
+<ol><li>support <a href="/PuSH" class="mw-redirect" title="PuSH">PuSH</a> 0.4 for your home page posts</li>
+<li><a href="/POSSE" title="POSSE">POSSE</a> thread reply posts to wherever you <a href="/POSSE" title="POSSE">POSSE</a> notes, e.g. <a href="/Twitter#POSSE_Replies_to_Tweets" title="Twitter">POSSE Replies to Tweets</a></li></ol></li></ul>
+<p><br />
+Possible additional granularity if needed
+</p>
+<ul><li>for each type of post</li>
+<li>to more than one destination for each type of content</li></ul>
+<p>Under consideration:
+</p>
+<ul><li>Require POSSE permashortlinks/permashortcitations for all silos your site POSSEs to.</li></ul>
+<p>Belongs in a different axis:
+</p>
+<ul><li><a href="/backfeed" title="backfeed">Backfeed</a>! Whether with <a href="/Bridgy" title="Bridgy">Bridgy</a>, <a href="/backfeed#WordPress_Plugins" title="backfeed">backfeed#WordPress_Plugins</a>, or anything else.</li></ul>
+<h3><span class="mw-headline" id="posting_UI">posting UI</span></h3>
+<div style="text-indent:2em;font-style:italic">Main article: <a href="/creating" class="mw-redirect" title="creating">creating</a></div>
+<p>posting (post editing) UI
+</p>
+<ul><li>Level 1: no explicit requirement</li>
+<li>Level 2: minimal UI to <b>cause POSSEing</b> to happen, otherwise can be as hacked up / command line / raw editing as is expedient</li>
+<li>Level 3: UI for <b>adding reply info</b> (in-reply-to URL), possibly other replies (RSVPs), and POSSEing accordingly (as well as saving in-reply-to info alongside posts on your site).</li>
+<li>Level 4: simple web UI for <b>creating posts</b> of different types</li>
+<li>Level 5: <b><a href="/micropub" class="mw-redirect" title="micropub">micropub</a> support</b> for creating posts of different types, and use of others' micropub clients to post</li></ul>
+<p>Possible futures: (don't know of anyone doing this)
+</p>
+<ul><li>Level 6: undo/edit/save/update/delete UI for posts (that then follow proper <a href="/CRUD" title="CRUD">CRUD</a> protocols)</li>
+<li>Level 7: UI for editing comments/external content that comes in</li></ul>
+<h3><span class="mw-headline" id="navigation">navigation</span></h3>
+<div style="text-indent:2em;font-style:italic">Main article: <a href="/navigation" title="navigation">navigation</a></div>
+<p>Provide a <a href="/navigation" title="navigation">navigation</a> UI to make your content browsable:
+</p>
+<ul><li>Level 1: no requirements.</li>
+<li>Level 2: simple linear previous/next navigation across all posts by time order</li>
+<li>Level 3: time period based archive pages</li>
+<li>Level 4: <a href="/tag" class="mw-redirect" title="tag">tag</a> based archive pages (paginated by time or amount) of your own content</li></ul>
+<p>Possible futures: (brainstorms, don't know of anyone doing these)
+</p>
+<ul><li>geo (e.g. city/state/country specific) based archive pages</li>
+<li>mentions of a person (person tags)</li></ul>
+<h3><span class="mw-headline" id="search">search</span></h3>
+<div style="text-indent:2em;font-style:italic">Main article: <a href="/search" title="search">search</a></div>
+<p>Search UI and results for your content
+</p>
+<ul><li>Level 1: searchability (<a href="/curlability" title="curlability">curlability</a> and don't screw up with robots.txt or JS, be able to use site:yoursite.com in Google directly).</li>
+<li>Level 2: Use an external search provider UI (e.g. <a href="/Google" title="Google">Google</a>) to provide time ordered results, but on their domain.
+<ul><li>Very highly demanded end user feature of folks reading indieweb sites.</li></ul></li>
+<li>Level 3: Wrap an external search provider's results/UI on your own domain so the search results URLs are at least on your own site.</li>
+<li>Level 4: Search on your own site with your own search backend - level 4 requirement because this is actually quite challenging to build, and build well (i.e. <em>better</em> than "just using Google", e.g. just MySQL full text search is insufficient, which fails for 3 letter or fewer words for example)</li>
+<li>Level 5: Thoughts: some form of fast / client-side search (e.g. with <a class="external free" href="http://lunrjs.com/">http://lunrjs.com/</a> ) and/or advanced search operations (with AND OR - exclusions, Creative Commons license search etc.).
+<ul><li>awaiting real world implementation examples that go beyond Level 4, perhaps using ideas from <a href="/search" title="search">search</a> page.</li></ul></li></ul>
+<h3><span class="mw-headline" id="aggregation">aggregation</span></h3>
+<p>aggregation / syndication in - showing/browsing others' content on your site
+</p>
+<ul><li>Level 1: no requirement</li>
+<li>Level 2: simple embeds of external resources (images, link previews) in <a href="/notes" class="mw-redirect" title="notes">notes</a> posts</li>
+<li>Level 3: show <a href="/reply-context" title="reply-context">reply-context</a> - at least URL / username/source domain</li>
+<li>Level 4: show rich <a href="/reply-context" title="reply-context">reply-context</a> - perhaps the simplest structured piece of information to bring in - <a href="/h-card" title="h-card">h-card</a> name/avatar of original post author, summary or ellipsing of original <a href="/h-entry" title="h-entry">h-entry</a> post content</li>
+<li>Level 5:
+<ol><li>receive <a href="/webmentions" class="mw-redirect" title="webmentions">webmentions</a> (optionally <a href="/pingbacks" class="mw-redirect" title="pingbacks">pingbacks</a>)</li>
+<li>show others' <a href="/comments" title="comments">comments</a> (per <a href="/comments-presentation" class="mw-redirect" title="comments-presentation">comments-presentation</a>), as good as any normal/local comment</li></ol></li></ul>
+<p>Possible futures: (no one has implemented this yet, but people are actively working on it)
+</p>
+<ul><li>Level 6: reverse-syndication of silo-hosted comments/tags/favorites on your POSSE copies</li>
+<li>Level 6: integrated personal aggregator of everyone you follow, built into your site so you can read/reply right there inline (similar to the logged-in Twitter home page, FB news feed, Tumblr dashboard)</li></ul>
+<h3><span class="mw-headline" id="interactivity">interactivity</span></h3>
+<p>(Formerly named <span id="web_actions">web actions</span>, this was renamed to be about providing UI for others to directly interact with your posts)
+</p><p>While viewing your posts, people should be able to directly interact with your posts, whether that’s selecting and copying text or links, clicking <a href="/reaction" class="mw-redirect" title="reaction">reaction</a> buttons, or a <a href="/comment" title="comment">comment</a> box, etc. <a href="/web_actions" class="mw-redirect" title="web actions">web actions</a> may be useful for implementing some levels of this axis.
+</p>
+<ul><li>Level 0: Selecting text, copy text, select permalink, copy permalink</li>
+<li>Level 1: TBD</li></ul>
+<p>Possible levels (based on some implementation)
+</p>
+<ul><li>Level: Links to POSSE copies. View on other (POSSE) site <a href="/u-syndication" title="u-syndication">u-syndication</a> links on posts (if there are any <a href="/silos" class="mw-redirect" title="silos">silos</a> you actually use and thus POSSE out to). None if you don’t POSSE.
+<ul><li>Many implementations, e.g.</li>
+<li><span class="h-card" style="white-space:nowrap"><img src="https&#58;//tantek.com/logo.jpg" class="" style="height:1.1em;vertical-align:-.1em" alt="" /> <a href="/User:Tantek.com" title="User:Tantek.com">Tantek Çelik</a></span></li></ul></li>
+<li>Level: Hard-coded actions for your most used silo (e.g. Tweet actions) if any, with  &lt;indie-action&gt; tag wrappers for all actions in your UI - so others can override them with their browsers to <a href="/reply" title="reply">reply</a>/<a href="/favorite" title="favorite">favorite</a>/<a href="/repost" title="repost">repost</a> to your posts on their own site.
+<ul><li>Some implementations, e.g.</li>
+<li><span class="h-card" style="white-space:nowrap"><img src="https&#58;//tantek.com/logo.jpg" class="" style="height:1.1em;vertical-align:-.1em" alt="" /> <a href="/User:Tantek.com" title="User:Tantek.com">Tantek Çelik</a></span></li></ul></li>
+<li>Level: cross-site action button overrides - setup browser plugin so when you click <a href="/reply" title="reply">reply</a>/<a href="/favorite" title="favorite">favorite</a>/<a href="/repost" title="repost">repost</a> buttons on other site (e.g. <a href="/silo" title="silo">silo</a>) posts, it takes you to your own posting UI instead, with the in-reply-to URL and context pre-filled in.
+<ul><li>Past implementations, unknown if any current</li>
+<li>...</li></ul></li></ul>
+<p>Possible futures: (no one has implemented this yet, but people are actively working on it)
+</p>
+<ul><li>Level: cross-site inline textarea/form overrides - setup browser plugin so that it appears you can simply use the inline textarea/form UI on other site (e.g. <a href="/silo" title="silo">silo</a>) posts / home page and it posts to your site transparently without you having to leave the page you're on.</li></ul>
+<h3><span class="mw-headline" id="security">security</span></h3>
+<div style="text-indent:2em;font-style:italic">Main article: <a href="/https" class="mw-redirect" title="https">https</a></div>
+<p>See the <a href="/https" class="mw-redirect" title="https">https</a> for details of each level:
+</p>
+<ol><li>Don't do the wrong thing</li>
+<li>Secure admin of your site</li>
+<li>Serve https optionally on all your pages</li>
+<li>Lock icon or better when serving https</li>
+<li>Redirect everything to https</li>
+<li>Correct ciphers, support forward secrecy</li></ol>
+<p>TBI: These need to be integrated into the above overall Level descriptions and summaries.
+</p>
+<h3><span class="mw-headline" id="handling_responses">handling responses</span></h3>
+<ol><li>accept webmentions, and at least store them somewhere (e.g. on a webmention proxy)</li>
+<li>accept webmentions and display comments</li>
+<li>display multiple types of <a href="/responses" title="responses">responses</a> (<a href="/likes" title="likes">likes</a>, <a href="/reposts" title="reposts">reposts</a>) to your posts</li>
+<li>display <a href="/RSVP" class="mw-redirect" title="RSVP">RSVPs</a> to your event posts</li></ol>
+<h2><span class="mw-headline" id="idea_capture">idea capture</span></h2>
+<p>I'm using this wiki page capturing the <a class="external text" href="http://indiewebcamp.com/irc/2012-07-06#t1341607091">general idea of IndieMark</a> first and then will flesh this out into one or more straw proposals for discussion. - <a href="/User:Tantek.com" title="User:Tantek.com">Tantek</a>
+</p>
+<h3><span class="mw-headline" id="ideas">ideas</span></h3>
+<ul><li>areas and then levels in each area</li></ul>
+<ul><li>based on Diso 2.0 thinking which contains multiple dimensions of independence / self-reliance / robustness: <a class="external free" href="https://tantek.com/2010/034/t2/diso-2-personal-domains-shortener-hatom-push-relmeauth">https://tantek.com/2010/034/t2/diso-2-personal-domains-shortener-hatom-push-relmeauth</a></li></ul>
+<h3><span class="mw-headline" id="design_principles">design principles</span></h3>
+<h4><span class="mw-headline" id="start_at_level_1">start at level 1</span></h4>
+<p>From the <a href="/2013/UK/Indiemark" title="2013/UK/Indiemark">2013/UK/Indiemark</a> session, it became clear that it made the most sense to:
+</p>
+<ul><li><b>start with Level 1</b> as the first level to achieve:
+<ul><li>it makes more sense to people to reach for Level 1 than reach for Level 0</li>
+<li>0 / Level 0 / makes sense as a starting point. You start at zero and build up from there.</li>
+<li>as you build indiewebness and acquire fractional points, you go from 0 up towards 1:
+<ul><li>e.g. "My website has achieved IndieMark Level 0.3 - 0.3 points toward Level 1"</li></ul></li>
+<li>TO BE UPDATED (references to level elsewhere in this page still start at 0 when they should start at 1)</li></ul></li></ul>
+<h3><span class="mw-headline" id="levels">levels</span></h3>
+<ul><li>0?
+<ul><li>implementing a feature/service via a 3rd party (content hosting, identity, search) (e.g. Tumblr, MyOpenID, Google)
+<ul><li>or should these count at all?</li></ul></li>
+<li>OR wrapping a white label service / 3rd party (content hosting, identity, search) feature in your own domain (e.g. Squarespace, Blogger, Tumblr domain hosting; <a href="/OpenID" title="OpenID">OpenID</a> delegation, GCS)
+<ul><li>should we avoid recommending this or distinguishing this at all? This is a bit of a diversion from truly being "indieweb", so perhaps we should avoid making it seem much (if any) better than direct 3rd party dependence.</li></ul></li>
+<li>OR measured by *any way* of making a simple set of features work with your own domain.</li></ul></li>
+<li>1: (should be 1 perhaps) implementing a feature/service via a web host that doesn't have a content TOS and code/library (mediatemple, phpMyOpenID, search library)</li>
+<li>2: multiple post types, POSSE</li>
+<li>3: implementing the additional levels or parts of a level for each feature.
+<ul><li>replies</li></ul></li>
+<li>4
+<ul><li>comments receiving &amp; display</li></ul></li>
+<li>5 - ideas welcome, just brainstorming for now, need to filter according to actual itches later.
+<ul><li>private content? e.g.:
+<ul><li>private posts?</li>
+<li>private replies?</li>
+<li>private comment display?</li></ul></li></ul></li></ul>
+<h3><span class="mw-headline" id="motivations">motivations</span></h3>
+<ul><li>IndieMark helps us as a community measure our progress both individually and collectively.</li>
+<li>one of the reasons I want to do this as a "mark" with areas/levels is that IMHO "SWAT0" was too hard and unsustainable - that is - I believe some implementations claimed to pass SWAT0, but that perhaps only Statusnet is still around?
+<ul><li>it also prioritized the wrong things (IMHO) from an *indieweb* perspective (though it made sense from the FSW framing at the time perspective).</li>
+<li>e.g. <a href="/Cliqset" title="Cliqset">Cliqset</a> is gone - and I think it was used to pass SWAT0</li>
+<li>I don't even know if we have 3 implementations that can be used to pass SWAT0 any more.</li></ul></li></ul>
+<h3><span class="mw-headline" id="challenges">challenges</span></h3>
+<ul><li>one of the challenges of any "*-mark" system is to figure out abstract levels that one technology can satisfy today and another could replace tomorrow. any ranking/mark system that depends on a specific technology tends to either look silly after a while, or unfortunately cause people to waste time implementing obsolete.</li></ul>
+<h3><span class="mw-headline" id="projects">projects</span></h3>
+<p>Tip: <b>Calculating</b>: As a hackday project at <a href="/2016/NYC" title="2016/NYC">2016/NYC</a> <a class="external text" href="https://daily.jorb.in/">Aaron Jorbin</a> created an <a class="external text" href="https://aaronjorbin.github.io/indiemark-score/">Indiemark Score calculator</a> with the <a class="external text" href="https://github.com/aaronjorbin/indiemark-score">code available on Github</a>.
+</p>
+<h2><span class="mw-headline" id="FAQ">FAQ</span></h2>
+<h3><span class="mw-headline" id="Not_just_a_rank">Not just a rank</span></h3>
+<ul><li>Q: Why not just a "rank"?
+<ul><li>A: Rank implies a serial order. Because there are several areas being measured, and you can be ahead or behind in any particular area, I thought "mark" was better, similar to the "<a class="external text" href="http://rng.io/">ringmark</a>" effort at W3C.</li>
+<li>A: "Rank" is one-dimensional. IndieMark captures multiple dimensions (axes) along multiple features.</li></ul></li></ul>
+<h3><span class="mw-headline" id="What_is_omitted">What is omitted</span></h3>
+<p>What is deliberately omitted from IndieMark?
+</p><p>If something does not provide immediate benefit to the person doing it, then it's not part of IndieMark.
+</p><p>That's not the only requirement, but it is a key requirement.
+</p><p>Everything in every level of IndieMark has its own wiki page with a "Why" section explaining the immediate benefits.
+</p><p>If you find something which doesn't clearly explain why, go ahead and add a "Why" section to the respective wiki page and a question about "How does this immediately benefit the site user?"
+</p>
+<h2><span class="mw-headline" id="To_Do">To Do</span></h2>
+<p>Some note to self to dos to improve both this page and the underyling features/technology it depends on. - <a href="/User:Tantek.com" title="User:Tantek.com">Tantek</a>
+</p><p>Goals:
+</p>
+<ul><li>IndieMark level descriptions should be short enough to be a simple list of one liners (perhaps with links)
+<ul><li>short enough to not require a separate summary.</li>
+<li>longer descriptions should be provided on the page for each axis/feature, along with "How To" and "Why".</li>
+<li>ok to develop the thinking behind each level here inline</li>
+<li>as each level gains rough consensus, the thinking should be moved to separate pages</li></ul></li>
+<li>Users of indiemark should be able to click through to the page detailing an axis and easily find both
+<ul><li>"what" detailed description of a feature</li>
+<li>"how-to" - steps to implement the feature</li>
+<li>"why" (is a why for a feature different from a why for why it is part of indiemark or at a particular level?)</li>
+<li>"examples" of this I can go see to consider what personal variation I want on my own site. and then add my site to the list of example when I've implemented it.</li></ul></li></ul>
+<p>Tasks:
+</p>
+<ul><li>Improve Level 1 in particular:
+<ul><li>simplify Level 1 description to a simple list of one liners (linked to expanded description, how, why)</li></ul></li></ul>
+<ul><li>Incorporate recommended/agreed improvements from sessions:
+<ul><li><a href="/2016/IndieMark" title="2016/IndieMark">2016 IndieWeb Summit: IndieMark</a></li>
+<li><a href="/2013/UK/Indiemark" title="2013/UK/Indiemark">2013 IndieWebCamp UK: IndieMark</a></li></ul></li></ul>
+<ul><li>Expand each level + axis combination on its own wiki page:
+<ul><li>make sure there is a wiki page for each axis for each Level (2+)
+<ul><li>each page should document the <b>how-to</b> and <b>why</b> for each level of each axis in more detail, as well as indieweb examples (all in one list, each example indicating to what "level" it has achieved and any other interesting aspects of its implementation).</li></ul></li></ul></li></ul>
+<h2><span class="mw-headline" id="Brainstorming">Brainstorming</span></h2>
+<h3><span class="mw-headline" id="Visualization_like_RingMark">Visualization like RingMark</span></h3>
+<p><span style="float:right;max-width:25%"><a class="external text" href="https://visual.ly/community/Infographics/technology/idc-next-level-mobile-web"><img src="https&#58;//i.visual.ly/images/idc-next-level-of-mobile-web_502917e15cacb_w1500.jpg" style="max-width:100%" alt="Very tall cartoon infographic showing the flow of HTML5 work and browsers into Ringmark tests, results, and relationship with different levels of mobile web apps" /></a></span>
+<a class="external text" href="http://rng.io/about/"><img style="float:left;max-width:25%;margin-right:2em" src="http&#58;//rng.io/site/img/ring.png" alt="An example Ringmark result with concentric circles partially shaded in green for the tests that pass." /></a>
+Make a visualization like <a class="external text" href="http://rng.io/">RingMark</a>, see:
+</p>
+<ul><li><a class="external free" href="http://rng.io/about/">http://rng.io/about/</a></li>
+<li><a class="external text" href="https://web.archive.org/web/20120606211709/https://developers.facebook.com/html5/blog/post/2012/04/03/ringmark-is-now-open-source/">archived 2020-04-03 blog post about open sourcing it</a>)</li>
+<li><a class="external free" href="https://developers.facebook.com/blog/post/2012/05/01/w3c-and-ringmark-updates/">https://developers.facebook.com/blog/post/2012/05/01/w3c-and-ringmark-updates/</a></li>
+<li><a class="external free" href="https://developers.facebook.com/blog/post/2012/06/14/ringmark-performance-tests-and-coremob-meeting/">https://developers.facebook.com/blog/post/2012/06/14/ringmark-performance-tests-and-coremob-meeting/</a></li>
+<li>wiki: <a class="external free" href="https://www.w3.org/community/coremob/wiki/Tests/Acceptance_Criteria">https://www.w3.org/community/coremob/wiki/Tests/Acceptance_Criteria</a></li>
+<li><a class="external free" href="https://github.com/facebookarchive/rng.io">https://github.com/facebookarchive/rng.io</a></li>
+<li>Example of minutes: <a class="external free" href="https://www.w3.org/2012/06/25-coremob-minutes.html">https://www.w3.org/2012/06/25-coremob-minutes.html</a></li>
+<li>Warning: coremob.org site looks like it was lost and has been squatted</li>
+<li><a class="external free" href="https://twitter.com/rngmrk">https://twitter.com/rngmrk</a></li></ul>
+<p>See this for a visualization of the context around RingMark:
+</p>
+<ul><li><a class="external free" href="https://visual.ly/community/Infographics/technology/idc-next-level-mobile-web">https://visual.ly/community/Infographics/technology/idc-next-level-mobile-web</a></li></ul>
+<h3><span class="mw-headline" id="Visualization_like_pie_slices">Visualization like pie slices</span></h3>
+<p>More examples:
+</p><p><a href="/File:indiemark-concentric-circles-v2.svg" class="image" title="IndieMark as Concentric Circles"><img alt="IndieMark as Concentric Circles" src="/images/thumb/2/24/indiemark-concentric-circles-v2.svg/500px-indiemark-concentric-circles-v2.svg.png" decoding="async" width="500" height="453" srcset="/images/thumb/2/24/indiemark-concentric-circles-v2.svg/750px-indiemark-concentric-circles-v2.svg.png 1.5x, /images/thumb/2/24/indiemark-concentric-circles-v2.svg/1000px-indiemark-concentric-circles-v2.svg.png 2x" /></a>
+</p><p><img src="https&#58;//daringtolivefully.com/wp-content/uploads/2017/02/all-about64.png" style="max-width:50%" alt="The 20-Point Personality Chart showing a equal spaced concentric circles divided up into 8 pie slices, each with different colors filling out a different amount of the slice, from the center outwards, aligned on different concentric circles" />
+</p>
+<h3><span class="mw-headline" id="Badges">Badges</span></h3>
+<ul><li>Consider some red/yellow/green badges for IndieMark levels/features displayed by IndieWebify.me similar to <a class="external free" href="https://coveralls.io/">https://coveralls.io/</a> (which is apparently motivating to see, want to get a higher&#160;% etc.)</li></ul>
+<h2><span class="mw-headline" id="Sessions">Sessions</span></h2>
+<p>IndieWebCamp sessions on IndieMark
+</p>
+<ul><li><a href="/2016/IndieMark" title="2016/IndieMark">2016 IndieWeb Summit: IndieMark</a></li>
+<li>...&#160;?</li>
+<li><a href="/2013/UK/Indiemark" title="2013/UK/Indiemark">2013 IndieWebCamp UK: IndieMark</a></li>
+<li>...</li></ul>
+<h2><span class="mw-headline" id="Criticism">Criticism</span></h2>
+<p>There are aspects of IndieMark which have been counterproductive, and it's worth capturing as constructive criticism toward improving and potentially redesigning it.
+</p>
+<ul><li><span class="h-card" style="white-space:nowrap"><img src="https&#58;//vil.lv/avatar.png" class="" style="height:1.1em;vertical-align:-.1em" alt="" /> <a href="/wiki/index.php?title=User:Vil.lv&amp;action=edit&amp;redlink=1" class="new" title="User:Vil.lv (page does not exist)">Bill Doyle</a></span> The level-oriented structure causes it to feel like you cannot progress if you don't have a need/desire for certain features. In my case this meant I stopped referring to it at all until I realized this was not its intent.</li>
+<li><span class="h-card" style="white-space:nowrap"><img src="https&#58;//vil.lv/avatar.png" class="" style="height:1.1em;vertical-align:-.1em" alt="" /> <a href="/wiki/index.php?title=User:Vil.lv&amp;action=edit&amp;redlink=1" class="new" title="User:Vil.lv (page does not exist)">Bill Doyle</a></span> While many Indieweb technologies do depend on others, it is possible and even encouraged to implement only the ones you want. A goal-oriented guide might better reflect this more freeform approach, instead of making Indieweb appear as a monolith (a common argument in criticism).</li>
+<li><a class="external free" href="https://kongaloosh.com/e/2017/6/22/hello-world">https://kongaloosh.com/e/2017/6/22/hello-world</a> describes problems with an extrinsic to do list like indiemark</li>
+<li><span class="h-card" style="white-space:nowrap"><img src="https&#58;//petermolnar.net/favicon.jpg" class="" style="height:1.1em;vertical-align:-.1em" alt="" /> <a href="/User:Petermolnar.eu" class="mw-redirect" title="User:Petermolnar.eu">Peter Molnar</a></span> indiemark levels are not built in the proper order to each other. For example: to get a `h-entry` running properly, one needs a `h-card` either site-wide or inside the entry markup, meaning `h-card` should come before moving into other territories. Adding a site-wide `h-card` in a system like WordPress takes about 5 minutes by adding HTML to a widget, whereas `h-entry` requires serious fiddling with templating. Quote from <span class="h-card" style="white-space:nowrap"><img src="https&#58;//martymcgui.re/img/logo.jpg" class="" style="height:1.1em;vertical-align:-.1em" alt="" /> <a href="/User:Martymcgui.re" title="User:Martymcgui.re">Marty McGuire</a></span>: <a class="external text" href="https://chat.indieweb.org/meta/2020-11-19/1605828724837300">agree it's a more gentle introduction to microformats2 etc! and seeing that a testing tool can see it is rewarding.</a></li>
+<li><span class="h-card" style="white-space:nowrap"><img src="https&#58;//www.boffosocko.com/logo.jpg" class="" style="height:1.1em;vertical-align:-.1em" alt="" /> <a href="/User:Boffosocko.com" title="User:Boffosocko.com">Chris Aldrich</a></span> and <span class="h-card"><img src="http&#58;//www.kevinmarks.com/km.jpg" class="" style="height:1.1em;vertical-align:-.1em" alt="" /> <a href="/User:Kevinmarks.com" title="User:Kevinmarks.com">Kevin Marks</a></span> proposed the "shopping basket and ingredients from the grocery store" analogy to overcome the problem of understanding building blocks <a class="external autonumber" href="https://chat.indieweb.org/meta/2020-11-19/1605830102850500">[1]</a> instead of levels and points system</li></ul>
+<h2><span class="mw-headline" id="See_Also">See Also</span></h2>
+<ul><li><a href="/Getting_Started" title="Getting Started">Getting Started</a></li>
+<li><a href="/friendly" title="friendly">friendly</a></li>
+<li><a href="/WordPress/IndieMark" title="WordPress/IndieMark">WordPress/IndieMark</a></li>
+<li>to-do: rewrite at least the intro to direct folks first to <a href="/getting_started" class="mw-redirect" title="getting started">getting started</a>, and then using the <a href="/principles" title="principles">principles</a>. then rewrite the levels to be based on the principles.</li>
+<li>to-do: consider re-orienting as a set of areas, e.g. existing axes, rather than levels, where you can improve your site if you wish, and in each of those axes, provide different options that people here have implemented, perhaps loosely ordered by steps people took. move levels to lower section</li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20230905180219
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.070 seconds
+Real time usage: 0.153 seconds
+Preprocessor visited node count: 562/1000000
+Post‐expand include size: 3575/2097152 bytes
+Template argument size: 761/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 11/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   71.807      1 -total
+ 21.18%   15.205      2 Template:vilhalmer
+ 17.77%   12.758      2 Template:t
+  9.55%    6.861      8 Template:main
+  9.24%    6.634      6 Template:sparkline
+  8.71%    6.255      2 Template:warning
+  8.23%    5.907      1 Template:petermolnar
+  8.20%    5.891      1 Template:chrisaldrich
+  8.17%    5.866      1 Template:emojicon
+  8.11%    5.823      1 Template:schmarty
+-->
+
+<!-- Saved in parser cache with key indieweb_wiki:pcache:idhash:246-0!canonical and timestamp 20230905180219 and revision id 87226. Serialized with JSON.
+ -->
+</div>
+<div class="printfooter">Retrieved from "<a dir="ltr" href="https://indieweb.org/wiki/index.php?title=IndieMark&amp;oldid=87226">https://indieweb.org/wiki/index.php?title=IndieMark&amp;oldid=87226</a>"</div></div>
+		<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Navigation menu</h2>
+	<div id="mw-head">
+		
+<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-user-menu-legacy vector-menu" aria-labelledby="p-personal-label" role="navigation" 
+	 >
+	<label id="p-personal-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Personal tools</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="pt-login" class="mw-list-item"><a href="https://sso.indieweb.org/login?url=https%3A%2F%2Findieweb.org%2FIndieMark" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o"><span>Log in</span></a></li></ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			
+<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu vector-menu-tabs" aria-labelledby="p-namespaces-label" role="navigation" 
+	 >
+	<label id="p-namespaces-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Namespaces</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="ca-nstab-main" class="selected mw-list-item"><a href="/IndieMark" title="View the content page [c]" accesskey="c"><span>Page</span></a></li><li id="ca-talk" class="new mw-list-item"><a href="/wiki/index.php?title=Talk:IndieMark&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li></ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown-noicon vector-menu vector-menu-dropdown" aria-labelledby="p-variants-label" role="navigation" 
+	 >
+	<input type="checkbox"
+		id="p-variants-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-variants"
+		class="vector-menu-checkbox" aria-labelledby="p-variants-label" />
+	<label id="p-variants-label" aria-label="Change language variant" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">English</span>
+			<span class="vector-menu-checkbox-expanded">expanded</span>
+			<span class="vector-menu-checkbox-collapsed">collapsed</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			
+<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu vector-menu-tabs" aria-labelledby="p-views-label" role="navigation" 
+	 >
+	<label id="p-views-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Views</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="ca-view" class="selected mw-list-item"><a href="/IndieMark"><span>Read</span></a></li><li id="ca-viewsource" class="mw-list-item"><a href="/wiki/index.php?title=IndieMark&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e"><span>View source</span></a></li><li id="ca-history" class="mw-list-item"><a href="/wiki/index.php?title=IndieMark&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li></ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown-noicon vector-menu vector-menu-dropdown" aria-labelledby="p-cactions-label" role="navigation"  title="More options"
+	 >
+	<input type="checkbox"
+		id="p-cactions-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-cactions"
+		class="vector-menu-checkbox" aria-labelledby="p-cactions-label" />
+	<label id="p-cactions-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">More</span>
+			<span class="vector-menu-checkbox-expanded">expanded</span>
+			<span class="vector-menu-checkbox-collapsed">collapsed</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<div>
+			<h3 >
+				<label for="searchInput">Search</label>
+			</h3>
+		<form action="/wiki/index.php" id="searchform"
+			class="vector-search-box-form">
+			<div id="simpleSearch"
+				class="vector-search-box-inner"
+				 data-search-loc="header-navigation">
+				<input class="vector-search-box-input"
+					 type="search" name="search" placeholder="Search IndieWeb" aria-label="Search IndieWeb" autocapitalize="none" title="Search IndieWeb [f]" accesskey="f" id="searchInput"
+				/>
+				<input type="hidden" name="title" value="Special:Search"/>
+				<input id="mw-searchButton"
+					 class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Search the pages for this text" value="Search" />
+				<input id="searchButton"
+					 class="searchButton" type="submit" name="go" title="Go to a page with this exact name if it exists" value="Go" />
+			</div>
+		</form>
+	</div>
+</div>
+
+		</div>
+	</div>
+	
+
+<div id="mw-panel">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="/Main_Page"
+			title="Visit the main page"></a>
+	</div>
+	
+<nav id="p-Recent_&amp;_Upcoming" class="mw-portlet mw-portlet-Recent_Upcoming vector-menu vector-menu-portal portal" aria-labelledby="p-Recent_&amp;_Upcoming-label" role="navigation" 
+	 >
+	<label id="p-Recent_&amp;_Upcoming-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Recent &amp; Upcoming</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-🎁-2022-Gift-Calendar!" class="mw-list-item"><a href="/IndieWeb_Gift_Calendar"><span>🎁 2022 Gift Calendar!</span></a></li><li id="n-✨-2023-Commitments!" class="mw-list-item"><a href="/2023-01-01-commitments"><span>✨ 2023 Commitments!</span></a></li><li id="n-📰News-Podcast-Video" class="mw-list-item"><a href="/Posts_about_the_IndieWeb"><span>📰News Podcast Video</span></a></li><li id="n-📅-Events" class="mw-list-item"><a href="https://events.indieweb.org/"><span>📅 Events</span></a></li><li id="n-👥--Next-HWCs:-2023-09-06" class="mw-list-item"><a href="https://events.indieweb.org/tag/hwc"><span>👥  Next HWCs: 2023-09-06</span></a></li><li id="n-Camps-&amp;-Pop-ups:" class="mw-list-item"><a href="/IndieWebCamps"><span>Camps &amp; Pop-ups:</span></a></li><li id="n-🎪-Summit-2023" class="mw-list-item"><a href="/2023"><span>🎪 Summit 2023</span></a></li><li id="n-❤️-Sponsor" class="mw-list-item"><a href="/how-to-sponsor"><span>❤️ Sponsor</span></a></li></ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-Resources" class="mw-portlet mw-portlet-Resources vector-menu vector-menu-portal portal" aria-labelledby="p-Resources-label" role="navigation" 
+	 >
+	<label id="p-Resources-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Resources</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-🌈-Code-of-conduct" class="mw-list-item"><a href="/code-of-conduct"><span>🌈 Code of conduct</span></a></li><li id="n-💬-Discuss" class="mw-list-item"><a href="/discuss"><span>💬 Discuss</span></a></li><li id="n-📜-Chat-log" class="mw-list-item"><a href="https://chat.indieweb.org/"><span>📜 Chat log</span></a></li><li id="n-🎉-Get-started" class="mw-list-item"><a href="/Getting_Started"><span>🎉 Get started</span></a></li><li id="n-ℹ️-FAQ" class="mw-list-item"><a href="/FAQ"><span>ℹ️ FAQ</span></a></li><li id="n-🧰-Standards" class="mw-list-item"><a href="https://spec.indieweb.org/"><span>🧰 Standards</span></a></li><li id="n-✳️-Recent-changes" class="mw-list-item"><a href="/Special:RecentChanges"><span>✳️ Recent changes</span></a></li><li id="n-🎲-Random-page" class="mw-list-item"><a href="/Special:Random"><span>🎲 Random page</span></a></li><li id="n-©-Wiki-content-is-CC0" class="mw-list-item"><a href="/IndieWebCamp:Copyrights"><span>© Wiki content is CC0</span></a></li></ul>
+		
+	</div>
+</nav>
+
+<nav id="p-Developers" class="mw-portlet mw-portlet-Developers vector-menu vector-menu-portal portal" aria-labelledby="p-Developers-label" role="navigation" 
+	 >
+	<label id="p-Developers-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Developers</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-🔩-building-blocks" class="mw-list-item"><a href="/Category:building-blocks"><span>🔩 building blocks</span></a></li><li id="n-📑-projects" class="mw-list-item"><a href="/Projects"><span>📑 projects</span></a></li><li id="n-🗽-principles" class="mw-list-item"><a href="/principles"><span>🗽 principles</span></a></li></ul>
+		
+	</div>
+</nav>
+
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu vector-menu-portal portal" aria-labelledby="p-tb-label" role="navigation" 
+	 >
+	<label id="p-tb-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Tools</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="t-whatlinkshere" class="mw-list-item"><a href="/Special:WhatLinksHere/IndieMark" title="A list of all wiki pages that link here [j]" accesskey="j"><span>What links here</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/Special:RecentChangesLinked/IndieMark" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k"><span>Related changes</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q"><span>Special pages</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Printable version of this page [p]" accesskey="p"><span>Printable version</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/wiki/index.php?title=IndieMark&amp;oldid=87226" title="Permanent link to this revision of the page"><span>Permanent link</span></a></li><li id="t-info" class="mw-list-item"><a href="/wiki/index.php?title=IndieMark&amp;action=info" title="More information about this page"><span>Page information</span></a></li></ul>
+		
+	</div>
+</nav>
+
+	
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" role="contentinfo" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> This page was last edited on 28 March 2023, at 13:17.</li>
+	<li id="footer-info-copyright">Content is available under <a href="/IndieWebCamp:Copyrights" class="mw-redirect" title="IndieWebCamp:Copyrights">a CC0 public domain dedication</a> unless otherwise noted.</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="/IndieWeb:Privacy_policy" class="mw-redirect" title="IndieWeb:Privacy policy">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="/IndieWeb:About" class="mw-redirect" title="IndieWeb:About">About IndieWeb</a></li>
+	<li id="footer-places-disclaimer"><a href="/IndieWeb:General_disclaimer" title="IndieWeb:General disclaimer">Disclaimers</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="http://creativecommons.org/publicdomain/zero/1.0/"><img src="https://i.creativecommons.org/p/zero/1.0/88x31.png" alt="a CC0 public domain dedication" width="88" height="31" loading="lazy"/></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img src="/wiki/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/wiki/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /wiki/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" loading="lazy"/></a></li>
+</ul>
+
+
+
+
+
+
+<style type="text/css">
+.sponsor-logo-block {
+	margin-left: -12px;
+	margin-top: 50px;
+	margin-right: -12px;
+}
+@media screen and (min-width: 982px) {
+	.sponsor-logo-block {
+		margin-left: -1.25em;
+		margin-right: -1.25em;
+	}
+}
+@media screen and (max-width: 720px) {
+	.sponsor-logo-block {
+		margin-top: 0;
+	}  
+}
+.sponsor-logo-block .inner {
+	background-color: #d9d9d9; 
+	padding: 30px;
+}
+
+.page-Main_Page .sponsor-logo-block {
+	background-color: #d9d9d9; 
+	padding-left: 30px;
+}
+.page-Main_Page .sponsor-logo-block .inner {
+	border: 0;
+}
+
+div#footer {
+	background-image: none;
+}
+
+.sponsor-logo-block .logo {
+	float: left;
+	margin: 10px;
+	height: 70px;
+	zoom: 0.5;
+	-moz-transform: scale(0.5);
+}
+.page-Main_Page .sponsor-logo-block .logo {
+	zoom: 1;
+	-moz-transform: scale(1);
+}
+.sponsor-logo-block .logo div {
+	padding: 6px;
+	background-color: #d9d9d9;
+	border-radius: 0;
+}
+.sponsor-logo-block .thanks {
+	color: #777;
+	font-size: 16px;
+	font-weight: bold;
+}
+.sponsor-logo-block .thanks.small {
+	font-size: 14px;
+	text-align: right;
+}
+.sponsor-logo-block .thanks.small a {
+	color: #777;
+}
+</style>
+<div class="sponsor-logo-block"><div class="inner">
+	<div class="thanks">Thank you to our sponsors of IndieWeb events!</div>
+	<div ><div><a href="http://mozilla.org/"><img src="/sponsor-logos/mozilla.png" alt="Mozilla"></a></div></div>
+	<div ><div><a href="https://developer.okta.com/"><img src="/sponsor-logos/okta.png" alt="Okta"></a></div></div>
+	<div ><div><a href="http://sipgate.de/"><img src="/sponsor-logos/sipgate.png" alt="sipgate"></a></div></div>
+	<div ><div><a href="https://www.brid.gy/"><img src="/sponsor-logos/bridgy.png" alt="Bridgy"></a></div></div>
+	<div ><div><a href="https://beyondtellerrand.com"><img src="/sponsor-logos/beyondtellerrand.png" alt="Beyond Tellerrand"></a></div></div>
+	<div ><div><a href="http://tollwerk.de/"><img src="/sponsor-logos/tollwerk.png" alt="Tollwerk"></a></div></div>
+	<div ><div><a href="https://www.opensuse.org/"><img src="/sponsor-logos/opensuse.png" alt="OpenSuse"></a></div></div>
+	<div ><div><a href="http://idno.co/"><img src="/sponsor-logos/idno.png" alt="Idno"></a></div></div>
+	<div ><div><a href="http://google.com"><img src="/sponsor-logos/google.png" alt="Google"></a></div></div>
+	<div ><div><a href="http://clearleft.com/"><img src="/sponsor-logos/clearleft.png" alt="ClearLeft"></a></div></div>
+	<div ><div><a href="https://cgi.com/"><img src="/sponsor-logos/cgi.png" alt="CGI"></a></div></div>
+
+	<div style="clear: both;"></div>
+	<div class="thanks small"><a href="https://opencollective.com/indieweb">become a supporter!</a></div>
+</div></div>
+
+
+</footer>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.070","walltime":"0.153","ppvisitednodes":{"value":562,"limit":1000000},"postexpandincludesize":{"value":3575,"limit":2097152},"templateargumentsize":{"value":761,"limit":2097152},"expansiondepth":{"value":4,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":11,"limit":5000000},"timingprofile":["100.00%   71.807      1 -total"," 21.18%   15.205      2 Template:vilhalmer"," 17.77%   12.758      2 Template:t","  9.55%    6.861      8 Template:main","  9.24%    6.634      6 Template:sparkline","  8.71%    6.255      2 Template:warning","  8.23%    5.907      1 Template:petermolnar","  8.20%    5.891      1 Template:chrisaldrich","  8.17%    5.866      1 Template:emojicon","  8.11%    5.823      1 Template:schmarty"]},"cachereport":{"timestamp":"20230905180219","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":510});});</script>
+</body>
+</html>

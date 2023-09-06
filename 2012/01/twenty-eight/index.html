@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) & !(IE 8)]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Twenty-Eight | Matt Mullenweg</title>
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="pingback" href="https://ma.tt/blog/xmlrpc.php">
+	<!--[if lt IE 9]>
+	<script src="https://ma.tt/blog-content/themes/twentythirteen/js/html5.js?ver=3.7.0"></script>
+	<![endif]-->
+	<meta name='robots' content='max-image-preview:large' />
+<link rel='dns-prefetch' href='//s.gravatar.com' />
+<link rel='dns-prefetch' href='//stats.wp.com' />
+<link rel='dns-prefetch' href='//cdn.parsely.com' />
+<link rel='dns-prefetch' href='//secure.gravatar.com' />
+<link rel='dns-prefetch' href='//i0.wp.com' />
+<link rel='dns-prefetch' href='//v0.wordpress.com' />
+<link rel='dns-prefetch' href='//jetpack.wordpress.com' />
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//public-api.wordpress.com' />
+<link rel='dns-prefetch' href='//0.gravatar.com' />
+<link rel='dns-prefetch' href='//1.gravatar.com' />
+<link rel='dns-prefetch' href='//2.gravatar.com' />
+<link rel="alternate" type="application/rss+xml" title="Matt Mullenweg &raquo; Feed" href="https://ma.tt/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Matt Mullenweg &raquo; Comments Feed" href="https://ma.tt/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Matt Mullenweg &raquo; Twenty-Eight Comments Feed" href="https://ma.tt/2012/01/twenty-eight/feed/" />
+<script>
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/ma.tt\/blog\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.4-alpha-56520"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!n(e,"\ud83e\udef1\ud83c\udffb\u200d\ud83e\udef2\ud83c\udfff","\ud83e\udef1\ud83c\udffb\u200b\ud83e\udef2\ud83c\udfff")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+</script>
+<style>
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css' href='https://ma.tt/blog-content/plugins/gutenberg/build/block-library/style.css?ver=16.5.1' media='all' />
+<style id='wp-block-library-inline-css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<link rel='stylesheet' id='wp-block-library-theme-css' href='https://ma.tt/blog-content/plugins/gutenberg/build/block-library/theme.css?ver=16.5.1' media='all' />
+<style id='wp-parsely-recommendations-style-inline-css'>
+.parsely-recommendations-list-title{font-size:1.2em}.parsely-recommendations-list{list-style:none;padding:unset}.parsely-recommendations-cardbody{overflow:hidden;padding:.8em;text-overflow:ellipsis;white-space:nowrap}.parsely-recommendations-cardmedia{padding:.8em .8em 0}
+
+</style>
+<link rel='stylesheet' id='jetpack-videopress-video-block-view-css' href='https://ma.tt/blog-content/plugins/jetpack-dev/jetpack_vendor/automattic/jetpack-videopress/build/block-editor/blocks/video/view.css?minify=false&#038;ver=34ae973733627b74a14e' media='all' />
+<link rel='stylesheet' id='mediaelement-css' href='https://ma.tt/blog/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17' media='all' />
+<link rel='stylesheet' id='wp-mediaelement-css' href='https://ma.tt/blog/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=6.4-alpha-56520' media='all' />
+<style id='classic-theme-styles-inline-css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #fff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--dark-gray: #141412;--wp--preset--color--red: #bc360a;--wp--preset--color--medium-orange: #db572f;--wp--preset--color--light-orange: #ea9629;--wp--preset--color--yellow: #fbca3c;--wp--preset--color--dark-brown: #220e10;--wp--preset--color--medium-brown: #722d19;--wp--preset--color--light-brown: #eadaa6;--wp--preset--color--beige: #e8e5ce;--wp--preset--color--off-white: #f7f5e7;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--gradient--autumn-brown: linear-gradient(135deg, rgba(226,45,15,1) 0%, rgba(158,25,13,1) 100%);--wp--preset--gradient--sunset-yellow: linear-gradient(135deg, rgba(233,139,41,1) 0%, rgba(238,179,95,1) 100%);--wp--preset--gradient--light-sky: linear-gradient(135deg,rgba(228,228,228,1.0) 0%,rgba(208,225,252,1.0) 100%);--wp--preset--gradient--dark-sky: linear-gradient(135deg,rgba(0,0,0,1.0) 0%,rgba(56,61,69,1.0) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+</style>
+<link rel='stylesheet' id='twentythirteen-fonts-css' href='https://ma.tt/blog-content/themes/twentythirteen/fonts/source-sans-pro-plus-bitter.css?ver=20230328' media='all' />
+<link rel='stylesheet' id='genericons-css' href='https://ma.tt/blog-content/plugins/jetpack-dev/_inc/genericons/genericons/genericons.css?ver=3.1' media='all' />
+<link rel='stylesheet' id='twentythirteen-style-css' href='https://ma.tt/blog-content/themes/ma.tt/style.css?ver=1688053572' media='all' />
+<link rel='stylesheet' id='twentythirteen-block-style-css' href='https://ma.tt/blog-content/themes/twentythirteen/css/blocks.css?ver=20230621' media='all' />
+<link rel='stylesheet' id='social-logos-css' href='https://ma.tt/blog-content/plugins/jetpack-dev/_inc/social-logos/social-logos.min.css?ver=12.6-a.3' media='all' />
+<link rel='stylesheet' id='jetpack_css-css' href='https://ma.tt/blog-content/plugins/jetpack-dev/css/jetpack.css?ver=1693845897' media='all' />
+<script src='https://ma.tt/blog/wp-includes/js/jquery/jquery.min.js?ver=3.7.1' id='jquery-core-js'></script>
+<script src='https://ma.tt/blog/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1' id='jquery-migrate-js'></script>
+<script id='jetpack_related-posts-js-extra'>
+var related_posts_js_options = {"post_heading":"h4"};
+</script>
+<script src='https://ma.tt/blog-content/plugins/jetpack-dev/_inc/build/related-posts/related-posts.min.js?ver=20211209' id='jetpack_related-posts-js'></script>
+<script src='https://ma.tt/blog/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?ver=3.1.2' id='wp-polyfill-inert-js'></script>
+<script src='https://ma.tt/blog/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.11' id='regenerator-runtime-js'></script>
+<script src='https://ma.tt/blog-content/plugins/gutenberg/build/vendors/inert-polyfill.min.js?ver=6.4-alpha-56520' id='wp-inert-polyfill-js'></script>
+<script src='https://ma.tt/blog/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script src='https://ma.tt/blog-content/plugins/gutenberg/build/hooks/index.min.js?ver=3aee234ea7807d8d70bc' id='wp-hooks-js'></script>
+<script src='https://ma.tt/blog-content/plugins/gutenberg/build/i18n/index.min.js?ver=5baa98e4345eccc97e24' id='wp-i18n-js'></script>
+<script id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script src='https://ma.tt/blog-content/plugins/jetpack-dev/jetpack_vendor/automattic/jetpack-assets/build/i18n-loader.js?minify=true&#038;ver=ee939953aa2115e2ca59' id='wp-jp-i18n-loader-js'></script>
+<script id="wp-jp-i18n-loader-js-after">
+wp.jpI18nLoader.state = {"baseUrl":"https://ma.tt/blog-content/languages/","locale":"en_US","domainMap":{"jetpack-admin-ui":"plugins/jetpack","jetpack-assets":"plugins/jetpack","jetpack-boost-core":"plugins/jetpack","jetpack-boost-speed-score":"plugins/jetpack","jetpack-config":"plugins/jetpack-boost","jetpack-connection":"plugins/jetpack","jetpack-image-cdn":"plugins/jetpack","jetpack-jitm":"plugins/jetpack","jetpack-lazy-images":"plugins/jetpack","jetpack-licensing":"plugins/jetpack","jetpack-my-jetpack":"plugins/jetpack","jetpack-plugin-deactivation":"plugins/jetpack-boost","jetpack-plugins-installer":"plugins/jetpack","jetpack-wp-js-data-sync":"plugins/jetpack-boost","jetpack-action-bar":"plugins/jetpack","jetpack-backup-pkg":"plugins/jetpack","jetpack-blaze":"plugins/jetpack","jetpack-compat":"plugins/jetpack","jetpack-forms":"plugins/jetpack","jetpack-google-fonts-provider":"plugins/jetpack","jetpack-idc":"plugins/jetpack","jetpack-import":"plugins/jetpack","jetpack-ip":"plugins/jetpack","jetpack-password-checker":"plugins/jetpack","jetpack-post-list":"plugins/jetpack","jetpack-publicize-pkg":"plugins/jetpack","jetpack-search-pkg":"plugins/jetpack","jetpack-stats":"plugins/jetpack","jetpack-stats-admin":"plugins/jetpack","jetpack-sync":"plugins/jetpack","jetpack-videopress-pkg":"plugins/jetpack","jetpack-waf":"plugins/jetpack","jetpack-wordads":"plugins/jetpack"},"domainPaths":{"jetpack-admin-ui":"jetpack_vendor/automattic/jetpack-admin-ui/","jetpack-assets":"jetpack_vendor/automattic/jetpack-assets/","jetpack-boost-core":"jetpack_vendor/automattic/jetpack-boost-core/","jetpack-boost-speed-score":"jetpack_vendor/automattic/jetpack-boost-speed-score/","jetpack-config":"jetpack_vendor/automattic/jetpack-config/","jetpack-connection":"jetpack_vendor/automattic/jetpack-connection/","jetpack-image-cdn":"jetpack_vendor/automattic/jetpack-image-cdn/","jetpack-jitm":"jetpack_vendor/automattic/jetpack-jitm/","jetpack-lazy-images":"jetpack_vendor/automattic/jetpack-lazy-images/","jetpack-licensing":"jetpack_vendor/automattic/jetpack-licensing/","jetpack-my-jetpack":"jetpack_vendor/automattic/jetpack-my-jetpack/","jetpack-plugin-deactivation":"jetpack_vendor/automattic/jetpack-plugin-deactivation/","jetpack-plugins-installer":"jetpack_vendor/automattic/jetpack-plugins-installer/","jetpack-wp-js-data-sync":"jetpack_vendor/automattic/jetpack-wp-js-data-sync/","jetpack-action-bar":"jetpack_vendor/automattic/jetpack-action-bar/","jetpack-backup-pkg":"jetpack_vendor/automattic/jetpack-backup/","jetpack-blaze":"jetpack_vendor/automattic/jetpack-blaze/","jetpack-compat":"jetpack_vendor/automattic/jetpack-compat/","jetpack-forms":"jetpack_vendor/automattic/jetpack-forms/","jetpack-google-fonts-provider":"jetpack_vendor/automattic/jetpack-google-fonts-provider/","jetpack-idc":"jetpack_vendor/automattic/jetpack-identity-crisis/","jetpack-import":"jetpack_vendor/automattic/jetpack-import/","jetpack-ip":"jetpack_vendor/automattic/jetpack-ip/","jetpack-password-checker":"jetpack_vendor/automattic/jetpack-password-checker/","jetpack-post-list":"jetpack_vendor/automattic/jetpack-post-list/","jetpack-publicize-pkg":"jetpack_vendor/automattic/jetpack-publicize/","jetpack-search-pkg":"jetpack_vendor/automattic/jetpack-search/","jetpack-stats":"jetpack_vendor/automattic/jetpack-stats/","jetpack-stats-admin":"jetpack_vendor/automattic/jetpack-stats-admin/","jetpack-sync":"jetpack_vendor/automattic/jetpack-sync/","jetpack-videopress-pkg":"jetpack_vendor/automattic/jetpack-videopress/","jetpack-waf":"jetpack_vendor/automattic/jetpack-waf/","jetpack-wordads":"jetpack_vendor/automattic/jetpack-wordads/"}};
+</script>
+<link rel="https://api.w.org/" href="https://ma.tt/wp-json/" /><link rel="alternate" type="application/json" href="https://ma.tt/wp-json/wp/v2/posts/39771" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://ma.tt/blog/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.4-alpha-56520" />
+<link rel="canonical" href="https://ma.tt/2012/01/twenty-eight/" />
+<link rel='shortlink' href='https://wp.me/p4oB3-alt' />
+<link rel="alternate" type="application/json+oembed" href="https://ma.tt/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fma.tt%2F2012%2F01%2Ftwenty-eight%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://ma.tt/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fma.tt%2F2012%2F01%2Ftwenty-eight%2F&#038;format=xml" />
+
+<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+<!-- Generated by Jetpack Social -->
+<meta property="og:title" content="Twenty-Eight">
+<meta property="og:url" content="https://ma.tt/2012/01/twenty-eight/">
+<meta property="og:description" content="This is the tenth year I’ve blogged my birthday: 19, 20, 21, 22 (this one is funny), 23, 24, 25, and 26, 27. Wow&#8230; I don&#8217;t think I&#8217;ve ever done anything for ten years in a row bef…">
+<meta name="twitter:site" content="@photomatt">
+<meta name="twitter:text:title" content="Twenty-Eight">
+<!-- / Jetpack Social -->
+<script type='text/javascript' src='https://ma.tt/blog-content/plugins/matts-community-tags/suggest.js'></script>
+<link rel="stylesheet" href="https://ma.tt/blog-content/plugins/matts-community-tags/suggest.css" />
+<script type="text/javascript">
+<!--
+var $j = jQuery.noConflict();
+
+$j( document ).ready( function(){
+	$j( '#tagthis' ).html('<p>Recognize someone in this photo? Tag them.</p><form action="/index.php?addtag=go" method="post" id="tagthisform"><p>Separate multiple people with commas, example: Elvis Presley, Britney Spears.</p><p><input type="text" id="mct_people" name="mct_people" size="30" /> <input type="hidden" value="39771" name="post_id" id="post_id" /><input type="button" value="Tag People &raquo;" id="tagthisbutt" /></p></form>');
+	$j( '#tagthisbutt' ).click( mct_process_form );
+	$j( '#mct_people' ).suggest( 'https://ma.tt/index.php?suggesttag=go', { onSelect: function() { mct_process_form(); } } );
+
+} );
+
+function mct_process_form() {
+	var mct_people = $j( '#mct_people' ).value;
+	var mct_people = $j( '#post_id' ).value;
+	$j.post( 'https://ma.tt/index.php?addtag=go', $j("#tagthis :input").serializeArray(), function(data){ $j('#tagthis').html('<p>Thank you for your submission, it is in moderation and should appear shortly.'); } );
+}
+-->
+</script>
+<!-- Generated by Social Image Generator - https://socialimagegenerator.com -->
+<meta property="og:image" content="https://ma.tt/wp-json/social-image-generator/v1/image/39771">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://ma.tt/wp-json/social-image-generator/v1/image/39771">
+<meta name="twitter:card" content="summary_large_image">
+<!-- / Social Image Generator -->
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://ma.tt/blog/wp-includes/wlwmanifest.xml" /> 
+	<style>img#wpstats{display:none}</style>
+		<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"NewsArticle","headline":"Twenty-Eight","url":"http:\/\/ma.tt\/2012\/01\/twenty-eight\/","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/ma.tt\/2012\/01\/twenty-eight\/"},"thumbnailUrl":"","image":{"@type":"ImageObject","url":""},"articleSection":"Personal","author":[{"@type":"Person","name":"Matt"}],"creator":["Matt"],"publisher":{"@type":"Organization","name":"Matt Mullenweg","logo":"http:\/\/ma.tt\/files\/2021\/05\/Photo-on-2020-10-28-at-2.05-PM-1.jpg"},"keywords":[],"dateCreated":"2012-01-12T04:12:33Z","datePublished":"2012-01-12T04:12:33Z","dateModified":"2022-02-12T08:59:24Z"}</script><link rel="icon" type="image/x-icon" href="https://ma.tt/blog-content/themes/ma.tt/i/favicon-spring.ico" />
+<meta name="p:domain_verify" content="bc52ac484003bc590de056c705de47fc"/>
+	<style type="text/css" id="twentythirteen-header-css">
+		.site-header {
+		background: url(https://ma.tt/blog-content/themes/twentythirteen/images/headers/circle.png) no-repeat scroll top;
+		background-size: 1600px auto;
+	}
+	@media (max-width: 767px) {
+		.site-header {
+			background-size: 768px auto;
+		}
+	}
+	@media (max-width: 359px) {
+		.site-header {
+			background-size: 360px auto;
+		}
+	}
+			</style>
+				<style type="text/css">
+				/* If html does not have either class, do not show lazy loaded images. */
+				html:not( .jetpack-lazy-images-js-enabled ):not( .js ) .jetpack-lazy-image {
+					display: none;
+				}
+			</style>
+			<script>
+				document.documentElement.classList.add(
+					'jetpack-lazy-images-js-enabled'
+				);
+			</script>
+		
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Twenty-Eight" />
+<meta property="og:url" content="https://ma.tt/2012/01/twenty-eight/" />
+<meta property="og:description" content="This is the tenth year I’ve blogged my birthday: 19, 20, 21, 22 (this one is funny), 23, 24, 25, and 26, 27. Wow&#8230; I don&#8217;t think I&#8217;ve ever done anything for ten years in a row befo…" />
+<meta property="article:published_time" content="2012-01-12T04:12:33+00:00" />
+<meta property="article:modified_time" content="2022-02-12T08:59:24+00:00" />
+<meta property="og:site_name" content="Matt Mullenweg" />
+<meta property="og:image:alt" content="" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:site" content="@photomatt" />
+<meta name="twitter:text:title" content="Twenty-Eight" />
+
+<!-- End Jetpack Open Graph Tags -->
+<style type="text/css" id="wp-custom-css">/* GH76 - TR - 2023/08/16 */
+.jetpack-instant-search__overlay button {
+    background: #fff;
+}</style></head>
+
+<body class="post-template-default single single-post postid-39771 single-format-standard wp-embed-responsive jps-theme-ma.tt spring">
+		<div id="page" class="hfeed site">
+		<header id="masthead" class="site-header">
+			<a class="home-link" href="https://ma.tt/" title="Matt Mullenweg" rel="home">
+				<h1 class="site-title">Matt Mullenweg</h1>
+				<h2 class="site-description">Unlucky in Cards</h2>
+			</a>
+
+		</header><!-- #masthead -->
+
+		<div id="main" class="site-main">
+
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">
+
+			
+				
+<article id="post-39771" class="post-39771 post type-post status-publish format-standard hentry category-personal">
+	<header class="entry-header">
+		
+				<h1 class="entry-title">Twenty-Eight</h1>
+		
+		<div class="entry-meta">
+			<span class="date"><a href="https://ma.tt/2012/01/twenty-eight/" title="Permalink to Twenty-Eight" rel="bookmark"><time class="entry-date" datetime="2012-01-11T20:12:33-08:00">January 11, 2012</time></a></span><span class="categories-links"><a href="https://ma.tt/category/personal/" rel="category tag">Personal</a></span><span class="author vcard"><a class="url fn n" href="https://ma.tt/author/saxmatt/" title="View all posts by Matt" rel="author">Matt</a></span>					</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		
+<p>This is the tenth year I’ve blogged my birthday: <a href="https://ma.tt/2003/01/bday/">19</a>, <a href="https://ma.tt/2004/01/so-im-20/">20</a>, <a href="https://ma.tt/2005/01/hot-barely-legal-matt/">21</a>, <a href="https://ma.tt/2006/01/matt-22/">22</a> (this one is funny), <a href="https://ma.tt/2007/01/twenty-three/">23</a>, <a href="https://ma.tt/2008/01/twenty-four/">24</a>, <a href="https://ma.tt/2009/01/twenty-five/">25</a>, and <a href="https://ma.tt/2010/01/twenty-six/">26</a>, <a href="https://ma.tt/2011/01/twenty-seven/">27</a>. Wow&#8230; I don&#8217;t think I&#8217;ve ever done anything for ten years in a row before.</p>
+
+
+
+<p>The public awareness of blogging comes and goes every two years, but for me it&#8217;s been a rock of intrinsic goodness that I keep coming back to. I think that&#8217;s why I love working on the platforms around it so much.</p>
+
+
+
+<p>I was on the road a lot this year, covering about 190k miles over 245 days. (An average velocity of 21.6 mph.) I spent longer stretches in the same place, and often to places I had been before, which was nice for starting to appreciate the character of a given place. (52 cities and 12 countries.)</p>
+
+
+
+<p>It was also one of my most productive years yet. The big resolutions from last year &#8212; launching <a href="http://jetpack.me/">Jetpack</a>, <a href="http://jazz-quotes.com/">Jazz Quotes</a>, three major <a href="http://wordpress.org/">WordPress</a> versions &#8212; all were completed, and as the team at <a href="http://automattic.com/">Automattic</a> grew and matured I was able to focus my time a lot more, even finding time to start coding again and switch (back) to Mac after 8 years on Windows.</p>
+
+
+
+<p>In my twenty-eighth year I want to focus more on friends, family, and loved ones, something I&#8217;m running late for by doing this blog post, so will wrap this up now and see you all more later in 2012. 🙂</p>
+
+
+
+<p>Reminder: In lieu of gifts, <a href="http://mycharitywater.org/matt28">I&#8217;m trying to raise $28,000 to help bring clean water to Africa</a>. It&#8217;s ambitious but I think we can do it. Please chip in!</p>
+
+
+
+<p>All birthday posts: <a href="https://ma.tt/2003/01/bday/">19</a>, <a href="https://ma.tt/2004/01/so-im-20/">20</a>, <a href="https://ma.tt/2005/01/hot-barely-legal-matt/">21</a>, <a href="https://ma.tt/2006/01/matt-22/">22</a>, <a href="https://ma.tt/2007/01/twenty-three/">23</a>, <a href="https://ma.tt/2008/01/twenty-four/">24</a>, <a href="https://ma.tt/2009/01/twenty-five/">25</a>, <a href="https://ma.tt/2010/01/twenty-six/">26</a>, <a href="https://ma.tt/2011/01/twenty-seven/">27</a>, <a href="https://ma.tt/2012/01/twenty-eight/">28</a>, <a href="https://ma.tt/2013/01/twenty-nine/">29</a>, <a href="https://ma.tt/2014/01/matt-3-0/">30</a>, <a href="https://ma.tt/2015/01/thirty-one/">31</a>, <a href="https://ma.tt/2016/01/thirty-two/">32</a>, <a href="https://ma.tt/2017/01/thirty-three/">33</a>, <a href="https://ma.tt/2018/01/thirty-four/">34</a>, <a href="https://ma.tt/2019/01/thirty-five/">35</a>, <a href="https://ma.tt/2020/01/thirty-six/">36</a>, <a href="https://ma.tt/2021/01/thirty-seven/">37</a>, <a href="https://ma.tt/2022/01/thirty-eight/">38</a>, <a href="https://ma.tt/2023/01/thirty-nine/">39</a>.</p>
+<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-tumblr"><a rel="nofollow noopener noreferrer" data-shared="" class="share-tumblr sd-button share-icon no-text" href="https://ma.tt/2012/01/twenty-eight/?share=tumblr" target="_blank" title="Click to share on Tumblr" ><span></span><span class="sharing-screen-reader-text">Click to share on Tumblr (Opens in new window)</span></a></li><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-39771" class="share-twitter sd-button share-icon no-text" href="https://ma.tt/2012/01/twenty-eight/?share=twitter" target="_blank" title="Click to share on Twitter" ><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-39771" class="share-facebook sd-button share-icon no-text" href="https://ma.tt/2012/01/twenty-eight/?share=facebook" target="_blank" title="Click to share on Facebook" ><span></span><span class="sharing-screen-reader-text">Click to share on Facebook (Opens in new window)</span></a></li><li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-39771" class="share-linkedin sd-button share-icon no-text" href="https://ma.tt/2012/01/twenty-eight/?share=linkedin" target="_blank" title="Click to share on LinkedIn" ><span></span><span class="sharing-screen-reader-text">Click to share on LinkedIn (Opens in new window)</span></a></li><li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon no-text" href="https://ma.tt/2012/01/twenty-eight/?share=pocket" target="_blank" title="Click to share on Pocket" ><span></span><span class="sharing-screen-reader-text">Click to share on Pocket (Opens in new window)</span></a></li><li class="share-telegram"><a rel="nofollow noopener noreferrer" data-shared="" class="share-telegram sd-button share-icon no-text" href="https://ma.tt/2012/01/twenty-eight/?share=telegram" target="_blank" title="Click to share on Telegram" ><span></span><span class="sharing-screen-reader-text">Click to share on Telegram (Opens in new window)</span></a></li><li class="share-email"><a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button share-icon no-text" href="mailto:?subject=%5BShared%20Post%5D%20Twenty-Eight&body=https%3A%2F%2Fma.tt%2F2012%2F01%2Ftwenty-eight%2F&share=email" target="_blank" title="Click to email a link to a friend" data-email-share-error-title="Do you have email set up?" data-email-share-error-text="If you&#039;re having problems sharing via email, you might not have email set up for your browser. You may need to create a new email yourself." data-email-share-nonce="b0fef071de" data-email-share-track-url="https://ma.tt/2012/01/twenty-eight/?share=email"><span></span><span class="sharing-screen-reader-text">Click to email a link to a friend (Opens in new window)</span></a></li><li class="share-end"></li></ul></div></div></div>
+<div id='jp-relatedposts' class='jp-relatedposts' >
+	<!--googleoff: index-->
+<h3 class="jp-relatedposts-headline"><em>Related Posts</em></h3><!--googleon: index-->
+
+</div>	</div><!-- .entry-content -->
+	
+	<footer class="entry-meta">
+		
+			</footer><!-- .entry-meta -->
+</article><!-- #post -->
+						<nav class="navigation post-navigation">
+		<h1 class="screen-reader-text">
+			Post navigation		</h1>
+		<div class="nav-links">
+
+			<a href="https://ma.tt/2012/01/the-independent-web/" rel="prev"><span class="meta-nav">&larr;</span> The Independent&nbsp;Web</a>			<a href="https://ma.tt/2012/01/birthday-at-thee-parkside/" rel="next">Birthday at Thee&nbsp;Parkside <span class="meta-nav">&rarr;</span></a>
+		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+						
+<div id="comments" class="comments-area">
+
+			<h2 class="comments-title">
+			40 thoughts on &ldquo;<span>Twenty-Eight</span>&rdquo;		</h2>
+
+		<ol class="comment-list">
+					<li id="comment-542063" class="comment even thread-even depth-1">
+			<article id="div-comment-542063" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/3424ecaeaa6570c5ea3e75a5f1414e15?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/3424ecaeaa6570c5ea3e75a5f1414e15?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/3424ecaeaa6570c5ea3e75a5f1414e15?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/3424ecaeaa6570c5ea3e75a5f1414e15?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/3424ecaeaa6570c5ea3e75a5f1414e15?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://blogservice.uz" class="url" rel="ugc external nofollow">elixoid</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542063"><time datetime="2012-01-11T20:35:05-08:00">January 11, 2012 at 8:35 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Happy Birthday, Matt!!! Wishing you all the best!!! (Can&#8217;t find any appropriate words to say, shame on me&#8230;:) )</p>
+<p>P.S. Wow, for the 1st time ever I am the first to comment?</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542063#respond' data-commentid="542063" data-postid="39771" data-belowelement="div-comment-542063" data-respondelement="respond" data-replyto="Reply to elixoid" aria-label='Reply to elixoid'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-542065" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-542065" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/8b935fafbe79266ea36293c22a903f2c?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/8b935fafbe79266ea36293c22a903f2c?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/8b935fafbe79266ea36293c22a903f2c?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/8b935fafbe79266ea36293c22a903f2c?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/8b935fafbe79266ea36293c22a903f2c?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://www.avestyles.com" class="url" rel="ugc external nofollow">Alexandra Evjen</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542065"><time datetime="2012-01-11T20:40:40-08:00">January 11, 2012 at 8:40 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Cheers to that!!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542065#respond' data-commentid="542065" data-postid="39771" data-belowelement="div-comment-542065" data-respondelement="respond" data-replyto="Reply to Alexandra Evjen" aria-label='Reply to Alexandra Evjen'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-542067" class="comment even thread-even depth-1">
+			<article id="div-comment-542067" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/7e5d24dece26b10a60a46f1f332dc3c3?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/7e5d24dece26b10a60a46f1f332dc3c3?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/7e5d24dece26b10a60a46f1f332dc3c3?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/7e5d24dece26b10a60a46f1f332dc3c3?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/7e5d24dece26b10a60a46f1f332dc3c3?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://shaynesanderson.com" class="url" rel="ugc external nofollow">shayne</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542067"><time datetime="2012-01-11T20:43:07-08:00">January 11, 2012 at 8:43 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Happy Birthday buddy!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542067#respond' data-commentid="542067" data-postid="39771" data-belowelement="div-comment-542067" data-respondelement="respond" data-replyto="Reply to shayne" aria-label='Reply to shayne'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-542072" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-542072" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/071438b18df87e84d964f6923085a331?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/071438b18df87e84d964f6923085a331?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/071438b18df87e84d964f6923085a331?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/071438b18df87e84d964f6923085a331?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/071438b18df87e84d964f6923085a331?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn">Matthew McGarity</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542072"><time datetime="2012-01-11T21:22:49-08:00">January 11, 2012 at 9:22 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Happy birthday, Matt. And thanks for taking the opportunity to turn the occasion into a great charitable benefit &#8212; it&#8217;s an inspiration.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542072#respond' data-commentid="542072" data-postid="39771" data-belowelement="div-comment-542072" data-respondelement="respond" data-replyto="Reply to Matthew McGarity" aria-label='Reply to Matthew McGarity'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-542073" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-542073" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/5d0db044e5e893c6f56cb677d1381c71?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/5d0db044e5e893c6f56cb677d1381c71?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/5d0db044e5e893c6f56cb677d1381c71?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/5d0db044e5e893c6f56cb677d1381c71?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/5d0db044e5e893c6f56cb677d1381c71?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://jkudish.com" class="url" rel="ugc external nofollow">Joachim Kudish</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542073"><time datetime="2012-01-11T21:40:35-08:00">January 11, 2012 at 9:40 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Happy Birthday Matt!</p>
+<p>Happy to have contributed to the clean water fund. First of [hopefully] many donations for 2012 🙂</p>
+<p>The 26mph is a pretty awesome stat! Are you going to try to beat that for 2012 or slow down a little bit?</p>
+<p>Cheers &amp; all the best!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542073#respond' data-commentid="542073" data-postid="39771" data-belowelement="div-comment-542073" data-respondelement="respond" data-replyto="Reply to Joachim Kudish" aria-label='Reply to Joachim Kudish'>Reply</a></div>			</article><!-- .comment-body -->
+		<ol class="children">
+		<li id="comment-542199" class="comment byuser comment-author-saxmatt bypostauthor odd alt depth-2">
+			<article id="div-comment-542199" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://ma.tt/" class="url" rel="ugc">Matt</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542199"><time datetime="2012-01-12T19:31:08-08:00">January 12, 2012 at 7:31 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Slowing down I think.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542199#respond' data-commentid="542199" data-postid="39771" data-belowelement="div-comment-542199" data-respondelement="respond" data-replyto="Reply to Matt" aria-label='Reply to Matt'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-542077" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-542077" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/b65e2b0866f4a3074de6b59ee1698a9b?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/b65e2b0866f4a3074de6b59ee1698a9b?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/b65e2b0866f4a3074de6b59ee1698a9b?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/b65e2b0866f4a3074de6b59ee1698a9b?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/b65e2b0866f4a3074de6b59ee1698a9b?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://www.ablogtoread.com" class="url" rel="ugc external nofollow">Ariel Adams</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542077"><time datetime="2012-01-11T21:56:20-08:00">January 11, 2012 at 9:56 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Happy birthday Matt! Let&#8217;s keep Africa hydrated.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542077#respond' data-commentid="542077" data-postid="39771" data-belowelement="div-comment-542077" data-respondelement="respond" data-replyto="Reply to Ariel Adams" aria-label='Reply to Ariel Adams'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-542082" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-542082" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/e0e9586bc8af374a791d21a703d97281?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/e0e9586bc8af374a791d21a703d97281?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/e0e9586bc8af374a791d21a703d97281?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/e0e9586bc8af374a791d21a703d97281?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/e0e9586bc8af374a791d21a703d97281?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://koolinus.wordpress.com" class="url" rel="ugc external nofollow">kOoLiNuS</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542082"><time datetime="2012-01-11T22:36:31-08:00">January 11, 2012 at 10:36 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Happy Birthday Matt!<br />
+You&#8217;ve done an amazing life until now, can&#8217;t wait to see what you&#8217;ll create for us in the upcoming years!!!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542082#respond' data-commentid="542082" data-postid="39771" data-belowelement="div-comment-542082" data-respondelement="respond" data-replyto="Reply to kOoLiNuS" aria-label='Reply to kOoLiNuS'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-542085" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-542085" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/5c30a6a215b71aecff878b0945fccf95?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/5c30a6a215b71aecff878b0945fccf95?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/5c30a6a215b71aecff878b0945fccf95?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/5c30a6a215b71aecff878b0945fccf95?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/5c30a6a215b71aecff878b0945fccf95?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn">Ericdano</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542085"><time datetime="2012-01-11T23:25:31-08:00">January 11, 2012 at 11:25 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Are you going to take a stand like reddit and perhaps blackout WordPress on the same day? It would be awesome to see another major player take action against SOPA</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542085#respond' data-commentid="542085" data-postid="39771" data-belowelement="div-comment-542085" data-respondelement="respond" data-replyto="Reply to Ericdano" aria-label='Reply to Ericdano'>Reply</a></div>			</article><!-- .comment-body -->
+		<ol class="children">
+		<li id="comment-542200" class="comment byuser comment-author-saxmatt bypostauthor odd alt depth-2">
+			<article id="div-comment-542200" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://ma.tt/" class="url" rel="ugc">Matt</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542200"><time datetime="2012-01-12T19:31:29-08:00">January 12, 2012 at 7:31 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Been giving it a lot of thought.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542200#respond' data-commentid="542200" data-postid="39771" data-belowelement="div-comment-542200" data-respondelement="respond" data-replyto="Reply to Matt" aria-label='Reply to Matt'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-542090" class="comment even thread-even depth-1">
+			<article id="div-comment-542090" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/2bc9e3ba62d8daeb9900e921e5d3031a?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/2bc9e3ba62d8daeb9900e921e5d3031a?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/2bc9e3ba62d8daeb9900e921e5d3031a?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/2bc9e3ba62d8daeb9900e921e5d3031a?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/2bc9e3ba62d8daeb9900e921e5d3031a?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://vidarara.com" class="url" rel="ugc external nofollow">jp</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542090"><time datetime="2012-01-12T01:09:37-08:00">January 12, 2012 at 1:09 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>happy birthday, matt!</p>
+<p>all the best!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542090#respond' data-commentid="542090" data-postid="39771" data-belowelement="div-comment-542090" data-respondelement="respond" data-replyto="Reply to jp" aria-label='Reply to jp'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-542095" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-542095" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/ee8923674180f7175d1f624b6ed2dcc0?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/ee8923674180f7175d1f624b6ed2dcc0?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/ee8923674180f7175d1f624b6ed2dcc0?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/ee8923674180f7175d1f624b6ed2dcc0?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/ee8923674180f7175d1f624b6ed2dcc0?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="https://ilovemandaue.wordpress.com" class="url" rel="ugc external nofollow">aRVee</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542095"><time datetime="2012-01-12T01:46:58-08:00">January 12, 2012 at 1:46 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Happy birthday Matt. I have greeted you through my blog as well. Thanks very much for WordPress! Enjoy and have fun!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542095#respond' data-commentid="542095" data-postid="39771" data-belowelement="div-comment-542095" data-respondelement="respond" data-replyto="Reply to aRVee" aria-label='Reply to aRVee'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-542097" class="comment even thread-even depth-1">
+			<article id="div-comment-542097" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/05cf08f3fa36a99de45046cce51fb990?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/05cf08f3fa36a99de45046cce51fb990?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/05cf08f3fa36a99de45046cce51fb990?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/05cf08f3fa36a99de45046cce51fb990?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/05cf08f3fa36a99de45046cce51fb990?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://www.desiedition.com/" class="url" rel="ugc external nofollow">Priya</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542097"><time datetime="2012-01-12T02:38:32-08:00">January 12, 2012 at 2:38 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>My Wishes always stays with you.. Happy Birthday Rockstar.. 🙂</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542097#respond' data-commentid="542097" data-postid="39771" data-belowelement="div-comment-542097" data-respondelement="respond" data-replyto="Reply to Priya" aria-label='Reply to Priya'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-542100" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-542100" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/932ac5a2600a5dff1bc8e2edfdeaaae4?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/932ac5a2600a5dff1bc8e2edfdeaaae4?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/932ac5a2600a5dff1bc8e2edfdeaaae4?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/932ac5a2600a5dff1bc8e2edfdeaaae4?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/932ac5a2600a5dff1bc8e2edfdeaaae4?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://www.adityajain.name" class="url" rel="ugc external nofollow">Aditya Jain</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542100"><time datetime="2012-01-12T03:15:47-08:00">January 12, 2012 at 3:15 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Thank You Matt for giving us WORDPRESS<br />
+Just one line East or West WordPress is the best.<br />
+Wish you a Very Very Happy Birth Day      (I must bookmark theday to post Happy Birthday every year)<br />
+Well what surprise will we get on WordPress&#8217;s BirthDay this January?</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542100#respond' data-commentid="542100" data-postid="39771" data-belowelement="div-comment-542100" data-respondelement="respond" data-replyto="Reply to Aditya Jain" aria-label='Reply to Aditya Jain'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-542116" class="comment even thread-even depth-1">
+			<article id="div-comment-542116" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/5fc2351a97b4820599e12a7337c17ee2?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/5fc2351a97b4820599e12a7337c17ee2?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/5fc2351a97b4820599e12a7337c17ee2?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/5fc2351a97b4820599e12a7337c17ee2?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/5fc2351a97b4820599e12a7337c17ee2?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://www.AmadoGonzalez.com" class="url" rel="ugc external nofollow">AMADO</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542116"><time datetime="2012-01-12T06:09:10-08:00">January 12, 2012 at 6:09 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Happy Birthday sir 🙂<br />
+May 2012 bring you debt elimination, wealth accumulation and financial independence.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542116#respond' data-commentid="542116" data-postid="39771" data-belowelement="div-comment-542116" data-respondelement="respond" data-replyto="Reply to AMADO" aria-label='Reply to AMADO'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-542123" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-542123" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/e94fe56c4c91d9af369ca8d2aa704c7a?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/e94fe56c4c91d9af369ca8d2aa704c7a?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/e94fe56c4c91d9af369ca8d2aa704c7a?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/e94fe56c4c91d9af369ca8d2aa704c7a?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/e94fe56c4c91d9af369ca8d2aa704c7a?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://dongilbert.net" class="url" rel="ugc external nofollow">Don Gilbert</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542123"><time datetime="2012-01-12T06:43:18-08:00">January 12, 2012 at 6:43 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Matt, just want to wish you a happy birthday man! These past 10 years have been awesome I&#8217;m sure, and I hope the next 10 are your best yet!</p>
+<p>Great job on WordPress, good luck with your travels, and I hope you meet your goal for Charity Water.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542123#respond' data-commentid="542123" data-postid="39771" data-belowelement="div-comment-542123" data-respondelement="respond" data-replyto="Reply to Don Gilbert" aria-label='Reply to Don Gilbert'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-542126" class="comment even thread-even depth-1">
+			<article id="div-comment-542126" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/56139efa891370710c47a5ec7ca2cca8?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/56139efa891370710c47a5ec7ca2cca8?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/56139efa891370710c47a5ec7ca2cca8?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/56139efa891370710c47a5ec7ca2cca8?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/56139efa891370710c47a5ec7ca2cca8?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://thetruejoe90.com" class="url" rel="ugc external nofollow">Joseph</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542126"><time datetime="2012-01-12T07:06:31-08:00">January 12, 2012 at 7:06 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>WOW! Your birthday again, already?!<br />
+Time certainly flies!<br />
+Many happy returns of the day to you, Sir 😉</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542126#respond' data-commentid="542126" data-postid="39771" data-belowelement="div-comment-542126" data-respondelement="respond" data-replyto="Reply to Joseph" aria-label='Reply to Joseph'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-542127" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-542127" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/ade0ebd17bff6893246bcb164bcb4bec?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/ade0ebd17bff6893246bcb164bcb4bec?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/ade0ebd17bff6893246bcb164bcb4bec?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/ade0ebd17bff6893246bcb164bcb4bec?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/ade0ebd17bff6893246bcb164bcb4bec?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://lucabonesini.it" class="url" rel="ugc external nofollow">Luca</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542127"><time datetime="2012-01-12T07:10:30-08:00">January 12, 2012 at 7:10 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Happy Birthday and congratulations for the 28-&gt;28k initiative!<br />
+Ciao. Luca<br />
+ps: please don&#8217;t make us wait another 6 years for Matt and WP 3.4 though.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542127#respond' data-commentid="542127" data-postid="39771" data-belowelement="div-comment-542127" data-respondelement="respond" data-replyto="Reply to Luca" aria-label='Reply to Luca'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-542136" class="comment even thread-even depth-1">
+			<article id="div-comment-542136" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/563552f203014f5813a2404415e8a296?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/563552f203014f5813a2404415e8a296?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/563552f203014f5813a2404415e8a296?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/563552f203014f5813a2404415e8a296?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/563552f203014f5813a2404415e8a296?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn">Mohsen Elgendy</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542136"><time datetime="2012-01-12T08:14:44-08:00">January 12, 2012 at 8:14 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Congrats Matt, You have changed the web to better, helped a lot of people make money and helped people get inspired and do cool things like WordPress 🙂</p>
+<p>In the history of the internet you will never be forgotten Because we will use your application forever ^_^</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542136#respond' data-commentid="542136" data-postid="39771" data-belowelement="div-comment-542136" data-respondelement="respond" data-replyto="Reply to Mohsen Elgendy" aria-label='Reply to Mohsen Elgendy'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-542151" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-542151" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/4f46c57dd286467e6d25166d9ce8c622?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/4f46c57dd286467e6d25166d9ce8c622?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/4f46c57dd286467e6d25166d9ce8c622?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/4f46c57dd286467e6d25166d9ce8c622?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/4f46c57dd286467e6d25166d9ce8c622?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://feed.us" class="url" rel="ugc external nofollow">rick</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542151"><time datetime="2012-01-12T09:59:17-08:00">January 12, 2012 at 9:59 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>I can&#8217;t believe you&#8217;re only 28.  </p>
+<p>(Not that you look old!)</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542151#respond' data-commentid="542151" data-postid="39771" data-belowelement="div-comment-542151" data-respondelement="respond" data-replyto="Reply to rick" aria-label='Reply to rick'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-542163" class="comment even thread-even depth-1">
+			<article id="div-comment-542163" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/3c2addb453111bcd806e23ed430b71b8?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/3c2addb453111bcd806e23ed430b71b8?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/3c2addb453111bcd806e23ed430b71b8?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/3c2addb453111bcd806e23ed430b71b8?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/3c2addb453111bcd806e23ed430b71b8?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://linde-media.dk/" class="url" rel="ugc external nofollow">Andreas Linde</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542163"><time datetime="2012-01-12T11:53:43-08:00">January 12, 2012 at 11:53 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Congratulations Matt! It has been a very good year WordPress wise! I hope you have had a great day!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542163#respond' data-commentid="542163" data-postid="39771" data-belowelement="div-comment-542163" data-respondelement="respond" data-replyto="Reply to Andreas Linde" aria-label='Reply to Andreas Linde'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-542165" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-542165" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/5eae1e380ad4b5bcd2f7a2060d66a85c?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/5eae1e380ad4b5bcd2f7a2060d66a85c?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/5eae1e380ad4b5bcd2f7a2060d66a85c?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/5eae1e380ad4b5bcd2f7a2060d66a85c?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/5eae1e380ad4b5bcd2f7a2060d66a85c?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn">Takeshi</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542165"><time datetime="2012-01-12T11:59:01-08:00">January 12, 2012 at 11:59 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Happy birthday Matt!  Thanks for all your hard work!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542165#respond' data-commentid="542165" data-postid="39771" data-belowelement="div-comment-542165" data-respondelement="respond" data-replyto="Reply to Takeshi" aria-label='Reply to Takeshi'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-542166" class="comment even thread-even depth-1">
+			<article id="div-comment-542166" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/44f916dd32874cafa09d22141615c819?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/44f916dd32874cafa09d22141615c819?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/44f916dd32874cafa09d22141615c819?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/44f916dd32874cafa09d22141615c819?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/44f916dd32874cafa09d22141615c819?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://pjrvs.com" class="url" rel="ugc external nofollow">paul</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542166"><time datetime="2012-01-12T13:18:23-08:00">January 12, 2012 at 1:18 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>happy birthday sir!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542166#respond' data-commentid="542166" data-postid="39771" data-belowelement="div-comment-542166" data-respondelement="respond" data-replyto="Reply to paul" aria-label='Reply to paul'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-542172" class="comment odd alt thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-542172" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/173b1527092c765c7ae5e0fe600423e4?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/173b1527092c765c7ae5e0fe600423e4?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/173b1527092c765c7ae5e0fe600423e4?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/173b1527092c765c7ae5e0fe600423e4?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/173b1527092c765c7ae5e0fe600423e4?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://cdeminski.wordpress.com" class="url" rel="ugc external nofollow">Carol Deminski</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542172"><time datetime="2012-01-12T14:01:38-08:00">January 12, 2012 at 2:01 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hi Matt,</p>
+<p>That&#8217;s a lot of cities and countries!</p>
+<p>Are you focused on evangelizing WordPress or are you doing other things? (Just curious.)</p>
+<p>Happy Birthday,<br />
+Carol</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542172#respond' data-commentid="542172" data-postid="39771" data-belowelement="div-comment-542172" data-respondelement="respond" data-replyto="Reply to Carol Deminski" aria-label='Reply to Carol Deminski'>Reply</a></div>			</article><!-- .comment-body -->
+		<ol class="children">
+		<li id="comment-542202" class="comment byuser comment-author-saxmatt bypostauthor even depth-2">
+			<article id="div-comment-542202" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://ma.tt/" class="url" rel="ugc">Matt</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542202"><time datetime="2012-01-12T19:38:37-08:00">January 12, 2012 at 7:38 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Lots of meeting WordPress users and Automatticians.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542202#respond' data-commentid="542202" data-postid="39771" data-belowelement="div-comment-542202" data-respondelement="respond" data-replyto="Reply to Matt" aria-label='Reply to Matt'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-542173" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-542173" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/7308d2279829748e8ccb73e5fb851186?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/7308d2279829748e8ccb73e5fb851186?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/7308d2279829748e8ccb73e5fb851186?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/7308d2279829748e8ccb73e5fb851186?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/7308d2279829748e8ccb73e5fb851186?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://CreativeWebBiz.com" class="url" rel="ugc external nofollow">Yamile Yemoonyah</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542173"><time datetime="2012-01-12T14:02:49-08:00">January 12, 2012 at 2:02 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Happy Birthday Matt!<br />
+Can&#8217;t believe it&#8217;s already 3 years ago when we met in Berlin in 2008! Back then you inspired me to help artists with their WordPress sites and that&#8217;s exactly what I do now 🙂 So all the best to you in this new year. Keep up the good work, you&#8217;re really making a difference for a lot of people out there!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542173#respond' data-commentid="542173" data-postid="39771" data-belowelement="div-comment-542173" data-respondelement="respond" data-replyto="Reply to Yamile Yemoonyah" aria-label='Reply to Yamile Yemoonyah'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-542175" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-542175" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/cd2b106395041754b30a829428d92ed3?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/cd2b106395041754b30a829428d92ed3?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/cd2b106395041754b30a829428d92ed3?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/cd2b106395041754b30a829428d92ed3?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/cd2b106395041754b30a829428d92ed3?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://docsheldon.com" class="url" rel="ugc external nofollow">Doc Sheldon</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542175"><time datetime="2012-01-12T15:31:45-08:00">January 12, 2012 at 3:31 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Happy Birthday, Matt! Hope this year is as good to you as the last!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542175#respond' data-commentid="542175" data-postid="39771" data-belowelement="div-comment-542175" data-respondelement="respond" data-replyto="Reply to Doc Sheldon" aria-label='Reply to Doc Sheldon'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-542183" class="pingback odd alt thread-even depth-1">
+			<div class="comment-body">
+				Pingback: <a href="http://raychenon.wordpress.com/2012/01/12/28-twenty-eight/" class="url" rel="ugc external nofollow">28 twenty eight | Ray&#039;s blog</a> 			</div>
+		</li><!-- #comment-## -->
+		<li id="comment-542219" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-542219" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/c92d3f3fe8e5b19bd7dc3d08142b400e?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/c92d3f3fe8e5b19bd7dc3d08142b400e?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/c92d3f3fe8e5b19bd7dc3d08142b400e?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/c92d3f3fe8e5b19bd7dc3d08142b400e?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/c92d3f3fe8e5b19bd7dc3d08142b400e?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://www.jameskrill.com" class="url" rel="ugc external nofollow">Jim Krill</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542219"><time datetime="2012-01-12T21:09:26-08:00">January 12, 2012 at 9:09 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Happy Birthday Matt!  Thank you for WordPress.  Seriously, thank you.   Because of it, I am able to work from home part time and make enough to raise 3 beautiful daughters. It&#8217;s a good life, and I owe a small percentage of that to you my friend. Thank you.  I&#8217;m not sure it would be possible without WordPress (and the team behind it).  </p>
+<p>Wishing you the best in 2012 @ 28!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542219#respond' data-commentid="542219" data-postid="39771" data-belowelement="div-comment-542219" data-respondelement="respond" data-replyto="Reply to Jim Krill" aria-label='Reply to Jim Krill'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-542305" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-542305" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/61a1d08040925043bbf536f5998a22d5?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/61a1d08040925043bbf536f5998a22d5?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/61a1d08040925043bbf536f5998a22d5?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/61a1d08040925043bbf536f5998a22d5?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/61a1d08040925043bbf536f5998a22d5?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn">Will</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542305"><time datetime="2012-01-13T11:02:49-08:00">January 13, 2012 at 11:02 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Happy birthday Matt!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542305#respond' data-commentid="542305" data-postid="39771" data-belowelement="div-comment-542305" data-respondelement="respond" data-replyto="Reply to Will" aria-label='Reply to Will'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-542315" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-542315" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/cf37eef589f546d6b2bb2264ebcc36d4?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/cf37eef589f546d6b2bb2264ebcc36d4?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/cf37eef589f546d6b2bb2264ebcc36d4?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/cf37eef589f546d6b2bb2264ebcc36d4?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/cf37eef589f546d6b2bb2264ebcc36d4?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://www.wiggersrobert.nl" class="url" rel="ugc external nofollow">Robert!</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542315"><time datetime="2012-01-13T13:42:44-08:00">January 13, 2012 at 1:42 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Twenty-Eight? Im waiting for Twenty Twelve 😀</p>
+<p>Happy B-Day dude!!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542315#respond' data-commentid="542315" data-postid="39771" data-belowelement="div-comment-542315" data-respondelement="respond" data-replyto="Reply to Robert!" aria-label='Reply to Robert!'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-542392" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-542392" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/e73beaaeeef05a6edb3c85ee7f874ff7?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/e73beaaeeef05a6edb3c85ee7f874ff7?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/e73beaaeeef05a6edb3c85ee7f874ff7?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/e73beaaeeef05a6edb3c85ee7f874ff7?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/e73beaaeeef05a6edb3c85ee7f874ff7?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://www.redywebs.com" class="url" rel="ugc external nofollow">redywebs</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542392"><time datetime="2012-01-14T04:22:03-08:00">January 14, 2012 at 4:22 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Happy birthday and all the best for 2012!!!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542392#respond' data-commentid="542392" data-postid="39771" data-belowelement="div-comment-542392" data-respondelement="respond" data-replyto="Reply to redywebs" aria-label='Reply to redywebs'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-542443" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-542443" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/812b78e566805e4618f90f560ebdbf80?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/812b78e566805e4618f90f560ebdbf80?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/812b78e566805e4618f90f560ebdbf80?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/812b78e566805e4618f90f560ebdbf80?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/812b78e566805e4618f90f560ebdbf80?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://just-thinkin.net/" class="url" rel="ugc external nofollow">Kirk M</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542443"><time datetime="2012-01-14T17:12:49-08:00">January 14, 2012 at 5:12 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p><em>Wow… I don’t think I’ve ever done anything for ten years in a row before.</em></p>
+<p>Well, there&#8217;s this wee little thing called WordPress&#8230;</p>
+<p>Oh, wait. That&#8217;s not until May of next year. That is if you&#8217;re still planning on being involved with WordPress then? 😉</p>
+<p>Happy Birthday, Matt!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542443#respond' data-commentid="542443" data-postid="39771" data-belowelement="div-comment-542443" data-respondelement="respond" data-replyto="Reply to Kirk M" aria-label='Reply to Kirk M'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-542485" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-542485" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/9b33e607edb4fbf5e28c53e16a6a37c8?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/9b33e607edb4fbf5e28c53e16a6a37c8?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/9b33e607edb4fbf5e28c53e16a6a37c8?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/9b33e607edb4fbf5e28c53e16a6a37c8?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/9b33e607edb4fbf5e28c53e16a6a37c8?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn">Mohammad</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542485"><time datetime="2012-01-15T09:31:07-08:00">January 15, 2012 at 9:31 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Happy Birthday, Matt.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542485#respond' data-commentid="542485" data-postid="39771" data-belowelement="div-comment-542485" data-respondelement="respond" data-replyto="Reply to Mohammad" aria-label='Reply to Mohammad'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-542865" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-542865" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/4ca365b5a9b08159de4e227205b148f8?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/4ca365b5a9b08159de4e227205b148f8?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/4ca365b5a9b08159de4e227205b148f8?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/4ca365b5a9b08159de4e227205b148f8?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/4ca365b5a9b08159de4e227205b148f8?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://www.chrishopkins.co.uk" class="url" rel="ugc external nofollow">Chris</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-542865"><time datetime="2012-01-18T07:26:23-08:00">January 18, 2012 at 7:26 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Belated birthday wishes. Remember car insurance gets cheaper with age.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=542865#respond' data-commentid="542865" data-postid="39771" data-belowelement="div-comment-542865" data-respondelement="respond" data-replyto="Reply to Chris" aria-label='Reply to Chris'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-543094" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-543094" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/3b1bf41eb555d321ef461064ba06b208?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/3b1bf41eb555d321ef461064ba06b208?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/3b1bf41eb555d321ef461064ba06b208?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/3b1bf41eb555d321ef461064ba06b208?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/3b1bf41eb555d321ef461064ba06b208?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://www.geekandjock.com" class="url" rel="ugc external nofollow">Martin</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-543094"><time datetime="2012-01-19T00:11:53-08:00">January 19, 2012 at 12:11 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Happy belated birthday, Matt &#8211; congrats on your achievements.</p>
+<p>I noticed you&#8217;re looking to raise funds for clean drinking water. I&#8217;ve been closely associated with the guys over at Buy1Give1 which is essentially a zero cost charity conduit. A number of their worthy causes are around clean drinking water for a number of countries including Africa &#8211; to which I&#8217;ve contributed. You might like to check them out in case they&#8217;re able to assist you.</p>
+<p>And a huge thank you too for WordPress as well &#8211; I migrated my Drupal site over to WP over the Xmas break and what a breath of fresh air that has turned out to be.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=543094#respond' data-commentid="543094" data-postid="39771" data-belowelement="div-comment-543094" data-respondelement="respond" data-replyto="Reply to Martin" aria-label='Reply to Martin'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-545154" class="pingback even thread-odd thread-alt depth-1">
+			<div class="comment-body">
+				Pingback: <a href="http://weblogtoolscollection.com/archives/2012/01/25/celebrate-matt-mullenwegs-birthday-by-donating-water/" class="url" rel="ugc external nofollow">Celebrate Matt Mullenweg&#8217;s Birthday by Donating Water &laquo; Weblog Tools Collection</a> 			</div>
+		</li><!-- #comment-## -->
+		<li id="comment-567780" class="pingback odd alt thread-even depth-1">
+			<div class="comment-body">
+				Pingback: <a href="http://justhugo.com/2012/07/29/30-for-my-30th/" class="url" rel="ugc external nofollow">$30 for my 30th | Just Hugo</a> 			</div>
+		</li><!-- #comment-## -->
+		<li id="comment-568993" class="pingback even thread-odd thread-alt depth-1">
+			<div class="comment-body">
+				Pingback: <a href="http://ma.tt/2013/01/twenty-nine/" class="url" rel="ugc">Twenty-Nine &#8212; Matt Mullenweg</a> 			</div>
+		</li><!-- #comment-## -->
+		<li id="comment-569801" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-569801" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/a5e5bd94f031b6a382594eeb0c169403?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/a5e5bd94f031b6a382594eeb0c169403?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/a5e5bd94f031b6a382594eeb0c169403?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/a5e5bd94f031b6a382594eeb0c169403?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/a5e5bd94f031b6a382594eeb0c169403?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://www.davidclements.me" class="url" rel="ugc external nofollow">Dave</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2012/01/twenty-eight/#comment-569801"><time datetime="2013-04-08T10:39:02-07:00">April 8, 2013 at 10:39 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>I have to ask if the travelling includes flying? I can&#8217;t imagine that you travelled at 22 mph every second of every day if by road. If so, that&#8217;s quite an exhausting feat!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2012/01/twenty-eight/?replytocom=569801#respond' data-commentid="569801" data-postid="39771" data-belowelement="div-comment-569801" data-respondelement="respond" data-replyto="Reply to Dave" aria-label='Reply to Dave'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+		
+	
+	
+		<div id="respond" class="comment-respond">
+			<h3 id="reply-title" class="comment-reply-title">SHARE YOUR THOUGHTS<small><a rel="nofollow" id="cancel-comment-reply-link" href="/2012/01/twenty-eight/#respond" style="display:none;">Cancel reply</a></small></h3>			<form id="commentform" class="comment-form">
+				<iframe
+					title="Comment Form"
+					src="https://jetpack.wordpress.com/jetpack-comment/?blogid=1047865&#038;postid=39771&#038;comment_registration=0&#038;require_name_email=1&#038;stc_enabled=1&#038;stb_enabled=1&#038;show_avatars=1&#038;avatar_default=retro&#038;greeting=SHARE+YOUR+THOUGHTS&#038;jetpack_comments_nonce=217a8636b6&#038;greeting_reply=Leave+a+Reply+to+%25s&#038;color_scheme=transparent&#038;lang=en_US&#038;jetpack_version=12.6-a.3&#038;show_cookie_consent=10&#038;has_cookie_consent=0&#038;token_key=%3Bnormal%3B&#038;sig=f1dad112c5e22cdd84676f3e07765205104e4cf0#parent=https%3A%2F%2Fma.tt%2F2012%2F01%2Ftwenty-eight%2F"
+											name="jetpack_remote_comment"
+						style="width:100%; height: 430px; border:0;"
+										class="jetpack_remote_comment"
+					id="jetpack_remote_comment"
+					sandbox="allow-same-origin allow-top-navigation allow-scripts allow-forms allow-popups"
+				>
+									</iframe>
+									<!--[if !IE]><!-->
+					<script>
+						document.addEventListener('DOMContentLoaded', function () {
+							var commentForms = document.getElementsByClassName('jetpack_remote_comment');
+							for (var i = 0; i < commentForms.length; i++) {
+								commentForms[i].allowTransparency = true;
+								commentForms[i].scrolling = 'no';
+							}
+						});
+					</script>
+					<!--<![endif]-->
+							</form>
+		</div>
+
+		
+		<input type="hidden" name="comment_parent" id="comment_parent" value="" />
+
+		
+</div><!-- #comments -->
+			
+		</div><!-- #content -->
+	</div><!-- #primary -->
+
+
+		</div><!-- #main -->
+		<footer id="colophon" class="site-footer">
+			
+			<div class="site-info">
+												<a href="https://wordpress.org/" class="imprint">
+					Proudly powered by WordPress				</a>
+			</div><!-- .site-info -->
+
+            <div id="navbar" class="navbar">
+				<nav id="site-navigation" class="navigation main-navigation">
+					<button class="menu-toggle">Menu</button>
+					<a class="screen-reader-text skip-link" href="#content" title="Skip to content">Skip to content</a>
+					<div class="menu-main-menu-container"><ul id="primary-menu" class="nav-menu"><li id="menu-item-42392" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-42392"><a href="https://ma.tt/">Home</a></li>
+<li id="menu-item-42393" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42393"><a href="https://ma.tt/about/">About</a></li>
+<li id="menu-item-48597" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48597"><a href="https://ma.tt/contact/">Contact</a></li>
+<li id="menu-item-51120" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-51120"><a href="https://distributed.blog/">Podcast</a></li>
+<li id="menu-item-51149" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-51149"><a href="https://twitter.com/photomatt">Twitter</a></li>
+<li id="menu-item-43841" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43841"><a href="http://automattic.com/work-with-us/">Let&#8217;s Work&nbsp;Together</a></li>
+</ul></div>					<form role="search" method="get" class="search-form" action="https://ma.tt/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form>				</nav><!-- #site-navigation -->
+			</div><!-- #navbar -->
+
+		</footer><!-- #colophon -->
+	</div><!-- #page -->
+
+			<script type="text/javascript">
+						var _sf_async_config={};
+			_sf_async_config.uid = 174;
+			_sf_async_config.domain = "ma.tt";
+			_sf_async_config.useCanonical = true;
+				(function(){
+			        function loadChartbeat() {
+					window._sf_endpt=(new Date()).getTime();
+					var e = document.createElement('script');
+					e.setAttribute('language', 'javascript');
+					e.setAttribute('type', 'text/javascript');
+					e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+					document.body.appendChild(e);
+				  }
+				  var oldonload = window.onload;
+				  window.onload = (typeof window.onload != 'function') ?
+					 loadChartbeat : function() { try { oldonload(); } catch (e) { loadChartbeat(); throw e} loadChartbeat(); };
+				})();
+		</script>
+
+		<!-- GA Google Analytics @ https://m0n.co/ga -->
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-52447-3', 'auto');
+			ga('send', 'pageview');
+		</script>
+
+			<div class="jetpack-instant-search__widget-area" style="display: none">
+							<div id="jetpack-search-filters-2" class="widget jetpack-filters widget_search">			<div id="jetpack-search-filters-2-wrapper" class="jetpack-instant-search-wrapper">
+		</div></div>					</div>
+			<div style="display:none">
+			<div class="grofile-hash-map-3424ecaeaa6570c5ea3e75a5f1414e15">
+		</div>
+		<div class="grofile-hash-map-8b935fafbe79266ea36293c22a903f2c">
+		</div>
+		<div class="grofile-hash-map-7e5d24dece26b10a60a46f1f332dc3c3">
+		</div>
+		<div class="grofile-hash-map-ef8a849dca458f32daef0752bee6ede8">
+		</div>
+		<div class="grofile-hash-map-5d0db044e5e893c6f56cb677d1381c71">
+		</div>
+		<div class="grofile-hash-map-767fc9c115a1b989744c755db47feb60">
+		</div>
+		<div class="grofile-hash-map-b65e2b0866f4a3074de6b59ee1698a9b">
+		</div>
+		<div class="grofile-hash-map-e0e9586bc8af374a791d21a703d97281">
+		</div>
+		<div class="grofile-hash-map-034541760f8f2f888a9ed5508729cfd5">
+		</div>
+		<div class="grofile-hash-map-2bc9e3ba62d8daeb9900e921e5d3031a">
+		</div>
+		<div class="grofile-hash-map-ee8923674180f7175d1f624b6ed2dcc0">
+		</div>
+		<div class="grofile-hash-map-05cf08f3fa36a99de45046cce51fb990">
+		</div>
+		<div class="grofile-hash-map-932ac5a2600a5dff1bc8e2edfdeaaae4">
+		</div>
+		<div class="grofile-hash-map-32bc13105ca83782b70f77477f6e871f">
+		</div>
+		<div class="grofile-hash-map-e94fe56c4c91d9af369ca8d2aa704c7a">
+		</div>
+		<div class="grofile-hash-map-56139efa891370710c47a5ec7ca2cca8">
+		</div>
+		<div class="grofile-hash-map-ade0ebd17bff6893246bcb164bcb4bec">
+		</div>
+		<div class="grofile-hash-map-563552f203014f5813a2404415e8a296">
+		</div>
+		<div class="grofile-hash-map-4f46c57dd286467e6d25166d9ce8c622">
+		</div>
+		<div class="grofile-hash-map-3c2addb453111bcd806e23ed430b71b8">
+		</div>
+		<div class="grofile-hash-map-5eae1e380ad4b5bcd2f7a2060d66a85c">
+		</div>
+		<div class="grofile-hash-map-44f916dd32874cafa09d22141615c819">
+		</div>
+		<div class="grofile-hash-map-173b1527092c765c7ae5e0fe600423e4">
+		</div>
+		<div class="grofile-hash-map-7308d2279829748e8ccb73e5fb851186">
+		</div>
+		<div class="grofile-hash-map-cd2b106395041754b30a829428d92ed3">
+		</div>
+		<div class="grofile-hash-map-c92d3f3fe8e5b19bd7dc3d08142b400e">
+		</div>
+		<div class="grofile-hash-map-61a1d08040925043bbf536f5998a22d5">
+		</div>
+		<div class="grofile-hash-map-cf37eef589f546d6b2bb2264ebcc36d4">
+		</div>
+		<div class="grofile-hash-map-e73beaaeeef05a6edb3c85ee7f874ff7">
+		</div>
+		<div class="grofile-hash-map-812b78e566805e4618f90f560ebdbf80">
+		</div>
+		<div class="grofile-hash-map-9b33e607edb4fbf5e28c53e16a6a37c8">
+		</div>
+		<div class="grofile-hash-map-4ca365b5a9b08159de4e227205b148f8">
+		</div>
+		<div class="grofile-hash-map-3b1bf41eb555d321ef461064ba06b208">
+		</div>
+		<div class="grofile-hash-map-a5e5bd94f031b6a382594eeb0c169403">
+		</div>
+		</div>
+		
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/ma.tt\/2012\/01\/twenty-eight\/":39771};
+	</script>
+				<script src='https://s.gravatar.com/js/gprofiles.js?ver=e' id='gprofiles-js'></script>
+<script src='https://ma.tt/blog-content/plugins/jetpack-dev/jetpack_vendor/automattic/jetpack-image-cdn/dist/image-cdn.js?minify=false&#038;ver=132249e245926ae3e188' id='jetpack-photon-js'></script>
+<script src='https://ma.tt/blog-content/plugins/gutenberg/build/url/index.min.js?ver=c077739130b14a5dadc3' id='wp-url-js'></script>
+<script id="jetpack-instant-search-js-before">
+var JetpackInstantSearchOptions=JSON.parse(decodeURIComponent("%7B%22overlayOptions%22%3A%7B%22colorTheme%22%3A%22light%22%2C%22enableInfScroll%22%3Atrue%2C%22enableFilteringOpensOverlay%22%3Atrue%2C%22enablePostDate%22%3Atrue%2C%22enableSort%22%3Atrue%2C%22highlightColor%22%3A%22%23FFC%22%2C%22overlayTrigger%22%3A%22submit%22%2C%22resultFormat%22%3A%22expanded%22%2C%22showPoweredBy%22%3Atrue%2C%22defaultSort%22%3A%22newest%22%2C%22excludedPostTypes%22%3A%5B%22attachment%22%5D%7D%2C%22homeUrl%22%3A%22https%3A%5C%2F%5C%2Fma.tt%22%2C%22locale%22%3A%22en-US%22%2C%22postsPerPage%22%3A20%2C%22siteId%22%3A1047865%2C%22postTypes%22%3A%7B%22post%22%3A%7B%22singular_name%22%3A%22Post%22%2C%22name%22%3A%22Posts%22%7D%2C%22page%22%3A%7B%22singular_name%22%3A%22Page%22%2C%22name%22%3A%22Pages%22%7D%2C%22attachment%22%3A%7B%22singular_name%22%3A%22Media%22%2C%22name%22%3A%22Media%22%7D%7D%2C%22webpackPublicPath%22%3A%22https%3A%5C%2F%5C%2Fma.tt%5C%2Fblog-content%5C%2Fplugins%5C%2Fjetpack-dev%5C%2Fjetpack_vendor%5C%2Fautomattic%5C%2Fjetpack-search%5C%2Fbuild%5C%2Finstant-search%5C%2F%22%2C%22isPhotonEnabled%22%3Atrue%2C%22isFreePlan%22%3Afalse%2C%22apiRoot%22%3A%22https%3A%5C%2F%5C%2Fma.tt%5C%2Fwp-json%5C%2F%22%2C%22apiNonce%22%3A%22ce01344259%22%2C%22isPrivateSite%22%3Afalse%2C%22isWpcom%22%3Afalse%2C%22hasOverlayWidgets%22%3Atrue%2C%22widgets%22%3A%5B%7B%22filters%22%3A%5B%7B%22name%22%3A%22People%22%2C%22type%22%3A%22taxonomy%22%2C%22taxonomy%22%3A%22people%22%2C%22count%22%3A5%2C%22widget_id%22%3A%22jetpack-search-filters-2%22%2C%22filter_id%22%3A%22taxonomy_0%22%7D%2C%7B%22name%22%3A%22Categories%22%2C%22type%22%3A%22taxonomy%22%2C%22taxonomy%22%3A%22category%22%2C%22count%22%3A5%2C%22widget_id%22%3A%22jetpack-search-filters-2%22%2C%22filter_id%22%3A%22taxonomy_1%22%7D%2C%7B%22name%22%3A%22Tags%22%2C%22type%22%3A%22taxonomy%22%2C%22taxonomy%22%3A%22post_tag%22%2C%22count%22%3A5%2C%22widget_id%22%3A%22jetpack-search-filters-2%22%2C%22filter_id%22%3A%22taxonomy_2%22%7D%2C%7B%22name%22%3A%22Year%22%2C%22type%22%3A%22date_histogram%22%2C%22count%22%3A5%2C%22field%22%3A%22post_date%22%2C%22interval%22%3A%22year%22%2C%22widget_id%22%3A%22jetpack-search-filters-2%22%2C%22filter_id%22%3A%22date_histogram_3%22%7D%5D%2C%22widget_id%22%3A%22jetpack-search-filters-2%22%7D%5D%2C%22widgetsOutsideOverlay%22%3A%5B%5D%2C%22hasNonSearchWidgets%22%3Afalse%7D"));
+</script>
+<script src='https://ma.tt/blog-content/plugins/jetpack-dev/jetpack_vendor/automattic/jetpack-search/build/instant-search/jp-search.js?minify=false&#038;ver=fd8e2df5c5556b33e4a7' id='jetpack-instant-search-js'></script>
+<script src='//stats.wp.com/w.js?ver=202336' id='jp-tracks-js'></script>
+<script src='https://ma.tt/blog-content/plugins/wp-parsely/build/loader.js?ver=1d54726e91ce976b3e82' id='wp-parsely-loader-js'></script>
+<script data-parsely-site="ma.tt" src='https://cdn.parsely.com/keys/ma.tt/p.js?ver=3.9.0' id="parsely-cfg"></script>
+<script src='https://secure.gravatar.com/js/gprofiles.js?ver=202336' id='grofiles-cards-js'></script>
+<script id='wpgroho-js-extra'>
+var WPGroHo = {"my_hash":""};
+</script>
+<script src='https://ma.tt/blog-content/plugins/jetpack-dev/modules/wpgroho.js?ver=12.6-a.3' id='wpgroho-js'></script>
+<script src='https://ma.tt/blog/wp-includes/js/comment-reply.min.js?ver=6.4-alpha-56520' id='comment-reply-js' async data-wp-strategy='async'></script>
+<script src='https://ma.tt/blog-content/themes/twentythirteen/js/functions.js?ver=20230526' id='twentythirteen-script-js'></script>
+<script src='https://ma.tt/blog-content/plugins/jetpack-dev/jetpack_vendor/automattic/jetpack-lazy-images/dist/intersection-observer.js?minify=false&#038;ver=83ec8aa758f883d6da14' id='jetpack-lazy-images-polyfill-intersectionobserver-js'></script>
+<script id='jetpack-lazy-images-js-extra'>
+var jetpackLazyImagesL10n = {"loading_warning":"Images are still loading. Please cancel your print and try again."};
+</script>
+<script src='https://ma.tt/blog-content/plugins/jetpack-dev/jetpack_vendor/automattic/jetpack-lazy-images/dist/lazy-images.js?minify=false&#038;ver=2e29137590434abf5fbe' id='jetpack-lazy-images-js'></script>
+<script defer src='https://stats.wp.com/e-202336.js' id='jetpack-stats-js'></script>
+<script id="jetpack-stats-js-after">
+_stq = window._stq || [];
+_stq.push([ "view", {v:'ext',blog:'1047865',post:'39771',tz:'-7',srv:'ma.tt',j:'1:12.6-a.3'} ]);
+_stq.push([ "clickTrackerInit", "1047865", "39771" ]);
+</script>
+<script defer src='https://ma.tt/blog-content/plugins/akismet/_inc/akismet-frontend.js?ver=1687399767' id='akismet-frontend-js'></script>
+<script id='sharing-js-js-extra'>
+var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
+</script>
+<script src='https://ma.tt/blog-content/plugins/jetpack-dev/_inc/build/sharedaddy/sharing.min.js?ver=12.6-a.3' id='sharing-js-js'></script>
+<script id="sharing-js-js-after">
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-tumblr' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-tumblr' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomtumblr', 'menubar=1,resizable=1,width=450,height=450' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-twitter' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-twitter' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-facebook' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-facebook' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-linkedin' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-linkedin' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-pocket' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-pocket' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcompocket', 'menubar=1,resizable=1,width=450,height=450' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-telegram' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-telegram' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomtelegram', 'menubar=1,resizable=1,width=450,height=450' );
+						return false;
+					}
+				} );
+			} )();
+</script>
+
+		<!--[if IE]>
+		<script type="text/javascript">
+			if ( 0 === window.location.hash.indexOf( '#comment-' ) ) {
+				// window.location.reload() doesn't respect the Hash in IE
+				window.location.hash = window.location.hash;
+			}
+		</script>
+		<![endif]-->
+		<script type="text/javascript">
+			(function () {
+				var comm_par_el = document.getElementById( 'comment_parent' ),
+					comm_par = ( comm_par_el && comm_par_el.value ) ? comm_par_el.value : '',
+					frame = document.getElementById( 'jetpack_remote_comment' ),
+					tellFrameNewParent;
+
+				tellFrameNewParent = function () {
+					if ( comm_par ) {
+						frame.src = "https://jetpack.wordpress.com/jetpack-comment/?blogid=1047865&postid=39771&comment_registration=0&require_name_email=1&stc_enabled=1&stb_enabled=1&show_avatars=1&avatar_default=retro&greeting=SHARE+YOUR+THOUGHTS&jetpack_comments_nonce=217a8636b6&greeting_reply=Leave+a+Reply+to+%25s&color_scheme=transparent&lang=en_US&jetpack_version=12.6-a.3&show_cookie_consent=10&has_cookie_consent=0&token_key=%3Bnormal%3B&sig=f1dad112c5e22cdd84676f3e07765205104e4cf0#parent=https%3A%2F%2Fma.tt%2F2012%2F01%2Ftwenty-eight%2F" + '&replytocom=' + parseInt( comm_par, 10 ).toString();
+					} else {
+						frame.src = "https://jetpack.wordpress.com/jetpack-comment/?blogid=1047865&postid=39771&comment_registration=0&require_name_email=1&stc_enabled=1&stb_enabled=1&show_avatars=1&avatar_default=retro&greeting=SHARE+YOUR+THOUGHTS&jetpack_comments_nonce=217a8636b6&greeting_reply=Leave+a+Reply+to+%25s&color_scheme=transparent&lang=en_US&jetpack_version=12.6-a.3&show_cookie_consent=10&has_cookie_consent=0&token_key=%3Bnormal%3B&sig=f1dad112c5e22cdd84676f3e07765205104e4cf0#parent=https%3A%2F%2Fma.tt%2F2012%2F01%2Ftwenty-eight%2F";
+					}
+				};
+
+				
+				if ( 'undefined' !== typeof addComment ) {
+					addComment._Jetpack_moveForm = addComment.moveForm;
+
+					addComment.moveForm = function ( commId, parentId, respondId, postId ) {
+						var returnValue = addComment._Jetpack_moveForm( commId, parentId, respondId, postId ),
+							cancelClick, cancel;
+
+						if ( false === returnValue ) {
+							cancel = document.getElementById( 'cancel-comment-reply-link' );
+							cancelClick = cancel.onclick;
+							cancel.onclick = function () {
+								var cancelReturn = cancelClick.call( this );
+								if ( false !== cancelReturn ) {
+									return cancelReturn;
+								}
+
+								if ( ! comm_par ) {
+									return cancelReturn;
+								}
+
+								comm_par = 0;
+
+								tellFrameNewParent();
+
+								return cancelReturn;
+							};
+						}
+
+						if ( comm_par == parentId ) {
+							return returnValue;
+						}
+
+						comm_par = parentId;
+
+						tellFrameNewParent();
+
+						return returnValue;
+					};
+				}
+
+				
+				// Do the post message bit after the dom has loaded.
+				document.addEventListener( 'DOMContentLoaded', function () {
+					var iframe_url = "https:\/\/jetpack.wordpress.com";
+					if ( window.postMessage ) {
+						if ( document.addEventListener ) {
+							window.addEventListener( 'message', function ( event ) {
+								var origin = event.origin.replace( /^http:\/\//i, 'https://' );
+								if ( iframe_url.replace( /^http:\/\//i, 'https://' ) !== origin ) {
+									return;
+								}
+								frame.style.height = event.data + 'px';
+							});
+						} else if ( document.attachEvent ) {
+							window.attachEvent( 'message', function ( event ) {
+								var origin = event.origin.replace( /^http:\/\//i, 'https://' );
+								if ( iframe_url.replace( /^http:\/\//i, 'https://' ) !== origin ) {
+									return;
+								}
+								frame.style.height = event.data + 'px';
+							});
+						}
+					}
+				})
+
+			})();
+		</script>
+
+		</body>
+</html>
+
+<!-- Dynamic page generated in 0.226 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2023-09-05 23:49:28 -->
+
+<!-- Compression = gzip -->

@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/i/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/i/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/i/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/web-app/site.webmanifest">
+<link rel="mask-icon" href="/assets/i/icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/i/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="msapplication-config" content="/assets/web-app/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+
+  <title>Igalia Chats: Polypane | Igalia - Open Source Consultancy and Development</title>
+  <meta name="description" content="Igalia is an open source consultancy specialised in the development of innovative projects and solutions. Our engineers have expertise in a wide range of technological areas, including browsers and client-side web technologies, graphics pipeline, compilers and virtual machines. We have the most WPE, WebKit, Chromium/Blink and Firefox expertise found in the consulting business, including many reviewers and committers. Igalia designs, develops, customises and optimises GNU/Linux-based solutions for companies across the globe. Our work and contributions are present in many projects such as GStreamer, Mesa 3D, WebKit, Chromium, etc.">
+  <meta name="keywords" content="igalia, free software, free software engineering, development, consultancy, webkit consultancy, consulting, webkit consulting, programming, hackers, cooperative organization, organization, company, assembly, igalia.com, igalia sl, webkit, webkitgtk, a11y, v8, jsc, training, GNOME, webkit consultants, chromium consulting, chromium consultants, chromium consultancy, blink consultants, blink consultancy, gstreamer consultancy, gstreamer consulting">
+  <meta name="author" content="Igalia">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" id="main-stylesheet" href="/assets/main.css" data-main="/assets/main.css" data-aria="/assets/aria.css">
+  <link rel="canonical" href="https://www.igalia.com/chats/polypane">
+  <link rel="alternate" type="application/rss+xml" title="Igalia" href="/feed.xml">
+
+  
+
+  <!-- Open Graph metadata -->
+  <meta content="Igalia" property="og:site_name">
+  <meta content="Igalia Chats: Polypane | Igalia - Open Source Consultancy and Development" property="og:title">
+  <meta content="https://www.igalia.com/assets/i/logo200x200Margin.png" property="og:image">
+  <meta content="https://www.igalia.com/assets/i/logoSimple200x200.png" property="og:logo">
+  
+    <meta content="website" property="og:type">
+  
+  
+    <meta content="Igalia is an open source consultancy specialised in the development of innovative projects and solutions. Our engineers have expertise in a wide range of technological areas, including browsers and client-side web technologies, graphics pipeline, compilers and virtual machines. We have the most WPE, WebKit, Chromium/Blink and Firefox expertise found in the consulting business, including many reviewers and committers. Igalia designs, develops, customises and optimises GNU/Linux-based solutions for companies across the globe. Our work and contributions are present in many projects such as GStreamer, Mesa 3D, WebKit, Chromium, etc." property="og:description">
+  
+  
+    <meta content="https://www.igalia.com/chats/polypane" property="og:url">
+  
+  
+</head>
+
+
+  <body class="aria-contrast" data-json-base="/assets/json">
+    <header id="header" role="banner">
+  <div class="container-fluid-1440">
+    <div class="wrapper">
+      
+      
+      
+      <h1 class="site-title logos">
+        <a href="/" title="Igalia">
+          <img src="/assets/i/logo.png" alt="Igalia" />
+        </a>
+      </h1>
+
+      <nav role="navigation" class="site-nav hidden-xs hidden-sm">
+        <ol class="main-menu">
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/about" title="About Us">
+              About Us
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/technologies" title="Technologies">
+              Technologies
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/services" title="Services">
+              Services
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/industries" title="Industries">
+              Industries
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/24-7/home" title="24/7">
+              24/7
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/jobs" title="Jobs">
+              Jobs
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/contact" title="Contact">
+              Contact
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/public-funding" title="Feder">
+              Feder
+            </a>
+          </li>
+          
+        </ol>
+      </nav>
+
+      <div aria-hidden="true" id="menu-toggle-wrapper" class="visible-xs visible-sm">
+        <a href="#" id="menu-toggle" title="Toggle menu">
+          <i aria-hidden="true" class="fas fa-bars"></i>
+          <span hidden>Toggle menu</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div id="mobile-menu-wrapper">
+  <div id="mobile-menu">
+    <ul role="navigation" class="nav">
+      
+      <li>
+        <a class="page-link" href="/about" title="About Us">
+          About Us
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/technologies" title="Technologies">
+          Technologies
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/services" title="Services">
+          Services
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/industries" title="Industries">
+          Industries
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/24-7/home" title="24/7">
+          24/7
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/jobs" title="Jobs">
+          Jobs
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/contact" title="Contact">
+          Contact
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/public-funding" title="Feder">
+          Feder
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+    <main class="page-content" aria-label="Content">
+        <article class="page page--chats">
+  <header class="page-header" style="background-image: url(/assets/i/headers/header-technologies.jpg); ">
+    <div class="container-fluid-1440">
+      <div class="grid-row">
+        <div class="col-xs-12 col-sm-10-center">
+          <h1 class="page-title" itemprop="name headline">Igalia Chats: Polypane</h1>
+          
+        </div>
+      </div>
+    </div>
+    <div class="cover"></div>
+  </header>
+
+  <div class="container-fluid-1440">
+    <div class="page-content">
+      <div class="grid-row">
+        <div class="col-xs-12">
+          <div class="grid-row">
+            <div class="col-xs-12 col-lg-8">
+              <h2 class="chat-title">
+                <a href="/24-7/chats" class="chat-title__back">
+                  <img src="/assets/i/arrowBackBlue.png" alt="Back to chats">
+                </a>
+                Igalia&#39;s Brian Kardell and Eric Meyer chat with Kilian Valkhof about his Chromium-based web development app Polypane.
+              </h2>
+              <div class="chat-date">
+                <time datetime="2023-08-22T00:00:00+00:00" itemprop="datePublished">
+                  
+                  Aug 22, 2023
+                </time>
+              </div>
+              <div class="chat-audio">
+                <div class="chat-audio__player">
+                  <div class="audio-player" data-src="/downloads/interviews/polypane.mp3">
+                    <div class="controls">
+                      <div class="play-container">
+                        <div class="toggle-play play">
+                        </div>
+                      </div>
+                      <div class="time-container">
+                        <div class="time">
+                          <div class="current">0:00</div>
+                          <div class="length"></div>
+                        </div>
+                        <div class="timeline">
+                          <div class="progress"></div>
+                        </div>
+                      </div>
+                      <div class="volume-container">
+                        <div class="volume-button">
+                          <div class="volume c-icon-volumeMed"></div>
+                        </div>
+                        <div class="volume-slider">
+                          <div class="volume-percentage"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <ul class="chat-audio__links">
+                  <li><a href="/downloads/interviews/polypane.mp3" title="Download Chat" target="_blank"><i class="c-icon-download"></i></a></li>
+                  
+                  <li><a href="/chats.xml" title="Open podcast RSS feed" target="_blank"><i class="c-icon-podcast"></i></a></li>
+                  
+                  
+                  <li><a href="https://www.youtube.com/watch?v=nNc4GYGlMZk" title="Open in Youtube" target="_blank"><i class="c-icon-youtube"></i></a></li>
+                  
+                  
+                  <li><a href="https://open.spotify.com/show/0XZ4hqB5ogePKOumi4daDm" title="Open in Spotify" target="_blank"><i class="c-icon-spotify"></i></a></li>
+                  
+                  
+                  <li><a href="https://podcasts.apple.com/us/podcast/igalia/id1533323588" title="Open in iTunes" target="_blank"><i class="c-icon-itunes"></i></a></li>
+                  
+                  
+                  <li><a href="https://podcasts.google.com/feed/aHR0cHM6Ly93d3cuaWdhbGlhLmNvbS9jaGF0cy54bWw" title="Open in Google Podcasts" target="_blank"><i class="c-icon-gpod"></i></a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12">
+          <div class="grid-row grid-row--between">
+            <div class="col-xs-12 col-lg-3 col-lg-order-3">
+              <ul class="c-participants">
+                
+                <li class="c-participants__item  c-participants__item--">
+                  
+                  
+                  <img src="/assets/i/logoSimple.png" alt="Igalian" class="c-participants__igalian">
+                  <a href="/team/emeyer" class="c-participants__link">
+                    <img src="/assets/i/igalians/emeyer.jpg"
+                      alt="Eric Meyer's avatar"
+                      class="c-participants__image">
+                    Eric Meyer
+                    <i class="fas fa-plus"></i>
+                  </a>
+                  
+                </li>
+                
+                <li class="c-participants__item  c-participants__item--">
+                  
+                  
+                  <img src="/assets/i/logoSimple.png" alt="Igalian" class="c-participants__igalian">
+                  <a href="/team/bkardell" class="c-participants__link">
+                    <img src="/assets/i/igalians/brian-kardell.jpg"
+                      alt="Brian Kardell's avatar"
+                      class="c-participants__image">
+                    Brian Kardell
+                    <i class="fas fa-plus"></i>
+                  </a>
+                  
+                </li>
+                
+                <li class="c-participants__item  c-participants__item--3">
+                  
+                  <a href="https://kilianvalkhof.com/" class="c-participants__link">
+                    
+                    <img src="/assets/i/chats/kilian-valkhof.jpg" alt="Kilian Valkhof's avatar"
+                    class="c-participants__image">
+                    
+                    Kilian Valkhof
+                    <i class="fas fa-plus"></i>
+                  </a>
+                  
+                </li>
+                
+              </ul>
+            </div>
+            <div class="col-lg-1 col-lg-order-2"></div>
+
+            <div class="col-xs-12 col-lg-8 col-lg-order-1">
+              
+
+
+              <h2 class="chat-subtitle">Transcription</h2>
+              <ul class="c-chat">
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>:  Welcome to Igalia Chats. I'm Eric Meyer. I'm a developer advocate at Igalia. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>:  I'm Brian Kardell. I'm also a developer advocate at Igalia. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>:  And we have a guest with us this week, Kilian Valkhof, who has created a number of pieces of software over the years. But we're going to talk about one in particular. But Kilian, please introduce yourself. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  Hi, I'm Kilian. I'm Dutch, as you can probably hear from my accent. I'm the creator of Polypane and a whole bunch of other projects that I hope to discuss with you guys today. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>:  Before we start with that, sometimes we like to ask, guess who are writing code? How did you get started with coding? Like what's sort of your journey to this point, you know, in a nutshell? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  I think like most people, I started out playing games as a kid and then wanting to make games as a kid. And then somehow around the age of 10, 11, I convinced my dad to get me a copy of Borland C++ and an instruction course. So I got through the first chapter in the instruction course, which was all text and input based, like fill in your name, fill in your address. Here's your nice looking address card in the DOS terminal that was prompt. But then chapter two started and it was like, okay, now draw a chessboard on the screen. And that was kind of a too big a leap for me at that point. Okay. Yeah. So I kind of forgot about that. But in the meantime, I had also discovered that websites were also built with code. So I started playing around with that, you know, making my own little websites, first in words, then in front page, then editing the things in Notepad. And it just kind of went from there. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>:  Are you back to doing C++ now? Or are you writing in something else? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  So everything I do is in JavaScript. I still don't know any C++. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>:  Okay. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>:  Wow, that's amazing. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>:  Cool. So as was mentioned, you are the creator, maintainer, coder of software called Polypane. Can you describe that in a way that sort of conveys the experience to someone who hasn't used it? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  I usually say Polypane is a browser for building websites instead of for browsing websites. But what it comes down to is that it's actually everything I want my browser to do as I'm building a website, all the information I need, all the handy tools I need, et cetera. I'm just combining that in one app and trying to make me as productive as possible and to make the process of building a website or a web app or what have you as fun as possible. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>:  Okay. And so Polypane, what does that name refer to in the experience? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  The idea of Polypane started out in 2015 when I just switched over from Photoshop to Sketch for website design work. And at that time, Sketch had something called Frames. No, it wasn't called Frames, but now everyone calls it Frames. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>:  Okay. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  Photoshop didn't have that. And what that meant was that in Sketch, you had this one big canvas and you could put your mobile and your tablet and your desktop designs on that one canvas side by side. So you had a really good overview of your website at different sizes as you're designing it. And it made things really easy to compare and check if you're, for example, consistent. If things become larger in a way that is actually buildable, which at the time, very often, front-end developers would get very annoyed because a design on desktop and a design on mobile had nothing to do with each other. And having them side by side like that just made that really, really obvious. So that was a real productivity boost. But then you went back to the browser. No, I had designed a website and then I went to implement it. And suddenly all of that was gone. And I was just staring at one thing at a time again and having to resize my browser, et cetera. So I got really annoyed. And the thing I do when I get really annoyed is I build something to fix the issue. So I built this really small prototype that was essentially three iFrames duct taped together with an address bar above it. And then at some point, you have to name a thing. And it just popped into my head, like Polypane. It has alliteration. It means the thing. There's multiple panes, windows, or view ports. So that's what it started out as. Let me see my website in these bunch of different permutations that I need to build for so that I don't have to do all that stuff manually. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>:  And are they still iFrames duct taped together? Or have you switched over to some other different construct? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  So they were iFrames for a bit, but you have to do a lot of really weird stuff to make iFrames behave. Well, essentially not like iFrames, because iFrames have all sorts of rights that you don't actually want them to have in this situation. So right now, the app uses something called web views, which Polypane is based on Electron, which uses Chromium for the rendering. So it inherits a bunch of these Chromium things that you don't really get if you're building websites, like there is no concept of a web view on your website. But it is something in Chrome, the browser, where they use these things to show different different web content that isn't websites. So you can use that in Electron. And the way that's actually implemented is that under the hood, it is a regular iFrame. So it's technically an out of process iFrame, which is nice because then it doesn't interact with whatever page it's being shown in. And then there's a web view wrapper that makes it so that you can interact with it on like a system level where you can inspect the network and change properties of the renderer itself. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>:  It's pretty amazing, actually. And it's even more amazing that you've basically built a browser that does some really unique sorts of things targeted at developers. So it's a little bit like a DevTools-focused browser with some really great DevTools. Like if you were to give DevTools its own URL and concepts like these panes. It's you also have like lots of other tools in there that aren't simply about these panes. They have to do with accessibility focuses and things like that, right? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  Yeah. So it really started out as just responsive design. But that's only one of the things that you need to work on if you want to build a good website. You know, that's whenever I build websites, that's what I try to do. And I think a good website, you know, it runs on every device and it works for every user. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>:  Preach, testify. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  So yeah, like I said in the beginning, I'm just adding everything that I need and that I think other people need. And so of course, a major part of that is tooling around accessibility. Because one of the ironic things about quote, unquote, regular browsers is that they do a whole lot of work to compensate for bad web development. Because they're user agents, if they can get something on the screen for the user, and it mostly works and they can mostly interact with it, then that's a win for the browser. So they actually hide a whole lot of things you could consider issues because for the regular user, for a user that has full motor capabilities and perfect eyesight, etc, they won't notice these things. So I have to flip that around in my browser and actually make it easy to figure out where the browser tries to compensate for lack of quality. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>:  I realized that we didn't make clear that it's a it's an electron app. It is Macintosh only or… </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  No, it runs on all three platforms. Four if you include Chromebooks. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>:  Okay, awesome. So it's an electron app. And it started out as a responsive checker, as it were. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  Yeah. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>:  You know, drawing on that experience that you had where you could have multiple frames on a single canvas. And that's what it's like being in Polypane. And it has easy ways to set up like it'll detect your breakpoints and stuff like that. But yeah, having the extra features like accessibility and you know, being able to check colors and that sort of thing, it makes a really interesting sort of full featured development environment. And the scroll linking was the other thing that I was I was trying to remember the name of. But yeah, like if you're click a link, or you scroll a page in one pane, it will do that in all of the panes. Was that hard to do easy to do? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  So I think I've rebuilt that five or six times. So yeah, it's it's quite difficult. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>:  Do you know if there's a name for the design pattern that you're using without you know, having a bunch of windows in a single big canvas? And if not, would you like to name it? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  I'd have to think about that. Like that in general, like there is the concept of canvas based tools, which Polypane isn't quite because the concept of a canvas based tool is that you can zoom and pan around it. Like you had a huge desk and you can just shuffle papers all all across it. Whereas Polypane is kind of like the light version of that, because I I try to move people away from doing too much sizing management. But yeah, I'd have to think about that. I could facetiously call it the Polypane pattern has a nice ring to it. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>:  I don't think that's facetious. I think that sounds pretty good. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>:  Yeah. I expect there are some challenges like, you know, like anything like this, I expect you're probably the same. Well, probably everyone is the same. Like you see this and you come up with a I wonder what would happen in this case. And then you just do it and you kind of try to stump the browser, right? But I got to thinking like, well, sometimes there's like a little bit of thing that's only there on the desktop. And it's not, you know, when you shrink it down, it's not there anymore, because it's just hidden. It's like, well, it's not critical. We can't really fit it on the screen. So we're going to just hide that. And one of those things could be a button or a link, right? And so, you know, what happens when you interact with an element that's only in one of the views? And it seems like it deals with it just fine, because I guess probably you only respond to one of them, right? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  Yeah. So the trick is, I don't do anything if the button isn't there. And it's really that simple. A lot of people, when they see like the click syncing, they think, if you click a button in one pane, I click the button in all the other paints, that's very easy to say, but click the button can mean a whole bunch of different things. A lot of people envision that I figure out, you know, where the button is on the screen, and then do a mouse event on the XY position. But of course, that doesn't make sense, because the button might be in a very different place. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>:  Yeah, probably in fact, yeah. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  Yeah. And you also can't like, like fudge it, you know, this is twice as wide. So I'll just do X times two, because it can literally be any place else. So what what I do is, I find the same elements in the DOM, and then I execute click events on that. And if the element isn't in the DOM, then there is nothing to click. And so the click doesn't happen. And you know, that if you say that out loud, again, it sounds pretty simple. But you know, it took quite some iteration to figure out that that is the thing that makes it work. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>:  But I think that for people who aren't aware, you have a tab that looks a lot like any tab in any other browser at the top that has a single URL, right? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  Yeah. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>:  And I think if you click a link that's only shown in one, it will cause a top level navigation, which acts on the top thing. And so it actually does happen for a whole bunch of things in all the pains, right? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  Yeah. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>:  Yeah. So that that was actually kind of surprising to me. And then I was like, Oh, yeah, now that I think about it, that really makes a lot of sense. It would be a lot simpler than you kind of think it is for a whole bunch of cases. And then probably, you know, well, I don't know, you just let the other cases go because they're probably not that interesting. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  Yeah. So in this example, if you have a link that's available in one of the pains, but not in all the others, because of sizing, what the browser does is it first tries to sync the click event. And that click event might trigger a navigation event. So the browser will wait a bit upon acting upon that navigation event to see what happens in all the other pains, because if all the other pains also start a navigation event, then the browser just has to follow. It has to receive the new URL and then display it, but it doesn't actually have to instruct all the pains to go to that URL. But then if that doesn't happen, you know, if that click can't be synced, then we fall back to syncing the navigation, the URL instead, it's preferable to have the click synced because then you have all these benefits of intact history, et cetera. But, you know, at the end of a cycle like that, the main goal for Polypane is that all pains show the same page. There's this fallback mechanism to it. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>:  Okay, yeah. So the action of last resort is, well, I couldn't find anything to do, but we've moved to another page. So I'm just going to drag this other pain to the same page. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  Exactly. Yeah. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>:  Are you familiar at all with Firefox Developer Edition? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  Yeah. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>:  Yeah, it feels like Firefox tried a thing like this, but it failed to catch on. Let's put it that way. Do you feel like Polypane is very similar to developer edition in terms of the experience of using it? Or is it like really different? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  I think it's really different. Firefox developer edition is just regular Firefox. It's Firefox with a theme that fits better for developers and easier access to the available developer tools, all of which is nice. But the developer tools of Firefox, and for that matter of Chrome, of Edge, et cetera, they are confined to the area where the development tools are. The address bar is in the developer tool. The web content showing your website isn't part of the developer tools. All the browser Chrome isn't part of the developer tools. They're locked away because that's what the regular product demands. If 99% of your users are developers, you definitely don't want them to accidentally stumble upon the developer tools because they think they'll have hacked their entire computer or whatever. They're confined by that constraint where the developer tools as a concept can't really break out of that little box they're in. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>:  A thing that I've wondered is how much or how little, for that matter, what did you have to do to expose the web inspector to the various panes? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  So Polypane actually ships with two web inspectors. There's the Chrome one, which I get essentially for free. I have to do some trickery to display it in a place that isn't right next to the pane or inside a pane. But other than that, I get the entire Chromium developer tools for free, but the Chromium developer tools are built to interact with a single web page at a time. If you're in Polypane and you want to change some stuff, edit some content or change some colors or edit some CSS, then obviously you would want that to happen in all the panes at once because that's the thing it does. So I've also built my own Elements Inspector and my own console to enable that, where they consolidate the styling from all the panes and the DOM from all the panes. And then allow you to edit that in each pane in one go. So that took a whole lot of work and it still definitely doesn't do everything that the Chromium Elements Inspector does. But I think the 80-20 rule, you can definitely get very, very far with just the Polypane Elements Inspector. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>:  Is there one point of creating that multi-view unified inspector that stands out to you as that was particularly difficult to make work the way you wanted it to? Or was it all…? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  I mean, it was all pretty difficult. So getting the CSS for everything is pretty hard. And then parsing the CSS is okay, except when you run into rendering specific bugs, where the CSS object model in Chromium isn't being truthful. So you have to work around that. But definitely like a big difficult feature that I recently added was support for container queries. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>:  Yeah, okay. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  Where if you use container queries on your page, then the size of certain elements is going to influence the styling of their descendants, the elements inside of them. So in an Elements Inspector, you want to know whether or not you reach that container threshold and then show the styling that is actually being applied. While for media queries, you can use JavaScript with window.matchmedia to figure out which media query is actually true for the current page at this current time. For containers, that doesn't exist. So if you have in your CSS like at container minimum width of 400 pixels, then there's nothing that you can ask the browser to say, you know, is this element, does it match this container query? Or is this container query valid for this element? Essentially, I had to implement that myself. So I now have a whole bunch of codes that can take an element and a matched container query, and then figure out whether or not that container query actually applies at this moment. And unfortunately, what that comes down to is a whole lot of parsing strings. Because if you think of a container query, let's say it's, let's keep it simple, and it's just the inline size, it's just the width. There are actually like five or so different notations that you can use to say, is this thing wider than 400 pixels? You can do min width, you can do width greater than, you can do number smaller than width, you can do ranged media query, so you can put width in the middle and then have two values side by side. So you have to look through all of those cases and see, you know, which one is the user actually trying to convey, and then which is actually the value. And is it for width or inline size, or is it for block size for height? So it's a whole bunch of if statements, essentially. And at the end, I know whether or not a given block of CSS is actually being applied to the page or not. Of course, all of that would have been much less work if I could have just done like element dot match container. But that doesn't exist. At least it doesn't exist yet. They're working on it, it's specced, but it's not in browsers yet. So when it lands, I can delete a whole bunch of code, which is, you know, deleting code is always nice. So I look forward to that. But for now, this is what I have to do to make stuff like that work. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>:  So on our podcast, we talk a lot about open source and ecosystems around open source and really a lot about browsers, browser engines, the projects that around them. A couple of episodes ago, we did two back to back with novel engines that are being developed. So Servo recently Igalia came and picked up where Mozilla left off on Servo. We're really helping champion in that with some new funding. And we also talk about Ladybird, which I think at the time didn't have any funding. And it seems that it's recently getting some, which is nice. But your browser is interesting in sort of both regards in that it is it's not a novel engine. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  No. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>:  It is the Chromium engine. Like it is the Chromium project, I guess, that on top of that electron is built, right? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  Yes. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>:  So it's like a downstream browser project that would put it in the camp of Samsung Internet or Opera or Brave, you know, those kind of other Chromium browsers. But it's also not developed with C++. I don't know in those other cases what those other browsers are. But yours is unique in that it's not another C++ kind of application port of Chromium. It's also unique, though, in that it is specifically targeted for developers. And that means it's an interesting niche, right? So I assume that because I've seen a bunch of people tweet about it and toot  about it and skeet about it, like all the whatever words we're using for those people talk about it, they blog about it. And clearly, there are some people who use it. But it's also not a free product. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  Yeah, yeah. So that yeah, that's right. As I said, I started this in 2015 as just a fun side project. Then from like around 2017 to somewhere in 2018, it was a public beta. So everyone could use it for free. And then in 2019, I started working on it full time. And in order to work on something full time, you need to have income to be able to do groceries and pay rent, etc. So yeah, so it's a paid product, because I get to live and then build this full time in exchange for people subscribing to it. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>:  Yeah, it's very interesting because the fact that it is a niche tool for developers really changed the equation, right? I don't think that, I think it does actually have a mode where it can just act like a regular browser, right? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  Yeah, but… </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>:  You don't use that as your daily driver, right? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  No, no, I tell people not to use it as their daily driver. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>:  Right. And I don't think that if you tried to do that, there would be much chance that anybody would be willing to pay for it at this moment in history. And it's not about your product, it's about, like if Google said tomorrow, it's going to cost $10 a month to use Chrome, Firefox would jump through the roof in market share, right? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  Sounds good! </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>:  Because that's just out of the norm, right? It's out of the norm, nobody would pay that. So you've shifted the equation just subtly and people are like, sure, it's a tool, of course, we'll pay for it, right? Not everybody probably, but it doesn't take an astounding number of people to help fund a project at like $10 a month. So yeah, that's amazing to me. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  It is to me as well. Having developers as a target audience is, it's a blessing and a curse. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>:  Sure. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  You will not find people that are better at sending in feature requests or bug reports. So like a large number of features are things that I would never have come up with. And it's just some person emailing me, you know, I get everything from like a single line, like wouldn't it be cool if it did X? To, I've mocked up this demo video of a new feature that I think you should add. And it's like the most polished thing ever. And everything in between. But like you said, paying for browsers is weird. And on top of that, developers are very much used to not paying for their tooling, increasingly so. So that is, you know, a hard battle. You really have to convince people that this is actually worth the price of admission. You know, that's what the product needs to do. It really needs to convince people. And part of that is also, you know, what I found is that a lot of developers, they don't consider their own time to be worth anything. So saving time isn't really interesting to them. So even if they're faster, then that doesn't mean that they think it's worth it. Whereas if they take that equation and they show to their manager, you know, their manager might cry. So I, you know, part of like my marketing, if you will, is, you know, helping developers figure out that, you know, actually, the time you spend and the work you do have value. And that means that you can ask your employer for stuff that makes the time you spend more effective, more efficient, more fun. And your employer will be happy to do that. Because if you as a developer are happy and productive, that means that, you know, the work is getting done better. It's of higher quality. There's no less remedial work you have to do later on. So it's better for everyone. But you don't get to that point if you don't realize at the beginning, like my time is valuable. So that's been interesting seeing how people respond to that messaging. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>:  Yeah, I like how you have this tiered system too where it's like for an individual developer, I think it's $9, $10 a month, and then you can buy one for your company, that's I think up to 10, is that right? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  Yeah. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>:  Up to 10 people. And then you can buy one for the whole enterprise, which is, I guess, a lot. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  Yeah. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>:  Maybe I don't know, there must be some limit. But yeah, like I like the way that you do that, because I guess per user, it kind of goes down. And like you say, to convince a single developer, well, if you're doing like contract work, and you just stop and do the math for a minute, like, how much time and anxiety does this have to save you to be worth $9 a month? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  Yeah. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>:  Almost nothing, right? I mean, like… </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  Yeah, for an average, whatever average means, but like two years ago, I did some checking like, what's the rough average that I can name like globally? And that's if you save 11 minutes per month, then it pays for itself. That's roughly your break even point. And on the websites, I have a calculator that you can fill in your own details. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>:  That's really smart. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  Yeah, but but it that makes it more tangible for people, right? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>:  Yeah. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  But the thing that I haven't really figured out yet, or cracked is that this is time saved during development. And some of that is literally you're not resizing your browser, which takes seconds. But if you do that dozens or hundreds of times a day, over a month, that really adds up. And it, you know, resizing your browser isn't intellectually stimulating. So probably don't want to do that. But the real value is in all the stuff that you don't miss during development. Because we all know that when you as a developer think you're done, and the website goes live, and it shipped to users, and then a couple of months late or a couple of weeks later, it turns out that you weren't done at all. You missed a whole bunch of stuff. And for various reasons, that only came up now, because, you know, now people are interacting with the site, or now the customer finally looks at it. Now it has content. So they actually understand what's going on, all these things. But what happens is that, no, you work on a project, you think it's done, you ship it, you start working on another project. And then your manager comes back, and he says, you know, that project from a month ago. Yeah, here's a word file with all the stuff you need to fix, or JIRA tickets, or whatever. And at that point, it's so much more time intensive, and annoying to go back to that project, and figure out where everything is, and fix the things, and validate it, and then ship it again. Compared to during development, you already found that weird breakpoints where you missed that things are actually now two columns, and they don't quite fit. But it's not an iPhone, and it's not an iPad, it's right in the middle. And you never bother checking that if you don't use Polypane, whereas in Polypane, that sort of comes up naturally. So you see that you can fix it because you're working on it anyway, and move on with your day, and you never end up having that remedial work, or, you know, never say never, but you get a whole lot less issues, because you catch all these things during development. And as you can tell, for how long this explanation was, it's very hard to explain people that that's what's happening. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>:  I think you also get some nice new tools that you didn't have anywhere else. The view of all of them is really nice for you in the moment. But also, you have this ability to do like a screenshot of the whole thing, right? And that would be typically much harder to do. If you're trying to do this manually, like I've tried to do that, where you manually finagling these windows, you know, trying to get them so that you can get a nice screenshot with no noise or anything. So I mean, I'm totally sold that it's worth it for somebody who builds websites to have a tool like this at that price. And that blows my mind, because at the beginning of this, I thought that was not a thing that I would agree with. Yeah, I mean, I can see the usefulness and when I think about what it costs you to save, that it definitely will, it's definitely worth that much to a lot of people, I think. So because this is effectively like a proprietary product, it's not on GitHub, right? Like nobody else can contribute to it? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  No, no, it's just me. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>:  Yeah. I don't want to put you on the spot. So feel free to say no, you don't want to talk about this. But we have talked about how it is possible for people to make a downstream browser, right? So like let's say Chromium is the open source project. And then all the browsers, even Chrome are downstream of that. And the way you can easily get market share is to ship it on a device that you also make, right? Or with an operating system that you also make. And that just inevitably, the power of defaults is very strong, right? You will capture a very, very significant overwhelming portion of the people who use that operating system or buy that product. And so there are some downstream products that have significant share. And they also frequently then have their own stores, which they monetize, and they can monetize their default search. So they can be lucrative even. And there's nothing in open source that says they have to contribute anything back. And I certainly don't want to imply that somebody who can just, you know, the product more or less breaks even or something like that, they also should pay back. But I think that there is some point where things start getting very lucrative, where you would hope that people would want to put back into the system that supports them, do you know what I mean? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  Mm-hmm. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>:  And I wonder if there's like anything you imagine where like you would somehow contribute back downstream via whatever like back your stack or like just even some collective or something that's working upstream in Chromium. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  So I am part of the Electron Governance team. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>:  Okay. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  So I mostly help out in the ecosystem there because again, I don't know C++. So I, you know, I try to contribute back that way. There's also stuff that I've built for Polypane that I now ship in other tools for free. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>:  Cool. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  I can be found in the Chromium bug reports quite often. And I'm hoping to start contributing to the Chromium DevTools. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>:  Nice. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  And perhaps the Chromium DevTools protocol as well. Because by nature of the things I do, </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>:  Mm-hmm. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  I tend to find a lot of like the gaps in there. But I haven't started that yet. Usually I get stuck. I figure out it's some bug. I try to find, you know, where should this be fixed? But then at the same time, I usually find a workaround. And that workaround is something I can do in my own product. So instead of learning C++ is what it comes down to. I end up fixing it in my own product. But for example, I have Chromium extension and Firefox and Opera, etc. called FixAlly. And what that does is it automatically fixes contrast issues on webpages. And that's available for free on all the browsers that I can put it on. And that uses the same technology that Polypane uses to suggest colors for contrast issues. And instead, it just applies them. So you can toggle that on as an end user. And then all the websites you visit won't have contrast issues and will be readable. So I try to give back in that way as well. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>:  Yeah, which is great. But it's interesting that you bring up that you're working like with the Chromium DevTools people. Does that make you at all concerned that Chromium might just take all your ideas from Polypane and make them native? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  There are features like from Polypane that have landed in Chrome, in Firefox, etc. And I have a bit mixed feelings about that. On the one hand, they can do that. And I'm also proud that my ideas were good enough for multi-billion-dollar companies to also implement. And the people that are implementing them, I am in contact with them. And they're all very nice people. And they all share the same enthusiasm I have about developer tooling. So there's nothing insidious there. We were literally all just trying to build the best thing for developers. However, a developer working on Chrome or on Edge, they don't have to worry about the longevity of their company. They can just build and ship because those companies will keep existing. Because they have income from wildly different things than the browser. For me, however, this is my income, my job. So having a huge company in the most banal way takes something I came up with and then give it away for free. I have very mixed feelings about that. All in all, though, I don't think that those browsers are ever going to let the developer tools break out of their box. What I've done in Polypane really requires everything about the browser to be DevTools-focused. That's just not going to work for a browser where the vast majority of users should never see developer tooling. So I hope that that's where the balance is. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>:  Right. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  And that's the complicated feelings I have on that topic. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>:  Is there some universe in which you can see yourself going to work for Google or something effectively similar to Google or Apple agreeing to fund your work, but then own the ability to put it into their browsers and products and things like that because they hire people to design those tools and to build those tools and to manage those tools and everything. And you have done a lot of that work. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  I mean, there's always a number, right? There's a number for which that makes sense for me. I feel like I still have a lot of work to do. And I really enjoy doing that. But there are other ways that I can achieve the same goals I have now. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>:  Yeah. Well, this has been really great. Thank you so much for joining us. Where can people find you online? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  You can find me at KilianValkof.com. And from there, you can find links to Polypane, to FixAlly, to everything I do. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>:  And where can people go directly to find Polypane so they can see what you've created and give you money? </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  That's at polypane.app. And you don't have to give me money straight away. There's a free trial, no strings attached. Just download it and try it. And if it is for you, please let me know. And if it isn't for you, please also let me know because I really enjoy all the feedback I get. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>:  Awesome. Thank you, Kilian. I really appreciate taking the time to talk to us. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>:  Yeah, this was really, really interesting. </blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Kilian Valkhof</cite>:  Thank you guys as well.</blockquote></li>
+                
+              </ul>
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+<script src="/assets/chat.js"></script>
+
+    </main>
+
+    <footer id="site-footer" role="contentinfo">
+
+  <a class="site-title" href="/">
+    <img src="/assets/i/logo.png" alt="Igalia" />
+  </a>
+
+  <div>
+    <h2>Igalia.com</h2>
+    <ul class="main-menu" role="navigation">
+      
+      <li>
+        <a class="page-link" href="/about" title="About Us">
+          About Us
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/technologies" title="Technologies">
+          Technologies
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/services" title="Services">
+          Services
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/industries" title="Industries">
+          Industries
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/24-7/home" title="24/7">
+          24/7
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/jobs" title="Jobs">
+          Jobs
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/contact" title="Contact">
+          Contact
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div>
+    <h2>Igalia, S.L. © 2023. All rights reserved.</h2>
+    <ul class="footer-menu" role="navigation">
+      
+      <li>
+        <a class="page-link" href="/coc" title="Code of Conduct">
+          Code of Conduct
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/legal" title="Legal Terms">
+          Legal Terms
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/press" title="Press">
+          Press
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/privacy" title="Privacy Policy">
+          Privacy Policy
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/public-funding" title="Public funding (Fondos públicos)">
+          Public funding (Fondos públicos)
+        </a>
+        </li>
+        
+    </ul>
+  </div>
+
+  <div role="contentinfo">
+    <h2>Headquarters</h2>
+    <ul class="contact-list">
+      
+      <li>Bugallal Marchesi, 22, 1º</li>
+      
+      <li>15008 A Coruña</li>
+      
+      <li>Galicia (Spain)</li>
+      
+      <li>Pho.: +34 981 913991</li>
+      
+      <li>
+        <a href="mailto:info(at)igalia.com">
+          info(at)igalia.com
+        </a>
+      </li>
+      
+    </ul>
+    <div class="social">
+      
+      
+
+      <a class="social-link" href="https://twitter.com/igalia" target="_blank" title="twitter" rel="me">
+        <i aria-hidden="true" class="fab fa-twitter"></i>
+        <span hidden>twitter</span>
+      </a>
+      
+      
+
+      <a class="social-link" href="https://floss.social/@igalia" target="_blank" title="mastodon" rel="me">
+        <i aria-hidden="true" class="fab fa-mastodon"></i>
+        <span hidden>mastodon</span>
+      </a>
+      
+      
+
+      <a class="social-link" href="https://youtube.com/igalia" target="_blank" title="youtube" rel="me">
+        <i aria-hidden="true" class="fab fa-youtube"></i>
+        <span hidden>youtube</span>
+      </a>
+      
+    </div>
+
+</footer>
+
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+    <script src="/assets/app.js"></script>
+    
+    
+
+    <!-- Piwik -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+      _paq.push(['disableCookies']);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+         var u="//stats.igalia.com/";
+         _paq.push(['setTrackerUrl', u+'piwik.php']);
+         _paq.push(['setSiteId', '1']);
+         var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+         g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+       })();
+    </script>
+    <noscript><p><img src="//stats.igalia.com/piwik.php?idsite=1&rec=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Piwik Code -->
+
+  </body>
+</html>

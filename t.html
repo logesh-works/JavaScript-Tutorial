@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html class="theme-auto">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+		<meta property="og:image" content="https://www.gravatar.com/avatar/02cd45622e90350cc061aaaa02229195?s=96&d=https%3A%2F%2Fmicro.blog%2Fimages%2Fblank_avatar.png" />
+	
+	
+	<title>Micro.blog - @t</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.micro.blog/css/main.css?v=20230813.1">
+	<link rel="stylesheet" href="https://cdn.micro.blog/css/themes/dark.css?v=20230724.1">
+	<link rel="shortcut icon" href="https://cdn.micro.blog/images/icons/favicon_32.png" type="image/x-icon" />
+	<link rel="apple-touch-icon" sizes="192x192" href="https://cdn.micro.blog/images/icons/favicon_192.png">
+	<link rel="webmention" href="https://micro.blog/webmention" />
+	<link rel="subscribe" href="https://micro.blog/users/follow" />
+	
+		<link rel="alternate" type="application/json" title="JSON Feed" href="https://micro.blog/posts/t" />
+	
+
+	<script type="importmap">
+		{
+			"imports": {
+				"application": "/js/application.js?v=20230612.1",
+				"@hotwired/stimulus": "https://unpkg.com/@hotwired/stimulus/dist/stimulus.js"
+			}
+		}
+	</script>
+	<script src="https://cdn.micro.blog/js/libs/es-module-shims.js" async="async"></script>
+	<script src="/js/application.js?v=20230612.1" type="module"></script>
+
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+	<script defer src="https://cdn.micro.blog/js/alpine_intersect.js?v=20221122.1"></script>
+	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.5/cdn.min.js"></script>
+	<script src="https://cdn.micro.blog/js/microblog.js?v=20230630.1"></script>
+</head>
+<body>
+
+
+	<style>
+		nav {
+			float: right;
+			line-height: 56px;
+			padding-top: 4px;
+		}
+		
+		nav a {
+			padding-right: 6px;
+		}
+		
+		.container {
+			width: 70%;
+		}
+
+		.splash_signup {
+			display: inline-block;
+			margin-left: 10px;
+			vertical-align: middle;
+		}
+
+		.splash_startbutton {
+			background-color: #FEE199;
+			border-color: #FDB52B;
+			color: black;
+		}
+		
+		.splash_startbutton:hover {
+			background-color: #FDC75C;
+			border-color: #FDB52B;
+			color: black;
+		}
+						
+		@media screen and (max-width: 600px) {
+			nav {
+				float: none;
+				line-height: 22px;				
+				padding-bottom: 10px;
+			}
+			
+			.container {
+				width: 90%;
+			}
+
+			.splash_signup {
+				/* margin-left: 0px;
+				padding-bottom: 10px; */
+			}
+		}
+	</style>
+
+	<div class="container home_container main_container home_container">
+		<header>
+			<h1 class="header_logo"><a href="/">Micro.blog</a></h1>
+
+			<div class="splash_signup">
+				
+					
+						<p><a href="/register" class="btn btn-default splash_startbutton">Sign up now: free 30-day trial</a></p>
+					
+				
+			</div>
+					
+			<nav>
+				<a href="/signin">Sign In</a>
+				<a href="/discover">Discover</a>
+				<a href="/pricing">Pricing</a>
+				<a href="https://help.micro.blog/" target="_blank">Help</a>
+			</nav>
+		</header>
+		
+		<div class="alert alert-warning user_options_alert" style="display: none;">
+	@t has been reported. Thank you.
+</div>
+
+<div class="alert alert-info" role="alert" style="display: block;" id="timeline_info">
+	<div class="timeline_info">
+		
+			<img src="https://www.gravatar.com/avatar/02cd45622e90350cc061aaaa02229195?s=96&d=https%3A%2F%2Fmicro.blog%2Fimages%2Fblank_avatar.png" width="80" height="80" alt="@t's avatar" loading="lazy" />
+		
+		<div class="timeline_info--meta">
+			<b>Tantek Çelik</b> 
+			
+			<br />
+			@t
+			
+				/ 
+				Mastodon: <a href="/t?remote_follow=1">@t@micro.blog</a>
+			
+			<br>
+			<a class="word-break-all" href="https://tantek.com/">https://tantek.com/</a>
+		</div>
+	</div>
+	
+
+	
+
+	
+</div>
+
+
+<form>
+	<input type="hidden" value="/posts/t" id="fetch_path" />
+</form>
+
+<script>
+	var tag_names = [];
+
+	function loadTags() {
+		fetch("/posts/bookmarks/tags").then(response => response.json()).then(data => {
+			tag_names = data;
+		});
+	}
+
+	function showTagsField(parent_div) {
+		var divs;
+		
+		divs = parent_div.getElementsByClassName("tags_display");
+		divs[0].style.display = "none";
+		
+		divs = parent_div.getElementsByClassName("tags_edit");
+		divs[0].style.display = "inline-block";
+		
+		var fields = divs[0].getElementsByTagName("input");
+		fields[0].focus();
+	}
+
+	function hideTagsField(post_id) {
+		var parent_div = document.getElementById("tags_" + post_id);
+		var divs;
+		
+		divs = parent_div.getElementsByClassName("tags_display");
+		divs[0].style.display = "inline-block";
+		
+		divs = parent_div.getElementsByClassName("tags_edit");
+		divs[0].style.display = "none";
+	}
+		
+	function sendTagsField(post_id) {
+		var parent_div = document.getElementById("tags_" + post_id);
+		var divs;
+		
+		divs = parent_div.getElementsByClassName("tags_edit");
+
+		var fields = divs[0].getElementsByTagName("input");
+		const new_tags = fields[0].value;
+
+		divs = parent_div.getElementsByClassName("tags_display");
+		if (new_tags.length > 0) {
+			divs[0].innerText = new_tags;
+		}
+		else {
+			divs[0].innerText = "Tag...";
+		}
+
+		let form = new FormData();
+		form.append("tags", new_tags);
+		
+		fetch(`/posts/bookmarks/${post_id}`, {
+			method: "POST",
+			body: form
+		}).then(response => response.json()).then(data => {
+			hideTagsField(post_id);
+			loadTags();
+		});
+	}
+	
+	function readyAutocomplete(post_id) {
+		var currentFocus;
+	  
+		const tags_input = document.getElementById("tags_field_" + post_id);
+	  
+		tags_input.addEventListener("input", function(e) {
+			var a, b, i;
+			var pieces = this.value.split(",");
+			var val = pieces[pieces.length -1].trim();
+			
+			// close open autocomplete lists
+			closeAllLists();
+			
+			if (!val) {
+				return false;
+			}
+			
+			currentFocus = -1;
+			
+			// create div to hold items list
+			a = document.createElement("DIV");
+			a.setAttribute("id", this.id + "tags_autocomplete_list");
+			a.setAttribute("class", "tags_autocomplete_items");
+			this.parentNode.appendChild(a);
+			
+			// for each item
+			for (i = 0; i < tag_names.length; i++) {
+				// check if the item starts with the same letters as the text field value
+				if (tag_names[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+					// create a div for each matching element
+					b = document.createElement("DIV");
+					
+					// make the matching letters bold
+					b.innerHTML = "<strong>" + tag_names[i].substr(0, val.length) + "</strong>";
+					b.innerHTML += tag_names[i].substr(val.length);
+					
+					// insert an input field that will hold the current array item's value
+					b.innerHTML += "<input type='hidden' value='" + tag_names[i] + "'>";
+					
+					// when someone clicks on the item value (div)
+					b.addEventListener("click", function(e) {
+						// replace new text after last comma
+						var pieces = tags_input.value.split(",");
+						const last_tag = pieces[pieces.length - 1];
+						pieces = pieces.slice(0, -1);
+						var new_tag = this.getElementsByTagName("input")[0].value;
+												
+						// add a space if the user had one
+						if (last_tag[0] == " ") {
+							new_tag = " " + new_tag;
+						}
+					
+						pieces.push(new_tag);
+						
+						tags_input.value = pieces.join(",");
+						closeAllLists();
+					});
+					
+					a.appendChild(b);
+				}
+			}
+		});
+		
+		tags_input.addEventListener("keydown", function(e) {
+			var x = document.getElementById(this.id + "tags_autocomplete_list");
+			if (x) {
+				x = x.getElementsByTagName("div");
+			}
+			
+			if (e.keyCode == 40) { // down arrow
+				currentFocus++;
+				// and and make the current item more visible
+				addActive(x);
+			}
+			else if (e.keyCode == 38) { // up arrow
+				currentFocus--;
+				// and and make the current item more visible
+				addActive(x);
+			}
+			else if (e.keyCode == 13) { // enter key			
+				if (currentFocus > -1) {					
+					// simulate a click on the "active" item
+					if (x) {
+						e.preventDefault();
+						x[currentFocus].click();
+					}
+				}
+			}
+		});
+		
+		function addActive(x) {
+			if (!x) {
+				return false;
+			}
+			
+			// start by removing the "active" class on all items
+			removeActive(x);
+			if (currentFocus >= x.length) {
+				currentFocus = 0;
+			}
+			
+			if (currentFocus < 0) {
+				currentFocus = (x.length - 1);
+			}		
+			
+			x[currentFocus].classList.add("tags_autocomplete_active");
+		}
+		
+		function removeActive(x) {
+			// remove the "active" class from all items
+			for (var i = 0; i < x.length; i++) {
+				x[i].classList.remove("tags_autocomplete_active");
+			}
+		}
+		
+		function closeAllLists(elmnt) {
+			// close all autocomplete lists except the one passed as an argument
+			var x = document.getElementsByClassName("tags_autocomplete_items");
+			for (var i = 0; i < x.length; i++) {
+				if (elmnt != x[i] && elmnt != tags_input) {
+					x[i].parentNode.removeChild(x[i]);
+				}
+			}
+		}
+		
+		// when someone clicks elsewhere on the page
+		document.addEventListener("click", function(e) {
+			closeAllLists(e.target);
+		});
+	}
+	
+	
+</script>
+
+<script id="posts-template" type="text/x-handlebars-template">
+	
+	
+	{{#each this}}
+		<div class="post" id="post_div_{{id}}" data-timestamp="{{_microblog.date_timestamp}}">
+			<div class="post_avatar"
+				@mouseover="trigger_pop_up({{id}}, 'avatar')"
+				@mouseleave="cancel_pop_up({{id}})"
+			>
+				<a href="/{{author._microblog.username}}" >
+					<img src="https://cdn.micro.blog/photos/96/{{author.avatar}}" width="48" height="48" loading="lazy" />
+				</a>
+			</div>
+			<div class="post_content">
+				<div class="post_username">
+					<a href="/{{author._microblog.username}}"
+						@mouseover="trigger_pop_up({{id}}, 'username')"
+						@mouseleave="cancel_pop_up({{id}})">
+						{{author._microblog.username}}
+					</a>
+				</div>
+				<div class="post_text" @mouseover.debounce="cancel_pop_up({{id}})">
+					{{{content_html}}}
+					{{#if _microblog.note}}
+						<div class="post_note_row">
+							<div class="post_note_text">{{{_microblog.note}}}</div>
+						</div>
+					{{/if}}
+				</div>
+				
+				<div class="post_options">
+					<div class="post_time"><a href="{{url}}">{{_microblog.date_relative}}</a></div>
+					
+				</div>
+				
+				<div class="post_replybox" id="reply_div_{{id}}" style="display: none;">
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<div class="col-sm-12">
+								<div id="reply_editor_{{id}}" class="post_editor"></div>
+							</div>
+						</div>
+						<div class="form-group" id="posting_autocomplete_{{id}}">
+							<div class="col-sm-12">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-12" style="text-align: right;">
+								<button type="submit" class="btn btn-default replybox_button" onClick="cancelReply({{id}}); return false;">Cancel</button>
+								<button type="submit" id="reply_button_{{id}}" class="btn btn-default replybox_button" onClick="sendReply({{id}}); return false;">Post</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<template x-if="profile_popup == {{id}}">
+				<div
+					class="timeline_profile_popup"
+					:class="profile_align"
+					x-html="(await fetch('/{{author._microblog.username}}/embed')).text()"
+					@click.outside="profile_popup == {{id}} ? hide_pop_up : null"
+					@mouseleave.debounce.50ms="profile_popup == {{id}} ? hide_pop_up  : null"
+					@mouseleave="profile_popup == {{id}} ? is_inside_popup = false : null"
+					@mouseover="profile_popup == {{id}} ? is_inside_popup = true : null"
+					x-intersect:leave="profile_popup == {{id}} ? hide_pop_up  : null"
+					>
+					<div class="loading blur_container">
+						<img src="/images/progress_spinner.svg?v=2021031.1" width="30" height="30" alt="Progress spinner" />
+					</div>
+				</div>
+			</template>
+		</div>
+	{{/each}}
+</script>
+
+<img id="progress_spinner" src="/images/progress_spinner.svg?v=2021031.1" width="30" height="30" alt="Progress spinner" />
+
+<div class="posts" x-data="profile_popup"></div>
+
+
+	</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.6.0/Sortable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
+<script src="https://cdn.micro.blog/js/editor.min.js?v=20230501.1"></script>
+
+
+
+
+</body>
+</html>

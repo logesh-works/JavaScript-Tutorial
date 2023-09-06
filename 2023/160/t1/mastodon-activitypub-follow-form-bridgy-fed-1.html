@@ -1,0 +1,148 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" />
+<title>If you added a #Mastodon / #ActivityPub follow form to your #IndieWeb site based on Bridgy Fed (e.g. using code/instructions I previously posted^1), you need to update it to add another invisible input element for the &quot;protocol&quot;, e.g.:
+
+&lt;input name=&quot;protocol&quot; type=&quot;hidden&quot; value=&quot;web&quot; /&gt;
+
+Otherwise people trying to use your form to follow you may see an error from #BridgyFed like:
+&gt; Bad Request 
+&gt; Missing required parameter protocol
+
+Here is the complete example that I posted previously with the new invisible input:
+
+&lt;form method=&quot;post&quot; action=&quot;https://fed.brid.gy/remote-follow&quot;&gt;
+ &lt;label for=&quot;follow-address&quot;&gt;🐘 Follow 
+  &lt;kbd&gt;@tantek.com@tantek.com&lt;/kbd&gt;:&lt;br /&gt; 
+  enter your @-@ fediverse address:&lt;/label&gt;
+ &lt;input id=&quot;follow-address&quot; name=&quot;address&quot; type=&quot;text&quot; required=&quot;required&quot;
+        placeholder=&quot;@you@instance.social&quot; alt=&quot;fediverse address&quot; value=&quot;&quot; /&gt;
+ &lt;input name=&quot;domain&quot; type=&quot;hidden&quot; value=&quot;tantek.com&quot; /&gt;
+ &lt;input name=&quot;protocol&quot; type=&quot;hidden&quot; value=&quot;web&quot; /&gt;
+ &lt;button type=&quot;submit&quot;&gt;Follow&lt;/button&gt;
+&lt;/form&gt;
+
+I also updated that previous post^1 with the new input in case people find that instead.
+
+
+This is day 42 of #100DaysOfIndieWeb. #100Days
+
+← Day 41: https://tantek.com/2023/139/t1/wikipedia-supports-indieweb-rel-me
+→ Day 43: https://tantek.com/2023/171/t1/anniversaries-microformats-posse
+
+
+^1 https://tantek.com/2023/020/t2/bridgy-fed-follow-form - Tantek</title>
+<link rel="canonical" href="https://tantek.com/2023/160/t1/mastodon-activitypub-follow-form-bridgy-fed" />
+<link rel="icon" href="/logo.jpg" />
+<meta name="viewport" content="initial-scale=0.7"/>
+<link rel="webmention" href="//webmention.io/tantek.com/webmention" />
+<style type="text/css">/*<![CDATA[*/ 
+@import "/2023/simple.css";
+form.search { width:34%; float:right; white-space:nowrap; font-size:1.3em; text-align:right }
+input,button { font-size:1em }
+button { margin: 0 0.5em 0 0; padding:0 0.5em }
+form.search input[type=search] { width:62% }
+/*]]>*/</style>
+</head>
+<body class=" post hentry h-entry as-note">
+<header><div class="header">
+<h1><a href="/" rel="author home">tantek.com</a></h1>
+
+<form class="search" action="https://duckduckgo.com/html/" method="get">
+<input type="hidden" name="type" value="list" />
+<input type="search" value="site:tantek.com " name="q" />
+<button type="submit">Search</button>
+</form>
+
+</div></header>
+
+<div class="sidestuff">
+<ul class="snav">
+<li><a href="/2023/158/t2/" id="previtem" title="View the previous (older) item in the stream." rel="prev"><abbr>&#x2190;</abbr></a></li><li><a href="/2023/170/t1/" id="nextitem" title="View the next (newer) item in the stream" rel="next"><abbr>&#x2192;</abbr></a></li>
+</ul>
+</div>
+<span class="p-author h-card"><a href="/" class="u-url author-icon" rel="author" title="Tantek Çelik"><img class="u-photo p-name" src="/logo.jpg" alt="Tantek Çelik" /></a></span>
+
+<a href="https://fed.brid.gy/" aria-hidden="true"></a> <p class="p-name entry-title e-content entry-content article">If you added a <a href="https://indieweb.social/tags/Mastodon" class="auto-link-hashtag">#<span class="p-category auto-tag">Mastodon</span></a> / <a href="https://indieweb.social/tags/ActivityPub" class="auto-link-hashtag">#<span class="p-category auto-tag">ActivityPub</span></a> follow form to your <a href="https://indieweb.social/tags/IndieWeb" class="auto-link-hashtag">#<span class="p-category auto-tag">IndieWeb</span></a> site based on Bridgy Fed (e.g. using code/instructions I previously posted<a id="t5RH1_ref-1" href="#t5RH1_note-1">¹</a>), you need to update it to add another invisible input element for the &quot;protocol&quot;, e.g.:<br class="auto-break"/><br class="auto-break"/>&lt;input name=&quot;protocol&quot; type=&quot;hidden&quot; value=&quot;web&quot; /&gt;<br class="auto-break"/><br class="auto-break"/>Otherwise people trying to use your form to follow you may see an error from <a href="https://indieweb.social/tags/BridgyFed" class="auto-link-hashtag">#<span class="p-category auto-tag">BridgyFed</span></a> like:<br class="auto-break"/>&gt; Bad Request <br class="auto-break"/>&gt; Missing required parameter protocol<br class="auto-break"/><br class="auto-break"/>Here is the complete example that I posted previously with the new invisible input:<br class="auto-break"/><br class="auto-break"/>&lt;form method=&quot;post&quot; action=&quot;https://fed.brid.gy/remote-follow&quot;&gt;<br class="auto-break"/>&#xA0;&lt;label for=&quot;follow-address&quot;&gt;🐘 Follow <br class="auto-break"/>&#xA0; &lt;kbd&gt;@tantek.com@tantek.com&lt;/kbd&gt;:&lt;br /&gt; <br class="auto-break"/>&#xA0; enter your @-@ fediverse address:&lt;/label&gt;<br class="auto-break"/>&#xA0;&lt;input id=&quot;follow-address&quot; name=&quot;address&quot; type=&quot;text&quot; required=&quot;required&quot;<br class="auto-break"/>&#xA0; &#xA0; &#xA0; &#xA0; placeholder=&quot;@you@instance.social&quot; alt=&quot;fediverse address&quot; value=&quot;&quot; /&gt;<br class="auto-break"/>&#xA0;&lt;input name=&quot;domain&quot; type=&quot;hidden&quot; value=&quot;tantek.com&quot; /&gt;<br class="auto-break"/>&#xA0;&lt;input name=&quot;protocol&quot; type=&quot;hidden&quot; value=&quot;web&quot; /&gt;<br class="auto-break"/>&#xA0;&lt;button type=&quot;submit&quot;&gt;Follow&lt;/button&gt;<br class="auto-break"/>&lt;/form&gt;<br class="auto-break"/><br class="auto-break"/>I also updated that previous post<a id="t5RH1_ref-1" href="#t5RH1_note-1">¹</a> with the new input in case people find that instead.<br class="auto-break"/><br class="auto-break"/><br class="auto-break"/>This is day 42 of <a href="https://indieweb.social/tags/100DaysOfIndieWeb" class="auto-link-hashtag">#<span class="p-category auto-tag">100DaysOfIndieWeb</span></a>. <a href="https://indieweb.social/tags/100Days" class="auto-link-hashtag">#<span class="p-category auto-tag">100Days</span></a><br class="auto-break"/><br class="auto-break"/>← Day 41: <a class="auto-link" href="https://tantek.com/2023/139/t1/wikipedia-supports-indieweb-rel-me">https://tantek.com/2023/139/t1/wikipedia-supports-indieweb-rel-me</a><br class="auto-break"/>→ Day 43: <a class="auto-link" href="https://tantek.com/2023/171/t1/anniversaries-microformats-posse">https://tantek.com/2023/171/t1/anniversaries-microformats-posse</a><br class="auto-break"/><br class="auto-break"/><br class="auto-break"/><a id="t5RH1_note-1" href="#t5RH1_ref-1">¹</a> <a class="auto-link" href="https://tantek.com/2023/020/t2/bridgy-fed-follow-form">https://tantek.com/2023/020/t2/bridgy-fed-follow-form</a></p><span class="info footer">
+  <span class="dt-published published dt-updated updated">
+  <time class="value" datetime="19:14-0700">19:14</time> on <time class="value">2023-06-09</time>  </span>
+ <span class="lt">
+ (ttk.me t5RH1) </span>
+  using <span class="using">BBEdit</span> </span> 
+<div class="info footer">
+<form action="//tantek.com/2023/160/t1/mastodon-activitypub-follow-form-bridgy-fed"><div>
+<label><span class="lt">URL:</span>
+<input class="u-url url u-uid uid bookmark" type="url" size="70" style="max-width:100%" value="https://tantek.com/2023/160/t1/mastodon-activitypub-follow-form-bridgy-fed" />
+</label>
+</div></form>
+</div>
+</li>
+<script type="text/javascript">/*<![CDATA[*/
+function select_all(e) {
+ e = e ? e : window.event;
+ var el = targetelement(e);
+ el.focus();
+ /* el.select(); // fails in Mobile Safari */
+ el.selectionStart=0;
+ el.selectionEnd=el.value.length;
+}
+
+var fs = document.forms, i = 0, j = 0, es;
+for (i = 0; i<fs.length; i++) {
+  es = document.forms[i].elements;
+  if (es) {
+    for (j=0;j<es.length;j++) {
+      switch (es[j].type) {
+      case "text":
+      case "url":
+        es[j].onclick = select_all;
+      }
+    }
+  }
+}
+
+
+document.onkeyup = keyup;
+
+function clearactive() {
+  var e = document.getElementById("previtem");
+  if (e) { e.className = ""; }
+  e = document.getElementById("nextitem");
+  if (e) { e.className = ""; }
+}
+
+function keyup(e)
+{
+   var kid = (window.event) ? event.keyCode : e.keyCode;
+   var nid = "";
+   if (document.activeElement !== document.body) {
+     return;
+   }
+   switch(kid) {
+    case 33:
+    case 37:
+    case 74:
+      nid = "previtem";
+      break;
+    case 34:
+    case 39:
+    case 75:
+      nid = "nextitem";
+      break;
+   }
+   if (nid!="") {
+      ne = document.getElementById(nid);
+      if (ne) {
+        ne.className = "active";
+        doevent(ne,"click");
+        window.onunload = clearactive;
+        return false;
+      }
+   }
+}
+
+/*]]>*/</script>
+<script src="/fragmention.min.js"></script>
+<script src="/scripts/indieconfig.js"></script> 
+<script src="/scripts/webaction.js"></script>
+<script src="cassis.js"></script>
+</body>
+</html>

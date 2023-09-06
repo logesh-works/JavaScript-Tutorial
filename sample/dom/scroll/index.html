@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Scroll Events</title>
+    <style>
+        #scrollDemo {
+            height: 200px;
+            width: 200px;
+            overflow: auto;
+            background-color: #f0db4f
+        }
+
+        #scrollDemo p {
+            /* show the scrollbar */
+            height: 300px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="scrollDemo">
+        <p>JS Scroll Event Demo</p>
+    </div>
+
+    <div id="control">
+        <button id="btnScrollLeft">Scroll Left</button>
+        <button id="btnScrollTop">Scroll Top</button>
+    </div>
+
+    <script>
+        const control = document.querySelector('#control');
+
+        control.addEventListener('click', function (e) {
+            // get the scrollDemo
+            const div = document.getElementById('scrollDemo');
+            // get the target
+            const target = e.target;
+            // handle each button's click
+            switch (target.id) {
+                case 'btnScrollLeft':
+                    div.scrollLeft += 20;
+                    break;
+
+                case 'btnScrollTop':
+                    div.scrollTop += 20;
+                    break;
+            }
+        });
+    </script>
+
+</body>
+
+</html>

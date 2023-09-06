@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+	<meta name="generator" content="Hugo 0.91.2" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="" />
+  <title>
+     Tim Chambers 
+  </title>
+    <link
+    rel="shortcut icon"
+    href="https://micro.blog/tchambers/favicon.png"
+    type="image/x-icon"
+  />
+  <link rel="stylesheet" href="/css/main.css"> <link
+  rel="stylesheet" href="/custom.css">
+  <style>
+    :root {
+    --body-background-color: #f8f8f8;
+    --body-text-color: #242424;
+    --body-accent-color: #1184ab;
+    --card-background-color: #ffffff;
+    --card-text-color: #252525;
+    --card-accent-color: #1084ab;
+    --hover-color: #d58400;
+    --blockquote: #f8eec4;
+    --blockquote-border: #d6a32e;
+    --blockquote-text: #2a2a2b;
+    --shadow-color: #e3e3e3;
+    --meta-color: #848484;
+  }
+  
+  [data-theme="light"] {
+    --body-background-color: #f8f8f8;
+    --body-text-color: #242424;
+    --body-accent-color: #1184ab;
+    --card-background-color: #ffffff;
+    --card-text-color: #252525;
+    --card-accent-color: #1084ab;
+    --hover-color: #d58400;
+    --blockquote: #f8eec4;
+    --blockquote-border: #d6a32e;
+    --blockquote-text: #2a2a2b;
+    --shadow-color: #e3e3e3;
+    --meta-color: #848484;
+  }
+
+  [data-theme="dark"] {
+    --body-background-color: #2a2a2b;
+    --body-text-color: #ffffff;
+    --body-accent-color: #16a5d4;
+    --card-background-color: #212121;
+    --card-text-color: #ffffff;
+    --card-accent-color: #16a5d4;
+    --hover-color: #e27e2c;
+    --blockquote: #f8eec4;
+    --blockquote-border: #d6a32e;
+    --blockquote-text: #2a2a2b;
+    --shadow-color: #000000;
+    --meta-color: #a2a2a3;
+  }
+
+</style>
+  <link rel="canonical" href="https://www.timothychambers.net/" />
+
+  <link
+    href="https://www.timothychambers.net/feed.xml"
+    rel="alternate"
+    type="application/rss+xml"
+    title="Tim Chambers"
+  />
+  <link href="https://www.timothychambers.net/podcast.xml" rel="alternate"
+  type="application/rss+xml" title="Podcast" /> <link rel="alternate"
+  type="application/json" title="Tim Chambers" href="https://www.timothychambers.net/feed.json" /> <link rel="EditURI" type="application/rsd+xml" href="https://www.timothychambers.net/rsd.xml" /> <link rel="me" href="https://micro.blog/tchambers" />
+    
+  <link rel="authorization_endpoint" href="https://micro.blog/indieauth/auth" />
+  <link rel="token_endpoint" href="https://micro.blog/indieauth/token" />
+  <link rel="micropub" href="https://micro.blog/micropub" />
+  <link rel="microsub" href="https://micro.blog/microsub" />
+  <link rel="webmention" href="https://micro.blog/webmention" />
+  <link rel="subscribe" href="https://micro.blog/users/follow" />
+  
+  <link rel="stylesheet" href="/css/all.min.css" />
+    <meta name="twitter:card" content="summary" />
+
+  <meta name="twitter:title" content="Tim Chambers" />
+
+<meta name="twitter:description" content="" />
+
+  
+
+
+	<meta property="og:title" content="Tim Chambers" />
+
+
+<meta property="og:description" content="Follow &lt;a href=&#34;https://micro.blog/tchambers&#34;&gt;@tchambers on Micro.blog&lt;/a&gt;." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.timothychambers.net/" />
+
+
+
+
+
+
+
+
+  
+    <meta property="og:updated_time" content="2023-07-14T10:51:53-04:00"/>
+  
+
+
+
+
+
+  <script async defer data-domain="" src="https://plausible.io/js/plausible.js"></script> 
+</head>
+
+
+  <body onload="document.body.style.opacity='1'">
+
+    
+<div class="theme-switch-wrapper">
+  🌞&nbsp;
+  <label class="theme-switch" for="checkbox">
+    <input type="checkbox" id="checkbox" />
+    <div class="slider round"></div>
+  </label>
+  &nbsp;🌛
+</div>
+<script type="text/javascript">
+  const toggleSwitch = document.querySelector(
+    '.theme-switch input[type="checkbox"]'
+  )
+
+  function switchTheme(e) {
+    if (e.target.checked) {
+      document.documentElement.setAttribute('data-theme', 'dark')
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light')
+    }
+  }
+
+  toggleSwitch.addEventListener('change', switchTheme, false)
+
+  function switchTheme(e) {
+    if (e.target.checked) {
+      document.documentElement.setAttribute('data-theme', 'dark')
+      localStorage.setItem('theme', 'dark')
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light')
+      localStorage.setItem('theme', 'light')
+    }
+  }
+
+  const currentTheme = localStorage.getItem('theme')
+    ? localStorage.getItem('theme')
+    : null
+
+  if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme)
+
+    if (currentTheme === 'dark') {
+      toggleSwitch.checked = true
+    }
+  }
+</script>
+
+<header class="site-header">
+  <div class="site-header-logo">
+    <a class="site-header-logo-link" href="/"
+      ><img
+        src="https://micro.blog/tchambers/avatar.jpg"
+        class="site-image"
+        alt="Tim Chambers"
+        width="75px"
+    /></a>
+  </div>
+  <div class="site-header-title">
+    <a class="site-header-title-link" href="/">Tim Chambers</a>
+  </div>
+  <div class="site-header-nav">
+    <nav class="site-nav">
+      <div class="site-nav-trigger">
+         
+        <a class="site-nav-link" href="/about/"
+          >About</a
+        >
+          
+        <a class="site-nav-link" href="/archive/"
+          >Archive</a
+        >
+          
+        <a class="site-nav-link" href="/verified/"
+          >Verified</a
+        >
+          
+        <a class="site-nav-link" href="/feeds/"
+          >Feeds</a
+        >
+         
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+		
+<div class="home h-feed">
+  <ul class="post-list">
+    
+    
+    
+      
+      <li class="post-list-item">
+        <h1 class="p-name"><a href="https://www.timothychambers.net/2023/07/14/important-exchange-from.html" class="post-list-item-title">Important Exchange from Casey Newton and Joshua Toplosky on Threads &amp; the Fediverse</a></h1>
+        <a href="https://www.timothychambers.net/2023/07/14/important-exchange-from.html" class="post-list-item-date"><span class="post-meta"><time class="dt-published" datetime="2023-07-14 10:51:53 -0400">Jul 14, 2023</time></span></a>
+        <div class="post-list-item-content">
+          <p>And this from this episode with Casey Newton and Joshua Toplosky:
+Josh: &ldquo;I understand the whole Fediverse and the Mastodon thing, and that is cool, and if they can make it work well, I&rsquo;m totally into it and will keep posting there&hellip;
+&hellip;But I think we all acknowledge, that … <a href="https://www.timothychambers.net/2023/07/14/important-exchange-from.html" class="continue-link">read more</a></p>
+        </div>
+      </li>
+      
+    
+    
+    
+      
+      <li class="post-list-item">
+        <h1 class="p-name"><a href="https://www.timothychambers.net/2023/07/08/threads-and-activtypub.html" class="post-list-item-title">Threads and ActivtyPub - Key New Quotes from Adam Mosseri from Instagram</a></h1>
+        <a href="https://www.timothychambers.net/2023/07/08/threads-and-activtypub.html" class="post-list-item-date"><span class="post-meta"><time class="dt-published" datetime="2023-07-08 11:23:30 -0400">Jul 8, 2023</time></span></a>
+        <div class="post-list-item-content">
+          <p>Here are some very important quotes from the head of Instagram on their roll-out of ActivytPub support and how they plan to interact with the Fediverse: which he commits to being a &ldquo;fast follow&rdquo; feature to add now that they have launched, where he commits to decentralization to be a long … <a href="https://www.timothychambers.net/2023/07/08/threads-and-activtypub.html" class="continue-link">read more</a></p>
+        </div>
+      </li>
+      
+    
+    
+    
+      
+      <li class="post-list-item">
+        <h1 class="p-name"><a href="https://www.timothychambers.net/2023/07/05/nstagram-threads-and.html" class="post-list-item-title">Instagram Threads and the Fediverse (Part 5)</a></h1>
+        <a href="https://www.timothychambers.net/2023/07/05/nstagram-threads-and.html" class="post-list-item-date"><span class="post-meta"><time class="dt-published" datetime="2023-07-05 09:31:49 -0400">Jul 5, 2023</time></span></a>
+        <div class="post-list-item-content">
+          <p>I wrote before that we need humility, recognizing there is so much we don&rsquo;t know and could be wrong about.
+I would have sworn that Meta would not support full export of users' social graph to go join other servers. Many opposing federation with Meta did too. We were all wrong at least to what … <a href="https://www.timothychambers.net/2023/07/05/nstagram-threads-and.html" class="continue-link">read more</a></p>
+        </div>
+      </li>
+      
+    
+    
+    
+      
+      <li class="post-list-item">
+        <h1 class="p-name"><a href="https://www.timothychambers.net/2023/07/03/instagram-threads-and.html" class="post-list-item-title">Instagram Threads and the Fediverse (Part 4)</a></h1>
+        <a href="https://www.timothychambers.net/2023/07/03/instagram-threads-and.html" class="post-list-item-date"><span class="post-meta"><time class="dt-published" datetime="2023-07-03 21:18:25 -0400">Jul 3, 2023</time></span></a>
+        <div class="post-list-item-content">
+          <p>As Meta&rsquo;s new App - now officially confirmed as &ldquo;Threads&rdquo; - has a near-term launch date of July 6th, wanted to restate that Indieweb.social will be taking the same position as almost all mid-sized and large-sized servers and will be &ldquo;Watching Like a Hawk, with our Fingers … <a href="https://www.timothychambers.net/2023/07/03/instagram-threads-and.html" class="continue-link">read more</a></p>
+        </div>
+      </li>
+      
+    
+    
+    
+      
+      <li class="post-list-item">
+        <h1 class="p-name"><a href="https://www.timothychambers.net/2023/06/30/meta-and-the.html" class="post-list-item-title">Meta and the Fediverse (&#34;First Time, Part 3)</a></h1>
+        <a href="https://www.timothychambers.net/2023/06/30/meta-and-the.html" class="post-list-item-date"><span class="post-meta"><time class="dt-published" datetime="2023-06-30 11:21:32 -0400">Jun 30, 2023</time></span></a>
+        <div class="post-list-item-content">
+          <p>The strum and drang of the conversation of Meta joining the Fediverse continue at it&rsquo;s wild and intense pace: See this: netwars.pelicancrossing.net/2023/06/3&hellip;
+And to me, for the most part, that is a good thing, this is a big deal and we as a fediverse family should suss it out. We have … <a href="https://www.timothychambers.net/2023/06/30/meta-and-the.html" class="continue-link">read more</a></p>
+        </div>
+      </li>
+      
+    
+    
+    
+      
+      <li class="post-list-item">
+        <h1 class="p-name"><a href="https://www.timothychambers.net/2023/06/25/project-the-fediverse.html" class="post-list-item-title">#Project92, the Fediverse: (First Time? Part 2)</a></h1>
+        <a href="https://www.timothychambers.net/2023/06/25/project-the-fediverse.html" class="post-list-item-date"><span class="post-meta"><time class="dt-published" datetime="2023-06-25 12:37:29 -0400">Jun 25, 2023</time></span></a>
+        <div class="post-list-item-content">
+          <p>One more post about how things are going inside the Fediverse now that #Project92 has joined the Fediverse.
+I have two ideas:
+One is that the Fediverse has ALWAYS had to make hard choices about things like this, but we&rsquo;ve always found a way. We&rsquo;ll do it again. The sky isn&rsquo;t going … <a href="https://www.timothychambers.net/2023/06/25/project-the-fediverse.html" class="continue-link">read more</a></p>
+        </div>
+      </li>
+      
+    
+    
+    
+      
+      <li class="post-list-item">
+        <h1 class="p-name"><a href="https://www.timothychambers.net/2023/06/23/project-and-the.html" class="post-list-item-title">Threads and the Fediverse - A Smarter Battle Plan to Protect the Open Social Web</a></h1>
+        <a href="https://www.timothychambers.net/2023/06/23/project-and-the.html" class="post-list-item-date"><span class="post-meta"><time class="dt-published" datetime="2023-06-23 12:33:08 -0400">Jun 23, 2023</time></span></a>
+        <div class="post-list-item-content">
+          <p>With the #meta #Project92 or #Threads Fediverse offering, there has been a, well, robust discussion of how to avoid threats looming. Those advocating mass-preemptive defederation make three cases for it.
+➡️ To avoid data mining &hellip;
+However, defederation does virtually zero to avoid any big tech … <a href="https://www.timothychambers.net/2023/06/23/project-and-the.html" class="continue-link">read more</a></p>
+        </div>
+      </li>
+      
+    
+    
+    
+      <li class="post-list-item">
+        <a href="https://www.timothychambers.net/2023/06/08/more-on-metas.html" class="post-list-item-date"><span class="post-meta"><time class="dt-published"
+              datetime=" 2023-06-08 15:55:46 -0400">Jun 8, 2023</time></span></a>
+        <div class="post-list-item-content">
+          <p>More on Meta&rsquo;s Instagram &ldquo;project 92&rdquo; Twitter-competitor just leaked including confirmation of #ActivityPub support: <a href="https://twitter.com/alexeheath/status/1666895838294208512">twitter.com/alexeheat&hellip;</a></p>
+
+        </div>
+      </li>
+    
+    
+    
+      <li class="post-list-item">
+        <a href="https://www.timothychambers.net/2023/05/24/the-most-interesting.html" class="post-list-item-date"><span class="post-meta"><time class="dt-published"
+              datetime=" 2023-05-24 17:17:09 -0400">May 24, 2023</time></span></a>
+        <div class="post-list-item-content">
+          <p>&ldquo;The most interesting thing about Meta’s Twitter clone&hellip;If Meta pursues this idea at scale, it would be an incredible departure for the world’s largest social media company.&rdquo; 
+#Barcelona #Meta #Fediverse</p>
+<p><a href="https://qz.com/meta-instagram-twitter-decentralized-social-network-1850461027">qz.com/meta-inst&hellip;</a></p>
+
+        </div>
+      </li>
+    
+    
+    
+      <li class="post-list-item">
+        <a href="https://www.timothychambers.net/2023/05/22/some-important-questions.html" class="post-list-item-date"><span class="post-meta"><time class="dt-published"
+              datetime=" 2023-05-22 16:51:37 -0400">May 22, 2023</time></span></a>
+        <div class="post-list-item-content">
+          <p>Some important questions users of #BlueSky and other emerging social networks will have to face: 
+<a href="https://www.vanityfair.com/news/2023/05/bluesky-social-twitter-content-moderation">www.vanityfair.com/news/2023&hellip;</a></p>
+
+        </div>
+      </li>
+    
+    
+    
+      <li class="post-list-item">
+        <a href="https://www.timothychambers.net/2023/04/14/funny-and-a.html" class="post-list-item-date"><span class="post-meta"><time class="dt-published"
+              datetime=" 2023-04-14 09:42:42 -0400">Apr 14, 2023</time></span></a>
+        <div class="post-list-item-content">
+          <p>Funny (and a sign of the times) to see &ldquo;billions of minutes viewed&rdquo; become functionally the new Neilsen ratings: <a href="https://www.hollywoodreporter.com/tv/tv-news/streaming-tv-rankings-march-6-12-2023-2-1235373784/">www.hollywoodreporter.com/tv/tv-new&hellip;</a></p>
+
+        </div>
+      </li>
+    
+    
+    
+      <li class="post-list-item">
+        <a href="https://www.timothychambers.net/2023/04/14/well-if-they.html" class="post-list-item-date"><span class="post-meta"><time class="dt-published"
+              datetime=" 2023-04-14 06:58:29 -0400">Apr 14, 2023</time></span></a>
+        <div class="post-list-item-content">
+          <p>Well if they had virtual legs, they would be.</p>
+<p>&ldquo;Major retail players are walking back their metaverse strategies&hellip;&rdquo;</p>
+<p><a href="https://www.modernretail.co/technology/major-retail-players-are-walking-back-their-metaverse-strategies/">www.modernretail.co/technolog&hellip;</a></p>
+
+        </div>
+      </li>
+    
+    
+    
+      <li class="post-list-item">
+        <a href="https://www.timothychambers.net/2023/04/09/because-of-course.html" class="post-list-item-date"><span class="post-meta"><time class="dt-published"
+              datetime=" 2023-04-09 00:35:18 -0400">Apr 9, 2023</time></span></a>
+        <div class="post-list-item-content">
+          <p>Because, of course, they are.  And soon these #BlueCheck users will be the only ones upranking &amp; downranking the Twitter algorithm for everyone.</p>
+<p><a href="https://www.newsweek.com/2023/04/07/verified-misinformation-blue-check-twitter-accounts-are-flooding-platform-false-claims-1793237.html">www.newsweek.com/2023/04/0&hellip;</a></p>
+
+        </div>
+      </li>
+    
+    
+    
+      <li class="post-list-item">
+        <a href="https://www.timothychambers.net/2023/04/02/happy-april-nd.html" class="post-list-item-date"><span class="post-meta"><time class="dt-published"
+              datetime=" 2023-04-02 09:54:53 -0400">Apr 2, 2023</time></span></a>
+        <div class="post-list-item-content">
+          <p>Happy April 2nd - International Fact-Checking Day  -  to all who celebrate. #FactsMatter
+<a href="https://twitter.com/factcheckdotorg/status/1642524340024385539">twitter.com/factcheck&hellip;</a></p>
+
+        </div>
+      </li>
+    
+    
+    
+      
+      <li class="post-list-item">
+        <h1 class="p-name"><a href="https://www.timothychambers.net/2023/03/28/how-to-verify.html" class="post-list-item-title">How to Verify your Twitter Account as Owned by You, Without Paying Twitter for #TwitterBlue or for a $12K a Month</a></h1>
+        <a href="https://www.timothychambers.net/2023/03/28/how-to-verify.html" class="post-list-item-date"><span class="post-meta"><time class="dt-published" datetime="2023-03-28 23:09:35 -0400">Mar 28, 2023</time></span></a>
+        <div class="post-list-item-content">
+          <p>This solution for Twitter verification without paying Elon is easy to use, adheres to web standards, and works efficiently.
+First, include the following in your (or your organization&rsquo;s) Twitter bio:
+This account can be verified at timothychambers.net/verified/
+You can also (like I did) add the … <a href="https://www.timothychambers.net/2023/03/28/how-to-verify.html" class="continue-link">read more</a></p>
+        </div>
+      </li>
+      
+    
+    
+    
+      <li class="post-list-item">
+        <a href="https://www.timothychambers.net/2022/12/06/224601.html" class="post-list-item-date"><span class="post-meta"><time class="dt-published"
+              datetime=" 2022-12-06 23:46:01 -0400">Dec 6, 2022</time></span></a>
+        <div class="post-list-item-content">
+          <p>No, it&rsquo;s just the #indieweb, #openweb, and #fediverse doing it&rsquo;s thing.</p>
+<img src="https://cdn.uploads.micro.blog/1789/2022/44d7bafdfe.png" width="600" height="277" alt="">
+
+        </div>
+      </li>
+    
+    
+    
+      <li class="post-list-item">
+        <a href="https://www.timothychambers.net/2022/12/06/no-its-just.html" class="post-list-item-date"><span class="post-meta"><time class="dt-published"
+              datetime=" 2022-12-06 23:43:59 -0400">Dec 6, 2022</time></span></a>
+        <div class="post-list-item-content">
+          <p>No, it&rsquo;s just the #openweb, #indieweb, and #fediverse doing their thing.</p>
+
+        </div>
+      </li>
+    
+    
+    
+      <li class="post-list-item">
+        <a href="https://www.timothychambers.net/2022/11/24/this-blackfriday-keep.html" class="post-list-item-date"><span class="post-meta"><time class="dt-published"
+              datetime=" 2022-11-24 15:09:54 -0400">Nov 24, 2022</time></span></a>
+        <div class="post-list-item-content">
+          <p>This #blackFriday keep #privacy in mind in gift choices… <a href="https://foundation.mozilla.org/en/privacynotincluded/">foundation.mozilla.org/en/privac&hellip;</a></p>
+
+        </div>
+      </li>
+    
+    
+    
+      <li class="post-list-item">
+        <a href="https://www.timothychambers.net/2022/11/24/ok-pretty-cool.html" class="post-list-item-date"><span class="post-meta"><time class="dt-published"
+              datetime=" 2022-11-24 14:00:27 -0400">Nov 24, 2022</time></span></a>
+        <div class="post-list-item-content">
+          <p>OK, pretty cool: Feedle - a new track of RSS feeds of blogs and podcasts&hellip;. <a href="https://feedle.world">feedle.world</a></p>
+
+        </div>
+      </li>
+    
+    
+    
+      <li class="post-list-item">
+        <a href="https://www.timothychambers.net/2022/11/17/mozilla-issues-its.html" class="post-list-item-date"><span class="post-meta"><time class="dt-published"
+              datetime=" 2022-11-17 12:03:26 -0400">Nov 17, 2022</time></span></a>
+        <div class="post-list-item-content">
+          <p>#Mozilla issues its &ldquo;State of Mozilla 2021-2022 Report. The web is such a better place with them in it. They have many challenges but wishing them a bright next chapter:  <a href="https://www.mozilla.org/en-US/foundation/annualreport/2021/">www.mozilla.org/en-US/fou&hellip;</a></p>
+
+        </div>
+      </li>
+    
+    
+    
+      <li class="post-list-item">
+        <a href="https://www.timothychambers.net/2022/11/14/this-site-is.html" class="post-list-item-date"><span class="post-meta"><time class="dt-published"
+              datetime=" 2022-11-14 18:49:37 -0400">Nov 14, 2022</time></span></a>
+        <div class="post-list-item-content">
+          <p>This site is going to be very busy: <a href="https://twitterisgoinggreat.com/">twitterisgoinggreat.com</a> #Twitter</p>
+
+        </div>
+      </li>
+    
+    
+    
+      <li class="post-list-item">
+        <a href="https://www.timothychambers.net/2022/11/08/a-guide-to.html" class="post-list-item-date"><span class="post-meta"><time class="dt-published"
+              datetime=" 2022-11-08 11:20:16 -0400">Nov 8, 2022</time></span></a>
+        <div class="post-list-item-content">
+          <p>&ldquo;A Guide to US Election Day Misinformation&rdquo; - <a href="https://www.bloomberg.com/news/newsletters/2022-11-08/is-the-election-rigged-no-but-you-ll-see-many-posts-saying-it-is">www.bloomberg.com/news/news&hellip;</a></p>
+
+        </div>
+      </li>
+    
+    
+    
+      <li class="post-list-item">
+        <a href="https://www.timothychambers.net/2022/11/04/web-inventor-tim.html" class="post-list-item-date"><span class="post-meta"><time class="dt-published"
+              datetime=" 2022-11-04 12:22:52 -0400">Nov 4, 2022</time></span></a>
+        <div class="post-list-item-content">
+          <p>“Web inventor Tim Berners-Lee wants us to ‘ignore’ Web3: ‘Web3 is not the web at all’…” <a href="https://www.cnbc.com/2022/11/04/web-inventor-tim-berners-lee-wants-us-to-ignore-web3.html">www.cnbc.com/2022/11/0&hellip;</a></p>
+
+        </div>
+      </li>
+    
+    
+    
+      <li class="post-list-item">
+        <a href="https://www.timothychambers.net/2022/11/03/mastodon-says-people.html" class="post-list-item-date"><span class="post-meta"><time class="dt-published"
+              datetime=" 2022-11-03 14:06:27 -0400">Nov 3, 2022</time></span></a>
+        <div class="post-list-item-content">
+          <p>&ldquo;Mastodon says 230,000 people joined its decentralized social network in the last week and it now has 655,000 active users&rdquo; #TwitterMigration
+<a href="https://techcrunch.com/2022/11/03/decentralized-social-network-mastodon-grows-to-655k-users-in-wake-of-elon-musks-twitter-takeover/">techcrunch.com/2022/11/0&hellip;</a></p>
+
+        </div>
+      </li>
+    
+    
+    
+      <li class="post-list-item">
+        <a href="https://www.timothychambers.net/2022/11/02/imperfectly-indieweb-how.html" class="post-list-item-date"><span class="post-meta"><time class="dt-published"
+              datetime=" 2022-11-02 19:21:37 -0400">Nov 2, 2022</time></span></a>
+        <div class="post-list-item-content">
+          <p>&ldquo;Imperfectly #indieweb - How the collapse of Twitter and a trip to the Wayback Machine inspired me to go all in on the Indieweb.&rdquo; <a href="https://rossabaker.com/blog/imperfectly-indieweb/">rossabaker.com/blog/impe&hellip;</a></p>
+
+        </div>
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="pagination">
+  
+  
+  
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="site-footer-content">
+    <div class="footer-col footer-col-3">
+      <p class="site-footer-text"><a href="https://www.instagram.com/timothyjchambers/" rel="me">@timothyjchambers on Instagram</a>
+
+  <a href="https://xn--sr8hvo.ws/%F0%9F%99%88%F0%9F%98%B2%F0%9F%9B%A1/previous">←</a>
+🕸💍
+  <a href="https://xn--sr8hvo.ws/%F0%9F%99%88%F0%9F%98%B2%F0%9F%9B%A1/next">→</a>
+
+<a rel="me" href="https://indieweb.social/@tchambers">Mastodon</a></p>
+    </div>
+  </div>
+</footer>
+        
+    
+  </body>
+
+</html>

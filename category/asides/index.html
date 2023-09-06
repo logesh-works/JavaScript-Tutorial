@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) & !(IE 8)]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Asides | Matt Mullenweg</title>
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="pingback" href="https://ma.tt/blog/xmlrpc.php">
+	<!--[if lt IE 9]>
+	<script src="https://ma.tt/blog-content/themes/twentythirteen/js/html5.js?ver=3.7.0"></script>
+	<![endif]-->
+	<meta name='robots' content='max-image-preview:large' />
+<link rel='dns-prefetch' href='//s.gravatar.com' />
+<link rel='dns-prefetch' href='//stats.wp.com' />
+<link rel='dns-prefetch' href='//cdn.parsely.com' />
+<link rel='dns-prefetch' href='//secure.gravatar.com' />
+<link rel='dns-prefetch' href='//i0.wp.com' />
+<link rel='dns-prefetch' href='//v0.wordpress.com' />
+<link rel='dns-prefetch' href='//jetpack.wordpress.com' />
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//public-api.wordpress.com' />
+<link rel='dns-prefetch' href='//0.gravatar.com' />
+<link rel='dns-prefetch' href='//1.gravatar.com' />
+<link rel='dns-prefetch' href='//2.gravatar.com' />
+<link rel="alternate" type="application/rss+xml" title="Matt Mullenweg &raquo; Feed" href="https://ma.tt/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Matt Mullenweg &raquo; Comments Feed" href="https://ma.tt/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Matt Mullenweg &raquo; Asides Category Feed" href="https://ma.tt/category/asides/feed/" />
+<script>
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/ma.tt\/blog\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.4-alpha-56520"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!n(e,"\ud83e\udef1\ud83c\udffb\u200d\ud83e\udef2\ud83c\udfff","\ud83e\udef1\ud83c\udffb\u200b\ud83e\udef2\ud83c\udfff")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+</script>
+<style>
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css' href='https://ma.tt/blog-content/plugins/gutenberg/build/block-library/style.css?ver=16.5.1' media='all' />
+<style id='wp-block-library-inline-css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<link rel='stylesheet' id='wp-block-library-theme-css' href='https://ma.tt/blog-content/plugins/gutenberg/build/block-library/theme.css?ver=16.5.1' media='all' />
+<style id='wp-parsely-recommendations-style-inline-css'>
+.parsely-recommendations-list-title{font-size:1.2em}.parsely-recommendations-list{list-style:none;padding:unset}.parsely-recommendations-cardbody{overflow:hidden;padding:.8em;text-overflow:ellipsis;white-space:nowrap}.parsely-recommendations-cardmedia{padding:.8em .8em 0}
+
+</style>
+<link rel='stylesheet' id='jetpack-videopress-video-block-view-css' href='https://ma.tt/blog-content/plugins/jetpack-dev/jetpack_vendor/automattic/jetpack-videopress/build/block-editor/blocks/video/view.css?minify=false&#038;ver=34ae973733627b74a14e' media='all' />
+<link rel='stylesheet' id='mediaelement-css' href='https://ma.tt/blog/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17' media='all' />
+<link rel='stylesheet' id='wp-mediaelement-css' href='https://ma.tt/blog/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=6.4-alpha-56520' media='all' />
+<style id='classic-theme-styles-inline-css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #fff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--dark-gray: #141412;--wp--preset--color--red: #bc360a;--wp--preset--color--medium-orange: #db572f;--wp--preset--color--light-orange: #ea9629;--wp--preset--color--yellow: #fbca3c;--wp--preset--color--dark-brown: #220e10;--wp--preset--color--medium-brown: #722d19;--wp--preset--color--light-brown: #eadaa6;--wp--preset--color--beige: #e8e5ce;--wp--preset--color--off-white: #f7f5e7;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--gradient--autumn-brown: linear-gradient(135deg, rgba(226,45,15,1) 0%, rgba(158,25,13,1) 100%);--wp--preset--gradient--sunset-yellow: linear-gradient(135deg, rgba(233,139,41,1) 0%, rgba(238,179,95,1) 100%);--wp--preset--gradient--light-sky: linear-gradient(135deg,rgba(228,228,228,1.0) 0%,rgba(208,225,252,1.0) 100%);--wp--preset--gradient--dark-sky: linear-gradient(135deg,rgba(0,0,0,1.0) 0%,rgba(56,61,69,1.0) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+</style>
+<link rel='stylesheet' id='twentythirteen-fonts-css' href='https://ma.tt/blog-content/themes/twentythirteen/fonts/source-sans-pro-plus-bitter.css?ver=20230328' media='all' />
+<link rel='stylesheet' id='genericons-css' href='https://ma.tt/blog-content/plugins/jetpack-dev/_inc/genericons/genericons/genericons.css?ver=3.1' media='all' />
+<link rel='stylesheet' id='twentythirteen-style-css' href='https://ma.tt/blog-content/themes/ma.tt/style.css?ver=1688053572' media='all' />
+<link rel='stylesheet' id='twentythirteen-block-style-css' href='https://ma.tt/blog-content/themes/twentythirteen/css/blocks.css?ver=20230621' media='all' />
+<link rel='stylesheet' id='infinity-twentythirteen-css' href='https://ma.tt/blog-content/plugins/jetpack-dev/modules/infinite-scroll/themes/twentythirteen.css?ver=20130409' media='all' />
+<link rel='stylesheet' id='jetpack_css-css' href='https://ma.tt/blog-content/plugins/jetpack-dev/css/jetpack.css?ver=1693845897' media='all' />
+<script src='https://ma.tt/blog/wp-includes/js/jquery/jquery.min.js?ver=3.7.1' id='jquery-core-js'></script>
+<script src='https://ma.tt/blog/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1' id='jquery-migrate-js'></script>
+<script src='https://ma.tt/blog/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?ver=3.1.2' id='wp-polyfill-inert-js'></script>
+<script src='https://ma.tt/blog/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.11' id='regenerator-runtime-js'></script>
+<script src='https://ma.tt/blog-content/plugins/gutenberg/build/vendors/inert-polyfill.min.js?ver=6.4-alpha-56520' id='wp-inert-polyfill-js'></script>
+<script src='https://ma.tt/blog/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script src='https://ma.tt/blog-content/plugins/gutenberg/build/hooks/index.min.js?ver=3aee234ea7807d8d70bc' id='wp-hooks-js'></script>
+<script src='https://ma.tt/blog-content/plugins/gutenberg/build/i18n/index.min.js?ver=5baa98e4345eccc97e24' id='wp-i18n-js'></script>
+<script id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script src='https://ma.tt/blog-content/plugins/jetpack-dev/jetpack_vendor/automattic/jetpack-assets/build/i18n-loader.js?minify=true&#038;ver=ee939953aa2115e2ca59' id='wp-jp-i18n-loader-js'></script>
+<script id="wp-jp-i18n-loader-js-after">
+wp.jpI18nLoader.state = {"baseUrl":"https://ma.tt/blog-content/languages/","locale":"en_US","domainMap":{"jetpack-admin-ui":"plugins/jetpack","jetpack-assets":"plugins/jetpack","jetpack-boost-core":"plugins/jetpack","jetpack-boost-speed-score":"plugins/jetpack","jetpack-config":"plugins/jetpack-boost","jetpack-connection":"plugins/jetpack","jetpack-image-cdn":"plugins/jetpack","jetpack-jitm":"plugins/jetpack","jetpack-lazy-images":"plugins/jetpack","jetpack-licensing":"plugins/jetpack","jetpack-my-jetpack":"plugins/jetpack","jetpack-plugin-deactivation":"plugins/jetpack-boost","jetpack-plugins-installer":"plugins/jetpack","jetpack-wp-js-data-sync":"plugins/jetpack-boost","jetpack-action-bar":"plugins/jetpack","jetpack-backup-pkg":"plugins/jetpack","jetpack-blaze":"plugins/jetpack","jetpack-compat":"plugins/jetpack","jetpack-forms":"plugins/jetpack","jetpack-google-fonts-provider":"plugins/jetpack","jetpack-idc":"plugins/jetpack","jetpack-import":"plugins/jetpack","jetpack-ip":"plugins/jetpack","jetpack-password-checker":"plugins/jetpack","jetpack-post-list":"plugins/jetpack","jetpack-publicize-pkg":"plugins/jetpack","jetpack-search-pkg":"plugins/jetpack","jetpack-stats":"plugins/jetpack","jetpack-stats-admin":"plugins/jetpack","jetpack-sync":"plugins/jetpack","jetpack-videopress-pkg":"plugins/jetpack","jetpack-waf":"plugins/jetpack","jetpack-wordads":"plugins/jetpack"},"domainPaths":{"jetpack-admin-ui":"jetpack_vendor/automattic/jetpack-admin-ui/","jetpack-assets":"jetpack_vendor/automattic/jetpack-assets/","jetpack-boost-core":"jetpack_vendor/automattic/jetpack-boost-core/","jetpack-boost-speed-score":"jetpack_vendor/automattic/jetpack-boost-speed-score/","jetpack-config":"jetpack_vendor/automattic/jetpack-config/","jetpack-connection":"jetpack_vendor/automattic/jetpack-connection/","jetpack-image-cdn":"jetpack_vendor/automattic/jetpack-image-cdn/","jetpack-jitm":"jetpack_vendor/automattic/jetpack-jitm/","jetpack-lazy-images":"jetpack_vendor/automattic/jetpack-lazy-images/","jetpack-licensing":"jetpack_vendor/automattic/jetpack-licensing/","jetpack-my-jetpack":"jetpack_vendor/automattic/jetpack-my-jetpack/","jetpack-plugin-deactivation":"jetpack_vendor/automattic/jetpack-plugin-deactivation/","jetpack-plugins-installer":"jetpack_vendor/automattic/jetpack-plugins-installer/","jetpack-wp-js-data-sync":"jetpack_vendor/automattic/jetpack-wp-js-data-sync/","jetpack-action-bar":"jetpack_vendor/automattic/jetpack-action-bar/","jetpack-backup-pkg":"jetpack_vendor/automattic/jetpack-backup/","jetpack-blaze":"jetpack_vendor/automattic/jetpack-blaze/","jetpack-compat":"jetpack_vendor/automattic/jetpack-compat/","jetpack-forms":"jetpack_vendor/automattic/jetpack-forms/","jetpack-google-fonts-provider":"jetpack_vendor/automattic/jetpack-google-fonts-provider/","jetpack-idc":"jetpack_vendor/automattic/jetpack-identity-crisis/","jetpack-import":"jetpack_vendor/automattic/jetpack-import/","jetpack-ip":"jetpack_vendor/automattic/jetpack-ip/","jetpack-password-checker":"jetpack_vendor/automattic/jetpack-password-checker/","jetpack-post-list":"jetpack_vendor/automattic/jetpack-post-list/","jetpack-publicize-pkg":"jetpack_vendor/automattic/jetpack-publicize/","jetpack-search-pkg":"jetpack_vendor/automattic/jetpack-search/","jetpack-stats":"jetpack_vendor/automattic/jetpack-stats/","jetpack-stats-admin":"jetpack_vendor/automattic/jetpack-stats-admin/","jetpack-sync":"jetpack_vendor/automattic/jetpack-sync/","jetpack-videopress-pkg":"jetpack_vendor/automattic/jetpack-videopress/","jetpack-waf":"jetpack_vendor/automattic/jetpack-waf/","jetpack-wordads":"jetpack_vendor/automattic/jetpack-wordads/"}};
+</script>
+<script src='https://ma.tt/blog-content/plugins/jetpack-dev/_inc/build/tiled-gallery/tiled-gallery/tiled-gallery.min.js?ver=12.6-a.3' id='tiled-gallery-js'></script>
+<link rel="https://api.w.org/" href="https://ma.tt/wp-json/" /><link rel="alternate" type="application/json" href="https://ma.tt/wp-json/wp/v2/categories/33" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://ma.tt/blog/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.4-alpha-56520" />
+
+<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+<!-- Generated by Jetpack Social -->
+<meta property="og:title" content="Techcrunch with&nbsp;Gutenberg">
+<meta property="og:url" content="https://ma.tt/2023/09/techcrunch-with-gutenberg/">
+<meta property="og:description" content="Jamie Marsland has this great YouTube video where he rebuilds TechCrunch.com just using core blocks in WordPress 6.3 in 30 minutes. Worth checking out!">
+<meta name="twitter:creator" content="@photomatt">
+<meta name="twitter:site" content="@photomatt">
+<!-- / Jetpack Social -->
+<script type='text/javascript' src='https://ma.tt/blog-content/plugins/matts-community-tags/suggest.js'></script>
+<link rel="stylesheet" href="https://ma.tt/blog-content/plugins/matts-community-tags/suggest.css" />
+<script type="text/javascript">
+<!--
+var $j = jQuery.noConflict();
+
+$j( document ).ready( function(){
+	$j( '#tagthis' ).html('<p>Recognize someone in this photo? Tag them.</p><form action="/index.php?addtag=go" method="post" id="tagthisform"><p>Separate multiple people with commas, example: Elvis Presley, Britney Spears.</p><p><input type="text" id="mct_people" name="mct_people" size="30" /> <input type="hidden" value="96577" name="post_id" id="post_id" /><input type="button" value="Tag People &raquo;" id="tagthisbutt" /></p></form>');
+	$j( '#tagthisbutt' ).click( mct_process_form );
+	$j( '#mct_people' ).suggest( 'https://ma.tt/index.php?suggesttag=go', { onSelect: function() { mct_process_form(); } } );
+
+} );
+
+function mct_process_form() {
+	var mct_people = $j( '#mct_people' ).value;
+	var mct_people = $j( '#post_id' ).value;
+	$j.post( 'https://ma.tt/index.php?addtag=go', $j("#tagthis :input").serializeArray(), function(data){ $j('#tagthis').html('<p>Thank you for your submission, it is in moderation and should appear shortly.'); } );
+}
+-->
+</script>
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://ma.tt/blog/wp-includes/wlwmanifest.xml" /> 
+	<style>img#wpstats{display:none}</style>
+		<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"WebPage","headline":"Asides","url":"http:\/\/ma.tt\/category\/asides\/"}</script><link rel="icon" type="image/x-icon" href="https://ma.tt/blog-content/themes/ma.tt/i/favicon-spring.ico" />
+<meta name="p:domain_verify" content="bc52ac484003bc590de056c705de47fc"/>
+	<style type="text/css" id="twentythirteen-header-css">
+		.site-header {
+		background: url(https://ma.tt/blog-content/themes/twentythirteen/images/headers/circle.png) no-repeat scroll top;
+		background-size: 1600px auto;
+	}
+	@media (max-width: 767px) {
+		.site-header {
+			background-size: 768px auto;
+		}
+	}
+	@media (max-width: 359px) {
+		.site-header {
+			background-size: 360px auto;
+		}
+	}
+			</style>
+				<style type="text/css">
+				/* If html does not have either class, do not show lazy loaded images. */
+				html:not( .jetpack-lazy-images-js-enabled ):not( .js ) .jetpack-lazy-image {
+					display: none;
+				}
+			</style>
+			<script>
+				document.documentElement.classList.add(
+					'jetpack-lazy-images-js-enabled'
+				);
+			</script>
+		
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Asides &#8211; Matt Mullenweg" />
+<meta property="og:url" content="https://ma.tt/category/asides/" />
+<meta property="og:description" content="Interesting links." />
+<meta property="og:site_name" content="Matt Mullenweg" />
+<meta property="og:image" content="https://s0.wp.com/i/blank.jpg" />
+<meta property="og:image:alt" content="" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:creator" content="@photomatt" />
+<meta name="twitter:site" content="@photomatt" />
+
+<!-- End Jetpack Open Graph Tags -->
+<style type="text/css" id="wp-custom-css">/* GH76 - TR - 2023/08/16 */
+.jetpack-instant-search__overlay button {
+    background: #fff;
+}</style></head>
+
+<body class="archive category category-asides category-33 wp-embed-responsive jps-theme-ma.tt spring">
+		<div id="page" class="hfeed site">
+		<header id="masthead" class="site-header">
+			<a class="home-link" href="https://ma.tt/" title="Matt Mullenweg" rel="home">
+				<h1 class="site-title">Matt Mullenweg</h1>
+				<h2 class="site-description">Unlucky in Cards</h2>
+			</a>
+
+		</header><!-- #masthead -->
+
+		<div id="main" class="site-main">
+
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">
+
+					<header class="archive-header">
+				<h1 class="archive-title">
+				Category Archives: Asides				</h1>
+
+								<div class="archive-meta"><p>Interesting links.</p>
+</div>
+							</header><!-- .archive-header -->
+
+							
+<article id="post-96577" class="post-96577 post type-post status-publish format-video hentry category-asides post_format-post-format-video">
+	<header class="entry-header">
+				<h1 class="entry-title">
+			<a href="https://ma.tt/2023/09/techcrunch-with-gutenberg/" rel="bookmark">Techcrunch with&nbsp;Gutenberg</a>
+		</h1>
+			</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		
+<p>Jamie Marsland has this great YouTube video where he rebuilds <a href="https://techcrunch.com/">TechCrunch.com</a> just using core blocks in WordPress 6.3 in 30 minutes. Worth checking out!</p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<span class="embed-youtube" style="text-align:center; display: block;"><iframe class="youtube-player" width="604" height="340" src="https://www.youtube.com/embed/RghKQZmYwYI?version=3&#038;rel=1&#038;showsearch=0&#038;showinfo=1&#038;iv_load_policy=1&#038;fs=1&#038;hl=en-US&#038;autohide=2&#038;wmode=transparent" allowfullscreen="true" style="border:0;" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation"></iframe></span>
+</div></figure>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		<span class="date"><a href="https://ma.tt/2023/09/techcrunch-with-gutenberg/" title="Permalink to Techcrunch with&nbsp;Gutenberg" rel="bookmark"><time class="entry-date" datetime="2023-09-04T23:59:11-07:00">September 4, 2023</time></a></span><span class="categories-links"><a href="https://ma.tt/category/asides/" rel="category tag">Asides</a></span><span class="author vcard"><a class="url fn n" href="https://ma.tt/author/saxmatt/" title="View all posts by Matt" rel="author">Matt</a></span>
+				<span class="comments-link">
+			<a href="https://ma.tt/2023/09/techcrunch-with-gutenberg/#respond"><span class="leave-reply">Leave a comment</span></a>		</span><!-- .comments-link -->
+				
+			</footer><!-- .entry-meta -->
+</article><!-- #post -->
+							
+<article id="post-96532" class="post-96532 post type-post status-publish format-link hentry category-asides tag-burning-man post_format-post-format-link">
+	<div class="entry-content">
+		
+<p>Zeynep Tufekci has a great article, <a href="https://www.nytimes.com/2023/09/03/opinion/columnists/burning-man-rain-mud.html">One Thing Not to Fear at Burning Man</a>, that covers well what I have experienced as well growing up in Houston through hurricanes and other natural disasters—that in times of need people help each other in ingenious ways.</p>
+			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+					<span class="date"><a href="https://ma.tt/2023/09/fear/" title="Permalink to " rel="bookmark"><time class="entry-date" datetime="2023-09-04T14:18:48-07:00">September 4, 2023</time></a></span>						</footer><!-- .entry-meta -->
+</article><!-- #post -->
+							
+<article id="post-95968" class="post-95968 post type-post status-publish format-link hentry category-asides post_format-post-format-link">
+	<div class="entry-content">
+		
+<p>WordPress.com <a href="https://wordpress.com/blog/2023/08/25/introducing-the-100-year-plan/">just announced its hundred year plan</a>. This was very fun to create and plan for, and I hope it gets people and other companies thinking about the long term. Very inspired by <a href="https://longnow.org/">The Long Now Foundation</a> and <a href="https://archive.org/">The Internet Archive</a>. See also: <a href="https://hundredyearhost.com/">Derek Siver&#8217;s Hundred Year Host</a>.</p>
+			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+					<span class="date"><a href="https://ma.tt/2023/08/one-hundy/" title="Permalink to One&nbsp;Hundy" rel="bookmark"><time class="entry-date" datetime="2023-08-25T20:53:54-07:00">August 25, 2023</time></a></span>						</footer><!-- .entry-meta -->
+</article><!-- #post -->
+							
+<article id="post-94453" class="post-94453 post type-post status-publish format-aside hentry category-asides post_format-post-format-aside">
+	<div class="entry-content">
+		
+<p>Version 6.3 is out! Time to fire up your updating engines. 😄 This is actually a really big one. (As a reminder, we do three major release of WP per year and each one is a +0.1, 7.0 will just be the next release after 6.9, so big things can happen in random version numbers.) <a href="https://wordpress.org/download/releases/6-3/">We&#8217;ve made a release landing page to cover some of the new things in this one, check it out</a>.</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+					<span class="date"><a href="https://ma.tt/2023/08/wordpress-6-3/" title="Permalink to WordPress&nbsp;6.3" rel="bookmark"><time class="entry-date" datetime="2023-08-10T09:31:18-07:00">August 10, 2023</time></a></span>						</footer><!-- .entry-meta -->
+</article><!-- #post -->
+							
+<article id="post-87648" class="post-87648 post type-post status-publish format-link hentry category-asides post_format-post-format-link">
+	<div class="entry-content">
+		
+<p>Julia Evans writes <a href="https://jvns.ca/blog/2023/06/05/some-blogging-myths/">Some blogging myths</a>.</p>
+			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+					<span class="date"><a href="https://ma.tt/2023/06/87648/" title="Permalink to " rel="bookmark"><time class="entry-date" datetime="2023-06-12T23:53:17-07:00">June 12, 2023</time></a></span>						</footer><!-- .entry-meta -->
+</article><!-- #post -->
+							
+<article id="post-87066" class="post-87066 post type-post status-publish format-audio hentry category-asides category-podcast post_format-post-format-audio">
+	<header class="entry-header">
+				<h1 class="entry-title">
+			<a href="https://ma.tt/2023/06/whoop-podcast/" rel="bookmark">Whoop&nbsp;Podcast</a>
+		</h1>
+			</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<div class="audio-content">
+			
+<p><a href="https://www.whoop.com/">Whoop</a> is an excellent biometrics bracelet I&#8217;ve been wearing for a few months since my friend <a href="https://jaimewaydo.com/">Jaime Waydo</a> joined as their CTO. After many years of being very <a href="https://www.garmin.com/en-US/p/621922">in the Garmin 945 camp</a>, I now do an <a href="https://www.apple.com/apple-watch-ultra/">Apple Ultra</a> for all the smart stuff, and Whoop for all the great sleep, HRV, and recovery information that I use to be aware of my energy levels throughout the day, complemented by the <a href="https://www.risescience.com/">Rise sleep and energy tracker app</a>. This has been my ideal combo. </p>
+
+
+
+<p>The founder and CEO of Whoop, <a href="https://twitter.com/willahmed">Will Ahmed</a>, interviewed me for their podcast, which we covered for a more mainstream audience my passion for open source and creating an open ecosystem for a web, how I got started as an entrepreneur, how <a href="https://automattic.com/">Automattic</a> hires, growth mindset and mental clarity, working with <a href="https://artofaccomplishment.com/about/">Joe Hudson</a> as an executive coach, and day-to-day routine (or lack thereof, sometimes).</p>
+
+
+
+<figure class="wp-block-embed is-type-rich is-provider-pocket-casts wp-block-embed-pocket-casts"><div class="wp-block-embed__wrapper">
+<div style="width: 100%; max-width: 604px; max-height: 100%; position: relative;">    <div style="padding-bottom: 42.857142857142854%;"></div>    <iframe title="Growth Mindset: Navigating the Path to Entrepreneurial Success with Matt Mullenweg - WHOOP Podcast" src="https://pca.st/embed/yf7xbktu" style="border: 0; border-radius: 8px; position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen="true" frameborder="0"></iframe></div>
+</div></figure>
+		</div><!-- .audio-content -->
+	</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		<span class="date"><a href="https://ma.tt/2023/06/whoop-podcast/" title="Permalink to Whoop&nbsp;Podcast" rel="bookmark"><time class="entry-date" datetime="2023-06-08T17:21:10-07:00">June 8, 2023</time></a></span><span class="categories-links"><a href="https://ma.tt/category/asides/" rel="category tag">Asides</a>, <a href="https://ma.tt/category/podcast/" rel="category tag">Podcast</a></span><span class="author vcard"><a class="url fn n" href="https://ma.tt/author/saxmatt/" title="View all posts by Matt" rel="author">Matt</a></span>		
+			</footer><!-- .entry-meta -->
+</article><!-- #post -->
+							
+<article id="post-86465" class="post-86465 post type-post status-publish format-link hentry category-asides post_format-post-format-link">
+	<div class="entry-content">
+		
+<p>Check out this <a href="https://www.npr.org/2023/05/31/1179098682/john-coltrane-eric-dolphy-village-gate-1961-lost-album">great article on an exciting discovery of John Coltrane and Eric Dolphy playing together</a>. The album comes out July 14<sup>th</sup>. <cite>Hat tip: Aaron Wieczorek</cite>.</p>
+			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+					<span class="date"><a href="https://ma.tt/2023/06/coltrane-and-dolphin/" title="Permalink to Coltrane and&nbsp;Dolphy" rel="bookmark"><time class="entry-date" datetime="2023-06-05T01:31:16-07:00">June 5, 2023</time></a></span>						</footer><!-- .entry-meta -->
+</article><!-- #post -->
+							
+<article id="post-85361" class="post-85361 post type-post status-publish format-standard hentry category-asides">
+	<header class="entry-header">
+		
+				<h1 class="entry-title">
+			<a href="https://ma.tt/2023/05/power-of-one/" rel="bookmark">Power of&nbsp;One</a>
+		</h1>
+		
+		<div class="entry-meta">
+			<span class="date"><a href="https://ma.tt/2023/05/power-of-one/" title="Permalink to Power of&nbsp;One" rel="bookmark"><time class="entry-date" datetime="2023-05-29T10:23:50-07:00">May 29, 2023</time></a></span><span class="categories-links"><a href="https://ma.tt/category/asides/" rel="category tag">Asides</a></span><span class="author vcard"><a class="url fn n" href="https://ma.tt/author/saxmatt/" title="View all posts by Matt" rel="author">Matt</a></span>					</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		
+<p>I think part of what <a href="https://ma.tt/2003/01/the-blogging-software-dilemma/#comment-445">Mike Little showed with his comment on my blog</a> that led to the creation of WordPress, is that it&#8217;s not about how many views you have, how many likes, trying to max all your stats&#8230; sometimes a single connection to another human is all that matters. </p>
+
+
+
+<p><em>All it takes is a spark. </em></p>
+
+
+
+<p>That&#8217;s what is beautiful about blogging. It&#8217;s too bad the advertising and social media platforms got us all caught up in status games for the past 15 years.</p>
+
+
+
+<p>All you need is one view, one like, one comment, to change your life.</p>
+	</div><!-- .entry-content -->
+	
+	<footer class="entry-meta">
+					<div class="comments-link">
+				<a href="https://ma.tt/2023/05/power-of-one/#comments">View all 5 comments</a>			</div><!-- .comments-link -->
+		
+			</footer><!-- .entry-meta -->
+</article><!-- #post -->
+							
+<article id="post-85035" class="post-85035 post type-post status-publish format-video hentry category-asides post_format-post-format-video">
+	<header class="entry-header">
+				<h1 class="entry-title">
+			<a href="https://ma.tt/2023/05/with-mike-little-and-dries-buytaert/" rel="bookmark">With Mike Little and Dries&nbsp;Buytaert</a>
+		</h1>
+			</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		
+<figure class="wp-block-embed alignwide is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<span class="embed-youtube" style="text-align:center; display: block;"><iframe class="youtube-player" width="604" height="340" src="https://www.youtube.com/embed/QYhIItlPPOs?version=3&#038;rel=1&#038;showsearch=0&#038;showinfo=1&#038;iv_load_policy=1&#038;fs=1&#038;hl=en-US&#038;autohide=2&#038;wmode=transparent" allowfullscreen="true" style="border:0;" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation"></iframe></span>
+</div></figure>
+
+
+
+<p>Last week I had the honor of being on stage at the Royal Society of Arts in London with Mike Little, the co-founder of WordPress, and Dries Buytaert, the founder of Drupal, which is one of the open source projects I have the most respect and admiration for. This is the conversation that ensued.</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		<span class="date"><a href="https://ma.tt/2023/05/with-mike-little-and-dries-buytaert/" title="Permalink to With Mike Little and Dries&nbsp;Buytaert" rel="bookmark"><time class="entry-date" datetime="2023-05-26T09:53:16-07:00">May 26, 2023</time></a></span><span class="categories-links"><a href="https://ma.tt/category/asides/" rel="category tag">Asides</a></span><span class="author vcard"><a class="url fn n" href="https://ma.tt/author/saxmatt/" title="View all posts by Matt" rel="author">Matt</a></span>
+				<span class="comments-link">
+			<a href="https://ma.tt/2023/05/with-mike-little-and-dries-buytaert/#comments">View all 4 comments</a>		</span><!-- .comments-link -->
+				
+			</footer><!-- .entry-meta -->
+</article><!-- #post -->
+							
+<article id="post-84862" class="post-84862 post type-post status-publish format-audio hentry category-asides post_format-post-format-audio">
+	<header class="entry-header">
+				<h1 class="entry-title">
+			<a href="https://ma.tt/2023/05/on-the-design-better-podcast/" rel="bookmark">On the Design Better&nbsp;Podcast</a>
+		</h1>
+			</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<div class="audio-content">
+			
+<p>I was on the Design Better podcast hosted by Aarron Walter and Eli Woolery, we talked about jazz, generative AI, distributed work, and my journey as an entrepreneur.</p>
+
+
+
+<figure class="wp-block-embed is-type-rich is-provider-pocket-casts wp-block-embed-pocket-casts"><div class="wp-block-embed__wrapper">
+<div style="width: 100%; max-width: 604px; max-height: 100%; position: relative;">    <div style="padding-bottom: 42.857142857142854%;"></div>    <iframe title="Matt Mullenweg: WordPress, AI, and jazz - Design Better Podcast" src="https://pca.st/embed/1r37dfrc" style="border: 0; border-radius: 8px; position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen="true" frameborder="0"></iframe></div>
+</div></figure>
+		</div><!-- .audio-content -->
+	</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		<span class="date"><a href="https://ma.tt/2023/05/on-the-design-better-podcast/" title="Permalink to On the Design Better&nbsp;Podcast" rel="bookmark"><time class="entry-date" datetime="2023-05-25T10:15:18-07:00">May 25, 2023</time></a></span><span class="categories-links"><a href="https://ma.tt/category/asides/" rel="category tag">Asides</a></span><span class="author vcard"><a class="url fn n" href="https://ma.tt/author/saxmatt/" title="View all posts by Matt" rel="author">Matt</a></span>		
+			</footer><!-- .entry-meta -->
+</article><!-- #post -->
+							
+<article id="post-75803" class="post-75803 post type-post status-publish format-aside hentry category-asides tag-tumblr post_format-post-format-aside">
+	<div class="entry-content">
+		
+<p>We just <a href="https://www.tumblr.com/staff/706805192704802816/ok-folks-everybody-stay-calm-its-happening">launched polls on Tumblr</a>, and it&#8217;s been pretty fun. Cool to bring together the <a href="https://crowdsignal.com/">Crowdsignal</a> (née Polldaddy) technology into a new world.</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+					<span class="date"><a href="https://ma.tt/2023/01/polls-on-tumblr/" title="Permalink to Polls on&nbsp;Tumblr" rel="bookmark"><time class="entry-date" datetime="2023-01-18T17:38:22-08:00">January 18, 2023</time></a></span>						</footer><!-- .entry-meta -->
+</article><!-- #post -->
+							
+<article id="post-75200" class="post-75200 post type-post status-publish format-standard hentry category-asides">
+	<header class="entry-header">
+		
+				<h1 class="entry-title">
+			<a href="https://ma.tt/2023/01/thirty-nine/" rel="bookmark">Thirty-Nine</a>
+		</h1>
+		
+		<div class="entry-meta">
+			<span class="date"><a href="https://ma.tt/2023/01/thirty-nine/" title="Permalink to Thirty-Nine" rel="bookmark"><time class="entry-date" datetime="2023-01-11T20:37:53-08:00">January 11, 2023</time></a></span><span class="categories-links"><a href="https://ma.tt/category/asides/" rel="category tag">Asides</a></span><span class="author vcard"><a class="url fn n" href="https://ma.tt/author/saxmatt/" title="View all posts by Matt" rel="author">Matt</a></span>					</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		
+<p>The last year of my thirties! <a href="https://wp20.wordpress.net/">WordPress turns twenty this year</a>. <a href="https://automattic.com/">Automattic</a> is now ~2,000 people across 98 countries. There&#8217;s so much that has happened in the past decade yet it feels very much like we&#8217;re on the cusp of something even more exciting.</p>
+
+
+
+<p>This morning started well; I pulled the hammock out of the garage (it had been hiding from the rain) and read for a bit, trying to get my 5-10 minutes of sun in the first 30 minutes <a href="https://twitter.com/hubermanlab/status/1481842978117271560?lang=en">like Huberman suggests</a>.</p>
+
+
+
+<p>Candidly, the last year was a really challenging one for me personally. There were some beautiful moments, and I consider myself the most lucky in my family, friends, and colleagues, yet among that same group there was a lot of loss, existential health challenges, and that weighed heavily on me. It&#8217;s also my last year to get on 40 under 40 lists! 😂</p>
+
+
+
+<p>Usually when people ask me what I want for my birthday I don&#8217;t have a good answer, but this year I do! As <a href="https://www.sfgate.com/local/article/san-francisco-bay-bridge-lights-17708825.php">Heather Knight wrote about in the SF Chronicle, the beloved Bay Lights are coming down in March</a>. This has to happen —&nbsp;the vibrations and corrosive environment of the Bay Bridge is taking lights out strand by strand. Fortunately it&#8217;s now been a decade since the lights first went up, and there&#8217;s much better technology both for the lights and how they&#8217;re mounted and attached to the suspension cables. Finally, the lights were not visible from Treasure Island or the East Bay before, but this new version 3.0 will be, which is why the artist behind the lights, <a href="http://villareal.net/">Leo Villereal</a>, is calling it Bay Lights 360.</p>
+
+
+
+<figure class="wp-block-image size-large"><img data-attachment-id="75257" data-permalink="https://ma.tt/2023/01/thirty-nine/thebaylights_leovillareal_jamesewing-8863-ed/" data-orig-file="https://i0.wp.com/ma.tt/files/2023/01/TheBayLights_LeoVillareal_JamesEwing-8863-ed.webp?fit=1800%2C794&amp;ssl=1" data-orig-size="1800,794" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="TheBayLights_LeoVillareal_JamesEwing-8863-ed" data-image-description data-image-caption data-medium-file="https://i0.wp.com/ma.tt/files/2023/01/TheBayLights_LeoVillareal_JamesEwing-8863-ed.webp?fit=840%2C371&amp;ssl=1" data-large-file="https://i0.wp.com/ma.tt/files/2023/01/TheBayLights_LeoVillareal_JamesEwing-8863-ed.webp?fit=604%2C267&amp;ssl=1" decoding="async" fetchpriority="high" width="604" height="267" src="https://i0.wp.com/ma.tt/files/2023/01/TheBayLights_LeoVillareal_JamesEwing-8863-ed-1024x452.webp?resize=604%2C267&#038;ssl=1" alt class="wp-image-75257 jetpack-lazy-image" data-recalc-dims="1" data-lazy-srcset="https://i0.wp.com/ma.tt/files/2023/01/TheBayLights_LeoVillareal_JamesEwing-8863-ed.webp?resize=1024%2C452&amp;ssl=1 1024w, https://i0.wp.com/ma.tt/files/2023/01/TheBayLights_LeoVillareal_JamesEwing-8863-ed.webp?resize=840%2C371&amp;ssl=1 840w, https://i0.wp.com/ma.tt/files/2023/01/TheBayLights_LeoVillareal_JamesEwing-8863-ed.webp?resize=195%2C86&amp;ssl=1 195w, https://i0.wp.com/ma.tt/files/2023/01/TheBayLights_LeoVillareal_JamesEwing-8863-ed.webp?resize=768%2C339&amp;ssl=1 768w, https://i0.wp.com/ma.tt/files/2023/01/TheBayLights_LeoVillareal_JamesEwing-8863-ed.webp?resize=1536%2C678&amp;ssl=1 1536w, https://i0.wp.com/ma.tt/files/2023/01/TheBayLights_LeoVillareal_JamesEwing-8863-ed.webp?resize=1200%2C529&amp;ssl=1 1200w, https://i0.wp.com/ma.tt/files/2023/01/TheBayLights_LeoVillareal_JamesEwing-8863-ed.webp?w=1800&amp;ssl=1 1800w" data-lazy-sizes="(max-width: 604px) 100vw, 604px" data-lazy-src="https://i0.wp.com/ma.tt/files/2023/01/TheBayLights_LeoVillareal_JamesEwing-8863-ed-1024x452.webp?resize=604%2C267&amp;is-pending-load=1#038;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" data-attachment-id="75257" data-permalink="https://ma.tt/2023/01/thirty-nine/thebaylights_leovillareal_jamesewing-8863-ed/" data-orig-file="https://i0.wp.com/ma.tt/files/2023/01/TheBayLights_LeoVillareal_JamesEwing-8863-ed.webp?fit=1800%2C794&amp;ssl=1" data-orig-size="1800,794" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="TheBayLights_LeoVillareal_JamesEwing-8863-ed" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/ma.tt/files/2023/01/TheBayLights_LeoVillareal_JamesEwing-8863-ed.webp?fit=840%2C371&amp;ssl=1" data-large-file="https://i0.wp.com/ma.tt/files/2023/01/TheBayLights_LeoVillareal_JamesEwing-8863-ed.webp?fit=604%2C267&amp;ssl=1" decoding="async" fetchpriority="high" width="604" height="267" src="https://i0.wp.com/ma.tt/files/2023/01/TheBayLights_LeoVillareal_JamesEwing-8863-ed-1024x452.webp?resize=604%2C267&#038;ssl=1" alt="" class="wp-image-75257" srcset="https://i0.wp.com/ma.tt/files/2023/01/TheBayLights_LeoVillareal_JamesEwing-8863-ed.webp?resize=1024%2C452&amp;ssl=1 1024w, https://i0.wp.com/ma.tt/files/2023/01/TheBayLights_LeoVillareal_JamesEwing-8863-ed.webp?resize=840%2C371&amp;ssl=1 840w, https://i0.wp.com/ma.tt/files/2023/01/TheBayLights_LeoVillareal_JamesEwing-8863-ed.webp?resize=195%2C86&amp;ssl=1 195w, https://i0.wp.com/ma.tt/files/2023/01/TheBayLights_LeoVillareal_JamesEwing-8863-ed.webp?resize=768%2C339&amp;ssl=1 768w, https://i0.wp.com/ma.tt/files/2023/01/TheBayLights_LeoVillareal_JamesEwing-8863-ed.webp?resize=1536%2C678&amp;ssl=1 1536w, https://i0.wp.com/ma.tt/files/2023/01/TheBayLights_LeoVillareal_JamesEwing-8863-ed.webp?resize=1200%2C529&amp;ssl=1 1200w, https://i0.wp.com/ma.tt/files/2023/01/TheBayLights_LeoVillareal_JamesEwing-8863-ed.webp?w=1800&amp;ssl=1 1800w" sizes="(max-width: 604px) 100vw, 604px" data-recalc-dims="1"  /></noscript></figure>
+
+
+
+<p>Like the <a href="https://en.wikipedia.org/wiki/Foundation_series">Foundation series</a>, we can&#8217;t stop the coming period of darkness from happening, but if we raise $11M we can bring the lights back. If we raise it soon we can shorten the time they&#8217;re down to just a few months, so I&#8217;m working with the 501c3 non-profit <a href="https://illuminate.org/">Illuminate</a> to help fundraise. The idea is to find ten people or organizations to put one million each, and raise the final million in a broader crowdfunding campaign, to re-light the Bay Bridge and give an incredible gift to the people from every walk of life that see the bridge, and hopefully have their spirits lifted by the art. I&#8217;ve heard 25 million people see the Bay Lights every year.</p>
+
+
+
+<p>It&#8217;s a lot to raise, but every little bit helps so <a href="https://illuminate.org/baylights360/">please donate here</a>, and if you are interested to do a larger gift please get in touch. I&#8217;m committing a million dollars to the fundraise, and myself, Illuminate director Ben Davis, and the artist <a href="http://villareal.net/">Leo Villereal</a> are happy to personally connect with anyone considering a larger donation.</p>
+
+
+
+<p>Because of some family health reasons I&#8217;m back in lockdown, so going to try and throw an online party tonight in the &#8220;Matterverse.&#8221; We&#8217;re going to party like it&#8217;s late 2020. 🎉</p>
+
+
+
+<p>All birthday posts: <a href="https://ma.tt/2003/01/bday/">19</a>, <a href="https://ma.tt/2004/01/so-im-20/">20</a>, <a href="https://ma.tt/2005/01/hot-barely-legal-matt/">21</a>, <a href="https://ma.tt/2006/01/matt-22/">22</a>, <a href="https://ma.tt/2007/01/twenty-three/">23</a>, <a href="https://ma.tt/2008/01/twenty-four/">24</a>, <a href="https://ma.tt/2009/01/twenty-five/">25</a>, <a href="https://ma.tt/2010/01/twenty-six/">26</a>, <a href="https://ma.tt/2011/01/twenty-seven/">27</a>, <a href="https://ma.tt/2012/01/twenty-eight/">28</a>, <a href="https://ma.tt/2013/01/twenty-nine/">29</a>, <a href="https://ma.tt/2014/01/matt-3-0/">30</a>, <a href="https://ma.tt/2015/01/thirty-one/">31</a>, <a href="https://ma.tt/2016/01/thirty-two/">32</a>, <a href="https://ma.tt/2017/01/thirty-three/">33</a>, <a href="https://ma.tt/2018/01/thirty-four/">34</a>, <a href="https://ma.tt/2019/01/thirty-five/">35</a>, <a href="https://ma.tt/2020/01/thirty-six/">36</a>, <a href="https://ma.tt/2021/01/thirty-seven/">37</a>, <a href="https://ma.tt/2022/01/thirty-eight/">38</a>, <a href="https://ma.tt/2023/01/thirty-nine/">39</a>.</p>
+	</div><!-- .entry-content -->
+	
+	<footer class="entry-meta">
+					<div class="comments-link">
+				<a href="https://ma.tt/2023/01/thirty-nine/#comments">View all 16 comments</a>			</div><!-- .comments-link -->
+		
+			</footer><!-- .entry-meta -->
+</article><!-- #post -->
+							
+<article id="post-75018" class="post-75018 post type-post status-publish format-video hentry category-asides post_format-post-format-video">
+	<header class="entry-header">
+				<h1 class="entry-title">
+			<a href="https://ma.tt/2023/01/state-of-the-word-2/" rel="bookmark">State of the&nbsp;Word</a>
+		</h1>
+			</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		
+<p class="is-style-matt-rothko-style">A few weeks ago, but what feels like a lifetime ago, I was in New York City with a few dozen extra special people from around the WordPress world. Alongside <a href="https://josepha.blog/">Josepha</a> and the community we presented this review of how WordPress did in 2022, and vision for what&#8217;s coming:</p>
+
+
+
+<figure class="wp-block-embed alignwide is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<span class="embed-youtube" style="text-align:center; display: block;"><iframe loading="lazy" class="youtube-player" width="604" height="340" src="https://www.youtube.com/embed/VeigCZuxnfY?version=3&#038;rel=1&#038;showsearch=0&#038;showinfo=1&#038;iv_load_policy=1&#038;fs=1&#038;hl=en-US&#038;autohide=2&#038;wmode=transparent" allowfullscreen="true" style="border:0;" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation"></iframe></span>
+</div></figure>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		<span class="date"><a href="https://ma.tt/2023/01/state-of-the-word-2/" title="Permalink to State of the&nbsp;Word" rel="bookmark"><time class="entry-date" datetime="2023-01-09T15:25:18-08:00">January 9, 2023</time></a></span><span class="categories-links"><a href="https://ma.tt/category/asides/" rel="category tag">Asides</a></span><span class="author vcard"><a class="url fn n" href="https://ma.tt/author/saxmatt/" title="View all posts by Matt" rel="author">Matt</a></span>
+				<span class="comments-link">
+			<a href="https://ma.tt/2023/01/state-of-the-word-2/#comments">View all 4 comments</a>		</span><!-- .comments-link -->
+				
+			</footer><!-- .entry-meta -->
+</article><!-- #post -->
+							
+<article id="post-72681" class="post-72681 post type-post status-publish format-standard hentry category-asides">
+	<header class="entry-header">
+		
+				<h1 class="entry-title">
+			<a href="https://ma.tt/2022/12/fusion/" rel="bookmark">Fusion</a>
+		</h1>
+		
+		<div class="entry-meta">
+			<span class="date"><a href="https://ma.tt/2022/12/fusion/" title="Permalink to Fusion" rel="bookmark"><time class="entry-date" datetime="2022-12-14T22:19:30-08:00">December 14, 2022</time></a></span><span class="categories-links"><a href="https://ma.tt/category/asides/" rel="category tag">Asides</a></span><span class="author vcard"><a class="url fn n" href="https://ma.tt/author/saxmatt/" title="View all posts by Matt" rel="author">Matt</a></span>					</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		
+<p><a href="https://www.energy.gov/articles/doe-national-laboratory-makes-history-achieving-fusion-ignition">This is a big deal</a>. There are a lot of <a href="https://chat.openai.com/">big deals</a> happening right now, it&#8217;s honestly a very exciting time to be in tech. I feel like a sailor in a tumultuous sea, and they should have sent a poet. T. S. Eliot was actually the inspiration for WordPress&#8217; tagline &#8220;Code is Poetry&#8221; and I&#8217;m reminded of this from <a href="https://stuff.mit.edu/people/dpolicar/writing/poetry/poems/fareForward.html">The Dry Salvages</a>:</p>
+
+
+
+<blockquote class="wp-block-quote">
+<p>O voyagers, O seamen,<br>You who came to port, and you whose bodies<br>Will suffer the trial and judgement of the sea,<br>Or whatever event, this is your real destination.&#8221;<br>So Krishna, as when he admonished Arjuna<br>On the field of battle.<br>Not fare well,<br>But fare forward, voyagers.</p>
+</blockquote>
+	</div><!-- .entry-content -->
+	
+	<footer class="entry-meta">
+					<div class="comments-link">
+				<a href="https://ma.tt/2022/12/fusion/#comments">View all 3 comments</a>			</div><!-- .comments-link -->
+		
+			</footer><!-- .entry-meta -->
+</article><!-- #post -->
+							
+<article id="post-67415" class="post-67415 post type-post status-publish format-standard hentry category-asides">
+	<header class="entry-header">
+		
+				<h1 class="entry-title">
+			<a href="https://ma.tt/2022/10/open-source-podcasting-client/" rel="bookmark">Open Source Podcasting&nbsp;Client</a>
+		</h1>
+		
+		<div class="entry-meta">
+			<span class="date"><a href="https://ma.tt/2022/10/open-source-podcasting-client/" title="Permalink to Open Source Podcasting&nbsp;Client" rel="bookmark"><time class="entry-date" datetime="2022-10-21T10:44:14-07:00">October 21, 2022</time></a></span><span class="categories-links"><a href="https://ma.tt/category/asides/" rel="category tag">Asides</a></span><span class="author vcard"><a class="url fn n" href="https://ma.tt/author/saxmatt/" title="View all posts by Matt" rel="author">Matt</a></span>					</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		
+<p>Automattic <a href="https://www.theverge.com/2021/7/16/22580023/automattic-pocket-casts-podcast-app-tumble-wordpress">acquired Pocket Casts last July</a>, and since we&#8217;ve been tapping away trying to make the best podcast client for people who love listening to podcasts.</p>
+
+
+
+<p>And!</p>
+
+
+
+<p>The team has been working really hard to make those clients totally open source and available to the world, <a href="https://blog.pocketcasts.com/2022/10/19/pocket-casts-mobile-apps-are-now-open-source/">and it&#8217;s now happened</a>. You can see all the code <a href="https://github.com/Automattic/pocket-casts-ios">behind the iOS app</a> and <a href="https://github.com/Automattic/pocket-casts-android">the Android app</a>, and modify it, make it your own, suggest a change, fix a bug, add a feature, fork it and make your own client, anything!</p>
+
+
+
+<p>If your code gets merged into core, it&#8217;ll go out to users listening to literally <strong>millions of hours</strong> of podcasts a week. It&#8217;s also unusual to be able to peek under the hood of a consumer mobile app that is this widely used and see how it works.</p>
+
+
+
+<p>Audio publishing and consumption is a beautiful complement to the web publishing that <a href="https://wordpress.org/">WordPress</a> is already so good at, and that <a href="https://automattic.com/">Automattic</a> tries to nurture an ecosystem around. I love Spotify and Apple, and I hope that <a href="https://pocketcasts.com/">Pocket Casts</a> can do for podcast clients what Firefox in the early days and <a href="https://www.chromium.org/chromium-projects/">Chromium</a> now does for browsers — push the state of the art, be manically focused on user control, and grow a more decentralized and open web.</p>
+
+
+
+<p>If you haven&#8217;t tried Pocket Casts yet, <a href="https://itunes.apple.com/au/app/pocket-casts/id414834813">install for iOS</a> or <a href="https://play.google.com/store/apps/details?id=au.com.shiftyjelly.pocketcasts">Android</a>, and here&#8217;s <a href="https://support.pocketcasts.com/article/opml-import/">how to import your subscriptions using a format called OPML</a>. (And wouldn&#8217;t it be nice if trying out a new social network was that easy?)</p>
+	</div><!-- .entry-content -->
+	
+	<footer class="entry-meta">
+					<div class="comments-link">
+				<a href="https://ma.tt/2022/10/open-source-podcasting-client/#comments">View all 9 comments</a>			</div><!-- .comments-link -->
+		
+			</footer><!-- .entry-meta -->
+</article><!-- #post -->
+							
+<article id="post-63462" class="post-63462 post type-post status-publish format-standard hentry category-asides">
+	<header class="entry-header">
+		
+				<h1 class="entry-title">
+			<a href="https://ma.tt/2022/09/tumblr-updates/" rel="bookmark">Tumblr&nbsp;Updates</a>
+		</h1>
+		
+		<div class="entry-meta">
+			<span class="date"><a href="https://ma.tt/2022/09/tumblr-updates/" title="Permalink to Tumblr&nbsp;Updates" rel="bookmark"><time class="entry-date" datetime="2022-09-28T02:40:40-07:00">September 28, 2022</time></a></span><span class="categories-links"><a href="https://ma.tt/category/asides/" rel="category tag">Asides</a></span><span class="author vcard"><a class="url fn n" href="https://ma.tt/author/saxmatt/" title="View all posts by Matt" rel="author">Matt</a></span>					</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		
+<p><a href="https://www.tumblr.com/staff/696482214233440256/introducing-community-labels-as-you-know-art-and">Tumblr launched Community Labels yesterday</a>, which allows consistent tagging of addiction, violent, and adult content, and for people to hide, blur, or show that content. It&#8217;s gone pretty well so far. We&#8217;ve still been getting a lot of questions if it&#8217;s going to be free-for-all with adult content again, and the short answer is no, but the longer answer is covered in <a href="https://www.tumblr.com/photomatt/696629352701493248/why-go-nuts-show-nuts-doesnt-work-in-2022">Why “Go Nuts, Show Nuts” Doesn’t Work in 2022</a>.</p>
+
+
+
+<p>If you haven&#8217;t tried out Tumblr in a while, check it out. Lots of improvements the past few months, and it can be a refreshing alternative or add-on to your online social life. And get your friends on it too!</p>
+	</div><!-- .entry-content -->
+	
+	<footer class="entry-meta">
+					<div class="comments-link">
+				<a href="https://ma.tt/2022/09/tumblr-updates/#comments">One comment so far</a>			</div><!-- .comments-link -->
+		
+			</footer><!-- .entry-meta -->
+</article><!-- #post -->
+							
+<article id="post-63438" class="post-63438 post type-post status-publish format-video hentry category-asides post_format-post-format-video">
+	<header class="entry-header">
+				<h1 class="entry-title">
+			<a href="https://ma.tt/2022/09/this-week-in-google/" rel="bookmark">This Week in&nbsp;Google</a>
+		</h1>
+			</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		
+<p class="is-style-matt-rothko-style">I joined episode 681 of This Week in Google and it was fun with <a href="https://leo.fm/">Leo Laporte</a>, <a href="https://buzzmachine.com/">Jeff Jarvis</a>, and <a href="https://antpruitt.com/">Ant Pruitt</a>:</p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<span class="embed-youtube" style="text-align:center; display: block;"><iframe loading="lazy" class="youtube-player" width="604" height="340" src="https://www.youtube.com/embed/M4rPVd5tJ0c?version=3&#038;rel=1&#038;showsearch=0&#038;showinfo=1&#038;iv_load_policy=1&#038;fs=1&#038;hl=en-US&#038;autohide=2&#038;wmode=transparent" allowfullscreen="true" style="border:0;" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation"></iframe></span>
+</div></figure>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		<span class="date"><a href="https://ma.tt/2022/09/this-week-in-google/" title="Permalink to This Week in&nbsp;Google" rel="bookmark"><time class="entry-date" datetime="2022-09-14T12:25:00-07:00">September 14, 2022</time></a></span><span class="categories-links"><a href="https://ma.tt/category/asides/" rel="category tag">Asides</a></span><span class="author vcard"><a class="url fn n" href="https://ma.tt/author/saxmatt/" title="View all posts by Matt" rel="author">Matt</a></span>
+				<span class="comments-link">
+			<a href="https://ma.tt/2022/09/this-week-in-google/#respond"><span class="leave-reply">Leave a comment</span></a>		</span><!-- .comments-link -->
+				
+			</footer><!-- .entry-meta -->
+</article><!-- #post -->
+							
+<article id="post-61957" class="post-61957 post type-post status-publish format-standard hentry category-asides">
+	<header class="entry-header">
+		
+				<h1 class="entry-title">
+			<a href="https://ma.tt/2022/09/wcus-qa/" rel="bookmark">WCUS&nbsp;Q&#038;A</a>
+		</h1>
+		
+		<div class="entry-meta">
+			<span class="date"><a href="https://ma.tt/2022/09/wcus-qa/" title="Permalink to WCUS&nbsp;Q&#038;A" rel="bookmark"><time class="entry-date" datetime="2022-09-12T16:51:12-07:00">September 12, 2022</time></a></span><span class="categories-links"><a href="https://ma.tt/category/asides/" rel="category tag">Asides</a></span><span class="author vcard"><a class="url fn n" href="https://ma.tt/author/saxmatt/" title="View all posts by Matt" rel="author">Matt</a></span>					</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		
+<p><a href="https://us.wordcamp.org/">WordCamp United States</a> was in San Diego this year, a really lovely town. It felt like a throwback because of the venue we had to limit tickets quite a bit, so it felt like a WCUS from a decade ago.</p>
+
+
+
+<p>I&#8217;ll probably do this year&#8217;s State of the Word in December again with a livestream and small live audience, so for WCUS we did a brief introduction to the upcoming WordPress 6.1 release, and focused on audience Q&amp;A. Those are always fun for me because you never know what question will come next. Here&#8217;s the video if you&#8217;d like to catch up on it:</p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<span class="embed-youtube" style="text-align:center; display: block;"><iframe loading="lazy" class="youtube-player" width="604" height="340" src="https://www.youtube.com/embed/7x74kWqWMDY?version=3&#038;rel=1&#038;showsearch=0&#038;showinfo=1&#038;iv_load_policy=1&#038;fs=1&#038;hl=en-US&#038;autohide=2&#038;wmode=transparent" allowfullscreen="true" style="border:0;" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation"></iframe></span>
+</div></figure>
+	</div><!-- .entry-content -->
+	
+	<footer class="entry-meta">
+					<div class="comments-link">
+				<a href="https://ma.tt/2022/09/wcus-qa/#respond"><span class="leave-reply">Leave a comment</span></a>			</div><!-- .comments-link -->
+		
+			</footer><!-- .entry-meta -->
+</article><!-- #post -->
+							
+<article id="post-60315" class="post-60315 post type-post status-publish format-standard hentry category-asides">
+	<header class="entry-header">
+		
+				<h1 class="entry-title">
+			<a href="https://ma.tt/2022/08/sonic-sphere-and-empyrean-gate/" rel="bookmark">Sonic Sphere and Empyrean&nbsp;Gate</a>
+		</h1>
+		
+		<div class="entry-meta">
+			<span class="date"><a href="https://ma.tt/2022/08/sonic-sphere-and-empyrean-gate/" title="Permalink to Sonic Sphere and Empyrean&nbsp;Gate" rel="bookmark"><time class="entry-date" datetime="2022-08-27T09:31:04-07:00">August 27, 2022</time></a></span><span class="categories-links"><a href="https://ma.tt/category/asides/" rel="category tag">Asides</a></span><span class="author vcard"><a class="url fn n" href="https://ma.tt/author/saxmatt/" title="View all posts by Matt" rel="author">Matt</a></span>					</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		
+<p>If I had to pick one reason why I&#8217;d suggest every person should attend Burning Man at least once, it would be the art. (Second reason would be seeing <a href="https://burningman.org/about/10-principles/">the principles in action</a>.) This year I am particularly excited to support two pieces, the first being the <a href="https://sonicsphere.art/">Sonic Sphere</a> which has this great video introducing it:</p>
+
+
+
+<figure class="wp-block-embed aligncenter is-type-video is-provider-vimeo wp-block-embed-vimeo"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="Sonic Sphere for Burning Man 2022" src="https://player.vimeo.com/video/733407945?dnt=1&amp;app_id=122963" width="604" height="340" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p>I got a chance to try out a smaller prototype of this and it was a great experience. You can read a bit about the history of the Kugel Auditorium that this is based on on <a href="https://ed.blog/2021/02/28/which-is-better-a-bitcoin-or-a-spherical-concert-hall/">Ed Cooke&#8217;s blog post Which is more memorable, a Bitcoin or a Spherical Concert Hall?</a> The Sphere will be in <a href="https://what3words.com/circulation.later.chart">Deep Playa (what3words)</a>. </p>
+
+
+
+<p>Another exciting new project is the <a href="https://www.entheosrising.org/empyrean-gate-art-installation">Empyrean Gate at the Entheos camp</a>, which will be at 3 and Esplanade. Here are some renderings but I can&#8217;t wait to see how it turns out in person.</p>
+
+
+
+<figure data-carousel-extra='{"blog_id":1,"permalink":"https:\/\/ma.tt\/2022\/08\/sonic-sphere-and-empyrean-gate\/"}'  class="wp-block-gallery has-nested-images columns-1 is-cropped wp-block-gallery-1 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-large"><img data-attachment-id="60325" data-permalink="https://ma.tt/2022/08/sonic-sphere-and-empyrean-gate/entheos2022-funding-package-final2-with-site-map/" data-orig-file="https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map.jpg?fit=998%2C721&amp;ssl=1" data-orig-size="998,721" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;1&quot;}" data-image-title="Entheos2022-Funding-Package-FINAL2-with-Site-Map" data-image-description data-image-caption data-medium-file="https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map.jpg?fit=840%2C607&amp;ssl=1" data-large-file="https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map.jpg?fit=604%2C436&amp;ssl=1" decoding="async" width="604" height="436" data-id="60325" src="https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map.jpg?resize=604%2C436&#038;ssl=1" alt class="wp-image-60325 jetpack-lazy-image" data-recalc-dims="1" data-lazy-srcset="https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map.jpg?w=998&amp;ssl=1 998w, https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map.jpg?resize=840%2C607&amp;ssl=1 840w, https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map.jpg?resize=195%2C141&amp;ssl=1 195w, https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map.jpg?resize=768%2C555&amp;ssl=1 768w" data-lazy-sizes="(max-width: 604px) 100vw, 604px" data-lazy-src="https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map.jpg?resize=604%2C436&amp;is-pending-load=1#038;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" data-attachment-id="60325" data-permalink="https://ma.tt/2022/08/sonic-sphere-and-empyrean-gate/entheos2022-funding-package-final2-with-site-map/" data-orig-file="https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map.jpg?fit=998%2C721&amp;ssl=1" data-orig-size="998,721" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;1&quot;}" data-image-title="Entheos2022-Funding-Package-FINAL2-with-Site-Map" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map.jpg?fit=840%2C607&amp;ssl=1" data-large-file="https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map.jpg?fit=604%2C436&amp;ssl=1" decoding="async" loading="lazy" width="604" height="436" data-id="60325" src="https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map.jpg?resize=604%2C436&#038;ssl=1" alt="" class="wp-image-60325" srcset="https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map.jpg?w=998&amp;ssl=1 998w, https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map.jpg?resize=840%2C607&amp;ssl=1 840w, https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map.jpg?resize=195%2C141&amp;ssl=1 195w, https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map.jpg?resize=768%2C555&amp;ssl=1 768w" sizes="(max-width: 604px) 100vw, 604px" data-recalc-dims="1"  /></noscript></figure>
+
+
+
+<figure class="wp-block-image size-large"><img data-attachment-id="60326" data-permalink="https://ma.tt/2022/08/sonic-sphere-and-empyrean-gate/entheos2022-funding-package-final2-with-site-map2/" data-orig-file="https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map2.jpg?fit=1011%2C729&amp;ssl=1" data-orig-size="1011,729" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;1&quot;}" data-image-title="Entheos2022-Funding-Package-FINAL2-with-Site-Map2" data-image-description data-image-caption data-medium-file="https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map2.jpg?fit=840%2C606&amp;ssl=1" data-large-file="https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map2.jpg?fit=604%2C436&amp;ssl=1" decoding="async" width="604" height="436" data-id="60326" src="https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map2.jpg?resize=604%2C436&#038;ssl=1" alt class="wp-image-60326 jetpack-lazy-image" data-recalc-dims="1" data-lazy-srcset="https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map2.jpg?w=1011&amp;ssl=1 1011w, https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map2.jpg?resize=840%2C606&amp;ssl=1 840w, https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map2.jpg?resize=195%2C141&amp;ssl=1 195w, https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map2.jpg?resize=768%2C554&amp;ssl=1 768w" data-lazy-sizes="(max-width: 604px) 100vw, 604px" data-lazy-src="https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map2.jpg?resize=604%2C436&amp;is-pending-load=1#038;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" data-attachment-id="60326" data-permalink="https://ma.tt/2022/08/sonic-sphere-and-empyrean-gate/entheos2022-funding-package-final2-with-site-map2/" data-orig-file="https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map2.jpg?fit=1011%2C729&amp;ssl=1" data-orig-size="1011,729" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;1&quot;}" data-image-title="Entheos2022-Funding-Package-FINAL2-with-Site-Map2" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map2.jpg?fit=840%2C606&amp;ssl=1" data-large-file="https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map2.jpg?fit=604%2C436&amp;ssl=1" decoding="async" loading="lazy" width="604" height="436" data-id="60326" src="https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map2.jpg?resize=604%2C436&#038;ssl=1" alt="" class="wp-image-60326" srcset="https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map2.jpg?w=1011&amp;ssl=1 1011w, https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map2.jpg?resize=840%2C606&amp;ssl=1 840w, https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map2.jpg?resize=195%2C141&amp;ssl=1 195w, https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map2.jpg?resize=768%2C554&amp;ssl=1 768w" sizes="(max-width: 604px) 100vw, 604px" data-recalc-dims="1"  /></noscript></figure>
+
+
+
+<figure class="wp-block-image size-large"><img data-attachment-id="60327" data-permalink="https://ma.tt/2022/08/sonic-sphere-and-empyrean-gate/entheos2022-funding-package-final2-with-site-map3/" data-orig-file="https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map3.jpg?fit=1009%2C731&amp;ssl=1" data-orig-size="1009,731" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;1&quot;}" data-image-title="Entheos2022-Funding-Package-FINAL2-with-Site-Map3" data-image-description data-image-caption data-medium-file="https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map3.jpg?fit=840%2C609&amp;ssl=1" data-large-file="https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map3.jpg?fit=604%2C438&amp;ssl=1" decoding="async" width="604" height="438" data-id="60327" src="https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map3.jpg?resize=604%2C438&#038;ssl=1" alt class="wp-image-60327 jetpack-lazy-image" data-recalc-dims="1" data-lazy-srcset="https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map3.jpg?w=1009&amp;ssl=1 1009w, https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map3.jpg?resize=840%2C609&amp;ssl=1 840w, https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map3.jpg?resize=195%2C141&amp;ssl=1 195w, https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map3.jpg?resize=768%2C556&amp;ssl=1 768w" data-lazy-sizes="(max-width: 604px) 100vw, 604px" data-lazy-src="https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map3.jpg?resize=604%2C438&amp;is-pending-load=1#038;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" data-attachment-id="60327" data-permalink="https://ma.tt/2022/08/sonic-sphere-and-empyrean-gate/entheos2022-funding-package-final2-with-site-map3/" data-orig-file="https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map3.jpg?fit=1009%2C731&amp;ssl=1" data-orig-size="1009,731" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;1&quot;}" data-image-title="Entheos2022-Funding-Package-FINAL2-with-Site-Map3" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map3.jpg?fit=840%2C609&amp;ssl=1" data-large-file="https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map3.jpg?fit=604%2C438&amp;ssl=1" decoding="async" loading="lazy" width="604" height="438" data-id="60327" src="https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map3.jpg?resize=604%2C438&#038;ssl=1" alt="" class="wp-image-60327" srcset="https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map3.jpg?w=1009&amp;ssl=1 1009w, https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map3.jpg?resize=840%2C609&amp;ssl=1 840w, https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map3.jpg?resize=195%2C141&amp;ssl=1 195w, https://i0.wp.com/ma.tt/files/2022/08/Entheos2022-Funding-Package-FINAL2-with-Site-Map3.jpg?resize=768%2C556&amp;ssl=1 768w" sizes="(max-width: 604px) 100vw, 604px" data-recalc-dims="1"  /></noscript></figure>
+</figure>
+
+
+
+<p></p>
+	</div><!-- .entry-content -->
+	
+	<footer class="entry-meta">
+					<div class="comments-link">
+				<a href="https://ma.tt/2022/08/sonic-sphere-and-empyrean-gate/#comments">View all 2 comments</a>			</div><!-- .comments-link -->
+		
+			</footer><!-- .entry-meta -->
+</article><!-- #post -->
+							
+<article id="post-58841" class="post-58841 post type-post status-publish format-standard hentry category-asides">
+	<header class="entry-header">
+		
+				<h1 class="entry-title">
+			<a href="https://ma.tt/2022/08/gaiman-on-tumblr/" rel="bookmark">Gaiman on&nbsp;Tumblr</a>
+		</h1>
+		
+		<div class="entry-meta">
+			<span class="date"><a href="https://ma.tt/2022/08/gaiman-on-tumblr/" title="Permalink to Gaiman on&nbsp;Tumblr" rel="bookmark"><time class="entry-date" datetime="2022-08-09T07:05:20-07:00">August 9, 2022</time></a></span><span class="categories-links"><a href="https://ma.tt/category/asides/" rel="category tag">Asides</a></span><span class="author vcard"><a class="url fn n" href="https://ma.tt/author/saxmatt/" title="View all posts by Matt" rel="author">Matt</a></span>					</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		
+<p>From a nice new Polygon article, <a href="https://www.polygon.com/23289362/neil-gaiman-books-list-best">Our favorite Neil Gaiman books, comics, and more</a>:</p>
+
+
+
+<blockquote class="wp-block-quote">
+<p id="y3OElA">Before I elaborate —<em>&nbsp;yes,</em>&nbsp;people still use Tumblr and it’s far more popular than most people think. Neil Gaiman has been an active Tumblr user since 2011, and he still actively uses the microblogging platform to this day. This is notable, because celebrities have notoriously been bullied off of Tumblr. Yet somehow, Neil Gaiman has outlived them all, watching from the shadows of his own dashboard.</p>
+
+
+
+<p id="boJiHf">He keeps his ask box open and answers questions from fans. He&nbsp;<a href="https://neil-gaiman.tumblr.com/post/689452050371723264/getting-my-wisdom-teeth-out-today-any-wise-words">gives life</a>&nbsp;<a href="https://neil-gaiman.tumblr.com/post/688900605247438848/dear-neil-i-used-to-love-reading-id-stay-up">and</a>&nbsp;<a href="https://neil-gaiman.tumblr.com/post/688102709959835648/hi-neil-i-hope-youre-well-i-really-enjoy-your">writing advice</a>. He talks about the various adaptations of his works,&nbsp;<a href="https://neil-gaiman.tumblr.com/post/688701872087990272/hi-neil-im-sorry-to-bother-you-i-was-just">giving information he is able to give</a>&nbsp;and answering with a signature&nbsp;<a href="https://neil-gaiman.tumblr.com/post/688351019503058944/hi-neil-please-tell-me-if-number-one-song-in">“wait and see” when he cannot</a>. He plays&nbsp;<a href="https://neil-gaiman.tumblr.com/post/690151373249085440/glanced-at-your-wikipedia-page-and-was-absolutely">along with dumb jokes</a>&nbsp;and&nbsp;<a href="https://neil-gaiman.tumblr.com/post/655191408578265088/who-even-are-you-like-what-did-you-write">reblogs additions</a>. He helps fans track down&nbsp;<a href="https://neil-gaiman.tumblr.com/post/689935702067200000/i-read-this-quote-attributed-to-you-but-i-cant">obscure lines he’s written</a>. And as is the reality of the internet, he deals with his share of&nbsp;<a href="https://neil-gaiman.tumblr.com/post/690075850470768640/a-short-story-in-two-asks-i-wonder-where-the">haters and trolls</a>, but he’s always remarkably graceful toward them.</p>
+
+
+
+<p id="7FY6Dx">He also reblogs posts,&nbsp;<a href="https://neil-gaiman.tumblr.com/post/689248951545806848/neil-gaiman-ewan-mcgregor-food-in-movies">adding on new information</a>,&nbsp;<a href="https://neil-gaiman.tumblr.com/post/688076462799175680/an-elaborate-decade-long-imposter-at-this-point">providing funny commentary</a>, or&nbsp;<a href="https://neil-gaiman.tumblr.com/post/689454123592171520/50-words-to-use-instead-of-said">giving helpful tips</a>&nbsp;(this usually causes some surprise from people who organically stumble upon a comment from Neil Gaiman in the wild, and it’s always really amusing to see).</p>
+
+
+
+<p id="ebhxNC">He’s just a good presence on the internet, which is exceedingly rare to see these days.</p>
+</blockquote>
+
+
+
+<p>I&#8217;m seeing more and more people use Tumblr in this way, and it&#8217;s nice to be part of making the web a more interesting place. If you haven&#8217;t tried Tumblr recently, download the app and start <a href="https://neil-gaiman.tumblr.com/">with Neil&#8217;s blog</a> as a subscription. <em>Hat tip: Matthew Ryan.</em></p>
+	</div><!-- .entry-content -->
+	
+	<footer class="entry-meta">
+					<div class="comments-link">
+				<a href="https://ma.tt/2022/08/gaiman-on-tumblr/#respond"><span class="leave-reply">Leave a comment</span></a>			</div><!-- .comments-link -->
+		
+			</footer><!-- .entry-meta -->
+</article><!-- #post -->
+			
+					<nav class="navigation paging-navigation">
+		<h1 class="screen-reader-text">
+			Posts navigation		</h1>
+		<div class="nav-links">
+
+						<div class="nav-previous"><a href="https://ma.tt/category/asides/page/2/" ><span class="meta-nav">&larr;</span> Older posts</a></div>
+			
+			
+		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+		
+		
+		</div><!-- #content -->
+	</div><!-- #primary -->
+
+
+		</div><!-- #main -->
+		<footer id="colophon" class="site-footer">
+			
+			<div class="site-info">
+												<a href="https://wordpress.org/" class="imprint">
+					Proudly powered by WordPress				</a>
+			</div><!-- .site-info -->
+
+            <div id="navbar" class="navbar">
+				<nav id="site-navigation" class="navigation main-navigation">
+					<button class="menu-toggle">Menu</button>
+					<a class="screen-reader-text skip-link" href="#content" title="Skip to content">Skip to content</a>
+					<div class="menu-main-menu-container"><ul id="primary-menu" class="nav-menu"><li id="menu-item-42392" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-42392"><a href="https://ma.tt/">Home</a></li>
+<li id="menu-item-42393" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42393"><a href="https://ma.tt/about/">About</a></li>
+<li id="menu-item-48597" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48597"><a href="https://ma.tt/contact/">Contact</a></li>
+<li id="menu-item-51120" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-51120"><a href="https://distributed.blog/">Podcast</a></li>
+<li id="menu-item-51149" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-51149"><a href="https://twitter.com/photomatt">Twitter</a></li>
+<li id="menu-item-43841" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43841"><a href="http://automattic.com/work-with-us/">Let&#8217;s Work&nbsp;Together</a></li>
+</ul></div>					<form role="search" method="get" class="search-form" action="https://ma.tt/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form>				</nav><!-- #site-navigation -->
+			</div><!-- #navbar -->
+
+		</footer><!-- #colophon -->
+	</div><!-- #page -->
+
+			<script type="text/javascript">
+		var infiniteScroll = {"settings":{"id":"content","ajaxurl":"https:\/\/ma.tt\/?infinity=scrolling","type":"scroll","wrapper":true,"wrapper_class":"infinite-wrap","footer":"page","click_handle":"1","text":"Older posts","totop":"Scroll back to top","currentday":"09.08.22","order":"DESC","scripts":[],"styles":[],"google_analytics":false,"offset":1,"history":{"host":"ma.tt","path":"\/category\/asides\/page\/%d\/","use_trailing_slashes":true,"parameters":""},"query_args":{"category_name":"asides","error":"","m":"","p":0,"post_parent":"","subpost":"","subpost_id":"","attachment":"","attachment_id":0,"name":"","pagename":"","page_id":0,"second":"","minute":"","hour":"","day":0,"monthnum":0,"year":0,"w":0,"tag":"","cat":33,"tag_id":"","author":"","author_name":"","feed":"","tb":"","paged":0,"meta_key":"","meta_value":"","preview":"","s":"","sentence":"","title":"","fields":"","menu_order":"","embed":"","category__in":[],"category__not_in":[],"category__and":[],"post__in":[],"post__not_in":[],"post_name__in":[],"tag__in":[],"tag__not_in":[],"tag__and":[],"tag_slug__in":[],"tag_slug__and":[],"post_parent__in":[],"post_parent__not_in":[],"author__in":[],"author__not_in":[],"search_columns":[],"posts_per_page":20,"ignore_sticky_posts":false,"suppress_filters":false,"cache_results":true,"update_post_term_cache":true,"update_menu_item_cache":false,"lazy_load_term_meta":true,"update_post_meta_cache":true,"post_type":"","nopaging":false,"comments_per_page":"0","no_found_rows":false,"order":"DESC"},"query_before":"2023-09-05 23:23:37","last_post_date":"2022-08-09 07:05:20","body_class":"infinite-scroll neverending","loading_text":"Loading new page","stats":"blog=1047865&host=ma.tt&v=ext&j=1:12.6-a.3&x_pagetype=infinite-jetpack"}};
+		</script>
+				<script type="text/javascript">
+						var _sf_async_config={};
+			_sf_async_config.uid = 174;
+			_sf_async_config.domain = "ma.tt";
+			_sf_async_config.useCanonical = true;
+				(function(){
+			        function loadChartbeat() {
+					window._sf_endpt=(new Date()).getTime();
+					var e = document.createElement('script');
+					e.setAttribute('language', 'javascript');
+					e.setAttribute('type', 'text/javascript');
+					e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+					document.body.appendChild(e);
+				  }
+				  var oldonload = window.onload;
+				  window.onload = (typeof window.onload != 'function') ?
+					 loadChartbeat : function() { try { oldonload(); } catch (e) { loadChartbeat(); throw e} loadChartbeat(); };
+				})();
+		</script>
+
+		<!-- GA Google Analytics @ https://m0n.co/ga -->
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-52447-3', 'auto');
+			ga('send', 'pageview');
+		</script>
+
+			<div class="jetpack-instant-search__widget-area" style="display: none">
+							<div id="jetpack-search-filters-2" class="widget jetpack-filters widget_search">			<div id="jetpack-search-filters-2-wrapper" class="jetpack-instant-search-wrapper">
+		</div></div>					</div>
+				<div id="infinite-footer">
+			<div class="container">
+				<div class="blog-info">
+					<a id="infinity-blog-title" href="https://ma.tt/" rel="home">
+						Matt Mullenweg					</a>
+				</div>
+				<div class="blog-credits">
+					<a href="https://wordpress.org/" rel="noopener noreferrer" target="_blank" rel="generator">Proudly powered by WordPress</a> Theme: Ma.tt.				</div>
+			</div>
+		</div><!-- #infinite-footer -->
+				<div id="jp-carousel-loading-overlay">
+			<div id="jp-carousel-loading-wrapper">
+				<span id="jp-carousel-library-loading">&nbsp;</span>
+			</div>
+		</div>
+		<div class="jp-carousel-overlay" style="display: none;">
+
+		<div class="jp-carousel-container">
+			<!-- The Carousel Swiper -->
+			<div
+				class="jp-carousel-wrap swiper-container jp-carousel-swiper-container jp-carousel-transitions"
+				itemscope
+				itemtype="https://schema.org/ImageGallery">
+				<div class="jp-carousel swiper-wrapper"></div>
+				<div class="jp-swiper-button-prev swiper-button-prev">
+					<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<mask id="maskPrev" mask-type="alpha" maskUnits="userSpaceOnUse" x="8" y="6" width="9" height="12">
+							<path d="M16.2072 16.59L11.6496 12L16.2072 7.41L14.8041 6L8.8335 12L14.8041 18L16.2072 16.59Z" fill="white"/>
+						</mask>
+						<g mask="url(#maskPrev)">
+							<rect x="0.579102" width="23.8823" height="24" fill="#FFFFFF"/>
+						</g>
+					</svg>
+				</div>
+				<div class="jp-swiper-button-next swiper-button-next">
+					<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<mask id="maskNext" mask-type="alpha" maskUnits="userSpaceOnUse" x="8" y="6" width="8" height="12">
+							<path d="M8.59814 16.59L13.1557 12L8.59814 7.41L10.0012 6L15.9718 12L10.0012 18L8.59814 16.59Z" fill="white"/>
+						</mask>
+						<g mask="url(#maskNext)">
+							<rect x="0.34375" width="23.8822" height="24" fill="#FFFFFF"/>
+						</g>
+					</svg>
+				</div>
+			</div>
+			<!-- The main close buton -->
+			<div class="jp-carousel-close-hint">
+				<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<mask id="maskClose" mask-type="alpha" maskUnits="userSpaceOnUse" x="5" y="5" width="15" height="14">
+						<path d="M19.3166 6.41L17.9135 5L12.3509 10.59L6.78834 5L5.38525 6.41L10.9478 12L5.38525 17.59L6.78834 19L12.3509 13.41L17.9135 19L19.3166 17.59L13.754 12L19.3166 6.41Z" fill="white"/>
+					</mask>
+					<g mask="url(#maskClose)">
+						<rect x="0.409668" width="23.8823" height="24" fill="#FFFFFF"/>
+					</g>
+				</svg>
+			</div>
+			<!-- Image info, comments and meta -->
+			<div class="jp-carousel-info">
+				<div class="jp-carousel-info-footer">
+					<div class="jp-carousel-pagination-container">
+						<div class="jp-swiper-pagination swiper-pagination"></div>
+						<div class="jp-carousel-pagination"></div>
+					</div>
+					<div class="jp-carousel-photo-title-container">
+						<h2 class="jp-carousel-photo-caption"></h2>
+					</div>
+					<div class="jp-carousel-photo-icons-container">
+						<a href="#" class="jp-carousel-icon-btn jp-carousel-icon-info" aria-label="Toggle photo metadata visibility">
+							<span class="jp-carousel-icon">
+								<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<mask id="maskInfo" mask-type="alpha" maskUnits="userSpaceOnUse" x="2" y="2" width="21" height="20">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M12.7537 2C7.26076 2 2.80273 6.48 2.80273 12C2.80273 17.52 7.26076 22 12.7537 22C18.2466 22 22.7046 17.52 22.7046 12C22.7046 6.48 18.2466 2 12.7537 2ZM11.7586 7V9H13.7488V7H11.7586ZM11.7586 11V17H13.7488V11H11.7586ZM4.79292 12C4.79292 16.41 8.36531 20 12.7537 20C17.142 20 20.7144 16.41 20.7144 12C20.7144 7.59 17.142 4 12.7537 4C8.36531 4 4.79292 7.59 4.79292 12Z" fill="white"/>
+									</mask>
+									<g mask="url(#maskInfo)">
+										<rect x="0.8125" width="23.8823" height="24" fill="#FFFFFF"/>
+									</g>
+								</svg>
+							</span>
+						</a>
+												<a href="#" class="jp-carousel-icon-btn jp-carousel-icon-comments" aria-label="Toggle photo comments visibility">
+							<span class="jp-carousel-icon">
+								<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<mask id="maskComments" mask-type="alpha" maskUnits="userSpaceOnUse" x="2" y="2" width="21" height="20">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M4.3271 2H20.2486C21.3432 2 22.2388 2.9 22.2388 4V16C22.2388 17.1 21.3432 18 20.2486 18H6.31729L2.33691 22V4C2.33691 2.9 3.2325 2 4.3271 2ZM6.31729 16H20.2486V4H4.3271V18L6.31729 16Z" fill="white"/>
+									</mask>
+									<g mask="url(#maskComments)">
+										<rect x="0.34668" width="23.8823" height="24" fill="#FFFFFF"/>
+									</g>
+								</svg>
+
+								<span class="jp-carousel-has-comments-indicator" aria-label="This image has comments."></span>
+							</span>
+						</a>
+											</div>
+				</div>
+				<div class="jp-carousel-info-extra">
+					<div class="jp-carousel-info-content-wrapper">
+						<div class="jp-carousel-photo-title-container">
+							<h2 class="jp-carousel-photo-title"></h2>
+						</div>
+						<div class="jp-carousel-comments-wrapper">
+															<div id="jp-carousel-comments-loading">
+									<span>Loading Comments...</span>
+								</div>
+								<div class="jp-carousel-comments"></div>
+								<div id="jp-carousel-comment-form-container">
+									<span id="jp-carousel-comment-form-spinner">&nbsp;</span>
+									<div id="jp-carousel-comment-post-results"></div>
+																														<form id="jp-carousel-comment-form">
+												<label for="jp-carousel-comment-form-comment-field" class="screen-reader-text">Write a Comment...</label>
+												<textarea
+													name="comment"
+													class="jp-carousel-comment-form-field jp-carousel-comment-form-textarea"
+													id="jp-carousel-comment-form-comment-field"
+													placeholder="Write a Comment..."
+												></textarea>
+												<div id="jp-carousel-comment-form-submit-and-info-wrapper">
+													<div id="jp-carousel-comment-form-commenting-as">
+																													<fieldset>
+																<label for="jp-carousel-comment-form-email-field">Email (Required)</label>
+																<input type="text" name="email" class="jp-carousel-comment-form-field jp-carousel-comment-form-text-field" id="jp-carousel-comment-form-email-field" />
+															</fieldset>
+															<fieldset>
+																<label for="jp-carousel-comment-form-author-field">Name (Required)</label>
+																<input type="text" name="author" class="jp-carousel-comment-form-field jp-carousel-comment-form-text-field" id="jp-carousel-comment-form-author-field" />
+															</fieldset>
+															<fieldset>
+																<label for="jp-carousel-comment-form-url-field">Website</label>
+																<input type="text" name="url" class="jp-carousel-comment-form-field jp-carousel-comment-form-text-field" id="jp-carousel-comment-form-url-field" />
+															</fieldset>
+																											</div>
+													<input
+														type="submit"
+														name="submit"
+														class="jp-carousel-comment-form-button"
+														id="jp-carousel-comment-form-button-submit"
+														value="Post Comment" />
+												</div>
+											</form>
+																											</div>
+													</div>
+						<div class="jp-carousel-image-meta">
+							<div class="jp-carousel-title-and-caption">
+								<div class="jp-carousel-photo-info">
+									<h3 class="jp-carousel-caption" itemprop="caption description"></h3>
+								</div>
+
+								<div class="jp-carousel-photo-description"></div>
+							</div>
+							<ul class="jp-carousel-image-exif" style="display: none;"></ul>
+							<a class="jp-carousel-image-download" target="_blank" style="display: none;">
+								<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="3" y="3" width="19" height="18">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M5.84615 5V19H19.7775V12H21.7677V19C21.7677 20.1 20.8721 21 19.7775 21H5.84615C4.74159 21 3.85596 20.1 3.85596 19V5C3.85596 3.9 4.74159 3 5.84615 3H12.8118V5H5.84615ZM14.802 5V3H21.7677V10H19.7775V6.41L9.99569 16.24L8.59261 14.83L18.3744 5H14.802Z" fill="white"/>
+									</mask>
+									<g mask="url(#mask0)">
+										<rect x="0.870605" width="23.8823" height="24" fill="#FFFFFF"/>
+									</g>
+								</svg>
+								<span class="jp-carousel-download-text"></span>
+							</a>
+							<div class="jp-carousel-image-map" style="display: none;"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		</div>
+		<style id='core-block-supports-inline-css'>
+.wp-block-gallery.wp-block-gallery-1{--wp--style--unstable-gallery-gap:var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em ) ) );gap:var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em ) ) );}
+</style>
+<script src='https://ma.tt/blog-content/plugins/jetpack-dev/_inc/build/infinite-scroll/infinity.min.js?ver=12.6-a.3-is5.0.1' id='the-neverending-homepage-js'></script>
+<script src='https://s.gravatar.com/js/gprofiles.js?ver=e' id='gprofiles-js'></script>
+<script src='https://ma.tt/blog-content/plugins/jetpack-dev/jetpack_vendor/automattic/jetpack-image-cdn/dist/image-cdn.js?minify=false&#038;ver=132249e245926ae3e188' id='jetpack-photon-js'></script>
+<script src='https://ma.tt/blog-content/plugins/gutenberg/build/url/index.min.js?ver=c077739130b14a5dadc3' id='wp-url-js'></script>
+<script id="jetpack-instant-search-js-before">
+var JetpackInstantSearchOptions=JSON.parse(decodeURIComponent("%7B%22overlayOptions%22%3A%7B%22colorTheme%22%3A%22light%22%2C%22enableInfScroll%22%3Atrue%2C%22enableFilteringOpensOverlay%22%3Atrue%2C%22enablePostDate%22%3Atrue%2C%22enableSort%22%3Atrue%2C%22highlightColor%22%3A%22%23FFC%22%2C%22overlayTrigger%22%3A%22submit%22%2C%22resultFormat%22%3A%22expanded%22%2C%22showPoweredBy%22%3Atrue%2C%22defaultSort%22%3A%22newest%22%2C%22excludedPostTypes%22%3A%5B%22attachment%22%5D%7D%2C%22homeUrl%22%3A%22https%3A%5C%2F%5C%2Fma.tt%22%2C%22locale%22%3A%22en-US%22%2C%22postsPerPage%22%3A20%2C%22siteId%22%3A1047865%2C%22postTypes%22%3A%7B%22post%22%3A%7B%22singular_name%22%3A%22Post%22%2C%22name%22%3A%22Posts%22%7D%2C%22page%22%3A%7B%22singular_name%22%3A%22Page%22%2C%22name%22%3A%22Pages%22%7D%2C%22attachment%22%3A%7B%22singular_name%22%3A%22Media%22%2C%22name%22%3A%22Media%22%7D%7D%2C%22webpackPublicPath%22%3A%22https%3A%5C%2F%5C%2Fma.tt%5C%2Fblog-content%5C%2Fplugins%5C%2Fjetpack-dev%5C%2Fjetpack_vendor%5C%2Fautomattic%5C%2Fjetpack-search%5C%2Fbuild%5C%2Finstant-search%5C%2F%22%2C%22isPhotonEnabled%22%3Atrue%2C%22isFreePlan%22%3Afalse%2C%22apiRoot%22%3A%22https%3A%5C%2F%5C%2Fma.tt%5C%2Fwp-json%5C%2F%22%2C%22apiNonce%22%3A%22ce01344259%22%2C%22isPrivateSite%22%3Afalse%2C%22isWpcom%22%3Afalse%2C%22hasOverlayWidgets%22%3Atrue%2C%22widgets%22%3A%5B%7B%22filters%22%3A%5B%7B%22name%22%3A%22People%22%2C%22type%22%3A%22taxonomy%22%2C%22taxonomy%22%3A%22people%22%2C%22count%22%3A5%2C%22widget_id%22%3A%22jetpack-search-filters-2%22%2C%22filter_id%22%3A%22taxonomy_0%22%7D%2C%7B%22name%22%3A%22Categories%22%2C%22type%22%3A%22taxonomy%22%2C%22taxonomy%22%3A%22category%22%2C%22count%22%3A5%2C%22widget_id%22%3A%22jetpack-search-filters-2%22%2C%22filter_id%22%3A%22taxonomy_1%22%7D%2C%7B%22name%22%3A%22Tags%22%2C%22type%22%3A%22taxonomy%22%2C%22taxonomy%22%3A%22post_tag%22%2C%22count%22%3A5%2C%22widget_id%22%3A%22jetpack-search-filters-2%22%2C%22filter_id%22%3A%22taxonomy_2%22%7D%2C%7B%22name%22%3A%22Year%22%2C%22type%22%3A%22date_histogram%22%2C%22count%22%3A5%2C%22field%22%3A%22post_date%22%2C%22interval%22%3A%22year%22%2C%22widget_id%22%3A%22jetpack-search-filters-2%22%2C%22filter_id%22%3A%22date_histogram_3%22%7D%5D%2C%22widget_id%22%3A%22jetpack-search-filters-2%22%7D%5D%2C%22widgetsOutsideOverlay%22%3A%5B%5D%2C%22hasNonSearchWidgets%22%3Afalse%7D"));
+</script>
+<script src='https://ma.tt/blog-content/plugins/jetpack-dev/jetpack_vendor/automattic/jetpack-search/build/instant-search/jp-search.js?minify=false&#038;ver=fd8e2df5c5556b33e4a7' id='jetpack-instant-search-js'></script>
+<script src='//stats.wp.com/w.js?ver=202336' id='jp-tracks-js'></script>
+<script src='https://ma.tt/blog-content/plugins/wp-parsely/build/loader.js?ver=1d54726e91ce976b3e82' id='wp-parsely-loader-js'></script>
+<script data-parsely-site="ma.tt" src='https://cdn.parsely.com/keys/ma.tt/p.js?ver=3.9.0' id="parsely-cfg"></script>
+<script id='jetpack-carousel-js-extra'>
+var jetpackSwiperLibraryPath = {"url":"https:\/\/ma.tt\/blog-content\/plugins\/jetpack-dev\/_inc\/build\/carousel\/swiper-bundle.min.js"};
+var jetpackCarouselStrings = {"widths":[370,700,1000,1200,1400,2000],"is_logged_in":"","lang":"en","ajaxurl":"https:\/\/ma.tt\/blog\/wp-admin\/admin-ajax.php","nonce":"6800c235f0","display_exif":"1","display_comments":"1","single_image_gallery":"1","single_image_gallery_media_file":"","background_color":"black","comment":"Comment","post_comment":"Post Comment","write_comment":"Write a Comment...","loading_comments":"Loading Comments...","download_original":"View full size <span class=\"photo-size\">{0}<span class=\"photo-size-times\">\u00d7<\/span>{1}<\/span>","no_comment_text":"Please be sure to submit some text with your comment.","no_comment_email":"Please provide an email address to comment.","no_comment_author":"Please provide your name to comment.","comment_post_error":"Sorry, but there was an error posting your comment. Please try again later.","comment_approved":"Your comment was approved.","comment_unapproved":"Your comment is in moderation.","camera":"Camera","aperture":"Aperture","shutter_speed":"Shutter Speed","focal_length":"Focal Length","copyright":"Copyright","comment_registration":"0","require_name_email":"1","login_url":"https:\/\/ma.tt\/blog\/wp-login.php?redirect_to=https%3A%2F%2Fma.tt%2F2023%2F09%2Ftechcrunch-with-gutenberg%2F","blog_id":"1","meta_data":["camera","aperture","shutter_speed","focal_length","copyright"]};
+</script>
+<script src='https://ma.tt/blog-content/plugins/jetpack-dev/_inc/build/carousel/jetpack-carousel.min.js?ver=12.6-a.3' id='jetpack-carousel-js'></script>
+<script src='https://ma.tt/blog-content/themes/twentythirteen/js/functions.js?ver=20230526' id='twentythirteen-script-js'></script>
+<script src='https://ma.tt/blog-content/plugins/jetpack-dev/jetpack_vendor/automattic/jetpack-lazy-images/dist/intersection-observer.js?minify=false&#038;ver=83ec8aa758f883d6da14' id='jetpack-lazy-images-polyfill-intersectionobserver-js'></script>
+<script id='jetpack-lazy-images-js-extra'>
+var jetpackLazyImagesL10n = {"loading_warning":"Images are still loading. Please cancel your print and try again."};
+</script>
+<script src='https://ma.tt/blog-content/plugins/jetpack-dev/jetpack_vendor/automattic/jetpack-lazy-images/dist/lazy-images.js?minify=false&#038;ver=2e29137590434abf5fbe' id='jetpack-lazy-images-js'></script>
+<script defer src='https://stats.wp.com/e-202336.js' id='jetpack-stats-js'></script>
+<script id="jetpack-stats-js-after">
+_stq = window._stq || [];
+_stq.push([ "view", {v:'ext',blog:'1047865',post:'0',tz:'-7',srv:'ma.tt',j:'1:12.6-a.3'} ]);
+_stq.push([ "clickTrackerInit", "1047865", "0" ]);
+</script>
+		<script type="text/javascript">
+			(function() {
+				var extend = function(out) {
+					out = out || {};
+
+					for (var i = 1; i < arguments.length; i++) {
+						if (!arguments[i])
+						continue;
+
+						for (var key in arguments[i]) {
+						if (arguments[i].hasOwnProperty(key))
+							out[key] = arguments[i][key];
+						}
+					}
+
+					return out;
+				};
+				extend( window.infiniteScroll.settings.scripts, ["jquery-core","jquery-migrate","jquery","wp-polyfill-inert","regenerator-runtime","wp-inert-polyfill","wp-polyfill","wp-hooks","wp-i18n","wp-jp-i18n-loader","tiled-gallery","the-neverending-homepage","gprofiles","jetpack-photon","wp-url","jetpack-instant-search","jp-tracks","wp-parsely-loader","wp-parsely-tracker","jetpack-carousel","twentythirteen-script","jetpack-lazy-images-polyfill-intersectionobserver","jetpack-lazy-images","jetpack-stats"] );
+				extend( window.infiniteScroll.settings.styles, ["the-neverending-homepage","wp-block-library","wp-block-library-theme","wp-parsely-recommendations-style","jetpack-videopress-video-block-view","mediaelement","wp-mediaelement","classic-theme-styles","global-styles","jetpack-carousel-swiper-css","jetpack-carousel","tiled-gallery","twentythirteen-fonts","genericons","twentythirteen-style","twentythirteen-block-style","infinity-twentythirteen","jetpack_css","core-block-supports"] );
+			})();
+		</script>
+				<span id="infinite-aria" aria-live="polite"></span>
+		</body>
+</html>
+
+<!-- Dynamic page generated in 0.271 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2023-09-05 23:23:37 -->
+
+<!-- Compression = gzip -->

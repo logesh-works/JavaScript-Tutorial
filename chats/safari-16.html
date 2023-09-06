@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/i/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/i/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/i/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/web-app/site.webmanifest">
+<link rel="mask-icon" href="/assets/i/icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/i/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="msapplication-config" content="/assets/web-app/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+
+  <title>Igalia Chats: Mega Safari Release | Igalia - Open Source Consultancy and Development</title>
+  <meta name="description" content="Igalia is an open source consultancy specialised in the development of innovative projects and solutions. Our engineers have expertise in a wide range of technological areas, including browsers and client-side web technologies, graphics pipeline, compilers and virtual machines. We have the most WPE, WebKit, Chromium/Blink and Firefox expertise found in the consulting business, including many reviewers and committers. Igalia designs, develops, customises and optimises GNU/Linux-based solutions for companies across the globe. Our work and contributions are present in many projects such as GStreamer, Mesa 3D, WebKit, Chromium, etc.">
+  <meta name="keywords" content="igalia, free software, free software engineering, development, consultancy, webkit consultancy, consulting, webkit consulting, programming, hackers, cooperative organization, organization, company, assembly, igalia.com, igalia sl, webkit, webkitgtk, a11y, v8, jsc, training, GNOME, webkit consultants, chromium consulting, chromium consultants, chromium consultancy, blink consultants, blink consultancy, gstreamer consultancy, gstreamer consulting">
+  <meta name="author" content="Igalia">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" id="main-stylesheet" href="/assets/main.css" data-main="/assets/main.css" data-aria="/assets/aria.css">
+  <link rel="canonical" href="https://www.igalia.com/chats/safari-16">
+  <link rel="alternate" type="application/rss+xml" title="Igalia" href="/feed.xml">
+
+  
+
+  <!-- Open Graph metadata -->
+  <meta content="Igalia" property="og:site_name">
+  <meta content="Igalia Chats: Mega Safari Release | Igalia - Open Source Consultancy and Development" property="og:title">
+  <meta content="https://www.igalia.com/assets/i/logo200x200Margin.png" property="og:image">
+  <meta content="https://www.igalia.com/assets/i/logoSimple200x200.png" property="og:logo">
+  
+    <meta content="website" property="og:type">
+  
+  
+    <meta content="Igalia is an open source consultancy specialised in the development of innovative projects and solutions. Our engineers have expertise in a wide range of technological areas, including browsers and client-side web technologies, graphics pipeline, compilers and virtual machines. We have the most WPE, WebKit, Chromium/Blink and Firefox expertise found in the consulting business, including many reviewers and committers. Igalia designs, develops, customises and optimises GNU/Linux-based solutions for companies across the globe. Our work and contributions are present in many projects such as GStreamer, Mesa 3D, WebKit, Chromium, etc." property="og:description">
+  
+  
+    <meta content="https://www.igalia.com/chats/safari-16" property="og:url">
+  
+  
+</head>
+
+
+  <body class="aria-contrast" data-json-base="/assets/json">
+    <header id="header" role="banner">
+  <div class="container-fluid-1440">
+    <div class="wrapper">
+      
+      
+      
+      <h1 class="site-title logos">
+        <a href="/" title="Igalia">
+          <img src="/assets/i/logo.png" alt="Igalia" />
+        </a>
+      </h1>
+
+      <nav role="navigation" class="site-nav hidden-xs hidden-sm">
+        <ol class="main-menu">
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/about" title="About Us">
+              About Us
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/technologies" title="Technologies">
+              Technologies
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/services" title="Services">
+              Services
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/industries" title="Industries">
+              Industries
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/24-7/home" title="24/7">
+              24/7
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/jobs" title="Jobs">
+              Jobs
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/contact" title="Contact">
+              Contact
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/public-funding" title="Feder">
+              Feder
+            </a>
+          </li>
+          
+        </ol>
+      </nav>
+
+      <div aria-hidden="true" id="menu-toggle-wrapper" class="visible-xs visible-sm">
+        <a href="#" id="menu-toggle" title="Toggle menu">
+          <i aria-hidden="true" class="fas fa-bars"></i>
+          <span hidden>Toggle menu</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div id="mobile-menu-wrapper">
+  <div id="mobile-menu">
+    <ul role="navigation" class="nav">
+      
+      <li>
+        <a class="page-link" href="/about" title="About Us">
+          About Us
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/technologies" title="Technologies">
+          Technologies
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/services" title="Services">
+          Services
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/industries" title="Industries">
+          Industries
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/24-7/home" title="24/7">
+          24/7
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/jobs" title="Jobs">
+          Jobs
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/contact" title="Contact">
+          Contact
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/public-funding" title="Feder">
+          Feder
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+    <main class="page-content" aria-label="Content">
+        <article class="page page--chats">
+  <header class="page-header" style="background-image: url(/assets/i/headers/header-technologies.jpg); ">
+    <div class="container-fluid-1440">
+      <div class="grid-row">
+        <div class="col-xs-12 col-sm-10-center">
+          <h1 class="page-title" itemprop="name headline">Igalia Chats: Mega Safari Release</h1>
+          
+        </div>
+      </div>
+    </div>
+    <div class="cover"></div>
+  </header>
+
+  <div class="container-fluid-1440">
+    <div class="page-content">
+      <div class="grid-row">
+        <div class="col-xs-12">
+          <div class="grid-row">
+            <div class="col-xs-12 col-lg-8">
+              <h2 class="chat-title">
+                <a href="/24-7/chats" class="chat-title__back">
+                  <img src="/assets/i/arrowBackBlue.png" alt="Back to chats">
+                </a>
+                Igalia&#39;s Brian Kardell and Eric Meyer chat about the mega packed 16.4 Safari release
+              </h2>
+              <div class="chat-date">
+                <time datetime="2023-04-04T00:00:00+00:00" itemprop="datePublished">
+                  
+                  Apr 4, 2023
+                </time>
+              </div>
+              <div class="chat-audio">
+                <div class="chat-audio__player">
+                  <div class="audio-player" data-src="/downloads/interviews/huge-safari-release.mp3">
+                    <div class="controls">
+                      <div class="play-container">
+                        <div class="toggle-play play">
+                        </div>
+                      </div>
+                      <div class="time-container">
+                        <div class="time">
+                          <div class="current">0:00</div>
+                          <div class="length"></div>
+                        </div>
+                        <div class="timeline">
+                          <div class="progress"></div>
+                        </div>
+                      </div>
+                      <div class="volume-container">
+                        <div class="volume-button">
+                          <div class="volume c-icon-volumeMed"></div>
+                        </div>
+                        <div class="volume-slider">
+                          <div class="volume-percentage"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <ul class="chat-audio__links">
+                  <li><a href="/downloads/interviews/huge-safari-release.mp3" title="Download Chat" target="_blank"><i class="c-icon-download"></i></a></li>
+                  
+                  <li><a href="/chats.xml" title="Open podcast RSS feed" target="_blank"><i class="c-icon-podcast"></i></a></li>
+                  
+                  
+                  <li><a href="https://youtu.be/U-M6MPR9TFg" title="Open in Youtube" target="_blank"><i class="c-icon-youtube"></i></a></li>
+                  
+                  
+                  <li><a href="https://open.spotify.com/show/0XZ4hqB5ogePKOumi4daDm" title="Open in Spotify" target="_blank"><i class="c-icon-spotify"></i></a></li>
+                  
+                  
+                  <li><a href="https://podcasts.apple.com/us/podcast/igalia/id1533323588" title="Open in iTunes" target="_blank"><i class="c-icon-itunes"></i></a></li>
+                  
+                  
+                  <li><a href="https://podcasts.google.com/feed/aHR0cHM6Ly93d3cuaWdhbGlhLmNvbS9jaGF0cy54bWw" title="Open in Google Podcasts" target="_blank"><i class="c-icon-gpod"></i></a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12">
+          <div class="grid-row grid-row--between">
+            <div class="col-xs-12 col-lg-3 col-lg-order-3">
+              <ul class="c-participants">
+                
+                <li class="c-participants__item  c-participants__item--1">
+                  
+                  
+                  <img src="/assets/i/logoSimple.png" alt="Igalian" class="c-participants__igalian">
+                  <a href="/team/bkardell" class="c-participants__link">
+                    <img src="/assets/i/igalians/brian-kardell.jpg"
+                      alt="Brian Kardell's avatar"
+                      class="c-participants__image">
+                    Brian Kardell
+                    <i class="fas fa-plus"></i>
+                  </a>
+                  
+                </li>
+                
+                <li class="c-participants__item  c-participants__item--2">
+                  
+                  
+                  <img src="/assets/i/logoSimple.png" alt="Igalian" class="c-participants__igalian">
+                  <a href="/team/emeyer" class="c-participants__link">
+                    <img src="/assets/i/igalians/emeyer.jpg"
+                      alt="Eric Meyer's avatar"
+                      class="c-participants__image">
+                    Eric Meyer
+                    <i class="fas fa-plus"></i>
+                  </a>
+                  
+                </li>
+                
+              </ul>
+            </div>
+            <div class="col-lg-1 col-lg-order-2"></div>
+
+            <div class="col-xs-12 col-lg-8 col-lg-order-1">
+              
+
+
+              <h2 class="chat-subtitle">Transcription</h2>
+              <ul class="c-chat">
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Okay. Hi, I'm Brian Kardell. I'm a developer advocate at Igalia.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: I'm Eric Meyer. I'm also a developer advocate at Igalia.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: And so on today's show, we are going to talk about something that we've never talked about before, which is a specific browser release.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Yeah. Safari 16.4 came out. And I mean, the release note goes on for a really long time.  There is so much in version 16.4, just even as compared to 16.3.This is kind of the amazing thing that, I mean, for years, Safari was the slow browser that barely pushed anything. And now it's completely the opposite. There's stuff coming out with every point release. And, you know, just the top line on this one, Safari 16.4, if you look at the blog post,135 new web features and over 280, what they call polish updates, which is improving things that were already there. Chats are usually about an hour.We could not possibly cover everything in an hour.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Yeah, so here's the interesting thing that I looked up just before the show because I was taken by the fact that when you pull up the release notes on, well, not the release notes, the blog, the blog posts. Um, so, uh, the last one was 16.3. That was only in January. So like you were saying, it used to be the, you know, once or twice a year kind of updates, and we're certainly not at that point anymore. We just had 16.3 in January. Uh, I think that's like the end of January too. Um, but you know, when you go back and you look at those comparatively, like even. On the left bar is the, the author and the date. And the thing that jumped out at me is that, you know, normally the author is like Jon Davis, Jen Simmons, right? Like it's one person, you know, they're the release notes for this release. 16.4 is like 10 people, right? Listed as authors. There's so much in here.It is just like an astoundingly big release.I know that there are people who speculate about like why and want to tie that to all different kinds of things. We're not going to do that. I'm happy that it's a great release.And we just want to talk about a bunch of cool things. We can't talk about all the cool things that are in there because there's too much. But, um, I think it's really exciting to see this kind of energy happening and these, these huge, huge releases that is just full of great stuff.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Yeah.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: So what's your, like, if you had to pick one in here that you're like?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Like you say, there is so much, I, there's like, well, so I'm going to go with CSS cause that's kind of my wheelhouse. That's the thing that I like to do. I think the thing I'm going to go with is the relative color syntax.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Yeah, that's pretty good.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Yeah.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: You want to talk about that?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Yeah. So people who have used like LESS or SASS are probably used to mix-ins that do color mixing or a color modification where you can shade you can lighten a color by saying something like,'I want the color of this element to be this other color, except 20% lighter or 30% darker,' something like that. So you can shade a given, let's say a color variable so that you don't have to compute the exact, like RGB or HSL or whatever values for that shade or that tint and just say, just do this. Like I want you to mix. And that's what the CSS relative color syntax permits.It takes that sort of that preprocessor capability and brings it into native CSS and WebKit. Safari 16.4 is supporting that. So you can say something like, well, I'll just, one of the examples in this blog post is that you can say my root at the root level, I'm gonna define this CSS variable to be equivalent to green. And then later on, you can say, okay, well,I want in the LCH color space to compute a value, to compute a color from that green. And then what I want is I want the lightness in LCH to be half the value that it was in the color that I'm computing from, while the chroma and hue will stay the same. So that I'll give you green, except 50% darker. And there are a lot of different, like you can mix two colors together and you can specify which color space you want to do it in, which will affect how those two things are blended together. I think that's my favorite. How about yours?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: It is a really tough question. I am like really torn between two answers. There are so many things in here that I really,it's hard to even get it to two, but I do think that there are two. One is Declarative Shadow DOM.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: - Okay.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: And the reason that I think that one is important is because I think we punted it way too early.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: But what do you mean?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: There was an explicit decision back in 2010 or '11 that like, let's not worry about that for now. Let's not worry about how you'll serialize a Shadow DOM.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Okay.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: And I feel like it has probably affected answers that we come up with and made them probably more complex than they would have been if we had kept wanting to reason about markup .So yeah, for me, it's just like a thing that I've been thinking about personally a lot lately that I think I like that we're finally tackling it, and I wish we had tackled it sooner. Remains to be seen how useful it will actually be in its first go round because it can't do much beyond just serialize the thing. It can't do what a lot of people wanna do, just template and stamp out instances with slight differences and things like that. But it is really, really useful and handy nonetheless. So I'm excited about that. But the other one that I'm kind of tied with is the @property. So the reason that I am really excited about this is similarly complex and rooted in some history. So custom properties are a thing that I was excited about. They're like one of the things that I got really directly involved in discussing in CSS. And like they were an answer to a better question than the one that was being asked. What people wanted was a faster horse, but what they needed was a car.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: What was the faster horse in this case and what was the car?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: What people wanted was what Les and Sass do, which is just token replacement. They wanted to declare a string once and then just supplant it elsewhere in the string so they're not Setting. Repeating themselves. So they can stay DRY.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Setting a dollar sign BG color or whatever and then referring to that elsewhere. You can't do it that compactly in CSS but that you can do that with custom properties. Okay, so that was the faster horse.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: And I think actually, I was on the page that we should give that to people. Why should you need a preprocessor for that, right?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Mm-hmm, yeah. Yep.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: But a lot of the CSS working group did not agree with that. Multiple times over the years.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Yeah, sorry. I was in some of those conversations the first time I was in the CSS working group. And yeah, I laughed so that I don't cry. Anyway, sorry, go ahead.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: I respect the argument, you know? I respect the argument.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Okay.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: And then Tab Atkins came up with a brilliant take on this, which he still described as custom variables and it went on for kind of a long time. And a group of us suggested that they should be called what they are: they're just custom properties. And I think that those are brilliant and the things that people have been doing with them have just like blown my mind. But there's another piece of this that roughlyat the same time we had this like extensible web idea. And I pushed really hard for CSS to have something to do with that. And my argument was, look, the rest of the stack is hackable, right? Like the JavaScript, you can polyfill, like more or less, almost perfectly, right? And HTML has ways that you can extend it, lots of ways that you can extend it. There's an escape hatch on lots of these things where you don't have to reinvent the world if you want to do something very close to that. And CSS had none of that, right? If you want to polyfill something in CSS, good luck. If you have to parse the CSS because the CSSOM would throw things away, they wouldn't be in the CSSOM, so you couldn't use it to get them. And you don't have access to the downloaded CSS in some cases because it's like origin policy violation. It's really, really hard. And how do you hack it? How do you make cow paths in CSS? Like, so I was like, we need that. Like, I don't know what that is, but it seems like there's parts of that. And Houdini was the result of all that effort. And a lot of the things in Houdini have gone like focused on mostly not the things I care about, you know? And I'm like, well, you know, if somebody's willing to do that, then great. Like, let them do it, you know? Like,I'm totally happy to have the background, the paint, the paint one. Totally happy to have it. I just think that there's almost no actual use case for it that I've seen yet. But custom properties is a really good one. And a lot of the use cases, they want to have all of the real powers that a property has in CSS. They want to say like,I am inherited or I'm not inherited. Here is what my syntax is, right? So that when you recall me, I am a color or a length or whatever, so like I work in calcs and...</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Yeah, so I mean, custom properties as we're used to them now are basically just dash dash something equals this, right? Yeah, and what Safari is making possible now you can say @property --something. And then in brackets, you could say the syntax is length or percentage or number. And the initial value is, let's say, zero pixels if it's a length. And then does this thing inherit or not? So you really, yet, now it's not just a substitute, which is what we've been using custom properties for, right? Just to substitute a value. Sort of, we've been using them as variables. Now it's really build your own property and define what kind of values it can accept and what its initial value is and whether or not it inherits down the chain and so on and so on and so on.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Yeah.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Which is, yeah, which is going to potentially get really interesting. Maybe somebody hits on one that really catches on and, uh, becomes really widespread and then if that happens then that's the sort of thing that the working group probably looks at and says we should make that natively available. That should actually be part of the specs now rather than a thing that people have to define on their own. Sort of the same way that custom properties and relative color syntax and all that sort of thing are starting to make their way into the CSS specification after having been in preprocessors.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: So I think that one is really super nice because it is both part of Houdini. It is a way to do all the things that I want you to do. I want you to be able to plug into the system. And I want it to also be declarative when it can be. So it is great. It is exactly where I would like us to land. There is also another piece of what came out of Houdini that I think is similarly important but isn't declarative because it's for the other end of that, which is the typed OM. And the typed OM is sort of a precursor toward being able to get access to the parser or something like that. It's because the original OM lacked all that stuff. It was just sort of a Java--</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: OM being object model?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Yes.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: I just have to make sure, because there are so many acronyms.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Yeah. So, like, basically, the old, like, you know, you say, like, document dot style sheet. You could go through and get rules and all that. All those ultimately would give you not actually super helpful values in the end. Because a lot of the concepts about measurements and lengths and things like that were like you were back to just parsing strings. So this actually gives you access to all of the web browsers' understanding of different units and things like that. Pretty good.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Yeah. I mean, it's all really exciting. And maybe this is me being kind of an old fart, but kind of a little scary in a way.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: It is. Sure. Yeah.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: There's a lot of stuff. Exposing a lot of the guts and, you know, how, how, how badly are authors going to be able to break stuff? I don't mean, I don't mean like break the web or break the internet or anything, but you know, yikes.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: I think that like, if you recall, like there was an era where the web was kind of stuck because Safari and Mozilla, they were like...</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: They were tiny compared to the they were tiny fraction of Internet Explorer's market share at the time.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Yeah, which was just gigantic and it had moved on like they had moved on. They were like, this web is done.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Yeah, Microsoft had just stopped in that. So yeah, updating Internet Explorer ...</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: And so we had HTML was developing and HTML5 at the time was called and all these cool things and like Safari was actively working on it. And there was blogs like Surfin Safari, right?It was really cool, but it was like, you can't write websites for those tiny minuscule users. So, it's really hard to get people to use HTML, this chicken and egg problem. And polyfills are the things that got us out of that. Being able to say, 'Well, we can make that almost okay,' I think just really helps. I think it's approximately like exposing the DOM for HTML. Like I think, yes, people, it's scary, but probably good too.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Yeah, and I mean, that allowed quite a lot of new things. So you can imagine a similar explosion of creativity and power coming from here.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: We kind of buried the lead.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Well, I mean</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: everybody's excited about push notifications, add to home screen, even providing a way for other third party browsers to add to home screen and stuff. I think there's just so much in here. There's just so much.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Yeah, I mean, one of the other app rules got a big upgrade, app media, you can do range syntax now. So instead of saying app media mid width this and max width that, you can just say app media,the minimum width less than equal to width less than equal to other width.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: So huge. Like, I have wanted that for like so long. And when I first learned about that, it was one of those things that I thought, you know, like, we're just waiting for a release or something. Like, you know, like it's just, probably by two o'clock tomorrow we'll have it. It seems so, so easy, but it was not. And we waited a long time and I'm really happy to see it starting to land everywhere.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Yeah, and that's, Safari is not the first to do that, but it does add another big piece of that sort of widespread support puzzle, which is really nice to see.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: I think it's just way more readable, actually.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: It is.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: I always, like even to this day, I still get confused with the old media queries, like when I'm like min, wait, max.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Right.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Whereas when I look at the math, I go, that's just clear as can be.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Yeah, it does make it a lot more readable, I think. Yeah, they added the line height unit, the LH unit, so you can set sizes in terms of multiples of line height or I guess fractions of line height. There's margin trim, which lets you trim the top and bottom margins, let's say off of a block, well, off of the children of a block. So if you have an each one inside of a div, You can set the margin trim so that the top margin on that each one is trimmed off so that the content of the each one butts up against the padding area of its containing element, which can be useful in some cases. But we don't want to spend all this time on CSS. I mean, there's all kinds of other stuff. Over an HTML, you've got lazy loading iframes.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: I think that's actually really good. More than a lot of other things, especially because YouTube uses iframes. If you want to embed YouTube or something, it's using iframes. There's no way to prevent that without using... There are some nice custom elements that have been built around this, but all of them are still managing a lot of complexity and they're more complicated than they shouldbe. None of them really are doing this as far as I know, because we have cases where you have just a really long bunch of stuff, right? And you have videos that are like down at the bottom and it's like, they're just like thrashing all the network because you get to parse to them really quickly. And yeah, I don't like that they're using that when they don't have to, especially 'cause there are people who are like on metered plans or...</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Right, yeah, absolutely. And people who are on slow mobile connections or whatever. And like you say, thrashing the network becomes a real bad user experience. If a couple of YouTube embeds, many, many screens away from page loading are just causing the entire thing to load slowly because you can't lazy load them. But now iframe loading equals lazy, pretty much like images. So that's a big win. And that's one of those things that's really great because like add it to your markup now, right? Even it doesn't, and it doesn't matter how many browsers supported it don't support it. The browsers that support it, those users will get a better experience. And the ones that don't, they won't get any worse experience than they used to. And then, yeah, so I was really happy to see that. They got a bunch of APIs that they've added, OffscreenCanvas, which I know you.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: That is really cool.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: You know a lot about it.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: It's one of those things that you don't...I gave a talk about this, but like you,like you don't think that it is important, right?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Right.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: I mean, I didn't, right? I mean, I know that the canvas was introduced by Apple. Like they introduced it.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Yeah, 2005 or something like that.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Yeah, I think it was 2004, 2005. And it's cool, right? Like it's cool. It's a neat idea. And also I've gone my whole professional career where the only things that I've done with it are little like demo things that I, you know, some kitschy little thing that I just wanted to do. Like, and so, you know, you just think like, well, that's cool, I guess, you know? And why are we investing money into OffscreenCanvas is like, I think a fair question, right? Like why?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Well, I mean, you had that demo that you did showing, uh, panning and zooming on a, on a Google map type interface with and without off screen canvas. And the difference was just mind boggling.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Yeah. It is actually a really good thing to spend money on as it turns out, because while you don't use it, um, it is one of those lower level APIs that people build other things around and then you use it. So maybe your charting library uses it or maybe your mapping library use it or your games library use it and you don't even know that. You don't have to know that. And maps are like incredibly useful. I use them almost every day. And they're all rendered on canvas. And when Apple introduced the canvas, it was all on the main thread because there was only the main thread. And well, that's an awful lot of work to do on the main thread. So this is tricky because it's not the thing that everybody's going to ask for. It's another one of those, if you ask what everybody wants, they all want faster horses. But when we improve OffscreenCanvas, we can improve maybe a dozen libraries to use OffscreenCanvas. And then for every user of the web, something that they use probably every day suddenly gets more responsive and faster as users. It's really good for users. That's especially true on lower end devices.So awesome. So happy that that's the best. It's a good investment in the web platform.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Yeah, 100% agree there. Yeah, they've got full screen API, a screen orientation API, a screen wake lock API, user activation support. Going back to color, they're supporting wide gamut color in WebGL canvases now.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: This is important too. Like another thing we were talking about, about colors, you know, what you don't think about is how many places that applies,'cause we're just talking about CSS, right? But what it applies to images, it applies to canvas. Like there are so many places that the color limitations are all sort of built all the way down to be basically sRGB, you know? So wide gamut color on the canvas is really important. And I think that these kinds of things finishing upare gonna be really important to projects like Figma and stuff like that. I'm pleased to see the colors improvingacross the whole platform.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Yeah, I think it's gonna be really interesting to see what designers do with this as sort of the design space wakes up to the new reality that they're not as color limited as they used to be. But it's not all of language and stuff. There's a lot of interface improvements too, particularly with the developer tools. I was pretty happy to see there's improved typography inspection in the font and.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: The variable fonts thing. Yeah, support for variable fonts.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Yeah, exactly. So you can mess with sliders for weights and widths on a variable font or whatever axis it exposes, optical size or whatever, and see those changes kind of in real time.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Do other browsers have that? That's the first time I've seen that.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Firefox does, has for quite a while. And that's the only one I'm aware of.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: So I wonder if any of the people who used to work at Firefox would work at Apple?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: As a matter of fact, yeah.  So yeah, that's pretty cool to see. So that if you're designing with a variable font, which we all should be, but if you are being able to mess with itin the sort of live in the page with your browser to like, hmm, I wonder what happens if I crank the optical size up a little bit or take it down a little bit or if I change the weight just a tiny stoch. And it's like, oh yes, that is exactly what I want. Let me go over to the changes tab and it will tell me what I changed. And I can bring those values over into my actual CSS so that everybody gets those. But they've got a new pop-up for conditionals toggling.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: I was just gonna bring this up, yeah. I love this. Everything that we do that's like this,I just think is like so good. Because you have things like reduced motion or like some OS level setting, a user preference that's like, what is your system theme?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: User asks for high contrast.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Yeah, and some of them you can go into OS and change them, but that's really painful to do. And there are so many permutations of things that you wanna be able to check out. And I know these ones are specifically about accessibility, but I think that actually these are even ones where it's really hard to even do something like that,the things that help you emulate a slow network connection. I remember tweeting about wanting thata really long time ago, and when we finally got it, it was like, wow, that's so useful. So I think all the developer tools that we give that allow you to quickly simulate what it's like for different users is so helpful.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Yeah, no, I 100% agree. I'm actually, for partially nostalgic reasons,I'm a fan of the simulate print mode in the Firefox Web Inspector. And that's the sort of thing that could go into this new toggle, this new conditionals pop up,or pop over, I guess it is, that Safari has now. There's a, in the Web Inspector toolbar, there's a icon that you can select and it creates a popover that lets you, at least at the moment, switch between color schemes like light and dark,that sort of light mode, dark mode kind of thing, whether reduced motion is on or off, whether increased contrast is on or off. And since it's a popover, there's room to grow there. They could put in things like,what media you wanna toggle into or any numbers of other things. There are other user preference aspects that could go in there. And I hope they keep going in there.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Yeah, I love good dev tools.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Yeah, Safari is definitely getting better. It's getting better and better. They've, one of their other improvements is badging HTML elements, like putting, like when you're looking in the tree view of the markup in the inspector.  Like it'll have a little box next to an element that says grid, which indicates it's a grid container or overflow, at least in some browsers, it'll show you, hey, this is the element that's actually causing the horizontal scroll bar to show up because it's overflowing. So they've added new stuff and better information when you click on those little badges in Safari. So like if there's an event box showing that, you know,your element has an event attached to it. You can click on that little event badge and it will give you a popover that shows you what the event is, like click, and what function that comes from and is it actually turned on or not?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Yeah, as well as the ability to disable it,which is really cool, and to set a break point on it. I think that is really neat because</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: 100%.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: I don't know how many times I have a whole bunch of JavaScript off somewhere. And I have the screen that I'm looking at and it's like, okay, that's the thing. Now, where's the code for that? And just the ability to be like, when I click this button, I, that's when I want to break point, right?Like just there, like it's, I've never thought of that before, but like, when you see it, you're like, so obvious. That's how it should be.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Right. Yeah, exactly. There's yeah, this button right here, something's going wrong with it. I need to set a break point. You can just literally do it right therein the DOM inspector, rather than like you say,having to say, okay, so it's this button and it has this ID. So it's probably being called by this. Let me go see if I can find the right function that triggers that and then I can set a break point there. No, this will show you what line the function is on. And from what I can tell, you can click through. Like if you click it, it'll say, well, in the example, they have function grouping-rules.html colon 73, and it's underlined. So I think if you click on that, it will jump you to line 73 of that source. So you're right at that function. But you don't even have to go there to set the breakpoint. Because like you say, in that popover, there's a little breakpoint and a little checkbox that's not enabled by default. But if you just click on it, then you've set a breakpoint and you didn't have to go digging somewhere else. And that, yeah, like you say, you see it... And you immediately think, not only why didn't I think of that, why didn't anyone think of that before now?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: That's amazing. Yeah, I don't think anybody has thought of it, right? I'm looking at in Chrome -- I don't see that in Chrome.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Nope.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Like, it is -- the badges thing is subtle enough that you could miss it. And if you told me that it had been in Chrome for four releases and I just missed it, I would believe you. But I'm looking, I don't see it.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Right, yeah. How did it take us this long to think of something like that? But somebody at Apple thought of it. Yep, and then, God, I mean, there's so much more. There's one thing I did wanna mention. Safari has content blockers. You can create content blocker rules. And the has pseudo class is now supported in content blocker rules, so.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Which is kind of fitting because it was sponsored, the work was unblocked by being sponsored by eyeo.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Right, who created Ad Blocker Plus and hired Igalia to do the prototypes and some implementation of :has. So we didn't do the WebKit implementation.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: We didn't.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: We got the ball rolling basically.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: But that is the use case basically, right? It's the same use case.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Right. So that was pretty cool. Yeah, there's and then there's this huge list of bug fixes that we're not going to go through because it's very long and there's a lot of really cool stuff in there.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: But yeah, I mean,you did not even cover like the JavaScript stuff. Like there's a lot of cool JavaScript stuff too. Yeah. There's look behind.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Oh, yeah. Look behind in regexp. Yeah.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Which isLike actually really cool. I am a huge fan of making regexp improvements, giving you more powerful tools for processing text, which is a really common thing, is great.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Right, yeah. Yeah, we didn't even cover probably half of what's in here. We could do another two or three shows probably on just what's in 16.4. And I saw that 16.5 beta is already outAnd it has, it's not as long a list so far,but there's stuff that they're adding there too, like support for CSS selector nesting and some other improvements. So we might, in a couple of months, we might end up doing another one of these about Safari 16.5'cause they seem to really be bringing it, but.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Import maps are--</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Import maps.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: This one too, yeah. That's pretty huge. And some Intl stuff, duration format.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Yeah, international is that internationalization formats in there. Some improvements to arrays in JavaScript like from async method, that's a method, right?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Just a mind boggling lot of stuff in this.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Yeah, it really is.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: It's really, really good job Safari team.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Yeah.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: And good job, Igalia team who contributed some of these things to.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Indeed, but major, major applause to Apple.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: And good job to Sony also for contributing some things, I'm sure.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Yep.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: RedHat contributes some things. So yeah, but anyway, way to go Safari 16.4!</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Yep.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Good job.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Alrighty, well, thanks Brian. This was, this is actually fun. I like talking about good news.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Yeah, nice. It's a fun thing.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Alrighty, catch you later.</blockquote></li>
+                
+              </ul>
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+<script src="/assets/chat.js"></script>
+
+    </main>
+
+    <footer id="site-footer" role="contentinfo">
+
+  <a class="site-title" href="/">
+    <img src="/assets/i/logo.png" alt="Igalia" />
+  </a>
+
+  <div>
+    <h2>Igalia.com</h2>
+    <ul class="main-menu" role="navigation">
+      
+      <li>
+        <a class="page-link" href="/about" title="About Us">
+          About Us
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/technologies" title="Technologies">
+          Technologies
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/services" title="Services">
+          Services
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/industries" title="Industries">
+          Industries
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/24-7/home" title="24/7">
+          24/7
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/jobs" title="Jobs">
+          Jobs
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/contact" title="Contact">
+          Contact
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div>
+    <h2>Igalia, S.L. © 2023. All rights reserved.</h2>
+    <ul class="footer-menu" role="navigation">
+      
+      <li>
+        <a class="page-link" href="/coc" title="Code of Conduct">
+          Code of Conduct
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/legal" title="Legal Terms">
+          Legal Terms
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/press" title="Press">
+          Press
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/privacy" title="Privacy Policy">
+          Privacy Policy
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/public-funding" title="Public funding (Fondos públicos)">
+          Public funding (Fondos públicos)
+        </a>
+        </li>
+        
+    </ul>
+  </div>
+
+  <div role="contentinfo">
+    <h2>Headquarters</h2>
+    <ul class="contact-list">
+      
+      <li>Bugallal Marchesi, 22, 1º</li>
+      
+      <li>15008 A Coruña</li>
+      
+      <li>Galicia (Spain)</li>
+      
+      <li>Pho.: +34 981 913991</li>
+      
+      <li>
+        <a href="mailto:info(at)igalia.com">
+          info(at)igalia.com
+        </a>
+      </li>
+      
+    </ul>
+    <div class="social">
+      
+      
+
+      <a class="social-link" href="https://twitter.com/igalia" target="_blank" title="twitter" rel="me">
+        <i aria-hidden="true" class="fab fa-twitter"></i>
+        <span hidden>twitter</span>
+      </a>
+      
+      
+
+      <a class="social-link" href="https://floss.social/@igalia" target="_blank" title="mastodon" rel="me">
+        <i aria-hidden="true" class="fab fa-mastodon"></i>
+        <span hidden>mastodon</span>
+      </a>
+      
+      
+
+      <a class="social-link" href="https://youtube.com/igalia" target="_blank" title="youtube" rel="me">
+        <i aria-hidden="true" class="fab fa-youtube"></i>
+        <span hidden>youtube</span>
+      </a>
+      
+    </div>
+
+</footer>
+
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+    <script src="/assets/app.js"></script>
+    
+    
+
+    <!-- Piwik -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+      _paq.push(['disableCookies']);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+         var u="//stats.igalia.com/";
+         _paq.push(['setTrackerUrl', u+'piwik.php']);
+         _paq.push(['setSiteId', '1']);
+         var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+         g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+       })();
+    </script>
+    <noscript><p><img src="//stats.igalia.com/piwik.php?idsite=1&rec=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Piwik Code -->
+
+  </body>
+</html>

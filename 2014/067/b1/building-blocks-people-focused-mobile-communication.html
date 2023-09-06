@@ -1,0 +1,167 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" />
+<title>Building Blocks For People Focused Mobile Communication - Tantek</title>
+<link rel="canonical" href="https://tantek.com/2014/067/b1/building-blocks-people-focused-mobile-communication" />
+<link rel="icon" href="/logo.jpg" />
+<meta name="viewport" content="initial-scale=0.7"/>
+<link rel="webmention" href="//webmention.io/tantek.com/webmention" />
+<style type="text/css">/*<![CDATA[*/ 
+@import "/2014/simple.css";
+form.search { width:34%; float:right; white-space:nowrap; font-size:1.3em; text-align:right }
+input,button { font-size:1em }
+button { margin: 0 0.5em 0 0; padding:0 0.5em }
+form.search input[type=search] { width:62% }
+/*]]>*/</style>
+</head>
+<body class=" post hentry h-entry as-article">
+<header><div class="header">
+<h1><a href="/" rel="author home">tantek.com</a></h1>
+
+<form class="search" action="https://duckduckgo.com/html/" method="get">
+<input type="hidden" name="type" value="list" />
+<input type="search" value="site:tantek.com " name="q" />
+<button type="submit">Search</button>
+</form>
+
+</div></header>
+
+<div class="sidestuff">
+<ul class="snav">
+<li><a href="/2014/067/t2/amazing-indiewebcamp-hack-day-full-posse-roundtrip" id="previtem" title="View the previous (older) item in the stream." rel="prev"><abbr>&#x2190;</abbr></a></li><li><a href="/2014/067/b2/mockups-people-focused-mobile-communication" id="nextitem" title="View the next (newer) item in the stream" rel="next"><abbr>&#x2192;</abbr></a></li>
+</ul>
+</div>
+<span class="p-author h-card"><a href="/" class="u-url author-icon" rel="author" title="Tantek Çelik"><img class="u-photo p-name" src="/logo.jpg" alt="Tantek Çelik" /></a></span>
+
+<div class="article">
+<header><div class="header"><h1 class="p-name entry-title">
+Building Blocks For People Focused Mobile Communication
+</h1><span class="info"><span class="dt-published published dt-updated updated"><time class="value" datetime="14:58-0800">14:58</time> on <time class="value">2014-03-08</time></span> <span class="lt">(ttk.me b/4Ux1)</span> using <span class="using">BBEdit</span></span></div></header><div class="e-content entry-content">
+<p>
+I'm at <a href="http://indiewebcamp.com/2014/SF">IndieWebCampSF</a> and today, day 2, is "hack" or "create" day so I'm working on prototyping people focused mobile communication on my own website.
+</p>
+<p>
+A few months ago I wrote about my frustrations with distracting app-centric communication interfaces, and how a <a href="http://tantek.com/2013/338/b1/people-focused-mobile-communication-experience">people-focused mobile communication experience</a> could not only solve that problem, but provide numerous other advantages as well.
+</p>
+<p>
+Yesterday I led a discussion &amp; brainstorming session on the subject, hashtagged <a href="https://twitter.com/search?q=%23indiecomms&amp;f=realtime">#indiecomms</a>, and it became clear that there were several pieces we needed to figure out:
+</p>
+<ul>
+<li><strong><a href="http://tantek.com/2014/067/b2/mockups-people-focused-mobile-communication">Mockups</a></strong> for what it would look like</li>
+<li><strong><a href="http://tantek.com/2014/084/b1/urls-people-focused-mobile-communication">URLs</a></strong> for each communication service/app</li>
+<li><strong><a href="http://tantek.com/2014/120/b1/markup-people-focused-mobile-communication">Markup</a></strong> for the collections of links and labels</li>
+<li><strong>CSS</strong> for presenting it like the mockups</li>
+<li><strong>Logic</strong> for presence / availability for each service</li>
+<li><ins datetime="2014-03-25"><strong>Client Platform Detection</strong> for conditional display of platform specific apps
+</ins></li>
+<li><ins datetime="2014-03-25"><strong>Contextual Tests</strong> for 
+user time of day, calendar, do not disturb requests etc.</ins></li>
+</ul>
+<p>
+So that's what I'm working on and will blog each building block as I get figure it out, create it.
+</p>
+</div></div>
+<div class="info footer">
+<form action="//tantek.com/2014/067/b1/building-blocks-people-focused-mobile-communication"><div>
+<label><span class="lt">URL:</span>
+<input class="u-url url u-uid uid bookmark" type="url" size="70" style="max-width:100%" value="https://tantek.com/2014/067/b1/building-blocks-people-focused-mobile-communication" />
+</label>
+<label><span class="lt">HTML:</span>
+<input class="code" type="text" size="70" value='&lt;cite class="h-cite"&gt;&lt;a class="u-url p-name" href="https://tantek.com/2014/067/b1/building-blocks-people-focused-mobile-communication"&gt;Building Blocks For People Focused Mobile Communication&lt;/a&gt; (&lt;abbr class="p-author h-card" title="Tantek Çelik"&gt;Çelik&lt;/abbr&gt; &lt;time class="dt-published"&gt;2014-03-08&lt;/time&gt;)&lt;/cite&gt;' />
+</label>
+
+<indie-action do="post" with="//tantek.com/2014/067/b1/building-blocks-people-focused-mobile-communication">
+<span class="tweet-button">
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://tantek.com/2014/067/b1/building-blocks-people-focused-mobile-communication" data-text="Building Blocks For People Focused Mobile Communication:" data-count="horizontal" data-via="t" data-related="indiewebcamp:microformats">Tweet</a><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+</span>
+</indie-action>
+</div></form>
+</div>
+<div class="info footer">
+<a class="u-syndication" rel="syndication" style="float:right; clear:right; height:2em"
+   href="https://twitter.com/t/status/442434125728071680">
+   <img src="/icon/twitter.png" style="vertical-align:-30%;margin:-3px -6px -4px 0" alt=""/> 
+   View 
+      on Twitter
+</a><div style="line-height:2.6em; font-size:1em;">
+<indie-action do="like" with="//tantek.com/2014/067/b1/building-blocks-people-focused-mobile-communication">
+<a class="action favorite" target="_blank" href="https://twitter.com/intent/favorite?tweet_id=442434125728071680">♥ Like</a>
+</indie-action>
+<indie-action do="repost" with="//tantek.com/2014/067/b1/building-blocks-people-focused-mobile-communication">
+<a class="action reply" target="_blank" href="https://twitter.com/intent/retweet?tweet_id=442434125728071680">♺ Repost</a>
+</indie-action>
+<indie-action do="reply" with="//tantek.com/2014/067/b1/building-blocks-people-focused-mobile-communication">
+<a class="action reply" target="_blank" href="https://twitter.com/intent/tweet?in_reply_to=442434125728071680">↵ Reply</a>
+</indie-action>
+</div>
+
+</div>
+ </li>
+<script type="text/javascript">/*<![CDATA[*/
+function select_all(e) {
+ e = e ? e : window.event;
+ var el = targetelement(e);
+ el.focus();
+ /* el.select(); // fails in Mobile Safari */
+ el.selectionStart=0;
+ el.selectionEnd=el.value.length;
+}
+
+var fs = document.forms, i = 0, j = 0, es;
+for (i = 0; i<fs.length; i++) {
+  es = document.forms[i].elements;
+  if (es) {
+    for (j=0;j<es.length;j++) {
+      switch (es[j].type) {
+      case "text":
+      case "url":
+        es[j].onclick = select_all;
+      }
+    }
+  }
+}
+
+
+document.onkeyup = keyup;
+
+function clearactive() {
+  var e = document.getElementById("previtem");
+  if (e) { e.className = ""; }
+  e = document.getElementById("nextitem");
+  if (e) { e.className = ""; }
+}
+
+function keyup(e)
+{
+   var kid = (window.event) ? event.keyCode : e.keyCode;
+   var nid = "";
+   if (document.activeElement !== document.body) {
+     return;
+   }
+   switch(kid) {
+    case 37:
+    case 74:
+      nid = "previtem";
+      break;
+    case 39:
+    case 75:
+      nid = "nextitem";
+      break;
+   }
+   if (nid!="") {
+      ne = document.getElementById(nid);
+      if (ne) {
+        ne.className = "active";
+        doevent(ne,"click");
+        window.onunload = clearactive;
+        return false;
+      }
+   }
+}
+
+/*]]>*/</script>
+<script src="/fragmention.min.js"></script>
+<script src="/scripts/indieconfig.js"></script> 
+<script src="/scripts/webaction.js"></script>
+<script src="cassis.js"></script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</body>
+</html>

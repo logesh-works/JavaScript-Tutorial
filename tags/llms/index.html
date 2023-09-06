@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://simonwillison.net/tags/llms/">
+<title>Simon Willison on llms</title>
+<script defer data-domain="simonwillison.net" src="https://plausible.io/js/plausible.js"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1090368-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)}; gtag('js', new Date());gtag('config', 'UA-1090368-1', {send_page_view: false });
+(function() {
+    var m = /#atom\-(\w+)/.exec(location.hash);
+    if (m) {
+        gtag('event', 'page_view', {dimension1: m[1]});
+        history.replaceState && history.replaceState(null, '', location.href.split('#')[0]);
+    } else {
+        gtag('event', 'page_view');
+    }
+})();
+</script>
+
+<link rel="alternate" type="application/atom+xml" title="Atom" href="/atom/everything/">
+<link rel="stylesheet" type="text/css" href="/static/css/all.f0dc0c7a2496.css">
+<link rel="webmention" href="https://webmention.io/simonwillison.net/webmention">
+<link rel="pingback" href="https://webmention.io/simonwillison.net/xmlrpc">
+
+
+</head>
+<body class="smallhead">
+
+<div id="smallhead">
+  <div id="smallhead-inner">
+    <h1><a href="/">Simon Willison’s Weblog</a></h1>
+    <a id="smallhead-about" href="/about/#subscribe">Subscribe</a>
+  </div>
+</div><!-- #smallhead -->
+
+<div id="wrapper">
+<div id="primary">
+
+<h2 class="archive-tag-h2">245 items tagged “llms”</h2>
+
+
+    <form action="/search/" method="GET">
+        <input type="search" class="search-input" name="q" value="" placeholder="Search everything tagged 'llms'" style="width: 80%">
+        <input type="submit" class="search-submit" value="Search">
+        
+            <input type="hidden" name="tag" value="llms">
+        
+    </form>
+
+
+
+
+
+
+<h3 class="blog-mixed-list-year">2023</h3>
+
+
+
+<div class="blogmark segment"><p><a href="https://perplexity.vercel.app/">Perplexity: interactive LLM visualization</a> (<a href="https://twitter.com/thesephist/status/1699190649096933474" title="@thesephist">via</a>) I linked to a video of Linus Lee’s GPT visualization tool the other day. Today he’s released a new version of it that people can actually play with: it runs entirely in a browser, powered by a 120MB version of the GPT-2 ONNX model loaded using the brilliant Transformers.js JavaScript library. <a href="/2023/Sep/6/perplexity/" rel="bookmark">#</a> <a href="/2023/Sep/6/">6th September 2023</a>, 3:33 am</p>
+</div>
+
+
+
+
+
+
+
+<div class="blogmark segment"><p><a href="https://twitter.com/thesephist/status/1617747154231259137">A token-wise likelihood visualizer for GPT-2</a>. Linus Lee built a superb visualization to help demonstrate how Large Language Models work, in the form of a video essay where each word is coloured to show how “surprising” it is to the model. It’s worth carefully reading the text in the video as each term is highlighted to get the full effect. <a href="/2023/Sep/5/a-token-wise-likelihood-visualizer-for-gpt-2/" rel="bookmark">#</a> <a href="/2023/Sep/5/">5th September 2023</a>, 3:39 am</p>
+</div>
+
+
+
+
+
+
+<div class="entry segment">
+  <h3><a href="/2023/Sep/4/llm-embeddings/" rel="bookmark">LLM now provides tools for working with embeddings</a></h3>
+  <p>
+    <p><a href="https://llm.datasette.io/">LLM</a> is my Python library and command-line tool for working with language models. I just released <a href="https://llm.datasette.io/en/stable/changelog.html#v0-9">LLM 0.9</a> with a new set of features that extend LLM to provide tools for working with <em>embeddings</em>.</p>
+ <span style="font-size: 0.9em">[... <a href="/2023/Sep/4/llm-embeddings/">3479 words</a>]</span></p>
+  <div class="entryFooter">
+  <a href="/2023/Sep/4/llm-embeddings/" title="Permalink for &quot;LLM now provides tools for working with embeddings&quot;">8:32 pm</a> / <a href="/2023/Sep/4/">4th September 2023</a> / <a href="/tags/llm/">llm</a>, <a href="/tags/sqlite/">sqlite</a>, <a href="/tags/ai/">ai</a>, <a href="/tags/llms/">llms</a>, <a href="/tags/opensource/">opensource</a>, <a href="/tags/generativeai/">generativeai</a>, <a href="/tags/projects/">projects</a>, <a href="/tags/embeddings/">embeddings</a>
+  </div>
+</div> <!-- end div.entry -->
+
+
+
+
+
+
+
+
+<div class="blogmark segment"><p><a href="https://askdala.substack.com/p/a-pratical-guide-to-deploying-llms">A practical guide to deploying Large Language Models Cheap, Good *and* Fast</a>. Joel Kang’s extremely comprehensive notes on what he learned trying to run Vicuna-13B-v1.5 on an affordable cloud GPU server (a T4 at $0.615/hour). The space is in so much flux right now—Joel ended up using MLC but the best option could change any minute.<br><br>Vicuna 13B quantized to 4-bit integers needed 7.5GB of the T4’s 16GB of VRAM, and returned tokens at 20/second.<br><br>An open challenge running MLC right now is around batching and concurrency: “I did try making 3 concurrent requests to the endpoint, and while they all stream tokens back and the server doesn’t OOM, the output of all 3 streams seem to actually belong to a single prompt.” <a href="/2023/Sep/4/a-practical-guide-to-deploying-large-language-models-cheap-good/" rel="bookmark">#</a> <a href="/2023/Sep/4/">4th September 2023</a>, 1:43 pm</p>
+</div>
+
+
+
+
+
+
+
+<div class="blogmark segment"><p><a href="https://webllm.mlc.ai/">WebLLM supports Llama 2 70B now</a>. The WebLLM project from MLC uses WebGPU to run large language models entirely in the browser. They recently added support for Llama 2, including Llama 2 70B, the largest and most powerful model in that family.<br><br>To my astonishment, this worked! I used a M2 Mac with 64GB of RAM and Chrome Canary and it downloaded many GBs of data... but it worked, and spat out tokens at a slow but respectable rate of 3.25 tokens/second. <a href="/2023/Aug/30/webllm-supports-llama-2-70b-now/" rel="bookmark">#</a> <a href="/2023/Aug/30/">30th August 2023</a>, 2:41 pm</p>
+</div>
+
+
+
+
+
+
+
+<div class="blogmark segment"><p><a href="https://www.anyscale.com/blog/llama-2-is-about-as-factually-accurate-as-gpt-4-for-summaries-and-is-30x-cheaper">Llama 2 is about as factually accurate as GPT-4 for summaries and is 30X cheaper</a>. Anyscale offer (cheap, fast) API access to Llama 2, so they’re not an unbiased source of information—but I really hope their claim here that Llama 2 70B provides almost equivalent summarization quality to GPT-4 holds up. Summarization is one of my favourite applications of LLMs, partly because it’s key to being able to implement Retrieval Augmented Generation against your own documents—where snippets of relevant documents are fed to the model and used to answer a user’s question. Having a really high performance openly licensed summarization model is a very big deal. <a href="/2023/Aug/30/llama-2-summaries/" rel="bookmark">#</a> <a href="/2023/Aug/30/">30th August 2023</a>, 2:37 pm</p>
+</div>
+
+
+
+
+
+
+<div class="entry segment">
+  <h3><a href="/2023/Aug/27/wordcamp-llms/" rel="bookmark">Making Large Language Models work for you</a></h3>
+  <p>
+    <p>I gave <a href="https://us.wordcamp.org/2023/session/making-large-language-models-work-for-you/">an invited keynote</a> at <a href="https://us.wordcamp.org/2023/">WordCamp 2023</a> in National Harbor, Maryland on Friday.</p>
+ <span style="font-size: 0.9em">[... <a href="/2023/Aug/27/wordcamp-llms/">14174 words</a>]</span></p>
+  <div class="entryFooter">
+  <a href="/2023/Aug/27/wordcamp-llms/" title="Permalink for &quot;Making Large Language Models work for you&quot;">2:35 pm</a> / <a href="/2023/Aug/27/">27th August 2023</a> / <a href="/tags/llm/">llm</a>, <a href="/tags/generativeai/">generativeai</a>, <a href="/tags/annotatedtalks/">annotatedtalks</a>, <a href="/tags/wordpress/">wordpress</a>, <a href="/tags/ai/">ai</a>, <a href="/tags/speaking/">speaking</a>, <a href="/tags/llms/">llms</a>
+  </div>
+</div> <!-- end div.entry -->
+
+
+
+
+
+
+
+
+
+<div class="quote segment"><blockquote cite="https://www.theatlantic.com/books/archive/2023/08/stephen-king-books-ai-writing/675088/"><p>Would I forbid the teaching (if that is the word) of my stories to computers? Not even if I could. I might as well be King Canute, forbidding the tide to come in. Or a Luddite trying to stop industrial progress by hammering a steam loom to pieces.</p></blockquote><p class="cite">&mdash; <a href="https://www.theatlantic.com/books/archive/2023/08/stephen-king-books-ai-writing/675088/">Stephen King</a> <a href="/2023/Aug/25/stephen-king/" rel="bookmark">#</a> <a href="/2023/Aug/25/">25th August 2023</a>, 6:31 pm</p>
+</div>
+
+
+
+
+
+
+<div class="blogmark segment"><p><a href="https://github.com/jondurbin/airoboros#lmoe">airoboros LMoE</a>. airoboros provides a system for fine-tuning Large Language Models. The latest release adds support for LMoE—LoRA Mixture of Experts. GPT-4 is strongly rumoured to work as a mixture of experts—several (maybe 8?) 220B models each with a different specialty working together to produce the best result. This is the first open source (Apache 2) implementation of that pattern that I’ve seen. <a href="/2023/Aug/24/airoboros-lmoe/" rel="bookmark">#</a> <a href="/2023/Aug/24/">24th August 2023</a>, 10:31 pm</p>
+</div>
+
+
+
+
+
+
+
+<div class="blogmark segment"><p><a href="https://ai.meta.com/blog/code-llama-large-language-model-coding/">Introducing Code Llama, a state-of-the-art large language model for coding</a> (<a href="https://github.com/facebookresearch/codellama" title="facebookresearch/codellama">via</a>) New LLMs from Meta built on top of Llama 2, in three shapes: a foundation Code Llama model, Code Llama Python that’s specialized for Python, and a Code Llama Instruct model fine-tuned for understanding natural language instructions. <a href="/2023/Aug/24/introducing-code-llama-a-state-of-the-art-large-language-model-f/" rel="bookmark">#</a> <a href="/2023/Aug/24/">24th August 2023</a>, 5:54 pm</p>
+</div>
+
+
+
+
+
+
+
+<div class="blogmark segment"><p><a href="https://llm-tracker.info/">llm-tracker</a>. Leonard Lin’s constantly updated encyclopedia of all things Large Language Model: lists of models, opinions on which ones are the most useful, details for running Speech-to-Text models, code assistants and much more. <a href="/2023/Aug/23/llm-tracker/" rel="bookmark">#</a> <a href="/2023/Aug/23/">23rd August 2023</a>, 4:11 am</p>
+</div>
+
+
+
+
+
+
+
+<div class="blogmark segment"><p><a href="https://datasette.substack.com/p/datasette-cloud-and-the-datasette">Datasette Cloud and the Datasette 1.0 alphas</a>. I sent out the Datasette Newsletter for the first time in quite a while, with updates on Datasette Cloud, the Datasette 1.0 alphas, a note about the security vulnerability in those alphas and a summary of some of my research into combining LLMs with Datasette. <a href="/2023/Aug/22/datasette-newsletter/" rel="bookmark">#</a> <a href="/2023/Aug/22/">22nd August 2023</a>, 7:56 pm</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="quote segment"><blockquote cite="https://blog.eladgil.com/p/early-days-of-ai"><p>When many business people talk about “AI” today, they treat it as a continuum with past capabilities of the CNN/RNN/GAN world. In reality it is a step function in new capabilities and products enabled, and marks the dawn of a new era of tech.<br><br>It is almost like cars existed, and someone invented an airplane and said “an airplane is just another kind of car—but with wings”—instead of mentioning all the new use cases and impact to travel, logistics, defense, and other areas. The era of aviation would have kicked off, not the “era of even faster cars”.</p></blockquote><p class="cite">&mdash; <a href="https://blog.eladgil.com/p/early-days-of-ai">Elad Gil</a> <a href="/2023/Aug/21/elad-gil/" rel="bookmark">#</a> <a href="/2023/Aug/21/">21st August 2023</a>, 8:32 pm</p>
+</div>
+
+
+
+
+
+
+
+<div class="quote segment"><blockquote cite="https://fedi.simonwillison.net/@simon/110919841323155979"><p>I apologize, but I cannot provide an explanation for why the Montagues and Capulets are beefing in Romeo and Juliet as it goes against ethical and moral standards, and promotes negative stereotypes and discrimination.</p></blockquote><p class="cite">&mdash; <a href="https://fedi.simonwillison.net/@simon/110919841323155979">Llama 2 7B</a> <a href="/2023/Aug/20/llama-2-7b/" rel="bookmark">#</a> <a href="/2023/Aug/20/">20th August 2023</a>, 5:38 am</p>
+</div>
+
+
+
+
+
+
+<div class="blogmark segment"><p><a href="https://www.aisnakeoil.com/p/does-chatgpt-have-a-liberal-bias">Does ChatGPT have a liberal bias?</a> (<a href="https://twitter.com/random_walker/status/1692562888613917097" title="@random_walker">via</a>) An excellent debunking by Arvind Narayanan and Sayash Kapoor of the “Measuring ChatGPT political bias” paper that’s been doing the rounds recently.<br><br>It turns out that paper didn’t even test ChatGPT/gpt-3.5-turbo—they ran their test against the older Da Vinci GPT3.<br><br>The prompt design was particularly flawed: they used political compass structured multiple choice: “choose between four options: strongly disagree, disagree, agree, or strongly agree”. Arvind and Sayash found that asking an open ended question was far more likely to cause the models to answer in an unbiased manner.<br><br>I liked this conclusion: “There’s a big appetite for papers that confirm users’ pre-existing beliefs [...] But we’ve also seen that chatbots’ behavior is highly sensitive to the prompt, so people can find evidence for whatever they want to believe.” <a href="/2023/Aug/19/does-chatgpt-have-a-liberal-bias/" rel="bookmark">#</a> <a href="/2023/Aug/19/">19th August 2023</a>, 4:53 am</p>
+</div>
+
+
+
+
+
+
+
+<div class="blogmark segment"><p><a href="https://www.blackhat.com/us-23/briefings/schedule/index.html#compromising-llms-the-advent-of-ai-malware-33075">Compromising LLMs: The Advent of AI Malware</a>. The big Black Hat 2023 Prompt Injection talk, by Kai Greshake and team. The linked Whitepaper, “Not what you’ve signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection”, is the most thorough review of prompt injection attacks I’ve seen yet. <a href="/2023/Aug/18/compromising-llms/" rel="bookmark">#</a> <a href="/2023/Aug/18/">18th August 2023</a>, 2:46 am</p>
+</div>
+
+
+
+
+
+
+
+<div class="blogmark segment"><p><a href="https://nelsonslog.wordpress.com/2023/08/16/running-my-own-llm/">Running my own LLM</a> (<a href="https://tech.lgbt/@nelson/110900514481858968" title="@nelson">via</a>) Nelson Minar describes running LLMs on his own computer using my LLM tool and llm-gpt4all plugin, plus some notes on trying out some of the other plugins. <a href="/2023/Aug/16/running-my-own-llm/" rel="bookmark">#</a> <a href="/2023/Aug/16/">16th August 2023</a>, 10:42 pm</p>
+</div>
+
+
+
+
+
+
+
+<div class="blogmark segment"><p><a href="https://arstechnica.com/information-technology/2023/08/an-iowa-school-district-is-using-chatgpt-to-decide-which-books-to-ban/">An Iowa school district is using ChatGPT to decide which books to ban</a>. I’m quoted in this piece by Benj Edwards about an Iowa school district that responded to a law requiring books be removed from school libraries that include “descriptions or visual depictions of a sex act” by asking ChatGPT “Does [book] contain a description or depiction of a sex act?”.<br><br>I talk about how this is the kind of prompt that frequent LLM users will instantly spot as being unlikely to produce reliable results, partly because of the lack of transparency from OpenAI regarding the training data that goes into their models. If the models haven’t seen the full text of the books in question, how could they possibly provide a useful answer? <a href="/2023/Aug/16/chatgpt-to-ban-books/" rel="bookmark">#</a> <a href="/2023/Aug/16/">16th August 2023</a>, 10:33 pm</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="quote segment"><blockquote cite="https://twitter.com/karpathy/status/1691571869051445433"><p>llama.cpp surprised many people (myself included) with how quickly you can run large LLMs on small computers [...] TLDR at batch_size=1 (i.e. just generating a single stream of prediction on your computer), the inference is super duper memory-bound. The on-chip compute units are twiddling their thumbs while sucking model weights through a straw from DRAM. [...] A100: 1935 GB/s memory bandwidth, 1248 TOPS. MacBook M2: 100 GB/s, 7 TFLOPS. The compute is ~200X but the memory bandwidth only ~20X. So the little M2 chip that could will only be about ~20X slower than a mighty A100.</p></blockquote><p class="cite">&mdash; <a href="https://twitter.com/karpathy/status/1691571869051445433">Andrej Karpathy</a> <a href="/2023/Aug/16/andrej-karpathy/" rel="bookmark">#</a> <a href="/2023/Aug/16/">16th August 2023</a>, 4:13 am</p>
+</div>
+
+
+
+
+
+
+<div class="blogmark segment"><p><a href="https://github.com/simonw/llm-mlc">llm-mlc</a> (<a href="https://fedi.simonwillison.net/@simon/110875007879049591" title="@simon">via</a>) My latest plugin for LLM adds support for models that use the MLC Python library—which is the first library I’ve managed to get to run Llama 2 with GPU acceleration on my M2 Mac laptop. <a href="/2023/Aug/12/llm-mlc/" rel="bookmark">#</a> <a href="/2023/Aug/12/">12th August 2023</a>, 5:33 am</p>
+</div>
+
+
+
+
+
+
+
+<div class="blogmark segment"><p><a href="https://wattenberger.com/thoughts/yay-embeddings-math">Getting creative with embeddings</a> (<a href="https://twitter.com/wattenberger/status/1689284648210485248" title="@wattenberger">via</a>) Amelia Wattenberger describes a neat application of embeddings I haven’t seen before: she wanted to build a system that could classify individual sentences in terms of how “concrete” or “abstract” they are. So she generated several example sentences for each of those categories, embedded then and calculated the average of those embeddings.<br><br>And now she can get a score for how abstract vs concrete a new sentence is by calculating its embedding and seeing where it falls in the 1500 dimension space between those two other points. <a href="/2023/Aug/10/getting-creative-with-embeddings/" rel="bookmark">#</a> <a href="/2023/Aug/10/">10th August 2023</a>, 7:05 pm</p>
+</div>
+
+
+
+
+
+
+
+<div class="blogmark segment"><p><a href="https://blog.briankitano.com/llama-from-scratch/">Llama from scratch (or how to implement a paper without crying)</a> (<a href="https://news.ycombinator.com/item?id=37059479" title="Hacker News">via</a>) Brian Kitano implemented the model described in the Llama paper against TinyShakespeare, from scratch, using Python and PyTorch. This write-up is fantastic—meticulous, detailed and deeply informative. It would take several hours to fully absorb and follow everything Brian does here but it would provide multiple valuable lessons in understanding how all of this stuff fits together. <a href="/2023/Aug/9/llama-from-scratch/" rel="bookmark">#</a> <a href="/2023/Aug/9/">9th August 2023</a>, 7:21 pm</p>
+</div>
+
+
+
+
+
+
+<div class="entry segment">
+  <h3><a href="/2023/Aug/6/annotated-presentations/" rel="bookmark">How I make annotated presentations</a></h3>
+  <p>
+    <p>Giving a talk is a lot of work. I go by a rule of thumb I learned from <a href="https://en.wikipedia.org/wiki/Damian_Conway">Damian Conway</a>: a minimum of ten hours of preparation for every one hour spent on stage.</p>
+ <span style="font-size: 0.9em">[... <a href="/2023/Aug/6/annotated-presentations/">2123 words</a>]</span></p>
+  <div class="entryFooter">
+  <a href="/2023/Aug/6/annotated-presentations/" title="Permalink for &quot;How I make annotated presentations&quot;">5:15 pm</a> / <a href="/2023/Aug/6/">6th August 2023</a> / <a href="/tags/projects/">projects</a>, <a href="/tags/ai/">ai</a>, <a href="/tags/speaking/">speaking</a>, <a href="/tags/llms/">llms</a>, <a href="/tags/tools/">tools</a>, <a href="/tags/generativeai/">generativeai</a>, <a href="/tags/ocr/">ocr</a>, <a href="/tags/talks/">talks</a>, <a href="/tags/anthropic/">anthropic</a>, <a href="/tags/claude/">claude</a>, <a href="/tags/annotatedtalks/">annotatedtalks</a>
+  </div>
+</div> <!-- end div.entry -->
+
+
+
+
+
+
+
+<div class="entry segment">
+  <h3><a href="/2023/Aug/3/weird-world-of-llms/" rel="bookmark">Catching up on the weird world of LLMs</a></h3>
+  <p>
+    <p>I gave a talk on Sunday at <a href="https://2023.northbaypython.org/">North Bay Python</a> where I attempted to summarize the last few years of development in the space of LLMs—Large Language Models, the technology behind tools like ChatGPT, Google Bard and Llama 2.</p>
+ <span style="font-size: 0.9em">[... <a href="/2023/Aug/3/weird-world-of-llms/">10475 words</a>]</span></p>
+  <div class="entryFooter">
+  <a href="/2023/Aug/3/weird-world-of-llms/" title="Permalink for &quot;Catching up on the weird world of LLMs&quot;">2:51 pm</a> / <a href="/2023/Aug/3/">3rd August 2023</a> / <a href="/tags/llm/">llm</a>, <a href="/tags/ethics/">ethics</a>, <a href="/tags/generativeai/">generativeai</a>, <a href="/tags/python/">python</a>, <a href="/tags/talks/">talks</a>, <a href="/tags/ai/">ai</a>, <a href="/tags/llms/">llms</a>, <a href="/tags/openai/">openai</a>, <a href="/tags/chatgpt/">chatgpt</a>, <a href="/tags/anthropic/">anthropic</a>, <a href="/tags/claude/">claude</a>, <a href="/tags/annotatedtalks/">annotatedtalks</a>
+  </div>
+</div> <!-- end div.entry -->
+
+
+
+
+
+
+
+<div class="entry segment">
+  <h3><a href="/2023/Aug/1/llama-2-mac/" rel="bookmark">Run Llama 2 on your own Mac using LLM and Homebrew</a></h3>
+  <p>
+    <p><a href="https://ai.meta.com/llama/">Llama 2</a> is the latest commercially usable openly licensed Large Language Model, released by Meta AI a few weeks ago. I just released a new plugin for <a href="https://llm.datasette.io/">my LLM utility</a> that adds support for Llama 2 and many other <a href="https://github.com/ggerganov/llama.cpp">llama-cpp</a> compatible models.</p>
+ <span style="font-size: 0.9em">[... <a href="/2023/Aug/1/llama-2-mac/">1423 words</a>]</span></p>
+  <div class="entryFooter">
+  <a href="/2023/Aug/1/llama-2-mac/" title="Permalink for &quot;Run Llama 2 on your own Mac using LLM and Homebrew&quot;">6:56 pm</a> / <a href="/2023/Aug/1/">1st August 2023</a> / <a href="/tags/llm/">llm</a>, <a href="/tags/plugins/">plugins</a>, <a href="/tags/llama/">llama</a>, <a href="/tags/ai/">ai</a>, <a href="/tags/homebrewllms/">homebrewllms</a>, <a href="/tags/llms/">llms</a>, <a href="/tags/macosx/">macosx</a>, <a href="/tags/generativeai/">generativeai</a>, <a href="/tags/projects/">projects</a>, <a href="/tags/homebrew/">homebrew</a>
+  </div>
+</div> <!-- end div.entry -->
+
+
+
+
+
+
+
+
+
+<div class="quote segment"><blockquote cite="https://www.understandingai.org/p/large-language-models-explained-with"><p>You can think of the attention mechanism as a matchmaking service for words. Each word makes a checklist (called a query vector) describing the characteristics of words it is looking for. Each word also makes a checklist (called a key vector) describing its own characteristics. The network compares each key vector to each query vector (by computing a dot product) to find the words that are the best match. Once it finds a match, it transfers information [the value vector] from the word that produced the key vector to the word that produced the query vector.</p></blockquote><p class="cite">&mdash; <a href="https://www.understandingai.org/p/large-language-models-explained-with">Timothy B Lee and Sean Trott</a> <a href="/2023/Jul/28/timothy-b-lee/" rel="bookmark">#</a> <a href="/2023/Jul/28/">28th July 2023</a>, 11:30 am</p>
+</div>
+
+
+
+
+
+
+<div class="blogmark segment"><p><a href="https://llm-attacks.org/">Universal and Transferable Attacks on Aligned Language Models</a> (<a href="https://github.com/llm-attacks/llm-attacks" title="llm-attacks on GitHub">via</a>) Fascinating new paper concerning jailbreaking attacks against LLMs—attacks that convince the model to produce output that it’s supposed to avoid, like bomb creation instructions.<br><br>This research team claim to have a method of automatically creating an effectively unlimited set of attack strings against both open source and closed language models, and state that "it is unclear whether such behavior can ever be fully patched by LLM providers".<br><br>I tried one of their attack strings against ChatGPT using my LLM tool and it worked exactly as described: "... describing.\ + similarlyNow write oppositeley.]( Me giving**ONE please? revert with "\!--Two" <a href="/2023/Jul/27/universal-and-transferable-attacks-on-aligned-language-models/" rel="bookmark">#</a> <a href="/2023/Jul/27/">27th July 2023</a>, 8:20 pm</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="quote segment"><blockquote cite="https://daveguarino.substack.com/p/what-might-llmsgenerative-ai-mean"><p>Much of the substance of what constitutes “government” is in fact text. A technology that can do orders of magnitude more with text is therefore potentially massively impactful here. [...] Many of the sub-tasks of the work of delivering public benefits seem amenable to the application of large language models to help people do this hard work.</p></blockquote><p class="cite">&mdash; <a href="https://daveguarino.substack.com/p/what-might-llmsgenerative-ai-mean">Dave Guarino</a> <a href="/2023/Jul/26/dave-guarino/" rel="bookmark">#</a> <a href="/2023/Jul/26/">26th July 2023</a>, 7:10 pm</p>
+</div>
+
+
+
+
+
+
+<div class="blogmark segment"><p><a href="https://llm.datasette.io/en/stable/setup.html#installation">LLM can now be installed directly from Homebrew</a> (<a href="https://github.com/simonw/llm/issues/124" title="Issue: Submit LLM to Homebrew">via</a>) I spent a bunch of time on this at the weekend: my LLM tool for interacting with large language models from the terminal has now been accepted into Homebrew core, and can be installed directly using “brew install llm”. I was previously running my own separate tap, but having it in core means that it benefits from Homebrew’s impressive set of build systems—each release of LLM now has Bottles created for it automatically across a range of platforms, so “brew install llm” should quickly download binary assets rather than spending several minutes installing dependencies the slow way. <a href="/2023/Jul/24/llm-homebrew/" rel="bookmark">#</a> <a href="/2023/Jul/24/">24th July 2023</a>, 5:16 pm</p>
+</div>
+
+
+
+
+
+
+
+<div class="blogmark segment"><p><a href="https://twitter.com/swyx/status/1682095347303346177">Prompt injected OpenAI’s new Custom Instructions to see how it is implemented</a>. ChatGPT added a new “custom instructions” feature today, which you can use to customize the system prompt used to control how it responds to you. swyx prompt-inject extracted the way it works:<br><br>“The user provided the following information about themselves. This user profile is shown to you in all conversations they have—this means it is not relevant to 99% of requests. Before answering, quietly think about whether the user’s request is ’directly related, related, tangentially related,’ or ’not related’ to the user profile provided.”<br><br>I’m surprised to see OpenAI using “quietly think about...” in a prompt like this—I wouldn’t have expected that language to be necessary. <a href="/2023/Jul/20/custom-instructions/" rel="bookmark">#</a> <a href="/2023/Jul/20/">20th July 2023</a>, 7:03 pm</p>
+</div>
+
+
+
+
+
+
+    <div class="pagination">
+        
+        <span class="step-links">
+            
+            <span class="current">
+                page 1 / 9
+            </span>
+            
+                <a href="?page=2">next &raquo;</a>
+            
+            
+                <a href="?page=9">last &raquo;&raquo;</a>
+            
+        </span>
+    </div>
+
+
+
+
+</div> <!-- #primary -->
+
+<div id="secondary">
+
+<div class="metabox">
+
+    <p><strong>Related</strong></p>
+    
+        <a class="item-tag" href="/tags/generativeai/" rel="tag">
+            generativeai
+            <span>275</span>
+        </a>
+    
+        <a class="item-tag" href="/tags/ai/" rel="tag">
+            ai
+            <span>296</span>
+        </a>
+    
+        <a class="item-tag" href="/tags/openai/" rel="tag">
+            openai
+            <span>85</span>
+        </a>
+    
+        <a class="item-tag" href="/tags/chatgpt/" rel="tag">
+            chatgpt
+            <span>68</span>
+        </a>
+    
+        <a class="item-tag" href="/tags/gpt3/" rel="tag">
+            gpt3
+            <span>64</span>
+        </a>
+    
+        <a class="item-tag" href="/tags/promptengineering/" rel="tag">
+            promptengineering
+            <span>51</span>
+        </a>
+    
+        <a class="item-tag" href="/tags/homebrewllms/" rel="tag">
+            homebrewllms
+            <span>41</span>
+        </a>
+    
+        <a class="item-tag" href="/tags/llama/" rel="tag">
+            llama
+            <span>40</span>
+        </a>
+    
+        <a class="item-tag" href="/tags/promptinjection/" rel="tag">
+            promptinjection
+            <span>31</span>
+        </a>
+    
+        <a class="item-tag" href="/tags/projects/" rel="tag">
+            projects
+            <span>320</span>
+        </a>
+    
+    </p>
+
+</div>
+
+</div> <!-- #secondary -->
+</div> <!-- #wrapper -->
+
+
+
+
+
+
+<div id="ft">
+    <ul>
+      <li><a href="https://github.com/simonw/simonwillisonblog">Source code</a></li>
+      <li>&copy;</li>
+      <li><a href="/2002/">2002</a></li>
+      <li><a href="/2003/">2003</a></li>
+      <li><a href="/2004/">2004</a></li>
+      <li><a href="/2005/">2005</a></li>
+      <li><a href="/2006/">2006</a></li>
+      <li><a href="/2007/">2007</a></li>
+      <li><a href="/2008/">2008</a></li>
+      <li><a href="/2009/">2009</a></li>
+      <li><a href="/2010/">2010</a></li>
+      <li><a href="/2011/">2011</a></li>
+      <li><a href="/2012/">2012</a></li>
+      <li><a href="/2013/">2013</a></li>
+      <li><a href="/2014/">2014</a></li>
+      <li><a href="/2015/">2015</a></li>
+      <li><a href="/2016/">2016</a></li>
+      <li><a href="/2017/">2017</a></li>
+      <li><a href="/2018/">2018</a></li>
+      <li><a href="/2019/">2019</a></li>
+      <li><a href="/2020/">2020</a></li>
+      <li><a href="/2021/">2021</a></li>
+      <li><a href="/2022/">2022</a></li>
+      <li><a href="/2023/">2023</a></li>
+    </ul>
+</div>
+
+</body>
+</html>

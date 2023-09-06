@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>post-type-discovery - IndieWeb</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"8d5f432b25a63403be0ccc2c","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"post-type-discovery","wgTitle":"post-type-discovery","wgCurRevisionId":83767,"wgRevisionId":83767,"wgArticleId":4514,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"post-type-discovery","wgRelevantArticleId":4514,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]};RLSTATE={"site.styles":"ready","user.styles":"ready","user":
+"ready","user.options":"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1i9g4",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});</script>
+<link rel="stylesheet" href="/wiki/load.php?lang=en&amp;modules=skins.vector.styles.legacy&amp;only=styles&amp;skin=vector"/>
+<script async="" src="/wiki/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/wiki/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.38.4"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0"/>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/wiki/opensearch_desc.php" title="IndieWeb (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="https://indieweb.org/wiki/api.php?action=rsd"/>
+<link rel="license" href="/IndieWebCamp:Copyrights"/>
+<link rel="alternate" type="application/atom+xml" title="IndieWeb Atom feed" href="/wiki/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+<link rel="webmention" href="https://webmention.io/indiewebcamp/webmention">
+
+<link rel="pingback" href="https://webmention.io/indiewebcamp/xmlrpc">
+
+<script src="https://cdn.usefathom.com/script.js" site="ZPHFRYAA" defer></script>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-post-type-discovery rootpage-post-type-discovery skin-vector action-view skin--responsive skin-vector-legacy"><div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body h-entry" role="main">
+	<a id="top"></a>
+	<div id="siteNotice"></div>
+	<div class="mw-indicators">
+	</div>
+	<span class="p-name"><h1 id="firstHeading" class="firstHeading mw-first-heading">post-type-discovery</h1></span>
+	<div id="bodyContent" class="vector-body">
+		<div id="siteSub" class="noprint">From IndieWeb</div>
+		<div id="contentSub"></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+		<a class="mw-jump-link" href="#searchInput">Jump to search</a>
+		<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr"><div class="mw-parser-output"><p><span class="p-summary"><b><dfn>Post Type Discovery</dfn></b> specifies an algorithm for consuming code to determine the type of a post by its content properties and their values rather than an explicit “post type” property, thus better matched to modern post <a href="/creation" class="mw-redirect" title="creation">creation</a> UIs that allow combining text, media, etc in a variety of ways without burdening users with any notion of what kind of post they are creating.</span>
+</p>
+<dl><dt>Status</dt>
+<dd>This is a living <b>Editor's Draft</b> yet mature enough to encourage <a href="#Implementations">implementations</a> and <a href="#Feedback">feedback</a>.</dd>
+<dt>Editor's Draft</dt>
+<dd><a class="external free" href="https://ptd.spec.indieweb.org/">https://ptd.spec.indieweb.org/</a></dd>
+<dt>W3C Note</dt>
+<dd><a class="external free" href="https://www.w3.org/TR/2018/NOTE-post-type-discovery-20180118/">https://www.w3.org/TR/2018/NOTE-post-type-discovery-20180118/</a></dd>
+<dt>Participate</dt>
+<dd>Wiki (<a href="#Feedback">Feedback</a>, <a href="#Issues">Open issues</a>, <a class="external text" href="https://github.com/tantek/post-type-discovery/issues">issues on GitHub</a>)</dd>
+<dd><a href="/IRC" title="IRC">IRC</a>: <a class="external text" href="https://chat.indieweb.org/dev">discussion on #indieweb-dev</a> <a class="external text" href="irc://irc.libera.chat/indieweb">#indieweb-dev on Libera</a></dd>
+<dt>Editor</dt>
+<dd><span class="h-card" style="white-space:nowrap"><img src="https&#58;//tantek.com/logo.jpg" class="" style="height:1.1em;vertical-align:-.1em" alt="" /> <a href="/User:Tantek.com" title="User:Tantek.com">Tantek Çelik</a></span></dd>
+<dt>License</dt>
+<dd><small>Per <a class="external text" href="http://creativecommons.org/publicdomain/zero/1.0/">CC0</a>, to the extent possible under law, the editor(s) and contributors have waived all copyright and related or neighboring rights to this work. In addition, as of 2023-09-06, the editor(s) and contributors (2015-04-07 onward) have made this specification available under the <a class="external text" href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0">Open Web Foundation Agreement Version 1.0</a>.</small></dd></dl>
+<p>Post Type Discovery was published by the <a href="/W3C" title="W3C">W3C</a> Social Web Working Group as a <a class="external text" href="https://www.w3.org/TR/2018/NOTE-post-type-discovery-20180118/">W3C Note on 2018-01-18</a>, and is currently maintained by the IndieWeb community as a Living Standard at <a class="external free" href="https://ptd.spec.indieweb.org/">https://ptd.spec.indieweb.org/</a>
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Use_cases"><span class="tocnumber">1</span> <span class="toctext">Use cases</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Synthesizing_explicit_type_formats"><span class="tocnumber">1.1</span> <span class="toctext">Synthesizing explicit type formats</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="#Algorithm"><span class="tocnumber">2</span> <span class="toctext">Algorithm</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Methodology"><span class="tocnumber">3</span> <span class="toctext">Methodology</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Other_Types_Under_Consideration"><span class="tocnumber">4</span> <span class="toctext">Other Types Under Consideration</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Examples"><span class="tocnumber">5</span> <span class="toctext">Examples</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Like_post"><span class="tocnumber">5.1</span> <span class="toctext">Like post</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Next_steps"><span class="tocnumber">6</span> <span class="toctext">Next steps</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Feedback"><span class="tocnumber">7</span> <span class="toctext">Feedback</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#PTD_as_a_guide,_not_a_rule"><span class="tocnumber">7.1</span> <span class="toctext">PTD as a guide, not a rule</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Issues"><span class="tocnumber">8</span> <span class="toctext">Issues</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#Challenges_from_summaries"><span class="tocnumber">8.1</span> <span class="toctext">Challenges from summaries</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#note_detection_name_content_details"><span class="tocnumber">8.2</span> <span class="toctext">note detection name content details</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#How_to_handle_new_types"><span class="tocnumber">8.3</span> <span class="toctext">How to handle new types</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Entry_only_or_events_too"><span class="tocnumber">8.4</span> <span class="toctext">Entry only or events too</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Feature_request_type_invitation"><span class="tocnumber">8.5</span> <span class="toctext">Feature request type invitation</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Feature_consideration_checkin"><span class="tocnumber">8.6</span> <span class="toctext">Feature consideration checkin</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="#Resolved"><span class="tocnumber">9</span> <span class="toctext">Resolved</span></a>
+<ul>
+<li class="toclevel-2 tocsection-19"><a href="#Summary_vs_content_details"><span class="tocnumber">9.1</span> <span class="toctext">Summary vs content details</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Note_as_fallback"><span class="tocnumber">9.2</span> <span class="toctext">Note as fallback</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Empty_comments"><span class="tocnumber">9.3</span> <span class="toctext">Empty comments</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Feature_Request_video"><span class="tocnumber">9.4</span> <span class="toctext">Feature Request video</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#Theoretical_objection_to_AS2_compat"><span class="tocnumber">9.5</span> <span class="toctext">Theoretical objection to AS2 compat</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-24"><a href="#FAQ"><span class="tocnumber">10</span> <span class="toctext">FAQ</span></a>
+<ul>
+<li class="toclevel-2 tocsection-25"><a href="#What_about_a_photo_reply"><span class="tocnumber">10.1</span> <span class="toctext">What about a photo reply</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#Is_a_video_tag_sufficient"><span class="tocnumber">10.2</span> <span class="toctext">Is a video tag sufficient</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-27"><a href="#Implementations"><span class="tocnumber">11</span> <span class="toctext">Implementations</span></a>
+<ul>
+<li class="toclevel-2 tocsection-28"><a href="#Granary"><span class="tocnumber">11.1</span> <span class="toctext">Granary</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#p3k"><span class="tocnumber">11.2</span> <span class="toctext">p3k</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#mf2util"><span class="tocnumber">11.3</span> <span class="toctext">mf2util</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#IndieWeb_Utils"><span class="tocnumber">11.4</span> <span class="toctext">IndieWeb Utils</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-32"><a href="#Normative_References"><span class="tocnumber">12</span> <span class="toctext">Normative References</span></a></li>
+<li class="toclevel-1 tocsection-33"><a href="#Informative_References"><span class="tocnumber">13</span> <span class="toctext">Informative References</span></a></li>
+<li class="toclevel-1 tocsection-34"><a href="#History"><span class="tocnumber">14</span> <span class="toctext">History</span></a>
+<ul>
+<li class="toclevel-2 tocsection-35"><a href="#Articles_about_implied_post_types"><span class="tocnumber">14.1</span> <span class="toctext">Articles about implied post types</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-36"><a href="#See_Also"><span class="tocnumber">15</span> <span class="toctext">See Also</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Use_cases">Use cases</span></h2>
+<p>Both <a href="/creation" class="mw-redirect" title="creation">creation</a> user interfaces, and post presentation designs are evolving to directly use the presence or absence of specific properties (and their values) directly, rather than depending on any kind of explicit "post type", thus why bother discovering a post type in the first place? This section documents the (few) use-case(s) that is/are known to date.
+</p>
+<h3><span class="mw-headline" id="Synthesizing_explicit_type_formats">Synthesizing explicit type formats</span></h3>
+<p>There are existing formats that require explicit post types (e.g. <a href="/ActivityStreams" title="ActivityStreams">ActivityStreams</a>), and code that consumes them expects explicit post types. Post type discovery enabling automatic synthesizing of such formats from posts that merely have a set of content related properties.
+</p>
+<h2><span class="mw-headline" id="Algorithm">Algorithm</span></h2>
+<p>The Post Type Discovery algorithm ("the algorithm") discovers the type of a post given a data structure representing a post with a flat set of properties (e.g. Activity Streams (1.0 or 2.0) JSON, or JSON output from parsing [microformats2]), each with one or more values, by following these steps until reaching the first "it is a(n) ... post" statement at which point the "..." is the discovered post type.
+</p>
+<ol><li>If the post has an "rsvp" property with a valid value, <br />Then it is an RSVP post.</li>
+<li>If the post has an "in-reply-to" property with a valid URL, <br />Then it is a reply post.</li>
+<li>If the post has a "repost-of" property with a valid URL, <br />Then it is a repost (AKA "share") post.</li>
+<li>If the post has a "like-of" property with a valid URL, <br />Then it is a like (AKA "favorite") post.</li>
+<li>If the post has a "video" property with a valid URL, <br />Then it is a video post.</li>
+<li>If the post has a "photo" property with a valid URL, <br />Then it is a photo post.</li>
+<li>If the post has a "content" property with a non-empty value, <br />Then use its first non-empty value as the content</li>
+<li>Else if the post has a "summary" property with a non-empty value, <br />Then use its first non-empty value as the content</li>
+<li>Else it is a note post.</li>
+<li>If the post has no "name" property <br />&#160;&#160;or has a "name" property with an empty string value (or no value) <br />Then it is a note post.</li>
+<li>Take the first non-empty value of the "name" property</li>
+<li>Trim all leading/trailing whitespace</li>
+<li>Collapse all sequences of internal whitespace to a single space (0x20) character each</li>
+<li>Do the same with the content</li>
+<li>If this processed "name" property value is NOT a prefix of the processed content, <br />Then it is an article post.</li>
+<li>It is a note post.</li></ol>
+<p>Quoted property names in the algorithm are defined in <a href="/h-entry" title="h-entry">h-entry</a>.
+</p>
+<h2><span class="mw-headline" id="Methodology">Methodology</span></h2>
+<p>There are two important aspects to the methodology of the Post Type Discovery algorithm: scope (why is something explicitly in the algorithm), and order (why is something where it is in the algorithm).
+</p>
+<dl><dt>Scope</dt>
+<dd>The algorithm could attempt to cover innumerable potential hypothetical post types, or take an evidence based approach, focusing on real world publishing practices. This specification does the latter, specifically by placing a minimum bar of documented real world publishing practices of different visually apparent post types on the open web at recent (&lt; 1 year old) permalinks, each with at least three independent implementations that have converged on what properties (and potentially values thereof) they have to imply their visually apparent post types. As a result of being evidence based, it is likely this specification will expand over time as more apparent post types are published by more convergent implementations.</dd></dl>
+<dl><dt>Order</dt>
+<dd>The algorithm must also specify an order (e.g. of precedence) that various properties (and their values) imply various post types. The algorithm is ordered by post types that are in general "richer" in terms of content as well as show greater cognitive effort by the author.</dd></dl>
+<h2><span class="mw-headline" id="Other_Types_Under_Consideration">Other Types Under Consideration</span></h2>
+<p>Other types are being considered and will be included in the future iterations of the algorithm based on convergence of publishing patterns and critical mass of adoption thereof.
+</p>
+<ul><li><a href="/delete" class="mw-redirect" title="delete">delete</a></li>
+<li><a href="/event" title="event">event</a></li>
+<li><a href="/checkin" title="checkin">checkin</a></li>
+<li><a href="/bookmark" title="bookmark">bookmark</a></li>
+<li><a href="/quotation" title="quotation">quotation</a></li>
+<li><a href="/audio" title="audio">audio</a></li>
+<li><a href="/jam" title="jam">jam</a></li>
+<li><a href="/invitation" title="invitation">invitation</a></li>
+<li><a href="/tag-of" class="mw-redirect" title="tag-of">tag-of</a></li></ul>
+<h2><span class="mw-headline" id="Examples">Examples</span></h2>
+<h3><span class="mw-headline" id="Like_post">Like post</span></h3>
+<p>Here is an example <a href="/h-entry" title="h-entry">h-entry</a> post from <a class="external text" href="http://www.w3.org/TR/activitystreams-vocabulary/#dfn-like">Activity Streams 2.0 Vocabulary examples</a>:
+</p>
+<pre>&lt;div class="h-entry p-name"&gt;
+  &lt;span class="p-author h-card"&gt;Sally&lt;/span&gt;
+  liked
+  &lt;a class="u-like-of"
+    href="http://example.org/notes/1"&gt;
+    http://example.org/notes/1
+  &lt;/a&gt;
+&lt;/div&gt;</pre>
+<p>Following the algorithm, the step "If the post has a "like-of" property with a valid URL" is satisfied and thus the algorithm returns that the post is a "<a href="/like" title="like">like</a>" post.
+</p><p>Given this semantic, an implementation can generate (or process as if generated and consumed) the following AS2 JSON, in particular the <code>"@type": "Like"</code> in this output is what is determined by this algorithm:
+</p>
+<pre>{
+  "@type": "Like",
+  "actor": {
+    "@type": "Person",
+    "displayName": "Sally"
+  },
+  "object": "http://example.org/notes/1"
+}</pre>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Next_steps">Next steps</span></h2>
+<p>This section is for the editor, and may provide hints at updates to come for this specification.
+</p>
+<ul><li>figure out workflow between this document and <a class="external text" href="https://www.w3.org/wiki/Post-type-discovery">W3C copy</a>, for how to best do all the below:</li>
+<li>fix redlinks in W3C copy</li>
+<li>resolve trivial open issues</li>
+<li>copy non-trivial open issues to W3C Social Web WG github</li>
+<li>copy closed issues to separate page on IndieWebCamp</li>
+<li>add to <a href="#FAQ">#FAQ</a> questions from Evan and answers provided inline in <a class="external text" href="http://socialwg.indiewebcamp.com/irc/social/2015-10-06#t1444155351373">2015-10-06 #social IRC</a></li>
+<li>add explicit JSON examples based on both parsed <a href="/microformats2" title="microformats2">microformats2</a> output, and <a href="/ActivityStreams2" class="mw-redirect" title="ActivityStreams2">ActivityStreams2</a></li>
+<li>add example how to infer from a W3C Activity Streams post similar to h-entry properties
+<ul><li>awaiting any real world publishing examples of Activity Streams without explicit types</li></ul></li>
+<li>add example how to generate a W3C Activity Streams post from h-entry properties
+<ul><li>have added one, will add more based on requests for specific examples</li>
+<li>Some notes at <a class="external text" href="http://rhiaro.co.uk/2015/05/generating">Generating an ActivityStream</a></li></ul></li>
+<li>Publish a W3C working draft</li>
+<li>update: <a class="external text" href="http://www.w3.org/Social/track/issues/4">ISSUE-4: Do we rely on explicit typing or support implicit typing based on explicit property names?</a></li></ul>
+<h2><span class="mw-headline" id="Feedback">Feedback</span></h2>
+<p>Feel free to leave feedback about the draft here, please sign your name with ~~~~!
+</p>
+<h3><span id="PTD_as_a_guide.2C_not_a_rule"></span><span class="mw-headline" id="PTD_as_a_guide,_not_a_rule">PTD as a guide, not a rule</span></h3>
+<p>As described here, many people have gradually shifted from choosing an explicit post type up front to combining individual parts (photos, location, person tags) and discovering post type after the fact. The IndieWeb community discovers and analyzes new real world post types, catalogues them here on the wiki, and then adds them to this algorithm.
+</p><p>This is great in general, but sometimes tricky. Post type boundaries are often fuzzy and overlap in the real world - <a href="/quotation#Instead_use" title="quotation">quotations are a good example</a> - and algorithms and code aren't good at fuzziness and uncertainty. Given this, we should keep in mind that that post type discovery is high level and sometimes imprecise and not expect too much of it beyond that.
+</p><p>-<a href="/User:Snarfed.org" title="User:Snarfed.org">Snarfed.org</a>
+</p><p>Re: above about "fuzziness" of PTD, should we have some means of allowing content to give a "hint" to what kind of post type that they're intending to represent? <span class="h-card"><img src="https&#58;//jacky.wtf/assets/favicon.2fb16a8e.svg" class="" style="height:1.1em;vertical-align:-.1em" alt="" /> <a href="/User:Jacky.wtf" title="User:Jacky.wtf">Jacky Alciné</a></span> 2022-07-12
+</p>
+<h2><span class="mw-headline" id="Issues">Issues</span></h2>
+<p>Open issues on this specification are documented here.
+</p>
+<h3><span class="mw-headline" id="Challenges_from_summaries">Challenges from summaries</span></h3>
+<ul><li>Some of the entries on <a class="external free" href="http://aaronparecki.com/articles">http://aaronparecki.com/articles</a> have just a name, or a name and "featured" image, but no content or summary. Maybe the only way to tell this is an article is to go look at the canonical URL.
+<ul><li>Example permalinks of this? <a href="/User:Tantek.com" title="User:Tantek.com">Tantek</a> 22:15, 29 September 2015 (PDT)
+<ul><li>That is the example. The point is the h-feed contains partial information from the article, but the article permalinks have the full info. <a class="external free" href="http://pin13.net/mf2/?url=http%3A%2F%2Faaronparecki.com%2Farticles">http://pin13.net/mf2/?url=http%3A%2F%2Faaronparecki.com%2Farticles</a> <span class="h-card"><a href="/User:Aaronparecki.com" title="User:Aaronparecki.com">Aaron Parecki</a></span> 08:26, 30 September 2015 (PDT)</li></ul></li></ul></li></ul>
+<h3><span class="mw-headline" id="note_detection_name_content_details">note detection name content details</span></h3>
+<ul><li>The article vs. note check currently says to check if name is a prefix of content, but this fails the common auto-generated "name" case, where the name contains everything in the post including the content. I have had better luck checking name.contains(content) instead of content.startswith(name) <a href="/User:Kylewm.com" title="User:Kylewm.com">Kylewm.com</a> 21:24, 29 September 2015 (PDT)
+<ul><li>Note with an implied "name" that contains the "content": <a class="external free" href="https://shanehudson.net/2015/09/24/2042">https://shanehudson.net/2015/09/24/2042</a></li>
+<li>What if we made it an OR? That is "name.contains(content) OR content.startswith(name)" means this is a note? <a href="/User:Tantek.com" title="User:Tantek.com">Tantek</a> 22:15, 29 September 2015 (PDT)
+<ul><li>I can't think of anyone who gives their notes an explicit title that is a prefix of the content. The markup would be odd &lt;div class="e-content"&gt;&lt;span class="p-name"&gt;This is note&lt;/span&gt; with a title that is a prefix&lt;/div&gt;. I don't feel too strongly about it, but if we can't come up with any real-world examples, it's probably not worth complicating the spec with content.startswith(name)
+<ul><li>It was more anticipatory, as those of us doing name==content on notes start truncating the name for HTML title element readability, e.g. dropping leading URLs. <a href="/User:Tantek.com" title="User:Tantek.com">Tantek</a> 14:00, 16 February 2016 (PST)</li></ul></li></ul></li></ul></li></ul>
+<h3><span class="mw-headline" id="How_to_handle_new_types">How to handle new types</span></h3>
+<ul><li>The post type discovery algorithm needs some way for new types to be discovered. For example I am publishing bike rides, runs, and food consumption on my site right now, and it would be better to have a way to add these types as a possible result of the algorithm without having to change the core algorithm.
+<ul><li><span class="h-card"><img src="https&#58;//jacky.wtf/assets/favicon.2fb16a8e.svg" class="" style="height:1.1em;vertical-align:-.1em" alt="" /> <a href="/User:Jacky.wtf" title="User:Jacky.wtf">Jacky Alciné</a></span> I've considered <a class="external text" href="https://git.jacky.wtf/indieweb/rust/issues/18">reworking the PTD parser in Rust</a> such that one can define the 'rules' for a type and the parser will attempt to find the best one from the provided set. It'd match on things like properties in an object and property values (namely to help with finding it an article is being used)</li></ul></li></ul>
+<h3><span class="mw-headline" id="Entry_only_or_events_too">Entry only or events too</span></h3>
+<ul><li>Is this limited in scope to "h-entry" only? Are "h-event" always "event"s and never replies, invites, etc.? <a href="/User:Kylewm.com" title="User:Kylewm.com">Kylewm.com</a> 09:21, 28 October 2015 (PDT)
+<ul><li>Quite right, the top level microformat object can help with post type discovery. Will look into real world examples and detection steps. <a href="/User:Tantek.com" title="User:Tantek.com">Tantek</a> 16:26, 16 February 2016 (PST)</li></ul></li></ul>
+<h3><span class="mw-headline" id="Feature_request_type_invitation">Feature request type invitation</span></h3>
+<ul><li>Add "invitee" property implies post type "invite"? Above or below "rsvp"? <a href="/User:Kylewm.com" title="User:Kylewm.com">Kylewm.com</a> 09:21, 28 October 2015 (PDT)</li></ul>
+<h3><span class="mw-headline" id="Feature_consideration_checkin">Feature consideration checkin</span></h3>
+<p>Since <a class="external text" href="https://github.com/idno/Known/issues/1227">Known had to coordinate with client software to make this explicit</a>, written to be inserted into the current algorithm
+</p>
+<ul><li>if there is a u-photo property, then it is a photo (any venue information is info about the photo)</li>
+<li>if there is u-location to a venue h-card with name plus street-address and/or geo lat+long then is a checkin (any note/content is a "shout" or comment about the checkin)</li>
+<li>...</li>
+<li>if there is a content and/or name that "match" then it is a note</li>
+<li>...</li>
+<li>if there is a "location" property (but no content nor name) then it is a checkin</li></ul>
+<p>In summary:
+</p>
+<ul><li>photo -&gt; photo</li>
+<li>named location with adr street-address and/or geo lat+long -&gt; checkin</li>
+<li>...</li>
+<li>content~=name -&gt; note</li>
+<li>...</li>
+<li>location geo lat+long or adr -&gt; checkin</li></ul>
+<h2><span class="mw-headline" id="Resolved">Resolved</span></h2>
+<h3><span class="mw-headline" id="Summary_vs_content_details">Summary vs content details</span></h3>
+<ul><li>In an h-feed, an entry may have a name and summary but no content. In this case it is an article, but step 6 would have already classified it as a note since there is no content. Perhaps update this step to read "If the post has no "content" property and no "summary" property"?
+<ul><li>Steps 6 and following have been updated to use "summary" as a fallback for "content". <a href="/User:Tantek.com" title="User:Tantek.com">Tantek</a> 21:02, 29 September 2015 (PDT)</li></ul></li></ul>
+<h3><span class="mw-headline" id="Note_as_fallback">Note as fallback</span></h3>
+<ul><li>It appears that a post with no content and no name would be classified as a note. Would it be better for a possible result of this algorithm to be "unknown"?
+<ul><li>No. By having the known fallback of a note post, implementation for both publishing and consuming code is more predictable, and reliable. <a href="/User:Tantek.com" title="User:Tantek.com">Tantek</a> 21:40, 29 September 2015 (PDT)</li></ul></li></ul>
+<h3><span class="mw-headline" id="Empty_comments">Empty comments</span></h3>
+<ul><li>For example, when determining the post type of a comment, I may not want to display anything if the content and name are empty since it would just look like an empty post.
+<ul><li>What you display is up to you (outside the scope of this specification), and "post type" should only be one aspect of what you use to decide what to display or present. <a href="/User:Tantek.com" title="User:Tantek.com">Tantek</a> 21:40, 29 September 2015 (PDT)</li></ul></li></ul>
+<h3><span class="mw-headline" id="Feature_Request_video">Feature Request video</span></h3>
+<ul><li>There are several examples of people publishing <a href="/video" title="video">video</a> posts. Can we add "If the post has a "video" property with a valid URL, then it is a video post." before checking for the "photo" property? (Video posts often have a photo property as a fallback for consumers that don't understand video posts and to show a thumbnail of the video in a feed)
+<ul><li>There is only one recent example of people publishing <a href="/video" title="video">video</a> posts with <code>u-video</code> (Ben Roberts), one person no longer publishing (last was 2+ years ago), and no other examples with <code>u-video</code>.<a class="external autonumber" href="https://indiewebcamp.com/video#Indieweb_Support">[1]</a> One &lt; three - thus <a href="/video" title="video">video</a> stays as "under consideration" for now. <a href="/User:Tantek.com" title="User:Tantek.com">Tantek</a> 22:08, 29 September 2015 (PDT)</li></ul></li></ul>
+<h3><span class="mw-headline" id="Theoretical_objection_to_AS2_compat">Theoretical objection to AS2 compat</span></h3>
+<ul><li>Specific to <a class="external free" href="http://microformats.org/">http://microformats.org/</a> vocabulary, while incorrectly suggests support of  <a class="external free" href="http://www.w3.org/TR/activitystreams-vocabulary/">http://www.w3.org/TR/activitystreams-vocabulary/</a> For example as:Like <b>does NOT</b> recommend using 'like-of' property (which doesn't even exist in AS2.0 Vocabulary) instead it uses generic 'object' property. <a href="/User:Wwelves.org_perpetual-tripper" title="User:Wwelves.org perpetual-tripper">Wwelves.org perpetual-tripper</a> 14:04, 6 October 2015 (PDT)
+<ul><li>The algorithm shows how to discover a "like" post via the 'like-of' property. Once that discovery has occurred, the implementation can treat it as an AS2 as:Like. <a href="/User:Tantek.com" title="User:Tantek.com">Tantek</a> 11:24, 6 October 2015 (PDT)
+<ul><li>AS2.0 Vocabulary does NOT define 'like-of' property and uses generic 'object' instead. This algorithm will not work on data following <a class="external text" href="http://www.w3.org/TR/activitystreams-vocabulary/#dfn-like"><b>canonical</b> example of as:Like in JSON-LD serialization</a>. AS2.0 specs editor warns in both spec to consider Microformats HTML only informative and that they don't represent recommended modeling. Also current state of Microformat vocabulary doesn't allow using it in JSON-LD serialization, which includes 'like-of' property defined in it. Based on above, claiming compatibility of this draft with ActivityStreams 2.0 looks very misleading! <a href="/User:Wwelves.org_perpetual-tripper" title="User:Wwelves.org perpetual-tripper">Wwelves.org perpetual-tripper</a> 14:04, 6 October 2015 (PDT)
+<ul><li>Closing as theoretical only, not a problem in practice. No implementations have had any problems with this. You may reopen if you implement it, or other implementers may re-open if they have the same problem. <a href="/User:Tantek.com" title="User:Tantek.com">Tantek</a> 14:00, 16 February 2016 (PST)</li></ul></li></ul></li></ul></li></ul>
+<h2><span class="mw-headline" id="FAQ">FAQ</span></h2>
+<h3><span class="mw-headline" id="What_about_a_photo_reply">What about a photo reply</span></h3>
+<p>Q: What about a reply that includes a photo?
+</p><p>A: It's a reply.
+</p><p>Q2: Should that show up as a "photo" post?
+</p><p>A2: It should show up as a "reply" and not be in a user's published feed of their photos. The user-centric design here is to treat replies separately, because in practice, when users post replies to others' posts, and include a photo, the photos typically assume the context of that other post, and would look odd outside of it (e.g. in a generic "photos" feed). In addition, by not including reply photos in a user's feed of their photos, it gives the user the freedom to reply to other posts with whatever they wish, including photos, and not have those reply-specific photos pollute their streams of "their stuff" that their followers subscribe to.
+</p><p>A2a: From a presentation perspective, a reply should primarily be displayed as a reply first, and then adapt accordingly to whatever other properties it may have.
+</p>
+<h3><span class="mw-headline" id="Is_a_video_tag_sufficient">Is a video tag sufficient</span></h3>
+<p>Q: Is a video tag sufficient to imply a video post?
+</p><p>A: No, video tags can be used for additional content e.g. inside an article. Only relying on video tag markup would lead to false positives. E.g. <a class="external free" href="http://cweiske.de/tagebuch/kdenlive-lower-third.htm">http://cweiske.de/tagebuch/kdenlive-lower-third.htm</a> has a video tag but is an article, not a video post.<a class="external autonumber" href="https://indiewebcamp.com/irc/2015-12-13#t1450078670442">[2]</a>
+</p>
+<h2><span class="mw-headline" id="Implementations">Implementations</span></h2>
+<p>Implementations, in progress, partial, or complete, of Post Type Discovery.
+</p>
+<h3><span class="mw-headline" id="Granary">Granary</span></h3>
+<p><a class="external text" href="https://github.com/snarfed/granary/">Granary</a> synthesizes <a href="/ActivityStreams" title="ActivityStreams">ActivityStreams</a>, <a href="/microformats2" title="microformats2">microformats2</a>, and <a href="/Atom" title="Atom">Atom</a> from various input feeds and sources, and as such has some code that can be considered in progress or even a partial implementation of Post Type Discovery:
+</p>
+<ul><li>Live public demo site: <a class="external free" href="https://granary-demo.appspot.com/">https://granary-demo.appspot.com/</a></li>
+<li>Issue(s) related to implementing Post Type Discovery: <a class="external text" href="https://github.com/snarfed/granary/issues/41">#41</a></li></ul>
+<h3><span class="mw-headline" id="p3k">p3k</span></h3>
+<p><a href="/p3k" title="p3k">p3k</a> (a CMS) implements Post Type Discovery internally within its <a href="/micropub" class="mw-redirect" title="micropub">micropub</a> endpoint to automatically add posts to various collections. E.g.: if this post is a reply, it goes in the "replies" collection. if it's an RSVP, it goes in the "rsvps" and "replies" collections.
+</p>
+<ul><li>Live example: <a class="external free" href="http://aaronparecki.com/">http://aaronparecki.com/</a></li></ul>
+<h3><span class="mw-headline" id="mf2util">mf2util</span></h3>
+<p><a href="/mf2util" title="mf2util">mf2util</a> exposes a function for <code>post_type_discovery</code> that takes an h-entry and returns "like", "reply", "note", "article", etc.
+</p>
+<ul><li>Live demo: <a class="external free" href="https://kylewm.com/services/mf2util">https://kylewm.com/services/mf2util</a></li></ul>
+<h3><span class="mw-headline" id="IndieWeb_Utils">IndieWeb Utils</span></h3>
+<p><a href="/IndieWeb_Utils" title="IndieWeb Utils">IndieWeb Utils</a> has a <code>get_post_type</code> function that returns the type of a post per the Post Type Discovery specification.
+</p>
+<ul><li><a class="external text" href="https://indieweb-utils.readthedocs.io/en/latest/discovery.html#indieweb_utils.get_post_type">Documentation reference</a></li></ul>
+<h2><span class="mw-headline" id="Normative_References">Normative References</span></h2>
+<ul><li>[Activity Streams 2.0] - <a class="external free" href="http://www.w3.org/TR/activitystreams-core/">http://www.w3.org/TR/activitystreams-core/</a>
+<ul><li>for canonical Activity Streams 2.0 JSON</li></ul></li>
+<li>[Activity Vocabulary] - <a class="external free" href="http://www.w3.org/TR/activitystreams-vocabulary/">http://www.w3.org/TR/activitystreams-vocabulary/</a>
+<ul><li>for Activity Streams 2.0 vocabulary terms</li></ul></li>
+<li>[h-entry] - <a class="external free" href="http://microformats.org/wiki/h-entry">http://microformats.org/wiki/h-entry</a>
+<ul><li>for definitions of property names used in the algorithm</li></ul></li>
+<li>[microformats2] - <a class="external text" href="http://microformats.org/wiki/microformats2-parsing">microformats2 parsing</a>
+<ul><li>for canonical microformats2 JSON output</li></ul></li></ul>
+<h2><span class="mw-headline" id="Informative_References">Informative References</span></h2>
+<ul><li>[Activity Streams 1.0]
+<ul><li>for canonical Activity Streams 1.0 JSON</li></ul></li>
+<li><a href="/RSVP" class="mw-redirect" title="RSVP">RSVP</a></li>
+<li><a href="/reply" title="reply">reply</a></li>
+<li><a href="/repost" title="repost">repost</a></li>
+<li><a href="/like" title="like">like</a></li>
+<li><a href="/photo" title="photo">photo</a></li>
+<li><a href="/article" title="article">article</a></li>
+<li><a href="/note" title="note">note</a></li></ul>
+<h2><span class="mw-headline" id="History">History</span></h2>
+<p>The following was originally part of <a href="/posts" title="posts">posts</a>, and moved here.
+</p><p>Alternative perspective: instead of explicit post kinds, infer the post kind (and thus presentation/UI) by what aspects/properties a post has. E.g.:
+</p>
+<ul><li>a post with just plain text content -&gt; <a href="/note" title="note">note</a></li>
+<li>with an explicit post name (title) -&gt; <a href="/article" title="article">article</a></li>
+<li>with an embedded image (<code>u-photo</code> of the <code>h-entry</code>) -&gt; <a href="/photo" title="photo">photo</a></li>
+<li>with one or more <a href="/in-reply-to" title="in-reply-to">in-reply-to</a> links -&gt; <a href="/reply" title="reply">reply</a></li>
+<li>with a p-location <a href="/venue" title="venue">venue</a> -&gt; <a href="/checkin" title="checkin">checkin</a></li>
+<li>an h-event <a href="/event" title="event">event</a> -&gt; <a href="/event" title="event">event</a></li>
+<li>with a p-rsvp -&gt; <a href="/RSVP" class="mw-redirect" title="RSVP">RSVP</a></li>
+<li>with a u-like-of -&gt; <a href="/like" title="like">like</a></li>
+<li>with a u-repost-of -&gt; <a href="/repost" title="repost">repost</a></li>
+<li>with a p-invitee -&gt; <a href="/invitation" title="invitation">invitation</a></li>
+<li>with a u-tag-of -&gt; <a href="/tag-of" class="mw-redirect" title="tag-of">tag-of</a> response</li></ul>
+<p>The above list is very roughly ordered and likely requires implementation experience (of multiple post types/kinds) to better understand which properties should more primarily determine a post type than others.
+</p><p>Combinations of the above will also have to be explored to see if they make sense, and given multiple possible inferred post kinds, which should "win" in terms of driving the presentation/UI. E.g.
+</p>
+<ul><li>with an embedded image and with a p-location <a href="/venue" title="venue">venue</a> -&gt; <a href="/checkin" title="checkin">checkin</a> with photo. E.g. <a class="external text" href="http://aaronparecki.com/notes/2014/05/06/3/iiw-indieweb">this post by aaronpk</a> should be considered a check-in. Reasoning:
+<ul><li>the p-location applies to the whole h-entry, not the specific u-photo, thus making the h-entry primarily a checkin, and secondarily, happening to have a photo</li>
+<li>the alternative, a photo post tagged with a venue location, should be expressed by having the p-location be a property of an object nested on the u-photo, e.g. a "u-photo h-item" or "u-photo h-photo" which then has a "p-location h-card" inside it. The actual nested root class (h-item or h-photo, these are (mostly) just brainstorms) matters less than there happening to be such a nested root class.</li></ul></li></ul>
+<h3><span class="mw-headline" id="Articles_about_implied_post_types">Articles about implied post types</span></h3>
+<ul><li><span class="h-cite"><span class="dt-published">2013-06-23</span>&#32;<span class="p-author"><span class="h-card"><img src="http&#58;//werd.io/file/538d0a4cbed7de5111a1ad31/thumb.jpg" class="" style="height:1.1em;vertical-align:-.1em" alt="" /> <a href="/User:Werd.io" title="User:Werd.io">Ben Werdmüller</a></span></span>:&#32;<cite><a class="external u-url p-name" href="https://werd.io/entry/51c72566bed7dee673ee2052/the-tyranny-of-content-types-indiewebcamp">The tyranny of content types #indiewebcamp</a></cite>&#32;(<a href="https://web.archive.org/web/20180406174530/https://werd.io/entry/51c72566bed7dee673ee2052/the-tyranny-of-content-types-indiewebcamp" class="external u-url">archived</a>)</span></li>
+<li><span class="h-cite"><span class="dt-published">2012-10-22</span>&#32;<span class="p-author"><span class="h-card" style="white-space:nowrap"><img src="https&#58;//aaronparecki.com/images/profile.jpg" class="" style="height:1.1em;vertical-align:-.1em" alt="" /> <a href="/User:Aaronparecki.com" title="User:Aaronparecki.com">Aaron Parecki</a></span></span>:&#32;<cite><a class="external u-url p-name" href="https://aaronparecki.com/2012/10/22/1/creating-content-on-the-indie-web">Creating Content on the Indie Web</a></cite>&#32;(<a href="https://web.archive.org/web/20180406174711/https://aaronparecki.com/2012/10/22/1/creating-content-on-the-indie-web" class="external u-url">archived</a>)</span></li></ul>
+<h2><span class="mw-headline" id="See_Also">See Also</span></h2>
+<ul><li><a class="external text" href="http://rhiaro.co.uk/2015/09/post-type">Post type discovery</a> (my implementation pre-this-page) <a href="/User:Rhiaro.co.uk" title="User:Rhiaro.co.uk">Rhiaro.co.uk</a> 10:05, 30 September 2015 (PDT)</li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20230906062618
+Cache expiry: 3600
+Reduced expiry: true
+Complications: []
+CPU time usage: 0.039 seconds
+Real time usage: 0.085 seconds
+Preprocessor visited node count: 342/1000000
+Post‐expand include size: 2811/2097152 bytes
+Template argument size: 1723/2097152 bytes
+Highest expansion depth: 7/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 1165/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   48.752      1 -total
+ 41.65%   20.307      2 Template:citation
+ 28.84%   14.061      1 Template:t
+ 24.52%   11.956      2 Template:jacky
+ 13.95%    6.800      4 Template:sparkline
+ 12.45%    6.070      1 Template:benwerd
+ 11.81%    5.756      1 Template:aaronpk
+-->
+
+<!-- Saved in parser cache with key indieweb_wiki:pcache:idhash:4514-0!canonical and timestamp 20230906062617 and revision id 83767. Serialized with JSON.
+ -->
+</div>
+<div class="printfooter">Retrieved from "<a dir="ltr" href="https://indieweb.org/wiki/index.php?title=post-type-discovery&amp;oldid=83767">https://indieweb.org/wiki/index.php?title=post-type-discovery&amp;oldid=83767</a>"</div></div>
+		<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Navigation menu</h2>
+	<div id="mw-head">
+		
+<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-user-menu-legacy vector-menu" aria-labelledby="p-personal-label" role="navigation" 
+	 >
+	<label id="p-personal-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Personal tools</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="pt-login" class="mw-list-item"><a href="https://sso.indieweb.org/login?url=https%3A%2F%2Findieweb.org%2Fpost-type-discovery" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o"><span>Log in</span></a></li></ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			
+<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu vector-menu-tabs" aria-labelledby="p-namespaces-label" role="navigation" 
+	 >
+	<label id="p-namespaces-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Namespaces</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="ca-nstab-main" class="selected mw-list-item"><a href="/post-type-discovery" title="View the content page [c]" accesskey="c"><span>Page</span></a></li><li id="ca-talk" class="new mw-list-item"><a href="/wiki/index.php?title=Talk:post-type-discovery&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li></ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown-noicon vector-menu vector-menu-dropdown" aria-labelledby="p-variants-label" role="navigation" 
+	 >
+	<input type="checkbox"
+		id="p-variants-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-variants"
+		class="vector-menu-checkbox" aria-labelledby="p-variants-label" />
+	<label id="p-variants-label" aria-label="Change language variant" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">English</span>
+			<span class="vector-menu-checkbox-expanded">expanded</span>
+			<span class="vector-menu-checkbox-collapsed">collapsed</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			
+<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu vector-menu-tabs" aria-labelledby="p-views-label" role="navigation" 
+	 >
+	<label id="p-views-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Views</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="ca-view" class="selected mw-list-item"><a href="/post-type-discovery"><span>Read</span></a></li><li id="ca-viewsource" class="mw-list-item"><a href="/wiki/index.php?title=post-type-discovery&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e"><span>View source</span></a></li><li id="ca-history" class="mw-list-item"><a href="/wiki/index.php?title=post-type-discovery&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li></ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown-noicon vector-menu vector-menu-dropdown" aria-labelledby="p-cactions-label" role="navigation"  title="More options"
+	 >
+	<input type="checkbox"
+		id="p-cactions-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-cactions"
+		class="vector-menu-checkbox" aria-labelledby="p-cactions-label" />
+	<label id="p-cactions-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">More</span>
+			<span class="vector-menu-checkbox-expanded">expanded</span>
+			<span class="vector-menu-checkbox-collapsed">collapsed</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<div>
+			<h3 >
+				<label for="searchInput">Search</label>
+			</h3>
+		<form action="/wiki/index.php" id="searchform"
+			class="vector-search-box-form">
+			<div id="simpleSearch"
+				class="vector-search-box-inner"
+				 data-search-loc="header-navigation">
+				<input class="vector-search-box-input"
+					 type="search" name="search" placeholder="Search IndieWeb" aria-label="Search IndieWeb" autocapitalize="none" title="Search IndieWeb [f]" accesskey="f" id="searchInput"
+				/>
+				<input type="hidden" name="title" value="Special:Search"/>
+				<input id="mw-searchButton"
+					 class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Search the pages for this text" value="Search" />
+				<input id="searchButton"
+					 class="searchButton" type="submit" name="go" title="Go to a page with this exact name if it exists" value="Go" />
+			</div>
+		</form>
+	</div>
+</div>
+
+		</div>
+	</div>
+	
+
+<div id="mw-panel">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="/Main_Page"
+			title="Visit the main page"></a>
+	</div>
+	
+<nav id="p-Recent_&amp;_Upcoming" class="mw-portlet mw-portlet-Recent_Upcoming vector-menu vector-menu-portal portal" aria-labelledby="p-Recent_&amp;_Upcoming-label" role="navigation" 
+	 >
+	<label id="p-Recent_&amp;_Upcoming-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Recent &amp; Upcoming</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-🎁-2022-Gift-Calendar!" class="mw-list-item"><a href="/IndieWeb_Gift_Calendar"><span>🎁 2022 Gift Calendar!</span></a></li><li id="n-✨-2023-Commitments!" class="mw-list-item"><a href="/2023-01-01-commitments"><span>✨ 2023 Commitments!</span></a></li><li id="n-📰News-Podcast-Video" class="mw-list-item"><a href="/Posts_about_the_IndieWeb"><span>📰News Podcast Video</span></a></li><li id="n-📅-Events" class="mw-list-item"><a href="https://events.indieweb.org/"><span>📅 Events</span></a></li><li id="n-👥--Next-HWCs:-2023-09-06" class="mw-list-item"><a href="https://events.indieweb.org/tag/hwc"><span>👥  Next HWCs: 2023-09-06</span></a></li><li id="n-Camps-&amp;-Pop-ups:" class="mw-list-item"><a href="/IndieWebCamps"><span>Camps &amp; Pop-ups:</span></a></li><li id="n-🎪-Summit-2023" class="mw-list-item"><a href="/2023"><span>🎪 Summit 2023</span></a></li><li id="n-❤️-Sponsor" class="mw-list-item"><a href="/how-to-sponsor"><span>❤️ Sponsor</span></a></li></ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-Resources" class="mw-portlet mw-portlet-Resources vector-menu vector-menu-portal portal" aria-labelledby="p-Resources-label" role="navigation" 
+	 >
+	<label id="p-Resources-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Resources</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-🌈-Code-of-conduct" class="mw-list-item"><a href="/code-of-conduct"><span>🌈 Code of conduct</span></a></li><li id="n-💬-Discuss" class="mw-list-item"><a href="/discuss"><span>💬 Discuss</span></a></li><li id="n-📜-Chat-log" class="mw-list-item"><a href="https://chat.indieweb.org/"><span>📜 Chat log</span></a></li><li id="n-🎉-Get-started" class="mw-list-item"><a href="/Getting_Started"><span>🎉 Get started</span></a></li><li id="n-ℹ️-FAQ" class="mw-list-item"><a href="/FAQ"><span>ℹ️ FAQ</span></a></li><li id="n-🧰-Standards" class="mw-list-item"><a href="https://spec.indieweb.org/"><span>🧰 Standards</span></a></li><li id="n-✳️-Recent-changes" class="mw-list-item"><a href="/Special:RecentChanges"><span>✳️ Recent changes</span></a></li><li id="n-🎲-Random-page" class="mw-list-item"><a href="/Special:Random"><span>🎲 Random page</span></a></li><li id="n-©-Wiki-content-is-CC0" class="mw-list-item"><a href="/IndieWebCamp:Copyrights"><span>© Wiki content is CC0</span></a></li></ul>
+		
+	</div>
+</nav>
+
+<nav id="p-Developers" class="mw-portlet mw-portlet-Developers vector-menu vector-menu-portal portal" aria-labelledby="p-Developers-label" role="navigation" 
+	 >
+	<label id="p-Developers-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Developers</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-🔩-building-blocks" class="mw-list-item"><a href="/Category:building-blocks"><span>🔩 building blocks</span></a></li><li id="n-📑-projects" class="mw-list-item"><a href="/Projects"><span>📑 projects</span></a></li><li id="n-🗽-principles" class="mw-list-item"><a href="/principles"><span>🗽 principles</span></a></li></ul>
+		
+	</div>
+</nav>
+
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu vector-menu-portal portal" aria-labelledby="p-tb-label" role="navigation" 
+	 >
+	<label id="p-tb-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Tools</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="t-whatlinkshere" class="mw-list-item"><a href="/Special:WhatLinksHere/post-type-discovery" title="A list of all wiki pages that link here [j]" accesskey="j"><span>What links here</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/Special:RecentChangesLinked/post-type-discovery" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k"><span>Related changes</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q"><span>Special pages</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Printable version of this page [p]" accesskey="p"><span>Printable version</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/wiki/index.php?title=post-type-discovery&amp;oldid=83767" title="Permanent link to this revision of the page"><span>Permanent link</span></a></li><li id="t-info" class="mw-list-item"><a href="/wiki/index.php?title=post-type-discovery&amp;action=info" title="More information about this page"><span>Page information</span></a></li></ul>
+		
+	</div>
+</nav>
+
+	
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" role="contentinfo" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> This page was last edited on 10 October 2022, at 01:41.</li>
+	<li id="footer-info-copyright">Content is available under <a href="/IndieWebCamp:Copyrights" class="mw-redirect" title="IndieWebCamp:Copyrights">a CC0 public domain dedication</a> unless otherwise noted.</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="/IndieWeb:Privacy_policy" class="mw-redirect" title="IndieWeb:Privacy policy">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="/IndieWeb:About" class="mw-redirect" title="IndieWeb:About">About IndieWeb</a></li>
+	<li id="footer-places-disclaimer"><a href="/IndieWeb:General_disclaimer" title="IndieWeb:General disclaimer">Disclaimers</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="http://creativecommons.org/publicdomain/zero/1.0/"><img src="https://i.creativecommons.org/p/zero/1.0/88x31.png" alt="a CC0 public domain dedication" width="88" height="31" loading="lazy"/></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img src="/wiki/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/wiki/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /wiki/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" loading="lazy"/></a></li>
+</ul>
+
+
+
+
+
+
+<style type="text/css">
+.sponsor-logo-block {
+	margin-left: -12px;
+	margin-top: 50px;
+	margin-right: -12px;
+}
+@media screen and (min-width: 982px) {
+	.sponsor-logo-block {
+		margin-left: -1.25em;
+		margin-right: -1.25em;
+	}
+}
+@media screen and (max-width: 720px) {
+	.sponsor-logo-block {
+		margin-top: 0;
+	}  
+}
+.sponsor-logo-block .inner {
+	background-color: #d9d9d9; 
+	padding: 30px;
+}
+
+.page-Main_Page .sponsor-logo-block {
+	background-color: #d9d9d9; 
+	padding-left: 30px;
+}
+.page-Main_Page .sponsor-logo-block .inner {
+	border: 0;
+}
+
+div#footer {
+	background-image: none;
+}
+
+.sponsor-logo-block .logo {
+	float: left;
+	margin: 10px;
+	height: 70px;
+	zoom: 0.5;
+	-moz-transform: scale(0.5);
+}
+.page-Main_Page .sponsor-logo-block .logo {
+	zoom: 1;
+	-moz-transform: scale(1);
+}
+.sponsor-logo-block .logo div {
+	padding: 6px;
+	background-color: #d9d9d9;
+	border-radius: 0;
+}
+.sponsor-logo-block .thanks {
+	color: #777;
+	font-size: 16px;
+	font-weight: bold;
+}
+.sponsor-logo-block .thanks.small {
+	font-size: 14px;
+	text-align: right;
+}
+.sponsor-logo-block .thanks.small a {
+	color: #777;
+}
+</style>
+<div class="sponsor-logo-block"><div class="inner">
+	<div class="thanks">Thank you to our sponsors of IndieWeb events!</div>
+	<div ><div><a href="http://mozilla.org/"><img src="/sponsor-logos/mozilla.png" alt="Mozilla"></a></div></div>
+	<div ><div><a href="https://developer.okta.com/"><img src="/sponsor-logos/okta.png" alt="Okta"></a></div></div>
+	<div ><div><a href="http://sipgate.de/"><img src="/sponsor-logos/sipgate.png" alt="sipgate"></a></div></div>
+	<div ><div><a href="https://www.brid.gy/"><img src="/sponsor-logos/bridgy.png" alt="Bridgy"></a></div></div>
+	<div ><div><a href="https://beyondtellerrand.com"><img src="/sponsor-logos/beyondtellerrand.png" alt="Beyond Tellerrand"></a></div></div>
+	<div ><div><a href="http://tollwerk.de/"><img src="/sponsor-logos/tollwerk.png" alt="Tollwerk"></a></div></div>
+	<div ><div><a href="https://www.opensuse.org/"><img src="/sponsor-logos/opensuse.png" alt="OpenSuse"></a></div></div>
+	<div ><div><a href="http://idno.co/"><img src="/sponsor-logos/idno.png" alt="Idno"></a></div></div>
+	<div ><div><a href="http://google.com"><img src="/sponsor-logos/google.png" alt="Google"></a></div></div>
+	<div ><div><a href="http://clearleft.com/"><img src="/sponsor-logos/clearleft.png" alt="ClearLeft"></a></div></div>
+	<div ><div><a href="https://cgi.com/"><img src="/sponsor-logos/cgi.png" alt="CGI"></a></div></div>
+
+	<div style="clear: both;"></div>
+	<div class="thanks small"><a href="https://opencollective.com/indieweb">become a supporter!</a></div>
+</div></div>
+
+
+</footer>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.039","walltime":"0.085","ppvisitednodes":{"value":342,"limit":1000000},"postexpandincludesize":{"value":2811,"limit":2097152},"templateargumentsize":{"value":1723,"limit":2097152},"expansiondepth":{"value":7,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":1165,"limit":5000000},"timingprofile":["100.00%   48.752      1 -total"," 41.65%   20.307      2 Template:citation"," 28.84%   14.061      1 Template:t"," 24.52%   11.956      2 Template:jacky"," 13.95%    6.800      4 Template:sparkline"," 12.45%    6.070      1 Template:benwerd"," 11.81%    5.756      1 Template:aaronpk"]},"cachereport":{"timestamp":"20230906062618","ttl":3600,"transientcontent":true}}});mw.config.set({"wgBackendResponseTime":505});});</script>
+</body>
+</html>

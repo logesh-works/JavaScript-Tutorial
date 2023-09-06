@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head profile="http://gmpg.org/xfn/1">
+<title>First-Person Scrollers  &#8211;  Eric’s Archived Thoughts</title>
+<meta name="generator" content="WordPress 6.3.1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="shortcut icon" href="/favicon.ico"><link rel="home" href="http://meyerweb.com/" title="Home" ><link rel="openid.server" href="http://www.myopenid.com/server"><link rel="openid.delegate" href="http://emeyer.myopenid.com/"><meta name="google-site-verification" content="I_JFi4WrY6bW7AE2ya5sSlruVvgvrIeRa1IsqO0GB78" /><link rel="alternate" type="application/rss+xml" title="Thoughts From Eric" href="/eric/thoughts/rss2/full"><link rel="alternate" type="application/rss+xml" title="Thoughts From Eric (only technical posts)" href="/eric/thoughts/category/tech/rss2/full"><link rel="alternate" type="application/rss+xml" title="Thoughts From Eric (only personal posts)" href="/eric/thoughts/category/personal/rss2/full"><link rel="alternate" type="application/rss+xml" title="Excuse of the Day" href="/feeds/excuse/rss20.xml"><link rel="stylesheet" href="/ui/meyerweb.css" type="text/css"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@meyerweb"><meta name="twitter:title" content="meyerweb.com"><meta name="twitter:description" content="The web home of Eric A. Meyer, CSS guy; and his wife Kathryn, doctor of nursing."><meta name="twitter:url" content="https://meyerweb.com/"><meta name="twitter:image" content="https://meyerweb.com/ui/i/heart/663399love.png"><meta name="twitter:image:width" content="192"><meta name="twitter:image:height" content="192"><meta property="og:type" content="website"><meta property="og:image" content="https://meyerweb.com/ui/i/hamonshu/fb-og-image.png"><meta name="twitter:description" property="og:description" content="Web browsers have higher performance requirements than video games, and in essentially the same ways.  Seriously.">
+<meta name="twitter:title" property="og:title" content="First-Person Scrollers">
+<meta name="twitter:url" property="og:url" content="https://meyerweb.com/eric/thoughts/2023/06/20/first-person-scrollers/">
+<link rel="stylesheet" type="text/css" href="https://meyerweb.com/eric/thoughts/wp-content/themes/meyerweb-2020/style.css">
+<link rel="pingback" href="https://meyerweb.com/eric/thoughts/xmlrpc.php">
+</head>
+<body id="www-meyerweb-com" class="arch single">	
+<header role="banner" id="sitemast">
+<a href="/">meyerweb.com</a>
+<nav role="navigation" aria-label="page" id="skiplinks">
+<a href="#main">Main content</a>
+<a href="#navigate">Navigation links</a>
+<a href="#footer">Footer</a>
+</nav>
+</header>
+
+<nav role="navigation" aria-label="site" id="navigate">
+<ul id="navlinks">
+<li id="archLink"><a href="/eric/thoughts/">Post Archives</a></li>
+<li id="cssLink"><a href="/eric/css/">CSS Work</a></li>
+<li id="toolsLink"><a href="/eric/tools/">Toolbox</a></li>
+<li id="writeLink"><a href="/eric/writing.html">Writing</a></li>
+<li id="speakLink"><a href="/eric/talks/">Speaking</a></li>
+<li id="otherLink"><a href="/other/">Other Stuff</a></li>
+<li id="aboutsite"><a href="/ui/about.html">About this site</a></li>
+</ul>
+</nav>
+
+<!--div id="main"-->
+
+<main role="main" id="thoughts">
+				
+	
+<article role="article" class="single entry">
+<header>
+<h1 class="title"><a href="https://meyerweb.com/eric/thoughts/2023/06/20/first-person-scrollers/" rel="bookmark" title="Permanent Link: First-Person Scrollers" aria-current="page">First-Person Scrollers</a></h1>
+<em class="pubtime">Published  2 months, 2 weeks past</em>
+</header>
+
+<div class="text">
+<p>I’ve played a lot of video games over the years, and the thing that just utterly blows my mind about them is how every frame is painted from scratch.  So in a game running at 30 frames per second, everything in the scene has to be calculated and drawn every 33 milliseconds, no matter how little or much has changed from one frame to the next.  In modern games, users generally demand 60 frames per second.  So everything you see on-screen gets calculated, placed, colored, textured, shaded, and what-have-you in 16 milliseconds (or less).  And then, in the next 16 milliseconds (or less), it has to be done <em>all over again</em>.  And there are games that render the entire scene in single-digits numbers of milliseconds!</p>
+
+<p>I mean, I’ve done some simple 3D render coding in my day.  I’ve done hobbyist video game development; see <a href="https://gravitywars.meyerweb.com/">Gravity Wars</a>, for example (which I really do need to get back to and make less user-hostile).  So you’d think I’d be used to this concept, but somehow, I just never get there.  My pre-DOS-era brain rebels at the idea that everything has to be recalculated from scratch every frame, and doubly so that such a thing can be done in such infinitesimal slivers of time.</p>
+
+<p>So you can imagine how I feel about the fact that <em>web browsers</em> operate in exactly the same way, and with the same performance requirements.</p>
+
+<p>Maybe this shouldn’t come as a surprise.  After all, we have user interactions and embedded videos and resizable windows and page scrolling and stuff like that, never mind CSS animations and DOM manipulation, so the viewport often needs to be re-rendered to reflect the current state of things.  And to make all that feel smooth like butter, browser engines have to be able to display web pages at a minimum of 60 frames per second.</p>
+
+<figure>
+<a href="https://meyerweb.com/eric/thoughts/wp-content/uploads/‎fps.jpg"><img decoding="async" src="https://meyerweb.com/eric/thoughts/wp-content/uploads/‎fps.jpg" alt="" /></a>
+<figcaption>Admittedly, this would be a popular UI for browsing social media.</figcaption>
+</figure>
+
+<p>This demand touches absolutely <em>everything</em>, and shapes the evolution of web technologies in ways I don’t think we fully appreciate.  You want to add a new selector type?  It has to be performant.  This is what blocked <code>:has()</code> (and similar proposals) for such a long time.  It wasn’t difficult to figure out how to select ancestor elements&#x202F;—&#x2009;it was very difficult to figure out how to do it really, really fast, so as not to lower typical rendering speed below that magic 60fps.  The same logic applies to new features like view transitions, or new filter functions, or element exclusions, or whatever you might dream up.  No matter how cool the idea, if it bogs rendering down too much, it’s a non-starter.</p>
+
+<p>I should note that none of this is to say it’s impossible to get a browser below 60fps: pile on enough computationally expensive operations and you’ll still jank like crazy.  It’s more that the goal is to keep any new feature from dragging rendering performance down too far in reasonable situations, both alone and in combination with already-existing features.  What constitutes “down too far” and “reasonable situations” is honestly a little opaque, but that’s a conversation slash vigorous debate for another time.</p>
+
+<p>I’m sure the people who’ve worked on browser engines have fascinating stories about what they do internally to safeguard rendering speed, and ideas they’ve had to spike because they were performance killers.  I would love to hear those stories, if any BigCo devrel teams are looking for podcast ideas, or would like to guest on <a href="https://igalia.com/24-7/chats">Igalia Chats</a>. (We’d love to have you on!)</p>
+
+<p>Anyway, the point I’m making is that performance isn’t just a matter of low asset sizes and script tuning and server efficiency.  It’s also a question of the engine’s ability to redraw the contents of the viewport, no matter what changes for whatever reason, with reasonable anticipation of things that might affect the rendering, every 15 milliseconds, over and over and over and over and over again, just so we can scroll our web pages smoothly.  It’s kind of bananas, and yet, it also makes sense.  Welcome to the web.</p>
+<ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2023/06/20/first-person-scrollers/">First-Person Scrollers</cite></a> was published on <time>Tuesday, June 20th, 2023</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/tech/browsers/" rel="category tag">Browsers</a> and <a href="https://meyerweb.com/eric/thoughts/category/tech/web/" rel="category tag">Web</a> categories.</li>
+<li class="cmt">There has been <a href="https://meyerweb.com/eric/thoughts/2023/06/20/first-person-scrollers/#comments">one reply</a>.</li>
+</ul>
+</div>
+<hr class="fallback">
+</article>
+		
+
+<!-- You can start editing here. -->
+
+<div id="comments">
+<h3>One Comment</h3>
+
+	<ol>
+
+	
+		<li class="response comment" id="comment-3885847">
+			
+<div class="text"><p>Hey Eric &#8211; I&#8217;ve got many &#8220;fun&#8221; performance acedotes from working on layout in Blink over the years. I&#8217;d be happy to chat. :)</p>
+<p>Ian</p>
+</div><footer>Signed,<br>Ian Kilpatrick<br><a href="#comment-3885847"><time>Wednesday, June 21st, 2023 1:52pm</time></a></footer></li>
+	
+	</ol>
+
+ 
+
+
+
+<form action="https://meyerweb.com/eric/thoughts/wp-comments-post.php" method="post" id="commentform">
+
+<header>
+<h3>Add Your Thoughts</h3>
+<ul id="rss-tb">
+<li id="tb"><a href="https://meyerweb.com/eric/thoughts/2023/06/20/first-person-scrollers/trackback/" title="Trackback URL">Trackback URL</a></li>
+<li><a href="" title="Comments RSS feed">Comments <abbr title="Really Simple Syndication">RSS</abbr> feed'</a></li>
+</ul>
+</header>
+
+<fieldset>
+<div class="chrome-bug-workaround">
+<div id="fields">
+<p>
+<label for="author">Name</label>
+<input type="text" name="author" id="author" class="textarea" value="" size="28"> 
+<input type="hidden" name="comment_post_ID" value="5282">
+<input type="hidden" name="redirect_to" value="/eric/thoughts/2023/06/20/first-person-scrollers/">
+</p>
+
+<p>
+<label for="email">E-mail <small>(required but not displayed)</small></label>
+<input type="email" name="email" id="email" value="" size="28"> 
+</p>
+
+<p>
+<label for="url"><acronym title="Uniform Resource Identifier">URI</acronym> <small>(optional)</small></label>
+<input type="text" name="url" id="url" value="" size="28"> 
+</p>
+
+</div>
+<div id="form-info">
+<p><strong>Meyerweb dot com reserves the right to edit or remove any comment</strong>, especially when abusive or irrelevant to the topic at hand.</p>
+<p><acronym title="Hypertext Markup Language">HTML</acronym> allowed: <small><code>&lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;s&gt; &lt;strong&gt; &lt;pre class=&quot;&quot;&gt; &lt;kbd&gt; </code></small></p>
+</div>
+<hr class="fallback">
+
+<!--<p><small><strong>XHTML:</strong> You can use these tags: &lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;s&gt; &lt;strong&gt; &lt;pre class=&quot;&quot;&gt; &lt;kbd&gt; </small></p>-->
+
+<section>
+<div id="comment_input">
+<label for="comment">Your Comment <small>(<a href="https://github.com/showdownjs/showdown/wiki/Showdown's-Markdown-syntax">Markdown</a> supported)</small></label>
+<textarea name="comment" id="comment" cols="70" rows="10" onKeyup="run();"></textarea>
+<p>
+<input name="submit" type="submit" id="submit" value="Post your e-pistle" />
+<input type="hidden" name="comment_post_ID" value="5282" />
+<input type="hidden" name="mw_dssb" value="c81f1f833ed7eb7d743ab1d197ecf52b" />
+if you’re satisfied with it.</p>
+</div>
+<div>
+<h4>Comment Preview</h4>
+<div id="comment_preview"></div>
+</div>
+<script type="text/javascript" src="/ui/showdown/dist/showdown.min.js"></script>
+<script type="text/javascript">
+function run() {
+  var text = document.getElementById('comment').value,
+      target = document.getElementById('comment_preview'),
+      converter = new showdown.Converter(),
+      html = converter.makeHtml(text);
+  target.innerHTML = html;
+}
+run();
+</script>
+</section>
+</div>
+</fieldset>
+<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="42c44af678" /></p><p style="display: none !important;"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="154"/><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form>
+
+
+
+
+</div>
+
+</main>
+
+<div class="prev-next book" id="posts-pn">
+<h4>Browse <a href="/eric/thoughts/">the Archive</a></h4>
+<p class="prev"><a href="https://meyerweb.com/eric/thoughts/2023/04/10/from-abcs-to-9999999/">From ABC’s to 9999999</a></p>
+<p class="next"><a href="https://meyerweb.com/eric/thoughts/2023/08/22/igalia-chats-logo/">Designing the Igalia Chats Logo</a></p>
+</div>
+
+</div>
+
+<div role="navigation" aria-label="archive" class="panel" id="related">
+<h4>Related Posts</h4>
+<ul><li><a href="https://meyerweb.com/eric/thoughts/2022/08/15/table-column-alignment-with-variable-transforms/">Table Column Alignment with Variable Transforms</a> <time>August 15, 2022</time></li><li><a href="https://meyerweb.com/eric/thoughts/2022/01/24/no-apple-did-not-crowdfund-focus-visible-in-safari/">No, Apple Did Not Crowdfund :focus-visible in Safari</a> <time>January 24, 2022</time></li><li><a href="https://meyerweb.com/eric/thoughts/2017/03/24/practical-css-grid/">Practical CSS Grid</a> <time>March 24, 2017</time></li><li><a href="https://meyerweb.com/eric/thoughts/2017/03/10/doubled-grids/">Doubled Grids</a> <time>March 10, 2017</time></li><li><a href="https://meyerweb.com/eric/thoughts/2017/01/18/element-dragging-in-web-inspectors/">Element Dragging in Web Inspectors</a> <time>January 18, 2017</time></li><li><a href="https://meyerweb.com/eric/thoughts/2015/07/07/undoing-oncutoncopyonpaste-falsities/">Undoing oncut/oncopy/onpaste Falsities</a> <time>July 7, 2015</time></li><li><a href="https://meyerweb.com/eric/thoughts/2012/04/25/firefox-failing-localstorage/">Firefox Failing localStorage Due to Cookie Policy</a> <time>April 25, 2012</time></li><li><a href="https://meyerweb.com/eric/thoughts/2012/03/23/invented-elements/">Invented Elements</a> <time>March 23, 2012</time></li><li><a href="https://meyerweb.com/eric/thoughts/2012/02/14/the-vendor-prefix-predicament-at-ala/">“The Vendor Prefix Predicament” at ALA</a> <time>February 14, 2012</time></li><li><a href="https://meyerweb.com/eric/thoughts/2012/02/09/unfixed/">Unfixed</a> <time>February 9, 2012</time></li></ul><p>Browse posts in the <a href="https://meyerweb.com/eric/thoughts/category/tech/browsers/" rel="category tag">Browsers</a> or <a href="https://meyerweb.com/eric/thoughts/category/tech/web/" rel="category tag">Web</a> categories.</p>
+</div>
+
+<div class="panel" id="feeds">
+<h4>Feeds</h4>
+	<p>A dispatch of all posts to “Thoughts From Eric” is available in both <a href="https://meyerweb.com/eric/thoughts/feed/" title="Aggregate posts using RSS"><acronym title="Really Simple Syndication">RSS</acronym> 2.0</a>
+	and <a href="https://meyerweb.com/eric/thoughts/feed/atom/" title="Aggregate posts using Atom">Atom</a>.</p>
+</div>
+
+</div>
+
+<footer id="global">
+
+<div>
+
+<div id="archipelago">
+<h4>Identity Archipelago</h4>
+<ul>
+<li><a rel="me" href="https://twitter.com/meyerweb"><img src="/pix/icons/twitter.png" alt="Twitter"></a></li>
+<li><a rel="me" href="https://mastodon.social/@meyerweb"><img src="/pix/icons/mastodon.svg" alt="Mastodon"></a></li>
+<li><a rel="me" href="https://github.com/meyerweb"><img src="/pix/icons/github.png" alt="GitHub"></a></li>
+<li><a rel="me" href="https://flickr.com/photos/meyerweb/"><img src="/pix/icons/flickr.png" alt="Flickr"></a></li>
+<li><a rel="me" href="https://dribbble.com/meyerweb"><img src="/pix/icons/dribbble.png" alt="Dribbble"></a></li>
+<li><a rel="me" href="https://facebook.com/meyerweb"><img src="/pix/icons/facebook.png" alt="Facebook"></a></li>
+<li><a rel="me" href="https://www.linkedin.com/in/meyerweb"><img src="/pix/icons/linkedin.png" alt="LinkedIn"></a></li>
+</ul>
+</div>
+
+<div id="excuse">
+<div class="panel" id="excuse">
+<h4>The <a href="/feeds/excuse/">excuse of the day</a> is</h4>
+<p>ozone depletion</p>
+</div>
+<!--#include virtual="/feeds/excuse/current.html" -->
+</div>
+
+<div class="sosumi">
+All contents of this site, unless otherwise noted, are &copy;1993-2023<!--#config timefmt="%Y" --><!--#echo var="DATE_LOCAL" --> <strong>Eric A. and Kathryn S. Meyer</strong>.  All Rights Reserved.</div>
+
+<div id="wordpress" class="credits">"<a href="/eric/thoughts/">Thoughts From Eric</a>" is powered by <a href="http://wordpress.org/">WordPress</a>.  Most of the rest of the site is hand-authored.</div>
+
+<div id="design" class="credits">The ink-sketch images used in this site’s design are adapted from <a href="https://archive.org/search.php?query=creator%3A%22Mori%2C+Yu%CC%84zan%2C+-1917%22">Yūzan Mori’s <cite><dfn title="In English: Wave Forms">Hamonshū</dfn></cite>, Volumes 1-3</a>, published in 1903 and made available for public use by the <a href="https://library.si.edu/">Smithsonian Libraries</a> and the <a href="https://archive.org/">Internet Archive</a>.</div>
+
+</div>
+
+</footer>
+<!-- WP stuff follows -->
+</body>
+</html>
+<!-- Dynamic page generated in 0.202 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2023-09-06 02:22:12 -->
+
+<!-- Compression = gzip -->

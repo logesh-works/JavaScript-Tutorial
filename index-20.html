@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>in progress | The further adventures of Chris Wilson, open web platform guy</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://cwilso.com/xmlrpc.php">
+
+<title>in progress &#8211; The further adventures of Chris Wilson, open web platform guy</title>
+<meta name='robots' content='max-image-preview:large' />
+
+<!-- Async WordPress.com Remote Login -->
+<script id="wpcom_remote_login_js">
+var wpcom_remote_login_extra_auth = '';
+function wpcom_remote_login_remove_dom_node_id( element_id ) {
+	var dom_node = document.getElementById( element_id );
+	if ( dom_node ) { dom_node.parentNode.removeChild( dom_node ); }
+}
+function wpcom_remote_login_remove_dom_node_classes( class_name ) {
+	var dom_nodes = document.querySelectorAll( '.' + class_name );
+	for ( var i = 0; i < dom_nodes.length; i++ ) {
+		dom_nodes[ i ].parentNode.removeChild( dom_nodes[ i ] );
+	}
+}
+function wpcom_remote_login_final_cleanup() {
+	wpcom_remote_login_remove_dom_node_classes( "wpcom_remote_login_msg" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_remote_login_key" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_remote_login_validate" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_remote_login_js" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_request_access_iframe" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_request_access_styles" );
+}
+
+// Watch for messages back from the remote login
+window.addEventListener( "message", function( e ) {
+	if ( e.origin === "https://r-login.wordpress.com" ) {
+		var data = {};
+		try {
+			data = JSON.parse( e.data );
+		} catch( e ) {
+			wpcom_remote_login_final_cleanup();
+			return;
+		}
+
+		if ( data.msg === 'LOGIN' ) {
+			// Clean up the login check iframe
+			wpcom_remote_login_remove_dom_node_id( "wpcom_remote_login_key" );
+
+			var id_regex = new RegExp( /^[0-9]+$/ );
+			var token_regex = new RegExp( /^.*|.*|.*$/ );
+			if (
+				token_regex.test( data.token )
+				&& id_regex.test( data.wpcomid )
+			) {
+				// We have everything we need to ask for a login
+				var script = document.createElement( "script" );
+				script.setAttribute( "id", "wpcom_remote_login_validate" );
+				script.src = '/remote-login.php?wpcom_remote_login=validate'
+					+ '&wpcomid=' + data.wpcomid
+					+ '&token=' + encodeURIComponent( data.token )
+					+ '&host=' + window.location.protocol
+					+ '//' + window.location.hostname
+					+ '&postid=188'
+					+ '&is_singular=';
+				document.body.appendChild( script );
+			}
+
+			return;
+		}
+
+		// Safari ITP, not logged in, so redirect
+		if ( data.msg === 'LOGIN-REDIRECT' ) {
+			window.location = 'https://wordpress.com/log-in?redirect_to=' + window.location.href;
+			return;
+		}
+
+		// Safari ITP, storage access failed, remove the request
+		if ( data.msg === 'LOGIN-REMOVE' ) {
+			var css_zap = 'html { -webkit-transition: margin-top 1s; transition: margin-top 1s; } /* 9001 */ html { margin-top: 0 !important; } * html body { margin-top: 0 !important; } @media screen and ( max-width: 782px ) { html { margin-top: 0 !important; } * html body { margin-top: 0 !important; } }';
+			var style_zap = document.createElement( 'style' );
+			style_zap.type = 'text/css';
+			style_zap.appendChild( document.createTextNode( css_zap ) );
+			document.body.appendChild( style_zap );
+
+			var e = document.getElementById( 'wpcom_request_access_iframe' );
+			e.parentNode.removeChild( e );
+
+			document.cookie = 'wordpress_com_login_access=denied; path=/; max-age=31536000';
+
+			return;
+		}
+
+		// Safari ITP
+		if ( data.msg === 'REQUEST_ACCESS' ) {
+			console.log( 'request access: safari' );
+
+			// Check ITP iframe enable/disable knob
+			if ( wpcom_remote_login_extra_auth !== 'safari_itp_iframe' ) {
+				return;
+			}
+
+			// If we are in a "private window" there is no ITP.
+			var private_window = false;
+			try {
+				var opendb = window.openDatabase( null, null, null, null );
+			} catch( e ) {
+				private_window = true;
+			}
+
+			if ( private_window ) {
+				console.log( 'private window' );
+				return;
+			}
+
+			var iframe = document.createElement( 'iframe' );
+			iframe.id = 'wpcom_request_access_iframe';
+			iframe.setAttribute( 'scrolling', 'no' );
+			iframe.setAttribute( 'sandbox', 'allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-top-navigation-by-user-activation' );
+			iframe.src = 'https://r-login.wordpress.com/remote-login.php?wpcom_remote_login=request_access&origin=' + encodeURIComponent( data.origin ) + '&wpcomid=' + encodeURIComponent( data.wpcomid );
+
+			var css = 'html { -webkit-transition: margin-top 1s; transition: margin-top 1s; } /* 9001 */ html { margin-top: 46px !important; } * html body { margin-top: 46px !important; } @media screen and ( max-width: 660px ) { html { margin-top: 71px !important; } * html body { margin-top: 71px !important; } #wpcom_request_access_iframe { display: block; height: 71px !important; } } #wpcom_request_access_iframe { border: 0px; height: 46px; position: fixed; top: 0; left: 0; width: 100%; min-width: 100%; z-index: 99999; background: #23282d; } ';
+
+			var style = document.createElement( 'style' );
+			style.type = 'text/css';
+			style.id = 'wpcom_request_access_styles';
+			style.appendChild( document.createTextNode( css ) );
+			document.body.appendChild( style );
+
+			document.body.appendChild( iframe );
+		}
+
+		if ( data.msg === 'DONE' ) {
+			wpcom_remote_login_final_cleanup();
+		}
+	}
+}, false );
+
+// Inject the remote login iframe after the page has had a chance to load
+// more critical resources
+window.addEventListener( "DOMContentLoaded", function( e ) {
+	var iframe = document.createElement( "iframe" );
+	iframe.style.display = "none";
+	iframe.setAttribute( "scrolling", "no" );
+	iframe.setAttribute( "id", "wpcom_remote_login_key" );
+	iframe.src = "https://r-login.wordpress.com/remote-login.php"
+		+ "?wpcom_remote_login=key"
+		+ "&origin=aHR0cHM6Ly9jd2lsc28uY29t"
+		+ "&wpcomid=16891"
+		+ "&time=1693982128";
+	document.body.appendChild( iframe );
+}, false );
+</script>
+<link rel='dns-prefetch' href='//s1.wp.com' />
+<link rel='dns-prefetch' href='//s2.wp.com' />
+<link rel='dns-prefetch' href='//fonts-api.wp.com' />
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="in progress &raquo; Feed" href="https://cwilso.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="in progress &raquo; Comments Feed" href="https://cwilso.com/comments/feed/" />
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		function addLoadEvent(func) {
+			var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+				window.onload = func;
+			} else {
+				window.onload = function () {
+					oldonload();
+					func();
+				}
+			}
+		}
+		/* ]]> */
+	</script>
+	<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/s2.wp.com\/wp-includes\/js\/wp-emoji-release.min.js?m=1677072837i&ver=6.3.1-alpha-56423"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!n(e,"\ud83e\udef1\ud83c\udffb\u200d\ud83e\udef2\ud83c\udfff","\ud83e\udef1\ud83c\udffb\u200b\ud83e\udef2\ud83c\udfff")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link crossorigin='anonymous' rel='stylesheet' id='all-css-0-1' href='https://s1.wp.com/_static/??-eJx9zEEKgzAQheELNR2CWHQhniWN0xqdTEJngnj7RmhpV24e/PDxYMvGJ1ZkhVhMpvIMLLCgZufXT0NM6ZipEAoEfgQOikb8KxF9e796kQv8/emMsfpc7lCp2whEd8JT5xSJ6vmPjnGwt661je36dnkDTCZBmA==&cssminify=yes' type='text/css' media='all' />
+<link rel='stylesheet' id='scrawl-fonts-css' href='https://fonts-api.wp.com/css?family=Lora:400,700|Merriweather:400italic,400,700,700italic&#038;subset=latin%2Clatin-ext' media='all' />
+<link crossorigin='anonymous' rel='stylesheet' id='all-css-2-1' href='https://s0.wp.com/_static/??-eJyFUNtuwyAM/aGBlaaNuodpn1IRsJA7bsKQKn8/FKVRqq3KC+LgczPwSELHUDAU8FUkVy0FhjuWpPTPisHHGOBGQYPFgJmagv+/Ss38ATvTp6OtDY6YbZtkhKkb5EV2MFZyBkYXW5ijMas8A5fZ4R+jg3br223CYGIGVUv0qhTSG3sigzFlZH5JRUOlCRbAsJDaiY+tQFvbVYMtlsE3tkKHfmm0A8mpGbNwaJWepadwLG+zPX4Rvf+9tedzqRYbaxE2k3nzb4cWWRUKlg/kOq6yk+yushNMPjkUGSd5BkNcNobYjL79Vzd89v3pOlz6+y8Gv+iw&cssminify=yes' type='text/css' media='all' />
+<style id='wp-block-library-inline-css'>
+.has-text-align-justify {
+	text-align:justify;
+}
+.wp-block-cover__image-background.has-parallax {
+	background-size: cover;
+}
+</style>
+<style id='classic-theme-styles-inline-css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<link crossorigin='anonymous' rel='stylesheet' id='all-css-4-1' href='https://s2.wp.com/_static/??-eJx9jcEKg0AMRH+oaVhorR7Eb9E16IpZg8min2889FZ6GYbhPQYPgbhlo2zIBWQtU8qKcdvJd5be0AmmMfW0Ejv2jKoP/K0daZzIXNdvB6PzvyJ+A8MgO6mCJ6fCYLN/6e113IZXU9WfUL/DcgHSTkDo&cssminify=yes' type='text/css' media='all' />
+<style id='global-styles-inline-css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-family--albert-sans: 'Albert Sans';--wp--preset--font-family--alegreya: Alegreya;--wp--preset--font-family--arvo: Arvo;--wp--preset--font-family--bodoni-moda: 'Bodoni Moda';--wp--preset--font-family--cabin: Cabin;--wp--preset--font-family--chivo: Chivo;--wp--preset--font-family--commissioner: Commissioner;--wp--preset--font-family--cormorant: Cormorant;--wp--preset--font-family--courier-prime: 'Courier Prime';--wp--preset--font-family--crimson-pro: 'Crimson Pro';--wp--preset--font-family--dm-mono: 'DM Mono';--wp--preset--font-family--dm-sans: 'DM Sans';--wp--preset--font-family--domine: Domine;--wp--preset--font-family--eb-garamond: 'EB Garamond';--wp--preset--font-family--epilogue: Epilogue;--wp--preset--font-family--figtree: Figtree;--wp--preset--font-family--fira-sans: 'Fira Sans';--wp--preset--font-family--fraunces: Fraunces;--wp--preset--font-family--ibm-plex-mono: 'IBM Plex Mono';--wp--preset--font-family--ibm-plex-sans: 'IBM Plex Sans';--wp--preset--font-family--inter: Inter;--wp--preset--font-family--josefin-sans: 'Josefin Sans';--wp--preset--font-family--jost: Jost;--wp--preset--font-family--libre-baskerville: 'Libre Baskerville';--wp--preset--font-family--libre-franklin: 'Libre Franklin';--wp--preset--font-family--literata: Literata;--wp--preset--font-family--lora: Lora;--wp--preset--font-family--merriweather: Merriweather;--wp--preset--font-family--montserrat: Montserrat;--wp--preset--font-family--newsreader: Newsreader;--wp--preset--font-family--nunito: Nunito;--wp--preset--font-family--open-sans: 'Open Sans';--wp--preset--font-family--overpass: Overpass;--wp--preset--font-family--petrona: Petrona;--wp--preset--font-family--piazzolla: Piazzolla;--wp--preset--font-family--playfair-display: 'Playfair Display';--wp--preset--font-family--plus-jakarta-sans: 'Plus Jakarta Sans';--wp--preset--font-family--poppins: Poppins;--wp--preset--font-family--raleway: Raleway;--wp--preset--font-family--roboto-slab: 'Roboto Slab';--wp--preset--font-family--roboto: Roboto;--wp--preset--font-family--rubik: Rubik;--wp--preset--font-family--sora: Sora;--wp--preset--font-family--source-sans-pro: 'Source Sans Pro';--wp--preset--font-family--source-serif-pro: 'Source Serif Pro';--wp--preset--font-family--space-mono: 'Space Mono';--wp--preset--font-family--texturina: Texturina;--wp--preset--font-family--work-sans: 'Work Sans';--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+</style>
+<link crossorigin='anonymous' rel='stylesheet' id='all-css-6-1' href='https://s1.wp.com/_static/??-eJzTLy/QTc7PK0nNK9HPLdUtyClNz8wr1k9PzdfNyU9OLMnMz0Ph6KblJGYW6SUXF+voY9dalJqUk58OZKbrA1UhcUGa7HNtDU1MLU1MLMwNTbIAmkQtqg==&cssminify=yes' type='text/css' media='all' />
+<link crossorigin='anonymous' rel='stylesheet' id='print-css-7-1' href='https://s1.wp.com/wp-content/mu-plugins/global-print/global-print.css?m=1465851035i&cssminify=yes' type='text/css' media='print' />
+<link crossorigin='anonymous' rel='stylesheet' id='all-css-8-1' href='https://s0.wp.com/wp-content/themes/pub/satellite/style.css?m=1475577019i&cssminify=yes' type='text/css' media='all' />
+<link rel='stylesheet' id='satellite-fonts-css' href='https://fonts-api.wp.com/css?family=Lato%3A400%2C400italic%2C700%2C700italic%2C900%2C900italic&#038;subset=latin%2Clatin-ext' media='all' />
+<style id='jetpack-global-styles-frontend-style-inline-css'>
+:root { --font-headings: unset; --font-base: unset; --font-headings-default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; --font-base-default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;}
+</style>
+<link crossorigin='anonymous' rel='stylesheet' id='all-css-12-1' href='https://s2.wp.com/_static/??-eJyNy9sJgDAMAMCF1GjR4o84Sw3BVtIHJlLcXhxA8P8OamkxJ6WkoJ4iCZRrA8HTVYaQEERvprYWzLFDkQY+hlNiDkp/kx9h57w5fsEal2E0dp5sb8zxAHIPNi4=&cssminify=yes' type='text/css' media='all' />
+<script id='wpcom-actionbar-placeholder-js-extra'>
+var actionbardata = {"siteID":"16891","siteURL":"https:\/\/cwilso.com","xhrURL":"https:\/\/cwilso.com\/wp-admin\/admin-ajax.php","nonce":"7f1e60402d","isLoggedIn":"","statusMessage":"","subsEmailDefault":"instantly","proxyScriptUrl":"https:\/\/s0.wp.com\/wp-content\/js\/wpcom-proxy-request.js?ver=20211021","i18n":{"followedText":"New posts from this site will now appear in your <a href=\"https:\/\/wordpress.com\/read\">Reader<\/a>","foldBar":"Collapse this bar","unfoldBar":"Expand this bar"}};
+</script>
+<script crossorigin='anonymous' type='text/javascript' src='https://s1.wp.com/_static/??-eJyFyssOQDAQheEXMhohwkI8i8uQadop0zZ4eyQsrKxOcv5PbQsMjgNyUNor63oyCNGjdPP1AfHkUu0T9XViAizi9uNtxIOJI/o76jWiHM+klvgXgaVZuoAPbm2TlVVd1lVR5PoEj7w7nw=='></script>
+<script id="rlt-proxy-js-after" type="text/javascript">
+	window.addEventListener( 'DOMContentLoaded', function() {
+		rltInitialize( {"token":null,"iframeOrigins":["https:\/\/widgets.wp.com"]} );
+	} );
+</script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://cwilso.wordpress.com/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress.com" />
+<link rel='shortlink' href='https://wp.me/4or' />
+
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="in progress" />
+<meta property="og:description" content="The further adventures of Chris Wilson, open web platform guy" />
+<meta property="og:url" content="https://cwilso.com/" />
+<meta property="og:site_name" content="in progress" />
+<meta property="og:image" content="https://s0.wp.com/i/blank.jpg" />
+<meta property="og:image:alt" content="" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:creator" content="@cwilso" />
+
+<!-- End Jetpack Open Graph Tags -->
+<link rel="shortcut icon" type="image/x-icon" href="https://s1.wp.com/i/favicon.ico" sizes="16x16 24x24 32x32 48x48" />
+<link rel="icon" type="image/x-icon" href="https://s1.wp.com/i/favicon.ico" sizes="16x16 24x24 32x32 48x48" />
+<link rel="apple-touch-icon" href="https://s2.wp.com/i/webclip.png" />
+<link rel='openid.server' href='https://cwilso.com/?openidserver=1' />
+<link rel='openid.delegate' href='https://cwilso.com/' />
+<link rel="search" type="application/opensearchdescription+xml" href="https://cwilso.com/osd.xml" title="in progress" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://s1.wp.com/opensearch.xml" title="WordPress.com" />
+<meta name="application-name" content="in progress" /><meta name="msapplication-window" content="width=device-width;height=device-height" /><meta name="msapplication-tooltip" content="The further adventures of Chris Wilson, open web platform guy" /><meta name="msapplication-task" content="name=Subscribe;action-uri=https://cwilso.com/feed/;icon-uri=https://s1.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=https://s1.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=https://s1.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=https://s1.wp.com/i/favicon.ico" /><meta name="description" content="The further adventures of Chris Wilson, open web platform guy" />
+<!-- Your Google Analytics Plugin is missing the tracking ID -->
+</head>
+
+<body class="home blog customizer-styles-applied widgets-hidden highlander-enabled highlander-light">
+
+<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+<div class="sidebar-nav">
+	<button class="menu-toggle x" title="Menu">
+		<span class="lines"></span>
+		<span class="screen-reader-text">Primary Menu</span>
+	</button>
+	</div>
+<div class="slide-menu">
+		<h1 class="site-title">
+		<a href="https://cwilso.com/" rel="home">in progress</a>
+	</h1>
+	<nav id="site-navigation" class="main-navigation" role="navigation">
+		<div class="menu"><ul>
+<li class="current_page_item"><a href="https://cwilso.com/">Home</a></li><li class="page_item page-item-2"><a href="https://cwilso.com/about/">About Chris Wilson</a></li>
+</ul></div>
+	</nav><!-- #site-navigation -->
+
+		<div id="secondary" class="widget-area" role="complementary">
+		<aside id="text-175382831" class="widget widget_text"><h1 class="widget-title">Links</h1>			<div class="textwidget"><div><a href="about">About Chris Wilson</a></div>
+<div><a rel="me" href="http://twitter.com/cwilso">twitter</a></div>
+<div><a rel="me" href="http://flickr.com/photos/cwilso">flickr</a></div>
+<div><a rel="me" href="http://brightkite.com/people/cwilso">brightkite</a></div>
+<!-- Place this tag in your head or just before your close body tag -->
+
+
+<!-- Place this tag where you want the +1 button to render -->
+
+</div>
+		</aside><aside id="wp_tag_cloud-2" class="widget wp_widget_tag_cloud"><h1 class="widget-title"></h1><a href="https://cwilso.com/tag/conferences/" class="tag-cloud-link tag-link-9204 tag-link-position-1" style="font-size: 8pt;" aria-label="conferences (1 item)">conferences</a>
+<a href="https://cwilso.com/tag/fonts-ie/" class="tag-cloud-link tag-link-9217871 tag-link-position-2" style="font-size: 8pt;" aria-label="fonts IE (1 item)">fonts IE</a>
+<a href="https://cwilso.com/tag/freedom-2/" class="tag-cloud-link tag-link-22887963 tag-link-position-3" style="font-size: 8pt;" aria-label="Freedom (1 item)">Freedom</a>
+<a href="https://cwilso.com/tag/ground-rules/" class="tag-cloud-link tag-link-61033 tag-link-position-4" style="font-size: 8pt;" aria-label="ground rules (1 item)">ground rules</a>
+<a href="https://cwilso.com/tag/holga/" class="tag-cloud-link tag-link-138367 tag-link-position-5" style="font-size: 8pt;" aria-label="holga (1 item)">holga</a>
+<a href="https://cwilso.com/tag/leaving-ie/" class="tag-cloud-link tag-link-20558417 tag-link-position-6" style="font-size: 8pt;" aria-label="leaving IE (1 item)">leaving IE</a>
+<a href="https://cwilso.com/tag/opportunity/" class="tag-cloud-link tag-link-29970 tag-link-position-7" style="font-size: 8pt;" aria-label="opportunity (1 item)">opportunity</a>
+<a href="https://cwilso.com/tag/personal/" class="tag-cloud-link tag-link-64 tag-link-position-8" style="font-size: 8pt;" aria-label="personal (1 item)">personal</a>
+<a href="https://cwilso.com/tag/photography/" class="tag-cloud-link tag-link-436 tag-link-position-9" style="font-size: 22pt;" aria-label="photography (2 items)">photography</a>
+<a href="https://cwilso.com/tag/sadness/" class="tag-cloud-link tag-link-5841 tag-link-position-10" style="font-size: 8pt;" aria-label="sadness (1 item)">sadness</a>
+<a href="https://cwilso.com/tag/speaking-engagements/" class="tag-cloud-link tag-link-28505 tag-link-position-11" style="font-size: 22pt;" aria-label="speaking engagements (2 items)">speaking engagements</a></aside><aside id="meta-2" class="widget widget_meta"><h1 class="widget-title">Meta</h1>
+		<ul>
+			<li><a href="https://wordpress.com/start?ref=wplogin">Register</a></li>			<li><a href="https://cwilso.wordpress.com/wp-login.php">Log in</a></li>
+			<li><a href="https://cwilso.com/feed/">Entries feed</a></li>
+			<li><a href="https://cwilso.com/comments/feed/">Comments feed</a></li>
+
+			<li><a href="https://wordpress.com/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.com</a></li>
+		</ul>
+
+		</aside><aside id="text-189359563" class="widget widget_text"><h1 class="widget-title">Upcoming Speaking Engagements</h1>			<div class="textwidget"><p>
+<a href="http://sxsw.com/interactive">
+<img src="https://i0.wp.com/img.sxsw.com/2012/webtiles/sxsw_ia_meet_me.png" />
+</a>
+</p></div>
+		</aside>	</div><!-- #secondary -->
+</div><!-- .slide-menu -->
+<div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+		<div class="site-inner-wrapper">
+
+		<header id="masthead" class="site-header" role="banner">
+
+			<div class="site-branding">
+								<h1 class="site-title">
+					<a href="https://cwilso.com/" rel="home">in progress</a>
+				</h1>
+				<h2 class="site-description">The further adventures of Chris Wilson, open web platform guy</h2>
+			</div>
+		</header><!-- #masthead -->
+
+					<div class="featured-header-image">
+				<a href="https://cwilso.com/" rel="home">
+					<img class="custom-header" src="" width="1030" height="680" alt="">
+				</a>
+			</div>
+		
+		<div id="content" class="site-content">
+
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+						
+				
+<article id="post-188" class="post-188 post type-post status-publish format-standard hentry category-uncategorized">
+	<header class="entry-header">
+		<div class="entry-categories"><a href="https://cwilso.com/category/uncategorized/" rel="category tag">Uncategorized</a></div>					<h1 class="entry-title"><a href="https://cwilso.com/2019/05/17/please-vote-for-me-as-your-first-choice-for-the-w3c-advisory-board/" rel="bookmark">Please vote for me as your first choice for the W3C Advisory&nbsp;Board</a></h1>				<span class="entry-meta"><span class="posted-on">Posted on <a href="https://cwilso.com/2019/05/17/please-vote-for-me-as-your-first-choice-for-the-w3c-advisory-board/" rel="bookmark"><time class="entry-date published" datetime="2019-05-17T13:22:31-07:00">May 17, 2019</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="https://cwilso.com/author/cwilso/">cwilso</a></span></span></span>
+	</header><!-- .entry-header -->
+	<div class="content-wrapper">
+					<div class="entry-content">
+				<p><span style="font-weight:400;">I’m here, in my nearly-abandoned long form web home, to ask for one simple thing.</span></p>
+<p style="padding-left:40px;"><b>If you are able to influence the decision-making at a W3C Member company, please vote for me as your </b><b><i>first</i></b><b> choice in the current Advisory Board election.</b></p>
+<p><span style="font-weight:400;">I believe the W3C is slipping toward irrelevance.  The situation is not hopeless, however, and I have ideas that I believe can reverse that trend.  I also believe it is critically important that the W3C and Google continue to collaborate to improve the processes where our common interests are evident.  (If you believe Google helps the web platform move forward, think of this as “we need to work more closely together.”  If you believe Google is not a force for good in the web platform, well, I’d love to discuss why, and how we could improve in making our web investments and driving new capabilities for the web platform, and how Chrome and Blink can be even better web platform engines. Until then, I suggest you consider this “keep your friends close, and your enemies closer.” ) </span></p>
+<p><span style="font-weight:400;">What do I specifically want to impact in the next year or two at the W3C?  </span></p>
+<ul>
+<li style="font-weight:400;"><span style="font-weight:400;"><strong>The path to experimenting with new web platform standards needs to be better defined.</strong> We&#8217;ve learned a lot about how software should be built and how features are best developed since the W3C formal process was written.  As co-chair of the WICG, I spend part of my time working to create a functional process for feature developers that&#8217;s largely outside official W3C support channels, in order to make graceful failure an option. We should rationalize that further and make it part of the W3C Process, and I&#8217;m one of the people who can best advise on how to make that happen without destroying the value the community group process is currently delivering.  To gain more experience in preparation for this, I’ve been driving the partnership between the Immersive Web Working and Community Groups as co-chair of the former, as well as working together with my co-chairs to structure the work done in the Web Incubation Community Group (which I also co-chair) and working on refining Blink processes to improve openness and other vendor and developer participation.  </span></li>
+<li style="font-weight:400;"><span style="font-weight:400;"><strong>The “end game” of standards and maintenance needs to be fixed.</strong>  The prevailing view of the W3C in the past has been that once transitioned to a Recommendation, the work is done.  Unfortunately, experience has taught us that very few standards are done the first time around &#8211; in fact, that they must continue to evolve over time.  I believe not only that the Evergreen Standards effort is critical to make Living Standards a path at the W3C, but that it should become the norm for W3C standards and working groups.</span></li>
+<li style="font-weight:400;"><span style="font-weight:400;"><strong>The current host structure has led to a multi-headed, largely direction-less beast.</strong>  When the Director was strongly involved, this was mitigated by his moral and technical authority, but the Director hasn’t been involved in the day-to-day for quite some time now; this leaves a vacuum which the Process cannot currently fill. Transitioning to a better &#8220;legal entity&#8221; structure is the clear answer, and I believe I am personally suited to help drive this to conclusion.</span></li>
+<li style="font-weight:400;"><span style="font-weight:400;"><strong>The W3C and the WHATWG need to work well together.</strong> I&#8217;m uniquely positioned to help normalize and improve the working relationship between W3C and WHATWG communities driving the development of HTML and DOM.  I was an early skeptic of the lack of structure at the WHATWG, and spent a lot of effort to put in place common sense processes and structure there over the past few years.  I was the stand-in WHATWG Steering Group representative for Google while my colleague Shruthi was on leave. At the same time, I have good long-standing relationships with communities at the W3C that have historically not worked well with the WHATWG, and will continue to work hard to bring them closer together.</span></li>
+</ul>
+<p><span style="font-weight:400;">I’m specifically asking to be your top choice because of the way Single Transferable Voting works, rather than any delusions of personal grandeur. Under the rules adopted in 2017, each member only gets a single vote, and good centrist candidates (such as me) tend to be devalued in this system.  The best way I&#8217;ve found to explain how I believe you </span><b>should</b><span style="font-weight:400;"> vote in STV is this: </span></p>
+<p style="padding-left:40px;"><span style="font-weight:400;">&#8220;You get ONE vote that really matters.  Your first choice should be your desert-island candidate.  If NO ONE else you believe in gets elected, who do you choose?  Do they really represent everything you need, if no other candidate is selected?  Okay, that&#8217;s first choice sorted. Now for your second choice &#8211; imagine that your first-choice candidate is suddenly ineligible or unable to serve &#8211; that’s really the only case when your second vote makes a lot of difference.  Who&#8217;s your second choice, IF no one else you believe in gets elected? Lather, rinse, repeat until you run out of candidates you believe can represent all your interests. Most importantly, don’t ever expect that other peoples’ votes will elect the other good candidates.&#8221;</span></p>
+<p><span style="font-weight:400;">Thus, I have to explicitly ask you to consider putting me first on the ballot.  That said, there are many excellent candidates for the Advisory Board this time, and an unprecedented seven seats open &#8211; so I will recommend a few alternatives for your subsequent choices.</span></p>
+<ul>
+<li style="font-weight:400;"><span style="font-weight:400;">Tantek Çelik (Mozilla).  I’ve worked with Tantek on Web Standards for more than twenty years now.  He would be my second choice for restructuring the W3C, and I also believe it is critically important to keep Mozilla deeply involved in evolving the structure the W3C, as I value their core tenet of openness (and Tantek’s personal role as champion of openness).</span></li>
+<li>Leonie Watson (TetraLogical).  I worked with Leonie on the Advisory Board for several terms, and her consensus-seeking is some of the strongest and best I’ve known, and I value her input most highly.  Completely aside from her critical role in Accessibility, her roles co-chairing the Web Platform and Web Applications WGs has been exemplary, and I can think of no better way to strengthen the W3C’s inclusion and diversity culture than to include in the Advisory Board the co-chair of that Community Group and well-known past champion.</li>
+<li style="font-weight:400;"><span style="font-weight:400;">Elika Etemad (Invited Expert).  Elika has long been a critical member of the CSS WG.  Every discussion I’ve had with Elika has impressed me with her core values of collaboration and openness, and I believe she will play a strong role in leading the W3C to a better place.</span></li>
+</ul>
+<p><span style="font-weight:400;">I should be very clear that there are several other candidates that I would be delighted to serve with &#8211; Alan Stearns (Adobe) and Judy (Hongru) Zhu (Alibaba) for example &#8211; and every candidate running would add something positive to the Advisory Board.  I believe the four candidates above (including myself) are most critical to the future of the W3C at this pivotal time.  (On a personal note, no matter what I will miss the presence of my former colleague Mike Champion on the Advisory Board.)</span></p>
+<p><a href="https://www.w3.org/2002/09/wbs/33280/ab20190502/"><span style="font-weight:400;">Voting</span></a><span style="font-weight:400;"> is open to W3C Advisory Committee representatives until the end of May.  Please encourage all W3C Members you know to vote.</span></p>
+							</div><!-- .entry-content -->
+							<div class="entry-meta clear">
+				<span class="comments-link"><a href="https://cwilso.com/2019/05/17/please-vote-for-me-as-your-first-choice-for-the-w3c-advisory-board/#respond">0</a></span>											</div><!-- .entry-meta -->
+			</div>
+</article><!-- #post-## -->
+
+			
+				
+<article id="post-183" class="post-183 post type-post status-publish format-standard hentry category-web-development">
+	<header class="entry-header">
+		<div class="entry-categories"><a href="https://cwilso.com/category/web-development/" rel="category tag">web development</a></div>					<h1 class="entry-title"><a href="https://cwilso.com/2015/05/29/the-web-is-not-poor-mans-native/" rel="bookmark">The Web is not Poor Man&#8217;s&nbsp;Native</a></h1>				<span class="entry-meta"><span class="posted-on">Posted on <a href="https://cwilso.com/2015/05/29/the-web-is-not-poor-mans-native/" rel="bookmark"><time class="entry-date published" datetime="2015-05-29T14:12:53-07:00">May 29, 2015</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="https://cwilso.com/author/cwilso/">cwilso</a></span></span></span>
+	</header><!-- .entry-header -->
+	<div class="content-wrapper">
+					<div class="entry-content">
+				<p>I read PPK’s <a href="http://www.quirksmode.org/blog/archives/2015/05/web_vs_native_l.html">“Web vs. native: let’s concede defeat”</a> article with great interest.</p>
+<p>
+I agree quite strongly that the web does not need to emulate native to provide a powerful, vibrant app ecosystem.  If your goal is to build awesome experiences for the web, you will be very poorly served by attempting to just emulate native.  The web has its own set of strengths &#8211; its ephemeral nature and lack of friction, for example, and its incremental security model.
+</p>
+<p>
+However, I believe it&#8217;s fundamentally flawed to draw lines around the experiences you can build with the web, and “concede defeat” to native apps.  PPK himself previously identified that <a href="http://www.quirksmode.org/blog/archives/2015/05/tools_dont_solv.html">“Web vs native [is] the wrong question”</a>.  The “web has to capitalise on its own strengths, primarily its reach”. To my mind, those strengths don’t end when the user wants a home screen icon to integrate that experience better in their experience.</p>
+<h2>The web has incredibly low friction</h2>
+</p>
+<p>
+The average mobile user visits far more sites per month than individual apps &#8211; I’d postulate because installing an app has a somewhat high cost; you have to knowingly wait for the app to install, possibly agree to a EULA-like list of permissions that you may not understand (or more likely, haven’t bothered to read), and then you’ll be reminded of this relationship forever after by that icon in your home screen (if not notifications popping up).</p>
+<p>
+PPK referred to a <a href="http://jenson.org/mobile-apps-must-die/">article by Scott Jenson</a> to support that home screen location was the dividing line between web and native; but Scott DIDN’T make the point that home screen icons are the problem, he made the point that having to curate a set of apps was a problem. In fact, Scott’s point was largely around the importance of just-in-time interaction vs having to curate a set of apps.  The necessity of this curation comes from space, device impact (aka “stuff running in the background that can drain my battery and/or annoy me with notifications), and permissions, more than home screen icon space IMO.  This is certainly a pain point for users, though; I’ve changed mobile devices multiple times in the past year, and Android helpfully re-installs apps for me &#8211; reminding me just how much junk I’ve installed.</p>
+<p>
+The web, by comparison to native platforms, is very low friction. Commerce is heavily web-based, even on mobile devices &#8211; watch the <a href="https://www.youtube.com/watch?v=iZZdhTUP5qg">excellent talk</a> just given by Alex Komoroske and Elisabeth Morant at Google IO for more.</p>
+<h2>Everyone wants to be on the home screen</h2>
+</p>
+<p>
+PPK’s presumption is that engagement &#8211; RE-engagement, in particular &#8211; is just not done for web apps.  That’s no longer true.  We’ve had add to homescreen for quite a while &#8211; of course, it’s been somewhat hidden; but now, with re-engagement features like push notifications and add-to-homescreen apps that work offline thanks to Service Workers, putting web apps on the home screen is no longer putting lipstick on a pig; for example, I didn’t bother installing the Google I/O native app &#8211; I just added the <a href="https://events.google.com/io2015/">Google I/O web app</a> to my home screen, and it popped up notifications when it was time to go to a session and everything.  With the addition of <a href="http://updates.html5rocks.com/2015/03/increasing-engagement-with-app-install-banners-in-chrome-for-android">web app install banners</a>, we’ve made this both much more natural and more effective. </p>
+<p>
+I believe no content developer &#8211; say, a news site &#8211; would agree that they don’t <b>want</b> to be on the home screen.  They DESPERATELY want that re-engagement with the user.  The user, however, may not be completely ready to sign up to that just yet; they want to date for a while before living together.  But adding an icon to the home screen is like putting someone in your speed dial; it doesn’t mean you’re handing them the keys to your house.</p>
+<p>The web, by contrast, excels at just-in-time interaction, as it IS hassle-free. But it’s a natural progression to enable users to move that onto their home screen, and let them get notifications and other engagement features if they so desire.  This is still the web, though &#8211; I don’t need to have the NYT app open just to read the article at a link I followed.  There are also app-like behaviors you may want occasionally too, e.g. a &#8220;what&#8217;s near me?&#8221; app. There&#8217;s an assumption that app-like behaviors demand native, and that the web is for documents.</p>
+<h2>The cruft of the current Web</h2>
+</p>
+<p>Of course, the web development model also has its own set of challenges.  In particular, there is a huge <a href="http://www.theregister.co.uk/2015/05/25/tracking_isnt_just_invasive_its_too_heavy/">over-indulgence in trackers</a> today, and this can wildly impact responsiveness.  If you run a plugin like <a href="https://www.ghostery.com/">Ghostery</a> for a while, you’ll quickly learn just HOW prevalent add-ins like this are.  In a quick tour around common news sites, for example, I found the AVERAGE number of external tracking libraries being loaded to be more than twenty.
+</p>
+<p>
+Would I include more than twenty external code libraries into my native app, for dubious user benefit?  Probably not.  As <a href="https://adactio.com/journal/8956">Jeremy put it</a>, that cruft was put there by us; and Marco Arment agrees: “The entire culture dominant among web developers today is bizarrely framework-heavy, with seemingly no thought given to minimizing dependencies and page weight.”  I think it’s also true that web developers tend to rely heavily on frameworks, sometimes without understanding the cost/benefit tradeoffs in order to use them judiciously.  Particularly in the case of stale frameworks, or ones that don’t adhere to a <a href="https://developer.chrome.com/devsummit/sessions/the-applied-science-of-runtime-performance/">RAIL-like philosophy</a>, this can dramatically impact your usability.  I’m not saying “never use trackers”, but take a look in dev tools; maybe you don’t need a couple of dozen trackers on every page.  Focus on providing an incredible user experience; the little things add up.</p>
+<h2>Rethink the web</h2>
+</p>
+<p>
+Properly designed web apps in the modern world &#8211; particularly, utilizing <a href="http://jakearchibald.com/2014/offline-cookbook/">Service Workers</a> in order to manage your performance and offline experience &#8211; can be incredibly responsive, and with re-engagement features like push notifications being added daily, the web is now a viable platform for engaging user experiences.</p>
+<p>There will always be reasons to build native applications.  It’s quicker to innovate platform APIs when you don’t have to go through standardization and browser implementation.  Exposing new “bedrock” APIs can be done more quickly.  As Jeremy <a href="https://adactio.com/journal/9016">aptly summed up</a>, “The price we pay for that incredible cross-platform reach is that features on the web will always be lagging behind.”</p>
+<p>On the other hand, reach is incredibly beneficial.  Low-friction initial engagement (and scalable re-engagement) are an amazing on-ramp for users.</p>
+							</div><!-- .entry-content -->
+							<div class="entry-meta clear">
+				<span class="comments-link"><a href="https://cwilso.com/2015/05/29/the-web-is-not-poor-mans-native/#comments">7</a></span>											</div><!-- .entry-meta -->
+			</div>
+</article><!-- #post-## -->
+
+			
+				
+<article id="post-163" class="post-163 post type-post status-publish format-standard hentry category-photography tag-photography">
+	<header class="entry-header">
+		<div class="entry-categories"><a href="https://cwilso.com/category/photography/" rel="category tag">photography</a></div>					<h1 class="entry-title"><a href="https://cwilso.com/2013/05/22/outdoor-shooting/" rel="bookmark">Outdoor shooting</a></h1>				<span class="entry-meta"><span class="posted-on">Posted on <a href="https://cwilso.com/2013/05/22/outdoor-shooting/" rel="bookmark"><time class="entry-date published" datetime="2013-05-22T10:13:52-07:00">May 22, 2013</time><time class="updated" datetime="2015-05-27T14:28:00-07:00">May 27, 2015</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="https://cwilso.com/author/cwilso/">cwilso</a></span></span></span>
+	</header><!-- .entry-header -->
+	<div class="content-wrapper">
+					<div class="entry-content">
+				<p>One of the things I&#8217;m bad at is sharing advice in a broader public forum.  I love sharing advice, but sometimes I respond just to one person at a time.  I&#8217;m going to try to start sharing bits a bit more broadly.</p>
+<p>This morning, someone on a photography list I&#8217;m on asked:</p>
+<p>&#8220;I&#8217;ve been asked to do an outdoor shoot for a friend&#8230;what equipment do I need for something like this, and what do I need to keep in mind?&#8221;</p>
+<p>My advice back was:<br />
+First, an outdoor shoot of what?  Portraits, cars, landscapes?</p>
+<p>Secondly, just like indoor shoots, the key to outdoor shoots is lighting, and controlling the light.  The hard part, of course, is that can&#8217;t have direct control over the brightest light source &#8211; the sun.  General guidelines are that shooting in bright sun at high noon is pretty tough, and the golden hours can be great for this; but shooting in late morning or early afternoon is doable, but equipment-wise, you may want to make use of sunshades and sun reflectors (and/or strobes) for fill lighting.  I found even a small reflector can help tremendously at changing around the light on the subject; strobes in sun, for me, require a lot of trial and error, and I found a reflector was easier to visualize.</p>
+<p>Obviously, too &#8211; don&#8217;t shoot into the sun; that will wildly exacerbate the dynamic-range problem (subjects will be in shadow, background will be very bright, and you&#8217;ll lose detail in both).  Polarizers, on the other hand, can help control glare immensely, and when I&#8217;m shooting outside in sun, my polarizer almost never comes off my lens.</p>
+<p>In general, I&#8217;d grab a reflector, a reflector caddy (aka a friend who can bounce the light for you), and a polarizer, a strobe if you have it, try to set it up for late afternoon/early evening, and give it a shot.</p>
+<p>(As with all photography &#8220;rules&#8221; &#8211; your mileage may vary, and it is possible to get some incredible, innovative shots while blithely ignoring all the above suggestions.  🙂</p>
+<figure style="width: 1024px" class="wp-caption alignnone"><img src="https://i0.wp.com/farm4.staticflickr.com/3098/3144838644_18d8a21c6b_b_d.jpg" width="1024" height="683" class /><figcaption class="wp-caption-text">waterfall</figcaption></figure>
+							</div><!-- .entry-content -->
+							<div class="entry-meta clear">
+				<span class="comments-link"><a href="https://cwilso.com/2013/05/22/outdoor-shooting/#comments">1</a></span>											</div><!-- .entry-meta -->
+			</div>
+</article><!-- #post-## -->
+
+			
+				
+<article id="post-170" class="post-170 post type-post status-publish format-standard hentry category-web-development">
+	<header class="entry-header">
+		<div class="entry-categories"><a href="https://cwilso.com/category/web-development/" rel="category tag">web development</a></div>					<h1 class="entry-title"><a href="https://cwilso.com/2013/04/03/blink/" rel="bookmark">Chromium&#8217;s Blink announcement</a></h1>				<span class="entry-meta"><span class="posted-on">Posted on <a href="https://cwilso.com/2013/04/03/blink/" rel="bookmark"><time class="entry-date published" datetime="2013-04-03T14:07:58-07:00">April 3, 2013</time><time class="updated" datetime="2015-05-27T14:28:43-07:00">May 27, 2015</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="https://cwilso.com/author/cwilso/">cwilso</a></span></span></span>
+	</header><!-- .entry-header -->
+	<div class="content-wrapper">
+					<div class="entry-content">
+				<p>In case you haven&#8217;t seen the news yet, the Chromium project is building and releasing <a href="http://blog.chromium.org/2013/04/blink-rendering-engine-for-chromium.html" target="_blank">a new open source web rendering engine based on Webkit, called Blink</a>.
+</p>
+<p>This is all goodness, in my opinion.  It will make Chromium faster and more stable, it increases the diversity in the rendering engine space, and best of all, the Chromium team has already put in place strong guidelines for new features that will help mandate standards focus, openness and interoperability.
+</p>
+<p>Along with many others, I was sorry to see the browser engine space diminish with the loss of Opera&#8217;s engine, Presto, and I believe Blink will help improve that engine diversity &#8211; while maintaining a strong focus on continuing to improve interoperability.
+</p>
+<p>As someone who saw first hand how a web platform <a href="http://en.wikipedia.org/wiki/Internet_Explorer_6" target="_blank">monoculture</a> &#8211; even the well-intentioned aspects of it &#8211; affected the web platform the first time (or <a href="http://en.wikipedia.org/wiki/Netscape_Navigator" target="_blank">two</a> :), I&#8217;m excited by the strong investments in getting this right from my colleagues in the Chromium project.
+</p>
+<p>To learn more about Blink visit our <a href="http://www.chromium.org/blink" target="_blank">project page</a>. As always, feel free to engage me personally, here, on <a href="http://twitter.com/cwilso">Twitter</a>, on <a href="https://plus.google.com/+ChrisWilson">G+</a>, or in <a href="mailto:cwilso@google.com">email</a>.
+</p>
+<p>-Chris</p>
+							</div><!-- .entry-content -->
+							<div class="entry-meta clear">
+				<span class="comments-link"><a href="https://cwilso.com/2013/04/03/blink/#respond">0</a></span>											</div><!-- .entry-meta -->
+			</div>
+</article><!-- #post-## -->
+
+			
+				
+<article id="post-164" class="post-164 post type-post status-publish format-standard hentry category-css category-professional category-trolling">
+	<header class="entry-header">
+		<div class="entry-categories"><a href="https://cwilso.com/category/css/" rel="category tag">CSS</a>, <a href="https://cwilso.com/category/professional/" rel="category tag">professional</a>, <a href="https://cwilso.com/category/trolling/" rel="category tag">Trolling</a></div>					<h1 class="entry-title"><a href="https://cwilso.com/2012/03/16/content-protection-fonts-and-trolling/" rel="bookmark">Content Protection, fonts, and&nbsp;trolling</a></h1>				<span class="entry-meta"><span class="posted-on">Posted on <a href="https://cwilso.com/2012/03/16/content-protection-fonts-and-trolling/" rel="bookmark"><time class="entry-date published" datetime="2012-03-16T11:04:01-07:00">March 16, 2012</time><time class="updated" datetime="2012-03-16T11:38:28-07:00">March 16, 2012</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="https://cwilso.com/author/cwilso/">cwilso</a></span></span></span>
+	</header><!-- .entry-header -->
+	<div class="content-wrapper">
+					<div class="entry-content">
+				<p><em>(Updated: eek!  @marypcbuk pointed out that I had an unfinished sentence at the end of paragraph 3.  Fixed.  I blame the still-lingering SXSWScurvy.)</em></p>
+<p>Jeremy Keith posted <a href="http://adactio.com/journal/5289/">some thoughts</a> on <a href="http://sxsw.com/interactive">SXSW</a>, including the always-incredibly-fun <a href="http://lanyrd.com/2012/sxsw-interactive/sqbdh/">browser wars panel</a> I got to participate in again (yay!) with some good friends.</p>
+<p>Jeremy, a couple of corrections &#8211; 1) I think it was probably at least three years ago that I was &#8220;defending&#8221; the EOT format &#8211; and 2) my point was not &#8220;hey, that&#8217;s just the way things go.&#8221;  In fact, that&#8217;s the core of the problem with video right now &#8211; the cost/benefit here is not &#8220;that&#8217;s just the way things go&#8221;, so I want to expand my argument from the font controversy.</p>
+<p>I most certainly did NOT say &#8220;Without some form of DRM [on fonts], &#8230; we couldn&#8217;t have fonts on the web.&#8221;  I said, at the time, that font foundries needed to be happy with the arrangement, because the TTF/OTF files on your computer have at best convoluted and hard-to-track-down licenses and provenance.</p>
+<p>At the time, the competing &#8220;standard&#8221; for embedding fonts from Opera was simply direct linking to TTF/OTF files; my point was that really, only a select set of freeware fonts had licenses that allow you to reshare the font like this.  (Many of freeware fonts, for example, require you not to mess with their .zip file package when you re-host, and for their license.txt file to remain intact &#8211; which you can&#8217;t really do when resharing for use in direct linking.) In general, any non-freeware (i.e. licensed) fonts would not allow you (&#8220;allow&#8221; in terms of what their EULA allows to do, based on their copyright of the file) to just put their TTF file up on a web server.  In general, it&#8217;s quite a challenge to look up what the permission rights for a font on my computer is;  it&#8217;s basically a detective investigation to figure out where the file came from, and what the EULA says about redistribution of that file.  In short, I did not think this was a particularly good design.  Having originally implemented EOT in IE (in IE4, I believe), I wasn&#8217;t under any particular delusions of its brilliant design as a web embedding technology either, but I&#8217;d been pragmatic then.  I think you must have been reading my insistence that direct linking wasn&#8217;t good enough as an argument for hardcore DRM (which, BTW, EOT isn&#8217;t really anyway, but I could see even at the time how it triggered the DRM hotbutton for people).  The issue was not, though, that there was a <a href="https://twitter.com/#!/tabatkins/status/180670329461538816">demand for DRM</a> &#8211; it was there was demand for something other than just raw TTF/OTF files.  There was a demand for a wrapper that was, in the end, satisfied by&#8230; a wrapper.</p>
+<p>WOFF was not yet a thing &#8211; in fact, it partly grew out of the conversations we&#8217;d been having with font foundries based on EOT.  I was attempting to get exposure for the idea that something other than just a raw TTF file was going to be necessary &#8211; I believe I said, &#8220;if the font foundries are happy, I&#8217;m happy.  I don&#8217;t care.&#8221;  That happened; <a href="http://caniuse.com/#feat=woff">everyone pretty much implements WOFF now</a>; font foundries are really happy, because designers have some idea fonts are IP, but designers are happy because it&#8217;s not &#8220;DRM&#8221; and it&#8217;s not very restrictive at all.  Thus, I am happy.</p>
+<p>So, in short &#8211; I was trolling you.  Gotcha.  🙂</p>
+<p>-C</p>
+<p>PS &#8211; in followup; I believe IE only ships VBScript turned on for intranet, but maybe I&#8217;m confused.</p>
+<p>PPS &#8211; I haven&#8217;t said much about content protection and video here; nor do I really intend to.  It&#8217;s pragmatic; the rights owners (aka the studios) get to control whether episodes of Big Bang Theory (or whatever) get released in a particular format, and they believe DRM is important and useful.  Don&#8217;t ask me to defend this; go talk to them.  Or decide that you still want iTunes/Flash/Silverlight whatever totally-proprietary platform to maintain its critical position, and you&#8217;re limited to content studios don&#8217;t think is as important (or comes from studios willing to take that risk).  That&#8217;s where we are today.  We can hold that course, and I can continue to have to buy a copy of BBT for Android devices, one for my iOS devices, and still not get to watch on the web.  Go have this argument with the studios (again) &#8211; or, better yet, participate in the TV and Web IG at the W3C, because the studios are.  I personally am absolutely not asking anyone to just accept this because &#8220;hey, that&#8217;s the way it goes.&#8221;  I do think it&#8217;s probably the most pragmatic thing to do, and I am a pragmatist.  But my head is sore from banging on this rock, and it&#8217;s not even my rock.  🙂</p>
+<p>PPPS: I don&#8217;t really watch BBT.  But I got insulted last time I admitted to being a How I Met Your Mother fan.  (SERIOUSLY?!?  WHO CAN RESIST THE BRILLIANCE OF NPH?)</p>
+<p>PPPPS: I would have stopped SOPA at the &#8220;Something must be done!&#8221; stage &#8211; no, I don&#8217;t think it does.</p>
+<p>PPPPPS: Is there a legal restriction on the number of Ps?</p>
+							</div><!-- .entry-content -->
+							<div class="entry-meta clear">
+				<span class="comments-link"><a href="https://cwilso.com/2012/03/16/content-protection-fonts-and-trolling/#comments">3</a></span>											</div><!-- .entry-meta -->
+			</div>
+</article><!-- #post-## -->
+
+			
+				
+<article id="post-151" class="post-151 post type-post status-publish format-standard hentry category-uncategorized tag-holga tag-personal tag-photography">
+	<header class="entry-header">
+		<div class="entry-categories"><a href="https://cwilso.com/category/uncategorized/" rel="category tag">Uncategorized</a></div>					<h1 class="entry-title"><a href="https://cwilso.com/2012/02/11/holga-lens-for-canon-ef-mount/" rel="bookmark">Holga Lens for Canon EF&nbsp;Mount</a></h1>				<span class="entry-meta"><span class="posted-on">Posted on <a href="https://cwilso.com/2012/02/11/holga-lens-for-canon-ef-mount/" rel="bookmark"><time class="entry-date published" datetime="2012-02-11T15:18:19-07:00">February 11, 2012</time><time class="updated" datetime="2012-02-11T15:24:19-07:00">February 11, 2012</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="https://cwilso.com/author/cwilso/">cwilso</a></span></span></span>
+	</header><!-- .entry-header -->
+	<div class="content-wrapper">
+					<div class="entry-content">
+				<p><a href="https://plus.google.com/u/0/photos/106422711035746240826/albums/5705507077968483489/5705507079281250402"><img class="alignleft" style="margin:8px;" title="Holga on Canon" src="https://lh5.googleusercontent.com/-_YxA4RRAH1g/Ty4IdaQJEGI/AAAAAAAABLY/to6QlPHyWPA/w711-h532-k/12%2B-%2B1.jpg" alt="" width="320" height="239" /></a></p>
+<p>For those of you not in the know, a Holga is a &#8220;toy camera&#8221; &#8211; it&#8217;s a plastic camera body, with a plastic lens, that <a href="http://www.bhphotovideo.com/c/product/369376-REG/Holga_144120_144_120_120N.html">retails for around $25</a>.  It uses 120 film &#8211; taking a 6cm x 6cm image.  The pictures taken with it tend to be very unpredictable, with lots of blurriness (it&#8217;s hard to focus precisely, and nothing is every REALLY sharp), light leaks (the clips that hold the back on don&#8217;t really provide a totally light-proof seal all the time), and in general, a real lo-fi look.  The Holga (and similar cameras) really are partly responsible for spawning photo manipulation applications like Instagram, and they have a huge following (there are <a href="http://www.flickr.com/search/groups/?w=all&amp;q=holga">over 7,000 Flickr groups with &#8220;Holga&#8221; in the name</a>).</p>
+<p>I bought a Holga a few years ago, and played with it for a while &#8211; but of course, getting 120 film developed is a pain (and expensive), and my Lensbaby 2.0 (and more recently, my <a href="http://www.lensbaby.com/lenses-composer.php">Lensbaby Composer</a>, with a nearly full set of optics) have taken up my lo-fi attention.  There have been some mods to take Holga lenses and mount them on SLRs, but I&#8217;ve never taken the plunge &#8211; but I recently ran across the <a href="http://www.bhphotovideo.com/c/product/762095-REG/Holga_775120_Holga_Lens_for_Canon.html">official Holga Lens for Canon SLRs</a>, and decided it was worth $25 to try it out.</p>
+<p>So, how does it compare?  Well, I&#8217;ve got a <a href="http://www.flickr.com/search/?w=23387360@N00&amp;q=holga">few photos from my actual film Holga in my Flickr feed</a>, like this one:</p>
+<p><a href="http://www.flickr.com/photos/cwilso/3220567510/"><img class="alignnone" title="Holga image" src="https://i0.wp.com/farm4.staticflickr.com/3350/3220567510_b276432faf_z.jpg" alt="" width="480" /></a></p>
+<p>You can clearly see the vignetting in this image, as well as the warping, focus issues, and chromatic aberration.  But it&#8217;s still pretty.  🙂</p>
+<p>Although I&#8217;ve taken <a href="http://www.flickr.com/search/?w=23387360@N00&amp;q=lensbaby">tons of pictures with my Lensbabies</a> over the years, I was looking forward to playing with a new toy.  All in all, I&#8217;m pleased; although I thought it was a little weird when I opened up the lens and saw this:</p>
+<p><a href="https://plus.google.com/u/0/photos/106422711035746240826/albums/5705507077968483489/5707541877479229410"><img class="alignnone" title="Holga aperture" src="https://lh6.googleusercontent.com/-tCDo2DtwyWA/TzVDGQPQx-I/AAAAAAAABbU/JKdvsJpt9Yc/s912/20120210-_MG_0690.jpg" alt="" width="480" /></a></p>
+<p>Now, logically, the original Holga lens was designed for a 6x6cm film &#8220;sensor&#8221; &#8211; so it was going to look a lot different when cropped down, even on my full-frame Canon 5D mk ii.  For reference, here&#8217;s that same Holga image, but with 35mm crop frame (orange) and APS-C crop frame (yellow):</p>
+<p><a href="https://plus.google.com/u/0/photos/106422711035746240826/albums/5705507077968483489/5707977229767994898"><img class="alignnone" title="Holga with crop lines" src="https://lh6.googleusercontent.com/-lyk_uXvSDKo/TzbPDF5W7hI/AAAAAAAABc0/momZOsdzvq4/s912/Holga.jpg" alt="" width="480" /></a></p>
+<p>So the odd little aperture arrangement was apparently Holga&#8217;s attempt to replicate the vignetting and soft focus of their medium-format lens onto a smaller frame.  (Not surprisingly, this is reminiscent of the <a href="http://www.lensbaby.com/optics-softfocus.php">Lensbaby Soft Focus Optic</a> aperture discs.)  Somewhat ingenious &#8211; Holga can still claim &#8220;the original Holga lens!&#8221; while still actually getting the vignetting, etc on a smaller frame.  The unfortunate part? They really designed the aperture for APS-C crop cameras (e.g. the Canon 60D or 7D, not really my full-frame 5D mk ii.  A full-frame camera gets much of the outer frame completely vignetted out, and a weird 8-overlapping-circles bokeh pattern to boot:</p>
+<p><a href="https://plus.google.com/u/0/photos/106422711035746240826/albums/5705507077968483489/5705508109046224082"><img class="alignnone" title="Chris" src="https://lh6.googleusercontent.com/-IoTvvIyeovY/Ty4JZWbPlNI/AAAAAAAABN4/v-qTtfqKHwQ/s912/20120204-_MG_0599.jpg" alt="" width="480" /></a></p>
+<p>Of course, it works okay on full-frame when the background is dark anyway:</p>
+<p><a href="https://plus.google.com/u/0/photos/106422711035746240826/albums/5705507077968483489/5705508554675932978"><img class="alignnone" title="Hannah and Neve" src="https://lh4.googleusercontent.com/-qFtBQ9UAxBc/Ty4JzShpTzI/AAAAAAAABNQ/X9l7HT-znSE/s912/20120204-_MG_0613.jpg" alt="" width="480" /></a></p>
+<p>But can look a little weird at other times &#8211; which brings me to my one of my main points: this SLR lens was really designed for cropped-sensor cameras, like the 60D or 7D.</p>
+<p>The real tragedy, however, is that in adding this funky aperture, the lens goes from the original <a href="http://en.wikipedia.org/wiki/Holga#Lens_and_Aperture_Settings">approximately f/13</a> aperture to being somewhere between f/32 and f/40 (from an evaluative-metering on full-frame test, I measured it at about f/45; but I think that&#8217;s unfairly penalizing for the heavy vignetting on full-frame.  So, trying to use this in anything but lots of light &#8211; good luck.  You&#8217;ll need a REALLY slow shutter speed &#8211; and you will find it nearly impossible to aim, since the viewfinder will be very dark.  Even in bright sunlight, you&#8217;ll want to bump up the ISO &#8211; for example, this photo of my daughter in bright sunlight was ISO 400, 1/40sec exposure:</p>
+<p><a href="https://plus.google.com/u/0/photos/106422711035746240826/albums/5705507077968483489/5705507732213108098"><img class="alignnone" title="Hannah" src="https://lh5.googleusercontent.com/-7RDsJuS5fsE/Ty4JDanOjYI/AAAAAAAABLw/b-mXb0MIEm0/s912/20120204-_MG_0587.jpg" alt="" width="480" /></a></p>
+<p>Incidentally, I did discover that funky little aperture disc is <strong><em>removable</em></strong> &#8211; it&#8217;s glued in to the lens, but only with cheap sticky stuff.  Once you pull it out, though, as you&#8217;d expect from the crop example above, there&#8217;s basically no vignette at all, even on full frame.  I put it back in, but I think I&#8217;m going to try creating an aperture disc to stick in there that is larger than the current one, to get less vignette on full-frame, but still some.  That&#8217;ll be a future project, though.</p>
+<p>So, pluses to the Holga-for-Canon lens:  easy to use, great serendipity potential.  Downsides: WICKEDLY slow lens (f32-f45-ish on full frame), and has a very strange vignetting pattern in full frame.  Overall, though, absolutely worth the (little) money for a new creative tool.</p>
+<p>All the photos I&#8217;ve taken with the Holga lens on my SLR so far can be found on my <a href="https://plus.google.com/u/0/106422711035746240826/posts">Google+ account</a> in the <a href="https://plus.google.com/u/0/photos/106422711035746240826/albums/5705507077968483489">&#8220;Holga Lens&#8221; set</a>.</p>
+							</div><!-- .entry-content -->
+							<div class="entry-meta clear">
+				<span class="comments-link"><a href="https://cwilso.com/2012/02/11/holga-lens-for-canon-ef-mount/#comments">2</a></span>											</div><!-- .entry-meta -->
+			</div>
+</article><!-- #post-## -->
+
+			
+				
+<article id="post-126" class="post-126 post type-post status-publish format-standard hentry category-uncategorized">
+	<header class="entry-header">
+		<div class="entry-categories"><a href="https://cwilso.com/category/uncategorized/" rel="category tag">Uncategorized</a></div>					<h1 class="entry-title"><a href="https://cwilso.com/2011/10/03/promoting-the-open-web-and-platform-competition/" rel="bookmark">Promoting the Open Web, and Platform&nbsp;Competition</a></h1>				<span class="entry-meta"><span class="posted-on">Posted on <a href="https://cwilso.com/2011/10/03/promoting-the-open-web-and-platform-competition/" rel="bookmark"><time class="entry-date published" datetime="2011-10-03T15:53:31-07:00">October 3, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="https://cwilso.com/author/cwilso/">cwilso</a></span></span></span>
+	</header><!-- .entry-header -->
+	<div class="content-wrapper">
+					<div class="entry-content">
+				<p>Robert O&#8217;Callahan wrote a post last week about <a href="http://robert.ocallahan.org/2011/09/shifts-in-promoting-open-web.html">Mozilla&#8217;s historical promotion of the open Web over proprietary platforms</a>.  There were some things in there that I agreed with strongly, although some not as much.</p>
+<p>Robert, as I read your view, the competition has changed from WPF, Silverlight and Flash to iOS and Android, and &#8220;accordingly, the features the Web needs to catch up on are mobile focused.&#8221;  Although I absolutely agree that the web needs to be &#8220;knocking down barriers that make mobile app developers write native apps instead of Web apps,&#8221; I think it is a mistake to think that the web should narrow its competitive focus to mobile.  Mobile is just a placeholder for computers that are embedded in your daily life, and don&#8217;t cost $1000+, and aren&#8217;t chained to a desk.  It&#8217;s not about making phone calls.  It&#8217;s about being highly interactive, with lots of integration with the real world via sensors and outputs.  (There&#8217;s a whole 5-minute diatribe here about why the iPhone became popular &#8211; skipped for brevity&#8217;s sake.  Let me know in comments if you want me to expand.)  This isn&#8217;t a different Web; it&#8217;s just a more integrated one.  The Web platform is supposed to be good at scalability, so scaling to these needs should be a strength &#8211; and I DO think we need to expose APIs to those device capabilities.</p>
+<p>The Web platform&#8217;s competition here *IS* all proprietary stacks &#8211; WPF, Silverlight, Flash, iOS, Windows Phone, Windows, Metro, MacOS, and yes, Android.  That doesn&#8217;t mean I hate all those stacks, or that I think they&#8217;re ebil &#8211; I just want the Web to be a viable competitor to them.  When some developer somewhere starts building the NEXT Angry Birds, I hope it can be in the Web platform to begin with, and won&#8217;t need to be ported to those other platforms.</p>
+<p>(As an aside, Robert, I was curious to see you give kudos for Microsoft for moving towards a standards-based platform in the same post as lambasting Google for the Chrome Store.  You understand although you can write <a href="http://msdn.microsoft.com/library/windows/apps/br211386/#hello_world_with_javascript">Hello World for Metro completely using standards</a>, more complex apps are likely going to be heavily dependent on the Windows <a href="http://msdn.microsoft.com/en-us/library/windows/apps/hh464947">Metro Runtime</a> APIs, right?)</p>
+<p>I was somewhat amused to see you say &#8220;We also need to send a clear message that browser-specific app stores run counter to the open Web,&#8221; when Mozilla itself has one of the earliest (and wildly successful!) browser-specific app stores &#8211; <a href="https://addons.mozilla.org/en-US/firefox/">https://addons.mozilla.org/en-US/firefox/</a>.  You can say &#8220;that&#8217;s just addons,&#8221; but looking at apps like <a href="https://addons.mozilla.org/en-US/firefox/addon/xultris/">XulTris</a>, it&#8217;s hard to agree with that argument.  I get (and agree with you) that the point should be to not silo web platform applications inside a single-browser tower, though.</p>
+<p>To be clear &#8211; I&#8217;d like to see the Angry Birds web app work across all browsers, including being offline-accessible.  I&#8217;d like to see offline GMail and Google Calendar work across all browsers, too.  On the flip side, I think it&#8217;s pretty natural that there are going to be vendor-specific app stores &#8211; if for no other reason that users can get varying levels of confidence (or different assurance, or just different brand identification) from downloading an app package from Google, or Mozilla, or Amazon, or whoever.  And yes, that &#8220;package&#8221; may be a link, not a JAR file, but there has been store-specific level of vetting of the application that users will find useful.  I think the real question is &#8220;Could you use the Google app store from Firefox?&#8221; &#8211; personally, I&#8217;d like to say yes (modulo the browser add-ons, of course).  We&#8217;ve got a ways to go there, certainly.</p>
+<p>Robert, I&#8217;m not sure where you got &#8220;Google is explicitly telling its developers to target Chrome-only at first and support other browsers as an afterthought&#8221; &#8211; the link pointed to the Dash (Dart) &#8220;memo&#8221;, which says &#8220;Developers who can focus solely on Chrome can expect&#8230;&#8221;  in essence saying &#8220;we can get this stuff into Chrome; we can&#8217;t push it to other browsers, but we can support a cross-compiler to JS.&#8221;  I don&#8217;t read that as a whole lot different than any other new feature that turns up in one browser first, and goes through a lot of work before it might (or might not) be adopted by others.  I think either Dart (nee Dash) will be successful as an attempt to build a wildly more productive runtime, and it will turn into a real open standards part of the web platform, and other browsers will build their own implementations of whatever it becomes as it is tossed into the open development pot &#8211; or it will inform the current efforts on Harmony, et al to goad more aggressive improvements into the current efforts.  (Or it will be a complete flop, and sink without a trace.  I doubt that, but I wanted to feed the trolls.)  Personally, I would bet more on the informing-current-efforts-and-goading-further-improvements path, but that&#8217;s based on my history.  (WPF was, after all, an attempt to learn from the Web platform and do it better.)</p>
+<p>I&#8217;m concerned that you seem to think only Mozilla, and maybe Opera, have no vested interest in the success of a non-open-Web platform &#8211; mostly because the convolutions and double negative of that statement imply that others (Google in particular) have no vested interest in the success of the Open Web platform.  I have to disagree, if that&#8217;s the implication.  Yes, Google has Android; I would be a happy, happy person if the success of the open web platform placed Android into obscurity.  If anyone at Google wants to fire me for that, I&#8217;ll be happy to go.  And in fact, I would say Google has a very vested interest in the success of the shared open web platform, with a more solid business model behind that interest than most.  If I didn&#8217;t feel that way, I wouldn&#8217;t have come to work here.</p>
+<p>Today, in the short term, there are certainly features that are browser-specific, that enable cool applications.  I hope those features will become part of the shared open web platform &#8211; and that&#8217;s what I plan to do here.  If certain features don&#8217;t merit becoming part of that shared platform, for the most part I&#8217;d expect them to die on the vine*.</p>
+<p>But to get back to the core point &#8211; if someone at Google is telling web developers across the board to target Chrome only and only support other browsers as an afterthought, I&#8217;d like to know who, so I can go kick them in the (figurative) nuts.  Unless that message is actually being said by someone, I&#8217;d like to keep the focus where it needs to be &#8211; on figuring out what we need collectively to push the common Open Web platform to be competitive with all the other platforms out there, and on evangelizing building (cross-browser) web applications built on that Open Web platform.</p>
+<p>-C</p>
+<p>PS: *Remind me to post something on vendor prefixes.  This was already getting long.</p>
+<p>PPS: Which also reminds me &#8211; if there&#8217;s something any of you WANT me to post about, let me know.  I&#8217;m <a href="https://cwilso.com/2011/09/21/tick/">free</a>, in case you didn&#8217;t hear. 🙂</p>
+							</div><!-- .entry-content -->
+							<div class="entry-meta clear">
+				<span class="comments-link"><a href="https://cwilso.com/2011/10/03/promoting-the-open-web-and-platform-competition/#comments">2</a></span>											</div><!-- .entry-meta -->
+			</div>
+</article><!-- #post-## -->
+
+			
+				
+<article id="post-121" class="post-121 post type-post status-publish format-standard hentry category-personal category-professional tag-freedom-2">
+	<header class="entry-header">
+		<div class="entry-categories"><a href="https://cwilso.com/tag/personal/" rel="category tag">personal</a>, <a href="https://cwilso.com/category/professional/" rel="category tag">professional</a></div>					<h1 class="entry-title"><a href="https://cwilso.com/2011/09/21/tick/" rel="bookmark">Tick.</a></h1>				<span class="entry-meta"><span class="posted-on">Posted on <a href="https://cwilso.com/2011/09/21/tick/" rel="bookmark"><time class="entry-date published" datetime="2011-09-21T15:31:59-07:00">September 21, 2011</time><time class="updated" datetime="2011-09-21T17:01:03-07:00">September 21, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="https://cwilso.com/author/cwilso/">cwilso</a></span></span></span>
+	</header><!-- .entry-header -->
+	<div class="content-wrapper">
+					<div class="entry-content">
+				<p>Tick. The clock just ticked past 5:00PM PT September 21st, 2011, marking exactly one year since I walked out the doors of Microsoft as a former employee.</p>
+<p>The reason I care, of course, is that means both my non-compete clause and my non-solicitation clause have expired.  I am now free to go work on whatever I want, (and I&#8217;m also free to talk to my former co-workers about working for Google &#8211; y&#8217;know, if you want ;).</p>
+<p>So yes, you can expect that I will now be finding my way back to working on the core Open Web Platform, since that is where my passion lies.  And you can also expect I will be less&#8230;restrained&#8230; about discussing the web platform in the future.  Off to celebrate&#8230;</p>
+							</div><!-- .entry-content -->
+							<div class="entry-meta clear">
+				<span class="comments-link"><a href="https://cwilso.com/2011/09/21/tick/#comments">4</a></span>											</div><!-- .entry-meta -->
+			</div>
+</article><!-- #post-## -->
+
+			
+				
+<article id="post-117" class="post-117 post type-post status-publish format-standard hentry category-speaking-engagements tag-conferences tag-speaking-engagements">
+	<header class="entry-header">
+		<div class="entry-categories"><a href="https://cwilso.com/tag/speaking-engagements/" rel="category tag">speaking engagements</a></div>					<h1 class="entry-title"><a href="https://cwilso.com/2011/04/13/my-upcoming-week-o-fun/" rel="bookmark">My upcoming week o&#8217;&nbsp;fun&#8230;</a></h1>				<span class="entry-meta"><span class="posted-on">Posted on <a href="https://cwilso.com/2011/04/13/my-upcoming-week-o-fun/" rel="bookmark"><time class="entry-date published" datetime="2011-04-13T11:20:33-07:00">April 13, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="https://cwilso.com/author/cwilso/">cwilso</a></span></span></span>
+	</header><!-- .entry-header -->
+	<div class="content-wrapper">
+					<div class="entry-content">
+				<p>I&#8217;d already mentioned that I was going to be a keynote speaker at <a href="http://unplugged11.webdirections.org/">Web Directions Unplugged</a> here in Seattle on May 12th; I&#8217;ll also be presenting a session titled &#8220;Building Web Apps for Google TV&#8221; with my cohort Daniels Lee at <a href="http://www.google.com/events/io/2011/">Google I/O</a> earlier that week, and then to wrap up the week, I&#8217;ll be driving up to Vancouver to do a keynote presentation at <a href="http://2011.northernvoice.ca/">Northern Voice</a> (a personal blogging and social media conference).</p>
+<p>So May 10th-14th is gonna be a busy time.  🙂</p>
+<p>Just to make it even more entertaining for myself, each of the three presentations are nearly entirely different.  The Google I/O presentation is on the pragmatic side of building Web applications for the TV space; my <a href="http://unplugged11.webdirections.org/program/keynotes/#the-interconnectedness-of-all-things">Web Directions Unplugged keynote</a> is a higher-level talk on the convergence of devices on the Web platform.  And finally, my <a href="http://2011.northernvoice.ca/dial-modems-post-social-media">keynote at Northern Voice</a> is a retrospective of the growth of the Web, from my first days at NCSA to its current state.  It&#8217;s going to be a whirlwind week, but I can&#8217;t wait &#8211; I&#8217;ve really missed doing more public speaking.</p>
+							</div><!-- .entry-content -->
+							<div class="entry-meta clear">
+				<span class="comments-link"><a href="https://cwilso.com/2011/04/13/my-upcoming-week-o-fun/#comments">1</a></span>											</div><!-- .entry-meta -->
+			</div>
+</article><!-- #post-## -->
+
+			
+				
+<article id="post-108" class="post-108 post type-post status-publish format-standard hentry category-uncategorized">
+	<header class="entry-header">
+		<div class="entry-categories"><a href="https://cwilso.com/category/uncategorized/" rel="category tag">Uncategorized</a></div>					<h1 class="entry-title"><a href="https://cwilso.com/2011/03/01/fun-times-ahead-at-sxsw-2011/" rel="bookmark">Fun times ahead at SXSW&nbsp;2011</a></h1>				<span class="entry-meta"><span class="posted-on">Posted on <a href="https://cwilso.com/2011/03/01/fun-times-ahead-at-sxsw-2011/" rel="bookmark"><time class="entry-date published" datetime="2011-03-01T13:58:14-07:00">March 1, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="https://cwilso.com/author/cwilso/">cwilso</a></span></span></span>
+	</header><!-- .entry-header -->
+	<div class="content-wrapper">
+					<div class="entry-content">
+				<p>I&#8217;m happy that I&#8217;m going to SXSW again this year &#8211; although, partly due to my job transition, I won&#8217;t be speaking on any panels this year (maybe next year I&#8217;ll get to be on the Browser Wars panel again :P).</p>
+<p>There are two events that I&#8217;m helping run, though &#8211; <a href="http://extraordinary.eventbrite.com/">The League of Extraordinary Hackers, presented by Google</a>, and <a href="http://shdhsxsw.eventbrite.com/">SuperHappyDevHouse</a>.  The former is a series of lightning talks covering Google APIs, tools and services, including a talk on Google TV given by yours truly, along with a developer lounge for more low-level talks and discussions with Google peeps.  The latter, for those unfamiliar with SuperHappyDevHouse, is an evening of hacking and revelry, including a LEGO MINDSTORM contest.</p>
+<p>So, of course I&#8217;ll be there talking up the living room platform, and hooking web developers up with Google TV.   Hope to see you there, and around SXSW!</p>
+							</div><!-- .entry-content -->
+							<div class="entry-meta clear">
+				<span class="comments-link"><a href="https://cwilso.com/2011/03/01/fun-times-ahead-at-sxsw-2011/#comments">2</a></span>											</div><!-- .entry-meta -->
+			</div>
+</article><!-- #post-## -->
+
+			
+			
+	<nav class="navigation posts-navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Posts navigation</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="https://cwilso.com/page/2/" >Older posts</a></div></div>
+	</nav>
+		
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+
+		</div><!-- #content -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+			<div class="site-info">
+				<a href="https://wordpress.com/?ref=footer_blog" rel="nofollow">Blog at WordPress.com.</a>
+				
+							</div><!-- .site-info -->
+		</footer><!-- #colophon -->
+	</div><!-- .site-inner-wrapper -->
+</div><!-- #page -->
+
+		<script type="text/javascript">
+		var infiniteScroll = {"settings":{"id":"main","ajaxurl":"https:\/\/cwilso.com\/?infinity=scrolling","type":"scroll","wrapper":true,"wrapper_class":"infinite-wrap","footer":"page","click_handle":"1","text":"Older posts","totop":"Scroll back to top","currentday":"01.03.11","order":"DESC","scripts":[],"styles":[],"google_analytics":false,"offset":1,"history":{"host":"cwilso.com","path":"\/page\/%d\/","use_trailing_slashes":true,"parameters":""},"query_args":{"error":"","m":"","p":0,"post_parent":"","subpost":"","subpost_id":"","attachment":"","attachment_id":0,"name":"","pagename":"","page_id":0,"second":"","minute":"","hour":"","day":0,"monthnum":0,"year":0,"w":0,"category_name":"","tag":"","cat":"","tag_id":"","author":"","author_name":"","feed":"","tb":"","paged":0,"meta_key":"","meta_value":"","preview":"","s":"","sentence":"","title":"","fields":"","menu_order":"","embed":"","category__in":[],"category__not_in":[],"category__and":[],"post__in":[],"post__not_in":[],"post_name__in":[],"tag__in":[],"tag__not_in":[],"tag__and":[],"tag_slug__in":[],"tag_slug__and":[],"post_parent__in":[],"post_parent__not_in":[],"author__in":[],"author__not_in":[],"search_columns":[],"lazy_load_term_meta":false,"posts_per_page":10,"ignore_sticky_posts":false,"suppress_filters":false,"cache_results":true,"update_post_term_cache":true,"update_menu_item_cache":false,"update_post_meta_cache":true,"post_type":"","nopaging":false,"comments_per_page":"50","no_found_rows":false,"order":"DESC"},"query_before":"2023-09-05 23:35:28","last_post_date":"2011-03-01 13:58:14","body_class":"infinite-scroll neverending","loading_text":"Loading new page","stats":"blog=16891&v=wpcom&tz=-7&user_id=0&subd=cwilso&x_pagetype=infinite"}};
+		</script>
+		<!--  -->
+<script src='//0.gravatar.com/js/hovercards/hovercards.min.js?ver=202336aeb24331352c11f5446dd670d75325a3c4e3b8a6bd7f92ee1c88f8b8636d4d9c' id='grofiles-cards-js'></script>
+<script id='wpgroho-js-extra'>
+var WPGroHo = {"my_hash":""};
+</script>
+<script crossorigin='anonymous' type='text/javascript' src='https://s2.wp.com/wp-content/mu-plugins/gravatar-hovercards/wpgroho.js?m=1610363240i'></script>
+
+	<script>
+		// Initialize and attach hovercards to all gravatars
+		( function() {
+			function init() {
+				if ( typeof Gravatar === 'undefined' ) {
+					return;
+				}
+
+				if ( typeof Gravatar.init !== 'function' ) {
+					return;
+				}
+
+				Gravatar.profile_cb = function ( hash, id ) {
+					WPGroHo.syncProfileData( hash, id );
+				};
+
+				Gravatar.my_hash = WPGroHo.my_hash;
+				Gravatar.init(
+					'body',
+					'#wp-admin-bar-my-account',
+					{
+						i18n: {
+							'Edit your profile': 'Edit your profile',
+							'View profile': 'View profile',
+							'Sorry, we are unable to load this Gravatar profile.': 'Sorry, we are unable to load this Gravatar profile.',
+							'Sorry, we are unable to load this Gravatar profile. Please check your internet connection.': 'Sorry, we are unable to load this Gravatar profile. Please check your internet connection.',
+						},
+					}
+				);
+			}
+
+			if ( document.readyState !== 'loading' ) {
+				init();
+			} else {
+				document.addEventListener( 'DOMContentLoaded', init );
+			}
+		} )();
+	</script>
+
+		<div style="display:none">
+	</div>
+		<div id="infinite-footer">
+			<div class="container">
+				<div class="blog-info">
+					<a id="infinity-blog-title" href="https://cwilso.com/" rel="home">
+						in progress					</a>
+				</div>
+				<div class="blog-credits">
+					<a href="https://wordpress.com/?ref=footer_blog" rel="nofollow">Blog at WordPress.com.</a> 				</div>
+			</div>
+		</div><!-- #infinite-footer -->
+			<div id="actionbar" style="display: none;"
+			class="actnbr-pub-satellite actnbr-has-follow">
+		<ul>
+								<li class="actnbr-btn actnbr-hidden">
+								<a class="actnbr-action actnbr-actn-follow " href="">
+			<svg class="gridicon gridicons-reader-follow" height="24" width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M23 16v2h-3v3h-2v-3h-3v-2h3v-3h2v3h3zM20 2v9h-4v3h-3v4H4c-1.1 0-2-.9-2-2V2h18zM8 13v-1H4v1h4zm3-3H4v1h7v-1zm0-2H4v1h7V8zm7-4H4v2h14V4z"/></g></svg><span>Follow</span>
+		</a>
+		<a class="actnbr-action actnbr-actn-following  no-display" href="">
+			<svg class="gridicon gridicons-reader-following" height="24" width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M23 13.482L15.508 21 12 17.4l1.412-1.388 2.106 2.188 6.094-6.094L23 13.482zm-7.455 1.862L20 10.89V2H2v14c0 1.1.9 2 2 2h4.538l4.913-4.832 2.095 2.176zM8 13H4v-1h4v1zm3-2H4v-1h7v1zm0-2H4V8h7v1zm7-3H4V4h14v2z"/></g></svg><span>Following</span>
+		</a>
+							<div class="actnbr-popover tip tip-top-left actnbr-notice" id="follow-bubble">
+							<div class="tip-arrow"></div>
+							<div class="tip-inner actnbr-follow-bubble">
+															<ul>
+											<li class="actnbr-sitename">
+			<a href="https://cwilso.com">
+				<img alt='' src='https://s2.wp.com/i/logo/wpcom-gray-white.png' srcset='https://s2.wp.com/i/logo/wpcom-gray-white.png 1x' class='avatar avatar-50' height='50' width='50' />				in progress			</a>
+		</li>
+										<form method="post" action="https://subscribe.wordpress.com" accept-charset="utf-8" style="display: none;">
+																						<div class="actnbr-follow-count">Join 46 other followers</div>
+																					<div>
+										<input type="email" name="email" placeholder="Enter your email address" class="actnbr-email-field" aria-label="Enter your email address" />
+										</div>
+										<input type="hidden" name="action" value="subscribe" />
+										<input type="hidden" name="blog_id" value="16891" />
+										<input type="hidden" name="source" value="https://cwilso.com/" />
+										<input type="hidden" name="sub-type" value="actionbar-follow" />
+										<input type="hidden" id="_wpnonce" name="_wpnonce" value="1eadbeef07" />										<div class="actnbr-button-wrap">
+											<button type="submit" value="Sign me up">
+												Sign me up											</button>
+										</div>
+									</form>
+									<li class="actnbr-login-nudge">
+										<div>
+											Already have a WordPress.com account? <a href="https://wordpress.com/log-in?redirect_to=https%3A%2F%2Fr-login.wordpress.com%2Fremote-login.php%3Faction%3Dlink%26back%3Dhttps%253A%252F%252Fcwilso.com%252F2019%252F05%252F17%252Fplease-vote-for-me-as-your-first-choice-for-the-w3c-advisory-board%252F">Log in now.</a>										</div>
+									</li>
+								</ul>
+															</div>
+						</div>
+					</li>
+							<li class="actnbr-ellipsis actnbr-hidden">
+				<svg class="gridicon gridicons-ellipsis" height="24" width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M7 12c0 1.104-.896 2-2 2s-2-.896-2-2 .896-2 2-2 2 .896 2 2zm12-2c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm-7 0c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2z"/></g></svg>				<div class="actnbr-popover tip tip-top-left actnbr-more">
+					<div class="tip-arrow"></div>
+					<div class="tip-inner">
+						<ul>
+									<li class="actnbr-sitename">
+			<a href="https://cwilso.com">
+				<img alt='' src='https://s2.wp.com/i/logo/wpcom-gray-white.png' srcset='https://s2.wp.com/i/logo/wpcom-gray-white.png 1x' class='avatar avatar-50' height='50' width='50' />				in progress			</a>
+		</li>
+								<li class="actnbr-folded-customize">
+								<a href="https://cwilso.wordpress.com/wp-admin/customize.php?url=https%3A%2F%2Fcwilso.wordpress.com%2F">
+									<svg class="gridicon gridicons-customize" height="20" width="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M2 6c0-1.505.78-3.08 2-4 0 .845.69 2 2 2 1.657 0 3 1.343 3 3 0 .386-.08.752-.212 1.09.74.594 1.476 1.19 2.19 1.81L8.9 11.98c-.62-.716-1.214-1.454-1.807-2.192C6.753 9.92 6.387 10 6 10c-2.21 0-4-1.79-4-4zm12.152 6.848l1.34-1.34c.607.304 1.283.492 2.008.492 2.485 0 4.5-2.015 4.5-4.5 0-.725-.188-1.4-.493-2.007L18 9l-2-2 3.507-3.507C18.9 3.188 18.225 3 17.5 3 15.015 3 13 5.015 13 7.5c0 .725.188 1.4.493 2.007L3 20l2 2 6.848-6.848c1.885 1.928 3.874 3.753 5.977 5.45l1.425 1.148 1.5-1.5-1.15-1.425c-1.695-2.103-3.52-4.092-5.448-5.977z"/></g></svg>									<span>Customize</span>
+								</a>
+							</li>
+																<li class="actnbr-folded-follow">
+												<a class="actnbr-action actnbr-actn-follow " href="">
+			<svg class="gridicon gridicons-reader-follow" height="24" width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M23 16v2h-3v3h-2v-3h-3v-2h3v-3h2v3h3zM20 2v9h-4v3h-3v4H4c-1.1 0-2-.9-2-2V2h18zM8 13v-1H4v1h4zm3-3H4v1h7v-1zm0-2H4v1h7V8zm7-4H4v2h14V4z"/></g></svg><span>Follow</span>
+		</a>
+		<a class="actnbr-action actnbr-actn-following  no-display" href="">
+			<svg class="gridicon gridicons-reader-following" height="24" width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M23 13.482L15.508 21 12 17.4l1.412-1.388 2.106 2.188 6.094-6.094L23 13.482zm-7.455 1.862L20 10.89V2H2v14c0 1.1.9 2 2 2h4.538l4.913-4.832 2.095 2.176zM8 13H4v-1h4v1zm3-2H4v-1h7v1zm0-2H4V8h7v1zm7-3H4V4h14v2z"/></g></svg><span>Following</span>
+		</a>
+										</li>
+																	<li class="actnbr-signup"><a href="https://wordpress.com/start/">Sign up</a></li>
+									<li class="actnbr-login"><a href="https://wordpress.com/log-in?redirect_to=https%3A%2F%2Fr-login.wordpress.com%2Fremote-login.php%3Faction%3Dlink%26back%3Dhttps%253A%252F%252Fcwilso.com%252F2019%252F05%252F17%252Fplease-vote-for-me-as-your-first-choice-for-the-w3c-advisory-board%252F">Log in</a></li>
+																	<li class="flb-report">
+										<a href="http://en.wordpress.com/abuse/?report_url=https://cwilso.com" target="_blank">
+											Report this content										</a>
+									</li>
+																	<li class="actnbr-reader">
+										<a href="https://wordpress.com/read/feeds/1639955">
+											View site in Reader										</a>
+									</li>
+																	<li class="actnbr-subs">
+										<a href="https://subscribe.wordpress.com/">Manage subscriptions</a>
+									</li>
+																		<li class="actnbr-fold"><a href="">Collapse this bar</a></li>
+															</ul>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	
+<script>
+window.addEventListener( "load", function( event ) {
+	var link = document.createElement( "link" );
+	link.href = "https://s0.wp.com/wp-content/mu-plugins/actionbar/actionbar.css?v=20210915";
+	link.type = "text/css";
+	link.rel = "stylesheet";
+	document.head.appendChild( link );
+
+	var script = document.createElement( "script" );
+	script.src = "https://s0.wp.com/wp-content/mu-plugins/actionbar/actionbar.js?v=20220329";
+	script.defer = true;
+	document.body.appendChild( script );
+} );
+</script>
+
+			<div id="jp-carousel-loading-overlay">
+			<div id="jp-carousel-loading-wrapper">
+				<span id="jp-carousel-library-loading">&nbsp;</span>
+			</div>
+		</div>
+		<div class="jp-carousel-overlay" style="display: none;">
+
+		<div class="jp-carousel-container">
+			<!-- The Carousel Swiper -->
+			<div
+				class="jp-carousel-wrap swiper-container jp-carousel-swiper-container jp-carousel-transitions"
+				itemscope
+				itemtype="https://schema.org/ImageGallery">
+				<div class="jp-carousel swiper-wrapper"></div>
+				<div class="jp-swiper-button-prev swiper-button-prev">
+					<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<mask id="maskPrev" mask-type="alpha" maskUnits="userSpaceOnUse" x="8" y="6" width="9" height="12">
+							<path d="M16.2072 16.59L11.6496 12L16.2072 7.41L14.8041 6L8.8335 12L14.8041 18L16.2072 16.59Z" fill="white"/>
+						</mask>
+						<g mask="url(#maskPrev)">
+							<rect x="0.579102" width="23.8823" height="24" fill="#FFFFFF"/>
+						</g>
+					</svg>
+				</div>
+				<div class="jp-swiper-button-next swiper-button-next">
+					<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<mask id="maskNext" mask-type="alpha" maskUnits="userSpaceOnUse" x="8" y="6" width="8" height="12">
+							<path d="M8.59814 16.59L13.1557 12L8.59814 7.41L10.0012 6L15.9718 12L10.0012 18L8.59814 16.59Z" fill="white"/>
+						</mask>
+						<g mask="url(#maskNext)">
+							<rect x="0.34375" width="23.8822" height="24" fill="#FFFFFF"/>
+						</g>
+					</svg>
+				</div>
+			</div>
+			<!-- The main close buton -->
+			<div class="jp-carousel-close-hint">
+				<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<mask id="maskClose" mask-type="alpha" maskUnits="userSpaceOnUse" x="5" y="5" width="15" height="14">
+						<path d="M19.3166 6.41L17.9135 5L12.3509 10.59L6.78834 5L5.38525 6.41L10.9478 12L5.38525 17.59L6.78834 19L12.3509 13.41L17.9135 19L19.3166 17.59L13.754 12L19.3166 6.41Z" fill="white"/>
+					</mask>
+					<g mask="url(#maskClose)">
+						<rect x="0.409668" width="23.8823" height="24" fill="#FFFFFF"/>
+					</g>
+				</svg>
+			</div>
+			<!-- Image info, comments and meta -->
+			<div class="jp-carousel-info">
+				<div class="jp-carousel-info-footer">
+					<div class="jp-carousel-pagination-container">
+						<div class="jp-swiper-pagination swiper-pagination"></div>
+						<div class="jp-carousel-pagination"></div>
+					</div>
+					<div class="jp-carousel-photo-title-container">
+						<h2 class="jp-carousel-photo-caption"></h2>
+					</div>
+					<div class="jp-carousel-photo-icons-container">
+						<a href="#" class="jp-carousel-icon-btn jp-carousel-icon-info" aria-label="Toggle photo metadata visibility">
+							<span class="jp-carousel-icon">
+								<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<mask id="maskInfo" mask-type="alpha" maskUnits="userSpaceOnUse" x="2" y="2" width="21" height="20">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M12.7537 2C7.26076 2 2.80273 6.48 2.80273 12C2.80273 17.52 7.26076 22 12.7537 22C18.2466 22 22.7046 17.52 22.7046 12C22.7046 6.48 18.2466 2 12.7537 2ZM11.7586 7V9H13.7488V7H11.7586ZM11.7586 11V17H13.7488V11H11.7586ZM4.79292 12C4.79292 16.41 8.36531 20 12.7537 20C17.142 20 20.7144 16.41 20.7144 12C20.7144 7.59 17.142 4 12.7537 4C8.36531 4 4.79292 7.59 4.79292 12Z" fill="white"/>
+									</mask>
+									<g mask="url(#maskInfo)">
+										<rect x="0.8125" width="23.8823" height="24" fill="#FFFFFF"/>
+									</g>
+								</svg>
+							</span>
+						</a>
+												<a href="#" class="jp-carousel-icon-btn jp-carousel-icon-comments" aria-label="Toggle photo comments visibility">
+							<span class="jp-carousel-icon">
+								<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<mask id="maskComments" mask-type="alpha" maskUnits="userSpaceOnUse" x="2" y="2" width="21" height="20">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M4.3271 2H20.2486C21.3432 2 22.2388 2.9 22.2388 4V16C22.2388 17.1 21.3432 18 20.2486 18H6.31729L2.33691 22V4C2.33691 2.9 3.2325 2 4.3271 2ZM6.31729 16H20.2486V4H4.3271V18L6.31729 16Z" fill="white"/>
+									</mask>
+									<g mask="url(#maskComments)">
+										<rect x="0.34668" width="23.8823" height="24" fill="#FFFFFF"/>
+									</g>
+								</svg>
+
+								<span class="jp-carousel-has-comments-indicator" aria-label="This image has comments."></span>
+							</span>
+						</a>
+											</div>
+				</div>
+				<div class="jp-carousel-info-extra">
+					<div class="jp-carousel-info-content-wrapper">
+						<div class="jp-carousel-photo-title-container">
+							<h2 class="jp-carousel-photo-title"></h2>
+						</div>
+						<div class="jp-carousel-comments-wrapper">
+															<div id="jp-carousel-comments-loading">
+									<span>Loading Comments...</span>
+								</div>
+								<div class="jp-carousel-comments"></div>
+								<div id="jp-carousel-comment-form-container">
+									<span id="jp-carousel-comment-form-spinner">&nbsp;</span>
+									<div id="jp-carousel-comment-post-results"></div>
+																														<div id="jp-carousel-comment-form-commenting-as">
+												<p id="jp-carousel-commenting-as">
+													You must be <a href="#" class="jp-carousel-comment-login">logged in</a> to post a comment.												</p>
+											</div>
+																											</div>
+													</div>
+						<div class="jp-carousel-image-meta">
+							<div class="jp-carousel-title-and-caption">
+								<div class="jp-carousel-photo-info">
+									<h3 class="jp-carousel-caption" itemprop="caption description"></h3>
+								</div>
+
+								<div class="jp-carousel-photo-description"></div>
+							</div>
+							<ul class="jp-carousel-image-exif" style="display: none;"></ul>
+							<a class="jp-carousel-image-download" target="_blank" style="display: none;">
+								<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="3" y="3" width="19" height="18">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M5.84615 5V19H19.7775V12H21.7677V19C21.7677 20.1 20.8721 21 19.7775 21H5.84615C4.74159 21 3.85596 20.1 3.85596 19V5C3.85596 3.9 4.74159 3 5.84615 3H12.8118V5H5.84615ZM14.802 5V3H21.7677V10H19.7775V6.41L9.99569 16.24L8.59261 14.83L18.3744 5H14.802Z" fill="white"/>
+									</mask>
+									<g mask="url(#mask0)">
+										<rect x="0.870605" width="23.8823" height="24" fill="#FFFFFF"/>
+									</g>
+								</svg>
+								<span class="jp-carousel-download-text"></span>
+							</a>
+							<div class="jp-carousel-image-map" style="display: none;"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		</div>
+		<link crossorigin='anonymous' rel='stylesheet' id='all-css-0-2' href='https://s2.wp.com/_static/??-eJyljUsKhDAQRC80mXZGDLiQOUsmaSTa+ZBOI95eBN260E3BK4pXsGRlU6wYKwRRmWT0kWHCmo2dD4aQ0h5OCBmsKUkYCXjxGYv6S3SEb8v8gge2c3QWd4XVEzo1GiIs6xXtB78wfHT/7Zu203raAHg3ZXE=&cssminify=yes' type='text/css' media='all' />
+<script id='jetpack-carousel-js-extra'>
+var jetpackSwiperLibraryPath = {"url":"https:\/\/s2.wp.com\/wp-content\/mu-plugins\/jetpack-plugin\/moon\/_inc\/build\/carousel\/swiper-bundle.min.js"};
+var jetpackCarouselStrings = {"widths":[370,700,1000,1200,1400,2000],"is_logged_in":"","lang":"en","ajaxurl":"https:\/\/cwilso.com\/wp-admin\/admin-ajax.php","nonce":"bf0a7dccbb","display_exif":"1","display_comments":"1","single_image_gallery":"1","single_image_gallery_media_file":"","background_color":"black","comment":"Comment","post_comment":"Post Comment","write_comment":"Write a Comment...","loading_comments":"Loading Comments...","download_original":"View full size <span class=\"photo-size\">{0}<span class=\"photo-size-times\">\u00d7<\/span>{1}<\/span>","no_comment_text":"Please be sure to submit some text with your comment.","no_comment_email":"Please provide an email address to comment.","no_comment_author":"Please provide your name to comment.","comment_post_error":"Sorry, but there was an error posting your comment. Please try again later.","comment_approved":"Your comment was approved.","comment_unapproved":"Your comment is in moderation.","camera":"Camera","aperture":"Aperture","shutter_speed":"Shutter Speed","focal_length":"Focal Length","copyright":"Copyright","comment_registration":"1","require_name_email":"1","login_url":"https:\/\/cwilso.wordpress.com\/wp-login.php?redirect_to=https%3A%2F%2Fcwilso.com%2F2011%2F03%2F01%2Ffun-times-ahead-at-sxsw-2011%2F","blog_id":"16891","meta_data":["camera","aperture","shutter_speed","focal_length","copyright"],"stats_query_args":"blog=16891&v=wpcom&tz=-7&user_id=0&subd=cwilso","is_public":"1"};
+</script>
+<script crossorigin='anonymous' type='text/javascript' src='https://s0.wp.com/_static/??-eJydjtEOgjAMRX/I2WiU+GL8FDNGwULXLWwT+XvRiCFo1Ni30/a2BzqvjJOIEqEOUOCZDPrLsg4LmIxsUp5TRRKgxui1aR4M1jmBI4mBPBEXQFKSUEQVTOuYR+6XlmR+NZ7QYgCfchi2dcc3hdCQV0zSqNKZFFRJLzbTnI7IPPy7R0f4X9/o1qWA/NwbG+/8fz8bibFQlWbGtv9EX96MNqrzxtkZDrmD3a+y3XaTrYeqr262svI='></script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script>		<script type="text/javascript">
+			(function() {
+				var extend = function(out) {
+					out = out || {};
+
+					for (var i = 1; i < arguments.length; i++) {
+						if (!arguments[i])
+						continue;
+
+						for (var key in arguments[i]) {
+						if (arguments[i].hasOwnProperty(key))
+							out[key] = arguments[i][key];
+						}
+					}
+
+					return out;
+				};
+				extend( window.infiniteScroll.settings.scripts, ["mobile-useragent-info","rlt-proxy","jquery-core","jquery-migrate","jquery","wpcom-actionbar-placeholder","grofiles-cards","wpgroho","devicepx","the-neverending-homepage","scrawl-skip-link-focus-fix","satellite-script","jetpack-carousel","tiled-gallery","carousel-wpcom"] );
+				extend( window.infiniteScroll.settings.styles, ["the-neverending-homepage","satellite-parent-style","scrawl-style","genericons","wp-block-library","jetpack-videopress-video-block-view","mediaelement","wp-mediaelement","jetpack-layout-grid","jetpack-ratings","coblocks-frontend","wpcom-core-compat-playlist-styles","wpcom-text-widget-styles","wpcom-bbpress2-staff-css","geo-location-flair","reblogging","a8c-global-print","satellite-style","scrawl-wpcom","satellite-wpcom","h4-global","scrawl-fonts","classic-theme-styles","global-styles","satellite-fonts","jetpack-global-styles-frontend-style","jetpack-carousel-swiper-css","jetpack-carousel","tiled-gallery"] );
+			})();
+		</script>
+				<span id="infinite-aria" aria-live="polite"></span>
+		<script src="//stats.wp.com/w.js?63" defer></script> <script type="text/javascript">
+_tkq = window._tkq || [];
+_stq = window._stq || [];
+_tkq.push(['storeContext', {'blog_id':'16891','blog_tz':'-7','user_lang':'en','blog_lang':'en','user_id':'0'}]);
+_stq.push(['view', {'blog':'16891','v':'wpcom','tz':'-7','user_id':'0','subd':'cwilso'}]);
+_stq.push(['extra', {'crypt':'UE40eW5QN0p8M2Y/RE1mNzc2NTVTamdsRWFxcEV3XUtMXVR5aWlmMVNIcUxBaFstUWRrZVpWQ2tORExSfEpUVm05SlpEZzZWOEtlbW5nZHV0dkhDNjhwP35JbkdHLyZqfltyaHdKb0lrankrbkpPZ1RYJjVCRlhxLSV3bjZJbW1GSmJQRSxYZ2tIej9iS2oyZiw5ZkZWZU1YSGhvdXxkOENNY1VjRUJbNiZfM0tYNC1yeVBLc3kvbmxNdGxxZTFTa3Y1QWVOVE1UblE/SXxNaGNnfCwrU2hdMz1VcmxCQW9RaVJZTD1IJjUlLzFVVSY2S19scDRyP1hVUl01VSZRP3RoSml+YVR2SnBWWWNGLzA5MkNJeVBIQ1l1N2g0cnZkOA=='}]);
+_stq.push([ 'clickTrackerInit', '16891', '0' ]);
+	</script>
+<noscript><img src="https://pixel.wp.com/b.gif?v=noscript" style="height:1px;width:1px;overflow:hidden;position:absolute;bottom:1px;" alt="" /></noscript>
+<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script>
+</body>
+</html>
+<!--
+	generated in 0.182 seconds
+	116993 bytes batcached for 300 seconds
+-->

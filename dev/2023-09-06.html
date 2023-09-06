@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html class="h-feed">
+<head>
+  <meta charset="utf-8"/>
+  <title class="p-name">#dev 2023-09-06</title>
+
+  <meta name="keywords" content="#dev"/>
+        <meta name="robots" content="noindex,follow"/>
+  
+  <script src="/assets/jquery-3.1.0.min.js"></script>
+  <script src="/assets/cookie.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="/materialize/css/materialize.min.css"/>
+  <script src="/materialize/js/materialize.min.js"></script>
+  <script src="/assets/moment.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+
+  <link rel="stylesheet" type="text/css" href="/assets/styles.css"/>
+
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="generator" content="https://github.com/indieweb/chat.indieweb.org"/>
+  <link rel="pingback" href="https://webmention.io/indiewebcamp/xmlrpc"/>
+  <link href="https://webmention.io/indiewebcamp/webmention" rel="webmention"/>
+  <script src="/assets/pushstream.js"></script>
+  <script src="/assets/streaming.js"></script>
+
+  <link rel="apple-touch-icon-precomposed" href="/assets/logo/indieweb.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "url": "https://chat.indieweb.org/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://indiechat.search.cweiske.de/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <link rel="search" title="search chat.indieweb.org" type="application/opensearchdescription+xml" href="/opensearchdescription.php"/>
+</head>
+<body>
+<ul class="side-nav fixed" id="slide-out">
+  <li><div class="userView">
+    <img src="/assets/user-bkg.jpg" class="background"/>
+    <a href="#"><img class="circle" src="/assets/logo/indieweb.png"/></a>
+    <a><span class="white-text name" style="font-size: 18pt;">#dev</span></a>
+    <a><span class="white-text email">2023-09-06</span></a>
+  </div></li>
+
+  <li style="display: flex; flex-direction: row;">
+    <div style="flex: 1 1;">
+              <a href="./2023-09-05" rel="prev">Prev</a>
+          </div>
+    <div style="flex: 1 1;">
+              <a class="disabled">Next</a>
+          </div>
+  </li>
+
+  <li class="divider"></li>
+
+      <li class="channel " data-channel="#indieweb">
+      <a href="https://chat.indieweb.org/indieweb/">#indieweb</a>
+    </li>
+      <li class="channel current" data-channel="#indieweb-dev">
+      <a href="https://chat.indieweb.org/dev/">#dev</a>
+    </li>
+      <li class="channel " data-channel="#indieweb-wordpress">
+      <a href="https://chat.indieweb.org/wordpress/">#wordpress</a>
+    </li>
+      <li class="channel " data-channel="#indieweb-meta">
+      <a href="https://chat.indieweb.org/meta/">#meta</a>
+    </li>
+      <li class="channel " data-channel="#indieweb-stream">
+      <a href="https://chat.indieweb.org/stream/">#stream</a>
+    </li>
+      <li class="channel " data-channel="#microformats">
+      <a href="https://chat.indieweb.org/microformats/">#microformats</a>
+    </li>
+      <li class="channel " data-channel="#indieweb-known">
+      <a href="https://chat.indieweb.org/known/">#known</a>
+    </li>
+  
+  <li class="divider"></li>
+
+  <li class="search">
+    <form action="https://indiechat.search.cweiske.de/" method="get">
+      <div style="position:relative">
+        <input type="text" name="q" id="search" placeholder="Search"/>
+        <button class="material-icons" type="submit">search</button>
+      </div>
+    </form>
+  </li>
+  <li>
+    <form action="/set-timezone.php" method="post" id="set-timezone-form">
+      <div class="input-field col s12">
+        <select class="browser-default" id="set-timezone" name="tz" onchange="document.getElementById('set-timezone-form').submit()">
+                      <option value="-5 GMT" >-5 GMT</option>
+                      <option value="Africa/Accra" >Africa/Accra</option>
+                      <option value="America/Boise" >America/Boise</option>
+                      <option value="America/Chicago" >America/Chicago</option>
+                      <option value="America/Denver" >America/Denver</option>
+                      <option value="America/Detroit" >America/Detroit</option>
+                      <option value="America/Edmonton" >America/Edmonton</option>
+                      <option value="America/Halifax" >America/Halifax</option>
+                      <option value="America/Los_Angeles" >America/Los_Angeles</option>
+                      <option value="America/Los_angeles" >America/Los_angeles</option>
+                      <option value="America/Mexico_City" >America/Mexico_City</option>
+                      <option value="America/Monterrey" >America/Monterrey</option>
+                      <option value="America/Montreal" >America/Montreal</option>
+                      <option value="America/New_York" >America/New_York</option>
+                      <option value="America/Phoenix" >America/Phoenix</option>
+                      <option value="America/Sao_Paulo" >America/Sao_Paulo</option>
+                      <option value="America/Toronto" >America/Toronto</option>
+                      <option value="America/Vancouver" >America/Vancouver</option>
+                      <option value="Asia/Bangkok" >Asia/Bangkok</option>
+                      <option value="Asia/Calcutta" >Asia/Calcutta</option>
+                      <option value="Asia/Kolkata" >Asia/Kolkata</option>
+                      <option value="Asia/Kuala_Lumpur" >Asia/Kuala_Lumpur</option>
+                      <option value="Asia/Manila" >Asia/Manila</option>
+                      <option value="Asia/Seoul" >Asia/Seoul</option>
+                      <option value="Asia/Tehran" >Asia/Tehran</option>
+                      <option value="Asia/Tokyo" >Asia/Tokyo</option>
+                      <option value="Atlantic/Faroe" >Atlantic/Faroe</option>
+                      <option value="Atlantic/Reykjavik" >Atlantic/Reykjavik</option>
+                      <option value="Australia/Adelaide" >Australia/Adelaide</option>
+                      <option value="Australia/Brisbane" >Australia/Brisbane</option>
+                      <option value="Australia/Melbourne" >Australia/Melbourne</option>
+                      <option value="Australia/Perth" >Australia/Perth</option>
+                      <option value="Australia/Sydney" >Australia/Sydney</option>
+                      <option value="CET" >CET</option>
+                      <option value="Canada/Eastern" >Canada/Eastern</option>
+                      <option value="Europe/Amsterdam" >Europe/Amsterdam</option>
+                      <option value="Europe/Athens" >Europe/Athens</option>
+                      <option value="Europe/Belfast" >Europe/Belfast</option>
+                      <option value="Europe/Belgrade" >Europe/Belgrade</option>
+                      <option value="Europe/Berlin" >Europe/Berlin</option>
+                      <option value="Europe/Brussels" >Europe/Brussels</option>
+                      <option value="Europe/Dublin" >Europe/Dublin</option>
+                      <option value="Europe/Helsinki" >Europe/Helsinki</option>
+                      <option value="Europe/Lisbon" >Europe/Lisbon</option>
+                      <option value="Europe/London" >Europe/London</option>
+                      <option value="Europe/Luxembourg" >Europe/Luxembourg</option>
+                      <option value="Europe/Madrid" >Europe/Madrid</option>
+                      <option value="Europe/Moscow" >Europe/Moscow</option>
+                      <option value="Europe/Paris" >Europe/Paris</option>
+                      <option value="Europe/Prague" >Europe/Prague</option>
+                      <option value="Europe/Rome" >Europe/Rome</option>
+                      <option value="Europe/Stockholm" >Europe/Stockholm</option>
+                      <option value="Europe/Zurich" >Europe/Zurich</option>
+                      <option value="GMT" >GMT</option>
+                      <option value="Pacific/Auckland" >Pacific/Auckland</option>
+                      <option value="US/Central" >US/Central</option>
+                      <option value="US/Eastern" >US/Eastern</option>
+                      <option value="US/Pacific" >US/Pacific</option>
+                      <option value="UTC" selected="selected">UTC</option>
+                  </select>
+        <input type="hidden" name="location" value="/dev/2023-09-06"/>
+      </div>
+    </form>
+  </li>
+
+</ul>
+
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">#dev</a>
+      <a href="#" data-activates="slide-out" class="button-collapse"><abbr title="menu">≡</abbr></a>
+
+      <ul class="right">
+        <li>
+                      <a href="./2023-09-05" rel="prev"><abbr title="Previous">←</abbr></a>
+                  </li>
+        <li>
+                      <a class="disabled"><abbr title="Next">→</abbr></a>
+                  </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<script>
+$(function(){
+  $(".button-collapse").sideNav();
+  $("li.channel").each(function(i,ch){
+    if(channel_unread($(ch).data('channel'))) {
+      $(ch).addClass('activity');
+    }
+  });
+  channel_read($("#active-channel").val());
+});
+</script>
+<main>
+
+<h2 class="date"><span class="channel-name">#dev</span> 2023-09-06</h2>
+
+<div class="logs">
+  <div id="log-lines">
+    <div class="daymark">2023-09-06 <span class="tz">UTC</span></div><div class="line join cluster">[tw2113_Slack_], sp1ff and btrem joined the channel</div>  </div>
+  <span id="bottom"></span>
+</div>
+
+  <input id="active-channel" type="hidden" value="#indieweb-dev">
+  <input id="tz-offset" type="hidden" value="+00:00">
+
+<div id="chat-footer">
+      <div id="join_prompt">
+  <button type="button" id="join_btn">Join the Chat</button>
+  (or join via <a href="https://indieweb.org/discuss#Join_Discussions">Discord, IRC, Matrix</a>, 
+  or <a href="https://chat.indieweb.org/slack">Slack</a>)
+</div>
+
+<div id="signin" class="hidden">
+  enter nickname: <input type="text" id="nickname" autocomplete="off">
+</div>
+
+<div id="connection_status" class="hidden">
+  <input type="text" readonly="readonly" id="connection_status_field">
+</div>
+
+<div id="chat" class="hidden">
+  <input type="text" id="message" autocomplete="off">
+  <span id="notify_control" class="hidden">
+    <button type="button" id="notify_btn">Enable Notifications</button>
+  </span>
+</div>
+
+
+<div id="irc_notice" class="hidden"><div class="pad">
+  <button type="button" class="close" id="close_notice_btn">×</button>
+  <span class="nick" id="irc_notice_nick"></span>
+  <span class="text" id="irc_notice_text"></span>
+</div></div>
+
+
+<style type="text/css">
+.hidden {
+  display: none;
+}
+#join_prompt button {
+  padding: 4px;
+  font-size: 15px;
+  background: #94dfef;
+  border: 1px #78cee1 solid;
+  border-radius: 4px;
+}
+#notify_control button {
+  font-size: 15px;
+  background: #ccc;
+  border: 1px #999 solid;
+  border-radius: 4px;
+  float:right;
+}
+#notify_control button.enabled {
+  border: 1px #78cee1 solid;
+  background: #94dfef;
+}
+#connection_status_field {
+  width: 300px;
+}
+#message {
+  font-size: 15px;
+  width: 400px;
+}
+#irc_notice {
+  position: absolute;
+  bottom: 60px;
+  left: 20px;
+  background: #f2dede;
+  border: 2px #ebccd1 solid;
+  color: #a94442;
+  border-radius: 4px;
+}
+#irc_notice .pad {
+  margin: 15px;
+}
+#irc_notice .nick {
+  font-weight: bold;
+}
+#irc_notice .close {
+  position: relative;
+  top: -6px;
+  right: -9px;
+  border: 0;
+  float: right;
+  cursor: pointer;
+  background: 0 0;
+  -webkit-appearance: none;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: 0.2;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+#irc_notice .close:hover {
+  opacity: 0.5;
+}
+</style>
+
+<script>
+document.getElementById('close_notice_btn').addEventListener('click', function(){
+  document.getElementById('irc_notice').classList.add('hidden');
+});
+
+  var join_btn = document.getElementById('join_btn');
+  var notify_btn = document.getElementById('notify_btn');
+  var message_box = document.getElementById('message');
+  var nick_field = document.getElementById('nickname');
+  var status_field = document.getElementById('connection_status_field');
+  var notify = false;
+  var nickname;
+  var nickname_regex = null;
+  var nickname_self_regex = null;
+  var connected = false;
+  var chat_session = false;
+
+  join_btn.addEventListener('click', function(){
+    document.getElementById('join_prompt').classList.add('hidden');
+    document.getElementById('signin').classList.remove('hidden');
+    document.querySelector('.logs').classList.add('active-chat');
+    if(get_nick_from_cookie()) {
+      nick_field.value = get_nick_from_cookie();
+    }
+    nick_field.focus();
+    window.scrollTo(0,document.body.offsetHeight);
+
+    var nick_key_listener = function(e) {
+      if(e.keyCode == 13) {
+        if(!connected) {
+          show_notice("connecting...","connecting to the chat room...");
+        }
+      }
+    };
+    nick_field.addEventListener("keypress", nick_key_listener);
+    
+  });
+
+  notify_btn.addEventListener('click', function(){
+    if(notify){
+        notify = false;
+        notify_btn.classList.remove('enabled');
+        notify_btn.innerHTML = 'Enabled Notifications';
+    } else {
+        if (!("Notification" in window)) {
+            alert("Notifications not supported on this browser.");
+        } else if (Notification.permission === "granted") {
+            notify = true;
+            notify_btn.classList.add('enabled');
+            notify_btn.innerHTML = 'Disable Notifications';
+        } else if (Notification.permission !== 'denied') {
+            Notification.requestPermission(function (permission) {
+                if (permission === "granted") {
+                    notify = true;
+                    notify_btn.classList.add('enabled');
+                    notify_btn.innerHTML = 'Disable Notifications';
+                }
+            });
+        }
+    }
+  });
+
+  nick_field.addEventListener('keypress', function(e){
+    if(e.keyCode == 13) {
+      set_nick(nick_field.value);
+      document.getElementById('message').focus();
+      join(nickname);
+      activate_chat_field();
+    }
+  });
+
+function activate_chat_field() {
+  document.getElementById('signin').classList.add('hidden');
+  document.getElementById('chat').classList.remove('hidden');
+  document.querySelector('.logs').classList.add('active-chat');
+  var message_key_listener = function(e) {
+    if(e.keyCode == 13) {
+      console.log("Sending to IRC: "+message_box.value);
+      if(!connected) {
+        show_notice("connecting...","connecting to the chat room...");
+      }
+      send(message_box.value);
+    }
+  };
+  message_box.addEventListener("keypress", message_key_listener);
+}
+
+function get_nick_from_cookie() {
+  return Cookies.get("nickname");
+}
+
+function set_nick(nick) {
+  nickname = nick;
+  nickname_regex = new RegExp(nickname, "i");
+  nickname_self_regex = new RegExp('^# \\d\\d:\\d\\d \\[?'+nickname, "i");
+  Cookies.set("nickname", nickname);
+}
+
+function get_session_from_cookie() {
+  return Cookies.get("gatewaysession");
+}
+
+function set_session(session) {
+  chat_session = session;
+  Cookies.set("gatewaysession", session);
+}
+
+function show_notice(nick, text) {
+  document.getElementById('irc_notice').classList.remove('hidden');
+  document.getElementById('irc_notice_nick').innerHTML = nick;
+  document.getElementById('irc_notice_text').innerHTML = text;
+}
+function hide_notice() {
+  document.getElementById('irc_notice').classList.add('hidden');
+  document.getElementById('irc_notice_nick').innerHTML = "";
+  document.getElementById('irc_notice_text').innerHTML = "";
+}
+function check_alert(data){
+  if(!connected) {
+    console.log("Not connected. Got text: ");
+    console.log(data);
+    if(data.nick == nickname) {
+      connected = true;
+      console.log("Connected");
+      hide_notice();
+    }
+  }
+  if(notify){
+    if(data.line.match(nickname_regex) && data.nick != nickname) {
+      if (!("Notification" in window)) {
+          console.log("Notifications not supported on this browser.");
+      } else if (Notification.permission === "granted") {
+          var notification = new Notification(text);
+      } else if (Notification.permission !== 'denied') {
+          Notification.requestPermission();
+      }
+    }
+  }
+}
+function send(text) {
+  xhr = new XMLHttpRequest();
+  
+  xhr.open('POST', encodeURI('/send.php?action=input'));
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.onload = function() {
+    var response = JSON.parse(xhr.responseText);
+    if (xhr.status === 200 && response.username) {
+      console.log("sent");
+      message_box.value = '';
+    }
+    else {
+      alert('Request failed: ' + response.error);
+    }
+  };
+  xhr.send('user_name=' + encodeURIComponent(nickname) 
+    + '&text=' + encodeURIComponent(text) 
+    + '&session=' + encodeURIComponent(chat_session)
+    + '&channel=' + encodeURIComponent(document.getElementById('active-channel').value));
+}
+function join(nick) {
+  xhr = new XMLHttpRequest();
+
+  xhr.open('POST', encodeURI('/send.php?action=join'));
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.onload = function() {
+    console.log("Got status "+xhr.status);
+    var response = JSON.parse(xhr.responseText);
+    console.log(response);
+    if (response.status=="connecting") {
+      console.log("connecting...");
+      set_session(response.session);
+    } else if(response.status=="connected") {
+      connected = true;
+      console.log("connected");
+      set_session(response.session);
+      hide_notice();
+    } else {
+      alert('Request failed.  Returned status of ' + xhr.status);
+    }
+  };
+  xhr.send('user_name=' + encodeURIComponent(nickname) + '&channel=' + encodeURIComponent(document.getElementById('active-channel').value));
+}
+
+// Check if there is an active session in the cookie
+if(chat_session=get_session_from_cookie()) {
+  xhr = new XMLHttpRequest();
+
+  xhr.open('POST', encodeURI('/send.php?action=session'));
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.onload = function() {
+    var response = JSON.parse(xhr.responseText);
+    if(response && response.username) {
+      set_nick(response.username);
+      connected = true;
+      hide_notice();
+      document.getElementById('join_prompt').classList.add('hidden');
+      document.getElementById('signin').classList.add('hidden');
+      document.getElementById('chat').classList.remove('hidden');
+      activate_chat_field();
+      window.scrollTo(0,document.body.offsetHeight);
+    } else {
+      set_session("");
+    }
+  }
+  xhr.send('session=' + encodeURIComponent(chat_session));
+}
+
+</script>
+  
+  <div class="clear"></div>
+</div>
+
+<script type="text/javascript">/*<![CDATA[*/
+  if(window.location.hash && window.location.hash != '#top' && window.location.hash != '#bottom') {
+    var n = document.getElementById(window.location.hash.replace('#',''));
+    n.classList.add('hilite');
+  }
+  window.addEventListener("hashchange", function(){
+    var n = document.getElementsByClassName('line');
+    Array.prototype.filter.call(n, function(el){ el.classList.remove('hilite') });
+    var n = document.getElementById(window.location.hash.replace('#',''));
+    n.classList.add('hilite');
+  }, false);
+/*]]>*/</script>
+
+</main>
+
+</body>
+</html>

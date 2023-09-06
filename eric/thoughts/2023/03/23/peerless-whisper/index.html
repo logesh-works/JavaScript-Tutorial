@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head profile="http://gmpg.org/xfn/1">
+<title>Peerless Whisper  &#8211;  Eric’s Archived Thoughts</title>
+<meta name="generator" content="WordPress 6.3.1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="shortcut icon" href="/favicon.ico"><link rel="home" href="http://meyerweb.com/" title="Home" ><link rel="openid.server" href="http://www.myopenid.com/server"><link rel="openid.delegate" href="http://emeyer.myopenid.com/"><meta name="google-site-verification" content="I_JFi4WrY6bW7AE2ya5sSlruVvgvrIeRa1IsqO0GB78" /><link rel="alternate" type="application/rss+xml" title="Thoughts From Eric" href="/eric/thoughts/rss2/full"><link rel="alternate" type="application/rss+xml" title="Thoughts From Eric (only technical posts)" href="/eric/thoughts/category/tech/rss2/full"><link rel="alternate" type="application/rss+xml" title="Thoughts From Eric (only personal posts)" href="/eric/thoughts/category/personal/rss2/full"><link rel="alternate" type="application/rss+xml" title="Excuse of the Day" href="/feeds/excuse/rss20.xml"><link rel="stylesheet" href="/ui/meyerweb.css" type="text/css"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@meyerweb"><meta name="twitter:title" content="meyerweb.com"><meta name="twitter:description" content="The web home of Eric A. Meyer, CSS guy; and his wife Kathryn, doctor of nursing."><meta name="twitter:url" content="https://meyerweb.com/"><meta name="twitter:image" content="https://meyerweb.com/ui/i/heart/663399love.png"><meta name="twitter:image:width" content="192"><meta name="twitter:image:height" content="192"><meta property="og:type" content="website"><meta property="og:image" content="https://meyerweb.com/ui/i/hamonshu/fb-og-image.png"><meta name="twitter:description" property="og:description" content="I ran OpenAI’s Whisper on my laptop to transcribe some videos, and it did an astonishingly good job.">
+<meta name="twitter:title" property="og:title" content="Peerless Whisper">
+<meta name="twitter:url" property="og:url" content="https://meyerweb.com/eric/thoughts/2023/03/23/peerless-whisper/">
+<link rel="stylesheet" type="text/css" href="https://meyerweb.com/eric/thoughts/wp-content/themes/meyerweb-2020/style.css">
+<link rel="pingback" href="https://meyerweb.com/eric/thoughts/xmlrpc.php">
+</head>
+<body id="www-meyerweb-com" class="arch single">	
+<header role="banner" id="sitemast">
+<a href="/">meyerweb.com</a>
+<nav role="navigation" aria-label="page" id="skiplinks">
+<a href="#main">Main content</a>
+<a href="#navigate">Navigation links</a>
+<a href="#footer">Footer</a>
+</nav>
+</header>
+
+<nav role="navigation" aria-label="site" id="navigate">
+<ul id="navlinks">
+<li id="archLink"><a href="/eric/thoughts/">Post Archives</a></li>
+<li id="cssLink"><a href="/eric/css/">CSS Work</a></li>
+<li id="toolsLink"><a href="/eric/tools/">Toolbox</a></li>
+<li id="writeLink"><a href="/eric/writing.html">Writing</a></li>
+<li id="speakLink"><a href="/eric/talks/">Speaking</a></li>
+<li id="otherLink"><a href="/other/">Other Stuff</a></li>
+<li id="aboutsite"><a href="/ui/about.html">About this site</a></li>
+</ul>
+</nav>
+
+<!--div id="main"-->
+
+<main role="main" id="thoughts">
+				
+	
+<article role="article" class="single entry">
+<header>
+<h1 class="title"><a href="https://meyerweb.com/eric/thoughts/2023/03/23/peerless-whisper/" rel="bookmark" title="Permanent Link: Peerless Whisper" aria-current="page">Peerless Whisper</a></h1>
+<em class="pubtime">Published  5 months, 2 weeks past</em>
+</header>
+
+<div class="text">
+<p>What happened was, I was hanging out in an online chatter channel when a little birdy named <a href="https://brucelawson.co.uk/" rel="friend colleague met">Bruce</a> chirped about <a href="https://github.com/openai/whisper">OpenAI’s Whisper</a> and how he was using it to transcribe audio.  And I thought, <em>Hey, I have audio that needs to be transcribed.</em>  Brucie Bird also mentioned it would output text, SRT, and WebVTT formats, and I thought, <em>Hey, I have videos I’ll need to upload with transcription to YouTube!</em>  And <strong>then</strong> he said you could run it from the command line, and I thought, <em>Hey, <strong>I</strong> have a command line!</em></p>
+
+<p>So off I went to install it and try it out, and immediately ran smack into some hurdles I thought I’d document here in case someone else has similar problems.  All of this took place on <a href="https://meyerweb.com/eric/thoughts/2023/02/23/a-leap-of-decades/">my M2 MacBook Pro</a>, though I believe most of the below should be relevant to anyone trying to do this at the command line.</p>
+
+<p>The first thing I did was what the GitHub repository’s README recommended, which is:</p>
+
+<pre class="bash"><code>$ pip install -U openai-whisper</code>
+</pre>
+
+<p>That failed because I didn’t have <code>pip</code> installed.  Okay, fair enough.  I figured out how to install that, setting up an alias of <code>python</code> for <code>python3</code> along the way, and then tried again.  This time, the install started and then bombed out:</p>
+
+<pre><code>Collecting openai-whisper
+  Using cached openai-whisper-20230314.tar.gz (792 kB)
+  Installing build dependencies ...  done
+  Getting requirements to build wheel ...  done
+  Preparing metadata (pyproject.toml) ...  done
+Collecting numba
+  Using cached numba-0.56.4.tar.gz (2.4 MB)
+  Preparing metadata (setup.py) ...  error
+  error: subprocess-exited-with-error</code>
+</pre>
+
+<p>…followed by some stack trace stuff, none of which was really useful until ten or so lines down, where I found:</p>
+
+<pre><code>RuntimeError: Cannot install on Python version 3.11.2; only versions &gt;=3.7,&lt;3.11 are supported.</code>
+</pre>
+
+<p>In other words, the version of Python I have installed is <em>too modern</em> to run AI.  What a world.</p>
+
+<p>I DuckDucked around a bit and hit upon <code>pyenv</code>, which is I guess a way of installing and running older versions of Python without having to overwrite whatever version(s) you already have.  I’ll skip over the error part of my trial-and-error process and give you the commands that made it all work:</p>
+
+<pre class="bash"><code>$ brew install pyenv
+
+$ pyenv install 3.10
+
+$ PATH="~/.pyenv/shims:${PATH}"
+
+$ pyenv local 3.10
+
+$ pip install -U openai-whisper</code>
+</pre>
+
+<p>That got Whisper to install.  It didn’t take very long.</p>
+
+<p>At that point, I wondered what I’d have to configure to transcribe something, and the answer turned out to be precisely zilch.  Once the install was done, I dropped into the directory containing <a href="https://www.youtube.com/watch?v=CBdefloUvso">my MP4 video</a>, and typed this:</p>
+
+<pre class="bash"><code>$ whisper wpe-mse-eme-v2.mp4</code>
+</pre>
+
+<p>Here’s what I got back.  I’ve marked the very few errors.</p>
+
+<pre>
+[00:00.000 --&gt; 00:07.000]  In this video, we'll show you several demos showcasing multi-media capabilities in WPE<mark> </mark>WebKit,
+[00:07.000 --&gt; 00:11.000]  the official port of the WebKit engine for embedded devices.
+[00:11.000 --&gt; 00:18.000]  Each of these demos are running on the low-powered Raspberry Pi 3 seen in the lower right-hand side of the screen here.
+[00:18.000 --&gt; 00:25.000]  Infotainment systems and media players often need to consume digital rights-managed videos.
+[00:25.000 --&gt; 00:32.000]  <mark>They</mark> tell me, is Michael coming out?  Affirmative, Mike's coming out.
+[00:32.000 --&gt; 00:45.000]  Here you can see just that, smooth streaming playback using encrypted media extensions, or EME, with PlayReady 4.
+[00:45.000 --&gt; 00:52.000]  Media source extensions, or MSE, are used by many players for greater control over playback.
+[00:52.000 --&gt; 01:00.000]  YouTube TV has a whole conformance test suite for this, which WPE has been passing since 2021.
+[01:00.000 --&gt; 01:09.000]  The <mark>loan</mark> exceptions here are those tests requiring hardware support not available on the Raspberry Pi 4, but available for other platforms.
+[01:09.000 --&gt; 01:16.000]  YouTube TV has a conformance test for EME, which WPE<mark> </mark>WebKit passes with flying colors.
+[01:22.000 --&gt; 01:40.000]  Music
+[01:40.000 --&gt; 01:45.000]  Finally, perhaps most impressively, we can put all these things together.
+[01:45.000 --&gt; 01:56.000]  Here is the dash.js player using MSE, running in a page, and using Widevine DRM to decrypt and play rights-managed video with EME all fluidly.
+[01:56.000 --&gt; 02:04.000]  <mark>Music</mark>
+[02:04.000 --&gt; 02:09.000]  Remember, all of this is being played back on the same low-powered Raspberry Pi 3.
+[02:27.000 --&gt; 02:34.000]  For more about WPE WebKit, please visit WPE<mark> </mark>WebKit.com.
+[02:34.000 --&gt; 02:42.000]  For more information about <mark>EGALIA</mark>, or to find out how we can help with your embedded device needs, please visit us at <mark>EGALIA</mark>.com.  </pre>
+
+<p>I am, frankly, astonished.  This has <em>no business</em> being as accurate as it is, for all kinds of reasons.  There’s a lot of jargon and very specific terminology in there, and Whisper nailed pretty much every last bit of it, first time in, no special configuration, nothing.  I didn’t even bump up the model size from the default of <code>small</code>.  I felt a little like that Froyo guy in the animated Hunchback of Notre Dame meme yelling about sorcery or whatever.</p>
+
+<p>True, the output isn’t absolutely perfect.  Let’s review the glitches in reverse order.  The last two errors, turning “Igalia” into “EGALIA”, seems fair enough given I didn’t specify that there would be languages other than English involved.  I routinely have to spell it for my fellow Americans, so no reason to think a codebase could do any better.</p>
+
+<p>The space inserted into “WPEWebKit” (which happens throughout) is similarly understandable.  I’m impressed it understood “WebKit” at all, never mind that it was properly capitalized and not-spaced.</p>
+
+<p>The place where it says <code>Music</code> and I marked it as an error: This is essentially an echoing countdown and then a white-noise roar from rocket engines.  There’s a “music today is just noise” joke in here somewhere, but I’m too hip to find it.</p>
+
+<p>Whisper turning “lone” into “loan” doesn’t particularly faze me, given the difficulty of handling soundalike words.  Hell, just yesterday, I was scribing a conference call and mistakenly recorded “gamut” as “gamma”, and those aren’t even technically homophones.  They just sound like they are.</p>
+
+<p>Rounding out the glitch tour, “Hey” got turned into “They”, which (given the audio quality of that particular part of the video) is still pretty good.</p>
+
+<p>There is one other error I couldn’t mark because there’s nothing to mark, but if you scrutinize the timeline, you’ll see a gap from 02:09.000 and 02:27.000.  In there, a short clip from a movie plays, and there’s a brief dialogue between two characters in not-very-Dutch-accented English there.  It’s definitely louder and more clear than the 00:25.000 –&gt; 00:32.000 bit, so I’m not sure why Whisper just skipped over it.  Manually transcribing that part isn’t a big deal, but it’s odd to see it perform so flawlessly on every other piece of speech and then drop this completely on the floor.</p>
+
+<p>Before posting, I decided to give Whisper another go, this time on <a href="https://www.youtube.com/watch?v=WbW1J7huASY">a different video</a>:</p>
+
+<pre class="bash"><code>$ whisper wpe-gamepad-support-v3.mp4</code>
+</pre>
+
+<p>This was the result, with the one actual error marked:</p>
+
+<pre>[00:00.000 --&gt; 00:13.760]  In this video, we demonstrate WPE WebKit's support for the W3C's GamePad API.
+[00:13.760 --&gt; 00:20.080]  Here we're running WPE WebKit on a Raspberry Pi 4, but any device that will run WPE WebKit
+[00:20.080 --&gt; 00:22.960]  can benefit from this support.
+[00:22.960 --&gt; 00:28.560]  The GamePad API provides a JavaScript interface that makes it possible for developers to access
+[00:28.560 --&gt; 00:35.600]  and respond to signals from GamePads and other game controllers in a simple, consistent way.
+[00:35.600 --&gt; 00:40.320]  Having connected a standard Xbox controller, we boot up the Raspberry Pi with a customized
+[00:40.320 --&gt; 00:43.040]  <mark>build route</mark> image.
+[00:43.040 --&gt; 00:48.560]  Once the device is booted, we run cog, which is a small, single window launcher made specifically
+[00:48.560 --&gt; 00:51.080]  for WPE WebKit.
+[00:51.080 --&gt; 00:57.360]  The window cog creates can be full screen, which is what we're doing here.
+[00:57.360 --&gt; 01:01.800]  The game is loaded from a website that hosts a version of the classic video arcade game
+[01:01.800 --&gt; 01:05.480]  Asteroids.
+[01:05.480 --&gt; 01:11.240]  Once the game has loaded, the Xbox controller is used to start the game and control the spaceship.
+[01:11.240 --&gt; 01:17.040]  All the GamePad inputs are handled by the JavaScript GamePad API.
+[01:17.040 --&gt; 01:22.560]  This GamePad support is now possible thanks to work done by Igalia in 2022 and is available
+[01:22.560 --&gt; 01:27.160]  to anyone who uses WPE WebKit on their embedded device.
+[01:27.160 --&gt; 01:32.000]  For more about WPE WebKit, please visit wpewebkit.com.
+[01:32.000 --&gt; 01:35.840]  For more information about Igalia, or to find out how we can help with your embedded device
+[01:35.840 --&gt; 01:39.000]  needs, please visit us at Igalia.com.  </pre>
+
+<p>That should have been “buildroot”.  Again, an entirely reasonable error.  I’ve made at least an order of magnitude more typos writing this post than Whisper has in transcribing these videos.  And <em>this</em> time, it got the spelling of Igalia correct.  I didn’t make any changes between the two runs.  It just… figured it out.</p>
+
+<p>I don’t have a lot to say about this other than, wow.  Just <em>WOW</em>.  This is some real <a href="https://en.wikipedia.org/wiki/Clarke%27s_three_laws">Clarke’s Third Law</a> stuff right here, and the <a href="https://meyerweb.com/eric/thoughts/2003/02/13/the-nature-of-progress/">technovertigo</a> is Marianas deep.</p>
+<ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2023/03/23/peerless-whisper/">Peerless Whisper</cite></a> was published on <time>Thursday, March 23rd, 2023</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/personal/technovertigo/" rel="category tag">Technovertigo</a>, <a href="https://meyerweb.com/eric/thoughts/category/today-i-learned/" rel="category tag">Today I Learned</a>, and <a href="https://meyerweb.com/eric/thoughts/category/tech/tools/" rel="category tag">Tools</a> categories.</li>
+<li class="cmt">There have been <a href="https://meyerweb.com/eric/thoughts/2023/03/23/peerless-whisper/#comments">five replies</a>.</li>
+</ul>
+</div>
+<hr class="fallback">
+</article>
+		
+
+<!-- You can start editing here. -->
+
+<div id="comments">
+<h3>Comments (5)</h3>
+
+	<ol>
+
+	
+		<li class="response comment" id="comment-3878234">
+			
+<div class="text"><p>I was just trying the same thing: <code>brew install openai-whisper</code> was a handy shortcut. My results weren&#8217;t as unequivocally awesome but some of the files I was working with are old field recordings which even human listeners have trouble with.</p>
+<p>The major drawback I found was specific to Apple Silicon, namely that the GPU acceleration is still unstable:</p>
+<p><a href="https://github.com/openai/whisper/pull/382" rel="nofollow ugc">https://github.com/openai/whisper/pull/382</a></p>
+</div><footer>Signed,<br>Chris Adams<br><a href="#comment-3878234"><time>Thursday, March 23rd, 2023 2:20pm</time></a></footer></li>
+	
+		<li class="response comment" id="comment-3878266">
+			
+<div class="text"><p>For what it&#8217;s worth, <a href="https://pypa.github.io/pipx/" rel="nofollow ugc">pipx</a> does for <code>pip</code> what <code>pyenv</code> does for entire Python installations; it installs and manages them separately from each other so you don&#8217;t have to worry about version conflicts with dependencies. It&#8217;s really useful for tools and programs you just want to run because it can save headaches down the road, and if you stop using something it can remove the whole dependency tree at once without a bunch of packages left on your system.</p>
+</div><footer>Signed,<br>David<br><a href="#comment-3878266"><time>Thursday, March 23rd, 2023 9:32pm</time></a></footer></li>
+	
+		<li class="response comment" id="comment-3878400">
+			
+<div class="text"><p>Was the title of this entry a George Michael allusion? 🙂</p>
+</div><footer>Signed,<br><a href="http://plasmasturm.org/" class="url" rel="ugc external nofollow">Aristotle Pagaltzis</a><br><a href="#comment-3878400"><time>Saturday, March 25th, 2023 7:10am</time></a></footer></li>
+	
+		<li class="response comment" id="comment-3878421">
+			
+<div class="text"><p>To play around with AI tools like this but avoid the command line hijinks you went through, I tend to look for a free native app that&#8217;s wrapped it. For Whisper, I found <a href="https://github.com/chidiwilliams/buzz/releases/" rel="nofollow ugc">Buzz</a> and <a href="https://goodsnooze.gumroad.com/l/macwhisper" rel="nofollow ugc">MacWhisper</a>, the latter having free and paid versions (it looks like paid versions have a mix of unlocking options inherent to Whisper and actual added features).</p>
+</div><footer>Signed,<br>Curtis Wilcox<br><a href="#comment-3878421"><time>Saturday, March 25th, 2023 10:33am</time></a></footer></li>
+	
+		<li class="response comment kahuna" id="comment-3878571">
+			
+<div class="text"><p>Chris, David, Curits: thank you all for your contributions!  The alternate ways to install/use Whisper are much appreciated.</p>
+<p>I should’ve known better than to cheat a head, Aristotle.</p>
+</div><footer>Signed,<br><a href="https://meyerweb.com/" class="url" rel="ugc">Eric Meyer</a><br><a href="#comment-3878571"><time>Monday, March 27th, 2023 12:23pm</time></a></footer></li>
+	
+	</ol>
+
+ 
+
+
+
+<form action="https://meyerweb.com/eric/thoughts/wp-comments-post.php" method="post" id="commentform">
+
+<header>
+<h3>Add Your Thoughts</h3>
+<ul id="rss-tb">
+<li id="tb"><a href="https://meyerweb.com/eric/thoughts/2023/03/23/peerless-whisper/trackback/" title="Trackback URL">Trackback URL</a></li>
+<li><a href="" title="Comments RSS feed">Comments <abbr title="Really Simple Syndication">RSS</abbr> feed'</a></li>
+</ul>
+</header>
+
+<fieldset>
+<div class="chrome-bug-workaround">
+<div id="fields">
+<p>
+<label for="author">Name</label>
+<input type="text" name="author" id="author" class="textarea" value="" size="28"> 
+<input type="hidden" name="comment_post_ID" value="5218">
+<input type="hidden" name="redirect_to" value="/eric/thoughts/2023/03/23/peerless-whisper/">
+</p>
+
+<p>
+<label for="email">E-mail <small>(required but not displayed)</small></label>
+<input type="email" name="email" id="email" value="" size="28"> 
+</p>
+
+<p>
+<label for="url"><acronym title="Uniform Resource Identifier">URI</acronym> <small>(optional)</small></label>
+<input type="text" name="url" id="url" value="" size="28"> 
+</p>
+
+</div>
+<div id="form-info">
+<p><strong>Meyerweb dot com reserves the right to edit or remove any comment</strong>, especially when abusive or irrelevant to the topic at hand.</p>
+<p><acronym title="Hypertext Markup Language">HTML</acronym> allowed: <small><code>&lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;s&gt; &lt;strong&gt; &lt;pre class=&quot;&quot;&gt; &lt;kbd&gt; </code></small></p>
+</div>
+<hr class="fallback">
+
+<!--<p><small><strong>XHTML:</strong> You can use these tags: &lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;s&gt; &lt;strong&gt; &lt;pre class=&quot;&quot;&gt; &lt;kbd&gt; </small></p>-->
+
+<section>
+<div id="comment_input">
+<label for="comment">Your Comment <small>(<a href="https://github.com/showdownjs/showdown/wiki/Showdown's-Markdown-syntax">Markdown</a> supported)</small></label>
+<textarea name="comment" id="comment" cols="70" rows="10" onKeyup="run();"></textarea>
+<p>
+<input name="submit" type="submit" id="submit" value="Post your e-pistle" />
+<input type="hidden" name="comment_post_ID" value="5218" />
+<input type="hidden" name="mw_dssb" value="c81f1f833ed7eb7d743ab1d197ecf52b" />
+if you’re satisfied with it.</p>
+</div>
+<div>
+<h4>Comment Preview</h4>
+<div id="comment_preview"></div>
+</div>
+<script type="text/javascript" src="/ui/showdown/dist/showdown.min.js"></script>
+<script type="text/javascript">
+function run() {
+  var text = document.getElementById('comment').value,
+      target = document.getElementById('comment_preview'),
+      converter = new showdown.Converter(),
+      html = converter.makeHtml(text);
+  target.innerHTML = html;
+}
+run();
+</script>
+</section>
+</div>
+</fieldset>
+<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="5fa66ee689" /></p><p style="display: none !important;"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="50"/><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form>
+
+
+
+
+</div>
+
+</main>
+
+<div class="prev-next book" id="posts-pn">
+<h4>Browse <a href="/eric/thoughts/">the Archive</a></h4>
+<p class="prev"><a href="https://meyerweb.com/eric/thoughts/2023/02/23/a-leap-of-decades/">A Leap of Decades</a></p>
+<p class="next"><a href="https://meyerweb.com/eric/thoughts/2023/03/31/echoed-whisper/">Echoed Whisper</a></p>
+</div>
+
+</div>
+
+<div role="navigation" aria-label="archive" class="panel" id="related">
+<h4>Related Posts</h4>
+<ul><li><a href="https://meyerweb.com/eric/thoughts/2021/05/13/adding-pandoc-arguments-in-bbedit/">Adding Pandoc Arguments in BBEdit</a> <time>May 13, 2021</time></li><li><a href="https://meyerweb.com/eric/thoughts/2003/02/13/the-nature-of-progress/">The Nature of Progress</a> <time>February 13, 2003</time></li><li><a href="https://meyerweb.com/eric/thoughts/2023/03/31/echoed-whisper/">Echoed Whisper</a> <time>March 31, 2023</time></li><li><a href="https://meyerweb.com/eric/thoughts/2022/03/14/if-or-when/">When or If</a> <time>March 14, 2022</time></li><li><a href="https://meyerweb.com/eric/thoughts/2021/04/16/scripted-server-startup-for-mdn-and-wpt/">Scripted Server Startup for MDN and WPT</a> <time>April 16, 2021</time></li><li><a href="https://meyerweb.com/eric/thoughts/2020/09/29/polite-bash-commands/">Polite Bash Commands</a> <time>September 29, 2020</time></li><li><a href="https://meyerweb.com/eric/thoughts/2020/02/10/preventing-commits-to-the-master-branch-in-os-x-mojave/">Preventing Commits to the master Branch in OS X Mojave</a> <time>February 10, 2020</time></li><li><a href="https://meyerweb.com/eric/thoughts/2019/03/18/legend-of-the-stalwart-mouse/">Legend of the Stalwart Mouse: Return of the MX518</a> <time>March 18, 2019</time></li><li><a href="https://meyerweb.com/eric/thoughts/2018/08/24/firefoxs-screenshot-command-2018/">Firefox’s :screenshot command</a> <time>August 24, 2018</time></li><li><a href="https://meyerweb.com/eric/thoughts/2017/03/08/grid-inspection/">Grid Inspection</a> <time>March 8, 2017</time></li></ul><p>Browse posts in the <a href="https://meyerweb.com/eric/thoughts/category/personal/technovertigo/" rel="category tag">Technovertigo</a>, <a href="https://meyerweb.com/eric/thoughts/category/today-i-learned/" rel="category tag">Today I Learned</a>, or <a href="https://meyerweb.com/eric/thoughts/category/tech/tools/" rel="category tag">Tools</a> categories.</p>
+</div>
+
+<div class="panel" id="feeds">
+<h4>Feeds</h4>
+	<p>A dispatch of all posts to “Thoughts From Eric” is available in both <a href="https://meyerweb.com/eric/thoughts/feed/" title="Aggregate posts using RSS"><acronym title="Really Simple Syndication">RSS</acronym> 2.0</a>
+	and <a href="https://meyerweb.com/eric/thoughts/feed/atom/" title="Aggregate posts using Atom">Atom</a>.</p>
+</div>
+
+</div>
+
+<footer id="global">
+
+<div>
+
+<div id="archipelago">
+<h4>Identity Archipelago</h4>
+<ul>
+<li><a rel="me" href="https://twitter.com/meyerweb"><img src="/pix/icons/twitter.png" alt="Twitter"></a></li>
+<li><a rel="me" href="https://mastodon.social/@meyerweb"><img src="/pix/icons/mastodon.svg" alt="Mastodon"></a></li>
+<li><a rel="me" href="https://github.com/meyerweb"><img src="/pix/icons/github.png" alt="GitHub"></a></li>
+<li><a rel="me" href="https://flickr.com/photos/meyerweb/"><img src="/pix/icons/flickr.png" alt="Flickr"></a></li>
+<li><a rel="me" href="https://dribbble.com/meyerweb"><img src="/pix/icons/dribbble.png" alt="Dribbble"></a></li>
+<li><a rel="me" href="https://facebook.com/meyerweb"><img src="/pix/icons/facebook.png" alt="Facebook"></a></li>
+<li><a rel="me" href="https://www.linkedin.com/in/meyerweb"><img src="/pix/icons/linkedin.png" alt="LinkedIn"></a></li>
+</ul>
+</div>
+
+<div id="excuse">
+<div class="panel" id="excuse">
+<h4>The <a href="/feeds/excuse/">excuse of the day</a> is</h4>
+<p>ozone depletion</p>
+</div>
+<!--#include virtual="/feeds/excuse/current.html" -->
+</div>
+
+<div class="sosumi">
+All contents of this site, unless otherwise noted, are &copy;1993-2023<!--#config timefmt="%Y" --><!--#echo var="DATE_LOCAL" --> <strong>Eric A. and Kathryn S. Meyer</strong>.  All Rights Reserved.</div>
+
+<div id="wordpress" class="credits">"<a href="/eric/thoughts/">Thoughts From Eric</a>" is powered by <a href="http://wordpress.org/">WordPress</a>.  Most of the rest of the site is hand-authored.</div>
+
+<div id="design" class="credits">The ink-sketch images used in this site’s design are adapted from <a href="https://archive.org/search.php?query=creator%3A%22Mori%2C+Yu%CC%84zan%2C+-1917%22">Yūzan Mori’s <cite><dfn title="In English: Wave Forms">Hamonshū</dfn></cite>, Volumes 1-3</a>, published in 1903 and made available for public use by the <a href="https://library.si.edu/">Smithsonian Libraries</a> and the <a href="https://archive.org/">Internet Archive</a>.</div>
+
+</div>
+
+</footer>
+<!-- WP stuff follows -->
+</body>
+</html>
+<!-- Dynamic page generated in 0.106 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2023-09-06 02:09:32 -->
+
+<!-- Compression = gzip -->

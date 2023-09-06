@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head profile="http://gmpg.org/xfn/1">
+<title>Technovertigo  &#8211;  Eric’s Archived Thoughts</title>
+<meta name="generator" content="WordPress 6.3.1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="shortcut icon" href="/favicon.ico"><link rel="home" href="http://meyerweb.com/" title="Home" ><link rel="openid.server" href="http://www.myopenid.com/server"><link rel="openid.delegate" href="http://emeyer.myopenid.com/"><meta name="google-site-verification" content="I_JFi4WrY6bW7AE2ya5sSlruVvgvrIeRa1IsqO0GB78" /><link rel="alternate" type="application/rss+xml" title="Thoughts From Eric" href="/eric/thoughts/rss2/full"><link rel="alternate" type="application/rss+xml" title="Thoughts From Eric (only technical posts)" href="/eric/thoughts/category/tech/rss2/full"><link rel="alternate" type="application/rss+xml" title="Thoughts From Eric (only personal posts)" href="/eric/thoughts/category/personal/rss2/full"><link rel="alternate" type="application/rss+xml" title="Excuse of the Day" href="/feeds/excuse/rss20.xml"><link rel="stylesheet" href="/ui/meyerweb.css" type="text/css"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@meyerweb"><meta name="twitter:title" content="meyerweb.com"><meta name="twitter:description" content="The web home of Eric A. Meyer, CSS guy; and his wife Kathryn, doctor of nursing."><meta name="twitter:url" content="https://meyerweb.com/"><meta name="twitter:image" content="https://meyerweb.com/ui/i/heart/663399love.png"><meta name="twitter:image:width" content="192"><meta name="twitter:image:height" content="192"><meta property="og:type" content="website"><meta property="og:image" content="https://meyerweb.com/ui/i/hamonshu/fb-og-image.png"><meta name="twitter:description" property="og:description" content="I ran OpenAI’s Whisper on my laptop to transcribe some videos, and it did an astonishingly good job.">
+<meta name="twitter:title" property="og:title" content="Peerless Whisper">
+<meta name="twitter:url" property="og:url" content="https://meyerweb.com/eric/thoughts/2023/03/23/peerless-whisper/">
+<link rel="stylesheet" type="text/css" href="https://meyerweb.com/eric/thoughts/wp-content/themes/meyerweb-2020/style.css">
+<link rel="pingback" href="https://meyerweb.com/eric/thoughts/xmlrpc.php">
+</head>
+<body id="www-meyerweb-com" class="arch">	
+<header role="banner" id="sitemast">
+<a href="/">meyerweb.com</a>
+<nav role="navigation" aria-label="page" id="skiplinks">
+<a href="#main">Main content</a>
+<a href="#navigate">Navigation links</a>
+<a href="#footer">Footer</a>
+</nav>
+</header>
+
+<nav role="navigation" aria-label="site" id="navigate">
+<ul id="navlinks">
+<li id="archLink"><a href="/eric/thoughts/">Post Archives</a></li>
+<li id="cssLink"><a href="/eric/css/">CSS Work</a></li>
+<li id="toolsLink"><a href="/eric/tools/">Toolbox</a></li>
+<li id="writeLink"><a href="/eric/writing.html">Writing</a></li>
+<li id="speakLink"><a href="/eric/talks/">Speaking</a></li>
+<li id="otherLink"><a href="/other/">Other Stuff</a></li>
+<li id="aboutsite"><a href="/ui/about.html">About this site</a></li>
+</ul>
+</nav>
+
+<!--div id="main"-->
+
+<main role="main" id="thoughts">
+
+
+<h1 class="pagetitle">Posts in the <em>Technovertigo</em> Category</h1>
+
+
+
+<article role="article" class="entry">
+<header>
+<h2 class="title"><a href="https://meyerweb.com/eric/thoughts/2023/03/23/peerless-whisper/" rel="bookmark" title="Permanent Link: Peerless Whisper">Peerless Whisper</a></h2>
+<em class="pubtime">Published  5 months, 2 weeks past</em>
+</header>
+
+<div class="text">
+<p>What happened was, I was hanging out in an online chatter channel when a little birdy named <a href="https://brucelawson.co.uk/" rel="friend colleague met">Bruce</a> chirped about <a href="https://github.com/openai/whisper">OpenAI’s Whisper</a> and how he was using it to transcribe audio.  And I thought, <em>Hey, I have audio that needs to be transcribed.</em>  Brucie Bird also mentioned it would output text, SRT, and WebVTT formats, and I thought, <em>Hey, I have videos I’ll need to upload with transcription to YouTube!</em>  And <strong>then</strong> he said you could run it from the command line, and I thought, <em>Hey, <strong>I</strong> have a command line!</em></p>
+
+<p>So off I went to install it and try it out, and immediately ran smack into some hurdles I thought I’d document here in case someone else has similar problems.  All of this took place on <a href="https://meyerweb.com/eric/thoughts/2023/02/23/a-leap-of-decades/">my M2 MacBook Pro</a>, though I believe most of the below should be relevant to anyone trying to do this at the command line.</p>
+
+<p>The first thing I did was what the GitHub repository’s README recommended, which is:</p>
+
+<pre class="bash"><code>$ pip install -U openai-whisper</code>
+</pre>
+
+<p>That failed because I didn’t have <code>pip</code> installed.  Okay, fair enough.  I figured out how to install that, setting up an alias of <code>python</code> for <code>python3</code> along the way, and then tried again.  This time, the install started and then bombed out:</p>
+
+<pre><code>Collecting openai-whisper
+  Using cached openai-whisper-20230314.tar.gz (792 kB)
+  Installing build dependencies ...  done
+  Getting requirements to build wheel ...  done
+  Preparing metadata (pyproject.toml) ...  done
+Collecting numba
+  Using cached numba-0.56.4.tar.gz (2.4 MB)
+  Preparing metadata (setup.py) ...  error
+  error: subprocess-exited-with-error</code>
+</pre>
+
+<p>…followed by some stack trace stuff, none of which was really useful until ten or so lines down, where I found:</p>
+
+<pre><code>RuntimeError: Cannot install on Python version 3.11.2; only versions &gt;=3.7,&lt;3.11 are supported.</code>
+</pre>
+
+<p>In other words, the version of Python I have installed is <em>too modern</em> to run AI.  What a world.</p>
+
+<p>I DuckDucked around a bit and hit upon <code>pyenv</code>, which is I guess a way of installing and running older versions of Python without having to overwrite whatever version(s) you already have.  I’ll skip over the error part of my trial-and-error process and give you the commands that made it all work:</p>
+
+<pre class="bash"><code>$ brew install pyenv
+
+$ pyenv install 3.10
+
+$ PATH="~/.pyenv/shims:${PATH}"
+
+$ pyenv local 3.10
+
+$ pip install -U openai-whisper</code>
+</pre>
+
+<p>That got Whisper to install.  It didn’t take very long.</p>
+
+<p>At that point, I wondered what I’d have to configure to transcribe something, and the answer turned out to be precisely zilch.  Once the install was done, I dropped into the directory containing <a href="https://www.youtube.com/watch?v=CBdefloUvso">my MP4 video</a>, and typed this:</p>
+
+<pre class="bash"><code>$ whisper wpe-mse-eme-v2.mp4</code>
+</pre>
+
+<p>Here’s what I got back.  I’ve marked the very few errors.</p>
+
+<pre>
+[00:00.000 --&gt; 00:07.000]  In this video, we'll show you several demos showcasing multi-media capabilities in WPE<mark> </mark>WebKit,
+[00:07.000 --&gt; 00:11.000]  the official port of the WebKit engine for embedded devices.
+[00:11.000 --&gt; 00:18.000]  Each of these demos are running on the low-powered Raspberry Pi 3 seen in the lower right-hand side of the screen here.
+[00:18.000 --&gt; 00:25.000]  Infotainment systems and media players often need to consume digital rights-managed videos.
+[00:25.000 --&gt; 00:32.000]  <mark>They</mark> tell me, is Michael coming out?  Affirmative, Mike's coming out.
+[00:32.000 --&gt; 00:45.000]  Here you can see just that, smooth streaming playback using encrypted media extensions, or EME, with PlayReady 4.
+[00:45.000 --&gt; 00:52.000]  Media source extensions, or MSE, are used by many players for greater control over playback.
+[00:52.000 --&gt; 01:00.000]  YouTube TV has a whole conformance test suite for this, which WPE has been passing since 2021.
+[01:00.000 --&gt; 01:09.000]  The <mark>loan</mark> exceptions here are those tests requiring hardware support not available on the Raspberry Pi 4, but available for other platforms.
+[01:09.000 --&gt; 01:16.000]  YouTube TV has a conformance test for EME, which WPE<mark> </mark>WebKit passes with flying colors.
+[01:22.000 --&gt; 01:40.000]  Music
+[01:40.000 --&gt; 01:45.000]  Finally, perhaps most impressively, we can put all these things together.
+[01:45.000 --&gt; 01:56.000]  Here is the dash.js player using MSE, running in a page, and using Widevine DRM to decrypt and play rights-managed video with EME all fluidly.
+[01:56.000 --&gt; 02:04.000]  <mark>Music</mark>
+[02:04.000 --&gt; 02:09.000]  Remember, all of this is being played back on the same low-powered Raspberry Pi 3.
+[02:27.000 --&gt; 02:34.000]  For more about WPE WebKit, please visit WPE<mark> </mark>WebKit.com.
+[02:34.000 --&gt; 02:42.000]  For more information about <mark>EGALIA</mark>, or to find out how we can help with your embedded device needs, please visit us at <mark>EGALIA</mark>.com.  </pre>
+
+<p>I am, frankly, astonished.  This has <em>no business</em> being as accurate as it is, for all kinds of reasons.  There’s a lot of jargon and very specific terminology in there, and Whisper nailed pretty much every last bit of it, first time in, no special configuration, nothing.  I didn’t even bump up the model size from the default of <code>small</code>.  I felt a little like that Froyo guy in the animated Hunchback of Notre Dame meme yelling about sorcery or whatever.</p>
+
+<p>True, the output isn’t absolutely perfect.  Let’s review the glitches in reverse order.  The last two errors, turning “Igalia” into “EGALIA”, seems fair enough given I didn’t specify that there would be languages other than English involved.  I routinely have to spell it for my fellow Americans, so no reason to think a codebase could do any better.</p>
+
+<p>The space inserted into “WPEWebKit” (which happens throughout) is similarly understandable.  I’m impressed it understood “WebKit” at all, never mind that it was properly capitalized and not-spaced.</p>
+
+<p>The place where it says <code>Music</code> and I marked it as an error: This is essentially an echoing countdown and then a white-noise roar from rocket engines.  There’s a “music today is just noise” joke in here somewhere, but I’m too hip to find it.</p>
+
+<p>Whisper turning “lone” into “loan” doesn’t particularly faze me, given the difficulty of handling soundalike words.  Hell, just yesterday, I was scribing a conference call and mistakenly recorded “gamut” as “gamma”, and those aren’t even technically homophones.  They just sound like they are.</p>
+
+<p>Rounding out the glitch tour, “Hey” got turned into “They”, which (given the audio quality of that particular part of the video) is still pretty good.</p>
+
+<p>There is one other error I couldn’t mark because there’s nothing to mark, but if you scrutinize the timeline, you’ll see a gap from 02:09.000 and 02:27.000.  In there, a short clip from a movie plays, and there’s a brief dialogue between two characters in not-very-Dutch-accented English there.  It’s definitely louder and more clear than the 00:25.000 –&gt; 00:32.000 bit, so I’m not sure why Whisper just skipped over it.  Manually transcribing that part isn’t a big deal, but it’s odd to see it perform so flawlessly on every other piece of speech and then drop this completely on the floor.</p>
+
+<p>Before posting, I decided to give Whisper another go, this time on <a href="https://www.youtube.com/watch?v=WbW1J7huASY">a different video</a>:</p>
+
+<pre class="bash"><code>$ whisper wpe-gamepad-support-v3.mp4</code>
+</pre>
+
+<p>This was the result, with the one actual error marked:</p>
+
+<pre>[00:00.000 --&gt; 00:13.760]  In this video, we demonstrate WPE WebKit's support for the W3C's GamePad API.
+[00:13.760 --&gt; 00:20.080]  Here we're running WPE WebKit on a Raspberry Pi 4, but any device that will run WPE WebKit
+[00:20.080 --&gt; 00:22.960]  can benefit from this support.
+[00:22.960 --&gt; 00:28.560]  The GamePad API provides a JavaScript interface that makes it possible for developers to access
+[00:28.560 --&gt; 00:35.600]  and respond to signals from GamePads and other game controllers in a simple, consistent way.
+[00:35.600 --&gt; 00:40.320]  Having connected a standard Xbox controller, we boot up the Raspberry Pi with a customized
+[00:40.320 --&gt; 00:43.040]  <mark>build route</mark> image.
+[00:43.040 --&gt; 00:48.560]  Once the device is booted, we run cog, which is a small, single window launcher made specifically
+[00:48.560 --&gt; 00:51.080]  for WPE WebKit.
+[00:51.080 --&gt; 00:57.360]  The window cog creates can be full screen, which is what we're doing here.
+[00:57.360 --&gt; 01:01.800]  The game is loaded from a website that hosts a version of the classic video arcade game
+[01:01.800 --&gt; 01:05.480]  Asteroids.
+[01:05.480 --&gt; 01:11.240]  Once the game has loaded, the Xbox controller is used to start the game and control the spaceship.
+[01:11.240 --&gt; 01:17.040]  All the GamePad inputs are handled by the JavaScript GamePad API.
+[01:17.040 --&gt; 01:22.560]  This GamePad support is now possible thanks to work done by Igalia in 2022 and is available
+[01:22.560 --&gt; 01:27.160]  to anyone who uses WPE WebKit on their embedded device.
+[01:27.160 --&gt; 01:32.000]  For more about WPE WebKit, please visit wpewebkit.com.
+[01:32.000 --&gt; 01:35.840]  For more information about Igalia, or to find out how we can help with your embedded device
+[01:35.840 --&gt; 01:39.000]  needs, please visit us at Igalia.com.  </pre>
+
+<p>That should have been “buildroot”.  Again, an entirely reasonable error.  I’ve made at least an order of magnitude more typos writing this post than Whisper has in transcribing these videos.  And <em>this</em> time, it got the spelling of Igalia correct.  I didn’t make any changes between the two runs.  It just… figured it out.</p>
+
+<p>I don’t have a lot to say about this other than, wow.  Just <em>WOW</em>.  This is some real <a href="https://en.wikipedia.org/wiki/Clarke%27s_three_laws">Clarke’s Third Law</a> stuff right here, and the <a href="https://meyerweb.com/eric/thoughts/2003/02/13/the-nature-of-progress/">technovertigo</a> is Marianas deep.</p>
+<ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2023/03/23/peerless-whisper/">Peerless Whisper</cite></a> was published on <time>Thursday, March 23rd, 2023</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/personal/technovertigo/" rel="category tag">Technovertigo</a>, <a href="https://meyerweb.com/eric/thoughts/category/today-i-learned/" rel="category tag">Today I Learned</a>, and <a href="https://meyerweb.com/eric/thoughts/category/tech/tools/" rel="category tag">Tools</a> categories.</li>
+<li class="cmt">There have been <a href="https://meyerweb.com/eric/thoughts/2023/03/23/peerless-whisper/#comments">five replies</a>.</li>
+</ul>
+</div>
+<hr class="fallback">
+</article>
+
+
+<article role="article" class="entry">
+<header>
+<h2 class="title"><a href="https://meyerweb.com/eric/thoughts/2013/03/07/glasshouse/" rel="bookmark" title="Permanent Link: Glasshouse">Glasshouse</a></h2>
+<em class="pubtime">Published  10 years, 5 months past</em>
+</header>
+
+<div class="text">
+<p>Our youngest tends to wake up fairly early in the morning, at least as compared to his sisters, and since I need less sleep than Kat I’m usually the one who gets up with him.  This morning, he put away a box he’d just emptied of toys and I told him, “Well done!”  He turned to me, stuck his hand up in the air, and said with glee, “Hive!”</p>
+
+<p>I gave him the requested high-five, of course, and then another for being proactive.  It was the first time he’d ever asked for one.  He could not have looked more pleased with himself.</p>
+
+<p>And I suddenly realized that I wanted to be able to say to my glasses, “Okay, dump the last 30 seconds of livestream to permanent storage.”</p>
+
+<p>There have been <a href="http://creativegood.com/blog/the-google-glass-feature-no-one-is-talking-about/">concerns raised</a> about the impending crowdsourced panopticon that Google Glass represents.  I share those concerns, though I also wonder if the pairing of constant individual surveillance with cloud-based storage mediated through wearable CPUs will prove out an old if slightly recapitalized adage: that an <a href="http://en.wikipedia.org/wiki/ARM_architecture">ARM</a>ed society is a polite society.  Will it?  We’ll see&#x202F;—&#x2009;pun unintentional but unavoidable, very much like the future itself.</p>
+
+<p>And yet.  You think that you’ll remember all those precious milestones, that there is <em>no way on Earth</em> you could ever forget your child’s first word, or the first time they took their first steps, or the time they suddenly put on an impromptu comedy show that had you on the floor laughing.  But you do forget.  Time piles up and you forget most of everything that ever happened to you.  A few shining moments stay preserved, and the rest fade into the indistinct fog of your former existence.</p>
+
+<p>I’m not going to hold up my iPhone or Android or any other piece of hardware all the time, hoping that I’ll manage to catch a few moments to save.  That solution doesn’t scale at all, but I still want to save those moments.  If my glasses (or some other device) were always capturing a video buffer that could be dumped to permanent storage at any time, I could capture all of those truly important things.  I could go back and see that word, that step, that comedy show.  I would do that.  I wanted to do it, sitting on the floor of my child’s room this morning.</p>
+
+<p>That was when I realized that Glass is inevitable.  We’re going to observe each other because we want to preserve our own lives&#x202F;—&#x2009;not every last second, but the parts that really matter to us.  There will be a whole host of side effects, some of which we can predict but most of which will surprise us.  I just don’t believe that we can avoid it.  Even if Google fails with Glass, someone else will succeed with a very similar project, and sooner than we expect.  I’ve started thinking about how to cope with that outcome.  Have you?</p><ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2013/03/07/glasshouse/">Glasshouse</cite></a> was published on <time>Thursday, March 7th, 2013</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/personal/culture/" rel="category tag">Culture</a>, <a href="https://meyerweb.com/eric/thoughts/category/observations/" rel="category tag">Observations</a>, <a href="https://meyerweb.com/eric/thoughts/category/personal/parenting/" rel="category tag">Parenting</a>, <a href="https://meyerweb.com/eric/thoughts/category/tech/" rel="category tag">Tech</a>, and <a href="https://meyerweb.com/eric/thoughts/category/personal/technovertigo/" rel="category tag">Technovertigo</a> categories.</li>
+<li class="cmt">There have been <a href="https://meyerweb.com/eric/thoughts/2013/03/07/glasshouse/#comments">seven replies</a>.</li>
+</ul>
+</div>
+<hr class="fallback">
+</article>
+
+
+<article role="article" class="entry">
+<header>
+<h2 class="title"><a href="https://meyerweb.com/eric/thoughts/2005/05/11/connected/" rel="bookmark" title="Permanent Link: Connected">Connected</a></h2>
+<em class="pubtime">Published  18 years, 3 months past</em>
+</header>
+
+<div class="text">
+<p>
+Last fall, <a href="http://tantek.com/" rel="friend colleague muse met">Tantek</a> and I <a href="http://www.meyerweb.com/eric/thoughts/2004/08/11/hypertext-2004/" title="Hypertext 2004">presented a poster at HT04</a>.  To get it to the conference in one piece and to avoid having to lug it across the country, I created a PDF of the poster and sent it off to the Kinko&#8217;s web site.  It was printed for me by the Kinko&#8217;s closest to the conference.  All I had to do was send them a digital file, and 2,150 miles later I retrieved the physical output.
+</p>
+<p>
+As I did so, I thought: <i>This is really amazing.  This is what&#8217;s so great about being connected.</i>
+</p>
+<p>
+A few months later, Kat upgraded her car, and the new one came with XM digital radio.  We started receiving music from geosynchronous orbit, a digital signal broadcast from 22,600 miles above the equator and deciphered by the short, stubby antenna on the car&#8217;s roof.  On a drive to visit relatives, we listened to the same station for the entire four-hour drive there, and again for the return drive.
+</p>
+<p>
+As we did so, I thought: <i>This is incredible.  This is a great example of the benefits of connecting everything.</i>
+</p>
+<p>
+I was wrong in both cases.
+</p>
+<p>
+This morning, I stood in a hotel room in Chiba, Japan and saw my wife and daughter on the television.  Back home in Cleveland, they saw me on a computer monitor.  We talked to each other, waved hello, got caught up on recent events.  I watched as Carolyn ran around my office, heard her say &#8220;mama&#8221;, and agreed with her when she signed &#8220;telephone&#8221; while she watched my image.  I stuck my tongue out to make a silly face, and six thousand miles away, my daughter laughed with delight at my antics.
+</p>
+<p>
+A few minutes after we&#8217;d finished the chat, with the glow of home and family still warm upon me, I thought:
+<i>This is why we connected everything in the first place.</i>
+</p>
+<ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2005/05/11/connected/">Connected</cite></a> was published on <time>Wednesday, May 11th, 2005</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/personal/carolyn/" rel="category tag">Carolyn</a>, <a href="https://meyerweb.com/eric/thoughts/category/personal/" rel="category tag">Personal</a>, <a href="https://meyerweb.com/eric/thoughts/category/tech/" rel="category tag">Tech</a>, and <a href="https://meyerweb.com/eric/thoughts/category/personal/technovertigo/" rel="category tag">Technovertigo</a> categories.</li>
+<li class="cmt">There have been <a href="https://meyerweb.com/eric/thoughts/2005/05/11/connected/#comments">two replies</a>.</li>
+</ul>
+</div>
+<hr class="fallback">
+</article>
+
+
+<article role="article" class="entry">
+<header>
+<h2 class="title"><a href="https://meyerweb.com/eric/thoughts/2004/05/04/wakka-wakka-doo-doo-yeah/" rel="bookmark" title="Permanent Link: Wakka Wakka Doo Doo Yeah!">Wakka Wakka Doo Doo Yeah!</a></h2>
+<em class="pubtime">Published  19 years, 4 months past</em>
+</header>
+
+<div class="text">
+<p>
+I spotted a link to <a href="http://pacmanhattan.com/">PacManhattan</a> over at <a href="http://www.simplebits.com/">SimpleBits</a>, and was immediately stunned.  I mean, sure, it&#8217;s like an episode of &#8220;When Geeks Go Crazy,&#8221; what with the use of cellular and WiFi communications to update player positions, and the Web-based arcade view of a live game in progress, but think about it.  These people are running around entire blocks of New York City just to play a live-action version of a 1980&#8217;s video game.  They&#8217;re actually <em>getting exercise</em>.  They won&#8217;t just be toning their wrists; this is a total-body workout.  That&#8217;s <em>so</em> not geeky.
+</p>
+<p>
+Can&#8217;t you just hear the guy playing PacMan trying to cross the street?  &#8220;<strong>Hey!</strong>  I&#8217;m wakka wakka wakkin&#8217; here!&#8221;
+</p><ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2004/05/04/wakka-wakka-doo-doo-yeah/">Wakka Wakka Doo Doo Yeah!</cite></a> was published on <time>Tuesday, May 4th, 2004</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/humor/" rel="category tag">Humor</a>, <a href="https://meyerweb.com/eric/thoughts/category/tech/" rel="category tag">Tech</a>, and <a href="https://meyerweb.com/eric/thoughts/category/personal/technovertigo/" rel="category tag">Technovertigo</a> categories.</li>
+<li class="cmt">There has been <a href="https://meyerweb.com/eric/thoughts/2004/05/04/wakka-wakka-doo-doo-yeah/#comments">one reply</a>.</li>
+</ul>
+</div>
+<hr class="fallback">
+</article>
+
+
+<article role="article" class="entry">
+<header>
+<h2 class="title"><a href="https://meyerweb.com/eric/thoughts/2004/05/03/concerts-on-a-steeck/" rel="bookmark" title="Permanent Link: Concerts&#8230; On A Steeck">Concerts&#8230; On A Steeck</a></h2>
+<em class="pubtime">Published  19 years, 4 months past</em>
+</header>
+
+<div class="text">
+<p>
+This proceeds past cool, tears through ultra-cool, and lands somewhere to the west of &uuml;bercool:  <a href="http://www.cnn.com/2004/TECH/ptech/05/01/music.on.a.stick.ap/index.html" title="CNN.com - New technology brings live concerts home - May 1, 2004">taking home a recording of a live show on a USB memory stick</a> the same night you heard the show.  And it&#8217;s legal!  One wonders how much money the band gets for sales of their show.  If I were a club owner, I&#8217;d split my take with the band 50/50, but then that&#8217;s just me.
+</p>
+<p>
+Maybe the recording industry could stop whining about piracy and bootlegging long enough to examine some of these new approaches to helping fans get the music they want, and spend some time thinking about how they could do the same kind of thing.  Nahhh&#8230; that would make too much sense.
+</p><ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2004/05/03/concerts-on-a-steeck/">Concerts&#8230; On A Steeck</cite></a> was published on <time>Monday, May 3rd, 2004</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/personal/technovertigo/" rel="category tag">Technovertigo</a> category.</li>
+<li class="cmt">There have been <a href="https://meyerweb.com/eric/thoughts/2004/05/03/concerts-on-a-steeck/#respond">no replies</a>.</li>
+</ul>
+</div>
+<hr class="fallback">
+</article>
+
+
+<article role="article" class="entry">
+<header>
+<h2 class="title"><a href="https://meyerweb.com/eric/thoughts/2003/08/09/spooky/" rel="bookmark" title="Permanent Link: Spooky!">Spooky!</a></h2>
+<em class="pubtime">Published  20 years, 4 weeks past</em>
+</header>
+
+<div class="text">
+<p>
+Remember I <a href="http://www.meyerweb.com/eric/thoughts/2003c.html#t20030803" title="Platelets">mentioned the &#8220;ZARGON&#8221; license plate</a>?  Gail Cohen wrote me from <em>Miami, Florida</em> to tell me whose car that was.  His name&#8217;s Rex.  I&#8217;ve talked about <a href="http://www.meyerweb.com/eric/thoughts/2003a.html#t20030213" title="The Nature of Progress">moments of technological vertigo</a> (technovertigo? technologigo?  technigo?) in the past.  This is another such moment.
+</p>
+<p>
+So apparently Gail and Rex are both members of the <a href="http://www.iahaweb.com/visitors/index.html">International Association of Haunted Attractions</a>, and his hobby is being an interactive actor in haunted houses.  You know the guys who jump out at you with goalie masks and chain saws?  He&#8217;s one of them.  Oh, heck, <a href="http://www.hippywebdesign.com/transworld2001/index.html" title="Rex B. Hamilton &gt; Transworld 2001">take a look for yourself</a>.  So it turns out that terror really <em>is</em> his business, at least as a hobby, and I suppose it does take guts.  Just not the kind I meant.
+</p><ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2003/08/09/spooky/">Spooky!</cite></a> was published on <time>Saturday, August 9th, 2003</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/personal/technovertigo/" rel="category tag">Technovertigo</a> category.</li>
+<li class="cmt">There have been <a href="https://meyerweb.com/eric/thoughts/2003/08/09/spooky/#respond">no replies</a>.</li>
+</ul>
+</div>
+<hr class="fallback">
+</article>
+
+
+<article role="article" class="entry">
+<header>
+<h2 class="title"><a href="https://meyerweb.com/eric/thoughts/2003/02/13/the-nature-of-progress/" rel="bookmark" title="Permanent Link: The Nature of Progress">The Nature of Progress</a></h2>
+<em class="pubtime">Published  20 years, 6 months past</em>
+</header>
+
+<div class="text">
+<p>
+A redesigned <a href="http://devedge.netscape.com/" title="Netscape's developer information site">Netscape DevEdge</a> has been launched.  Look, ma, no tables.   Well, hardly any, and none in the basic design.  I was a primary project manager for this one, and the design is a from-scratch effort.  It&#8217;s nothing visually groundbreaking, and of course using positioning for a major site <a href="http://www.wired.com/">has been done</a>, but we&#8217;ve gone a step further into using positioning to make the design come together.  The site didn&#8217;t quite validate at launch thanks to some deeply stupid oversights on my part, but hopefully they&#8217;ll have been fixed by the time you read this entry.
+</p>
+<p>
+As for the design approach we took&#8230; that&#8217;s a subject for another day, and also the subject of <a href="http://devedge.netscape.com/viewsource/2003/devedge-redesign-css/" title="DevEdge Standards Redesign: CSS">an article I wrote</a>.  I predict that we&#8217;ll draw fire for using HTML 4.01 Transitional, for not validating when we launched, for our font sizing approach, and for our dropdown menus.  On the other hand, we&#8217;ll probably draw praise for making the markup accessible (once one of my stupid mistakes is fixed), for using CSS in a sophisticated manner, for pushing the envelope in reasonable ways, and for our dropdown menus.  For myself, I&#8217;m very much satisfied with and proud of the result, and very grateful for all the effort and help I got from the other members of the team.
+</p>
+<p>
+On a less important but possibly more amusing front, yesterday I hacked together a <a href="/eric/tools/color-blend/" title="Color Blender">color-blending tool</a> after <a href="http://www.haughey.com/">Matt Haughey</a> asked on <a href="http://www.webdesign-l.com/">Webdesign-L</a> how to calculate the midpoint between two colors, and <a href="http://a.jaundicedeye.com/">Steve Champeon</a> explained how to do it in some detail.  The JavaScript is no doubt inefficient and clumsy, the tool may not work in your browser, and for all I know it will lock up your computer.  It was just a quick hack.  Well, not quick, actually; I&#8217;m not very skilled at JavaScript.  Enjoy it, or don&#8217;t, as you like.  Just don&#8217;t expect me to fix or add anything unless you mail me the code needed to do whatever you want the tool to do.
+</p>
+<p>
+<a href="http://www.oreillynet.com/pub/au/154" title="Articles and blog entries by Lucas Gonze">Lucas Gonze</a> over the <a href="http://www.oreillynet.com/" title="The O'Reilly Network">O&#8217;Reilly Network</a> <a href="http://www.oreillynet.com/pub/wlg/2790" title="oreillynet.com: Cascade attacks">mentioned</a> a fascinating <a href="http://xxx.lanl.gov/PS_cache/cond-mat/pdf/0301/0301086.pdf" title="Cascade-based attacks on complex networks (PDF)">paper on &#8220;cascade attacks&#8221;</a> and how they can be used to take down a distributed network.  So the Internet can suffer cascade failure, eh?  I wonder how much effort would be required to take down the Internet&#8217;s starboard power coupling.  Or, worse yet, trigger a coolant leak.
+</p>
+<p>
+It&#8217;s been revealed that the blurry, grainy image of the Space Shuttle <i>Columbia</i> wasn&#8217;t taken using any advanced telescopes or military systems after all, but three engineers who used some off-the-shelf parts to put together a personal experiment.  CNN says: <a href="http://www.cnn.com/2003/TECH/space/02/12/shuttle.photo.ap/index.html" title="cnn.com: 'Hi-tech' shuttle pic really low-tech">&#8216;Hi-tech&#8217; shuttle pic really low-tech</a>.  Let&#8217;s think about that for a second.  Three guys took an eleven-year-old Macintosh, hooked it up to a telescope that probably cost no more than a couple hundred dollars, and took a picture of an object almost 40 miles away moving 18 times the speed of sound.  That&#8217;s <em>low-tech</em>?  The fact that you can even recognize the object they imaged is astounding.  Hell, the fact that they imaged anything at all is astounding.  No criticism of the three men intended; I&#8217;m sure they&#8217;re brilliant guys who know what they&#8217;re doing.  But think about it!
+</p>
+<p>
+I refer to moments like this as &#8220;technological vertigo.&#8221;  They&#8217;re those points where you suddenly come to a dead halt while you realize the incredible complexity of the world, and just how much we take for granted.  For that one moment, you stop taking it for granted.  Here&#8217;s an example: a couple of years ago, I was driving south through suburban Columbus.  In the back yard of a house just off the interstate, I spotted an old satellite dish lying on its side, obviously no longer in use.  Then it hit me: whoever lived there once had the ability to receive information from orbit, and decided to throw it away.  Their <em>garbage</em> was so much more advanced than anything their parents had ever even envisioned that the gap was barely comprehensible.  Any general in the Second World War would have given anything, including men&#8217;s <em>lives</em>, to have the kind of communication capability that now lay discarded in somebody&#8217;s back yard.
+</p>
+<p>
+The even more remarkable thing about this trashed satellite dish is that there was nothing remarkable about it.  So somebody threw out an old satellite dish&#x2014;so what?  They can always get another one, and one that&#8217;s a lot smaller, better, and more capable than the piece of junk they tossed, right?
+</p>
+<p>
+And <em>that</em> is perhaps the most incredible part of it all.
+</p><ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2003/02/13/the-nature-of-progress/">The Nature of Progress</cite></a> was published on <time>Thursday, February 13th, 2003</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/tech/css/" rel="category tag">CSS</a>, <a href="https://meyerweb.com/eric/thoughts/category/tech/redesign/" rel="category tag">Redesign</a>, <a href="https://meyerweb.com/eric/thoughts/category/personal/technovertigo/" rel="category tag">Technovertigo</a>, and <a href="https://meyerweb.com/eric/thoughts/category/tech/tools/" rel="category tag">Tools</a> categories.</li>
+<li class="cmt">There have been <a href="https://meyerweb.com/eric/thoughts/2003/02/13/the-nature-of-progress/#respond">no replies</a>.</li>
+</ul>
+</div>
+<hr class="fallback">
+</article>
+
+
+<article role="article" class="entry">
+<header>
+<h2 class="title"><a href="https://meyerweb.com/eric/thoughts/2002/05/30/thursday-30-may-2002/" rel="bookmark" title="Permanent Link: Thursday, 30 May 2002">Thursday, 30 May 2002</a></h2>
+<em class="pubtime">Published  21 years, 3 months past</em>
+</header>
+
+<div class="text">
+<p>
+I experienced a touch of techno-<i>frisson</i> this evening.  The phone rang, and when I answered it, it turned out to be a sales call offering to refinance my mortgage.  Just as the words &#8220;we&#8217;re calling to offer competitive interest rates on mortgage refinancing&#8221; left the guy&#8217;s mouth and grated across my eardrum, e-mail dropped into my Inbox with the subject line <code>current mortgage interest rate</code>.
+</p>
+<p>
+I had no idea I seemed so desperate for a new mortgage.  (Which I&#8217;m not, thanks.)
+</p>
+<p>
+<img decoding="async" src="/pix/thisisspam.gif" alt="THIS IS SPAM" style="border: 1px solid gray; float: right; margin: 0.33em 0 0.5em 1em;"/>
+Spam continues to stay in the forefront of my (mostly negative) thinking.  I do have to give major honesty points to a message I received a few weeks back.  When I opened it up (I still don&#8217;t know why I did) I found what&#8217;s depicted in the accompanying graphic.  They may be the scum of humanity, but at least they&#8217;re up front about what they do.  I have to respect that.  I admit I laughed out loud when I saw it, then took a screenshot and deleted the message.
+</p>
+<p>
+The other thing I wanted to mention is from the &#8220;this is funny but I&#8217;m laughing as much at the audacity as the humor&#8221; department:  <a href="http://www.theonion.com/">The Onion</a> managed this week to put a <a href="http://www.theonion.com/onion3820/sexual_tension.html">surreal  perspective</a> on current events.  You know, it almost <em>does</em> make sense&#8230;
+</p>
+<p>
+Brief correction: apparently the painting I liked so much isn&#8217;t called &#8220;Deception&#8221; any more.  Now it&#8217;s called <a href="http://www.weinstein.com/jun/eardrops.jpg">&#8220;Ear Drops&#8221;</a>.  Personally, I think the original title worked better.
+</p><ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2002/05/30/thursday-30-may-2002/">Thursday, 30 May 2002</cite></a> was published on <time>Thursday, May 30th, 2002</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/personal/technovertigo/" rel="category tag">Technovertigo</a> category.</li>
+<li class="cmt">There have been <a href="https://meyerweb.com/eric/thoughts/2002/05/30/thursday-30-may-2002/#respond">no replies</a>.</li>
+</ul>
+</div>
+<hr class="fallback">
+</article>
+
+
+<div class="prev-next book" id="posts-pn">
+<h4>Browse <a href="/eric/thoughts/">the Archive</a></h4>
+<p class="prev"></p>
+<p class="next"></p>
+</div>
+
+</main>
+
+</div>
+
+<div class="panel" id="feeds">
+<h4>Feeds</h4>
+	<p>A dispatch of all posts to “Thoughts From Eric” is available in both <a href="https://meyerweb.com/eric/thoughts/feed/" title="Aggregate posts using RSS"><acronym title="Really Simple Syndication">RSS</acronym> 2.0</a>
+	and <a href="https://meyerweb.com/eric/thoughts/feed/atom/" title="Aggregate posts using Atom">Atom</a>.</p>
+</div>
+
+<div class="panel" id="categories">
+<h4>Categories</h4>
+<ul>
+	<li class="cat-item cat-item-48"><a href="https://meyerweb.com/eric/thoughts/category/commentary/">Commentary</a> (55)
+</li>
+	<li class="cat-item cat-item-64"><a href="https://meyerweb.com/eric/thoughts/category/design/">Design</a> (28)
+</li>
+	<li class="cat-item cat-item-1"><a href="https://meyerweb.com/eric/thoughts/category/general/">General</a> (79)
+</li>
+	<li class="cat-item cat-item-53"><a href="https://meyerweb.com/eric/thoughts/category/guide/">Guide</a> (10)
+</li>
+	<li class="cat-item cat-item-56"><a href="https://meyerweb.com/eric/thoughts/category/hacks/">Hacks</a> (11)
+</li>
+	<li class="cat-item cat-item-15"><a href="https://meyerweb.com/eric/thoughts/category/humor/">Humor</a> (78)
+</li>
+	<li class="cat-item cat-item-41"><a href="https://meyerweb.com/eric/thoughts/category/links/">Links</a> (1)
+</li>
+	<li class="cat-item cat-item-49"><a href="https://meyerweb.com/eric/thoughts/category/observations/">Observations</a> (17)
+</li>
+	<li class="cat-item cat-item-4 current-cat-parent current-cat-ancestor"><a href="https://meyerweb.com/eric/thoughts/category/personal/">Personal</a> (752)
+<ul class='children'>
+	<li class="cat-item cat-item-59"><a href="https://meyerweb.com/eric/thoughts/category/personal/adoption/">Adoption</a> (5)
+</li>
+	<li class="cat-item cat-item-10"><a href="https://meyerweb.com/eric/thoughts/category/personal/books/">Books</a> (57)
+</li>
+	<li class="cat-item cat-item-60"><a href="https://meyerweb.com/eric/thoughts/category/personal/cancer/">Cancer</a> (56)
+</li>
+	<li class="cat-item cat-item-20"><a href="https://meyerweb.com/eric/thoughts/category/personal/carolyn/">Carolyn</a> (34)
+</li>
+	<li class="cat-item cat-item-29"><a href="https://meyerweb.com/eric/thoughts/category/personal/cleveland/">Cleveland</a> (16)
+</li>
+	<li class="cat-item cat-item-30"><a href="https://meyerweb.com/eric/thoughts/category/personal/consulting/">Consulting</a> (8)
+</li>
+	<li class="cat-item cat-item-26"><a href="https://meyerweb.com/eric/thoughts/category/personal/culture/">Culture</a> (62)
+</li>
+	<li class="cat-item cat-item-37"><a href="https://meyerweb.com/eric/thoughts/category/personal/food/">Food</a> (11)
+</li>
+	<li class="cat-item cat-item-17"><a href="https://meyerweb.com/eric/thoughts/category/personal/history/">History</a> (25)
+</li>
+	<li class="cat-item cat-item-21"><a href="https://meyerweb.com/eric/thoughts/category/personal/interviews/">Interviews</a> (24)
+</li>
+	<li class="cat-item cat-item-54"><a href="https://meyerweb.com/eric/thoughts/category/personal/joshua/">Joshua</a> (7)
+</li>
+	<li class="cat-item cat-item-55"><a href="https://meyerweb.com/eric/thoughts/category/personal/parenting/">Parenting</a> (35)
+</li>
+	<li class="cat-item cat-item-5"><a href="https://meyerweb.com/eric/thoughts/category/personal/politics/">Politics</a> (71)
+</li>
+	<li class="cat-item cat-item-19"><a href="https://meyerweb.com/eric/thoughts/category/personal/projects/">Projects</a> (68)
+</li>
+	<li class="cat-item cat-item-51"><a href="https://meyerweb.com/eric/thoughts/category/personal/rebecca/">Rebecca</a> (72)
+</li>
+	<li class="cat-item cat-item-50"><a href="https://meyerweb.com/eric/thoughts/category/personal/science/">Science</a> (1)
+</li>
+	<li class="cat-item cat-item-7"><a href="https://meyerweb.com/eric/thoughts/category/personal/speaking/">Speaking</a> (114)
+</li>
+	<li class="cat-item cat-item-28 current-cat"><a aria-current="page" href="https://meyerweb.com/eric/thoughts/category/personal/technovertigo/">Technovertigo</a> (8)
+</li>
+	<li class="cat-item cat-item-31"><a href="https://meyerweb.com/eric/thoughts/category/personal/travel/">Travel</a> (51)
+</li>
+	<li class="cat-item cat-item-74"><a href="https://meyerweb.com/eric/thoughts/category/personal/woodworking/">Woodworking</a> (2)
+</li>
+	<li class="cat-item cat-item-32"><a href="https://meyerweb.com/eric/thoughts/category/personal/work/">Work</a> (17)
+</li>
+	<li class="cat-item cat-item-11"><a href="https://meyerweb.com/eric/thoughts/category/personal/writing/">Writing</a> (76)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-47"><a href="https://meyerweb.com/eric/thoughts/category/questions/">Questions</a> (9)
+</li>
+	<li class="cat-item cat-item-42"><a href="https://meyerweb.com/eric/thoughts/category/rants/">Rants</a> (14)
+</li>
+	<li class="cat-item cat-item-73"><a href="https://meyerweb.com/eric/thoughts/category/reviews/">Reviews</a> (1)
+</li>
+	<li class="cat-item cat-item-16"><a href="https://meyerweb.com/eric/thoughts/category/tech/">Tech</a> (778)
+<ul class='children'>
+	<li class="cat-item cat-item-35"><a href="https://meyerweb.com/eric/thoughts/category/tech/xhtml/">(X)HTML</a> (36)
+</li>
+	<li class="cat-item cat-item-72"><a href="https://meyerweb.com/eric/thoughts/category/tech/accessibility/">Accessibility</a> (4)
+</li>
+	<li class="cat-item cat-item-40"><a href="https://meyerweb.com/eric/thoughts/category/tech/an-event-apart/">An Event Apart</a> (35)
+</li>
+	<li class="cat-item cat-item-13"><a href="https://meyerweb.com/eric/thoughts/category/tech/browsers/">Browsers</a> (117)
+</li>
+	<li class="cat-item cat-item-3"><a href="https://meyerweb.com/eric/thoughts/category/tech/css/">CSS</a> (309)
+</li>
+	<li class="cat-item cat-item-38"><a href="https://meyerweb.com/eric/thoughts/category/tech/dom/">DOM</a> (8)
+</li>
+	<li class="cat-item cat-item-70"><a href="https://meyerweb.com/eric/thoughts/category/tech/grid/">Grid</a> (11)
+</li>
+	<li class="cat-item cat-item-52"><a href="https://meyerweb.com/eric/thoughts/category/tech/html5/">HTML5</a> (13)
+</li>
+	<li class="cat-item cat-item-39"><a href="https://meyerweb.com/eric/thoughts/category/tech/javascript/">JavaScript</a> (9)
+</li>
+	<li class="cat-item cat-item-14"><a href="https://meyerweb.com/eric/thoughts/category/tech/mac/">Mac</a> (41)
+</li>
+	<li class="cat-item cat-item-36"><a href="https://meyerweb.com/eric/thoughts/category/tech/microformats/">Microformats</a> (9)
+</li>
+	<li class="cat-item cat-item-27"><a href="https://meyerweb.com/eric/thoughts/category/tech/redesign/">Redesign</a> (28)
+</li>
+	<li class="cat-item cat-item-25"><a href="https://meyerweb.com/eric/thoughts/category/tech/rss/">RSS</a> (5)
+</li>
+	<li class="cat-item cat-item-34"><a href="https://meyerweb.com/eric/thoughts/category/tech/s5/">S5</a> (29)
+</li>
+	<li class="cat-item cat-item-24"><a href="https://meyerweb.com/eric/thoughts/category/tech/semantic-web/">semantic web</a> (8)
+</li>
+	<li class="cat-item cat-item-2"><a href="https://meyerweb.com/eric/thoughts/category/tech/standards/">Standards</a> (163)
+</li>
+	<li class="cat-item cat-item-69"><a href="https://meyerweb.com/eric/thoughts/category/tech/svg/">SVG</a> (5)
+</li>
+	<li class="cat-item cat-item-22"><a href="https://meyerweb.com/eric/thoughts/category/tech/tools/">Tools</a> (84)
+</li>
+	<li class="cat-item cat-item-6"><a href="https://meyerweb.com/eric/thoughts/category/tech/w3c/">W3C</a> (22)
+</li>
+	<li class="cat-item cat-item-8"><a href="https://meyerweb.com/eric/thoughts/category/tech/web/">Web</a> (141)
+</li>
+	<li class="cat-item cat-item-33"><a href="https://meyerweb.com/eric/thoughts/category/tech/wordpress/">WordPress</a> (29)
+</li>
+	<li class="cat-item cat-item-18"><a href="https://meyerweb.com/eric/thoughts/category/tech/xfn/">XFN</a> (16)
+</li>
+	<li class="cat-item cat-item-23"><a href="https://meyerweb.com/eric/thoughts/category/tech/xslt/">XSLT</a> (7)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-58"><a href="https://meyerweb.com/eric/thoughts/category/the-web-behind/">The Web Behind</a> (6)
+</li>
+	<li class="cat-item cat-item-77"><a href="https://meyerweb.com/eric/thoughts/category/today-i-learned/">Today I Learned</a> (2)
+</li>
+</ul>
+</div>
+
+<div id="monthly" class="panel">
+<h4>Archives</h4>
+<ul role="navigation" aria-label="archive">
+	<li><h5><a href="https://meyerweb.com/eric/thoughts/2023/">2023</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2023/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2023/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2023/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2023/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2023/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2023/08">August</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2022/">2022</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2022/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2022/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2022/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2022/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2022/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2022/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2022/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2022/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2021/">2021</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2021/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2021/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2021/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2021/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2021/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2021/06">June</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2020/">2020</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2020/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2020/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2020/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2020/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2020/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2020/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2020/09">September</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2019/">2019</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2019/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2019/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2019/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2019/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2018/">2018</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2018/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2018/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2018/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2018/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2018/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2018/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2018/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2018/09">September</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2017/">2017</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2017/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2017/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2017/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2017/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2017/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2017/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2017/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2017/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2017/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2017/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2016/">2016</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2016/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2016/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2016/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2016/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2016/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2016/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2016/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2016/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2016/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2016/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2016/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2016/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2015/">2015</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2015/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2015/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2015/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2015/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2015/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2015/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2015/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2015/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2015/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2015/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2015/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2015/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2014/">2014</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2014/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2014/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2014/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2014/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2014/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2014/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2014/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2014/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2014/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2014/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2014/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2013/">2013</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2013/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2013/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2013/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2013/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2013/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2013/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2013/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2013/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2013/11">November</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2012/">2012</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2012/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2012/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2012/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2012/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2012/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2012/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2012/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2012/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2012/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2012/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2011/">2011</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2011/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2011/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2011/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2011/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2011/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2011/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2011/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2011/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2011/11">November</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2010/">2010</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2010/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2010/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2010/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2010/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2010/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2010/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2010/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2010/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2010/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2009/">2009</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2009/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2009/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2009/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2009/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2009/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2009/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2009/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2009/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2009/11">November</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2008/">2008</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2008/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2008/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2008/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2008/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2008/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2008/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2008/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2008/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2008/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2008/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2008/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2008/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2007/">2007</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2007/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2007/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2007/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2007/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2007/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2007/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2007/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2007/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2007/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2007/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2007/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2007/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2006/">2006</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2006/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2006/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2006/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2006/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2006/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2006/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2006/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2006/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2006/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2006/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2006/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2006/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2005/">2005</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2005/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2005/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2005/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2005/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2005/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2005/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2005/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2005/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2005/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2005/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2005/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2005/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2004/">2004</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2004/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2004/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2004/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2004/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2004/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2004/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2004/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2004/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2004/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2004/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2004/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2004/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2003/">2003</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2003/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2003/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2003/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2003/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2003/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2003/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2003/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2003/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2003/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2003/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2003/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2003/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2002/">2002</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2002/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2002/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2002/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2002/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2002/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2002/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2002/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2002/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2002/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2002/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2002/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2002/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2001/">2001</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2001/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2001/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2001/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2001/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2001/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2001/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2001/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2001/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2001/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2001/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2000/">2000</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2000/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2000/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2000/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2000/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2000/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2000/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2000/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2000/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2000/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2000/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2000/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/1999/">1999</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/1999/12">December</a></li></ul></li></ul>
+</div>
+
+</div>
+
+<footer id="global">
+
+<div>
+
+<div id="archipelago">
+<h4>Identity Archipelago</h4>
+<ul>
+<li><a rel="me" href="https://twitter.com/meyerweb"><img src="/pix/icons/twitter.png" alt="Twitter"></a></li>
+<li><a rel="me" href="https://mastodon.social/@meyerweb"><img src="/pix/icons/mastodon.svg" alt="Mastodon"></a></li>
+<li><a rel="me" href="https://github.com/meyerweb"><img src="/pix/icons/github.png" alt="GitHub"></a></li>
+<li><a rel="me" href="https://flickr.com/photos/meyerweb/"><img src="/pix/icons/flickr.png" alt="Flickr"></a></li>
+<li><a rel="me" href="https://dribbble.com/meyerweb"><img src="/pix/icons/dribbble.png" alt="Dribbble"></a></li>
+<li><a rel="me" href="https://facebook.com/meyerweb"><img src="/pix/icons/facebook.png" alt="Facebook"></a></li>
+<li><a rel="me" href="https://www.linkedin.com/in/meyerweb"><img src="/pix/icons/linkedin.png" alt="LinkedIn"></a></li>
+</ul>
+</div>
+
+<div id="excuse">
+<div class="panel" id="excuse">
+<h4>The <a href="/feeds/excuse/">excuse of the day</a> is</h4>
+<p>ozone depletion</p>
+</div>
+<!--#include virtual="/feeds/excuse/current.html" -->
+</div>
+
+<div class="sosumi">
+All contents of this site, unless otherwise noted, are &copy;1993-2023<!--#config timefmt="%Y" --><!--#echo var="DATE_LOCAL" --> <strong>Eric A. and Kathryn S. Meyer</strong>.  All Rights Reserved.</div>
+
+<div id="wordpress" class="credits">"<a href="/eric/thoughts/">Thoughts From Eric</a>" is powered by <a href="http://wordpress.org/">WordPress</a>.  Most of the rest of the site is hand-authored.</div>
+
+<div id="design" class="credits">The ink-sketch images used in this site’s design are adapted from <a href="https://archive.org/search.php?query=creator%3A%22Mori%2C+Yu%CC%84zan%2C+-1917%22">Yūzan Mori’s <cite><dfn title="In English: Wave Forms">Hamonshū</dfn></cite>, Volumes 1-3</a>, published in 1903 and made available for public use by the <a href="https://library.si.edu/">Smithsonian Libraries</a> and the <a href="https://archive.org/">Internet Archive</a>.</div>
+
+</div>
+
+</footer>
+<!-- WP stuff follows -->
+</body>
+</html>
+<!-- Dynamic page generated in 0.471 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2023-09-06 02:57:19 -->
+
+<!-- Compression = gzip -->

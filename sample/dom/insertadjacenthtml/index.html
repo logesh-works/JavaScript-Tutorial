@@ -1,0 +1,25 @@
+ <!DOCTYPE html>
+ <html lang="en">
+
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>insertAdjacentHTML() Demo</title>
+ </head>
+
+ <body>
+     <ul id="list">
+         <li>CSS</li>
+     </ul>
+
+     <script>
+         let list = document.querySelector('#list');
+
+         list.insertAdjacentHTML('beforebegin', '<h2>Web Technology</h2>');
+         list.insertAdjacentHTML('afterbegin', '<li>HTML</li>');
+         list.insertAdjacentHTML('beforeend', '<li>JavaScript</li>');
+         list.insertAdjacentHTML('afterend', '<p>For frontend developers</p>');
+     </script>
+ </body>
+
+ </html>

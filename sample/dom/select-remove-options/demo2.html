@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Demo</title>
+    </head>
+
+    <body>
+        <label for="list">Alphabet</label>
+        <select id="list">
+            <option value="A">Item A</option>
+            <option value="B">Item B</option>
+            <option value="C">Item C</option>
+        </select>
+        <script>
+            const select = document.querySelector('#list')
+            let indices = []
+            for (let i = 0; i < select.options.length; i++) {
+                const value = select.options[i].value;
+                if (value === 'B' || value === 'C') {
+                    select.remove(i);
+                    // decrease i by one because the index has been
+                    // adjusted
+                    i--
+                }
+            }
+        </script>
+    </body>
+
+</html>

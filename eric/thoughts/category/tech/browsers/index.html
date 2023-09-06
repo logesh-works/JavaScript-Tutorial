@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head profile="http://gmpg.org/xfn/1">
+<title>Browsers  &#8211;  Eric’s Archived Thoughts</title>
+<meta name="generator" content="WordPress 6.3.1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="shortcut icon" href="/favicon.ico"><link rel="home" href="http://meyerweb.com/" title="Home" ><link rel="openid.server" href="http://www.myopenid.com/server"><link rel="openid.delegate" href="http://emeyer.myopenid.com/"><meta name="google-site-verification" content="I_JFi4WrY6bW7AE2ya5sSlruVvgvrIeRa1IsqO0GB78" /><link rel="alternate" type="application/rss+xml" title="Thoughts From Eric" href="/eric/thoughts/rss2/full"><link rel="alternate" type="application/rss+xml" title="Thoughts From Eric (only technical posts)" href="/eric/thoughts/category/tech/rss2/full"><link rel="alternate" type="application/rss+xml" title="Thoughts From Eric (only personal posts)" href="/eric/thoughts/category/personal/rss2/full"><link rel="alternate" type="application/rss+xml" title="Excuse of the Day" href="/feeds/excuse/rss20.xml"><link rel="stylesheet" href="/ui/meyerweb.css" type="text/css"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@meyerweb"><meta name="twitter:title" content="meyerweb.com"><meta name="twitter:description" content="The web home of Eric A. Meyer, CSS guy; and his wife Kathryn, doctor of nursing."><meta name="twitter:url" content="https://meyerweb.com/"><meta name="twitter:image" content="https://meyerweb.com/ui/i/heart/663399love.png"><meta name="twitter:image:width" content="192"><meta name="twitter:image:height" content="192"><meta property="og:type" content="website"><meta property="og:image" content="https://meyerweb.com/ui/i/hamonshu/fb-og-image.png"><meta name="twitter:description" property="og:description" content="Web browsers have higher performance requirements than video games, and in essentially the same ways.  Seriously.">
+<meta name="twitter:title" property="og:title" content="First-Person Scrollers">
+<meta name="twitter:url" property="og:url" content="https://meyerweb.com/eric/thoughts/2023/06/20/first-person-scrollers/">
+<link rel="stylesheet" type="text/css" href="https://meyerweb.com/eric/thoughts/wp-content/themes/meyerweb-2020/style.css">
+<link rel="pingback" href="https://meyerweb.com/eric/thoughts/xmlrpc.php">
+</head>
+<body id="www-meyerweb-com" class="arch">	
+<header role="banner" id="sitemast">
+<a href="/">meyerweb.com</a>
+<nav role="navigation" aria-label="page" id="skiplinks">
+<a href="#main">Main content</a>
+<a href="#navigate">Navigation links</a>
+<a href="#footer">Footer</a>
+</nav>
+</header>
+
+<nav role="navigation" aria-label="site" id="navigate">
+<ul id="navlinks">
+<li id="archLink"><a href="/eric/thoughts/">Post Archives</a></li>
+<li id="cssLink"><a href="/eric/css/">CSS Work</a></li>
+<li id="toolsLink"><a href="/eric/tools/">Toolbox</a></li>
+<li id="writeLink"><a href="/eric/writing.html">Writing</a></li>
+<li id="speakLink"><a href="/eric/talks/">Speaking</a></li>
+<li id="otherLink"><a href="/other/">Other Stuff</a></li>
+<li id="aboutsite"><a href="/ui/about.html">About this site</a></li>
+</ul>
+</nav>
+
+<!--div id="main"-->
+
+<main role="main" id="thoughts">
+
+
+<h1 class="pagetitle">Posts in the <em>Browsers</em> Category</h1>
+
+
+
+<article role="article" class="entry">
+<header>
+<h2 class="title"><a href="https://meyerweb.com/eric/thoughts/2023/06/20/first-person-scrollers/" rel="bookmark" title="Permanent Link: First-Person Scrollers">First-Person Scrollers</a></h2>
+<em class="pubtime">Published  2 months, 2 weeks past</em>
+</header>
+
+<div class="text">
+<p>I’ve played a lot of video games over the years, and the thing that just utterly blows my mind about them is how every frame is painted from scratch.  So in a game running at 30 frames per second, everything in the scene has to be calculated and drawn every 33 milliseconds, no matter how little or much has changed from one frame to the next.  In modern games, users generally demand 60 frames per second.  So everything you see on-screen gets calculated, placed, colored, textured, shaded, and what-have-you in 16 milliseconds (or less).  And then, in the next 16 milliseconds (or less), it has to be done <em>all over again</em>.  And there are games that render the entire scene in single-digits numbers of milliseconds!</p>
+
+<p>I mean, I’ve done some simple 3D render coding in my day.  I’ve done hobbyist video game development; see <a href="https://gravitywars.meyerweb.com/">Gravity Wars</a>, for example (which I really do need to get back to and make less user-hostile).  So you’d think I’d be used to this concept, but somehow, I just never get there.  My pre-DOS-era brain rebels at the idea that everything has to be recalculated from scratch every frame, and doubly so that such a thing can be done in such infinitesimal slivers of time.</p>
+
+<p>So you can imagine how I feel about the fact that <em>web browsers</em> operate in exactly the same way, and with the same performance requirements.</p>
+
+<p>Maybe this shouldn’t come as a surprise.  After all, we have user interactions and embedded videos and resizable windows and page scrolling and stuff like that, never mind CSS animations and DOM manipulation, so the viewport often needs to be re-rendered to reflect the current state of things.  And to make all that feel smooth like butter, browser engines have to be able to display web pages at a minimum of 60 frames per second.</p>
+
+<figure>
+<a href="https://meyerweb.com/eric/thoughts/wp-content/uploads/‎fps.jpg"><img decoding="async" src="https://meyerweb.com/eric/thoughts/wp-content/uploads/‎fps.jpg" alt="" /></a>
+<figcaption>Admittedly, this would be a popular UI for browsing social media.</figcaption>
+</figure>
+
+<p>This demand touches absolutely <em>everything</em>, and shapes the evolution of web technologies in ways I don’t think we fully appreciate.  You want to add a new selector type?  It has to be performant.  This is what blocked <code>:has()</code> (and similar proposals) for such a long time.  It wasn’t difficult to figure out how to select ancestor elements&#x202F;—&#x2009;it was very difficult to figure out how to do it really, really fast, so as not to lower typical rendering speed below that magic 60fps.  The same logic applies to new features like view transitions, or new filter functions, or element exclusions, or whatever you might dream up.  No matter how cool the idea, if it bogs rendering down too much, it’s a non-starter.</p>
+
+<p>I should note that none of this is to say it’s impossible to get a browser below 60fps: pile on enough computationally expensive operations and you’ll still jank like crazy.  It’s more that the goal is to keep any new feature from dragging rendering performance down too far in reasonable situations, both alone and in combination with already-existing features.  What constitutes “down too far” and “reasonable situations” is honestly a little opaque, but that’s a conversation slash vigorous debate for another time.</p>
+
+<p>I’m sure the people who’ve worked on browser engines have fascinating stories about what they do internally to safeguard rendering speed, and ideas they’ve had to spike because they were performance killers.  I would love to hear those stories, if any BigCo devrel teams are looking for podcast ideas, or would like to guest on <a href="https://igalia.com/24-7/chats">Igalia Chats</a>. (We’d love to have you on!)</p>
+
+<p>Anyway, the point I’m making is that performance isn’t just a matter of low asset sizes and script tuning and server efficiency.  It’s also a question of the engine’s ability to redraw the contents of the viewport, no matter what changes for whatever reason, with reasonable anticipation of things that might affect the rendering, every 15 milliseconds, over and over and over and over and over again, just so we can scroll our web pages smoothly.  It’s kind of bananas, and yet, it also makes sense.  Welcome to the web.</p>
+<ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2023/06/20/first-person-scrollers/">First-Person Scrollers</cite></a> was published on <time>Tuesday, June 20th, 2023</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/tech/browsers/" rel="category tag">Browsers</a> and <a href="https://meyerweb.com/eric/thoughts/category/tech/web/" rel="category tag">Web</a> categories.</li>
+<li class="cmt">There has been <a href="https://meyerweb.com/eric/thoughts/2023/06/20/first-person-scrollers/#comments">one reply</a>.</li>
+</ul>
+</div>
+<hr class="fallback">
+</article>
+
+
+<article role="article" class="entry">
+<header>
+<h2 class="title"><a href="https://meyerweb.com/eric/thoughts/2022/08/15/table-column-alignment-with-variable-transforms/" rel="bookmark" title="Permanent Link: Table Column Alignment with Variable Transforms">Table Column Alignment with Variable Transforms</a></h2>
+<em class="pubtime">Published  1 year, 3 weeks past</em>
+</header>
+
+<div class="text">
+<p>One of the bigger challenges of <a href="https://meyerweb.com/eric/thoughts/2022/08/09/recreating-the-effects-of-nuclear-weapons-for-the-web/">recreating <cite>The Effects of Nuclear Weapons</cite> for the Web</a> was its tables.  It was easy enough to turn tab-separated text and numbers into table markup, but the column alignment almost broke me.</p>
+
+<p>To illustrate what I mean, here are just a few examples of columns that had to be aligned.</p>
+
+<figure class="fader standalone" tabindex="0">
+<style type="text/css">
+.fader div {position: relative;}
+.fader > div > * {max-width: 100%;}
+.fader > div > a > :first-child {position: absolute; top: 0; left: 0;}
+.fader:is(:hover, :focus) > div > a > :first-child {
+	animation: fadeCycle 1s -0.33s infinite alternate;}
+
+@keyframes fadeCycle {
+	from {opacity: 1;}
+	33.3% {opacity: 1;}
+	66.7% {opacity: 0;}
+	to {opacity: 0;}
+}
+</style>
+<div>
+<a href="https://meyerweb.com/eric/thoughts/wp-content/uploads/enw-data-tables-lined.jpg">
+<img decoding="async" src="https://meyerweb.com/eric/thoughts/wp-content/uploads/enw-data-tables-bare.jpg" class="border" alt="" />
+<img decoding="async" src="https://meyerweb.com/eric/thoughts/wp-content/uploads/enw-data-tables-lined.jpg" class="border" alt="" />
+</a>
+</div>
+<figcaption>
+A few of the many tables in the book and their fascinating column alignments.  (Hover/focus this figure to start a cyclic animation fading some alignment lines in and out. Sorry if that doesn’t work for you, mobile readers.)
+</figcaption>
+</figure>
+
+<p>At first I naïvely thought, “No worries, I can right- or left-align most of these columns and figure out the rest later.”  But then I looked at the centered column headings, and how the column contents were essentially centered on the headings while having their own internal horizontal alignment logic, and realized all my dreams of simple fixes were naught but ashes.</p>
+
+<p>My next thought was to put blank spacer columns between the columns of visible content, since table layout doesn’t honor the <code>gap</code> property, and then set a fixed width for various columns.  I really didn’t like all the empty-cell spam that would require, even with liberal application of the <code>rowspan</code> attribute, and it felt overly fragile &#x202F;—&#x2009; any shifts in font face (say, on an older or niche system) might cause layout upset within the visible columns, such as wrapping content that shouldn’t be wrapped or content overlapping other content.  I felt like there was a better answer.</p>
+
+<p>I also thought about segregating every number and symbol (including decimal separators) into separate columns, like this:</p>
+
+<pre class="html"><code>&lt;tr&gt;
+  &lt;th&gt;Neutrinos from fission products&lt;/th&gt;
+  &lt;td&gt;10&lt;/td&gt; 
+  &lt;td&gt;&lt;/td&gt;
+  &lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;total&quot;&gt;
+  &lt;th&gt;Total energy per fission&lt;/th&gt;
+  &lt;td&gt;200&lt;/td&gt;
+  &lt;td&gt;±&lt;/td&gt;
+  &lt;td&gt;6&lt;/td&gt;
+&lt;/tr&gt;</code></pre>
+
+<p>Then I contemplated what that would do to screen readers and the document structure in general, and after the nausea subsided, I decided to look elsewhere.</p>
+
+<p>It was at that point I thought about using spacer <code>&lt;span&gt;</code>s.  Like, anywhere I needed some space next to text in order to move it to one side or the other, I’d throw in something like one of these:</p>
+
+<pre class="html"><code>&lt;span class=&quot;spacer&quot;&gt;&lt;/span&gt;
+&lt;span style=&quot;display: inline; width: 2ch;&quot;&gt;&lt;/span&gt;</code></pre>
+
+<p>Again, the markup spam repulsed me, but there was the kernel of an idea in there… and when I combined it with the truism “CSS doesn’t care what you expect elements to look or act like”, I’d hit upon my solution.</p>
+
+<p>Let’s return to <a href="https://atomicarchive.com/resources/documents/effects/glasstone-dolan/chapter1.html#tbl1-43">Table 1.43</a>, which I used as an illustration in <a href="https://meyerweb.com/eric/thoughts/2022/08/09/recreating-the-effects-of-nuclear-weapons-for-the-web/">the announcement post</a>.  It’s shown here in its not-aligned and aligned states, with borders added to the table-cell elements.</p>
+
+<figure class="standalone">
+<a href="https://meyerweb.com/eric/thoughts/wp-content/uploads/enw-data-tables-1-43.jpg"><img decoding="async" src="https://meyerweb.com/eric/thoughts/wp-content/uploads/enw-data-tables-1-43.jpg" alt="" class="" /></a>
+<figcaption>
+Table 1.43 before and after the cells are shifted to make their contents visually align.
+</figcaption>
+
+</figure>
+
+<p>This is exactly the same table, only with cells shifted to one side or another in the second case.  To make this happen, I first set up a series of CSS rules:</p>
+
+<pre class="css"><code>figure.table .lp1 {transform: translateX(0.5ch);}
+figure.table .lp2 {transform: translateX(1ch);}
+figure.table .lp3 {transform: translateX(1.5ch);}
+figure.table .lp4 {transform: translateX(2ch);}
+figure.table .lp5 {transform: translateX(2.5ch);}
+
+figure.table .rp1 {transform: translateX(-0.5ch);}
+figure.table .rp2 {transform: translateX(-1ch);}</code></pre>
+
+<p>For a given class, the table cell is translated along the X axis by the declared number of <code>ch</code> units.  Yes, that means the table cells sharing a column no longer actually sit in the column.  No, I don’t care&#x202F;—&#x2009;and neither, as I said, does CSS.</p>
+
+<p>I chose the labels <code>lp</code> and <code>rp</code> for “left pad” and “right pad”, in part as a callback to <a href="https://www.theregister.com/2016/03/23/npm_left_pad_chaos/">the left-pad debacle</a> of yore even though it has basically nothing to do with what I’m doing here.  (Many of my class names are private jokes to myself.  We take our pleasures where we can.)  The number in each class name represents the number of “characters” to pad, which here increment by half-<code>ch</code> measures.  Since I was trying to move things by characters, using the unit that looks like it’s a character measure (even though <a href="https://meyerweb.com/eric/thoughts/2018/06/28/what-is-the-css-ch-unit/">it really isn’t</a>) made sense to me.</p>
+
+<p>With those rules set up, I could add simple classes to table cells that needed to be shifted, like so:</p>
+
+<pre class="html"><code>&lt;td class=&quot;lp3&quot;&gt;5 ± 0.5&lt;/td&gt;
+
+&lt;td class=&quot;rp2&quot;&gt;10&lt;/td&gt;</code></pre>
+
+<p>That was most of the solution, but it turned out to not be quite enough.  See, things like decimal places and commas aren’t as wide as the numbers surrounding them, and sometimes that was enough to prevent a specific cell from being able to line up with the rest of its column.  There were also situations where the data cells could all be aligned with each other, but were unacceptably offset from the column header, which was nearly always centered.</p>
+
+<p>So I decided to <code>calc()</code> the crap out of this to add the flexibility a custom property can provide.  First, I set a sitewide variable:</p>
+
+<pre class="css"><code>body {
+	--offset: 0ch;
+}</code></pre>
+
+<p>I then added that variable to the various transforms:</p>
+
+<pre class="css"><code>figure.table .lp1 {transform: translateX(calc(0.5ch + var(--offset)));}
+figure.table .lp2 {transform: translateX(calc(1ch   + var(--offset)));}
+figure.table .lp3 {transform: translateX(calc(1.5ch + var(--offset)));}
+figure.table .lp4 {transform: translateX(calc(2ch   + var(--offset)));}
+figure.table .lp5 {transform: translateX(calc(2.5ch + var(--offset)));}
+
+figure.table .rp1 {transform: translateX(calc(-0.5ch + var(--offset)));}
+figure.table .rp2 {transform: translateX(calc(-1ch   + var(--offset)));}</code></pre>
+
+<p>Why use a variable at all?  Because it allows me to define offsets specific to a given table, or even specific to certain table cells within a table.  Consider the styles embedded along with Table 3.66:</p>
+
+<pre class="css"><code>#tbl3-66 tbody tr:first-child td:nth-child(1),
+#tbl3-66 tbody td:nth-child(7) {
+	--offset: 0.25ch;
+}
+#tbl3-66 tbody td:nth-child(4) {
+	--offset: 0.1ch;	
+}</code></pre>
+
+<p>Yeah. The first cell of the first row and the seventh cell of every row in the table body needed to be shoved over an extra quarter-<code>ch</code>, and the fourth cell in every table-body row (under the heading “S<sub>p</sub>”) got a tenth-<code>ch</code> nudge.  You can judge <a href="https://atomicarchive.com/resources/documents/effects/glasstone-dolan/chapter3.html#tbl3-66">the results</a> for yourself.</p>
+
+<p>So, in the end, I needed only sprinkle class names around table markup where needed, and add a little extra offset via a custom property that I could scope to exactly where needed.  Sure, the whole setup is hackier than a panel of professional political pundits, but it works, and to my mind, it beats the alternatives.</p>
+
+<p>I’d have been a lot happier if I could have aligned some of the columns on a specific character.  I think I still would have needed the left- and right-pad approach, but there were a lot of columns where I could have reduced or eliminated all the classes.  A quarter-century ago, <a
+href="https://www.w3.org/TR/html4/struct/tables.html#adef-align-TD">HTML 4 had this capability</a>, in that you could write:</p>
+
+<pre class="html"><code>&lt;COLGROUP&gt;
+	&lt;COL&gt;
+	&lt;COL&gt;
+	&lt;COL align=&quot;±&quot;&gt;
+&lt;/COLGROUP&gt;</code></pre>
+
+<p>CSS2 was also given this power via <code>text-align</code>, where you could <a href="https://www.w3.org/TR/1998/REC-CSS2-19980512/tables.html#column-alignment">give it a string value in order to specify horizontal alignment</a>.</p>
+
+<p>But browsers never really supported these features, even if some of them do <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=2212">still have bugs
+open on the issue</a>.  (I chuckle aridly every time I go there and see “Opened 24 years ago” a few lines above “Status: NEW”.)  I know it’s not top of anybody’s wish list, but I wouldn’t mind seeing that capability return, somehow. Maybe as something that could be used in Grid column tracks as well as table columns.</p>
+
+<p>I also found myself really pining for the ability to use <code>attr()</code> here, which would have allowed me to drop the classes and use <code>data-*</code> attributes on the table cells to say how far to shift them.  I could even have dropped the offset variable.  Instead, it could have looked something like this:</p>
+
+<pre class="html"><code>&lt;td data-pad=&quot;3.25&quot;&gt;5 ± 0.5&lt;/td&gt;
+
+&lt;td data-pad=&quot;-1.9&quot;&gt;10&lt;/td&gt;</code></pre>
+
+<pre class="css"><code>
+figure.table *[data-pad] {transform: translateX(attr(data-pad,'ch'));}
+</code></pre>
+
+<p>Alas, <code>attr()</code> is confined to the <code>content</code> property, and the idea of letting it be used more widely remains unrealized.
+
+</p><p>Anyway, that was my journey into recreating mid-20th-Century table column alignment on the Web.  It’s true that sufficiently old browsers won’t get the fancy alignment due to not supporting custom properties or <code>calc()</code>, but the data will all still be there.  It just won’t have the very specific column alignment, that’s all.  Hooray for progressive enhancement!</p><ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2022/08/15/table-column-alignment-with-variable-transforms/">Table Column Alignment with Variable Transforms</cite></a> was published on <time>Monday, August 15th, 2022</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/tech/browsers/" rel="category tag">Browsers</a>, <a href="https://meyerweb.com/eric/thoughts/category/tech/css/" rel="category tag">CSS</a>, <a href="https://meyerweb.com/eric/thoughts/category/hacks/" rel="category tag">Hacks</a>, <a href="https://meyerweb.com/eric/thoughts/category/tech/standards/" rel="category tag">Standards</a>, and <a href="https://meyerweb.com/eric/thoughts/category/tech/web/" rel="category tag">Web</a> categories.</li>
+<li class="cmt">There have been <a href="https://meyerweb.com/eric/thoughts/2022/08/15/table-column-alignment-with-variable-transforms/#comments">three replies</a>.</li>
+</ul>
+</div>
+<hr class="fallback">
+</article>
+
+
+<article role="article" class="entry">
+<header>
+<h2 class="title"><a href="https://meyerweb.com/eric/thoughts/2022/01/24/no-apple-did-not-crowdfund-focus-visible-in-safari/" rel="bookmark" title="Permanent Link: No, Apple Did Not Crowdfund :focus-visible in Safari">No, Apple Did Not Crowdfund :focus-visible in Safari</a></h2>
+<em class="pubtime">Published  1 year, 7 months past</em>
+</header>
+
+<div class="text">
+<p>It’s not every week <a href="https://webkit.org/blog/12176/release-notes-for-safari-technology-preview-138/">the release notes for a preview build of a web browser</a> ignite Yet Another Twitter Teacup Storm (YATTS™), but that’s what happened when Safari Technology Preview 138 dropped late last week. At least, it’s what happened in the Twitter Teacups I tend to sip.</p>
+
+<p>Just in case you missed it, here’s the summary:</p>
+
+<ol>
+<li>The WebKit team released Safari Technology Preview 138, and the release notes for same.</li>
+<li>The “CSS” section of the release notes started with a line saying: <blockquote>Enabled <code>:focus-visible</code> pseudo-class by default (<a href="https://trac.webkit.org/changeset/286783/webkit/">r286783</a>, <a href="https://trac.webkit.org/changeset/286776/webkit/">r286776</a>, <a href="https://trac.webkit.org/changeset/286775/webkit/">r286775</a>)</blockquote></li>
+<li>A few people, including <a href="https://twitter.com/jensimmons/status/1484679052535660544">Jen Simmons, gave credit to Igalia</a> for implementing <code>:focus-visible</code> by means of a crowdfunding project (more on that in a moment).</li>
+<li>KABOOM</li>
+</ol>
+
+<p>I suppose I could be a bit more explicit in step 4, but I don’t really want to get into speculating on apparent motives and assumptions by others, because that’s not the point of this post. The point of this post is to clear up what seems to be a very common misunderstanding.</p>
+
+<p>What I kept seeing people saying was something to the effect of, “Why the hell did Apple have to crowdfund this feature?” And that’s wrong in two ways:</p>
+
+<ol>
+<li>Apple doesn’t <em>have</em> to crowdfund anything, up to and including colonization of the Moon. (They might have to ask for a few bucks to do Venus or Mars.)</li>
+<li><strong>Apple didn’t crowdfund <code>:focus-visible</code></strong>.</li>
+</ol>
+
+<p>This isn’t me splitting hairs, either. Nobody at Apple asked the crowd to fund anything. Nobody at Apple asked Igalia to crowdfund anything. They didn’t even ask Igalia to implement <code>:focus-visible</code>, and then Igalia decided to crowdfund the work. In fact, all of those assumptions get things almost exactly backwards&#x202F;—&#x2009;which is understandable! It’s what we expect from our experience of how the web has developed since at least the late 1990s. But here, something new happened.</p>
+
+<p>So, let me summarize what happened using yet another ordered list:</p>
+
+<ol>
+<li>Igalia noticed they’d done a fair bit of work adding features to all the browser engines (e.g., CSS Grid), with each project supported by a single paying client, and thought, “Wait a minute, the web is a commons. Why are features being driven one client at a time?”</li>
+<li>Of its own volition, Igalia decided to experiment with the idea of letting the web community (the “crowd”) vote for implementation of a missing browser feature with their wallets (the “funding”). They called this ongoing experiment <a href="https://www.igalia.com/open-prioritization/">Open Prioritization</a>, and launched it in 2019.</li>
+<li>There were six possible projects, chosen by Igalia through their own set of criteria, for the community to vote on by pledging monetary support:
+<ul>
+<li>CSS <code>lab()</code> colors in Firefox</li>
+<li><code>:focus-visible</code> in WebKit/Safari</li>
+<li>HTML <code>inert</code> in WebKit/Safari</li>
+<li>Selector list arguments for <code>:not()</code> in Chrome</li>
+<li>CSS Containment support in WebKit/Safari</li>
+<li>CSS <code>d</code> (SVG path) support in Firefox</li>
+</ul></li>
+<li>The winner was implementing <code>:focus-visible</code> in WebKit/Safari, and by “winner”, I mean that project got the most monetary commitment from the members of the community.</li>
+<li>Igalia matched the community contributions dollar for dollar, and moved forward with the work.</li>
+<li>The work was done, and submitted to the WebKit code base. (Along the way, inconsistencies and other problems were discovered, addressed, and fixes contributed to engines other than WebKit.)</li>
+<li>The WebKit team accepted Igalia’s contributions, and are now shipping them in a preview build of Safari for developers to test out.</li>
+</ol>
+
+<p>In other words: the community (more precisely, a portion of it) voted on which feature was most needed, Igalia implemented it, and Apple accepted it. Apple’s role in this process came at the end, not the beginning.</p>
+
+<p>And no, this is not the usual thing! It’s not supposed to be. Igalia is deeply committed to not just advancing the web, but to an unprecedented extent democratizing that advancement. It isn’t anything like a pure democratic effort, at least not yet, but these are early days and the initiative is structured to meet the current constraints of the environment (read: living under capitalism means coders gotta get paid).</p>
+
+<p>But <em>why</em> is Igalia doing this? Time for another list! Just to switch things up, this one will be unordered:</p>
+
+<ul>
+<li>Because the community should have more of a say in what gets prioritized in browsers. The community can be large collections of individuals, or it could be small collections of small companies, or a mix.</li>
+<li>Because in every browser team, there’s always a priority list, and sometimes good features get pushed down that list for various reasons. It could be lack of expertise. It could be lack of time. It could be lack of interest. It could be interference by higher-ups. It doesn’t matter.</li>
+<li>Because browser teams&#x202F;—&#x2009;not any one team, but the unfortunately small number of browser teams&#x202F;—&#x2009;are a bottleneck. No matter how much money the companies who employ those teams throw at them, they will always be a bottleneck, because resources are finite.</li>
+</ul>
+
+<p>And this brings us to why I think “Wait, shouldn’t the <code>$browser_name</code> team have already done <code>$feature_name</code> by now? Why did an outside party have to do it?” is a little short-sighted. There will <em>always</em> be a <code>$feature_name</code> that the <code>$browser_name</code> team hasn’t done yet, for any value of <code>$browser_name</code> you care to posit. Today it could be WebKit; tomorrow, Chromium. In ten years, maybe there will be teams at Amazon and Huawei, making browser engines that compete for user share. Maybe not. Doesn’t actually matter, because however many or few engines there are, no matter what their priorities are, this problem will persist.</p>
+
+<p>This is also why I’m not getting into Apple’s funding levels and priorities for WebKit and the web. Yes, there is much Apple-the-company can be criticized about, and personally, I am one of the biggest fans browser-engine diversity ever had, <em>but that is a different conversation</em>. Even if you could somehow wave a magic wand and open all platforms everywhere to engine diversity, <strong>and</strong> simultaneously cause a thousand browsers to bloom, we would still have the same basic problem. Open Prioritization would still need to exist.</p>
+
+<p>For another piece of evidence on that point, look at the second Open Prioritization project: <a href="https://opencollective.com/mathml-core-support">MathML-Core</a>, whose goal is to bring full cross-browser support for <a href="https://w3c.github.io/mathml-core/">the MathML Core specification</a> to browsers, starting with Chrome (which needs the most work in this area) and then moving on to other engines (which need less work, but still need work). Doing this will not only improve support for web-wide math markup and its visual rendering, but will also improve the accessibility of math content on the web by making math a first-class content type in browsers. And you can even now <a href="https://opencollective.com/mathml-core-support">contribute to this effort</a> with a pledge of your own!</p>
+
+<p>“But wait, why didn’t <code>$browser_name</code> already finish implementing MathML Core?” It doesn’t matter. Whether or not <code>$browser_name</code> (whichever one that is) should have done this by now, they haven’t. Maybe they would have done it eventually, but again, that doesn’t matter. We can make it happen now.</p>
+
+<p>That’s what happened with <code>:focus-visible</code> in WebKit, which helped improve other engines; it’s what will happen with MathML Core in various browsers; and it could very well be what happens with other features in the future. Igalia would love nothing more than to see more and more projects launch, even if they don’t get hired to do the work for a single one of them. This isn’t us spackling over the cracks of browser teams’ neglect. This is us trying to chart an entirely new way to advance browser engines.</p>
+
+<p>I go deeper into all of the above, as well as how Open Prioritization is designed to be an open forum and not some private reserve of Igalia’s, in <a href="https://www.youtube.com/watch?v=zhlw7_BoG9U">a 17-minute talk delivered at W3C TPAC in fall 2021</a>, available and captioned on Igalia’s YouTube channel. This post sort of summarizes it, but there are more examples and details in the talk, so if you’re interested, please do check that out.</p>
+
+<p>Just in case your eyes sort of glazed and you skipped to the end to see if there was a <abbr title="too long; didn’t read">TL;DR</abbr>, here it is:</p>
+
+<p><em>The addition of <code>:focus-visible</code> to WebKit was lead by the community, done by Igalia, and contributed to WebKit without any involvement from Apple except in the sense of their reviewing patches and accepting the contributions. Many of us are mad at Apple for a lot of good reasons, but please don’t let the process of venting that anger tar the goals and achievements of Open Prioritization. The future browser-feature priority you save may be your own.</em></p><ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2022/01/24/no-apple-did-not-crowdfund-focus-visible-in-safari/">No, Apple Did Not Crowdfund :focus-visible in Safari</cite></a> was published on <time>Monday, January 24th, 2022</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/tech/browsers/" rel="category tag">Browsers</a>, <a href="https://meyerweb.com/eric/thoughts/category/commentary/" rel="category tag">Commentary</a>, and <a href="https://meyerweb.com/eric/thoughts/category/tech/web/" rel="category tag">Web</a> categories.</li>
+<li class="cmt">There have been <a href="https://meyerweb.com/eric/thoughts/2022/01/24/no-apple-did-not-crowdfund-focus-visible-in-safari/#comments">nine replies</a>.</li>
+</ul>
+</div>
+<hr class="fallback">
+</article>
+
+
+<article role="article" class="entry">
+<header>
+<h2 class="title"><a href="https://meyerweb.com/eric/thoughts/2020/04/09/css-naked-day-2020/" rel="bookmark" title="Permanent Link: CSS Naked Day 2020">CSS Naked Day 2020</a></h2>
+<em class="pubtime">Published  3 years, 4 months past</em>
+</header>
+
+<div class="text">
+<p>
+If you’re here on meyerweb on April 9th, 2020, then you’re seeing the site without the CSS I wrote for its design and layout.  Why?  It’s <a href="https://css-naked-day.github.io/">CSS Naked Day</a>!  To quote that site:
+</p>
+
+<blockquote><p>The idea behind this event is to promote Web Standards. Plain and simple. This includes proper use of HTML, semantic markup, a good hierarchy structure, and of course, a good old play on words. It&#8217;s time to show off your &lt;body&gt; for what it really is.</p></blockquote>
+
+<p>
+So last night, I removed the links to the main stylesheets for the site.  There are, I should note, scattered pages where local CSS is still in play. I could have tracked them all down and removed their CSS as well, and I considered doing so, but in the end I decided against it.
+</p>
+<p>
+There’s a history to this day.  In the late Aughts, it was an annual thing, not unlike <a href="https://en.wikipedia.org/wiki/Blue_Beanie_Day">Blue Beanie Day</a>, to draw attention to web standards and reinforce among the community that good, solid, robust development practices are a good thing.  Because after all, if your site isn’t usable without the CSS, then it almost certainly has structure and accessibility problems you probably haven’t been thinking about.
+</p>
+<p>
+In all honesty, I had forgotten about it until just a couple of days prior, I suddenly thought, “Wait, early April, isn’t that when CSS Naked Day was observed?”  I went looking, and discovered that yes, it was.  I had remembered April 7th, but apparently April 9th was the actual date.  Or became it over time.  Either way, here we are, feeling fancy-free!
+</p>
+<p>
+What’s been interesting has been what CSS Naked Day has revealed about browsers as well as about our HTML.  To pick one example, suppose you have a very large SVG logo, which you size to where you want it with CSS.  This is ordinarily a best practice: the SVG is the same file size whether it renders huge or tiny, so there’s no downside to having an SVG that renders 1200 x 1000 when you view it directly&#x202F;—&#x2009;thus allowing you to see all the little details&#x202F;—&#x2009;but is sized to 120 x 100 via CSS for layout purposes.
+</p>
+<p>
+But take away the CSS, and the SVG will become 1200 x 1000 again.  That might tell you to resize it for production, sure, and you probably should.  But it also points out that browsers will not constrain that image, not even to the viewport.  If your window is only 900 pixels wide, the SVG could well spill outside, forcing a horizontal scrollbar.  Is that good?  Maybe!  Maybe not!  We might wish browsers would bake something like <code>img {max-width: 100%; height: auto;}</code> into their user-agent stylesheet(s), but maybe that would have unforeseen downsides.  The point is, this is a thing about browsers that CSS Naked Day reveals, and it’s worth knowing.
+</p>
+<p>
+Similarly, this reveals that browsers don’t have a way to restrict the width of lines of text.  Thus, if the browser window is wide, the lines get very long&#x202F;—&#x2009;long enough to make reading more difficult.  This isn’t a problem on handheld devices like smartphones, but on desktop (use of which has risen significantly in areas locked down to limit the spread of SARS-CoV-2) it can be a problem.  Again, if browsers had something like <code>body {max-width: 70em;}</code> or <code>max-width: 100ch</code> or suchlike, this wouldn’t be a problem.  Should they?  Maybe!  It’s worth thinking about for your own work, if nothing else.
+</p>
+<p>
+(For much more thinking about these kinds of browser behaviors and how to address them, you should absolutely check out the <a href="https://github.com/jensimmons/cssremedy">CSS Remedy</a> project.  “CSS Remedy sets CSS properties or values to what they would be if the CSSWG were creating the CSS today, from scratch, and didn&#8217;t have to worry about backwards compatibility.”)
+</p>
+<p>
+If I’d remembered sooner, I might have contacted the maintainers of the CSS Naked Day site and posted about it ahead of time and thought about stuff like a hashtag to spread the word.  Maybe that will happen next year.  Until then, enjoy all the nudity!
+</p><ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2020/04/09/css-naked-day-2020/">CSS Naked Day 2020</cite></a> was published on <time>Thursday, April 9th, 2020</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/tech/browsers/" rel="category tag">Browsers</a>, <a href="https://meyerweb.com/eric/thoughts/category/tech/css/" rel="category tag">CSS</a>, and <a href="https://meyerweb.com/eric/thoughts/category/tech/standards/" rel="category tag">Standards</a> categories.</li>
+<li class="cmt">There have been <a href="https://meyerweb.com/eric/thoughts/2020/04/09/css-naked-day-2020/#comments">two replies</a>.</li>
+</ul>
+</div>
+<hr class="fallback">
+</article>
+
+
+<article role="article" class="entry">
+<header>
+<h2 class="title"><a href="https://meyerweb.com/eric/thoughts/2018/09/05/variable-font-support/" rel="bookmark" title="Permanent Link: Variable Font Support">Variable Font Support</a></h2>
+<em class="pubtime">Published  5 years past</em>
+</header>
+
+<div class="text">
+<p>Firefox 62 <a href="https://blog.mozilla.org/blog/2018/09/05/latest-firefox-releases-available-today/">ships today</a>, bringing with it some real CSS goodness.  For one: float shapes!  Which means now, mainline Firefox users will see the text flow past the blender in “<a href="https://meyerweb.com/eric/thoughts/2017/03/20/handiwork/">Handiwork</a>” the same way Chrome users have for a long time now.</p>
+
+<p>But an even bigger addition is support for <a href="https://v-fonts.com/">variable fonts</a>.  The ability to have one font file that mathematically describes variants on the base face means that all kinds of fine-grained typography is possible with far less bandwidth overhead and a major reduction in page weight.</p>
+
+<p>However: bear in mind that like Safari, but unlike Chrome, Firefox’s variable-font support is dependent on the operating system on which is runs.  If you have Windows 10, or Max OS X 10.13, then you have variable font support in Firefox and Safari.  Earlier versions of those operating systems don’t support variable fonts, and so Safari and Firefox don’t either.  Chrome rolls its own variable-font support, so it can extend support backwards in the OS timeline.</p>
+
+<p>(I don’t know how things stand in the Linux world.  Hopefully someone can clear things up in the comments!)</p>
+
+<p>I say this not to chastise Firefox (nor Safari), because I tend to think leaning on the OS for this sort of thing is reasonable.  I feel the same way about form elements like <code>&lt;select&gt;</code> dropdowns, to be clear, which I know likely places me in the minority.  The point here is to give you a heads-up: if you get reports that a font isn’t doing the variable thing you styled, but it’s working fine for you, keep “check their operating system version” on your list of diagnostic tests.</p>
+<ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2018/09/05/variable-font-support/">Variable Font Support</cite></a> was published on <time>Wednesday, September 5th, 2018</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/tech/browsers/" rel="category tag">Browsers</a> and <a href="https://meyerweb.com/eric/thoughts/category/tech/css/" rel="category tag">CSS</a> categories.</li>
+<li class="cmt">There have been <a href="https://meyerweb.com/eric/thoughts/2018/09/05/variable-font-support/#comments">six replies</a>.</li>
+</ul>
+</div>
+<hr class="fallback">
+</article>
+
+
+<article role="article" class="entry">
+<header>
+<h2 class="title"><a href="https://meyerweb.com/eric/thoughts/2018/08/24/firefoxs-screenshot-command-2018/" rel="bookmark" title="Permanent Link: Firefox’s :screenshot command">Firefox’s :screenshot command</a></h2>
+<em class="pubtime">Published  5 years, 1 week past</em>
+</header>
+
+<div class="text">
+<p>Back in 2015, <a href="http://meyerweb.com/eric/thoughts/2015/10/22/firefoxs-screenshot-command/">I wrote about Firefox’s <kbd>screenshot</kbd> utility</a>, which used to be a command in the <acronym title="Graphical Command Line Interpreter">GCLI</acronym>.  Well, the GCLI is gone now, but the coders at Mozilla <a href="https://blog.nightly.mozilla.org/2018/08/23/screenshots-from-the-console/">have brought command-line screenshotting</a> back with <kbd>:screenshot</kbd>, currently available in Firefox Nightly and Firefox Dev Edition.  It’s available in the Web Console (<kbd>⌥⌘K</kbd> or Tools → Web Developer → Console).</p>
+
+<figure>
+<a href="https://meyerweb.com/eric/thoughts/wp-content/uploads/firefox-screenshot-article.png"><img decoding="async" fetchpriority="high" width="640" height="384" src="https://meyerweb.com/eric/thoughts/wp-content/uploads/firefox-screenshot-article.png" alt="" class="wp-image-4313 framed" srcset="https://meyerweb.com/eric/thoughts/wp-content/uploads/firefox-screenshot-article.png 640w, https://meyerweb.com/eric/thoughts/wp-content/uploads/firefox-screenshot-article-300x180.png 300w" sizes="(max-width: 640px) 100vw, 640px" /></a>
+<figcaption>An image I captured by typing <kbd>:screenshot --dpr 0.5</kbd> in the Web Console</figcaption>
+</figure>
+
+<p>Once you’re in the Web Console, you can type <kbd>:sc</kbd> and then hit Tab to autocomplete <kbd>:screenshot</kbd>. From there, everything is the same as <a href="http://meyerweb.com/eric/thoughts/2015/10/22/firefoxs-screenshot-command/">I wrote in 2015</a>, with the exception that the <kbd>--imgur</kbd> and <kbd>--chrome</kbd> options <strong>no longer exist</strong>.  There are plans to add uploading to Firefox Screenshots as a replacement for the old Imgur option, but as of this writing, that’s still in the future.</p>
+
+<p>So the list of <kbd>:screenshot</kbd> options as of late August 2018 is:</p>
+
+<dl class="compact separated">
+<dt><kbd>--clipboard</kbd></dt>
+<dd>Copies the image to your OS clipboard for pasting into other programs.  Prevents saving to a file unless you use the <kbd>--file</kbd> option to force file-writing.</dd>
+<dt><kbd>--delay</kbd></dt>
+<dd>The time in seconds to wait before taking the screenshot; handy if you want to pop open a menu or invoke a hover state for the screenshot.  You can use any number, not just integers.</dd>
+<dt><kbd>--dpr</kbd></dt>
+<dd>The Device Pixel Ratio (DPR) of the captured image.  Values above 1 yield “zoomed-in” images; values below 1 create “zoomed-out“ results.  <a href="http://meyerweb.com/eric/thoughts/2015/10/22/firefoxs-screenshot-command/">See the original article</a> for more details.</dd>
+<dt><kbd>--fullpage</kbd></dt>
+<dd>Captures the entire page, not just the portion of the page visible in the browser’s viewport.  For unusually long (or wide) pages, this can cause problems like crashing, not capturing all of the page, or just failing to capture anything at all.</dd>
+<dt><kbd>--selector</kbd></dt>
+<dd>Accepts a CSS selector and captures only that element and its descendants.</dd>
+<dt><kbd>--file</kbd></dt>
+<dd>When <kbd>true</kbd>, forces writing of the captured image to a file, even if <kbd>--clipboard</kbd> is also being used.  Setting this to <kbd>false</kbd> doesn’t seem to have any effect.</dd>
+<dt><kbd>--filename</kbd></dt>
+<dd>Allows you to set a filename rather than accept the default.  Explicitly saying <kbd>--filename</kbd> seems to be optional; I find that writing simply <kbd>:screenshot test</kbd> yields a file called <tt>test.png</tt>, without the need to write <kbd>:screenshot --filename test</kbd>. <acronym title="Your Firefox May Vary">YFFMV</acronym>.</dd>
+</dl>
+
+<p>
+I do have one warning: if you capture an image to a filename like <tt>test.png</tt>, and then you capture to that same filename, <strong>the new image will overwrite the old image</strong>.  This can bite you if you’re using the up-arrow history scroll to capture images in quick succession, and forget to change the filename for each new capture.  If you don’t supply a filename, then the file’s name uses the pattern of your OS screen capture naming; e.g., <em>Screen Shot 2018-08-23 at 16.44.41.png</em> on my machine.
+</p>
+<p>
+I still use <kbd>:screenshot</kbd> to this day, and I’m very happy to see it restored to the browser&#x202F;—&#x2009;thank you, Mozillans!  You’re the best.
+</p><ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2018/08/24/firefoxs-screenshot-command-2018/">Firefox’s :screenshot command</cite></a> was published on <time>Friday, August 24th, 2018</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/tech/browsers/" rel="category tag">Browsers</a>, <a href="https://meyerweb.com/eric/thoughts/category/hacks/" rel="category tag">Hacks</a>, and <a href="https://meyerweb.com/eric/thoughts/category/tech/tools/" rel="category tag">Tools</a> categories.</li>
+<li class="cmt">There have been <a href="https://meyerweb.com/eric/thoughts/2018/08/24/firefoxs-screenshot-command-2018/#comments">thirteen replies</a>.</li>
+</ul>
+</div>
+<hr class="fallback">
+</article>
+
+
+<article role="article" class="entry">
+<header>
+<h2 class="title"><a href="https://meyerweb.com/eric/thoughts/2017/07/21/svg-backgrounds/" rel="bookmark" title="Permanent Link: Adding Backgrounds to Directly Loaded SVGs">Adding Backgrounds to Directly Loaded SVGs</a></h2>
+<em class="pubtime">Published  6 years, 1 month past</em>
+</header>
+
+<div class="text">
+<p>My primary SVG viewer is Firefox.  This is partly because it’s always running, so the startup time is essentially zero.  It also allows me to directly inspect and modify elements of the SVG element through the Web Inspector, which can be handy.</p>
+
+<p>But I’ve run into a problem more than once, which is that if I load an SVG file in Firefox, the browser window’s background defaults to white, and a lot of times I’m trying to view images that are partially or entirely white.  I started thinking that if there were a way to make the window background medium gray, that would solve the problem with rare downsides, since I can’t remember trying to view an all-medium-gray SVG.</p>
+
+<p>After <a href="https://twitter.com/meyerweb/status/888401273363496960">a question on Twitter</a> and some ideas from <a href="https://twitter.com/tibor">Tibor Martini</a>, I realized I could use <a href="https://userstyles.org/">Stylish</a> to give the SVG files a background through CSS.  I didn’t want to select all SVGs, only those I was loading directly, so I tried this:</p>
+
+<pre class="css"><code>svg:root {background: gray;}</code></pre>
+
+<p>And it worked!  So I decided to make it more robust by doing a multicolor gradient, and grayscaling it on hover.  I couldn’t use <code>filter</code> because that would grayscale the whole image, rather than just the background, but that was easy to work around.  I ended up with this:</p>
+
+<pre class="css"><code>svg:root {background: linear-gradient(135deg, hsl(0,50%,60%), hsl(180,50%,40%));}
+svg:root:hover {background: linear-gradient(135deg, hsl(0,0%,60%), hsl(180,0%,40%));}</code></pre>
+
+<p>Which works great!  Except that I discovered Firefox applies it to all SVGs, even those loaded into HTML documents via <code>img</code>.  SVGs apparently define their own roots, which I hadn’t expected, but I can see how it might make sense.  So I poked around in MDN until I came up with this:</p>
+
+<pre class="css"><code>@-moz-document url-prefix(file:) {
+    svg:root {background: linear-gradient(135deg, hsl(0,50%,60%), hsl(180,50%,40%));}
+    svg:root:hover {background: linear-gradient(135deg, hsl(0,0%,60%), hsl(180,0%,40%));}
+}</code></pre>
+
+<p>And that’s exactly what I wanted.  If it’s useful to you, have at it.  Just paste that into a new Stylish rule in Firefox, and you should be good to go.</p>
+
+<p>If you’re on Chrome, you can import the above into Stylish and create a new rule, but it hasn’t worked for me, and I’m not sure why not.  Removing <code>:root</code> didn’t fix it when I tried, and that shouldn’t matter anyway: I can see in Chrome’s user styles that <code>svg:root</code> is used and applied.  And my Stylish toolbar icon shows the rule is being applied.  It just doesn’t do anything I can see.  If anyone can figure out how to make it work, or explain why it can’t work, I’d love to know in the comments!</p>
+<ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2017/07/21/svg-backgrounds/">Adding Backgrounds to Directly Loaded SVGs</cite></a> was published on <time>Friday, July 21st, 2017</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/tech/browsers/" rel="category tag">Browsers</a>, <a href="https://meyerweb.com/eric/thoughts/category/tech/css/" rel="category tag">CSS</a>, and <a href="https://meyerweb.com/eric/thoughts/category/tech/svg/" rel="category tag">SVG</a> categories.</li>
+<li class="cmt">There have been <a href="https://meyerweb.com/eric/thoughts/2017/07/21/svg-backgrounds/#comments">eight replies</a>.</li>
+</ul>
+</div>
+<hr class="fallback">
+</article>
+
+
+<article role="article" class="entry">
+<header>
+<h2 class="title"><a href="https://meyerweb.com/eric/thoughts/2017/05/23/gridded-headings-v-justified-headings/" rel="bookmark" title="Permanent Link: Gridded Headings v. Justified Headings">Gridded Headings v. Justified Headings</a></h2>
+<em class="pubtime">Published  6 years, 3 months past</em>
+</header>
+
+<div class="text">
+<p>Amongst the reactions to <a href="http://meyerweb.com/eric/thoughts/2017/05/19/gridded-headings/">Gridded Headings</a>, <a href="https://dribbble.com/bdc">Benjamin de Cock</a> pointed out there’s another way to arrive at the same place I did.  Instead of this:</p>
+
+<pre class="css"><code>grid-template-columns:
+    minmax(1em,1fr)
+    minmax(min-content,max-content)
+    minmax(1em,1fr);
+</code></pre>
+
+<p>…Benjamin pointed out one could instead do this:</p>
+
+<pre class="css"><code>justify-content: center;
+</code></pre>
+
+<p>That’s right: without explicitly specifying any grid columns, but just setting the grid items themselves to be centered, the same behaviors emerge.  Clever!</p>
+
+<p>What’s interesting is that the behaviors are not precisely the same.  While <em>mostly</em> identical behaviors occur with either approach, there are a few subtle differences and a much different possibility space.  I’ll consider each in turn.</p>
+
+<p>First, the differences.  First of all, the small gutters defined by the first and third grid column tracks&#x202F;—&#x2009;the ones defined to be <code>minmax(1em,1fr)</code>&#x202F;—&#x2009;aren’t present in the <code>justify-content</code> version.  This means the headings will jam right up against the edge of the grid container if things get narrow enough.</p>
+
+<figure class="standalone">
+<img decoding="async" src="http://meyerweb.com/pix/2017/grid-v-justify-sidegutters.png" alt="" />
+<figcaption>Side separation versus side smashing.  Grid on the left, justify-content on the right.</figcaption>
+</figure>
+
+<p>So we either need to re-establish them with <code>grid-template-columns</code>, which would seem to put us right back where we were, or else apply side margins to the heading and subheading.  Something like this:</p>
+
+<pre class="css"><code>div h2, div h3 {margin-right: 1rem; margin-left: 1rem;}
+</code></pre>
+
+<p>Either way, that side separation has to be defined (assuming you want it there).  Having to set those separations as margins feels a little clumsy to me, though not hugely so.  Doing all the sizing and separation in a single <code>grid-template-columns</code> declaration feels cleaner to me, though I admit that may be partly due to my current Gridfatuation.</p>
+
+<p>There is another difference worth exploring.  If the content gets wider than the space available, the <code>grid-template-columns</code> approach means the content will overflow to the right (in LTR writing modes).  If it falls offscreen, it can be scrolled to read.  With <code>justify-content: center</code>, the content stays centered within the box, overflowing to both sides.  The content to the left may not be accessible via scrollbar.</p>
+
+<figure class="standalone">
+<img decoding="async" src="http://meyerweb.com/pix/2017/grid-v-justify-narrows.png" alt="" />
+<figcaption>How track sizing and content justification handle overspill.  Grid on the left, justify-content on the right.</figcaption>
+</figure>
+
+<p>So if you have a large headline containing a lengthy unhyphenated word, like “Kazakhstan” or “emoluments”, you might prefer one result over the other.</p>
+
+<p>Beyond that, the further possibilities are a lot richer with Grid than with content justification.  Center-justifying the content means exactly that: the element boxes are centered.  So if you were interested in taking the heading and subheading, acting as an apparent unit, and shift them toward one side or another, this would be much easier to accomplish with Grid.</p>
+
+<p>Suppose we want there to be three times as much space to one side of the headings’ column as the other.  Here’s what that would look like:</p>
+
+<pre class="css"><code>grid-template-columns:
+    minmax(1em,1fr)
+    minmax(min-content,max-content)
+    minmax(1em,3fr);
+</code></pre>
+
+<p>That’s it.  One number changed, and the whole setup is offset from the center without losing the coherence of the original demo.</p>
+
+<p>The same thing could likely be approximated with <code>justify-content</code> using side margins on the heading elements, but it wouldn’t be precisely the same, even with percentages.  <code>fr</code> is a very special beast, and permits very unique results.</p>
+
+<p>The other major difference in possibilities is that with Grid, we can rearrange elements visually without ever touching the source.  Suppose we wanted to put the subhead <em>above</em> the heading in some layouts, but not others.  (Whether those different designs live on different pages or at different breakpoints, it really doesn’t matter.)  With Grid, that’s as simple as rewriting the grid template in a line or three of CSS.  The <code>h2</code> remains ahead of <code>h3</code> in the HTML.</p>
+
+<p>With <code>justify-content</code>, you’d still have to write that same grid template, or else switch to flexbox and use <code>flex-direction: column-reverse</code> or some such.  That would work if you want to just switch the display order of two headings in a single column.  It tends to fall down for anything more demanding than that.</p>
+
+<p>This is not to say Benjamin came up with a bad alternative!  I like it quite a bit, precisely because it has similar outcomes to my original idea, thus shedding light on creative ways Grid and content alignment can be combined.  But I like it even more for its differences, which shed even more light on how the two things operate.</p>
+
+<p>In that combination of similarity and difference, I can sense an incredible range of capability, chock full of nuance and brimming with possibility.  There are going to be ways to put these things together that <em>nobody</em> has figured out yet.  I know I keep saying this, but there’s a vast landscape opening, so vast that I don’t think we can even guess how far it extends yet, let alone have mapped its terrain.</p>
+<ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2017/05/23/gridded-headings-v-justified-headings/">Gridded Headings v. Justified Headings</cite></a> was published on <time>Tuesday, May 23rd, 2017</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/tech/browsers/" rel="category tag">Browsers</a>, <a href="https://meyerweb.com/eric/thoughts/category/tech/css/" rel="category tag">CSS</a>, <a href="https://meyerweb.com/eric/thoughts/category/design/" rel="category tag">Design</a>, and <a href="https://meyerweb.com/eric/thoughts/category/tech/grid/" rel="category tag">Grid</a> categories.</li>
+<li class="cmt">There have been <a href="https://meyerweb.com/eric/thoughts/2017/05/23/gridded-headings-v-justified-headings/#respond">no replies</a>.</li>
+</ul>
+</div>
+<hr class="fallback">
+</article>
+
+
+<div class="prev-next book" id="posts-pn">
+<h4>Browse <a href="/eric/thoughts/">the Archive</a></h4>
+<p class="prev"><a href="https://meyerweb.com/eric/thoughts/category/tech/browsers/page/2/" >Earlier Entries</a></p>
+<p class="next"></p>
+</div>
+
+</main>
+
+</div>
+
+<div class="panel" id="feeds">
+<h4>Feeds</h4>
+	<p>A dispatch of all posts to “Thoughts From Eric” is available in both <a href="https://meyerweb.com/eric/thoughts/feed/" title="Aggregate posts using RSS"><acronym title="Really Simple Syndication">RSS</acronym> 2.0</a>
+	and <a href="https://meyerweb.com/eric/thoughts/feed/atom/" title="Aggregate posts using Atom">Atom</a>.</p>
+</div>
+
+<div class="panel" id="categories">
+<h4>Categories</h4>
+<ul>
+	<li class="cat-item cat-item-48"><a href="https://meyerweb.com/eric/thoughts/category/commentary/">Commentary</a> (55)
+</li>
+	<li class="cat-item cat-item-64"><a href="https://meyerweb.com/eric/thoughts/category/design/">Design</a> (28)
+</li>
+	<li class="cat-item cat-item-1"><a href="https://meyerweb.com/eric/thoughts/category/general/">General</a> (79)
+</li>
+	<li class="cat-item cat-item-53"><a href="https://meyerweb.com/eric/thoughts/category/guide/">Guide</a> (10)
+</li>
+	<li class="cat-item cat-item-56"><a href="https://meyerweb.com/eric/thoughts/category/hacks/">Hacks</a> (11)
+</li>
+	<li class="cat-item cat-item-15"><a href="https://meyerweb.com/eric/thoughts/category/humor/">Humor</a> (78)
+</li>
+	<li class="cat-item cat-item-41"><a href="https://meyerweb.com/eric/thoughts/category/links/">Links</a> (1)
+</li>
+	<li class="cat-item cat-item-49"><a href="https://meyerweb.com/eric/thoughts/category/observations/">Observations</a> (17)
+</li>
+	<li class="cat-item cat-item-4"><a href="https://meyerweb.com/eric/thoughts/category/personal/">Personal</a> (752)
+<ul class='children'>
+	<li class="cat-item cat-item-59"><a href="https://meyerweb.com/eric/thoughts/category/personal/adoption/">Adoption</a> (5)
+</li>
+	<li class="cat-item cat-item-10"><a href="https://meyerweb.com/eric/thoughts/category/personal/books/">Books</a> (57)
+</li>
+	<li class="cat-item cat-item-60"><a href="https://meyerweb.com/eric/thoughts/category/personal/cancer/">Cancer</a> (56)
+</li>
+	<li class="cat-item cat-item-20"><a href="https://meyerweb.com/eric/thoughts/category/personal/carolyn/">Carolyn</a> (34)
+</li>
+	<li class="cat-item cat-item-29"><a href="https://meyerweb.com/eric/thoughts/category/personal/cleveland/">Cleveland</a> (16)
+</li>
+	<li class="cat-item cat-item-30"><a href="https://meyerweb.com/eric/thoughts/category/personal/consulting/">Consulting</a> (8)
+</li>
+	<li class="cat-item cat-item-26"><a href="https://meyerweb.com/eric/thoughts/category/personal/culture/">Culture</a> (62)
+</li>
+	<li class="cat-item cat-item-37"><a href="https://meyerweb.com/eric/thoughts/category/personal/food/">Food</a> (11)
+</li>
+	<li class="cat-item cat-item-17"><a href="https://meyerweb.com/eric/thoughts/category/personal/history/">History</a> (25)
+</li>
+	<li class="cat-item cat-item-21"><a href="https://meyerweb.com/eric/thoughts/category/personal/interviews/">Interviews</a> (24)
+</li>
+	<li class="cat-item cat-item-54"><a href="https://meyerweb.com/eric/thoughts/category/personal/joshua/">Joshua</a> (7)
+</li>
+	<li class="cat-item cat-item-55"><a href="https://meyerweb.com/eric/thoughts/category/personal/parenting/">Parenting</a> (35)
+</li>
+	<li class="cat-item cat-item-5"><a href="https://meyerweb.com/eric/thoughts/category/personal/politics/">Politics</a> (71)
+</li>
+	<li class="cat-item cat-item-19"><a href="https://meyerweb.com/eric/thoughts/category/personal/projects/">Projects</a> (68)
+</li>
+	<li class="cat-item cat-item-51"><a href="https://meyerweb.com/eric/thoughts/category/personal/rebecca/">Rebecca</a> (72)
+</li>
+	<li class="cat-item cat-item-50"><a href="https://meyerweb.com/eric/thoughts/category/personal/science/">Science</a> (1)
+</li>
+	<li class="cat-item cat-item-7"><a href="https://meyerweb.com/eric/thoughts/category/personal/speaking/">Speaking</a> (114)
+</li>
+	<li class="cat-item cat-item-28"><a href="https://meyerweb.com/eric/thoughts/category/personal/technovertigo/">Technovertigo</a> (8)
+</li>
+	<li class="cat-item cat-item-31"><a href="https://meyerweb.com/eric/thoughts/category/personal/travel/">Travel</a> (51)
+</li>
+	<li class="cat-item cat-item-74"><a href="https://meyerweb.com/eric/thoughts/category/personal/woodworking/">Woodworking</a> (2)
+</li>
+	<li class="cat-item cat-item-32"><a href="https://meyerweb.com/eric/thoughts/category/personal/work/">Work</a> (17)
+</li>
+	<li class="cat-item cat-item-11"><a href="https://meyerweb.com/eric/thoughts/category/personal/writing/">Writing</a> (76)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-47"><a href="https://meyerweb.com/eric/thoughts/category/questions/">Questions</a> (9)
+</li>
+	<li class="cat-item cat-item-42"><a href="https://meyerweb.com/eric/thoughts/category/rants/">Rants</a> (14)
+</li>
+	<li class="cat-item cat-item-73"><a href="https://meyerweb.com/eric/thoughts/category/reviews/">Reviews</a> (1)
+</li>
+	<li class="cat-item cat-item-16 current-cat-parent current-cat-ancestor"><a href="https://meyerweb.com/eric/thoughts/category/tech/">Tech</a> (778)
+<ul class='children'>
+	<li class="cat-item cat-item-35"><a href="https://meyerweb.com/eric/thoughts/category/tech/xhtml/">(X)HTML</a> (36)
+</li>
+	<li class="cat-item cat-item-72"><a href="https://meyerweb.com/eric/thoughts/category/tech/accessibility/">Accessibility</a> (4)
+</li>
+	<li class="cat-item cat-item-40"><a href="https://meyerweb.com/eric/thoughts/category/tech/an-event-apart/">An Event Apart</a> (35)
+</li>
+	<li class="cat-item cat-item-13 current-cat"><a aria-current="page" href="https://meyerweb.com/eric/thoughts/category/tech/browsers/">Browsers</a> (117)
+</li>
+	<li class="cat-item cat-item-3"><a href="https://meyerweb.com/eric/thoughts/category/tech/css/">CSS</a> (309)
+</li>
+	<li class="cat-item cat-item-38"><a href="https://meyerweb.com/eric/thoughts/category/tech/dom/">DOM</a> (8)
+</li>
+	<li class="cat-item cat-item-70"><a href="https://meyerweb.com/eric/thoughts/category/tech/grid/">Grid</a> (11)
+</li>
+	<li class="cat-item cat-item-52"><a href="https://meyerweb.com/eric/thoughts/category/tech/html5/">HTML5</a> (13)
+</li>
+	<li class="cat-item cat-item-39"><a href="https://meyerweb.com/eric/thoughts/category/tech/javascript/">JavaScript</a> (9)
+</li>
+	<li class="cat-item cat-item-14"><a href="https://meyerweb.com/eric/thoughts/category/tech/mac/">Mac</a> (41)
+</li>
+	<li class="cat-item cat-item-36"><a href="https://meyerweb.com/eric/thoughts/category/tech/microformats/">Microformats</a> (9)
+</li>
+	<li class="cat-item cat-item-27"><a href="https://meyerweb.com/eric/thoughts/category/tech/redesign/">Redesign</a> (28)
+</li>
+	<li class="cat-item cat-item-25"><a href="https://meyerweb.com/eric/thoughts/category/tech/rss/">RSS</a> (5)
+</li>
+	<li class="cat-item cat-item-34"><a href="https://meyerweb.com/eric/thoughts/category/tech/s5/">S5</a> (29)
+</li>
+	<li class="cat-item cat-item-24"><a href="https://meyerweb.com/eric/thoughts/category/tech/semantic-web/">semantic web</a> (8)
+</li>
+	<li class="cat-item cat-item-2"><a href="https://meyerweb.com/eric/thoughts/category/tech/standards/">Standards</a> (163)
+</li>
+	<li class="cat-item cat-item-69"><a href="https://meyerweb.com/eric/thoughts/category/tech/svg/">SVG</a> (5)
+</li>
+	<li class="cat-item cat-item-22"><a href="https://meyerweb.com/eric/thoughts/category/tech/tools/">Tools</a> (84)
+</li>
+	<li class="cat-item cat-item-6"><a href="https://meyerweb.com/eric/thoughts/category/tech/w3c/">W3C</a> (22)
+</li>
+	<li class="cat-item cat-item-8"><a href="https://meyerweb.com/eric/thoughts/category/tech/web/">Web</a> (141)
+</li>
+	<li class="cat-item cat-item-33"><a href="https://meyerweb.com/eric/thoughts/category/tech/wordpress/">WordPress</a> (29)
+</li>
+	<li class="cat-item cat-item-18"><a href="https://meyerweb.com/eric/thoughts/category/tech/xfn/">XFN</a> (16)
+</li>
+	<li class="cat-item cat-item-23"><a href="https://meyerweb.com/eric/thoughts/category/tech/xslt/">XSLT</a> (7)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-58"><a href="https://meyerweb.com/eric/thoughts/category/the-web-behind/">The Web Behind</a> (6)
+</li>
+	<li class="cat-item cat-item-77"><a href="https://meyerweb.com/eric/thoughts/category/today-i-learned/">Today I Learned</a> (2)
+</li>
+</ul>
+</div>
+
+<div id="monthly" class="panel">
+<h4>Archives</h4>
+<ul role="navigation" aria-label="archive">
+	<li><h5><a href="https://meyerweb.com/eric/thoughts/2023/">2023</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2023/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2023/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2023/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2023/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2023/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2023/08">August</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2022/">2022</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2022/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2022/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2022/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2022/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2022/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2022/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2022/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2022/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2021/">2021</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2021/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2021/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2021/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2021/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2021/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2021/06">June</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2020/">2020</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2020/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2020/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2020/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2020/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2020/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2020/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2020/09">September</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2019/">2019</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2019/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2019/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2019/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2019/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2018/">2018</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2018/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2018/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2018/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2018/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2018/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2018/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2018/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2018/09">September</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2017/">2017</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2017/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2017/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2017/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2017/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2017/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2017/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2017/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2017/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2017/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2017/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2016/">2016</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2016/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2016/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2016/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2016/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2016/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2016/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2016/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2016/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2016/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2016/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2016/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2016/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2015/">2015</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2015/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2015/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2015/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2015/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2015/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2015/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2015/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2015/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2015/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2015/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2015/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2015/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2014/">2014</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2014/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2014/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2014/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2014/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2014/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2014/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2014/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2014/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2014/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2014/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2014/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2013/">2013</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2013/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2013/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2013/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2013/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2013/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2013/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2013/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2013/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2013/11">November</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2012/">2012</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2012/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2012/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2012/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2012/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2012/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2012/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2012/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2012/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2012/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2012/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2011/">2011</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2011/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2011/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2011/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2011/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2011/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2011/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2011/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2011/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2011/11">November</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2010/">2010</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2010/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2010/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2010/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2010/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2010/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2010/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2010/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2010/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2010/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2009/">2009</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2009/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2009/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2009/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2009/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2009/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2009/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2009/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2009/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2009/11">November</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2008/">2008</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2008/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2008/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2008/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2008/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2008/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2008/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2008/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2008/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2008/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2008/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2008/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2008/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2007/">2007</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2007/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2007/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2007/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2007/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2007/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2007/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2007/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2007/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2007/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2007/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2007/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2007/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2006/">2006</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2006/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2006/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2006/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2006/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2006/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2006/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2006/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2006/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2006/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2006/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2006/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2006/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2005/">2005</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2005/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2005/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2005/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2005/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2005/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2005/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2005/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2005/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2005/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2005/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2005/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2005/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2004/">2004</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2004/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2004/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2004/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2004/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2004/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2004/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2004/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2004/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2004/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2004/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2004/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2004/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2003/">2003</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2003/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2003/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2003/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2003/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2003/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2003/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2003/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2003/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2003/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2003/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2003/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2003/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2002/">2002</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2002/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2002/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2002/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2002/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2002/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2002/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2002/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2002/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2002/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2002/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2002/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2002/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2001/">2001</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2001/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2001/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2001/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2001/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2001/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2001/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2001/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2001/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2001/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2001/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2000/">2000</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2000/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2000/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2000/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2000/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2000/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2000/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2000/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2000/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2000/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2000/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2000/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/1999/">1999</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/1999/12">December</a></li></ul></li></ul>
+</div>
+
+</div>
+
+<footer id="global">
+
+<div>
+
+<div id="archipelago">
+<h4>Identity Archipelago</h4>
+<ul>
+<li><a rel="me" href="https://twitter.com/meyerweb"><img src="/pix/icons/twitter.png" alt="Twitter"></a></li>
+<li><a rel="me" href="https://mastodon.social/@meyerweb"><img src="/pix/icons/mastodon.svg" alt="Mastodon"></a></li>
+<li><a rel="me" href="https://github.com/meyerweb"><img src="/pix/icons/github.png" alt="GitHub"></a></li>
+<li><a rel="me" href="https://flickr.com/photos/meyerweb/"><img src="/pix/icons/flickr.png" alt="Flickr"></a></li>
+<li><a rel="me" href="https://dribbble.com/meyerweb"><img src="/pix/icons/dribbble.png" alt="Dribbble"></a></li>
+<li><a rel="me" href="https://facebook.com/meyerweb"><img src="/pix/icons/facebook.png" alt="Facebook"></a></li>
+<li><a rel="me" href="https://www.linkedin.com/in/meyerweb"><img src="/pix/icons/linkedin.png" alt="LinkedIn"></a></li>
+</ul>
+</div>
+
+<div id="excuse">
+<div class="panel" id="excuse">
+<h4>The <a href="/feeds/excuse/">excuse of the day</a> is</h4>
+<p>ozone depletion</p>
+</div>
+<!--#include virtual="/feeds/excuse/current.html" -->
+</div>
+
+<div class="sosumi">
+All contents of this site, unless otherwise noted, are &copy;1993-2023<!--#config timefmt="%Y" --><!--#echo var="DATE_LOCAL" --> <strong>Eric A. and Kathryn S. Meyer</strong>.  All Rights Reserved.</div>
+
+<div id="wordpress" class="credits">"<a href="/eric/thoughts/">Thoughts From Eric</a>" is powered by <a href="http://wordpress.org/">WordPress</a>.  Most of the rest of the site is hand-authored.</div>
+
+<div id="design" class="credits">The ink-sketch images used in this site’s design are adapted from <a href="https://archive.org/search.php?query=creator%3A%22Mori%2C+Yu%CC%84zan%2C+-1917%22">Yūzan Mori’s <cite><dfn title="In English: Wave Forms">Hamonshū</dfn></cite>, Volumes 1-3</a>, published in 1903 and made available for public use by the <a href="https://library.si.edu/">Smithsonian Libraries</a> and the <a href="https://archive.org/">Internet Archive</a>.</div>
+
+</div>
+
+</footer>
+<!-- WP stuff follows -->
+</body>
+</html>
+<!-- Dynamic page generated in 0.505 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2023-09-06 01:59:08 -->
+
+<!-- Compression = gzip -->

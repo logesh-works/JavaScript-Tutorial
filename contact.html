@@ -1,0 +1,114 @@
+<!doctype html><html class="h-card"><head>
+<meta charset="utf-8" />
+<title class="p-name">Tantek Çelik</title>
+<link rel="stylesheet" href="contact-style.css" />
+<link class="u-photo" rel="shortcut icon" href="2013-11-13-npsf-128.jpg" />
+<link rel="apple-touch-icon-precomposed" href="2013-11-13-npsf-128.jpg" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <link rel="stylesheet" href="/addtohome.css" /> -->
+<link class="u-url" rel="home" href="/" />
+</head>
+<body>
+<div class="indieweb-contact">
+  <h2>Contact Tantek with</h2>
+<ol>
+
+<li>
+<a class="u-url" href="fb-messenger://user-thread/214611"><img src="icon/ios-facebook.jpg" alt="" /> <abbr title="Facebook">FB</abbr> message </a>
+</li>
+
+<!-- locked for no reason 2017-129 --><!-- locked for no reason 2018-221..223 --><!-- locked for no reason 2018-277..278 --><!-- suspended for no reason 2019-079 -->
+<li>
+<a class="u-url" href="https://twitter.com/messages/compose?recipient_id=11628"><img src="icon/twitterdm.png" alt="" /> Twitter DM</a>
+</li>
+<!-- 
+icon from https://g.twimg.com/about/feature-corporate/image/dm.png --><!-- 
+old URL https://mobile.twitter.com/t/messages -->
+
+<li id="sms">
+ <a class="u-url" href="sms:tantek@tantek.com"><img src="icon/ios-messages.png" alt="" /> txt message</a>
+</li><!-- t172
+icon from: http://media.idownloadblog.com/wp-content/uploads/2016/01/Messages-App-Icon.png 
+--><!-- prev icon: http://media.idownloadblog.com/wp-content/uploads/2013/06/Messages-icon-iOS-7.png -->
+
+<!-- chat option - useful when asleep for example -->
+<li>
+<a class="u-url" href="skype:tantekc?chat"><img src="icon/ios-skype-chat.png" alt="" /> Skype chat</a>
+</li><!-- icon from https://vpristoupilova.files.wordpress.com/2011/03/skype-chat.png
+--><!-- prev image http://a1.mzstatic.com/us/r30/Purple4/v4/56/a2/b7/56a2b7a7-426d-cb33-3d11-41b1259dab89/mzl.zcfukhdi.175x175-75.jpg -->
+
+<!-- chat or call option -->
+<li>
+<a class="u-url" href="slack://user?team=T03QR2B2T&amp;id=U03QSEYTP"><img src="icon/ios-slack-2018.png" alt="" />IndieWeb slack</a>
+</li><!-- was: href="https://indiewebcamp.slack.com/team/U03QSEYTP", icon from https://d1pet9gxylz2tx.cloudfront.net/uploads/2016/04/slack-logo.png -->
+
+
+<!-- audio call -->
+<li id="facetime" style="display:none">
+<a class="u-url" href="facetime-audio:tantek@tantek.com"><img src="icon/ios-phone.png" alt="" /> <abbr title="FaceTime">FT</abbr> audio</a>
+</li><!-- t172
+icon from http://media.idownloadblog.com/wp-content/uploads/2016/01/iOS-9-FaceTime-icon-full-size-220x220.png 
+--><!-- prev icon: http://www.downloadios7.org/wp-content/uploads/apple_facetime_ios_7_logo.png -->
+<li id="skype-call">
+<a class="u-url" href="skype:tantekc?call"><img src="icon/ios-skype.jpg" alt="" /> Skype call</a>
+</li><!-- icon from: http://a1.mzstatic.com/us/r30/Purple4/v4/56/a2/b7/56a2b7a7-426d-cb33-3d11-41b1259dab89/mzl.zcfukhdi.175x175-75.jpg
+-->
+
+</ol>
+</div>
+<p style="margin-top:2em;font-family:Helvetica,sans-serif">
+<a style="text-decoration:none" href="https://tantek.com/2014/067/b2/mockups-people-focused-mobile-communication#mockup-ios7-web-contact">What's this?</a>
+</p>
+
+<script src="/platform.js"></script>
+<script src="/cassis.js"></script>
+<script>
+var oniOS = false;
+if (platform!=undefined) {
+  oniOS = !strncmp(platform.os.family,"iOS",3);
+  if (oniOS || !strncmp(platform.os.family,"OS X",4))
+  {
+    // only iOS and OSX have Facetime, so show it
+    var fid = document.getElementById("facetime");
+    if (fid != undefined) {
+      var scid = document.getElementById("skype-call");
+      fid.style.display="list-item";
+      scid.style.display="none";
+    }
+  }
+  if (oniOS) {
+    var sid = document.getElementById("sms");
+    // if you're on iOS I'd rather you iMessage me.
+    if (sid != undefined) {
+      var cid = document.getElementById("aim");
+      if (cid != undefined) {
+        cid.style.display="none";
+      }
+    }
+  }
+}
+</script>
+
+<!-- <script src="/addtohome.min.js"></script>
+<script>
+if (!oniOS || 
+    (!offset("FxiOS", platform.ua) && !offset("crios", platform.ua)))
+{ // avoid showing if on Firefox/iOS or Chrome/iOS
+	var addtohome = addToHomescreen({
+		maxDisplayCount: 1,
+		detectHomescreen: "hash"
+	});
+}
+/*
+// debug version. can test with desktop Firefox or Safari with iOS7 UA
+var addtohome = addToHomescreen({
+  debug: true,
+  autostart: false
+});
+addtohome.show();
+addToHomescreen.removeSession()
+*/
+</script>-->
+</body>
+</html>

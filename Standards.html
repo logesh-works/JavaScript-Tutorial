@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"4c203d12f7",applicationID:"149389314"};;/*! For license information please see nr-loader-rum-1.238.0.min.js.LICENSE.txt */
+(()=>{"use strict";var e,t,n={763:(e,t,n)=>{n.d(t,{P_:()=>f,Mt:()=>p,C5:()=>s,DL:()=>m,OP:()=>j,lF:()=>T,Yu:()=>y,Dg:()=>g,CX:()=>c,GE:()=>b,sU:()=>E});var r=n(632),i=n(567);const o={beacon:r.ce.beacon,errorBeacon:r.ce.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0},a={};function s(e){if(!e)throw new Error("All info objects require an agent identifier!");if(!a[e])throw new Error("Info for ".concat(e," was never set"));return a[e]}function c(e,t){if(!e)throw new Error("All info objects require an agent identifier!");a[e]=(0,i.D)(t,o),(0,r.Qy)(e,a[e],"info")}var d=n(56);const u=()=>{const e={blockSelector:"[data-nr-block]",maskInputOptions:{password:!0}};return{allow_bfcache:!0,privacy:{cookies_enabled:!0},ajax:{deny_list:void 0,block_internal:!0,enabled:!0,harvestTimeSeconds:10},distributed_tracing:{enabled:void 0,exclude_newrelic_header:void 0,cors_use_newrelic_header:void 0,cors_use_tracecontext_headers:void 0,allowed_origins:void 0},session:{domain:void 0,expiresMs:d.oD,inactiveMs:d.Hb},ssl:void 0,obfuscate:void 0,jserrors:{enabled:!0,harvestTimeSeconds:10},metrics:{enabled:!0},page_action:{enabled:!0,harvestTimeSeconds:30},page_view_event:{enabled:!0},page_view_timing:{enabled:!0,harvestTimeSeconds:30,long_task:!1},session_trace:{enabled:!0,harvestTimeSeconds:10},harvest:{tooManyRequestsDelay:60},session_replay:{enabled:!1,harvestTimeSeconds:60,sampleRate:.1,errorSampleRate:.1,maskTextSelector:"*",maskAllInputs:!0,get blockClass(){return"nr-block"},get ignoreClass(){return"nr-ignore"},get maskTextClass(){return"nr-mask"},get blockSelector(){return e.blockSelector},set blockSelector(t){e.blockSelector+=",".concat(t)},get maskInputOptions(){return e.maskInputOptions},set maskInputOptions(t){e.maskInputOptions={...t,password:!0}}},spa:{enabled:!0,harvestTimeSeconds:10}}},l={};function f(e){if(!e)throw new Error("All configuration objects require an agent identifier!");if(!l[e])throw new Error("Configuration for ".concat(e," was never set"));return l[e]}function g(e,t){if(!e)throw new Error("All configuration objects require an agent identifier!");l[e]=(0,i.D)(t,u()),(0,r.Qy)(e,l[e],"config")}function p(e,t){if(!e)throw new Error("All configuration objects require an agent identifier!");var n=f(e);if(n){for(var r=t.split("."),i=0;i<r.length-1;i++)if("object"!=typeof(n=n[r[i]]))return;n=n[r[r.length-1]]}return n}const h={accountID:void 0,trustKey:void 0,agentID:void 0,licenseKey:void 0,applicationID:void 0,xpid:void 0},v={};function m(e){if(!e)throw new Error("All loader-config objects require an agent identifier!");if(!v[e])throw new Error("LoaderConfig for ".concat(e," was never set"));return v[e]}function b(e,t){if(!e)throw new Error("All loader-config objects require an agent identifier!");v[e]=(0,i.D)(t,h),(0,r.Qy)(e,v[e],"loader_config")}const y=(0,r.mF)().o;var w=n(385),A=n(818);const x={buildEnv:A.Re,bytesSent:{},queryBytesSent:{},customTransaction:void 0,disabled:!1,distMethod:A.gF,isolatedBacklog:!1,loaderType:void 0,maxBytes:3e4,offset:Math.floor(w._A?.performance?.timeOrigin||w._A?.performance?.timing?.navigationStart||Date.now()),onerror:void 0,origin:""+w._A.location,ptid:void 0,releaseIds:{},session:void 0,xhrWrappable:"function"==typeof w._A.XMLHttpRequest?.prototype?.addEventListener,version:A.q4,denyList:void 0},D={};function j(e){if(!e)throw new Error("All runtime objects require an agent identifier!");if(!D[e])throw new Error("Runtime for ".concat(e," was never set"));return D[e]}function E(e,t){if(!e)throw new Error("All runtime objects require an agent identifier!");D[e]=(0,i.D)(t,x),(0,r.Qy)(e,D[e],"runtime")}function T(e){return function(e){try{const t=s(e);return!!t.licenseKey&&!!t.errorBeacon&&!!t.applicationID}catch(e){return!1}}(e)}},567:(e,t,n)=>{n.d(t,{D:()=>i});var r=n(50);function i(e,t){try{if(!e||"object"!=typeof e)return(0,r.Z)("Setting a Configurable requires an object as input");if(!t||"object"!=typeof t)return(0,r.Z)("Setting a Configurable requires a model to set its initial properties");const n=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),o=0===Object.keys(n).length?e:n;for(let a in o)if(void 0!==e[a])try{"object"==typeof e[a]&&"object"==typeof t[a]?n[a]=i(e[a],t[a]):n[a]=e[a]}catch(e){(0,r.Z)("An error occurred while setting a property of a Configurable",e)}return n}catch(e){(0,r.Z)("An error occured while setting a Configurable",e)}}},818:(e,t,n)=>{n.d(t,{Re:()=>i,gF:()=>o,q4:()=>r});const r="1.238.0",i="PROD",o="CDN"},385:(e,t,n)=>{n.d(t,{IF:()=>c,Nk:()=>u,Tt:()=>a,_A:()=>o,il:()=>r,pL:()=>s,v6:()=>i,w1:()=>d});const r="undefined"!=typeof window&&!!window.document,i="undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),o=r?window:"undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),a=(o?.location,/iPad|iPhone|iPod/.test(navigator.userAgent)),s=a&&"undefined"==typeof SharedWorker,c=(()=>{const e=navigator.userAgent.match(/Firefox[/\s](\d+\.\d+)/);return Array.isArray(e)&&e.length>=2?+e[1]:0})(),d=Boolean(r&&window.document.documentMode),u=!!navigator.sendBeacon},711:(e,t,n)=>{n.d(t,{w:()=>o});var r=n(50);const i={agentIdentifier:"",ee:void 0};class o{constructor(e){try{if("object"!=typeof e)return(0,r.Z)("shared context requires an object as input");this.sharedContext={},Object.assign(this.sharedContext,i),Object.entries(e).forEach((e=>{let[t,n]=e;Object.keys(i).includes(t)&&(this.sharedContext[t]=n)}))}catch(e){(0,r.Z)("An error occured while setting SharedContext",e)}}}},0:(e,t,n)=>{n.d(t,{L:()=>u,R:()=>c});var r=n(148),i=n(284),o=n(322),a=n(325);const s={};function c(e,t){const n={staged:!1,priority:a.p[t]||0};d(e),s[e].get(t)||s[e].set(t,n)}function d(e){e&&(s[e]||(s[e]=new Map))}function u(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"feature";if(d(e),!e||!s[e].get(t))return a(t);s[e].get(t).staged=!0;const n=[...s[e]];function a(t){const n=e?r.ee.get(e):r.ee,a=o.X.handlers;if(n.backlog&&a){var s=n.backlog[t],c=a[t];if(c){for(var d=0;s&&d<s.length;++d)l(s[d],c);(0,i.D)(c,(function(e,t){(0,i.D)(t,(function(t,n){n[0].on(e,n[1])}))}))}delete a[t],n.backlog[t]=null,n.emit("drain-"+t,[])}}n.every((e=>{let[t,n]=e;return n.staged}))&&(n.sort(((e,t)=>e[1].priority-t[1].priority)),n.forEach((e=>{let[t]=e;a(t)})))}function l(e,t){var n=e[1];(0,i.D)(t[n],(function(t,n){var r=e[0];if(n[0]===r){var i=n[1],o=e[3],a=e[2];i.apply(o,a)}}))}},148:(e,t,n)=>{n.d(t,{A:()=>c,ee:()=>d});var r=n(632),i=n(210),o=n(763);class a{constructor(e){this.contextId=e}}var s=n(117);const c="nr@context:".concat(s.a),d=function e(t,n){var r={},s={},u={},f=!1;try{f=16===n.length&&(0,o.OP)(n).isolatedBacklog}catch(e){}var g={on:h,addEventListener:h,removeEventListener:function(e,t){var n=r[e];if(!n)return;for(var i=0;i<n.length;i++)n[i]===t&&n.splice(i,1)},emit:function(e,n,r,i,o){!1!==o&&(o=!0);if(d.aborted&&!i)return;t&&o&&t.emit(e,n,r);for(var a=p(r),c=v(e),u=c.length,l=0;l<u;l++)c[l].apply(a,n);var f=b()[s[e]];f&&f.push([g,e,n,a]);return a},get:m,listeners:v,context:p,buffer:function(e,t){const n=b();if(t=t||"feature",g.aborted)return;Object.entries(e||{}).forEach((e=>{let[r,i]=e;s[i]=t,t in n||(n[t]=[])}))},abort:l,aborted:!1,isBuffering:function(e){return!!b()[s[e]]},debugId:n,backlog:f?{}:t&&"object"==typeof t.backlog?t.backlog:{}};return g;function p(e){return e&&e instanceof a?e:e?(0,i.X)(e,c,(()=>new a(c))):new a(c)}function h(e,t){r[e]=v(e).concat(t)}function v(e){return r[e]||[]}function m(t){return u[t]=u[t]||e(g,t)}function b(){return g.backlog}}(void 0,"globalEE"),u=(0,r.fP)();function l(){d.aborted=!0,d.backlog={}}u.ee||(u.ee=d)},546:(e,t,n)=>{n.d(t,{E:()=>r,p:()=>i});var r=n(148).ee.get("handle");function i(e,t,n,i,o){o?(o.buffer([e],i),o.emit(e,t,n)):(r.buffer([e],i),r.emit(e,t,n))}},322:(e,t,n)=>{n.d(t,{X:()=>o});var r=n(546);o.on=a;var i=o.handlers={};function o(e,t,n,o){a(o||r.E,i,e,t,n)}function a(e,t,n,i,o){o||(o="feature"),e||(e=r.E);var a=t[o]=t[o]||{};(a[n]=a[n]||[]).push([e,i])}},239:(e,t,n)=>{n.d(t,{bP:()=>s,iz:()=>c,m$:()=>a});var r=n(385);let i=!1,o=!1;try{const e={get passive(){return i=!0,!1},get signal(){return o=!0,!1}};r._A.addEventListener("test",null,e),r._A.removeEventListener("test",null,e)}catch(e){}function a(e,t){return i||o?{capture:!!e,passive:i,signal:t}:!!e}function s(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2],r=arguments.length>3?arguments[3]:void 0;window.addEventListener(e,t,a(n,r))}function c(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2],r=arguments.length>3?arguments[3]:void 0;document.addEventListener(e,t,a(n,r))}},117:(e,t,n)=>{n.d(t,{a:()=>r});const r=(0,n(402).Rl)()},402:(e,t,n)=>{n.d(t,{Rl:()=>a,ky:()=>s});var r=n(385);const i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx";function o(e,t){return e?15&e[t]:16*Math.random()|0}function a(){const e=r._A?.crypto||r._A?.msCrypto;let t,n=0;return e&&e.getRandomValues&&(t=e.getRandomValues(new Uint8Array(31))),i.split("").map((e=>"x"===e?o(t,++n).toString(16):"y"===e?(3&o()|8).toString(16):e)).join("")}function s(e){const t=r._A?.crypto||r._A?.msCrypto;let n,i=0;t&&t.getRandomValues&&(n=t.getRandomValues(new Uint8Array(31)));const a=[];for(var s=0;s<e;s++)a.push(o(n,++i).toString(16));return a.join("")}},56:(e,t,n)=>{n.d(t,{Bq:()=>r,Hb:()=>o,oD:()=>i});const r="NRBA",i=144e5,o=18e5},894:(e,t,n)=>{function r(){return Math.round(performance.now())}n.d(t,{z:()=>r})},50:(e,t,n)=>{function r(e,t){"function"==typeof console.warn&&(console.warn("New Relic: ".concat(e)),t&&console.warn(t))}n.d(t,{Z:()=>r})},587:(e,t,n)=>{n.d(t,{N:()=>c,T:()=>d});var r=n(148),i=n(546),o=n(0),a=n(325);const s={stn:[a.D.sessionTrace],err:[a.D.jserrors,a.D.metrics],ins:[a.D.pageAction],spa:[a.D.spa],sr:[a.D.sessionReplay,a.D.sessionTrace]};function c(e,t){const n=r.ee.get(t);e&&"object"==typeof e&&(Object.entries(e).forEach((e=>{let[t,r]=e;void 0===d[t]&&(s[t]?s[t].forEach((e=>{r?(0,i.p)("feat-"+t,[],void 0,e,n):(0,i.p)("block-"+t,[],void 0,e,n),(0,i.p)("rumresp-"+t,[Boolean(r)],void 0,e,n)})):r&&(0,i.p)("feat-"+t,[],void 0,void 0,n),d[t]=Boolean(r))})),Object.keys(s).forEach((e=>{void 0===d[e]&&(s[e]?.forEach((t=>(0,i.p)("rumresp-"+e,[!1],void 0,t,n))),d[e]=!1)})),(0,o.L)(t,a.D.pageViewEvent))}const d={}},210:(e,t,n)=>{n.d(t,{X:()=>i});var r=Object.prototype.hasOwnProperty;function i(e,t,n){if(r.call(e,t))return e[t];var i=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:i,writable:!0,enumerable:!1}),i}catch(e){}return e[t]=i,i}},284:(e,t,n)=>{n.d(t,{D:()=>r});const r=(e,t)=>Object.entries(e||{}).map((e=>{let[n,r]=e;return t(n,r)}))},351:(e,t,n)=>{n.d(t,{P:()=>o});var r=n(148);const i=()=>{const e=new WeakSet;return(t,n)=>{if("object"==typeof n&&null!==n){if(e.has(n))return;e.add(n)}return n}};function o(e){try{return JSON.stringify(e,i())}catch(e){try{r.ee.emit("internal-error",[e])}catch(e){}}}},960:(e,t,n)=>{n.d(t,{K:()=>a,b:()=>o});var r=n(239);function i(){return"undefined"==typeof document||"complete"===document.readyState}function o(e,t){if(i())return e();(0,r.bP)("load",e,t)}function a(e){if(i())return e();(0,r.iz)("DOMContentLoaded",e)}},632:(e,t,n)=>{n.d(t,{EZ:()=>d,Qy:()=>c,ce:()=>o,fP:()=>a,gG:()=>u,mF:()=>s});var r=n(894),i=n(385);const o={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net"};function a(){return i._A.NREUM||(i._A.NREUM={}),void 0===i._A.newrelic&&(i._A.newrelic=i._A.NREUM),i._A.NREUM}function s(){let e=a();return e.o||(e.o={ST:i._A.setTimeout,SI:i._A.setImmediate,CT:i._A.clearTimeout,XHR:i._A.XMLHttpRequest,REQ:i._A.Request,EV:i._A.Event,PR:i._A.Promise,MO:i._A.MutationObserver,FETCH:i._A.fetch}),e}function c(e,t,n){let i=a();const o=i.initializedAgents||{},s=o[e]||{};return Object.keys(s).length||(s.initializedAt={ms:(0,r.z)(),date:new Date}),i.initializedAgents={...o,[e]:{...s,[n]:t}},i}function d(e,t){a()[e]=t}function u(){return function(){let e=a();const t=e.info||{};e.info={beacon:o.beacon,errorBeacon:o.errorBeacon,...t}}(),function(){let e=a();const t=e.init||{};e.init={...t}}(),s(),function(){let e=a();const t=e.loader_config||{};e.loader_config={...t}}(),a()}},956:(e,t,n)=>{n.d(t,{N:()=>i});var r=n(239);function i(e){let t=arguments.length>1&&void 0!==arguments[1]&&arguments[1],n=arguments.length>2?arguments[2]:void 0,i=arguments.length>3?arguments[3]:void 0;return void(0,r.iz)("visibilitychange",(function(){if(t)return void("hidden"==document.visibilityState&&e());e(document.visibilityState)}),n,i)}},81:(e,t,n)=>{n.d(t,{gF:()=>o,mY:()=>i,t9:()=>r,vz:()=>s,xS:()=>a});const r=n(325).D.metrics,i="sm",o="cm",a="storeSupportabilityMetrics",s="storeEventMetrics"},633:(e,t,n)=>{n.d(t,{Dz:()=>i,OJ:()=>a,qw:()=>o,t9:()=>r});const r=n(325).D.pageViewEvent,i="firstbyte",o="domcontent",a="windowload"},251:(e,t,n)=>{n.d(t,{t:()=>r});const r=n(325).D.pageViewTiming},938:(e,t,n)=>{n.d(t,{W:()=>o});var r=n(763),i=n(148);class o{constructor(e,t,n){this.agentIdentifier=e,this.aggregator=t,this.ee=i.ee.get(e,(0,r.OP)(this.agentIdentifier).isolatedBacklog),this.featureName=n,this.blocked=!1}}},144:(e,t,n)=>{n.d(t,{j:()=>v});var r=n(325),i=n(763),o=n(546),a=n(148),s=n(894),c=n(0),d=n(960),u=n(385),l=n(50),f=n(81),g=n(632);function p(){const e=(0,g.gG)();["setErrorHandler","finished","addToTrace","inlineHit","addRelease","addPageAction","setCurrentRouteName","setPageViewName","setCustomAttribute","interaction","noticeError","setUserId","setApplicationVersion"].forEach((t=>{e[t]=function(){for(var n=arguments.length,r=new Array(n),i=0;i<n;i++)r[i]=arguments[i];return function(t){for(var n=arguments.length,r=new Array(n>1?n-1:0),i=1;i<n;i++)r[i-1]=arguments[i];let o=[];return Object.values(e.initializedAgents).forEach((e=>{e.exposed&&e.api[t]&&o.push(e.api[t](...r))})),o.length>1?o:o[0]}(t,...r)}}))}var h=n(587);function v(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},v=arguments.length>2?arguments[2]:void 0,m=arguments.length>3?arguments[3]:void 0,{init:b,info:y,loader_config:w,runtime:A={loaderType:v},exposed:x=!0}=t;const D=(0,g.gG)();y||(b=D.init,y=D.info,w=D.loader_config),(0,i.Dg)(e,b||{}),(0,i.GE)(e,w||{}),y.jsAttributes??={},u.v6&&(y.jsAttributes.isWorker=!0),(0,i.CX)(e,y);const j=(0,i.P_)(e);A.denyList=[...j.ajax?.deny_list||[],...j.ajax?.block_internal?[y.beacon,y.errorBeacon]:[]],(0,i.sU)(e,A),p();const E=function(e,t){t||(0,c.R)(e,"api");const g={};var p=a.ee.get(e),h=p.get("tracer"),v="api-",m=v+"ixn-";function b(t,n,r,o){const a=(0,i.C5)(e);return null===n?delete a.jsAttributes[t]:(0,i.CX)(e,{...a,jsAttributes:{...a.jsAttributes,[t]:n}}),A(v,r,!0,o||null===n?"session":void 0)(t,n)}function y(){}["setErrorHandler","finished","addToTrace","inlineHit","addRelease"].forEach((e=>g[e]=A(v,e,!0,"api"))),g.addPageAction=A(v,"addPageAction",!0,r.D.pageAction),g.setCurrentRouteName=A(v,"routeName",!0,r.D.spa),g.setPageViewName=function(t,n){if("string"==typeof t)return"/"!==t.charAt(0)&&(t="/"+t),(0,i.OP)(e).customTransaction=(n||"http://custom.transaction")+t,A(v,"setPageViewName",!0)()},g.setCustomAttribute=function(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2];if("string"==typeof e){if(["string","number"].includes(typeof t)||null===t)return b(e,t,"setCustomAttribute",n);(0,l.Z)("Failed to execute setCustomAttribute.\nNon-null value must be a string or number type, but a type of <".concat(typeof t,"> was provided."))}else(0,l.Z)("Failed to execute setCustomAttribute.\nName must be a string type, but a type of <".concat(typeof e,"> was provided."))},g.setUserId=function(e){if("string"==typeof e||null===e)return b("enduser.id",e,"setUserId",!0);(0,l.Z)("Failed to execute setUserId.\nNon-null value must be a string type, but a type of <".concat(typeof e,"> was provided."))},g.setApplicationVersion=function(e){if("string"==typeof e||null===e)return b("application.version",e,"setApplicationVersion",!1);(0,l.Z)("Failed to execute setApplicationVersion. Expected <String | null>, but got <".concat(typeof e,">."))},g.interaction=function(){return(new y).get()};var w=y.prototype={createTracer:function(e,t){var n={},i=this,a="function"==typeof t;return(0,o.p)(m+"tracer",[(0,s.z)(),e,n],i,r.D.spa,p),function(){if(h.emit((a?"":"no-")+"fn-start",[(0,s.z)(),i,a],n),a)try{return t.apply(this,arguments)}catch(e){throw h.emit("fn-err",[arguments,this,e],n),e}finally{h.emit("fn-end",[(0,s.z)()],n)}}}};function A(e,t,n,i){return function(){return(0,o.p)(f.xS,["API/"+t+"/called"],void 0,r.D.metrics,p),i&&(0,o.p)(e+t,[(0,s.z)(),...arguments],n?null:this,i,p),n?void 0:this}}function x(){n.e(75).then(n.bind(n,438)).then((t=>{let{setAPI:n}=t;n(e),(0,c.L)(e,"api")})).catch((()=>(0,l.Z)("Downloading runtime APIs failed...")))}return["actionText","setName","setAttribute","save","ignore","onEnd","getContext","end","get"].forEach((e=>{w[e]=A(m,e,void 0,r.D.spa)})),g.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),(0,o.p)(f.xS,["API/noticeError/called"],void 0,r.D.metrics,p),(0,o.p)("err",[e,(0,s.z)(),!1,t],void 0,r.D.jserrors,p)},u.il?(0,d.b)((()=>x()),!0):x(),g}(e,m);return(0,g.Qy)(e,E,"api"),(0,g.Qy)(e,x,"exposed"),(0,g.EZ)("activatedFeatures",h.T),E}},325:(e,t,n)=>{n.d(t,{D:()=>r,p:()=>i});const r={ajax:"ajax",jserrors:"jserrors",metrics:"metrics",pageAction:"page_action",pageViewEvent:"page_view_event",pageViewTiming:"page_view_timing",sessionReplay:"session_replay",sessionTrace:"session_trace",spa:"spa"},i={[r.pageViewEvent]:1,[r.pageViewTiming]:2,[r.metrics]:3,[r.jserrors]:4,[r.ajax]:5,[r.sessionTrace]:6,[r.pageAction]:7,[r.spa]:8,[r.sessionReplay]:9}}},r={};function i(e){var t=r[e];if(void 0!==t)return t.exports;var o=r[e]={exports:{}};return n[e](o,o.exports,i),o.exports}i.m=n,i.d=(e,t)=>{for(var n in t)i.o(t,n)&&!i.o(e,n)&&Object.defineProperty(e,n,{enumerable:!0,get:t[n]})},i.f={},i.e=e=>Promise.all(Object.keys(i.f).reduce(((t,n)=>(i.f[n](e,t),t)),[])),i.u=e=>"nr-rum.3709cb75-1.238.0.min.js",i.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),e={},t="NRBA-1.238.0.PROD:",i.l=(n,r,o,a)=>{if(e[n])e[n].push(r);else{var s,c;if(void 0!==o)for(var d=document.getElementsByTagName("script"),u=0;u<d.length;u++){var l=d[u];if(l.getAttribute("src")==n||l.getAttribute("data-webpack")==t+o){s=l;break}}s||(c=!0,(s=document.createElement("script")).charset="utf-8",s.timeout=120,i.nc&&s.setAttribute("nonce",i.nc),s.setAttribute("data-webpack",t+o),s.src=n),e[n]=[r];var f=(t,r)=>{s.onerror=s.onload=null,clearTimeout(g);var i=e[n];if(delete e[n],s.parentNode&&s.parentNode.removeChild(s),i&&i.forEach((e=>e(r))),t)return t(r)},g=setTimeout(f.bind(null,void 0,{type:"timeout",target:s}),12e4);s.onerror=f.bind(null,s.onerror),s.onload=f.bind(null,s.onload),c&&document.head.appendChild(s)}},i.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.p="https://js-agent.newrelic.com/",(()=>{var e={50:0,832:0};i.f.j=(t,n)=>{var r=i.o(e,t)?e[t]:void 0;if(0!==r)if(r)n.push(r[2]);else{var o=new Promise(((n,i)=>r=e[t]=[n,i]));n.push(r[2]=o);var a=i.p+i.u(t),s=new Error;i.l(a,(n=>{if(i.o(e,t)&&(0!==(r=e[t])&&(e[t]=void 0),r)){var o=n&&("load"===n.type?"missing":n.type),a=n&&n.target&&n.target.src;s.message="Loading chunk "+t+" failed.\n("+o+": "+a+")",s.name="ChunkLoadError",s.type=o,s.request=a,r[1](s)}}),"chunk-"+t,t)}};var t=(t,n)=>{var r,o,[a,s,c]=n,d=0;if(a.some((t=>0!==e[t]))){for(r in s)i.o(s,r)&&(i.m[r]=s[r]);if(c)c(i)}for(t&&t(n);d<a.length;d++)o=a[d],i.o(e,o)&&e[o]&&e[o][0](),e[o]=0},n=self["webpackChunk:NRBA-1.238.0.PROD"]=self["webpackChunk:NRBA-1.238.0.PROD"]||[];n.forEach(t.bind(null,0)),n.push=t.bind(null,n.push.bind(n))})(),(()=>{var e=i(50);class t{addPageAction(t,n){(0,e.Z)("Call to agent api addPageAction failed. The session trace feature is not currently initialized.")}setPageViewName(t,n){(0,e.Z)("Call to agent api setPageViewName failed. The page view feature is not currently initialized.")}setCustomAttribute(t,n,r){(0,e.Z)("Call to agent api setCustomAttribute failed. The js errors feature is not currently initialized.")}noticeError(t,n){(0,e.Z)("Call to agent api noticeError failed. The js errors feature is not currently initialized.")}setUserId(t){(0,e.Z)("Call to agent api setUserId failed. The js errors feature is not currently initialized.")}setApplicationVersion(t){(0,e.Z)("Call to agent api setApplicationVersion failed. The agent is not currently initialized.")}setErrorHandler(t){(0,e.Z)("Call to agent api setErrorHandler failed. The js errors feature is not currently initialized.")}finished(t){(0,e.Z)("Call to agent api finished failed. The page action feature is not currently initialized.")}addRelease(t,n){(0,e.Z)("Call to agent api addRelease failed. The agent is not currently initialized.")}}var n=i(325),r=i(763);const o=Object.values(n.D);function a(e){const t={};return o.forEach((n=>{t[n]=function(e,t){return!1!==(0,r.Mt)(t,"".concat(e,".enabled"))}(n,e)})),t}var s=i(144);var c=i(546),d=i(385),u=i(0),l=i(938),f=i(960);class g extends l.W{constructor(e,t,n){let r=!(arguments.length>3&&void 0!==arguments[3])||arguments[3];super(e,t,n),this.auto=r,this.abortHandler,this.featAggregate,this.onAggregateImported,r&&(0,u.R)(e,n)}importAggregator(){let t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};if(this.featAggregate||!this.auto)return;const n=d.il&&!0===(0,r.Mt)(this.agentIdentifier,"privacy.cookies_enabled");let o;this.onAggregateImported=new Promise((e=>{o=e}));const a=async()=>{let r;try{if(n){const{setupAgentSession:e}=await i.e(75).then(i.bind(i,228));r=e(this.agentIdentifier)}}catch(t){(0,e.Z)("A problem occurred when starting up session manager. This page will not start or extend any session.",t)}try{if(!this.shouldImportAgg(this.featureName,r))return(0,u.L)(this.agentIdentifier,this.featureName),void o(!1);const{lazyFeatureLoader:e}=await i.e(75).then(i.bind(i,582)),{Aggregate:n}=await e(this.featureName,"aggregate");this.featAggregate=new n(this.agentIdentifier,this.aggregator,t),o(!0)}catch(t){(0,e.Z)("Downloading and initializing ".concat(this.featureName," failed..."),t),this.abortHandler?.(),o(!1)}};d.il?(0,f.b)((()=>a()),!0):a()}shouldImportAgg(e,t){return e!==n.D.sessionReplay||!!r.Yu.MO&&(!1!==(0,r.Mt)(this.agentIdentifier,"session_trace.enabled")&&(!!t?.isNew||!!t?.state.sessionReplay))}}var p=i(633),h=i(894);class v extends g{static featureName=p.t9;constructor(e,t){let i=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];if(super(e,t,p.t9,i),("undefined"==typeof PerformanceNavigationTiming||d.Tt)&&"undefined"!=typeof PerformanceTiming){const t=(0,r.OP)(e);t[p.Dz]=Math.max(Date.now()-t.offset,0),(0,f.K)((()=>t[p.qw]=Math.max((0,h.z)()-t[p.Dz],0))),(0,f.b)((()=>{const e=(0,h.z)();t[p.OJ]=Math.max(e-t[p.Dz],0),(0,c.p)("timing",["load",e],void 0,n.D.pageViewTiming,this.ee)}))}this.importAggregator()}}var m=i(711),b=i(284);class y extends m.w{constructor(e){super(e),this.aggregatedData={}}store(e,t,n,r,i){var o=this.getBucket(e,t,n,i);return o.metrics=function(e,t){t||(t={count:0});return t.count+=1,(0,b.D)(e,(function(e,n){t[e]=w(n,t[e])})),t}(r,o.metrics),o}merge(e,t,n,r,i){var o=this.getBucket(e,t,r,i);if(o.metrics){var a=o.metrics;a.count+=n.count,(0,b.D)(n,(function(e,t){if("count"!==e){var r=a[e],i=n[e];i&&!i.c?a[e]=w(i.t,r):a[e]=function(e,t){if(!t)return e;t.c||(t=A(t.t));return t.min=Math.min(e.min,t.min),t.max=Math.max(e.max,t.max),t.t+=e.t,t.sos+=e.sos,t.c+=e.c,t}(i,a[e])}}))}else o.metrics=n}storeMetric(e,t,n,r){var i=this.getBucket(e,t,n);return i.stats=w(r,i.stats),i}getBucket(e,t,n,r){this.aggregatedData[e]||(this.aggregatedData[e]={});var i=this.aggregatedData[e][t];return i||(i=this.aggregatedData[e][t]={params:n||{}},r&&(i.custom=r)),i}get(e,t){return t?this.aggregatedData[e]&&this.aggregatedData[e][t]:this.aggregatedData[e]}take(e){for(var t={},n="",r=!1,i=0;i<e.length;i++)t[n=e[i]]=x(this.aggregatedData[n]),t[n].length&&(r=!0),delete this.aggregatedData[n];return r?t:null}}function w(e,t){return null==e?function(e){e?e.c++:e={c:1};return e}(t):t?(t.c||(t=A(t.t)),t.c+=1,t.t+=e,t.sos+=e*e,e>t.max&&(t.max=e),e<t.min&&(t.min=e),t):{t:e}}function A(e){return{t:e,min:e,max:e,sos:e*e,c:1}}function x(e){return"object"!=typeof e?[]:(0,b.D)(e,D)}function D(e,t){return t}var j=i(632),E=i(402),T=i(351);var _=i(956),k=i(239),P=i(251);class C extends g{static featureName=P.t;constructor(e,t){let n=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,P.t,n),d.il&&((0,r.OP)(e).initHidden=Boolean("hidden"===document.visibilityState),(0,_.N)((()=>(0,c.p)("docHidden",[(0,h.z)()],void 0,P.t,this.ee)),!0),(0,k.bP)("pagehide",(()=>(0,c.p)("winPagehide",[(0,h.z)()],void 0,P.t,this.ee))),this.importAggregator())}}var I=i(81);class N extends g{static featureName=I.t9;constructor(e,t){let n=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,I.t9,n),this.importAggregator()}}new class extends t{constructor(t){let n=arguments.length>1&&void 0!==arguments[1]?arguments[1]:(0,E.ky)(16);super(),d._A?(this.agentIdentifier=n,this.sharedAggregator=new y({agentIdentifier:this.agentIdentifier}),this.features={},this.desiredFeatures=new Set(t.features||[]),this.desiredFeatures.add(v),Object.assign(this,(0,s.j)(this.agentIdentifier,t,t.loaderType||"agent")),this.start()):(0,e.Z)("Failed to initial the agent. Could not determine the runtime environment.")}get config(){return{info:(0,r.C5)(this.agentIdentifier),init:(0,r.P_)(this.agentIdentifier),loader_config:(0,r.DL)(this.agentIdentifier),runtime:(0,r.OP)(this.agentIdentifier)}}start(){const t="features";try{const r=a(this.agentIdentifier),i=[...this.desiredFeatures];i.sort(((e,t)=>n.p[e.featureName]-n.p[t.featureName])),i.forEach((t=>{if(r[t.featureName]||t.featureName===n.D.pageViewEvent){const i=function(e){switch(e){case n.D.ajax:return[n.D.jserrors];case n.D.sessionTrace:return[n.D.ajax,n.D.pageViewEvent];case n.D.sessionReplay:return[n.D.sessionTrace];case n.D.pageViewTiming:return[n.D.pageViewEvent];default:return[]}}(t.featureName);i.every((e=>r[e]))||(0,e.Z)("".concat(t.featureName," is enabled but one or more dependent features has been disabled (").concat((0,T.P)(i),"). This may cause unintended consequences or missing data...")),this.features[t.featureName]=new t(this.agentIdentifier,this.sharedAggregator)}})),(0,j.Qy)(this.agentIdentifier,this.features,t)}catch(n){(0,e.Z)("Failed to initialize all enabled instrument classes (agent aborted) -",n);for(const e in this.features)this.features[e].abortHandler?.();const r=(0,j.fP)();return delete r.initializedAgents[this.agentIdentifier]?.api,delete r.initializedAgents[this.agentIdentifier]?.[t],delete this.sharedAggregator,r.ee?.abort(),delete r.ee?.get(this.agentIdentifier),!1}}addToTrace(t){(0,e.Z)("Call to agent api addToTrace failed. The page action feature is not currently initialized.")}setCurrentRouteName(t){(0,e.Z)("Call to agent api setCurrentRouteName failed. The spa feature is not currently initialized.")}interaction(){(0,e.Z)("Call to agent api interaction failed. The spa feature is not currently initialized.")}}({features:[v,C,N],loaderType:"lite"})})()})();</script>
+<title>Standards - MozillaWiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Standards","wgTitle":"Standards","wgCurRevisionId":1247687,"wgRevisionId":1247687,"wgArticleId":36733,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Standards","wgRelevantArticleId":36733,"wgRequestId":"5c32a679934a504feb489dfb","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"srfFilteredConfig":null,"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":true,"publish":false},"wgPageFormsAutocompleteValues":[],"wgPageFormsAutocompleteOnAllChars":false,"wgPageFormsFieldProperties":[],"wgPageFormsCargoFields":[],"wgPageFormsDependentFields":[],"wgPageFormsGridValues":[],"wgPageFormsGridParams":[],"wgPageFormsShowOnSelect":[],"wgPageFormsScriptPath":"/extensions/PageForms","edgValues":null,"wgPageFormsEDSettings":null,"wgPreferredVariant":"en"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["ext.smw.style","mediawiki.page.startup","ext.Bugzilla","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=en&amp;modules=ext.Sandstone.main%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%2Cspecial%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="generator" content="MediaWiki 1.27.4"/>
+<link rel="alternate" media="only screen and (max-width: 720px)" href="https://m.wiki.mozilla.org/Standards"/>
+<link rel="alternate" type="application/rdf+xml" title="Standards" href="/index.php?title=Special:ExportRDF/Standards&amp;xmlmime=rdf"/>
+<link rel="shortcut icon" href="/skins/common/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="MozillaWiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.mozilla.org/api.php?action=rsd"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Standards rootpage-Standards skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Standards</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From MozillaWiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>Welcome to Mozilla's standards participation page.
+</p><p>This is a directory of standards organizations and their working groups, listing who at Mozilla is working with each.
+</p><p>For a technology summary see the <a href="/Standards/technologies" title="Standards/technologies">technologies</a> page, for Mozilla’s positions on particular specifications, see:
+</p>
+<ul><li> <a rel="nofollow" class="external free" href="https://mozilla.github.io/standards-positions/">https://mozilla.github.io/standards-positions/</a></li></ul>
+<p>Current discussions of Mozilla positions:
+</p>
+<ul><li> <a rel="nofollow" class="external free" href="https://github.com/mozilla/standards-positions/issues">https://github.com/mozilla/standards-positions/issues</a></li></ul>
+<p>The lists below are organized alphabetically by standards body and working group (if any), with Mozilla participants and specifications they edit/author/contribute to.
+</p><p>If you’re a Mozillian actively &amp; directly participating in a standards body (working group email list, IRC, wiki, and/or f2f meetings), please add yourself to the specific standards body / working group if any), linking to your wiki User: page. If you’re working in multiple working groups or standards organizations, add yourself to each.
+</p><p>Thanks!
+</p><p>— <a href="/User:Tantek" title="User:Tantek">Tantek</a>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Web_Standards_Coordination"><span class="tocnumber">1</span> <span class="toctext">Web Standards Coordination</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#General_Participation_Guidelines"><span class="tocnumber">1.1</span> <span class="toctext">General Participation Guidelines</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Ecma_International"><span class="tocnumber">1.2</span> <span class="toctext">Ecma International</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="#TC39"><span class="tocnumber">1.2.1</span> <span class="toctext">TC39</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#TC39_-_TG2_.28Internationalization.29"><span class="tocnumber">1.2.2</span> <span class="toctext">TC39 - TG2 (Internationalization)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-6"><a href="#IETF"><span class="tocnumber">1.3</span> <span class="toctext">IETF</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="#CALEXT_.28iCalendar.29"><span class="tocnumber">1.3.1</span> <span class="toctext">CALEXT (iCalendar)</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#HTTP"><span class="tocnumber">1.3.2</span> <span class="toctext">HTTP</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#RTCWEB_.2F_MMUSIC"><span class="tocnumber">1.3.3</span> <span class="toctext">RTCWEB / MMUSIC</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#TLS"><span class="tocnumber">1.3.4</span> <span class="toctext">TLS</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#ISOC_Advisory_Council"><span class="tocnumber">1.3.5</span> <span class="toctext">ISOC Advisory Council</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-12"><a href="#Khronos"><span class="tocnumber">1.4</span> <span class="toctext">Khronos</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#microformats"><span class="tocnumber">1.5</span> <span class="toctext">microformats</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#OWF"><span class="tocnumber">1.6</span> <span class="toctext">OWF</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#W3C"><span class="tocnumber">1.7</span> <span class="toctext">W3C</span></a>
+<ul>
+<li class="toclevel-3 tocsection-16"><a href="#Community_and_Interest_Groups"><span class="tocnumber">1.7.1</span> <span class="toctext">Community and Interest Groups</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="#Advisory_Board"><span class="tocnumber">1.7.2</span> <span class="toctext">Advisory Board</span></a>
+<ul>
+<li class="toclevel-4 tocsection-18"><a href="#Process_Community_Group"><span class="tocnumber">1.7.2.1</span> <span class="toctext">Process Community Group</span></a></li>
+<li class="toclevel-4 tocsection-19"><a href="#Vision_Task_Force"><span class="tocnumber">1.7.2.2</span> <span class="toctext">Vision Task Force</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-20"><a href="#Advisory_Committee"><span class="tocnumber">1.7.3</span> <span class="toctext">Advisory Committee</span></a></li>
+<li class="toclevel-3 tocsection-21"><a href="#ARIA_Working_Group"><span class="tocnumber">1.7.4</span> <span class="toctext">ARIA Working Group</span></a></li>
+<li class="toclevel-3 tocsection-22"><a href="#Audio_Working_Group"><span class="tocnumber">1.7.5</span> <span class="toctext">Audio Working Group</span></a>
+<ul>
+<li class="toclevel-4 tocsection-23"><a href="#Audio_Community_Group"><span class="tocnumber">1.7.5.1</span> <span class="toctext">Audio Community Group</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-24"><a href="#Media_Working_Group"><span class="tocnumber">1.7.6</span> <span class="toctext">Media Working Group</span></a>
+<ul>
+<li class="toclevel-4 tocsection-25"><a href="#Audiovisual_Media_Formats_for_Browsers_Community_Group"><span class="tocnumber">1.7.6.1</span> <span class="toctext">Audiovisual Media Formats for Browsers Community Group</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-26"><a href="#Browser_Testing_and_Tools_Working_Group"><span class="tocnumber">1.7.7</span> <span class="toctext">Browser Testing and Tools Working Group</span></a></li>
+<li class="toclevel-3 tocsection-27"><a href="#CSS_Working_Group"><span class="tocnumber">1.7.8</span> <span class="toctext">CSS Working Group</span></a></li>
+<li class="toclevel-3 tocsection-28"><a href="#GPU_for_the_Web_Working_Group_.28WebGPU.29"><span class="tocnumber">1.7.9</span> <span class="toctext">GPU for the Web Working Group (WebGPU)</span></a>
+<ul>
+<li class="toclevel-4 tocsection-29"><a href="#GPU_for_the_Web_Community_Group"><span class="tocnumber">1.7.9.1</span> <span class="toctext">GPU for the Web Community Group</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-30"><a href="#Internationalization_Working_Group"><span class="tocnumber">1.7.10</span> <span class="toctext">Internationalization Working Group</span></a></li>
+<li class="toclevel-3 tocsection-31"><a href="#Pointer_Events_Working_Group"><span class="tocnumber">1.7.11</span> <span class="toctext">Pointer Events Working Group</span></a></li>
+<li class="toclevel-3 tocsection-32"><a href="#Service_Workers_Working_Group"><span class="tocnumber">1.7.12</span> <span class="toctext">Service Workers Working Group</span></a></li>
+<li class="toclevel-3 tocsection-33"><a href="#SVG_Working_Group"><span class="tocnumber">1.7.13</span> <span class="toctext">SVG Working Group</span></a></li>
+<li class="toclevel-3 tocsection-34"><a href="#Web_Applications_Security_Working_Group"><span class="tocnumber">1.7.14</span> <span class="toctext">Web Applications Security Working Group</span></a></li>
+<li class="toclevel-3 tocsection-35"><a href="#Web_Applications_Working_Group"><span class="tocnumber">1.7.15</span> <span class="toctext">Web Applications Working Group</span></a></li>
+<li class="toclevel-3 tocsection-36"><a href="#WebAssembly_Working_Group"><span class="tocnumber">1.7.16</span> <span class="toctext">WebAssembly Working Group</span></a>
+<ul>
+<li class="toclevel-4 tocsection-37"><a href="#WebAssembly_Community_Group"><span class="tocnumber">1.7.16.1</span> <span class="toctext">WebAssembly Community Group</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-38"><a href="#Web_Authentication_Working_Group"><span class="tocnumber">1.7.17</span> <span class="toctext">Web Authentication Working Group</span></a></li>
+<li class="toclevel-3 tocsection-39"><a href="#Web_Editing_Working_Group"><span class="tocnumber">1.7.18</span> <span class="toctext">Web Editing Working Group</span></a></li>
+<li class="toclevel-3 tocsection-40"><a href="#Web_Fonts_Working_Group"><span class="tocnumber">1.7.19</span> <span class="toctext">Web Fonts Working Group</span></a></li>
+<li class="toclevel-3 tocsection-41"><a href="#Web_Payments_Working_Group"><span class="tocnumber">1.7.20</span> <span class="toctext">Web Payments Working Group</span></a></li>
+<li class="toclevel-3 tocsection-42"><a href="#Web_Performance_Working_Group"><span class="tocnumber">1.7.21</span> <span class="toctext">Web Performance Working Group</span></a></li>
+<li class="toclevel-3 tocsection-43"><a href="#WebRTC_Working_Group"><span class="tocnumber">1.7.22</span> <span class="toctext">WebRTC Working Group</span></a></li>
+<li class="toclevel-3 tocsection-44"><a href="#WebTransport_Working_Group"><span class="tocnumber">1.7.23</span> <span class="toctext">WebTransport Working Group</span></a></li>
+<li class="toclevel-3 tocsection-45"><a href="#Portable_Network_Graphics_Working_Group"><span class="tocnumber">1.7.24</span> <span class="toctext">Portable Network Graphics Working Group</span></a></li>
+<li class="toclevel-3 tocsection-46"><a href="#Technical_Architecture_Group"><span class="tocnumber">1.7.25</span> <span class="toctext">Technical Architecture Group</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-47"><a href="#WHATWG"><span class="tocnumber">1.8</span> <span class="toctext">WHATWG</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-48"><a href="#other"><span class="tocnumber">2</span> <span class="toctext">other</span></a>
+<ul>
+<li class="toclevel-2 tocsection-49"><a href="#Alliance_for_Open_Media_.28AOM.29"><span class="tocnumber">2.1</span> <span class="toctext">Alliance for Open Media (AOM)</span></a></li>
+<li class="toclevel-2 tocsection-50"><a href="#CA.2FBrowser_Forum"><span class="tocnumber">2.2</span> <span class="toctext">CA/Browser Forum</span></a></li>
+<li class="toclevel-2 tocsection-51"><a href="#CalConnect"><span class="tocnumber">2.3</span> <span class="toctext">CalConnect</span></a></li>
+<li class="toclevel-2 tocsection-52"><a href="#eIDAS_Regulation"><span class="tocnumber">2.4</span> <span class="toctext">eIDAS Regulation</span></a></li>
+<li class="toclevel-2 tocsection-53"><a href="#OASIS"><span class="tocnumber">2.5</span> <span class="toctext">OASIS</span></a></li>
+<li class="toclevel-2 tocsection-54"><a href="#XMPP"><span class="tocnumber">2.6</span> <span class="toctext">XMPP</span></a></li>
+<li class="toclevel-2 tocsection-55"><a href="#C.2B.2B"><span class="tocnumber">2.7</span> <span class="toctext">C++</span></a></li>
+<li class="toclevel-2 tocsection-56"><a href="#FIDO_Alliance"><span class="tocnumber">2.8</span> <span class="toctext">FIDO Alliance</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-57"><a href="#Emeritus"><span class="tocnumber">3</span> <span class="toctext">Emeritus</span></a></li>
+<li class="toclevel-1 tocsection-58"><a href="#subpages_of_Standards"><span class="tocnumber">4</span> <span class="toctext">subpages of Standards</span></a></li>
+<li class="toclevel-1 tocsection-59"><a href="#See_Also"><span class="tocnumber">5</span> <span class="toctext">See Also</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Web_Standards_Coordination">Web Standards Coordination</span></h1>
+<h2><span class="mw-headline" id="General_Participation_Guidelines">General Participation Guidelines</span></h2>
+<p>If you'd like to participate in some of these groups, or at least watch, learn, get up to speed, you can almost always do so by lurking on the public IRC channels and mailing lists that the groups use. Many (most?) standards mailing lists can often be overwhelming in quantity, depth so start with IRC as that's often lighter-weight and easier to watch for quick bits of info/knowledge.
+</p>
+<ul><li> Get on <a href="/Matrix" title="Matrix">Matrix</a> to:
+<ul><li> Set up a connection to and nickname for <code>chat.mozilla.org</code>. </li>
+<li> Join the #standards channel <a rel="nofollow" class="external text" href="https://chat.mozilla.org/#/room/#standards:mozilla.org">via chat.mozilla.org</a> or <a rel="nofollow" class="external text" href="https://matrix.to/#/#standards:mozilla.org">via matrix.to</a>.</li>
+<li> Participation in #<a href="/Whatwg" title="Whatwg" class="mw-redirect">whatwg</a> (see <a rel="nofollow" class="external text" href="https://whatwg.org/chat">WHATWG chat instructions</a>)</li></ul></li>
+<li> Get an <a href="/IRC#Pick_an_IRC_client" title="IRC">IRC client</a> to:
+<ul><li> Set up a connection to and nickname for <code>irc.w3.org</code> but specifically port 6665 (unprotected, no nickname registration).
+<ul><li> You may also use W3C IRC’s Web UI: <a rel="nofollow" class="external free" href="http://irc.w3.org/">http://irc.w3.org/</a></li></ul></li></ul></li>
+<li> Get on <a rel="nofollow" class="external text" href="https://chat.indieweb.org/">IndieWeb Chat</a> (IRC, Matrix, or Slack) to:
+<ul><li> chat with #<a href="/Microformats" title="Microformats">microformats</a>, #<a href="/Indieweb" title="Indieweb" class="mw-redirect">indieweb</a></li></ul></li></ul>
+<h2><span class="mw-headline" id="Ecma_International"><a rel="nofollow" class="external text" href="https://www.ecma-international.org/">Ecma International</a></span></h2>
+<ul><li> <a href="/Standards/Participating_in_TC39" title="Standards/Participating in TC39">Participating in TC39</a></li></ul>
+<h3><span class="mw-headline" id="TC39"><a rel="nofollow" class="external text" href="https://tc39.es//">TC39</a></span></h3>
+<p>Participants:
+</p>
+<ul><li> <span class="h-card"><a href="/User:Ystartsev" title="User:Ystartsev">Yulia Startsev</a></span></li>
+<li> <span class="h-card"><a href="/User:Dminor" title="User:Dminor">Daniel Minor</a></span></li>
+<li> <span class="h-card"><a href="/User:Eemeli" title="User:Eemeli">Eemeli Aro</a></span></li></ul>
+<p>Specifications: <a rel="nofollow" class="external text" href="https://www.ecma-international.org/publications-and-standards/standards/ecma-262/">ECMA-262</a>
+</p>
+<h3><span class="mw-headline" id="TC39_-_TG2_.28Internationalization.29"><a rel="nofollow" class="external text" href="https://github.com/tc39/ecma402">TC39 - TG2 (Internationalization)</a></span></h3>
+<p>Participants:
+</p>
+<ul><li> <span class="h-card"><a href="/User:Eemeli" title="User:Eemeli">Eemeli Aro</a></span></li>
+<li> <span class="h-card"><a href="/User:Dminor" title="User:Dminor">Daniel Minor</a></span></li>
+<li> <span class="h-card"><a href="/User:Gregtatum" title="User:Gregtatum">Greg Tatum</a></span></li></ul>
+<p>Specifications: <a rel="nofollow" class="external text" href="https://www.ecma-international.org/publications-and-standards/standards/ecma-402/">ECMA-402</a>
+</p>
+<h2><span class="mw-headline" id="IETF"><a rel="nofollow" class="external text" href="https://ietf.org/">IETF</a></span></h2>
+<p>Coordination: <span class="h-card"><a href="/User:Mthomson" title="User:Mthomson">Martin Thomson</a></span>
+</p>
+<h3><span class="mw-headline" id="CALEXT_.28iCalendar.29"><a rel="nofollow" class="external text" href="https://datatracker.ietf.org/wg/calext/about/">CALEXT</a> (iCalendar)</span></h3>
+<ul><li> <span class="h-card">Philipp Kewisch</span></li></ul>
+<h3><span class="mw-headline" id="HTTP"><a rel="nofollow" class="external text" href="https://datatracker.ietf.org/wg/httpbis/about/">HTTP</a></span></h3>
+<ul><li> <span class="h-card">Valentin Gosu</span></li></ul>
+<h3><span class="mw-headline" id="RTCWEB_.2F_MMUSIC"><a rel="nofollow" class="external text" href="https://datatracker.ietf.org/wg/rtcweb/about/">RTCWEB</a> / <a rel="nofollow" class="external text" href="https://datatracker.ietf.org/wg/mmusic/about/">MMUSIC</a></span></h3>
+<ul><li> <span class="h-card">Byron Campen</span></li>
+<li> <span class="h-card">Randell Jesup</span></li></ul>
+<h3><span class="mw-headline" id="TLS"><a rel="nofollow" class="external text" href="https://datatracker.ietf.org/wg/tls/about/">TLS</a></span></h3>
+<ul><li> <span class="h-card">Dennis Jackson</span></li></ul>
+<h3><span class="mw-headline" id="ISOC_Advisory_Council">ISOC Advisory Council</span></h3>
+<p>Please contact <span class="h-card">Martin Thomson</span> for any inquiries.
+</p>
+<h2><span class="mw-headline" id="Khronos">Khronos</span></h2>
+<p><a rel="nofollow" class="external text" href="http://www.khronos.org/webgl/">WebGL</a>
+</p>
+<ul><li> <span class="h-card"><a href="/User:Jgilbert" title="User:Jgilbert">Kelsey Gilbert</a></span> (:jgilbert)</li></ul>
+<h2><span class="mw-headline" id="microformats">microformats</span></h2>
+<p><a rel="nofollow" class="external free" href="https://microformats.org/">https://microformats.org/</a> and <a rel="nofollow" class="external text" href="https://microformats.org/wiki">microformats wiki</a>
+</p>
+<ul><li> chat: <a rel="nofollow" class="external free" href="https://chat.indieweb.org/microformats">https://chat.indieweb.org/microformats</a></li></ul>
+<p>Community participants:
+</p>
+<ul><li> <span class="h-card"><span class="p-name"><a href="/User:Tantek" title="User:Tantek">Tantek Çelik</a></span> (<span class="p-role">founder</span>, <span class="p-role">admin</span>)</span></li>
+<li> <span class="h-card">Michael Kaply</span></li></ul>
+<p>Specifications:
+</p>
+<ul><li> <a rel="nofollow" class="external text" href="https://microformats.org/wiki/rel-me">rel=me</a> — used in <a href="/Mastodon" title="Mastodon">Mastodon</a> etc. distributed ✅ verification</li>
+<li> ... and many others.</li></ul>
+<h2><span class="mw-headline" id="OWF">OWF</span></h2>
+<p><a rel="nofollow" class="external free" href="http://openwebfoundation.org/">http://openwebfoundation.org/</a>
+</p>
+<ul><li> <span class="h-card"><span class="p-name"><a href="/User:Tantek" title="User:Tantek">Tantek Çelik</a></span> (<span class="role">elected board member</span>)</span></li></ul>
+<p>Specifications: 
+</p>
+<ul><li> <a rel="nofollow" class="external text" href="http://openwebfoundation.org/legal/agreement/">Open Web Foundation Agreement</a> (OWFa) - used and recommended by <a href="/Standards/license" title="Standards/license">Standards/license</a></li></ul>
+<h2><span class="mw-headline" id="W3C">W3C</span></h2>
+<p>The <a rel="nofollow" class="external text" href="http://w3.org/">W3C</a> (World Wide Web Consortium) has Working Groups (WGs), Interest Groups (IGs), and Community Groups (CGs). See below for details and please add any/all of such groups here in alphabetical order by working group name.
+</p>
+<ul><li> <a href="/Standards/Participating_in_a_W3C_Working_Group" title="Standards/Participating in a W3C Working Group">Participating in a W3C Working Group</a></li>
+<li> <a href="/Standards/W3C_Charter_Development_and_Review" title="Standards/W3C Charter Development and Review">W3C Charter Development and Review</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.w3.org/2000/09/dbwg/participants?org=35507&amp;order=group">Member-confidential (unfortunately) list of groups Mozilla participates in</a>
+<ul><li> list of <a rel="nofollow" class="external text" href="https://www.w3.org/2000/09/dbwg/groups">all W3C Working Groups</a></li></ul></li></ul>
+<p>For the sake of focus and brevity, only W3C WGs are listed here inline, along with any complementary IGs or CGs that are paired with them.
+</p>
+<h3><span class="mw-headline" id="Community_and_Interest_Groups">Community and Interest Groups</span></h3>
+<div style="text-indent:2em;font-style:italic">Main article: <a href="/Standards/w3c-interest-community-groups" title="Standards/w3c-interest-community-groups">Standards/w3c-interest-community-groups</a></div>
+<p>W3C CGs or IGs not tied directly to an active WG are documented on a separate page:
+</p>
+<ul><li> <a href="/Color_on_the_Web_Community_Group" title="Color on the Web Community Group" class="mw-redirect">Color on the Web Community Group</a></li>
+<li> <a href="/Federated_Identity_Community_Group" title="Federated Identity Community Group" class="mw-redirect">Federated Identity Community Group</a></li>
+<li> <a href="/Games_Community_Group" title="Games Community Group" class="mw-redirect">Games Community Group</a></li>
+<li> <a href="/Immersive_Web_Community_Group" title="Immersive Web Community Group" class="mw-redirect">Immersive Web Community Group</a></li>
+<li> <a href="/Open_UI_Community_Group" title="Open UI Community Group" class="mw-redirect">Open UI Community Group</a></li>
+<li> <a href="/Privacy_Community_Group" title="Privacy Community Group" class="mw-redirect">Privacy Community Group</a></li>
+<li> <a href="/Social_Web_Incubator_Community_Group" title="Social Web Incubator Community Group" class="mw-redirect">Social Web Incubator Community Group</a></li>
+<li> <a href="/Web_Education_Community_Group" title="Web Education Community Group" class="mw-redirect">Web Education Community Group</a></li>
+<li> <a href="/WebExtensions_Community_Group" title="WebExtensions Community Group" class="mw-redirect">WebExtensions Community Group</a></li></ul>
+<h3><span class="mw-headline" id="Advisory_Board">Advisory Board</span></h3>
+<p><a rel="nofollow" class="external text" href="http://www.w3.org/wiki/AB">W3C Advisory Board</a> (AB) — elected members
+</p>
+<ul><li> <span class="h-card"><a href="/User:Tantek" title="User:Tantek">Tantek Çelik</a></span> (2013-2018, 2020-2022, 2023-)</li></ul>
+<p>The AB drives W3C process improvements in these groups:
+</p>
+<h4><span class="mw-headline" id="Process_Community_Group">Process Community Group</span></h4>
+<p><a rel="nofollow" class="external text" href="https://www.w3.org/community/w3process/">W3C Process Community Group</a> publicly discusses (<a rel="nofollow" class="external text" href="https://www.w3.org/wiki/W3Process">wiki</a>, <a rel="nofollow" class="external text" href="https://github.com/w3c/w3process/">GitHub repo</a>, <a rel="nofollow" class="external text" href="https://lists.w3.org/Archives/Public/public-w3process/">list</a>), proposes, and makes changes to the W3C Process. Delegated authority from the AB (some members of which overlap with the CG), which retains overall (dis)approval of W3C Process iterations before proposing to the AC.
+</p>
+<ul><li> <span class="h-card"><a href="/User:Tantek" title="User:Tantek">Tantek Çelik</a></span></li></ul>
+<h4><span class="mw-headline" id="Vision_Task_Force">Vision Task Force</span></h4>
+<p><a rel="nofollow" class="external free" href="https://www.w3.org/groups/tf/vision/">https://www.w3.org/groups/tf/vision/</a>
+</p>
+<ul><li> <span class="h-card"><a href="/User:Tantek" title="User:Tantek">Tantek Çelik</a></span></li></ul>
+<h3><span class="mw-headline" id="Advisory_Committee">Advisory Committee</span></h3>
+<ul><li> <span class="h-card"><a href="/User:Tantek" title="User:Tantek">Tantek Çelik</a></span> — Advisory Committee representative (AC Rep)</li>
+<li> <span class="h-card"><a href="/User:Mthomson" title="User:Mthomson">Martin Thomson</a></span> — Alternate AC Rep</li></ul>
+<p>See <a rel="nofollow" class="external text" href="https://www.w3.org/Member/ACList">Advisory Committee Representative Directory</a> (W3C Member-only link) for who else is an AC Rep from which other organizations.
+</p>
+<h3><span class="mw-headline" id="ARIA_Working_Group">ARIA Working Group</span></h3>
+<ul><li> <a rel="nofollow" class="external text" href="https://www.w3.org/WAI/ARIA/">ARIA Working Group homepage</a></li></ul>
+<p><a rel="nofollow" class="external text" href="https://www.w3.org/groups/wg/aria/participants?sortaff=1">Participants</a>:
+</p>
+<ul><li> <span class="h-card">James Teh</span></li></ul>
+<h3><span class="mw-headline" id="Audio_Working_Group">Audio Working Group</span></h3>
+<ul><li> <a rel="nofollow" class="external free" href="http://www.w3.org/2011/audio/">http://www.w3.org/2011/audio/</a></li></ul>
+<p><a rel="nofollow" class="external text" href="https://www.w3.org/2000/09/dbwg/details?group=46884&amp;public=1&amp;order=org#_MozillaFoundation">Participants</a>:
+</p>
+<ul><li> <span class="h-card">Matthew Gregan</span></li>
+<li> <span class="h-card">Paul Adenot</span> (Spec Editor)</li></ul>
+<p>The Audio Working Group works in conjuction with the Audio Community Group:
+</p>
+<h4><span class="mw-headline" id="Audio_Community_Group">Audio Community Group</span></h4>
+<ul><li> <a rel="nofollow" class="external free" href="https://www.w3.org/community/audio-comgp/">https://www.w3.org/community/audio-comgp/</a> </li>
+<li> <span class="h-card">Paul Adenot</span> (Chair)</li></ul>
+<h3><span class="mw-headline" id="Media_Working_Group">Media Working Group</span></h3>
+<ul><li> <a rel="nofollow" class="external free" href="https://www.w3.org/groups/wg/media">https://www.w3.org/groups/wg/media</a></li>
+<li> <span class="h-card">Paul Adenot</span></li>
+<li> <span class="h-card">Alastor Wu</span></li>
+<li> <span class="h-card">Chun-Min Chang</span></li>
+<li> <span class="h-card">Karl Tomlinson</span></li></ul>
+<h4><span class="mw-headline" id="Audiovisual_Media_Formats_for_Browsers_Community_Group">Audiovisual Media Formats for Browsers Community Group</span></h4>
+<ul><li> <a rel="nofollow" class="external free" href="https://www.w3.org/community/av4browsers/">https://www.w3.org/community/av4browsers/</a></li>
+<li> <span class="h-card">Paul Adenot</span></li></ul>
+<h3><span class="mw-headline" id="Browser_Testing_and_Tools_Working_Group">Browser Testing and Tools Working Group</span></h3>
+<p><a rel="nofollow" class="external text" href="https://www.w3.org/testing/browser/">Browser Testing and Tools Working Group homepage</a>, <a rel="nofollow" class="external text" href="https://www.w3.org/2011/08/browser-testing-charter.html">Charter</a>, <a rel="nofollow" class="external text" href="mailto:public-browser-tools-testing@w3.org">Mailing list</a>, <a rel="nofollow" class="external text" href="https://lists.w3.org/Archives/Public/public-browser-tools-testing/">Mailing list archive</a>
+</p>
+<ul><li> <span class="h-card"><a href="/User:Jgraham" title="User:Jgraham">James Graham</a></span></li></ul>
+<p>Specifications:
+</p>
+<ul><li> <a rel="nofollow" class="external text" href="http://w3c.github.io/webdriver/webdriver-spec.html">WebDriver</a> - APIs for remote controlling web browsers</li>
+<li> (link?) APIs for use in debugging of web applications</li></ul>
+<h3><span class="mw-headline" id="CSS_Working_Group">CSS Working Group</span></h3>
+<p><a rel="nofollow" class="external text" href="https://www.w3.org/Style/CSS/members">Cascading Style Sheets Working Group (CSSWG)</a>, <a rel="nofollow" class="external text" href="https://www.w3.org/Style/CSS/members">members</a>, <a rel="nofollow" class="external text" href="irc://irc.w3.org:6665/css">irc</a>, <a rel="nofollow" class="external text" href="http://lists.w3.org/Archives/Public/www-style/">email list</a>
+</p>
+<ul><li> Looking for where we prioritize our CSS development? See: <b><a href="/CSS#Priorities" title="CSS">CSS:Priorities</a></b></li></ul>
+<p>Working group members participating on behalf of Mozilla (also on w3c-css-wg)
+</p>
+<ul><li> <span class="h-card"><a href="/User:Emilio" title="User:Emilio">Emilio Cobos Álvarez</a></span></li>
+<li> <span class="h-card"><a href="/User:Tantek" title="User:Tantek">Tantek Çelik</a></span></li>
+<li> <span class="h-card"><a href="/User:Dholbert" title="User:Dholbert">Daniel Holbert</a></span></li>
+<li> <span class="h-card"><a href="/User:Masayuki" title="User:Masayuki">Masayuki Nakano</a></span></li>
+<li> <span class="h-card"><a href="/User:Mstange" title="User:Mstange">Markus Stange</a></span></li>
+<li> <span class="h-card"><a href="/User:Zcorpan" title="User:Zcorpan">Simon Pieters</a></span></li>
+<li> <span class="h-card"><a href="/index.php?title=User:Jfkthame&amp;action=edit&amp;redlink=1" class="new" title="User:Jfkthame (page does not exist)">Jonathan Kew</a></span></li></ul>
+<p>Additional www-style list participants related to Mozilla (anyone is welcome to join)
+</p>
+<ul><li> <span class="h-card"><a href="/index.php?title=User:Hsivonen&amp;action=edit&amp;redlink=1" class="new" title="User:Hsivonen (page does not exist)">Henri Sivonen</a></span></li>
+<li> ...</li></ul>
+<p>Specifications: 
+</p>
+<ul><li> <a href="/index.php?title=CSS21&amp;action=edit&amp;redlink=1" class="new" title="CSS21 (page does not exist)">CSS21</a>, <a href="/CSS3" title="CSS3">CSS3</a></li></ul>
+<p>For more details see: <a href="/CSS" title="CSS">CSS</a>
+</p>
+<h3><span class="mw-headline" id="GPU_for_the_Web_Working_Group_.28WebGPU.29">GPU for the Web Working Group (WebGPU)</span></h3>
+<p><a rel="nofollow" class="external free" href="https://github.com/gpuweb/gpuweb">https://github.com/gpuweb/gpuweb</a>
+</p>
+<ul><li> <span class="h-card"><a href="/User:Jgilbert" title="User:Jgilbert">Kelsey Gilbert</a></span> (:jgilbert, jdashg) (WGSL Chair)</li>
+<li> <span class="h-card"><a href="/User:Jimb" title="User:Jimb">Jim Blandy</a></span> (:jimb)</li></ul>
+<p>Everyone listed above is also in the CG below:
+</p>
+<h4><span class="mw-headline" id="GPU_for_the_Web_Community_Group">GPU for the Web Community Group</span></h4>
+<p><a rel="nofollow" class="external free" href="https://www.w3.org/community/gpu/">https://www.w3.org/community/gpu/</a>
+The following are only in the CG:
+</p>
+<ul><li> <span class="h-card"><a href="/User:Nical" title="User:Nical">Nicolas Silva</a></span> (:nical)</li>
+<li> <span class="h-card">Erich Gubler</span> (:egubler)</li>
+<li> <span class="h-card">Teodor Tanasoaia</span> (:teoxoy)</li></ul>
+<h3><span class="mw-headline" id="Internationalization_Working_Group">Internationalization Working Group</span></h3>
+<p><a rel="nofollow" class="external text" href="https://w3c.github.io/i18n-activity/i18n-wg/">Internationalization Working Group</a> (<a rel="nofollow" class="external text" href="https://www.w3.org/2000/09/dbwg/details?group=32113">members</a>),  part of <a rel="nofollow" class="external text" href="http://w3.org/International/">Internationalization Activity (i18n)</a>
+</p>
+<ul><li> Eemeli Aro</li>
+<li> Erik Nordin</li></ul>
+<h3><span class="mw-headline" id="Pointer_Events_Working_Group">Pointer Events Working Group</span></h3>
+<p><a rel="nofollow" class="external text" href="http://www.w3.org/2012/pointerevents/">Pointer Events Working Group home page</a> (<a rel="nofollow" class="external text" href="https://www.w3.org/2000/09/dbwg/details?group=59096&amp;public=1">members</a>).
+Participants:
+</p>
+<ul><li> <span class="h-card"><a href="/User:Pettay" title="User:Pettay">Olli Pettay</a></span> (:smaug)</li></ul>
+<h3><span class="mw-headline" id="Service_Workers_Working_Group">Service Workers Working Group</span></h3>
+<p><a rel="nofollow" class="external text" href="https://www.w3.org/sw/">Service Workers Working Group home page</a> (<a rel="nofollow" class="external text" href="https://www.w3.org/groups/wg/service-workers/participants">members</a>).
+Participants:
+</p>
+<ul><li> <span class="h-card"><a href="/User:Andrew_Sutherland" title="User:Andrew Sutherland">Andrew Sutherland</a></span></li></ul>
+<h3><span class="mw-headline" id="SVG_Working_Group">SVG Working Group</span></h3>
+<p><a rel="nofollow" class="external text" href="https://w3.org/SVG/">SVG (Scalable Vector Graphics) Working Group</a>, <a rel="nofollow" class="external text" href="https://www.w3.org/Graphics/SVG/2014/new-charter">charter expired and WG in-limbo</a>, <a rel="nofollow" class="external text" href="https://www.w3.org/2000/09/dbwg/details?group=19480&amp;public=1">members</a>
+</p>
+<ul><li> <span class="h-card">Jonathan Watt</span></li></ul>
+<p>Specifications: SVG 1.1, SVG 2.0
+</p>
+<h3><span class="mw-headline" id="Web_Applications_Security_Working_Group"><a rel="nofollow" class="external text" href="https://www.w3.org/groups/wg/webappsec">Web Applications Security Working Group</a></span></h3>
+<ul><li> Frederik Braun</li>
+<li> Christoph Kerschbaumer</li>
+<li> Daniel Veditz</li>
+<li> Paul Zühlcke</li></ul>
+<p>Specifications: CSP, Mixed-Content Blocking, SRI, Permission Policy, HTML Sanitizer
+</p>
+<h3><span class="mw-headline" id="Web_Applications_Working_Group">Web Applications Working Group</span></h3>
+<p><a rel="nofollow" class="external text" href="https://www.w3.org/2019/webapps/">WebApps WG home page</a> — (<a rel="nofollow" class="external text" href="https://www.w3.org/groups/wg/webapps/participants?sortaff=1">members</a>)
+</p>
+<ul><li> <span class="h-card"><a href="/User:Tantek" title="User:Tantek">Tantek Çelik</a></span> </li>
+<li> <span class="h-card"><a href="/User:Andrew_Sutherland" title="User:Andrew Sutherland">Andrew Sutherland</a></span></li>
+<li> <span class="h-card">Martin Thomson</span></li>
+<li> <span class="h-card"><a href="/User:Emilio" title="User:Emilio">Emilio Cobos Álvarez</a></span></li>
+<li> <span class="h-card"><a href="/User:Pettay" title="User:Pettay">Olli Pettay</a></span> (:smaug)</li>
+<li> <span class="h-card">Kagami Rosylight</span></li>
+<li> <span class="h-card"><a href="/User:Zcorpan" title="User:Zcorpan">Simon Pieters</a></span></li></ul>
+<p>Related incubator group: <a rel="nofollow" class="external text" href="https://www.w3.org/community/wicg/">Web Platform Incubator Community Group</a>
+</p>
+<h3><span class="mw-headline" id="WebAssembly_Working_Group"><a rel="nofollow" class="external text" href="https://www.w3.org/wasm/">WebAssembly Working Group</a></span></h3>
+<p>WASM:
+</p>
+<ul><li> <a rel="nofollow" class="external text" href="https://www.w3.org/2017/08/wasm-charter">charter 2017-08-03 … 2018-07-31</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.w3.org/2000/09/dbwg/details?group=101196&amp;order=org&amp;public=1">members</a></li>
+<li> Ryan Hunt</li></ul>
+<h4><span class="mw-headline" id="WebAssembly_Community_Group">WebAssembly Community Group</span></h4>
+<p><a rel="nofollow" class="external free" href="https://www.w3.org/community/webassembly/">https://www.w3.org/community/webassembly/</a> (<a rel="nofollow" class="external text" href="https://www.w3.org/community/webassembly/participants">members</a>)
+</p>
+<ul><li> Ryan Hunt</li></ul>
+<h3><span class="mw-headline" id="Web_Authentication_Working_Group">Web Authentication Working Group</span></h3>
+<p><a rel="nofollow" class="external text" href="https://www.w3.org/blog/webauthn/">WebAuthn homepage</a>
+</p>
+<ul><li> Dan Veditz</li></ul>
+<h3><span class="mw-headline" id="Web_Editing_Working_Group">Web Editing Working Group</span></h3>
+<p><a rel="nofollow" class="external text" href="https://www.w3.org/groups/wg/webediting/participants">Web Editing WG participants</a>
+</p>
+<ul><li> <span class="h-card"><a href="/User:Pettay" title="User:Pettay">Olli Pettay</a></span> (:smaug)</li>
+<li> <span class="h-card">Kagami Rosylight</span></li>
+<li> <span class="h-card">Edgar Chen</span></li>
+<li> <span class="h-card"><a href="/User:Zcorpan" title="User:Zcorpan">Simon Pieters</a></span></li></ul>
+<h3><span class="mw-headline" id="Web_Fonts_Working_Group">Web Fonts Working Group</span></h3>
+<p><a rel="nofollow" class="external text" href="https://www.w3.org/Fonts/WG/">Web Fonts Working Group homepage</a> (<a rel="nofollow" class="external text" href="https://www.w3.org/2000/09/dbwg/details?group=44556">members</a>)
+</p>
+<ul><li> <span class="h-card">Jonathan Kew</span> (former editor)</li></ul>
+<h3><span class="mw-headline" id="Web_Payments_Working_Group">Web Payments Working Group</span></h3>
+<p><a rel="nofollow" class="external text" href="https://www.w3.org/Payments/WG/">Web Payments Working Group homepage</a> (<a rel="nofollow" class="external text" href="https://www.w3.org/2000/09/dbwg/details?group=83744">members</a>)
+</p>
+<ul><li> No one from Mozilla currently.</li></ul>
+<h3><span class="mw-headline" id="Web_Performance_Working_Group">Web Performance Working Group</span></h3>
+<p><a rel="nofollow" class="external free" href="https://www.w3.org/webperf/">https://www.w3.org/webperf/</a>
+</p>
+<ul><li> <span class="h-card">Benjamin De Kosnik</span></li>
+<li> <span class="h-card">Sean Feng</span></li></ul>
+<p>Specifications: Navigation Timing, Paint Timing, Event Timing, Element Timing
+</p>
+<ul><li> <span class="h-card"><a href="/User:Pettay" title="User:Pettay">Olli Pettay</a></span> (:smaug)</li></ul>
+<p>Specifications: DOM-adjacent
+Specifications: Timing control for script-based animations (requestAnimationFrame)
+</p>
+<h3><span class="mw-headline" id="WebRTC_Working_Group">WebRTC Working Group</span></h3>
+<p><a href="/WebRTC" title="WebRTC" class="mw-redirect">WebRTC</a> (Web Real Time Communications) Working Group
+</p>
+<ul><li> <span class="h-card">Maire Reavy</span></li>
+<li> <span class="h-card">Randell Jesup (:jesup)</span></li>
+<li> <span class="h-card">Paul Adenot</span></li>
+<li> <span class="h-card">Jan-Ivar Bruaroey</span> (co-chair)</li>
+<li> <span class="h-card">Karl Tomlinson</span></li>
+<li> <span class="h-card">Martin Thomson</span></li></ul>
+<p><a rel="nofollow" class="external text" href="https://www.w3.org/groups/wg/webrtc">W3C home page</a>
+</p><p>Specifications: <a rel="nofollow" class="external text" href="https://www.w3.org/TR/mediacapture-streams/">Media Capture and Streams</a>
+</p><p>Specifications: <a rel="nofollow" class="external text" href="https://www.w3.org/TR/webrtc/">WebRTC 1.0: Real-Time Communication Between Browsers</a>
+</p><p>Long tail of <a rel="nofollow" class="external text" href="https://www.w3.org/groups/wg/webrtc/publications">other specs</a>.
+</p>
+<h3><span class="mw-headline" id="WebTransport_Working_Group">WebTransport Working Group</span></h3>
+<p><a rel="nofollow" class="external text" href="https://www.w3.org/wiki/WebTransport">WebTransport</a> Working Group
+</p>
+<ul><li> <span class="h-card">Jan-Ivar Bruaroey</span> (co-chair)</li>
+<li> <span class="h-card">Martin Thomson</span></li>
+<li> <span class="h-card">Randell Jesup (:jesup)</span></li></ul>
+<p>Specifications: <a rel="nofollow" class="external text" href="https://www.w3.org/TR/webtransport/">WebTransport</a>
+</p><p>Specifications: Media Capture Stream with Worker Extensions <a rel="nofollow" class="external text" href="https://w3c.github.io/mediacapture-worker/">mediacapture-worker APIs</a>
+</p>
+<h3><span class="mw-headline" id="Portable_Network_Graphics_Working_Group">Portable Network Graphics Working Group</span></h3>
+<p>(in the process of being chartered)
+</p>
+<ul><li> <a href="/APNG_Specification" title="APNG Specification">APNG_Specification</a> (on Mozilla Wiki)
+<ul><li> fork: <a rel="nofollow" class="external text" href="https://gist.github.com/SoniEx2/c679e771d506210378a5">MPNGPNG - Multi-PNG PNG spec</a></li></ul></li>
+<li> No current Mozilla participants.</li></ul>
+<p>Please contact <span class="h-card"><a href="/User:Tantek" title="User:Tantek">Tantek Çelik</a></span> if you have specific needs here and I’ll route your request as needed. -t
+</p>
+<h3><span class="mw-headline" id="Technical_Architecture_Group">Technical Architecture Group</span></h3>
+<ul><li> No current Mozilla participants.</li></ul>
+<p>Please contact <span class="h-card"><a href="/User:Tantek" title="User:Tantek">Tantek Çelik</a></span> if you have specific needs here and I’ll route your request as needed. -t
+</p>
+<h2><span class="mw-headline" id="WHATWG">WHATWG</span></h2>
+<div style="text-indent:2em;font-style:italic">Main article: <a href="/WHATWG" title="WHATWG">WHATWG</a></div>
+<ul><li> <span class="h-card"><a href="/User:Tantek" title="User:Tantek">Tantek Çelik</a></span></li>
+<li> <span class="h-card"><a href="/index.php?title=User:Hsivonen&amp;action=edit&amp;redlink=1" class="new" title="User:Hsivonen (page does not exist)">Henri Sivonen</a></span></li>
+<li> <span class="h-card"><a href="/User:Pettay" title="User:Pettay">Olli Pettay</a></span> (:smaug)</li>
+<li> <span class="h-card"><a href="/User:Fbraun" title="User:Fbraun">Frederik Braun</a></span> (aka mozfreddyb, freddy, freddyb)</li>
+<li> <span class="h-card"><a href="/User:Jgilbert" title="User:Jgilbert">Kelsey Gilbert</a></span> (jgilbert/jdashg on WhatWG/Canvas)</li>
+<li> <span class="h-card"><a href="/User:Zcorpan" title="User:Zcorpan">Simon Pieters</a></span></li></ul>
+<h1><span class="mw-headline" id="other">other</span></h1>
+<h2><span class="mw-headline" id="Alliance_for_Open_Media_.28AOM.29">Alliance for Open Media (AOM)</span></h2>
+<p>The <a rel="nofollow" class="external text" href="http://aomedia.org/">Alliance for Open Media</a> develops next-generation media formats, codecs, and technologies. See also <a href="#NETVC">#NETVC</a>.
+</p>
+<ul><li> Daniel Nazer (Mozilla's representative on AOM's Board)</li></ul>
+<h2><span class="mw-headline" id="CA.2FBrowser_Forum">CA/Browser Forum</span></h2>
+<p>The <a rel="nofollow" class="external text" href="http://cabforum.org/">CA/Browser Forum</a> produces standards in the area of best practice and validation for certificate authorities.
+</p>
+<ul><li> <span class="h-card">Kathleen Wilson</span></li>
+<li> <span class="h-card">Ben Wilson</span></li></ul>
+<h2><span class="mw-headline" id="CalConnect">CalConnect</span></h2>
+<p>Mozilla is a member of <a rel="nofollow" class="external text" href="http://www.calconnect.org/">CalConnect</a>, The Calendaring and Scheduling Consortium, which is not actually affiliated w/ IETF or W3C but in practice drives development and interoperability testing of IETF specs:
+</p>
+<ul><li> <a class="external mw-magiclink-rfc" rel="nofollow" href="//tools.ietf.org/html/rfc5545">RFC 5545</a> iCalendar (obsoletes <a class="external mw-magiclink-rfc" rel="nofollow" href="//tools.ietf.org/html/rfc2445">RFC 2445</a>).</li>
+<li> <a class="external mw-magiclink-rfc" rel="nofollow" href="//tools.ietf.org/html/rfc4791">RFC 4791</a> CalDAV Access protocol</li></ul>
+<p>See their <a rel="nofollow" class="external text" href="http://www.calconnect.org/CD1104_Calendaring_Standards.shtml">Index to Calendaring and Scheduling Standards</a> for other specific standards that CalConnect is involved with.
+</p>
+<h2><span class="mw-headline" id="eIDAS_Regulation">eIDAS Regulation</span></h2>
+<p>The <a rel="nofollow" class="external text" href="https://ec.europa.eu/digital-single-market/en/discover-eidas">eIDAS Regulation</a> places requirements on electronic identification and trust services. <a rel="nofollow" class="external text" href="https://blog.mozilla.org/netpolicy/2020/10/08/the-eus-current-approach-to-qwacs-qualified-website-authentication-certificates-will-undermine-security-on-the-open-web/">Our goal</a> is to keep the TLS requirements/framework separate and independent from eIDAS and Qualified Website Authentication Certificates (<a rel="nofollow" class="external text" href="https://ec.europa.eu/futurium/en/blog/commission-runs-pilot-project-qualified-web-authentication-certificates-qwacs">QWACs</a>).
+</p>
+<ul><li> <span class="h-card">Ben Wilson</span></li>
+<li> <span class="h-card">Kathleen Wilson</span></li>
+<li> <span class="h-card">Dennis Jackson</span></li>
+<li> <span class="h-card">Udbhav Tiwari</span></li></ul>
+<h2><span class="mw-headline" id="OASIS">OASIS</span></h2>
+<ul><li> No current Mozilla point of contact</li></ul>
+<h2><span class="mw-headline" id="XMPP">XMPP</span></h2>
+<p>Mozilla is not formally associated with the XSF but has representation indirectly. <a rel="nofollow" class="external free" href="http://xmpp.org/">http://xmpp.org/</a>
+</p>
+<ul><li> No direct involvement by any current Mozillian</li></ul>
+<h2><span class="mw-headline" id="C.2B.2B">C++</span></h2>
+<p>C++ is standardized by <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/">ISO/IEC JTC1/SC22/WG21</a> (informally, the "C++ Standards Committee"). All proposals are publically available <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/">here</a>.
+</p><p><a rel="nofollow" class="external text" href="https://mozillians.org/en-US/u/bballo/">Botond Ballo</a> is a member of Canada's delegation to the Committee, and has been attending meetings regularly since September 2013. If you have any feedback about any existing proposal, or would like to explore the idea of putting forth a new proposal, please post to dev-platform and cc Botond.
+</p>
+<h2><span class="mw-headline" id="FIDO_Alliance">FIDO Alliance</span></h2>
+<p>Mozilla is a member of the FIDO Alliance, which produces hardware specifications for Web Authentication.
+</p>
+<ul><li> Dan Veditz</li></ul>
+<h1><span class="mw-headline" id="Emeritus">Emeritus</span></h1>
+<div style="text-indent:2em;font-style:italic">Main article: <a href="/Standards/emeritus" title="Standards/emeritus">Standards/emeritus</a></div>
+<p>See: <a href="/Standards/emeritus" title="Standards/emeritus">Standards/emeritus</a> for lists of former Mozillians who worked on standards, and former standards groups or organizations.
+</p>
+<h1><span class="mw-headline" id="subpages_of_Standards">subpages of Standards</span></h1>
+<div class="mw-prefixindex-body"><ul class="mw-prefixindex-list"><li><div class="allpagesredirect"><a href="/Standards/" title="Standards/" class="mw-redirect">Standards/</a></div></li>
+<li><a href="/Standards/GitHub_IPR_Organization" title="Standards/GitHub IPR Organization">Standards/GitHub IPR Organization</a></li>
+<li><div class="allpagesredirect"><a href="/Standards/Github_IPR_Organization" title="Standards/Github IPR Organization" class="mw-redirect">Standards/Github IPR Organization</a></div></li>
+<li><div class="allpagesredirect"><a href="/Standards/License" title="Standards/License" class="mw-redirect">Standards/License</a></div></li>
+<li><a href="/Standards/Outreach" title="Standards/Outreach">Standards/Outreach</a></li>
+<li><a href="/Standards/Participating_in_TC39" title="Standards/Participating in TC39">Standards/Participating in TC39</a></li>
+<li><a href="/Standards/Participating_in_a_W3C_Working_Group" title="Standards/Participating in a W3C Working Group">Standards/Participating in a W3C Working Group</a></li>
+<li><div class="allpagesredirect"><a href="/Standards/SEO" title="Standards/SEO" class="mw-redirect">Standards/SEO</a></div></li>
+<li><a href="/Standards/TPAC2013" title="Standards/TPAC2013">Standards/TPAC2013</a></li>
+<li><a href="/Standards/W3C_Charter_Development_and_Review" title="Standards/W3C Charter Development and Review">Standards/W3C Charter Development and Review</a></li>
+<li><a href="/Standards/emeritus" title="Standards/emeritus">Standards/emeritus</a></li>
+<li><a href="/Standards/license" title="Standards/license">Standards/license</a></li>
+<li><a href="/Standards/priorities" title="Standards/priorities">Standards/priorities</a></li>
+<li><a href="/Standards/technologies" title="Standards/technologies">Standards/technologies</a></li>
+<li><a href="/Standards/w3c-interest-community-groups" title="Standards/w3c-interest-community-groups">Standards/w3c-interest-community-groups</a></li>
+</ul></div>
+<h1><span class="mw-headline" id="See_Also">See Also</span></h1>
+<ul><li> <a href="/CSS" title="CSS">CSS</a></li>
+<li> <a href="/DOM" title="DOM">DOM</a></li>
+<li> <a href="/Events" title="Events">Events</a> - which include web standards-related events.</li>
+<li> <a href="/ExposureGuidelines" title="ExposureGuidelines">ExposureGuidelines</a></li>
+<li> <a href="/Standards/license" title="Standards/license">Standards/license</a> - what license Mozilla prefers for standards specifications</li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20230906064212
+Cache expiry: 0
+Dynamic content: true
+[SMW] In‐text annotation parser time: 0.001 seconds
+CPU time usage: 0.048 seconds
+Real time usage: 0.054 seconds
+Preprocessor visited node count: 352/1000000
+Preprocessor generated node count: 514/1000000
+Post‐expand include size: 320/2097152 bytes
+Template argument size: 63/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    9.992      1 - -total
+ 45.98%    4.594      1 - Special:PrefixIndex/Standards/
+ 42.72%    4.269      3 - Template:Main
+-->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://wiki.mozilla.org/index.php?title=Standards&amp;oldid=1247687">https://wiki.mozilla.org/index.php?title=Standards&amp;oldid=1247687</a>"					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-login"><a href="/index.php?title=Special:UserLogin&amp;returnto=Standards" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li><li id="pt-createaccount"><a href="/Special:RequestAccount" title="You are encouraged to create an account and log in; however, it is not mandatory">Request account</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="/Standards"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk"><span><a href="/Talk:Standards"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="/Standards" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="/index.php?title=Standards&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="/index.php?title=Standards&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search" title="Search MozillaWiki [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="/Main_Page"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-Product-releases"><a href="/Releases">Product releases</a></li><li id="n-newpages"><a href="/Special:NewPages">New pages</a></li><li id="n-recentchanges"><a href="/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-Recent-uploads"><a href="/Special:NewFiles">Recent uploads</a></li><li id="n-randompage"><a href="/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-Help"><a href="/MozillaWiki:Help">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-How_to_Contribute' aria-labelledby='p-How_to_Contribute-label'>
+			<h3 id='p-How_to_Contribute-label'>How to Contribute</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-All-hands-meeting"><a href="/WeeklyUpdates">All-hands meeting</a></li><li id="n-Other-meetings"><a href="/Community_Calendar">Other meetings</a></li><li id="n-Contribute-to-Mozilla"><a href="/Contribute">Contribute to Mozilla</a></li><li id="n-Mozilla-Reps"><a href="/ReMo">Mozilla Reps</a></li><li id="n-Community-Portal"><a href="//community.mozilla.org" rel="nofollow">Community Portal</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-MozillaWiki' aria-labelledby='p-MozillaWiki-label'>
+			<h3 id='p-MozillaWiki-label'>MozillaWiki</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-About"><a href="/MozillaWiki:About">About</a></li><li id="n-Team"><a href="/MozillaWiki:Team">Team</a></li><li id="n-Policies"><a href="/MozillaWiki:Policies">Policies</a></li><li id="n-Report-a-wiki-bug"><a href="//bugzilla.mozilla.org/enter_bug.cgi?product=Websites&amp;component=wiki.mozilla.org" rel="nofollow">Report a wiki bug</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-Around_Mozilla' aria-labelledby='p-Around_Mozilla-label'>
+			<h3 id='p-Around_Mozilla-label'>Around Mozilla</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-Mozilla-Support"><a href="//support.mozilla.org/" rel="nofollow">Mozilla Support</a></li><li id="n-Mozilla-Developer-Network"><a href="//developer.mozilla.org/" rel="nofollow">Mozilla Developer Network</a></li><li id="n-Planet-Mozilla"><a href="//planet.mozilla.org/" rel="nofollow">Planet Mozilla</a></li><li id="n-Mozilla-Blog"><a href="//blog.mozilla.org/" rel="nofollow">Mozilla Blog</a></li><li id="n-Research"><a href="//www.mozilla.org/research/" rel="nofollow">Research</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="/Special:WhatLinksHere/Standards" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="/Special:RecentChangesLinked/Standards" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="/index.php?title=Standards&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="/index.php?title=Standards&amp;oldid=1247687" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="/index.php?title=Standards&amp;action=info" title="More information about this page">Page information</a></li><li id="t-importfrometherpadlink"><a href="/Special:ImportFromEtherpad" rel="importfrometherpad-link">Import an Etherpad</a></li><li id="t-smwbrowselink"><a href="/Special:Browse/:Standards" rel="search">Browse properties</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 18 August 2023, at 17:22.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="/MozillaWiki:Privacy_policy" title="MozillaWiki:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="/MozillaWiki:About" title="MozillaWiki:About">About MozillaWiki</a></li>
+											<li id="footer-places-mobileview"><a href="https://m.wiki.mozilla.org/index.php?title=Standards&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="//www.mediawiki.org/"><img src="/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a><a href="https://www.semantic-mediawiki.org/wiki/Semantic_MediaWiki"><img src="/extensions/SemanticMediaWiki/includes/../res/images/smw_button.png" alt="Powered by Semantic MediaWiki" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.ImportFromEtherpad.main.init"]);});</script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35433268-22', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+
+</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":127});});</script>
+	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"4c203d12f7","applicationID":"149389314","transactionName":"MVRbZkFTD0MCBkJYXAgeeFFHWw5eTARVRVoJXxZEWlcW","queueTime":0,"applicationTime":134,"atts":"HRNYEAlJHE0=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

@@ -1,0 +1,1670 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) & !(IE 8)]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>The Four Freedoms | Matt Mullenweg</title>
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="pingback" href="https://ma.tt/blog/xmlrpc.php">
+	<!--[if lt IE 9]>
+	<script src="https://ma.tt/blog-content/themes/twentythirteen/js/html5.js?ver=3.7.0"></script>
+	<![endif]-->
+	<meta name='robots' content='max-image-preview:large' />
+<link rel='dns-prefetch' href='//s.gravatar.com' />
+<link rel='dns-prefetch' href='//stats.wp.com' />
+<link rel='dns-prefetch' href='//cdn.parsely.com' />
+<link rel='dns-prefetch' href='//secure.gravatar.com' />
+<link rel='dns-prefetch' href='//i0.wp.com' />
+<link rel='dns-prefetch' href='//v0.wordpress.com' />
+<link rel='dns-prefetch' href='//jetpack.wordpress.com' />
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//public-api.wordpress.com' />
+<link rel='dns-prefetch' href='//0.gravatar.com' />
+<link rel='dns-prefetch' href='//1.gravatar.com' />
+<link rel='dns-prefetch' href='//2.gravatar.com' />
+<link rel="alternate" type="application/rss+xml" title="Matt Mullenweg &raquo; Feed" href="https://ma.tt/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Matt Mullenweg &raquo; Comments Feed" href="https://ma.tt/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Matt Mullenweg &raquo; The Four&nbsp;Freedoms Comments Feed" href="https://ma.tt/2014/01/four-freedoms/feed/" />
+<script>
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/ma.tt\/blog\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.4-alpha-56520"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!n(e,"\ud83e\udef1\ud83c\udffb\u200d\ud83e\udef2\ud83c\udfff","\ud83e\udef1\ud83c\udffb\u200b\ud83e\udef2\ud83c\udfff")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+</script>
+<style>
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css' href='https://ma.tt/blog-content/plugins/gutenberg/build/block-library/style.css?ver=16.5.1' media='all' />
+<style id='wp-block-library-inline-css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<link rel='stylesheet' id='wp-block-library-theme-css' href='https://ma.tt/blog-content/plugins/gutenberg/build/block-library/theme.css?ver=16.5.1' media='all' />
+<style id='wp-parsely-recommendations-style-inline-css'>
+.parsely-recommendations-list-title{font-size:1.2em}.parsely-recommendations-list{list-style:none;padding:unset}.parsely-recommendations-cardbody{overflow:hidden;padding:.8em;text-overflow:ellipsis;white-space:nowrap}.parsely-recommendations-cardmedia{padding:.8em .8em 0}
+
+</style>
+<link rel='stylesheet' id='jetpack-videopress-video-block-view-css' href='https://ma.tt/blog-content/plugins/jetpack-dev/jetpack_vendor/automattic/jetpack-videopress/build/block-editor/blocks/video/view.css?minify=false&#038;ver=34ae973733627b74a14e' media='all' />
+<link rel='stylesheet' id='mediaelement-css' href='https://ma.tt/blog/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17' media='all' />
+<link rel='stylesheet' id='wp-mediaelement-css' href='https://ma.tt/blog/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=6.4-alpha-56520' media='all' />
+<style id='classic-theme-styles-inline-css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #fff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--dark-gray: #141412;--wp--preset--color--red: #bc360a;--wp--preset--color--medium-orange: #db572f;--wp--preset--color--light-orange: #ea9629;--wp--preset--color--yellow: #fbca3c;--wp--preset--color--dark-brown: #220e10;--wp--preset--color--medium-brown: #722d19;--wp--preset--color--light-brown: #eadaa6;--wp--preset--color--beige: #e8e5ce;--wp--preset--color--off-white: #f7f5e7;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--gradient--autumn-brown: linear-gradient(135deg, rgba(226,45,15,1) 0%, rgba(158,25,13,1) 100%);--wp--preset--gradient--sunset-yellow: linear-gradient(135deg, rgba(233,139,41,1) 0%, rgba(238,179,95,1) 100%);--wp--preset--gradient--light-sky: linear-gradient(135deg,rgba(228,228,228,1.0) 0%,rgba(208,225,252,1.0) 100%);--wp--preset--gradient--dark-sky: linear-gradient(135deg,rgba(0,0,0,1.0) 0%,rgba(56,61,69,1.0) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+</style>
+<link rel='stylesheet' id='twentythirteen-fonts-css' href='https://ma.tt/blog-content/themes/twentythirteen/fonts/source-sans-pro-plus-bitter.css?ver=20230328' media='all' />
+<link rel='stylesheet' id='genericons-css' href='https://ma.tt/blog-content/plugins/jetpack-dev/_inc/genericons/genericons/genericons.css?ver=3.1' media='all' />
+<link rel='stylesheet' id='twentythirteen-style-css' href='https://ma.tt/blog-content/themes/ma.tt/style.css?ver=1688053572' media='all' />
+<link rel='stylesheet' id='twentythirteen-block-style-css' href='https://ma.tt/blog-content/themes/twentythirteen/css/blocks.css?ver=20230621' media='all' />
+<link rel='stylesheet' id='social-logos-css' href='https://ma.tt/blog-content/plugins/jetpack-dev/_inc/social-logos/social-logos.min.css?ver=12.6-a.3' media='all' />
+<link rel='stylesheet' id='jetpack_css-css' href='https://ma.tt/blog-content/plugins/jetpack-dev/css/jetpack.css?ver=1693845897' media='all' />
+<script src='https://ma.tt/blog/wp-includes/js/jquery/jquery.min.js?ver=3.7.1' id='jquery-core-js'></script>
+<script src='https://ma.tt/blog/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1' id='jquery-migrate-js'></script>
+<script id='jetpack_related-posts-js-extra'>
+var related_posts_js_options = {"post_heading":"h4"};
+</script>
+<script src='https://ma.tt/blog-content/plugins/jetpack-dev/_inc/build/related-posts/related-posts.min.js?ver=20211209' id='jetpack_related-posts-js'></script>
+<script src='https://ma.tt/blog/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?ver=3.1.2' id='wp-polyfill-inert-js'></script>
+<script src='https://ma.tt/blog/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.11' id='regenerator-runtime-js'></script>
+<script src='https://ma.tt/blog-content/plugins/gutenberg/build/vendors/inert-polyfill.min.js?ver=6.4-alpha-56520' id='wp-inert-polyfill-js'></script>
+<script src='https://ma.tt/blog/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script src='https://ma.tt/blog-content/plugins/gutenberg/build/hooks/index.min.js?ver=3aee234ea7807d8d70bc' id='wp-hooks-js'></script>
+<script src='https://ma.tt/blog-content/plugins/gutenberg/build/i18n/index.min.js?ver=5baa98e4345eccc97e24' id='wp-i18n-js'></script>
+<script id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script src='https://ma.tt/blog-content/plugins/jetpack-dev/jetpack_vendor/automattic/jetpack-assets/build/i18n-loader.js?minify=true&#038;ver=ee939953aa2115e2ca59' id='wp-jp-i18n-loader-js'></script>
+<script id="wp-jp-i18n-loader-js-after">
+wp.jpI18nLoader.state = {"baseUrl":"https://ma.tt/blog-content/languages/","locale":"en_US","domainMap":{"jetpack-admin-ui":"plugins/jetpack","jetpack-assets":"plugins/jetpack","jetpack-boost-core":"plugins/jetpack","jetpack-boost-speed-score":"plugins/jetpack","jetpack-config":"plugins/jetpack-boost","jetpack-connection":"plugins/jetpack","jetpack-image-cdn":"plugins/jetpack","jetpack-jitm":"plugins/jetpack","jetpack-lazy-images":"plugins/jetpack","jetpack-licensing":"plugins/jetpack","jetpack-my-jetpack":"plugins/jetpack","jetpack-plugin-deactivation":"plugins/jetpack-boost","jetpack-plugins-installer":"plugins/jetpack","jetpack-wp-js-data-sync":"plugins/jetpack-boost","jetpack-action-bar":"plugins/jetpack","jetpack-backup-pkg":"plugins/jetpack","jetpack-blaze":"plugins/jetpack","jetpack-compat":"plugins/jetpack","jetpack-forms":"plugins/jetpack","jetpack-google-fonts-provider":"plugins/jetpack","jetpack-idc":"plugins/jetpack","jetpack-import":"plugins/jetpack","jetpack-ip":"plugins/jetpack","jetpack-password-checker":"plugins/jetpack","jetpack-post-list":"plugins/jetpack","jetpack-publicize-pkg":"plugins/jetpack","jetpack-search-pkg":"plugins/jetpack","jetpack-stats":"plugins/jetpack","jetpack-stats-admin":"plugins/jetpack","jetpack-sync":"plugins/jetpack","jetpack-videopress-pkg":"plugins/jetpack","jetpack-waf":"plugins/jetpack","jetpack-wordads":"plugins/jetpack"},"domainPaths":{"jetpack-admin-ui":"jetpack_vendor/automattic/jetpack-admin-ui/","jetpack-assets":"jetpack_vendor/automattic/jetpack-assets/","jetpack-boost-core":"jetpack_vendor/automattic/jetpack-boost-core/","jetpack-boost-speed-score":"jetpack_vendor/automattic/jetpack-boost-speed-score/","jetpack-config":"jetpack_vendor/automattic/jetpack-config/","jetpack-connection":"jetpack_vendor/automattic/jetpack-connection/","jetpack-image-cdn":"jetpack_vendor/automattic/jetpack-image-cdn/","jetpack-jitm":"jetpack_vendor/automattic/jetpack-jitm/","jetpack-lazy-images":"jetpack_vendor/automattic/jetpack-lazy-images/","jetpack-licensing":"jetpack_vendor/automattic/jetpack-licensing/","jetpack-my-jetpack":"jetpack_vendor/automattic/jetpack-my-jetpack/","jetpack-plugin-deactivation":"jetpack_vendor/automattic/jetpack-plugin-deactivation/","jetpack-plugins-installer":"jetpack_vendor/automattic/jetpack-plugins-installer/","jetpack-wp-js-data-sync":"jetpack_vendor/automattic/jetpack-wp-js-data-sync/","jetpack-action-bar":"jetpack_vendor/automattic/jetpack-action-bar/","jetpack-backup-pkg":"jetpack_vendor/automattic/jetpack-backup/","jetpack-blaze":"jetpack_vendor/automattic/jetpack-blaze/","jetpack-compat":"jetpack_vendor/automattic/jetpack-compat/","jetpack-forms":"jetpack_vendor/automattic/jetpack-forms/","jetpack-google-fonts-provider":"jetpack_vendor/automattic/jetpack-google-fonts-provider/","jetpack-idc":"jetpack_vendor/automattic/jetpack-identity-crisis/","jetpack-import":"jetpack_vendor/automattic/jetpack-import/","jetpack-ip":"jetpack_vendor/automattic/jetpack-ip/","jetpack-password-checker":"jetpack_vendor/automattic/jetpack-password-checker/","jetpack-post-list":"jetpack_vendor/automattic/jetpack-post-list/","jetpack-publicize-pkg":"jetpack_vendor/automattic/jetpack-publicize/","jetpack-search-pkg":"jetpack_vendor/automattic/jetpack-search/","jetpack-stats":"jetpack_vendor/automattic/jetpack-stats/","jetpack-stats-admin":"jetpack_vendor/automattic/jetpack-stats-admin/","jetpack-sync":"jetpack_vendor/automattic/jetpack-sync/","jetpack-videopress-pkg":"jetpack_vendor/automattic/jetpack-videopress/","jetpack-waf":"jetpack_vendor/automattic/jetpack-waf/","jetpack-wordads":"jetpack_vendor/automattic/jetpack-wordads/"}};
+</script>
+<link rel="https://api.w.org/" href="https://ma.tt/wp-json/" /><link rel="alternate" type="application/json" href="https://ma.tt/wp-json/wp/v2/posts/43469" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://ma.tt/blog/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.4-alpha-56520" />
+<link rel="canonical" href="https://ma.tt/2014/01/four-freedoms/" />
+<link rel='shortlink' href='https://wp.me/p4oB3-bj7' />
+<link rel="alternate" type="application/json+oembed" href="https://ma.tt/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fma.tt%2F2014%2F01%2Ffour-freedoms%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://ma.tt/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fma.tt%2F2014%2F01%2Ffour-freedoms%2F&#038;format=xml" />
+
+<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+<!-- Generated by Jetpack Social -->
+<meta property="og:title" content="The Four&nbsp;Freedoms">
+<meta property="og:url" content="https://ma.tt/2014/01/four-freedoms/">
+<meta property="og:description" content="Eleven months before the U.S. declared war on Japan, President Franklin D. Roosevelt said &#8220;As men do not live by bread alone, they do not fight by armaments alone.&#8221; He articulated four…">
+<meta name="twitter:site" content="@photomatt">
+<meta name="twitter:text:title" content="The Four&nbsp;Freedoms">
+<!-- / Jetpack Social -->
+<script type='text/javascript' src='https://ma.tt/blog-content/plugins/matts-community-tags/suggest.js'></script>
+<link rel="stylesheet" href="https://ma.tt/blog-content/plugins/matts-community-tags/suggest.css" />
+<script type="text/javascript">
+<!--
+var $j = jQuery.noConflict();
+
+$j( document ).ready( function(){
+	$j( '#tagthis' ).html('<p>Recognize someone in this photo? Tag them.</p><form action="/index.php?addtag=go" method="post" id="tagthisform"><p>Separate multiple people with commas, example: Elvis Presley, Britney Spears.</p><p><input type="text" id="mct_people" name="mct_people" size="30" /> <input type="hidden" value="43469" name="post_id" id="post_id" /><input type="button" value="Tag People &raquo;" id="tagthisbutt" /></p></form>');
+	$j( '#tagthisbutt' ).click( mct_process_form );
+	$j( '#mct_people' ).suggest( 'https://ma.tt/index.php?suggesttag=go', { onSelect: function() { mct_process_form(); } } );
+
+} );
+
+function mct_process_form() {
+	var mct_people = $j( '#mct_people' ).value;
+	var mct_people = $j( '#post_id' ).value;
+	$j.post( 'https://ma.tt/index.php?addtag=go', $j("#tagthis :input").serializeArray(), function(data){ $j('#tagthis').html('<p>Thank you for your submission, it is in moderation and should appear shortly.'); } );
+}
+-->
+</script>
+<!-- Generated by Social Image Generator - https://socialimagegenerator.com -->
+<meta property="og:image" content="https://ma.tt/wp-json/social-image-generator/v1/image/43469">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://ma.tt/wp-json/social-image-generator/v1/image/43469">
+<meta name="twitter:card" content="summary_large_image">
+<!-- / Social Image Generator -->
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://ma.tt/blog/wp-includes/wlwmanifest.xml" /> 
+	<style>img#wpstats{display:none}</style>
+		<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"NewsArticle","headline":"The Four&nbsp;Freedoms","url":"http:\/\/ma.tt\/2014\/01\/four-freedoms\/","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/ma.tt\/2014\/01\/four-freedoms\/"},"thumbnailUrl":"","image":{"@type":"ImageObject","url":""},"articleSection":"Essays","author":[{"@type":"Person","name":"Matt"}],"creator":["Matt"],"publisher":{"@type":"Organization","name":"Matt Mullenweg","logo":"http:\/\/ma.tt\/files\/2021\/05\/Photo-on-2020-10-28-at-2.05-PM-1.jpg"},"keywords":[],"dateCreated":"2014-01-23T17:02:30Z","datePublished":"2014-01-23T17:02:30Z","dateModified":"2014-01-23T23:08:39Z"}</script><link rel="icon" type="image/x-icon" href="https://ma.tt/blog-content/themes/ma.tt/i/favicon-spring.ico" />
+<meta name="p:domain_verify" content="bc52ac484003bc590de056c705de47fc"/>
+	<style type="text/css" id="twentythirteen-header-css">
+		.site-header {
+		background: url(https://ma.tt/blog-content/themes/twentythirteen/images/headers/circle.png) no-repeat scroll top;
+		background-size: 1600px auto;
+	}
+	@media (max-width: 767px) {
+		.site-header {
+			background-size: 768px auto;
+		}
+	}
+	@media (max-width: 359px) {
+		.site-header {
+			background-size: 360px auto;
+		}
+	}
+			</style>
+				<style type="text/css">
+				/* If html does not have either class, do not show lazy loaded images. */
+				html:not( .jetpack-lazy-images-js-enabled ):not( .js ) .jetpack-lazy-image {
+					display: none;
+				}
+			</style>
+			<script>
+				document.documentElement.classList.add(
+					'jetpack-lazy-images-js-enabled'
+				);
+			</script>
+		
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="The Four&nbsp;Freedoms" />
+<meta property="og:url" content="https://ma.tt/2014/01/four-freedoms/" />
+<meta property="og:description" content="Eleven months before the U.S. declared war on Japan, President Franklin D. Roosevelt said &#8220;As men do not live by bread alone, they do not fight by armaments alone.&#8221; He articulated four …" />
+<meta property="article:published_time" content="2014-01-23T17:02:30+00:00" />
+<meta property="article:modified_time" content="2014-01-23T23:08:39+00:00" />
+<meta property="og:site_name" content="Matt Mullenweg" />
+<meta property="og:image:alt" content="" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:site" content="@photomatt" />
+<meta name="twitter:text:title" content="The Four&nbsp;Freedoms" />
+
+<!-- End Jetpack Open Graph Tags -->
+<style type="text/css" id="wp-custom-css">/* GH76 - TR - 2023/08/16 */
+.jetpack-instant-search__overlay button {
+    background: #fff;
+}</style></head>
+
+<body class="post-template-default single single-post postid-43469 single-format-standard wp-embed-responsive jps-theme-ma.tt spring">
+		<div id="page" class="hfeed site">
+		<header id="masthead" class="site-header">
+			<a class="home-link" href="https://ma.tt/" title="Matt Mullenweg" rel="home">
+				<h1 class="site-title">Matt Mullenweg</h1>
+				<h2 class="site-description">Unlucky in Cards</h2>
+			</a>
+
+		</header><!-- #masthead -->
+
+		<div id="main" class="site-main">
+
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">
+
+			
+				
+<article id="post-43469" class="post-43469 post type-post status-publish format-standard hentry category-essays">
+	<header class="entry-header">
+		
+				<h1 class="entry-title">The Four&nbsp;Freedoms</h1>
+		
+		<div class="entry-meta">
+			<span class="date"><a href="https://ma.tt/2014/01/four-freedoms/" title="Permalink to The Four&nbsp;Freedoms" rel="bookmark"><time class="entry-date" datetime="2014-01-23T09:02:30-08:00">January 23, 2014</time></a></span><span class="categories-links"><a href="https://ma.tt/category/essays/" rel="category tag">Essays</a></span><span class="author vcard"><a class="url fn n" href="https://ma.tt/author/saxmatt/" title="View all posts by Matt" rel="author">Matt</a></span>					</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		<p>Eleven months before the U.S. declared war on Japan, <a href="http://voicesofdemocracy.umd.edu/fdr-the-four-freedoms-speech-text/">President Franklin D. Roosevelt said</a> &#8220;As men do not live by bread alone, they do not fight by armaments alone.&#8221; He articulated four fundamental freedoms that everyone in the world ought to enjoy:</p>
+<ol>
+<li>Freedom of speech.</li>
+<li>Freedom of worship.</li>
+<li>Freedom from want.</li>
+<li>Freedom from fear.</li>
+</ol>
+<p>Fast forward 72 years: technology has advanced at dizzying rates and permeated every aspect of our lives, from <a title="Too much technology." href="http://www.theatlantic.com/health/archive/2012/03/the-most-scientific-birth-is-often-the-least-technological-birth/254420/">how we are born</a> to <a title="Still too much technology." href="http://www.newyorker.com/reporting/2007/04/30/070430fa_fact_gawande">how we die</a> and everything in between. In this co-evolution of society and technology, what it means to be truly &#8220;free&#8221; is no longer about just the country we live in, or even its laws, but is shaped by the products we live <em>on</em>.</p>
+<p>As <a title="Don't you wish Marc blogged more?" href="http://online.wsj.com/news/articles/SB10001424053111903480904576512250915629460">Marc Andreessen says, software is eating the world</a>. It’s a creative gale of destruction that irreversibly changes every industry it touches, and if you don&#8217;t control the software, the software controls you. It mediates how and with whom you communicate, what news you see, and what other software you&#8217;re able to run. It <a title="Long, but good, read." href="http://edge.org/responses/how-is-the-internet-changing-the-way-you-think">influences</a> the <a href="http://www.theatlantic.com/magazine/archive/2008/07/is-google-making-us-stupid/306868/">very way your brain works</a>, as you process the creative gale of <em>distraction</em> that interrupts us all hundreds of times each day. With <a href="http://www.nirandfar.com/2012/10/escape.html">every ping</a>, software burrows deeper into our lives.</p>
+<p>In the early nineties, a prescient hacker named <a title="Read about the parrots." href="http://stallman.org/">Richard Stallman</a> — working at MIT, where today&#8217;s future had already happened — recognized this shift. He <a href="https://www.gnu.org/philosophy/free-sw.html">proposed a set of four freedoms</a> that were fundamental for software in an enlightened, tech-dependent society.</p>
+<ol start="0">
+<li>The freedom to run the program, for any purpose.</li>
+<li>The freedom to study how the program works, and change it so it does your computing as you wish.</li>
+<li>The freedom to redistribute copies so you can help your neighbor.</li>
+<li>The freedom to distribute copies of your modified versions, giving the community a chance to benefit from your changes.</li>
+</ol>
+<p>(Aside: I originally thought Stallman <a href="http://en.wikipedia.org/wiki/Zero-based_numbering">started counting with zero instead of one</a> because he&#8217;s a geek. He is, but that wasn&#8217;t the reason. Freedoms one, two, and three came first, but later he wanted to add something to supercede all of them. So: freedom zero. The geekness is a happy accident.)</p>
+<p>This is our Bill of Rights. Stallman called it <a title="Don't call it open source." href="https://www.gnu.org/philosophy/free-sw.html">Free Software</a>. The &#8220;free&#8221; doesn&#8217;t have to do with price, as you’re still free to charge for your software, but with freedom to create. Or as we geeks often say: not free as in beer, <a href="http://en.wikipedia.org/wiki/Freedom_of_speech_in_the_United_States">free as in speech</a>.</p>
+<p>People are scared of free software, and I understand why. You&#8217;re taking the <a title="Industries with low IP protection are more creative and generate more sales." href="http://intenseminimalism.com/2010/creativity-in-a-copyright-less-world/">most valuable thing</a> you have, <a title="Old-school theme." href="http://sob.apotheon.org/?p=1519">your intellectual property</a>, and granting the freedom you enjoy as a creator to anyone who downloads your work. It&#8217;s terrifying, actually. It’s releasing your ideas, and letting anyone build on them — in a way that might be better than your own work. It’s releasing your traditional understanding of ownership, and your fear of being out-developed.</p>
+<p>The most experienced entrepreneurs can cling to the concept that your <a href="http://www.paulgraham.com/ideas.html">idea is something precious that must be protected from the world</a>, and meted out in a controlled way. Lots of us hang on to the assumption that scarcity creates a proprietary advantage. It’s how many non-tech markets work.</p>
+<p>Open source abdicates your flexibility as a developer to better serve the people who actually use your products. You can see that as a constraint&#8230; or you can see it as a door to iteration, innovation, and constant progress.</p>
+<p>I&#8217;ve spent a third of my life building software based on Stallman’s four freedoms, and I&#8217;ve been astonished by the results. <a href="http://wordpress.org/">WordPress</a> wouldn’t be here if it weren’t for those freedoms, and it couldn’t have evolved the way it has.</p>
+<p>WordPress was based on a program called <a title="The header is still classic." href="http://cafelog.com/">B2/cafelog</a> that predated it by two years. I was using B2 because it had freedoms 0 and 1: I could use it for whatever I wanted, including my zero-budget personal blog, and the source code was open. It was elegant and easy to understand, and anyone could tweak it.</p>
+<p>B2 was ultimately <a title="This post is where WordPress started." href="https://ma.tt/2003/01/the-blogging-software-dilemma/">abandoned</a> by its creator. If I’d been using it under a proprietary license, that would have been the end — for me, and all its other users. But because we had freedoms 2 and 3, Mike Little and I were able to use the software as a foundation, giving us a two-year headstart over building something from scratch, and realize our own vision of what blogging could be.</p>
+<p>We were just consumers of the software, volunteers in the forums, and occasional contributors to the codebase, but because (of the GPL) we had the freedom to build on B2, we were able to continue development as if it had been our own creation.</p>
+<p>Ten years later, those freedoms are still embedded in every copy of WordPress downloaded, including the <a href="http://wordpress.org/download/counter/">9.2 million downloaded</a> in the past month or so since our <a href="http://wordpress.org/news/2013/12/parker/">3.8 release</a>.</p>
+<p>I believe that software, and in fact entire companies, should be run in a way that assumes that the sum of the talent of people outside your walls is greater than the sum of the few you have inside. None of us are as smart as all of us. Given the right environment — one that leverages the marginal cost of distributing software and ideas — independent actors can work toward something that benefits them, while also increasing the capability of the entire community.</p>
+<p>This is where open source gets really interesting: it&#8217;s not just about the <a href="http://www.gnu.org/licenses/license-list.html">legal wonkery around software licensing</a>, but what effect open sourced software has on people using it. In the proprietary world, those people are typically called &#8220;users,&#8221; a strange term that connotes dependence and addiction. In the open source world, they’re more rightly called a community.</p>
+<p>The core features of WordPress aren’t <a href="http://www.amazon.com/Rocket-Surgery-Made-Easy-Do-It-Yourself/dp/0321657292?tag=photomatt08-20">rocket surgery</a>. A handful of smart people in a room for a year could create a reasonable approximation of the software, and undoubtably improve some things — I see other startups do this <a title="Someday they will build a museum to document your former competitors." href="http://www.crunchbase.com/tag/cms">three or four times a year</a>.</p>
+<p>What they miss is that WordPress isn&#8217;t a checklist of features. It&#8217;s over <a title="I have about 20 of them." href="http://wordpress.org/plugins/">29,000 plugins</a> created by the community, from the in-demand things like SEO to niche features like <a title="I can't make these things up." href="http://wordpress.org/plugins/hundstall-404/">using your 404 page to help adopt homeless dogs in Sweden</a>. Every WordPress site looks different, because of the thousands of themes available. Instead of one event to outdo, there are more than <a title="Check one out if you haven't been yet, amazing groups of folks." href="http://central.wordcamp.org/">70 volunteer-organized WordCamps on six continents</a> (and there’ll be more in 2014).</p>
+<p>WordPress marketing has nothing to do with its website or <a title="Fight the Fauxgo." href="http://wordpress.org/about/logos/">logo</a>, it&#8217;s the <a href="http://wordpress.tv/2013/07/29/matt-mullenweg-state-of-the-word-2013/">tens of thousands of people who make a living building WordPress sites</a> and receive so much value from it that they proselytize to anyone that will listen, spreading the flame one site at a time. It works — as of December 2013, 21% of websites are powered by WordPress. One-fifth of the web is built with a tool that anyone can use, change, or improve, whenever and however they want (even more when you count other open source projects, like Drupal).</p>
+<p>This approach to building isn&#8217;t an abdication of developers’ and designers’ responsibility to build beautiful, functional software. Design and forethought are <em>more important</em> than ever when every change sends millions of independent actors down a new path. Changes to WordPress have consequences today, tomorrow, five years, and ten years down the road, but the passion and talent of the community helps ensure that it always moves forward in a positive way.</p>
+<p>The four freedoms don’t limit us as creators — they open possibilities for us as creators <em>and</em> consumers. When you apply them to software, you get Linux, Webkit/Chrome, and WordPress. When you apply them to medicine, you get the <a href="http://www.opengenomicsengine.org/">Open Genomics Engine</a>, which is accelerating cancer research and bringing us closer to personalized treatment. When you apply them to companies, you get radically geographically distributed, results-based organizations like <a href="http://automattic.com/">Automattic</a>. When you apply them to events you get <a href="http://www.ted.com/tedx">TEDx</a>, <a title="Which I accidentally ended up helping get started." href="http://en.wikipedia.org/wiki/BarCamp">Barcamp</a>, and <a href="http://wordcamp.org/">WordCamp</a>. When you apply them to knowledge, you get <a title="Where people argue you for deletion." href="http://wikipedia.org/">Wikipedia</a>.</p>
+<p><a href="http://www.williamgibsonbooks.com/">William Gibson</a> is attributed with saying &#8220;The future is already here — it&#8217;s just not very evenly distributed.&#8221; The world is changing faster than any one person or organization can keep up with it. Closed off, proprietary development creates closed off, proprietary products that won’t keep pace in the long run. Open source provides another path — one that’s open to everyone, and can take advantage of the skills and talents of anyone in the world to build software that helps everyone.</p>
+<p>As <a href="http://en.wikipedia.org/wiki/Joy's_Law_(management)">Bill Joy said</a>, &#8220;No matter who you are, most of the smartest people work for someone else.&#8221; Good ideas aren’t the sole province of groups of people behind high walls, and software shouldn’t be either.</p>
+<p><em>This was adapted from a talk I gave at <a title="Was great fun, hope they do it again next year." href="http://www.lifeisbeautifulfestival.com/">the Life is Beautiful festival</a> in <a title="One of the more interesting scenes around right now." href="http://downtownproject.com/">Downtown Las Vegas</a>. Thanks to <a href="http://kingofstates.com/">Michelle</a>, <a href="http://stratechery.com/">Ben</a>, <a href="http://intenseminimalism.com/">Davide</a>, and <a href="http://paulmaiorana.com/notes/">Paul</a> for help with this.</em></p>
+<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-tumblr"><a rel="nofollow noopener noreferrer" data-shared="" class="share-tumblr sd-button share-icon no-text" href="https://ma.tt/2014/01/four-freedoms/?share=tumblr" target="_blank" title="Click to share on Tumblr" ><span></span><span class="sharing-screen-reader-text">Click to share on Tumblr (Opens in new window)</span></a></li><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-43469" class="share-twitter sd-button share-icon no-text" href="https://ma.tt/2014/01/four-freedoms/?share=twitter" target="_blank" title="Click to share on Twitter" ><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-43469" class="share-facebook sd-button share-icon no-text" href="https://ma.tt/2014/01/four-freedoms/?share=facebook" target="_blank" title="Click to share on Facebook" ><span></span><span class="sharing-screen-reader-text">Click to share on Facebook (Opens in new window)</span></a></li><li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-43469" class="share-linkedin sd-button share-icon no-text" href="https://ma.tt/2014/01/four-freedoms/?share=linkedin" target="_blank" title="Click to share on LinkedIn" ><span></span><span class="sharing-screen-reader-text">Click to share on LinkedIn (Opens in new window)</span></a></li><li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon no-text" href="https://ma.tt/2014/01/four-freedoms/?share=pocket" target="_blank" title="Click to share on Pocket" ><span></span><span class="sharing-screen-reader-text">Click to share on Pocket (Opens in new window)</span></a></li><li class="share-telegram"><a rel="nofollow noopener noreferrer" data-shared="" class="share-telegram sd-button share-icon no-text" href="https://ma.tt/2014/01/four-freedoms/?share=telegram" target="_blank" title="Click to share on Telegram" ><span></span><span class="sharing-screen-reader-text">Click to share on Telegram (Opens in new window)</span></a></li><li class="share-email"><a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button share-icon no-text" href="mailto:?subject=%5BShared%20Post%5D%20The%20Four%20Freedoms&body=https%3A%2F%2Fma.tt%2F2014%2F01%2Ffour-freedoms%2F&share=email" target="_blank" title="Click to email a link to a friend" data-email-share-error-title="Do you have email set up?" data-email-share-error-text="If you&#039;re having problems sharing via email, you might not have email set up for your browser. You may need to create a new email yourself." data-email-share-nonce="1d355d9f00" data-email-share-track-url="https://ma.tt/2014/01/four-freedoms/?share=email"><span></span><span class="sharing-screen-reader-text">Click to email a link to a friend (Opens in new window)</span></a></li><li class="share-end"></li></ul></div></div></div>
+<div id='jp-relatedposts' class='jp-relatedposts' >
+	<!--googleoff: index-->
+<h3 class="jp-relatedposts-headline"><em>Related Posts</em></h3><!--googleon: index-->
+
+</div>	</div><!-- .entry-content -->
+	
+	<footer class="entry-meta">
+		
+			</footer><!-- .entry-meta -->
+</article><!-- #post -->
+						<nav class="navigation post-navigation">
+		<h1 class="screen-reader-text">
+			Post navigation		</h1>
+		<div class="nav-links">
+
+			<a href="https://ma.tt/2014/01/abusing-copyright-laws/" rel="prev"><span class="meta-nav">&larr;</span> Abusing Copyright&nbsp;Laws</a>			<a href="https://ma.tt/2014/01/marco-on-long-form/" rel="next">Marco on&nbsp;Long-Form <span class="meta-nav">&rarr;</span></a>
+		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+						
+<div id="comments" class="comments-area">
+
+			<h2 class="comments-title">
+			52 thoughts on &ldquo;<span>The Four&nbsp;Freedoms</span>&rdquo;		</h2>
+
+		<ol class="comment-list">
+					<li id="comment-574459" class="comment even thread-even depth-1">
+			<article id="div-comment-574459" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/1f0202a5fd831452e34e24b459187a9f?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/1f0202a5fd831452e34e24b459187a9f?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/1f0202a5fd831452e34e24b459187a9f?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/1f0202a5fd831452e34e24b459187a9f?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/1f0202a5fd831452e34e24b459187a9f?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn">Michael Scott McGinn</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574459"><time datetime="2014-01-23T11:04:08-08:00">January 23, 2014 at 11:04 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Fantastic article.  Love it. Keep on sharing! This article would make an incredible infographic. I wish I had the design skills to pull it off. Anybody else want to take a shot at it? I saw an image of a long scroll of parchment with old english calligraphy and ornate illustrations of elvinish like images and wisping candle smoke trails weaving in and around the words.I can see it in my mind&#8217;s eye but getting it out of the end of fingers will have to be satisfied with mere words.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574459#respond' data-commentid="574459" data-postid="43469" data-belowelement="div-comment-574459" data-respondelement="respond" data-replyto="Reply to Michael Scott McGinn" aria-label='Reply to Michael Scott McGinn'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-574461" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-574461" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/78e3e81048d397b4b2bd07fcb86f9ddf?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/78e3e81048d397b4b2bd07fcb86f9ddf?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/78e3e81048d397b4b2bd07fcb86f9ddf?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/78e3e81048d397b4b2bd07fcb86f9ddf?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/78e3e81048d397b4b2bd07fcb86f9ddf?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://digitalstrategyworks.com" class="url" rel="ugc external nofollow">Tony Zeoli</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574461"><time datetime="2014-01-23T11:11:31-08:00">January 23, 2014 at 11:11 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Good post and definitely the reason I invested myself in the WordPress Community, both as digital strategist making a living from our work with WordPress to giving back by organizing WordPress Chapel Hill (and WordPress Westchester when I lived in the NYC area). When you think about what open source means and the community built around this and other software platforms, it&#8217;s amazing how many people have come together to embrace the philosophy. Good post and thanks for reminding us about where this all came from and what it means today.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574461#respond' data-commentid="574461" data-postid="43469" data-belowelement="div-comment-574461" data-respondelement="respond" data-replyto="Reply to Tony Zeoli" aria-label='Reply to Tony Zeoli'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-574463" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-574463" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/c6947e2f6fbffadce924f7edfc1b112d?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/c6947e2f6fbffadce924f7edfc1b112d?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/c6947e2f6fbffadce924f7edfc1b112d?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/c6947e2f6fbffadce924f7edfc1b112d?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/c6947e2f6fbffadce924f7edfc1b112d?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://nickgrossman.is" class="url" rel="ugc external nofollow">Nick Grossman</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574463"><time datetime="2014-01-23T11:40:59-08:00">January 23, 2014 at 11:40 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Wow, I never knew the story of the startup of WordPress.  Really incredible to read that blog post from 11 years ago.</p>
+<p>I&#8217;m sure you hear this all the time, but I essentially owe my career to WordPress as well.  I started learning to code (DIY) back in 2002, and picked up WordPress sometime in 2004.  It became my tool of choice and I grew a small business building WordPress sites.  Which lead to me getting hired by several startups, learning to lead product teams, building businesses, founding and growing open source and open standards projects, and now working in VC.</p>
+<p>I can&#8217;t thank you enough for having the foresight to believe in this vision.  It&#8217;s certainly shaped my thinking on just about everything.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574463#respond' data-commentid="574463" data-postid="43469" data-belowelement="div-comment-574463" data-respondelement="respond" data-replyto="Reply to Nick Grossman" aria-label='Reply to Nick Grossman'>Reply</a></div>			</article><!-- .comment-body -->
+		<ol class="children">
+		<li id="comment-574468" class="comment byuser comment-author-saxmatt bypostauthor odd alt depth-2 parent">
+			<article id="div-comment-574468" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://ma.tt/" class="url" rel="ugc">Matt</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574468"><time datetime="2014-01-23T14:20:15-08:00">January 23, 2014 at 2:20 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>That&#8217;s awesome, thanks for sharing. 🙂</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574468#respond' data-commentid="574468" data-postid="43469" data-belowelement="div-comment-574468" data-respondelement="respond" data-replyto="Reply to Matt" aria-label='Reply to Matt'>Reply</a></div>			</article><!-- .comment-body -->
+		<ol class="children">
+		<li id="comment-574478" class="comment even depth-3">
+			<article id="div-comment-574478" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/c6947e2f6fbffadce924f7edfc1b112d?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/c6947e2f6fbffadce924f7edfc1b112d?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/c6947e2f6fbffadce924f7edfc1b112d?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/c6947e2f6fbffadce924f7edfc1b112d?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/c6947e2f6fbffadce924f7edfc1b112d?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://nickgrossman.is" class="url" rel="ugc external nofollow">nick grossman</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574478"><time datetime="2014-01-23T15:46:13-08:00">January 23, 2014 at 3:46 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>And I should say, more importantly, that these freedoms are what make it possible to learn, build and create on the web.  Whether you are building a software project, a career, or an ecosystem.</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-574465" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-574465" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/7ecfc3f9c6c16c5e7e10e42833aea99f?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/7ecfc3f9c6c16c5e7e10e42833aea99f?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/7ecfc3f9c6c16c5e7e10e42833aea99f?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/7ecfc3f9c6c16c5e7e10e42833aea99f?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/7ecfc3f9c6c16c5e7e10e42833aea99f?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://twitter.com/julien51" class="url" rel="ugc external nofollow">Julien Genestoux (@julien51)</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574465"><time datetime="2014-01-23T12:29:44-08:00">January 23, 2014 at 12:29 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Amazing article Matt. I really like the fact that WP is not a full wheel re-invention. I think there is a curse in our industry where every developer feels like they need to rewrite everything from scratch, because whatever was done before is just not good enough for them.</p>
+<p>It&#8217;s sad because software is probably the most re-usable tool we&#8217;ve ever had!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574465#respond' data-commentid="574465" data-postid="43469" data-belowelement="div-comment-574465" data-respondelement="respond" data-replyto="Reply to Julien Genestoux (@julien51)" aria-label='Reply to Julien Genestoux (@julien51)'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-574470" class="comment even thread-even depth-1">
+			<article id="div-comment-574470" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://graph.facebook.com/1373774981/picture?type=large&#038;_md5=a3e55833cebf37d5d6b5b5c2984e5d2c" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/b84003edf93debb4de8cd6712f5f2cf4?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://graph.facebook.com/1373774981/picture?type=large&amp;is-pending-load=1#038;_md5=a3e55833cebf37d5d6b5b5c2984e5d2c" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://graph.facebook.com/1373774981/picture?type=large&#038;_md5=a3e55833cebf37d5d6b5b5c2984e5d2c' srcset='https://secure.gravatar.com/avatar/b84003edf93debb4de8cd6712f5f2cf4?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="https://www.facebook.com/geekzonebooks" class="url" rel="ugc external nofollow">Michael Scott McGinn</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574470"><time datetime="2014-01-23T14:40:15-08:00">January 23, 2014 at 2:40 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Fantastic article. Love it. Keep on sharing! This article would make an incredible infographic. I wish I had the design skills to pull it off. Anybody else want to take a shot at it? I saw an image of a long scroll of parchment with old english calligraphy and ornate illustrations of elvinish like images and wisping candle smoke trails weaving in and around the words.I can see it in my mind’s eye but getting it out of the end of fingers will have to be satisfied with mere words.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574470#respond' data-commentid="574470" data-postid="43469" data-belowelement="div-comment-574470" data-respondelement="respond" data-replyto="Reply to Michael Scott McGinn" aria-label='Reply to Michael Scott McGinn'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-574472" class="comment odd alt thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-574472" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/339dd51a7f4959a90d50ebffcbfa8c8e?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/339dd51a7f4959a90d50ebffcbfa8c8e?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/339dd51a7f4959a90d50ebffcbfa8c8e?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/339dd51a7f4959a90d50ebffcbfa8c8e?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/339dd51a7f4959a90d50ebffcbfa8c8e?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://www.jonathanbardo.com" class="url" rel="ugc external nofollow">Jonathan Bardo</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574472"><time datetime="2014-01-23T15:08:01-08:00">January 23, 2014 at 3:08 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Great article! I spotted a typo : &#8220;becasue&#8221; should be &#8220;because&#8221;.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574472#respond' data-commentid="574472" data-postid="43469" data-belowelement="div-comment-574472" data-respondelement="respond" data-replyto="Reply to Jonathan Bardo" aria-label='Reply to Jonathan Bardo'>Reply</a></div>			</article><!-- .comment-body -->
+		<ol class="children">
+		<li id="comment-574474" class="comment byuser comment-author-saxmatt bypostauthor even depth-2">
+			<article id="div-comment-574474" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://ma.tt/" class="url" rel="ugc">Matt</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574474"><time datetime="2014-01-23T15:09:39-08:00">January 23, 2014 at 3:09 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Thanks, all fixed up.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574474#respond' data-commentid="574474" data-postid="43469" data-belowelement="div-comment-574474" data-respondelement="respond" data-replyto="Reply to Matt" aria-label='Reply to Matt'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-574473" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-574473" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/522c9316a1655ff2d0c031b91529a62e?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/522c9316a1655ff2d0c031b91529a62e?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/522c9316a1655ff2d0c031b91529a62e?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/522c9316a1655ff2d0c031b91529a62e?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/522c9316a1655ff2d0c031b91529a62e?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://artpredator.wordpress.com" class="url" rel="ugc external nofollow">Gwendolyn Alley aka Art Predator</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574473"><time datetime="2014-01-23T15:08:14-08:00">January 23, 2014 at 3:08 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Great essay, Matt! And perfect timing for me to share with my community college composition students as they prepare to enter the world of blogging and on the heels of reading Godin&#8217;s &#8220;Stop Stealing Dreams&#8221; and writing by MLK. (PS I post articles and essays instead of lectures on my blog/s and use a class blog for posting essays by others and other resources for my college students&#8230;)</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574473#respond' data-commentid="574473" data-postid="43469" data-belowelement="div-comment-574473" data-respondelement="respond" data-replyto="Reply to Gwendolyn Alley aka Art Predator" aria-label='Reply to Gwendolyn Alley aka Art Predator'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-574475" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-574475" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://graph.facebook.com/1386573073/picture?type=large&#038;_md5=3fe6657c4ad986d03267f089366b729a" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/299480f154cbd8ccad3d12ddc35fec0f?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://graph.facebook.com/1386573073/picture?type=large&amp;is-pending-load=1#038;_md5=3fe6657c4ad986d03267f089366b729a" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://graph.facebook.com/1386573073/picture?type=large&#038;_md5=3fe6657c4ad986d03267f089366b729a' srcset='https://secure.gravatar.com/avatar/299480f154cbd8ccad3d12ddc35fec0f?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="https://www.facebook.com/michaelbastos" class="url" rel="ugc external nofollow">Michael Cabral Poubel Bastos</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574475"><time datetime="2014-01-23T15:22:50-08:00">January 23, 2014 at 3:22 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Matt for President in 2016 lol jk</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574475#respond' data-commentid="574475" data-postid="43469" data-belowelement="div-comment-574475" data-respondelement="respond" data-replyto="Reply to Michael Cabral Poubel Bastos" aria-label='Reply to Michael Cabral Poubel Bastos'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-574476" class="comment odd alt thread-even depth-1 parent">
+			<article id="div-comment-574476" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/e9fd5ab1d9d87b4ed8785dad88b99905?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/e9fd5ab1d9d87b4ed8785dad88b99905?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/e9fd5ab1d9d87b4ed8785dad88b99905?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/e9fd5ab1d9d87b4ed8785dad88b99905?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/e9fd5ab1d9d87b4ed8785dad88b99905?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://miche.lv/" class="url" rel="ugc external nofollow">michel v</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574476"><time datetime="2014-01-23T15:26:49-08:00">January 23, 2014 at 3:26 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>I am proud that releasing b2 under the GPL allowed so much to happen.</p>
+<p>If someone had told me in 2001 that my beginner code would evolve into something that powers so many websites and enables easy blogging to so many people in the world, I would have had a 0.00001 % chance of believing them.</p>
+<p>Matt and the team, thanks for making that unexpected dream come true.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574476#respond' data-commentid="574476" data-postid="43469" data-belowelement="div-comment-574476" data-respondelement="respond" data-replyto="Reply to michel v" aria-label='Reply to michel v'>Reply</a></div>			</article><!-- .comment-body -->
+		<ol class="children">
+		<li id="comment-574479" class="comment byuser comment-author-saxmatt bypostauthor even depth-2">
+			<article id="div-comment-574479" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://ma.tt/" class="url" rel="ugc">Matt</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574479"><time datetime="2014-01-23T16:07:56-08:00">January 23, 2014 at 4:07 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>It&#8217;s been an honor. 🙂</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574479#respond' data-commentid="574479" data-postid="43469" data-belowelement="div-comment-574479" data-respondelement="respond" data-replyto="Reply to Matt" aria-label='Reply to Matt'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-574480" class="comment odd alt thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-574480" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/5aaee927125743b79d52dd705c2469b4?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/5aaee927125743b79d52dd705c2469b4?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/5aaee927125743b79d52dd705c2469b4?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/5aaee927125743b79d52dd705c2469b4?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/5aaee927125743b79d52dd705c2469b4?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn">rogerwilliams459414674</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574480"><time datetime="2014-01-23T16:37:48-08:00">January 23, 2014 at 4:37 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Great post Matt, thank you for getting all this going. I too owe the story of starting my business to WordPress so thanks for that.</p>
+<p>One question I have is how to do you handle it when someone says &#8220;PHP is an insecure programming language and therefore WordPress is insecure&#8221;?</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574480#respond' data-commentid="574480" data-postid="43469" data-belowelement="div-comment-574480" data-respondelement="respond" data-replyto="Reply to rogerwilliams459414674" aria-label='Reply to rogerwilliams459414674'>Reply</a></div>			</article><!-- .comment-body -->
+		<ol class="children">
+		<li id="comment-574575" class="comment byuser comment-author-saxmatt bypostauthor even depth-2">
+			<article id="div-comment-574575" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://ma.tt/" class="url" rel="ugc">Matt</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574575"><time datetime="2014-01-31T14:06:51-08:00">January 31, 2014 at 2:06 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>I haven&#8217;t heard that in a while &#8212; Facebook, WordPress.com, Wikipedia, Yahoo, and many more of the top sites in the world rely heavily on PHP, so I think most people now feel if it&#8217;s good enough for those, it&#8217;s good enough for them.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574575#respond' data-commentid="574575" data-postid="43469" data-belowelement="div-comment-574575" data-respondelement="respond" data-replyto="Reply to Matt" aria-label='Reply to Matt'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-574481" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-574481" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/1933c25d0b19ab908666e6296591d6e3?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/1933c25d0b19ab908666e6296591d6e3?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/1933c25d0b19ab908666e6296591d6e3?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/1933c25d0b19ab908666e6296591d6e3?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/1933c25d0b19ab908666e6296591d6e3?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="https://plus.google.com/+DaneMorgan" class="url" rel="ugc external nofollow">Dane Morgan</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574481"><time datetime="2014-01-23T17:10:21-08:00">January 23, 2014 at 5:10 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Brilliant. Every time I hear or read you talking about open source I am blown away. I earn my living doing something I love because WordPress exists as it does. I&#8217;ve worked with other tools over the years and slowly turned more and more of my efforts and focus to WordPress, turning down projects built on other tools because of these principles and the community you have built.</p>
+<p>I&#8217;ve been lurking on the outskirts for years but some things you&#8217;ve said recently, specifically in your interview on Drad, but other instances as well have me trying to move in and find a place on the inside.</p>
+<p>Thanks Matt!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574481#respond' data-commentid="574481" data-postid="43469" data-belowelement="div-comment-574481" data-respondelement="respond" data-replyto="Reply to Dane Morgan" aria-label='Reply to Dane Morgan'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-574483" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-574483" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/3fdd3d39cb0b8459be27c89654b37acf?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/3fdd3d39cb0b8459be27c89654b37acf?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/3fdd3d39cb0b8459be27c89654b37acf?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/3fdd3d39cb0b8459be27c89654b37acf?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/3fdd3d39cb0b8459be27c89654b37acf?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://www.alearningaday.com" class="url" rel="ugc external nofollow">Rohan</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574483"><time datetime="2014-01-23T17:43:16-08:00">January 23, 2014 at 5:43 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hi Matt,</p>
+<p>I&#8217;m loving your posts. </p>
+<p>And, it actually took me some time to understand the nuance between free beer and free software when I heard it the first time. But, Richard Stallman explained it well &#8211; our team were fortunate to interview him in person &#8211; <a href="http://realleaders.tv/portfolio/richard-stallman/" rel="nofollow ugc">http://realleaders.tv/portfolio/richard-stallman/</a></p>
+<p>Also, your previous post about WordPress has convinced me to shift my long standing blogger blog (5.5 years, 3000+ posts) onto wordpress. I&#8217;ve to figure out the technical difficulties of doing so this weekend.</p>
+<p>Thanks for the posts.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574483#respond' data-commentid="574483" data-postid="43469" data-belowelement="div-comment-574483" data-respondelement="respond" data-replyto="Reply to Rohan" aria-label='Reply to Rohan'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-574484" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-574484" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/94ae98c7302aa5b10f1d9a4255cf83ba?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/94ae98c7302aa5b10f1d9a4255cf83ba?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/94ae98c7302aa5b10f1d9a4255cf83ba?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/94ae98c7302aa5b10f1d9a4255cf83ba?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/94ae98c7302aa5b10f1d9a4255cf83ba?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://personal.customerservant.com" class="url" rel="ugc external nofollow">AmandaAmanda</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574484"><time datetime="2014-01-23T18:26:54-08:00">January 23, 2014 at 6:26 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>This is an amazing post. I think one of the things I like best about WordPress is that, in a round-about way, what we do as part of its accessibility team will eventually benefit what happens around the rest of the web, given WordPress&#8217;s market share and the number of websites it controls. It&#8217;s also helping me build a business, something I think I would have had a lot more trouble doing without it. Thanks for all the work you do Matt.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574484#respond' data-commentid="574484" data-postid="43469" data-belowelement="div-comment-574484" data-respondelement="respond" data-replyto="Reply to AmandaAmanda" aria-label='Reply to AmandaAmanda'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-574487" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-574487" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/54cd74783ff88b90b23fda1d3c41bce5?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/54cd74783ff88b90b23fda1d3c41bce5?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/54cd74783ff88b90b23fda1d3c41bce5?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/54cd74783ff88b90b23fda1d3c41bce5?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/54cd74783ff88b90b23fda1d3c41bce5?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn">Gustav</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574487"><time datetime="2014-01-23T19:40:42-08:00">January 23, 2014 at 7:40 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>While free software has done great things for the industry, so has proprietary software. It is often said that one&#8217;s freedom ends when it infringes on another&#8217;s. i.e. my freedom to decide how and when to distribute my software. I think a healthy software industry encompasses and encourages free software, proprietary software, and everything in between.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574487#respond' data-commentid="574487" data-postid="43469" data-belowelement="div-comment-574487" data-respondelement="respond" data-replyto="Reply to Gustav" aria-label='Reply to Gustav'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-574488" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-574488" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/06b2506d84d3e0515b96e2cbdd8f16f9?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/06b2506d84d3e0515b96e2cbdd8f16f9?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/06b2506d84d3e0515b96e2cbdd8f16f9?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/06b2506d84d3e0515b96e2cbdd8f16f9?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/06b2506d84d3e0515b96e2cbdd8f16f9?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://gravatar.com/techbridgeca" class="url" rel="ugc external nofollow">Sasha Baksht</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574488"><time datetime="2014-01-23T19:56:18-08:00">January 23, 2014 at 7:56 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Well said, Mr. Mullenweg!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574488#respond' data-commentid="574488" data-postid="43469" data-belowelement="div-comment-574488" data-respondelement="respond" data-replyto="Reply to Sasha Baksht" aria-label='Reply to Sasha Baksht'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-574489" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-574489" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/c2a6249151d12a218d62683e91521680?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/c2a6249151d12a218d62683e91521680?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/c2a6249151d12a218d62683e91521680?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/c2a6249151d12a218d62683e91521680?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/c2a6249151d12a218d62683e91521680?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://blog.feedly.com" class="url" rel="ugc external nofollow">@feedly</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574489"><time datetime="2014-01-23T20:25:02-08:00">January 23, 2014 at 8:25 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Thank you for this thoughtful piece Matt. Very inspiring.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574489#respond' data-commentid="574489" data-postid="43469" data-belowelement="div-comment-574489" data-respondelement="respond" data-replyto="Reply to @feedly" aria-label='Reply to @feedly'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-574490" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-574490" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/48c46dbd53713b391e1d44ffb88ca86f?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/48c46dbd53713b391e1d44ffb88ca86f?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/48c46dbd53713b391e1d44ffb88ca86f?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/48c46dbd53713b391e1d44ffb88ca86f?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/48c46dbd53713b391e1d44ffb88ca86f?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://gravatar.com/melaylor" class="url" rel="ugc external nofollow">melaylor</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574490"><time datetime="2014-01-23T20:41:23-08:00">January 23, 2014 at 8:41 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>I love this post. The philosophy behind WordPress is definitely key to its large, vibrant community and its growing market share on the web. I instantly fell in love with WordPress when I discovered and started using it going on seven years ago. WordPress is helping me build a business in web design and web solutions consulting, and has also helped me get a job. It is because I believe so much in the project and in the community at large that I co-organize the WordPress Hampton Roads Meetup and I&#8217;m working toward building a vibrant local community of users. I appreciate all you do and please keep sharing!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574490#respond' data-commentid="574490" data-postid="43469" data-belowelement="div-comment-574490" data-respondelement="respond" data-replyto="Reply to melaylor" aria-label='Reply to melaylor'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-574492" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-574492" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/77f9913330a084195d6bd47edcac1b2f?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/77f9913330a084195d6bd47edcac1b2f?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/77f9913330a084195d6bd47edcac1b2f?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/77f9913330a084195d6bd47edcac1b2f?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/77f9913330a084195d6bd47edcac1b2f?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn">viodi</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574492"><time datetime="2014-01-23T21:30:56-08:00">January 23, 2014 at 9:30 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Matt, fantastic article. I came to your site to let you know that we have once again turned to WordPress to help with a community project. When we met in Campbell a couple years ago, I explained how a self-hosted WordPress site helped us organize a fundraiser relief for Japan in a matter of a few short weeks. </p>
+<p>Now, we are building a playground in an area where 35% of the kids are in households with poverty-level income. WordPress has been instrumental in organizing and communicating to the community at large, as we move through our tight time schedule. After the build, this site will be a centerpiece to keep the community organized.</p>
+<p>Thanks Matt and the incredible WordPress community for everything you have collectively done to help so many people.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574492#respond' data-commentid="574492" data-postid="43469" data-belowelement="div-comment-574492" data-respondelement="respond" data-replyto="Reply to viodi" aria-label='Reply to viodi'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-574493" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-574493" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/a0650d06914be4131e6a331ae419e75e?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/a0650d06914be4131e6a331ae419e75e?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/a0650d06914be4131e6a331ae419e75e?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/a0650d06914be4131e6a331ae419e75e?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/a0650d06914be4131e6a331ae419e75e?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://pooriast.wordpress.com" class="url" rel="ugc external nofollow">pooriast</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574493"><time datetime="2014-01-23T21:38:30-08:00">January 23, 2014 at 9:38 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Thanks Matt it&#8217;s a great post, I love many of the remarks you&#8217;ve mentioned, yet I think the most important point for people who work with WordPress is to realize that before any code and prior to any application WordPress is a philosophy, as you mentioned it&#8217;s not a checklist of features. The philosophy has drawn a path and a community has been established to go through the path, from time to time your fair-often remarks and signals are important reminders to the community to keep on the path.<br />
+Now as deep as I can see there are THREE major challenges within the community,<br />
+1. How to handle the new or self-made translations of GPL or other sneaky moves when it comes to WordPress products, I know, to keep everything in order a huge amount of time and resources are invested ( such as what Mika explains about handling copyrights issues for launching the Font Awesome plugin <a href="http://goo.gl/bvgLwy" rel="nofollow ugc">http://goo.gl/bvgLwy</a>). But my concerns are how the community may help to meet the new challenges.</p>
+<p>2. The William Gibson quote “The future is already here it’s just not very evenly distributed.”  really make sense. Last few weeks there was a series of blog posts addressing women and WordPress, The initial discussion started with a post by Jay Mylo comparing participation of women in WordCamps in 2012 and 2013. Without any hassle or doubt I insist that participation of women in any field including WordPress and WordCamps is an essential value. I did a small research on stats of the WordCamps, WP.org and WP.com. in 2013 there were 61 WordCamps, 32 of them in US while share of US in WP.org visits is 26%, and only 14.6% of WordPress FB fans are from US. When it comes to women in US, both WP.com &amp; WP.org receive a fair amount of female visitors, and I guess the number of female visitors in WordCamps central and WP.TV is higher than male visitors. I don&#8217;t mean we should stop encouraging women for getting more involved in WordPress, and I also don&#8217;t mean higher number of WordCamps in US is not fair. But I think we need to at least acknowledge much deeper issues in other countries. Indonesia for example has 9.8% of WP FB fans and 2.4% of WP.org visitors, India also has 9.8% of WP FB fans and 8% of WP.org visitors. Indonesia had only one and India only two WordCamps in 2013. I&#8217;m sure you have access to much more insights yet in this spreadsheet find sats related to the thirty most visiting countries for WP.org along with the number of FB fans and number of WordCamps: <a href="http://goo.gl/62a7d4" rel="nofollow ugc">http://goo.gl/62a7d4</a> and you know it&#8217;s not only the WordCamps,  there are many other barriers and limitations. There are Government suppressions in some cases, lack of financial services, non or limited specialized tech media, no funding, no angel investors, no VC of any kind, localization and language barriers, poverty and lack of minimum financial resources for even learning or providing the necessary resources, even a small hosting cost might stop some developers from launching their projects, Obviously many of these issues can&#8217;t or shouldn&#8217;t be solved by the community, but it&#8217;s a great start if we acknowledge them. </p>
+<p>3. Education, I believe education is what the community needs more and no proper solution or plan is provided yet. The resources in WP.org are useful, but there are no organized guidelines for non-tech people, and I think many of the users are non-tech and many more beginners are joining. On one hand it&#8217;s an advantage that someone with a very poor tech knowledge can launch a WP site but it&#8217;s a vulnerability. You see how WordPress suffered from bad publicity over security issues. I&#8217;m not a security expert, but I tried to understand the issue by observing the whole ecosystem, the major issue with the security of WordPress is not the software, it is uneducated users and poor knowledge. Here is a good point and bad point, The good point is that any one can launch a WordPress install  within that famous 5 minute 🙂 but to maintain  the site securely the person at least needs a set of skills and information that can be thought in 2 hours. In addition to usability benefits a proper education can transform the economy of the community to a higher level. It creates revenue for the current experts and helps the future experts to get jobs easier. There are many other benefits but since this comment is already too long I better stop here. Thanks again for your great remarks and excuse me for taking lots of your precious space here.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574493#respond' data-commentid="574493" data-postid="43469" data-belowelement="div-comment-574493" data-respondelement="respond" data-replyto="Reply to pooriast" aria-label='Reply to pooriast'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-574496" class="pingback even thread-odd thread-alt depth-1">
+			<div class="comment-body">
+				Pingback: <a href="http://www.jarche.com/2014/01/networked-monkeys/" class="url" rel="ugc external nofollow">Networked monkeys | Harold Jarche</a> 			</div>
+		</li><!-- #comment-## -->
+		<li id="comment-574498" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-574498" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/fc81f9e8c6db1d1d6dfdaae4d16e54e9?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/fc81f9e8c6db1d1d6dfdaae4d16e54e9?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/fc81f9e8c6db1d1d6dfdaae4d16e54e9?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/fc81f9e8c6db1d1d6dfdaae4d16e54e9?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/fc81f9e8c6db1d1d6dfdaae4d16e54e9?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://bedreweb.dk" class="url" rel="ugc external nofollow">Bolette Obbekær</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574498"><time datetime="2014-01-24T00:54:30-08:00">January 24, 2014 at 12:54 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Thank you Matt, for explaining so well the whole idea and philosophy of open source. I startet doing websites when all CMS were sooooo expensive and only reachable for bigger companies. And now I find it so important to share this concept of open source and the idea of all of us geeks helping each other. I am 45 and have a teenage son &#8211; poor guy has to listen to his moms lectures on the marvel of the online communities and the democratization of the web &#8211; brought on by open source.</p>
+<p>I guess the numbers you mention says it all, but here it is from a WP-creatrice &#8220;thank you, you really made a difference&#8221;!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574498#respond' data-commentid="574498" data-postid="43469" data-belowelement="div-comment-574498" data-respondelement="respond" data-replyto="Reply to Bolette Obbekær" aria-label='Reply to Bolette Obbekær'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-574499" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-574499" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://i0.wp.com/pbs.twimg.com/profile_images/378800000404509244/28b2580be9e35893685d19677ba8c77a_normal.jpeg?resize=60%2C60" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/6f2db16840cf565e3b9fb559f08b083c?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://i0.wp.com/pbs.twimg.com/profile_images/378800000404509244/28b2580be9e35893685d19677ba8c77a_normal.jpeg?resize=60%2C60&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://i0.wp.com/pbs.twimg.com/profile_images/378800000404509244/28b2580be9e35893685d19677ba8c77a_normal.jpeg?resize=60%2C60' srcset='https://secure.gravatar.com/avatar/6f2db16840cf565e3b9fb559f08b083c?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://twitter.com/akshayraje" class="url" rel="ugc external nofollow">Akshay Raje (@akshayraje)</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574499"><time datetime="2014-01-24T01:37:01-08:00">January 24, 2014 at 1:37 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>This is one of the best articulated essays I have read about OSS. The application of four freedoms and open-source philosophy in Industries apart software is really awesome, and so surprisingly true.</p>
+<p>&#8220;When you apply them to medicine, you get the Open Genomics Engine, which is accelerating cancer research and bringing us closer to personalized treatment. When you apply them to companies, you get radically geographically distributed, results-based organizations like Automattic. When you apply them to events you get TEDx, Barcamp, and WordCamp. When you apply them to knowledge, you get Wikipedia.&#8221; </p>
+<p>I makes a lot of economic sense for entrepreneurs and traditional industry alike to adopt these principles of freedom in the way they do business.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574499#respond' data-commentid="574499" data-postid="43469" data-belowelement="div-comment-574499" data-respondelement="respond" data-replyto="Reply to Akshay Raje (@akshayraje)" aria-label='Reply to Akshay Raje (@akshayraje)'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-574501" class="comment odd alt thread-even depth-1 parent">
+			<article id="div-comment-574501" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/71c847d51f5ab1057123914b27dcb3a4?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/71c847d51f5ab1057123914b27dcb3a4?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/71c847d51f5ab1057123914b27dcb3a4?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/71c847d51f5ab1057123914b27dcb3a4?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/71c847d51f5ab1057123914b27dcb3a4?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://iqatrophie.wordpress.com" class="url" rel="ugc external nofollow">Martin (IQ)</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574501"><time datetime="2014-01-24T03:29:54-08:00">January 24, 2014 at 3:29 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>I&#8217;m curious if you could still find unchanged B2/cafelog code lines in the sourcecode of WordPress.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574501#respond' data-commentid="574501" data-postid="43469" data-belowelement="div-comment-574501" data-respondelement="respond" data-replyto="Reply to Martin (IQ)" aria-label='Reply to Martin (IQ)'>Reply</a></div>			</article><!-- .comment-body -->
+		<ol class="children">
+		<li id="comment-574511" class="comment even depth-2">
+			<article id="div-comment-574511" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/27bd212ccad2b23b44c8f9010dfcf1c2?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/27bd212ccad2b23b44c8f9010dfcf1c2?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/27bd212ccad2b23b44c8f9010dfcf1c2?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/27bd212ccad2b23b44c8f9010dfcf1c2?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/27bd212ccad2b23b44c8f9010dfcf1c2?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://gravatar.com/rmarksua" class="url" rel="ugc external nofollow">Ryan Marks</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574511"><time datetime="2014-01-24T20:19:25-08:00">January 24, 2014 at 8:19 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Or if it were possible to run a diff between the two!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574511#respond' data-commentid="574511" data-postid="43469" data-belowelement="div-comment-574511" data-respondelement="respond" data-replyto="Reply to Ryan Marks" aria-label='Reply to Ryan Marks'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-574502" class="pingback odd alt thread-odd thread-alt depth-1">
+			<div class="comment-body">
+				Pingback: <a href="http://helenjane.com/2014/01/24/on-blogging-the-internet-is-a-teenager/" class="url" rel="ugc external nofollow">The internet as a teenager | helenjane.com</a> 			</div>
+		</li><!-- #comment-## -->
+		<li id="comment-574505" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-574505" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/e4a8cc9e26942b8b50d55fba4543cab4?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/e4a8cc9e26942b8b50d55fba4543cab4?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/e4a8cc9e26942b8b50d55fba4543cab4?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/e4a8cc9e26942b8b50d55fba4543cab4?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/e4a8cc9e26942b8b50d55fba4543cab4?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://keepkalm.com" class="url" rel="ugc external nofollow">Kyle Alm</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574505"><time datetime="2014-01-24T12:30:25-08:00">January 24, 2014 at 12:30 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>It&#8217;s been pretty amazing to be a part of the WordPress adventure, it&#8217;s a really amazing piece of software and it has an amazing community of support. It&#8217;s been about 5 years for me, I think 2.7 is when I got started with it.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574505#respond' data-commentid="574505" data-postid="43469" data-belowelement="div-comment-574505" data-respondelement="respond" data-replyto="Reply to Kyle Alm" aria-label='Reply to Kyle Alm'>Reply</a></div>			</article><!-- .comment-body -->
+		<ol class="children">
+		<li id="comment-574564" class="comment odd alt depth-2">
+			<article id="div-comment-574564" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/c4f97d04402a45543a724090c2f089e6?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/c4f97d04402a45543a724090c2f089e6?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/c4f97d04402a45543a724090c2f089e6?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/c4f97d04402a45543a724090c2f089e6?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/c4f97d04402a45543a724090c2f089e6?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://www.cheatbee.com" class="url" rel="ugc external nofollow">TrhAckTor</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574564"><time datetime="2014-01-30T08:29:35-08:00">January 30, 2014 at 8:29 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Thats the Version I started with too. I guess thats the point: WP reached the necessary UserBase very very early and due to its awesomeness it stayed there since then. I really enjoyed reading this short bio.<br />
+Thanks for sharing 🙂</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574564#respond' data-commentid="574564" data-postid="43469" data-belowelement="div-comment-574564" data-respondelement="respond" data-replyto="Reply to TrhAckTor" aria-label='Reply to TrhAckTor'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-574508" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-574508" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://i0.wp.com/pbs.twimg.com/profile_images/1767009766/9577-480-20100303161509_normal.png?resize=60%2C60" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/a511e50c7aec433e7445fa0641c00d45?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://i0.wp.com/pbs.twimg.com/profile_images/1767009766/9577-480-20100303161509_normal.png?resize=60%2C60&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://i0.wp.com/pbs.twimg.com/profile_images/1767009766/9577-480-20100303161509_normal.png?resize=60%2C60' srcset='https://secure.gravatar.com/avatar/a511e50c7aec433e7445fa0641c00d45?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://twitter.com/mattl" class="url" rel="ugc external nofollow">Matt Lee (@mattl)</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574508"><time datetime="2014-01-24T18:26:43-08:00">January 24, 2014 at 6:26 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Great article! </p>
+<p>RMS quit MIT around Thanksgiving 83 to start GNU.</p>
+<p>I&#8217;m very happy to be a GNU developer using PHP and making my living from WordPress thirty years later.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574508#respond' data-commentid="574508" data-postid="43469" data-belowelement="div-comment-574508" data-respondelement="respond" data-replyto="Reply to Matt Lee (@mattl)" aria-label='Reply to Matt Lee (@mattl)'>Reply</a></div>			</article><!-- .comment-body -->
+		<ol class="children">
+		<li id="comment-574519" class="comment byuser comment-author-saxmatt bypostauthor odd alt depth-2">
+			<article id="div-comment-574519" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://ma.tt/" class="url" rel="ugc">Matt</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574519"><time datetime="2014-01-25T10:03:29-08:00">January 25, 2014 at 10:03 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>I thought he still had an office there, thanks for the info. What do you think would be the most accurate way to put that sentence?</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574519#respond' data-commentid="574519" data-postid="43469" data-belowelement="div-comment-574519" data-respondelement="respond" data-replyto="Reply to Matt" aria-label='Reply to Matt'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-574522" class="comment even thread-even depth-1">
+			<article id="div-comment-574522" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/3094298ee1d4ce597e3b5319436e3e99?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/3094298ee1d4ce597e3b5319436e3e99?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/3094298ee1d4ce597e3b5319436e3e99?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/3094298ee1d4ce597e3b5319436e3e99?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/3094298ee1d4ce597e3b5319436e3e99?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn">beta</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574522"><time datetime="2014-01-25T12:17:08-08:00">January 25, 2014 at 12:17 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>thanks for explaining the zeroth law</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574522#respond' data-commentid="574522" data-postid="43469" data-belowelement="div-comment-574522" data-respondelement="respond" data-replyto="Reply to beta" aria-label='Reply to beta'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-574526" class="comment odd alt thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-574526" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://i0.wp.com/pbs.twimg.com/profile_images/378800000226903875/911f74e0d0c04e0e38af39c2a2ad25ad_normal.jpeg?resize=60%2C60" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/818b2e24704755ce036c0eae061216ad?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://i0.wp.com/pbs.twimg.com/profile_images/378800000226903875/911f74e0d0c04e0e38af39c2a2ad25ad_normal.jpeg?resize=60%2C60&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://i0.wp.com/pbs.twimg.com/profile_images/378800000226903875/911f74e0d0c04e0e38af39c2a2ad25ad_normal.jpeg?resize=60%2C60' srcset='https://secure.gravatar.com/avatar/818b2e24704755ce036c0eae061216ad?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://twitter.com/abhijeetmk" class="url" rel="ugc external nofollow">Abhijeet Mukherjee (@abhijeetmk)</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574526"><time datetime="2014-01-25T23:58:10-08:00">January 25, 2014 at 11:58 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Brilliant post Matt, loved it. If not for the open-source WordPress, I wouldn&#8217;t have been here (a self-employed web publisher for 5 years now). Blogspot/blogger might have started it, but the true blogging revolution was brought by WordPress and it continues to steer it forward. Long live WordPress and long live Open Source!</p>
+<p>P.S. I have a doubt though. I thought Stallman was against open source and says free software is different, from what I&#8217;ve read. Did he change his views later?</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574526#respond' data-commentid="574526" data-postid="43469" data-belowelement="div-comment-574526" data-respondelement="respond" data-replyto="Reply to Abhijeet Mukherjee (@abhijeetmk)" aria-label='Reply to Abhijeet Mukherjee (@abhijeetmk)'>Reply</a></div>			</article><!-- .comment-body -->
+		<ol class="children">
+		<li id="comment-574527" class="comment byuser comment-author-saxmatt bypostauthor even depth-2">
+			<article id="div-comment-574527" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://ma.tt/" class="url" rel="ugc">Matt</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574527"><time datetime="2014-01-26T00:10:07-08:00">January 26, 2014 at 12:10 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>That&#8217;s more of a terminology difference between Open Source and Free Software that&#8217;s explained on the linked FSF page, he prefers people use the term Free Software because of the additional connotations it brings.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574527#respond' data-commentid="574527" data-postid="43469" data-belowelement="div-comment-574527" data-respondelement="respond" data-replyto="Reply to Matt" aria-label='Reply to Matt'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-574528" class="pingback odd alt thread-even depth-1">
+			<div class="comment-body">
+				Pingback: <a href="http://hi-tech.leonardo.it/wordpress-matt-mullenweg-open-source/" class="url" rel="ugc external nofollow">WordPress: Matt Mullenweg sostiene le quattro libertà dell’open source</a> 			</div>
+		</li><!-- #comment-## -->
+		<li id="comment-574532" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-574532" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/309082956d4ba8a0489ec7f5f1b5fcd7?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/309082956d4ba8a0489ec7f5f1b5fcd7?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/309082956d4ba8a0489ec7f5f1b5fcd7?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/309082956d4ba8a0489ec7f5f1b5fcd7?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/309082956d4ba8a0489ec7f5f1b5fcd7?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn">t0rnad0</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574532"><time datetime="2014-01-26T04:25:20-08:00">January 26, 2014 at 4:25 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Really awesome article Matt! I just wanted to thank you for creating WordPress as it&#8217;s opened up many new opportunities for me and really changed my life. I am a geek at heart so having a blogging platform that&#8217;s open source is a very big deal to me. The majority of the software I use is open source and I hope to keep it that way. Thanks again.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574532#respond' data-commentid="574532" data-postid="43469" data-belowelement="div-comment-574532" data-respondelement="respond" data-replyto="Reply to t0rnad0" aria-label='Reply to t0rnad0'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-574534" class="comment odd alt thread-even depth-1 parent">
+			<article id="div-comment-574534" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/94626bb9120b5fd4653bb84ec6108961?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/94626bb9120b5fd4653bb84ec6108961?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/94626bb9120b5fd4653bb84ec6108961?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/94626bb9120b5fd4653bb84ec6108961?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/94626bb9120b5fd4653bb84ec6108961?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://tradr.com" class="url" rel="ugc external nofollow">Johnny</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574534"><time datetime="2014-01-26T06:35:10-08:00">January 26, 2014 at 6:35 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>It would be great to know Matt&#8217;s thoughts on how software will change ecommerce. Sure, ecommerce websites can be built using WordPress, but could this beautiful code base be applied intrinsically into every commerce transaction on the planet? Can it reach the speed of the twittersphere?</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574534#respond' data-commentid="574534" data-postid="43469" data-belowelement="div-comment-574534" data-respondelement="respond" data-replyto="Reply to Johnny" aria-label='Reply to Johnny'>Reply</a></div>			</article><!-- .comment-body -->
+		<ol class="children">
+		<li id="comment-574573" class="comment byuser comment-author-saxmatt bypostauthor even depth-2">
+			<article id="div-comment-574573" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://ma.tt/" class="url" rel="ugc">Matt</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574573"><time datetime="2014-01-31T13:58:08-08:00">January 31, 2014 at 1:58 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>I don&#8217;t see any reason why not.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574573#respond' data-commentid="574573" data-postid="43469" data-belowelement="div-comment-574573" data-respondelement="respond" data-replyto="Reply to Matt" aria-label='Reply to Matt'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-574535" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-574535" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/a6d8be203bb9da491bbdce177fea43eb?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/a6d8be203bb9da491bbdce177fea43eb?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/a6d8be203bb9da491bbdce177fea43eb?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/a6d8be203bb9da491bbdce177fea43eb?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/a6d8be203bb9da491bbdce177fea43eb?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://hexmode.com/" class="url" rel="ugc external nofollow">hexmode</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574535"><time datetime="2014-01-26T08:56:30-08:00">January 26, 2014 at 8:56 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>rms developed his 4 freedoms in the 80s, not the 90s. <a href="http://mobile.datamation.com/osrc/article.php/3717476/Interview-with-Richard-Stallman-Four-Essential-Freedoms.htm" rel="nofollow ugc">http://mobile.datamation.com/osrc/article.php/3717476/Interview-with-Richard-Stallman-Four-Essential-Freedoms.htm</a></p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574535#respond' data-commentid="574535" data-postid="43469" data-belowelement="div-comment-574535" data-respondelement="respond" data-replyto="Reply to hexmode" aria-label='Reply to hexmode'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-574538" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-574538" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/de79f24778b12c4e393589c26ed4f6f0?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/de79f24778b12c4e393589c26ed4f6f0?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/de79f24778b12c4e393589c26ed4f6f0?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/de79f24778b12c4e393589c26ed4f6f0?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/de79f24778b12c4e393589c26ed4f6f0?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://atlantarofters.blogspot.com" class="url" rel="ugc external nofollow">The Sanity Inspector</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574538"><time datetime="2014-01-26T09:47:26-08:00">January 26, 2014 at 9:47 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>I&#8217;m a non-techie end user who probably has no business weighing in on this matter.  But I wonder if and when a pay model will evolve where coders can both enjoy the fruits of their labors and have their product made freely available, without a single player swallowing the bulk of the market.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574538#respond' data-commentid="574538" data-postid="43469" data-belowelement="div-comment-574538" data-respondelement="respond" data-replyto="Reply to The Sanity Inspector" aria-label='Reply to The Sanity Inspector'>Reply</a></div>			</article><!-- .comment-body -->
+		<ol class="children">
+		<li id="comment-574574" class="comment byuser comment-author-saxmatt bypostauthor odd alt depth-2">
+			<article id="div-comment-574574" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://ma.tt/" class="url" rel="ugc">Matt</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574574"><time datetime="2014-01-31T14:00:44-08:00">January 31, 2014 at 2:00 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>There&#8217;s nothing to say that coders can&#8217;t enjoy the fruits of their labor, in fact in open source the projects often grow far beyond what it ever would have if it was just the efforts of a single developer or company.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574574#respond' data-commentid="574574" data-postid="43469" data-belowelement="div-comment-574574" data-respondelement="respond" data-replyto="Reply to Matt" aria-label='Reply to Matt'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-574540" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-574540" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://i0.wp.com/pbs.twimg.com/profile_images/51504420/mii_normal.jpg?resize=60%2C60" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/0f24f7f0614ee3535c5a86c06384845f?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://i0.wp.com/pbs.twimg.com/profile_images/51504420/mii_normal.jpg?resize=60%2C60&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://i0.wp.com/pbs.twimg.com/profile_images/51504420/mii_normal.jpg?resize=60%2C60' srcset='https://secure.gravatar.com/avatar/0f24f7f0614ee3535c5a86c06384845f?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://twitter.com/GIFmodel" class="url" rel="ugc external nofollow">olia lialina (@GIFmodel)</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574540"><time datetime="2014-01-26T11:32:57-08:00">January 26, 2014 at 11:32 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Dear Matt<br />
+Thank you for your great essay.</p>
+<p>Please allow me a critical remark:  if you want to defend ideals of free software, you shouldn&#8217;t attack the term &#8220;user&#8221;.  Because the user&#8217;s existence and respect to the role of user is half the battle for free software.</p>
+<p>You are wrong in assuming that this term comes from proprietary software. &#8220;User&#8221; is widely and respectfully used in free software and means the one who is running the program. And originally &#8220;user&#8221; doesn&#8217;t connotes addiction. It means competence, knowing the thing you are using and what are you using it for. Comparing computer users with junkies is exactly the rhetoric of the proprietary software market, who needs &#8220;people&#8221; and &#8220;customers&#8221; to sell their obscure stuff. </p>
+<p>You may want to read my Turing Complete User essay  for more pro-user arguments. <a href="http://contemporary-home-computing.org/turing-complete-user/" rel="nofollow ugc">http://contemporary-home-computing.org/turing-complete-user/</a> also available as a 20 min  talk <a href="http://www.youtube.com/watch?v=DxK-Djf1s5Y" rel="nofollow ugc">http://www.youtube.com/watch?v=DxK-Djf1s5Y</a></p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574540#respond' data-commentid="574540" data-postid="43469" data-belowelement="div-comment-574540" data-respondelement="respond" data-replyto="Reply to olia lialina (@GIFmodel)" aria-label='Reply to olia lialina (@GIFmodel)'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-574541" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-574541" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/8c9eef97327d44bb514c3f2c56408a27?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/8c9eef97327d44bb514c3f2c56408a27?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/8c9eef97327d44bb514c3f2c56408a27?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/8c9eef97327d44bb514c3f2c56408a27?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/8c9eef97327d44bb514c3f2c56408a27?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="https://plus.google.com/+ChrisHeuer" class="url" rel="ugc external nofollow">Chris Heuer</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574541"><time datetime="2014-01-26T12:06:54-08:00">January 26, 2014 at 12:06 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>First, as you know, I&#8217;ve had great respect for you since you were, as us older folks are want to say, just a wee lad &#8211; well, at least before your 21st birthday, and I believe we discussed some of this the night you turned 21 too. You had potential and you worked hard to realize it. Despite early and ongoing success, your compass has remained true. Reading this now, I am struck by how much of that potential you have manifested and am excited by a future in which there are more people like you, inspired by you and extending your world view into all they do.  I am one of those people in many ways, having spread your insights about software, about the world we could be living in and about how we can live on this big sphere together. Thank you for all you do, and for putting together terrific prose such as this. Yes, code is poetry, but your words are so often poetry too.</p>
+<p>I would like to extend your remarks here in a few ways, or at least to make the attempt. Actually, it turned into a very lengthy reply that will need to see the hand of an editor and posted over on my own blog, but let me try to summarize a little here since your post really inspired me.</p>
+<p>Your respect for the tens of thousands of people and organizations who make up (and extend) the WordPress ecosystem, who make their living from this ecosystem, can not be under appreciated in an analysis of its success. While it&#8217;s not my day to day reality as it once was when I installed and managed several WP blogs every month, WordPress remains a large part of my life, so I have direct knowledge of its power, and of the power that the community imbues in it. What I see as the true power beyond the free software philosophy is only hinted at above, but I believe should be more directly acknowledged. </p>
+<p>The success should be as much attributed to the system and governance you put in place that supports and reinforces a set of shared values that aligns people together in a way that melds self interest with collective interests. Of course this is inherent in Stallman&#8217;s freedom&#8217;s. In particular his use of these words/phrases: </p>
+<p>&#8220;change it&#8221;<br />
+&#8220;as you wish&#8221;<br />
+&#8220;help your neighbor&#8221;<br />
+&#8220;giving the community a chance to benefit&#8221;</p>
+<p>These principles, and the success of the WordPress ecosystem, are based on the fundamental principal that people are respected for their contributions, however small or large. That everyone, even a commenter, has something of value to contribute. Further, that everyone is unique and has a unique view or needs in how they communicate. More importantly, the system of governance and the structures for collaboration enable others to extend and expand the ecosystem, intrinsically increasing the value available to everyone else. This in essence is the core of the principles that form the basis of our imperfect union here in the United States, that all men (and women) are created equal, and equally deserve these freedoms, so long as they do not harm or unlawfully impinge on the freedoms and rights of others. WordPress, in its spirit, in its strategic goals and its day to day operations is an exemplar of how things could be in direct opposition to traditional command and control hierarchical models in such a way that people are empowered and trusted to do the right thing, and as a result, the vast majority do. We give others our trust, and the vast majority prove they are worthy and give us their trust in return. </p>
+<p>While I am not currently building an open source core as you have done here with my new startup, one day it may be, or at least parts of it will be for sure as embrace the open Web and ensure we easily integrate into everything. The ability for any organization to do so is dependent on the nature of the market need and many other factors, which may enable the specific approach to be successful here and not successful when applied to other contexts and markets. Regardless, the success is demonstrative of the future of work, and indeed the future of society in which I soon hope more of us will live. Where we are all aligned with each other instead of in opposition with each other. Where companies sit on the same side of the proverbial table as their customers and partners. In fact, I see it as a world where the tables do not have different sides, but instead are round with only one side, just as we gather around watering holes to drink up life and around the camp fire for warmth as peers, as colleagues and as human members of the same team.</p>
+<p>With the advent of the BarCamp movement, and then the rise of social media as a mainstream phenomenon and now the rise of the collaborative/sharing economy, we&#8217;ve born witness to and helped shape the birthing of a new world order. As Mary Meeker and others have pointed out, this is the time to re-imagine everything. I do mean everything, including the nature of work, the structures of organizations and especially how we think about value creation. I hope that all organizations, large and small, new and old, for profit and non-profit are able to wake up and seize the opportunity presented by the emerging reality you are showing to be not only possible, but profitable as well.</p>
+<p>It is in this way that WordPress is a prime example of what Michael Porter means when he talks about creating shared value, in the process capturing profits that are more then just numbers in a financial audit, but accrue to the benefit of the community. If you haven&#8217;t seen it yet, check out his TED talk and you will see how business is not innately evil as some might want you to believe, but that profits can actually be magic.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574541#respond' data-commentid="574541" data-postid="43469" data-belowelement="div-comment-574541" data-respondelement="respond" data-replyto="Reply to Chris Heuer" aria-label='Reply to Chris Heuer'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-574549" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-574549" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/19887ced772ecfeb689e7dd236e14f6f?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/19887ced772ecfeb689e7dd236e14f6f?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/19887ced772ecfeb689e7dd236e14f6f?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/19887ced772ecfeb689e7dd236e14f6f?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/19887ced772ecfeb689e7dd236e14f6f?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://about.me/marc.dangeard" class="url" rel="ugc external nofollow">MarcD</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574549"><time datetime="2014-01-27T13:42:34-08:00">January 27, 2014 at 1:42 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Inspiring article. Now let&#8217;s try these freedoms for business contrats:</p>
+<p>1. The freedom to create business contracts, for any purpose.<br />
+2. The freedom to study how the business contract works, and change it so it applies to your business as you wish.<br />
+3. The freedom to redistribute copies so you can help your neighbor.<br />
+4. The freedom to distribute copies of your modified versions, giving the community a chance to benefit from your changes.</p>
+<p>Our legal world is still fundamentally inefficient, the way software was before Open Source allowed us to reuse code. Contracts live in the hell of Microsoft docs wiith colored tracking and many revisions sent back and forth to the point where you get lost.</p>
+<p>But there is one guy somewhere who came up with a brilliant way to render legal docs from other legal docs that can be shared and I really hope that the WordPress story you share will repeat itself in the legal world. Law is code, and it should be managed as such.</p>
+<p>If you want to know more check out <a href="https://github.com/HazardJ/Cmacc-Mediawiki" rel="nofollow ugc">https://github.com/HazardJ/Cmacc-Mediawiki</a></p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574549#respond' data-commentid="574549" data-postid="43469" data-belowelement="div-comment-574549" data-respondelement="respond" data-replyto="Reply to MarcD" aria-label='Reply to MarcD'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-574556" class="pingback odd alt thread-even depth-1">
+			<div class="comment-body">
+				Pingback: <a href="http://artpredator.wordpress.com/2014/01/28/know-your-rights-blogging-in-college/" class="url" rel="ugc external nofollow">Know Your Rights: Blogging in College | art predator</a> 			</div>
+		</li><!-- #comment-## -->
+		<li id="comment-574557" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-574557" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/a5929a7493eff42e3cdb5e60786b4285?s=60&#038;d=retro&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" decoding="async" data-lazy-srcset="https://secure.gravatar.com/avatar/a5929a7493eff42e3cdb5e60786b4285?s=120&#038;d=retro&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/a5929a7493eff42e3cdb5e60786b4285?s=60&amp;is-pending-load=1#038;d=retro&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-lazy-fallback="1" alt='' src='https://secure.gravatar.com/avatar/a5929a7493eff42e3cdb5e60786b4285?s=60&#038;d=retro&#038;r=g' srcset='https://secure.gravatar.com/avatar/a5929a7493eff42e3cdb5e60786b4285?s=120&#038;d=retro&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy' decoding='async' /></noscript>						<b class="fn"><a href="http://onurkaratas.com.tr" class="url" rel="ugc external nofollow">Onur</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://ma.tt/2014/01/four-freedoms/#comment-574557"><time datetime="2014-01-29T03:21:47-08:00">January 29, 2014 at 3:21 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hi, Mr. Mullenweg !</p>
+<p>With WordPress, we found a chance to express ourself in web to the tons of people.</p>
+<p>I first created my WordPress blog in 2009 @WordPress.com, after that I realized the power of it and moved to a host with my content.</p>
+<p>Since that day, I enjoyed writing and expressing my skills at my blog and customizing it with free plugins and themes in a huge freedom.</p>
+<p>Many thanks to you, to every contributor and every free software people for this.</p>
+<p>Also we are surely thankful to RMS for the FSF movement.</p>
+<p>You both are heroes for me.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ma.tt/2014/01/four-freedoms/?replytocom=574557#respond' data-commentid="574557" data-postid="43469" data-belowelement="div-comment-574557" data-respondelement="respond" data-replyto="Reply to Onur" aria-label='Reply to Onur'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-574569" class="pingback odd alt thread-even depth-1">
+			<div class="comment-body">
+				Pingback: <a href="http://christhilk.wordpress.com/2014/01/31/wordpress-is-just-kind-of-great/" class="url" rel="ugc external nofollow">WordPress is just kind of great | Chris Thilk</a> 			</div>
+		</li><!-- #comment-## -->
+		<li id="comment-595209" class="pingback even thread-odd thread-alt depth-1">
+			<div class="comment-body">
+				Pingback: <a href="https://ma.tt/2023/05/wp20-audrey-scholars/" class="url" rel="ugc">WP20 &#038; Audrey Scholars | Matt Mullenweg</a> 			</div>
+		</li><!-- #comment-## -->
+		<li id="comment-595759" class="pingback odd alt thread-even depth-1">
+			<div class="comment-body">
+				Pingback: <a href="https://ma.tt/2023/08/i-love-wordcamps/" class="url" rel="ugc">I Love WordCamps! | Matt Mullenweg</a> 			</div>
+		</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+		
+	
+	
+		<div id="respond" class="comment-respond">
+			<h3 id="reply-title" class="comment-reply-title">SHARE YOUR THOUGHTS<small><a rel="nofollow" id="cancel-comment-reply-link" href="/2014/01/four-freedoms/#respond" style="display:none;">Cancel reply</a></small></h3>			<form id="commentform" class="comment-form">
+				<iframe
+					title="Comment Form"
+					src="https://jetpack.wordpress.com/jetpack-comment/?blogid=1047865&#038;postid=43469&#038;comment_registration=0&#038;require_name_email=1&#038;stc_enabled=1&#038;stb_enabled=1&#038;show_avatars=1&#038;avatar_default=retro&#038;greeting=SHARE+YOUR+THOUGHTS&#038;jetpack_comments_nonce=5de5dbaa21&#038;greeting_reply=Leave+a+Reply+to+%25s&#038;color_scheme=transparent&#038;lang=en_US&#038;jetpack_version=12.6-a.3&#038;show_cookie_consent=10&#038;has_cookie_consent=0&#038;token_key=%3Bnormal%3B&#038;sig=72a8befc6fde25292240479ee52f6cb83fb775d2#parent=https%3A%2F%2Fma.tt%2F2014%2F01%2Ffour-freedoms%2F"
+											name="jetpack_remote_comment"
+						style="width:100%; height: 430px; border:0;"
+										class="jetpack_remote_comment"
+					id="jetpack_remote_comment"
+					sandbox="allow-same-origin allow-top-navigation allow-scripts allow-forms allow-popups"
+				>
+									</iframe>
+									<!--[if !IE]><!-->
+					<script>
+						document.addEventListener('DOMContentLoaded', function () {
+							var commentForms = document.getElementsByClassName('jetpack_remote_comment');
+							for (var i = 0; i < commentForms.length; i++) {
+								commentForms[i].allowTransparency = true;
+								commentForms[i].scrolling = 'no';
+							}
+						});
+					</script>
+					<!--<![endif]-->
+							</form>
+		</div>
+
+		
+		<input type="hidden" name="comment_parent" id="comment_parent" value="" />
+
+		
+</div><!-- #comments -->
+			
+		</div><!-- #content -->
+	</div><!-- #primary -->
+
+
+		</div><!-- #main -->
+		<footer id="colophon" class="site-footer">
+			
+			<div class="site-info">
+												<a href="https://wordpress.org/" class="imprint">
+					Proudly powered by WordPress				</a>
+			</div><!-- .site-info -->
+
+            <div id="navbar" class="navbar">
+				<nav id="site-navigation" class="navigation main-navigation">
+					<button class="menu-toggle">Menu</button>
+					<a class="screen-reader-text skip-link" href="#content" title="Skip to content">Skip to content</a>
+					<div class="menu-main-menu-container"><ul id="primary-menu" class="nav-menu"><li id="menu-item-42392" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-42392"><a href="https://ma.tt/">Home</a></li>
+<li id="menu-item-42393" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42393"><a href="https://ma.tt/about/">About</a></li>
+<li id="menu-item-48597" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48597"><a href="https://ma.tt/contact/">Contact</a></li>
+<li id="menu-item-51120" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-51120"><a href="https://distributed.blog/">Podcast</a></li>
+<li id="menu-item-51149" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-51149"><a href="https://twitter.com/photomatt">Twitter</a></li>
+<li id="menu-item-43841" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43841"><a href="http://automattic.com/work-with-us/">Let&#8217;s Work&nbsp;Together</a></li>
+</ul></div>					<form role="search" method="get" class="search-form" action="https://ma.tt/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form>				</nav><!-- #site-navigation -->
+			</div><!-- #navbar -->
+
+		</footer><!-- #colophon -->
+	</div><!-- #page -->
+
+			<script type="text/javascript">
+						var _sf_async_config={};
+			_sf_async_config.uid = 174;
+			_sf_async_config.domain = "ma.tt";
+			_sf_async_config.useCanonical = true;
+				(function(){
+			        function loadChartbeat() {
+					window._sf_endpt=(new Date()).getTime();
+					var e = document.createElement('script');
+					e.setAttribute('language', 'javascript');
+					e.setAttribute('type', 'text/javascript');
+					e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+					document.body.appendChild(e);
+				  }
+				  var oldonload = window.onload;
+				  window.onload = (typeof window.onload != 'function') ?
+					 loadChartbeat : function() { try { oldonload(); } catch (e) { loadChartbeat(); throw e} loadChartbeat(); };
+				})();
+		</script>
+
+		<!-- GA Google Analytics @ https://m0n.co/ga -->
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-52447-3', 'auto');
+			ga('send', 'pageview');
+		</script>
+
+			<div class="jetpack-instant-search__widget-area" style="display: none">
+							<div id="jetpack-search-filters-2" class="widget jetpack-filters widget_search">			<div id="jetpack-search-filters-2-wrapper" class="jetpack-instant-search-wrapper">
+		</div></div>					</div>
+			<div style="display:none">
+			<div class="grofile-hash-map-1f0202a5fd831452e34e24b459187a9f">
+		</div>
+		<div class="grofile-hash-map-78e3e81048d397b4b2bd07fcb86f9ddf">
+		</div>
+		<div class="grofile-hash-map-c6947e2f6fbffadce924f7edfc1b112d">
+		</div>
+		<div class="grofile-hash-map-767fc9c115a1b989744c755db47feb60">
+		</div>
+		<div class="grofile-hash-map-7ecfc3f9c6c16c5e7e10e42833aea99f">
+		</div>
+		<div class="grofile-hash-map-b84003edf93debb4de8cd6712f5f2cf4">
+		</div>
+		<div class="grofile-hash-map-339dd51a7f4959a90d50ebffcbfa8c8e">
+		</div>
+		<div class="grofile-hash-map-522c9316a1655ff2d0c031b91529a62e">
+		</div>
+		<div class="grofile-hash-map-299480f154cbd8ccad3d12ddc35fec0f">
+		</div>
+		<div class="grofile-hash-map-e9fd5ab1d9d87b4ed8785dad88b99905">
+		</div>
+		<div class="grofile-hash-map-5aaee927125743b79d52dd705c2469b4">
+		</div>
+		<div class="grofile-hash-map-1933c25d0b19ab908666e6296591d6e3">
+		</div>
+		<div class="grofile-hash-map-3fdd3d39cb0b8459be27c89654b37acf">
+		</div>
+		<div class="grofile-hash-map-94ae98c7302aa5b10f1d9a4255cf83ba">
+		</div>
+		<div class="grofile-hash-map-54cd74783ff88b90b23fda1d3c41bce5">
+		</div>
+		<div class="grofile-hash-map-06b2506d84d3e0515b96e2cbdd8f16f9">
+		</div>
+		<div class="grofile-hash-map-c2a6249151d12a218d62683e91521680">
+		</div>
+		<div class="grofile-hash-map-48c46dbd53713b391e1d44ffb88ca86f">
+		</div>
+		<div class="grofile-hash-map-77f9913330a084195d6bd47edcac1b2f">
+		</div>
+		<div class="grofile-hash-map-a0650d06914be4131e6a331ae419e75e">
+		</div>
+		<div class="grofile-hash-map-1fafa18d278d4b30f7f6327d46549421">
+		</div>
+		<div class="grofile-hash-map-6f2db16840cf565e3b9fb559f08b083c">
+		</div>
+		<div class="grofile-hash-map-71c847d51f5ab1057123914b27dcb3a4">
+		</div>
+		<div class="grofile-hash-map-27bd212ccad2b23b44c8f9010dfcf1c2">
+		</div>
+		<div class="grofile-hash-map-f53d12fa8b3dab4ff3e474f705e1d411">
+		</div>
+		<div class="grofile-hash-map-c4f97d04402a45543a724090c2f089e6">
+		</div>
+		<div class="grofile-hash-map-a511e50c7aec433e7445fa0641c00d45">
+		</div>
+		<div class="grofile-hash-map-3094298ee1d4ce597e3b5319436e3e99">
+		</div>
+		<div class="grofile-hash-map-818b2e24704755ce036c0eae061216ad">
+		</div>
+		<div class="grofile-hash-map-309082956d4ba8a0489ec7f5f1b5fcd7">
+		</div>
+		<div class="grofile-hash-map-94626bb9120b5fd4653bb84ec6108961">
+		</div>
+		<div class="grofile-hash-map-a6d8be203bb9da491bbdce177fea43eb">
+		</div>
+		<div class="grofile-hash-map-de79f24778b12c4e393589c26ed4f6f0">
+		</div>
+		<div class="grofile-hash-map-58b81b8b9448988d7f8584d4fb3cea19">
+		</div>
+		<div class="grofile-hash-map-8c9eef97327d44bb514c3f2c56408a27">
+		</div>
+		<div class="grofile-hash-map-19887ced772ecfeb689e7dd236e14f6f">
+		</div>
+		<div class="grofile-hash-map-a5929a7493eff42e3cdb5e60786b4285">
+		</div>
+		</div>
+		
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/ma.tt\/2014\/01\/four-freedoms\/":43469};
+	</script>
+				<script src='https://s.gravatar.com/js/gprofiles.js?ver=e' id='gprofiles-js'></script>
+<script src='https://ma.tt/blog-content/plugins/jetpack-dev/jetpack_vendor/automattic/jetpack-image-cdn/dist/image-cdn.js?minify=false&#038;ver=132249e245926ae3e188' id='jetpack-photon-js'></script>
+<script src='https://ma.tt/blog-content/plugins/gutenberg/build/url/index.min.js?ver=c077739130b14a5dadc3' id='wp-url-js'></script>
+<script id="jetpack-instant-search-js-before">
+var JetpackInstantSearchOptions=JSON.parse(decodeURIComponent("%7B%22overlayOptions%22%3A%7B%22colorTheme%22%3A%22light%22%2C%22enableInfScroll%22%3Atrue%2C%22enableFilteringOpensOverlay%22%3Atrue%2C%22enablePostDate%22%3Atrue%2C%22enableSort%22%3Atrue%2C%22highlightColor%22%3A%22%23FFC%22%2C%22overlayTrigger%22%3A%22submit%22%2C%22resultFormat%22%3A%22expanded%22%2C%22showPoweredBy%22%3Atrue%2C%22defaultSort%22%3A%22newest%22%2C%22excludedPostTypes%22%3A%5B%22attachment%22%5D%7D%2C%22homeUrl%22%3A%22https%3A%5C%2F%5C%2Fma.tt%22%2C%22locale%22%3A%22en-US%22%2C%22postsPerPage%22%3A20%2C%22siteId%22%3A1047865%2C%22postTypes%22%3A%7B%22post%22%3A%7B%22singular_name%22%3A%22Post%22%2C%22name%22%3A%22Posts%22%7D%2C%22page%22%3A%7B%22singular_name%22%3A%22Page%22%2C%22name%22%3A%22Pages%22%7D%2C%22attachment%22%3A%7B%22singular_name%22%3A%22Media%22%2C%22name%22%3A%22Media%22%7D%7D%2C%22webpackPublicPath%22%3A%22https%3A%5C%2F%5C%2Fma.tt%5C%2Fblog-content%5C%2Fplugins%5C%2Fjetpack-dev%5C%2Fjetpack_vendor%5C%2Fautomattic%5C%2Fjetpack-search%5C%2Fbuild%5C%2Finstant-search%5C%2F%22%2C%22isPhotonEnabled%22%3Atrue%2C%22isFreePlan%22%3Afalse%2C%22apiRoot%22%3A%22https%3A%5C%2F%5C%2Fma.tt%5C%2Fwp-json%5C%2F%22%2C%22apiNonce%22%3A%22ce01344259%22%2C%22isPrivateSite%22%3Afalse%2C%22isWpcom%22%3Afalse%2C%22hasOverlayWidgets%22%3Atrue%2C%22widgets%22%3A%5B%7B%22filters%22%3A%5B%7B%22name%22%3A%22People%22%2C%22type%22%3A%22taxonomy%22%2C%22taxonomy%22%3A%22people%22%2C%22count%22%3A5%2C%22widget_id%22%3A%22jetpack-search-filters-2%22%2C%22filter_id%22%3A%22taxonomy_0%22%7D%2C%7B%22name%22%3A%22Categories%22%2C%22type%22%3A%22taxonomy%22%2C%22taxonomy%22%3A%22category%22%2C%22count%22%3A5%2C%22widget_id%22%3A%22jetpack-search-filters-2%22%2C%22filter_id%22%3A%22taxonomy_1%22%7D%2C%7B%22name%22%3A%22Tags%22%2C%22type%22%3A%22taxonomy%22%2C%22taxonomy%22%3A%22post_tag%22%2C%22count%22%3A5%2C%22widget_id%22%3A%22jetpack-search-filters-2%22%2C%22filter_id%22%3A%22taxonomy_2%22%7D%2C%7B%22name%22%3A%22Year%22%2C%22type%22%3A%22date_histogram%22%2C%22count%22%3A5%2C%22field%22%3A%22post_date%22%2C%22interval%22%3A%22year%22%2C%22widget_id%22%3A%22jetpack-search-filters-2%22%2C%22filter_id%22%3A%22date_histogram_3%22%7D%5D%2C%22widget_id%22%3A%22jetpack-search-filters-2%22%7D%5D%2C%22widgetsOutsideOverlay%22%3A%5B%5D%2C%22hasNonSearchWidgets%22%3Afalse%7D"));
+</script>
+<script src='https://ma.tt/blog-content/plugins/jetpack-dev/jetpack_vendor/automattic/jetpack-search/build/instant-search/jp-search.js?minify=false&#038;ver=fd8e2df5c5556b33e4a7' id='jetpack-instant-search-js'></script>
+<script src='//stats.wp.com/w.js?ver=202336' id='jp-tracks-js'></script>
+<script src='https://ma.tt/blog-content/plugins/wp-parsely/build/loader.js?ver=1d54726e91ce976b3e82' id='wp-parsely-loader-js'></script>
+<script data-parsely-site="ma.tt" src='https://cdn.parsely.com/keys/ma.tt/p.js?ver=3.9.0' id="parsely-cfg"></script>
+<script src='https://secure.gravatar.com/js/gprofiles.js?ver=202336' id='grofiles-cards-js'></script>
+<script id='wpgroho-js-extra'>
+var WPGroHo = {"my_hash":""};
+</script>
+<script src='https://ma.tt/blog-content/plugins/jetpack-dev/modules/wpgroho.js?ver=12.6-a.3' id='wpgroho-js'></script>
+<script src='https://ma.tt/blog/wp-includes/js/comment-reply.min.js?ver=6.4-alpha-56520' id='comment-reply-js' async data-wp-strategy='async'></script>
+<script src='https://ma.tt/blog-content/themes/twentythirteen/js/functions.js?ver=20230526' id='twentythirteen-script-js'></script>
+<script src='https://ma.tt/blog-content/plugins/jetpack-dev/jetpack_vendor/automattic/jetpack-lazy-images/dist/intersection-observer.js?minify=false&#038;ver=83ec8aa758f883d6da14' id='jetpack-lazy-images-polyfill-intersectionobserver-js'></script>
+<script id='jetpack-lazy-images-js-extra'>
+var jetpackLazyImagesL10n = {"loading_warning":"Images are still loading. Please cancel your print and try again."};
+</script>
+<script src='https://ma.tt/blog-content/plugins/jetpack-dev/jetpack_vendor/automattic/jetpack-lazy-images/dist/lazy-images.js?minify=false&#038;ver=2e29137590434abf5fbe' id='jetpack-lazy-images-js'></script>
+<script defer src='https://stats.wp.com/e-202336.js' id='jetpack-stats-js'></script>
+<script id="jetpack-stats-js-after">
+_stq = window._stq || [];
+_stq.push([ "view", {v:'ext',blog:'1047865',post:'43469',tz:'-7',srv:'ma.tt',j:'1:12.6-a.3'} ]);
+_stq.push([ "clickTrackerInit", "1047865", "43469" ]);
+</script>
+<script defer src='https://ma.tt/blog-content/plugins/akismet/_inc/akismet-frontend.js?ver=1687399767' id='akismet-frontend-js'></script>
+<script id='sharing-js-js-extra'>
+var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
+</script>
+<script src='https://ma.tt/blog-content/plugins/jetpack-dev/_inc/build/sharedaddy/sharing.min.js?ver=12.6-a.3' id='sharing-js-js'></script>
+<script id="sharing-js-js-after">
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-tumblr' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-tumblr' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomtumblr', 'menubar=1,resizable=1,width=450,height=450' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-twitter' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-twitter' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-facebook' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-facebook' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-linkedin' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-linkedin' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-pocket' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-pocket' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcompocket', 'menubar=1,resizable=1,width=450,height=450' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-telegram' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-telegram' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomtelegram', 'menubar=1,resizable=1,width=450,height=450' );
+						return false;
+					}
+				} );
+			} )();
+</script>
+
+		<!--[if IE]>
+		<script type="text/javascript">
+			if ( 0 === window.location.hash.indexOf( '#comment-' ) ) {
+				// window.location.reload() doesn't respect the Hash in IE
+				window.location.hash = window.location.hash;
+			}
+		</script>
+		<![endif]-->
+		<script type="text/javascript">
+			(function () {
+				var comm_par_el = document.getElementById( 'comment_parent' ),
+					comm_par = ( comm_par_el && comm_par_el.value ) ? comm_par_el.value : '',
+					frame = document.getElementById( 'jetpack_remote_comment' ),
+					tellFrameNewParent;
+
+				tellFrameNewParent = function () {
+					if ( comm_par ) {
+						frame.src = "https://jetpack.wordpress.com/jetpack-comment/?blogid=1047865&postid=43469&comment_registration=0&require_name_email=1&stc_enabled=1&stb_enabled=1&show_avatars=1&avatar_default=retro&greeting=SHARE+YOUR+THOUGHTS&jetpack_comments_nonce=5de5dbaa21&greeting_reply=Leave+a+Reply+to+%25s&color_scheme=transparent&lang=en_US&jetpack_version=12.6-a.3&show_cookie_consent=10&has_cookie_consent=0&token_key=%3Bnormal%3B&sig=72a8befc6fde25292240479ee52f6cb83fb775d2#parent=https%3A%2F%2Fma.tt%2F2014%2F01%2Ffour-freedoms%2F" + '&replytocom=' + parseInt( comm_par, 10 ).toString();
+					} else {
+						frame.src = "https://jetpack.wordpress.com/jetpack-comment/?blogid=1047865&postid=43469&comment_registration=0&require_name_email=1&stc_enabled=1&stb_enabled=1&show_avatars=1&avatar_default=retro&greeting=SHARE+YOUR+THOUGHTS&jetpack_comments_nonce=5de5dbaa21&greeting_reply=Leave+a+Reply+to+%25s&color_scheme=transparent&lang=en_US&jetpack_version=12.6-a.3&show_cookie_consent=10&has_cookie_consent=0&token_key=%3Bnormal%3B&sig=72a8befc6fde25292240479ee52f6cb83fb775d2#parent=https%3A%2F%2Fma.tt%2F2014%2F01%2Ffour-freedoms%2F";
+					}
+				};
+
+				
+				if ( 'undefined' !== typeof addComment ) {
+					addComment._Jetpack_moveForm = addComment.moveForm;
+
+					addComment.moveForm = function ( commId, parentId, respondId, postId ) {
+						var returnValue = addComment._Jetpack_moveForm( commId, parentId, respondId, postId ),
+							cancelClick, cancel;
+
+						if ( false === returnValue ) {
+							cancel = document.getElementById( 'cancel-comment-reply-link' );
+							cancelClick = cancel.onclick;
+							cancel.onclick = function () {
+								var cancelReturn = cancelClick.call( this );
+								if ( false !== cancelReturn ) {
+									return cancelReturn;
+								}
+
+								if ( ! comm_par ) {
+									return cancelReturn;
+								}
+
+								comm_par = 0;
+
+								tellFrameNewParent();
+
+								return cancelReturn;
+							};
+						}
+
+						if ( comm_par == parentId ) {
+							return returnValue;
+						}
+
+						comm_par = parentId;
+
+						tellFrameNewParent();
+
+						return returnValue;
+					};
+				}
+
+				
+				// Do the post message bit after the dom has loaded.
+				document.addEventListener( 'DOMContentLoaded', function () {
+					var iframe_url = "https:\/\/jetpack.wordpress.com";
+					if ( window.postMessage ) {
+						if ( document.addEventListener ) {
+							window.addEventListener( 'message', function ( event ) {
+								var origin = event.origin.replace( /^http:\/\//i, 'https://' );
+								if ( iframe_url.replace( /^http:\/\//i, 'https://' ) !== origin ) {
+									return;
+								}
+								frame.style.height = event.data + 'px';
+							});
+						} else if ( document.attachEvent ) {
+							window.attachEvent( 'message', function ( event ) {
+								var origin = event.origin.replace( /^http:\/\//i, 'https://' );
+								if ( iframe_url.replace( /^http:\/\//i, 'https://' ) !== origin ) {
+									return;
+								}
+								frame.style.height = event.data + 'px';
+							});
+						}
+					}
+				})
+
+			})();
+		</script>
+
+		</body>
+</html>
+
+<!-- Dynamic page generated in 0.226 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2023-09-05 23:43:55 -->
+
+<!-- Compression = gzip -->

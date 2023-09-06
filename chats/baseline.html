@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/i/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/i/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/i/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/web-app/site.webmanifest">
+<link rel="mask-icon" href="/assets/i/icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/i/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="msapplication-config" content="/assets/web-app/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+
+  <title>Igalia Chats: Baseline | Igalia - Open Source Consultancy and Development</title>
+  <meta name="description" content="Igalia is an open source consultancy specialised in the development of innovative projects and solutions. Our engineers have expertise in a wide range of technological areas, including browsers and client-side web technologies, graphics pipeline, compilers and virtual machines. We have the most WPE, WebKit, Chromium/Blink and Firefox expertise found in the consulting business, including many reviewers and committers. Igalia designs, develops, customises and optimises GNU/Linux-based solutions for companies across the globe. Our work and contributions are present in many projects such as GStreamer, Mesa 3D, WebKit, Chromium, etc.">
+  <meta name="keywords" content="igalia, free software, free software engineering, development, consultancy, webkit consultancy, consulting, webkit consulting, programming, hackers, cooperative organization, organization, company, assembly, igalia.com, igalia sl, webkit, webkitgtk, a11y, v8, jsc, training, GNOME, webkit consultants, chromium consulting, chromium consultants, chromium consultancy, blink consultants, blink consultancy, gstreamer consultancy, gstreamer consulting">
+  <meta name="author" content="Igalia">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" id="main-stylesheet" href="/assets/main.css" data-main="/assets/main.css" data-aria="/assets/aria.css">
+  <link rel="canonical" href="https://www.igalia.com/chats/baseline">
+  <link rel="alternate" type="application/rss+xml" title="Igalia" href="/feed.xml">
+
+  
+
+  <!-- Open Graph metadata -->
+  <meta content="Igalia" property="og:site_name">
+  <meta content="Igalia Chats: Baseline | Igalia - Open Source Consultancy and Development" property="og:title">
+  <meta content="https://www.igalia.com/assets/i/logo200x200Margin.png" property="og:image">
+  <meta content="https://www.igalia.com/assets/i/logoSimple200x200.png" property="og:logo">
+  
+    <meta content="website" property="og:type">
+  
+  
+    <meta content="Igalia is an open source consultancy specialised in the development of innovative projects and solutions. Our engineers have expertise in a wide range of technological areas, including browsers and client-side web technologies, graphics pipeline, compilers and virtual machines. We have the most WPE, WebKit, Chromium/Blink and Firefox expertise found in the consulting business, including many reviewers and committers. Igalia designs, develops, customises and optimises GNU/Linux-based solutions for companies across the globe. Our work and contributions are present in many projects such as GStreamer, Mesa 3D, WebKit, Chromium, etc." property="og:description">
+  
+  
+    <meta content="https://www.igalia.com/chats/baseline" property="og:url">
+  
+  
+</head>
+
+
+  <body class="aria-contrast" data-json-base="/assets/json">
+    <header id="header" role="banner">
+  <div class="container-fluid-1440">
+    <div class="wrapper">
+      
+      
+      
+      <h1 class="site-title logos">
+        <a href="/" title="Igalia">
+          <img src="/assets/i/logo.png" alt="Igalia" />
+        </a>
+      </h1>
+
+      <nav role="navigation" class="site-nav hidden-xs hidden-sm">
+        <ol class="main-menu">
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/about" title="About Us">
+              About Us
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/technologies" title="Technologies">
+              Technologies
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/services" title="Services">
+              Services
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/industries" title="Industries">
+              Industries
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/24-7/home" title="24/7">
+              24/7
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/jobs" title="Jobs">
+              Jobs
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/contact" title="Contact">
+              Contact
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/public-funding" title="Feder">
+              Feder
+            </a>
+          </li>
+          
+        </ol>
+      </nav>
+
+      <div aria-hidden="true" id="menu-toggle-wrapper" class="visible-xs visible-sm">
+        <a href="#" id="menu-toggle" title="Toggle menu">
+          <i aria-hidden="true" class="fas fa-bars"></i>
+          <span hidden>Toggle menu</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div id="mobile-menu-wrapper">
+  <div id="mobile-menu">
+    <ul role="navigation" class="nav">
+      
+      <li>
+        <a class="page-link" href="/about" title="About Us">
+          About Us
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/technologies" title="Technologies">
+          Technologies
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/services" title="Services">
+          Services
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/industries" title="Industries">
+          Industries
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/24-7/home" title="24/7">
+          24/7
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/jobs" title="Jobs">
+          Jobs
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/contact" title="Contact">
+          Contact
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/public-funding" title="Feder">
+          Feder
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+    <main class="page-content" aria-label="Content">
+        <article class="page page--chats">
+  <header class="page-header" style="background-image: url(/assets/i/headers/header-technologies.jpg); ">
+    <div class="container-fluid-1440">
+      <div class="grid-row">
+        <div class="col-xs-12 col-sm-10-center">
+          <h1 class="page-title" itemprop="name headline">Igalia Chats: Baseline</h1>
+          
+        </div>
+      </div>
+    </div>
+    <div class="cover"></div>
+  </header>
+
+  <div class="container-fluid-1440">
+    <div class="page-content">
+      <div class="grid-row">
+        <div class="col-xs-12">
+          <div class="grid-row">
+            <div class="col-xs-12 col-lg-8">
+              <h2 class="chat-title">
+                <a href="/24-7/chats" class="chat-title__back">
+                  <img src="/assets/i/arrowBackBlue.png" alt="Back to chats">
+                </a>
+                Igalia&#39;s Brian Kardell and Eric Meyer chat about the new Baseline effort announced at Google IO
+              </h2>
+              <div class="chat-date">
+                <time datetime="2023-05-22T00:00:00+00:00" itemprop="datePublished">
+                  
+                  May 22, 2023
+                </time>
+              </div>
+              <div class="chat-audio">
+                <div class="chat-audio__player">
+                  <div class="audio-player" data-src="/downloads/interviews/baseline.mp3">
+                    <div class="controls">
+                      <div class="play-container">
+                        <div class="toggle-play play">
+                        </div>
+                      </div>
+                      <div class="time-container">
+                        <div class="time">
+                          <div class="current">0:00</div>
+                          <div class="length"></div>
+                        </div>
+                        <div class="timeline">
+                          <div class="progress"></div>
+                        </div>
+                      </div>
+                      <div class="volume-container">
+                        <div class="volume-button">
+                          <div class="volume c-icon-volumeMed"></div>
+                        </div>
+                        <div class="volume-slider">
+                          <div class="volume-percentage"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <ul class="chat-audio__links">
+                  <li><a href="/downloads/interviews/baseline.mp3" title="Download Chat" target="_blank"><i class="c-icon-download"></i></a></li>
+                  
+                  <li><a href="/chats.xml" title="Open podcast RSS feed" target="_blank"><i class="c-icon-podcast"></i></a></li>
+                  
+                  
+                  <li><a href="https://youtu.be/Oht1D9j7pnQ" title="Open in Youtube" target="_blank"><i class="c-icon-youtube"></i></a></li>
+                  
+                  
+                  <li><a href="https://open.spotify.com/show/0XZ4hqB5ogePKOumi4daDm" title="Open in Spotify" target="_blank"><i class="c-icon-spotify"></i></a></li>
+                  
+                  
+                  <li><a href="https://podcasts.apple.com/us/podcast/igalia/id1533323588" title="Open in iTunes" target="_blank"><i class="c-icon-itunes"></i></a></li>
+                  
+                  
+                  <li><a href="https://podcasts.google.com/feed/aHR0cHM6Ly93d3cuaWdhbGlhLmNvbS9jaGF0cy54bWw" title="Open in Google Podcasts" target="_blank"><i class="c-icon-gpod"></i></a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12">
+          <div class="grid-row grid-row--between">
+            <div class="col-xs-12 col-lg-3 col-lg-order-3">
+              <ul class="c-participants">
+                
+                <li class="c-participants__item  c-participants__item--1">
+                  
+                  
+                  <img src="/assets/i/logoSimple.png" alt="Igalian" class="c-participants__igalian">
+                  <a href="/team/emeyer" class="c-participants__link">
+                    <img src="/assets/i/igalians/emeyer.jpg"
+                      alt="Eric Meyer's avatar"
+                      class="c-participants__image">
+                    Eric Meyer
+                    <i class="fas fa-plus"></i>
+                  </a>
+                  
+                </li>
+                
+                <li class="c-participants__item  c-participants__item--2">
+                  
+                  
+                  <img src="/assets/i/logoSimple.png" alt="Igalian" class="c-participants__igalian">
+                  <a href="/team/bkardell" class="c-participants__link">
+                    <img src="/assets/i/igalians/brian-kardell.jpg"
+                      alt="Brian Kardell's avatar"
+                      class="c-participants__image">
+                    Brian Kardell
+                    <i class="fas fa-plus"></i>
+                  </a>
+                  
+                </li>
+                
+              </ul>
+            </div>
+            <div class="col-lg-1 col-lg-order-2"></div>
+
+            <div class="col-xs-12 col-lg-8 col-lg-order-1">
+              
+
+
+              <h2 class="chat-subtitle">Transcription</h2>
+              <ul class="c-chat">
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>: Hello, I'm Eric Meyer. I'm a Developer Advocate at Igalia.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>: And I am Brian Kardell, also a Developer Advocate at Igalia.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>: And today we're going to chat about a new thing in the web, a new service called Baseline. Have you looked at this much, Brian?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>: I have looked at a bit. I mean, I know where it comes from.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>: So, Baseline is essentially a way of letting you look at let's say, information about a Web API and it will tell you whether the thing is widely supported, or not widely supported, or not supported at all, I guess, in some cases. And the way they're defining widely supported is that it's supported in three major browser engines for at least the last two major release versions, which is a little complicated. So if something's been supported in Chromium since version 79, and Gecko since version 79, and then WebKit added it two release versions ago, two major release versions ago, then it's countered as widely supported.Or if WebKit has supported it since 2016, and Chromium has supported it for the last three releases, and Gecko has added it two releases ago then that would also be widely supported. So if you go to MDN, Mozilla Developers Network, and you land on a property like margin-top, it's going to tell you if that's widely supported. I really hope that margin-top is widely supported. But then it might for things like new color formats, it might have different information. So I mean, that's what Baseline is meant to do, is to give people, to give developers a more coarse-grained idea of, 'Hey, can I use this thing right now or not?'</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>: I like what this is doing. I think it's one of these things that there's a slow trend toward realizing that we need effectively this. So, in 2019 Igalia was, there's a effort spearheaded by little Dan, Dan Ehrenberg.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>: Who was then at Igalia?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>: He was then at Igalia, right. He went to Bloomberg since then, after the pandemic. So it was to bring together different interest groups about JavaScript, who some people are involved because they make frameworks and some people make tools. And we want to get together and talk with them and help review and shape what's developing in standards so that it takes all those things into account. And there was one that was set up for educators. And we had a lot of trouble like, 'What do you want this group to do?'Because the obvious thing is documentation in education. We could give talks. We could write MDN. There's so many things that seem obvious, but a non-obvious aspiration that we had is that, 'Boy, there's a lot of it already.' And it starts at a very early stage. We start talking about things sometimes years before anybody can really use them in good conscience. You know what I mean?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>: Yeah. We've had that problem with a few technologies over the years. Flexbox comes to mind.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>: Yeah, absolutely. And so, we had this idea. I wrote a piece about this. It's on my blog called 2-Minute Standards. And we had a Twitter count that we would post no more than 500 words or a two-minute video. It had to be basically the equivalent of the evening news. It was like, 'This is not going to be deep, but it's going to tell you the things that you really should know.' You know?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>: So for the younger viewers in our audience who may not have ever experienced this, it used to be that there was local news at six o'clock in the evening in your local time zone and then national news at 6:30. And the national news would come from one of the three major networks, like ABC, NBC, CBS. And the news anchor would for half an hour give you little bite-sized summaries of what the top news stories were, like hitting up the homepage of a news site today and glancing through the headlines and everything. Anyway it's... And people actually used to schedule their evenings around it, because that was how they caught up with the news, with what was going on that day. It was by watching a half hour program that would cover, I don't know, 8 to 10 stories in that time with commercial breaks, so anyway.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>: I think today we have a lot of things that like to go deeper on things. And I like that as well. But you need two different things. And I like what, I think that some of this came out in conversations with the WebDX group as well, that there's a real need here. And you and I actually have been having a lot of conversations about this. Well, I wrote a piece about that too called, The Cool Tool You Didn't Know Existed, or something like that. And it's just about like, 'Hey, did you know that you can not by design, but almost by accident, you can subscribe to BCD updates?' So once or twice a week you get a little summary in your RSS feed of a pretty condensed version of everything that happened.But it's also too noisy, because when things are experimental, they go in there, because we're trying to make it not experimental. To get it past that point, you have to do a whole bunch of stuff and it takes a long time. I just see a lot of convergence of ideas here. I know also, do you remember there was a conversation in CSS Working Group? I think Jen Simmons maybe started it. I could be wrong about that, but let's do CSS4.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>: Vaguely.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>: The idea here is that we gained a lot by modularizing and moving to Evergreen. But the one thing that we've made it really, really hard to do is for people to keep up and say, 'This year I'm going to make a point of learning these things and making sure that I am fluent with them.' And now, it's just sort of things come at you a million miles a minute through social media. You'll see five presentations in a single week about a thing that isn't a thing yet. And each one wants an hour of your time. So it's just really, really hard to know when is it really time to pay attention. And that has a side effect of a little bit like the Boy Who Cried Wolf. We miss the moment when it arrives.So I like what Rachel has been doing. I think it's been inspired by all these things, like the CSS4, HTML6, ideas about how we could put a bow on it and say, 'This is what it means. It's not really a new version of the standard or anything, but it's sort of like we do with ECMA 2016, ECMA 2017. You can say, 'This is what is in that.'</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>: And you'll CSS Working Group occasionally does that. They used to do it yearly. They would do a CSS snapshot. But I think they've been working on one recently.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>: That was part of the conversation in that thread is a number of people pointed that out. I mean, I hate to say it, but we need a marketing term. We need something, a banner under which this is done, even if that has a relatively boring, like CSS 2024. But I really like what's being done here. Rachel Andrew announced it at Google I/O.<div id='edited'>EDIT::</div></blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>: At Google I/O and from what I understand, she's been working on it. She's been at least one of the people working on it for some time now. It's been a while in the works.  It sort of short circuits that or bypasses that whole step of, 'Oh, this sounds cool. Let me adapt the example in this page to my project. And then I'll load it up in the web browser and then it doesn't work.' And then you spend however long trying to figure out, 'Did I get the syntax wrong? Am I not understanding what kind of elements will accept it? Am I not thinking through this other thing? Is it just the browser that I tested in? Let me open another browser.'Ideally, you can skip that whole step with this Baseline information and say, 'Scroll snapping! Scroll snapping would be perfect for this carousel that marketing insists that I implement. Let me go read up on that.' And then you land on the scroll snap page and it will tell you right away if this is going to help you or not. As opposed to maybe you land there. I mean, Scroll Snap's pretty widely supported, if I remember correctly. But let's just imagine that it's only supported in one of three browser engines. Somebody lands there and immediately can see, 'Oh, this CSS is not going to work. I'm probably going to have to go to JavaScript,' as opposed to today they would land on it, land on that page, and it would say, 'Widely supported,' and be like, 'Awesome, I can do this with CSS.' Or HTML or whatever the thing is.And this is supposed to apply to more than CSS. It's supposed to be throughout, I think, the HTML and certainly the JavaScript APIs.~~ So you could land on an API page and see right away 'Oh gosh, this actually works in all browsers and it has for at least two major versions,' which I thought was... What do you think about that last two major versions cut off for marking something as being supported?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>: Anything we choose here is going to be arbitrary. I think one of the things that you get from the two major versions thing is first you miss the bugs that are inevitably probably in the first one. But second, there are a non-small number of browsers as well that are built off of Chrome especially, and they sometimes can lag. So it probably increases your likelihood that it's going to be also in downstream browsers if you say two versions. Also, not everybody gets the version at the same time. Even though we say, 'Oh, today Chrome 109...' Well, the world is a big place and there are a few billion people who are getting Chrome. So when will they get it can depend on all kinds of things, including even many of them say, 'Hey, we have an update. Click here to restart.' And do you?And also, in the things that it can delay is internets, where your corporate IT lags you on that, which is actually a lot of internet traffic and intranet work. So I can tell you, I worked for a company before I came here, for a long time that had controlled tech IT policies and would delay your rollout. And it would be very, very confusing if you weren't aware of that, because you would say, 'Gee, but the latest version is this and it tells me there's no update available.' So I think that the two major versions is just guaranteeing that you're not going to get a lot of weird, false like, 'This should be supported, and I can't understand why it's not working for this small fraction of my users.' So I think it's a good one.I think that the Baseline itself is going to move slow. I mean, when they talked about in, there's a WebDev piece about this. And there's also her talk introducing it. It's a short 15 minutes, I think. By the way, did you watch it?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>: I have not seen all of it.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>: She mentions Igalia.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>: Oh, nice. Very cool. Thanks, Rachel!</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>: Yeah, thanks Rachel. Basically, she says, 'What is this about? What are we trying to do with it and what are our roles and responsibilities?' And she says that Google is interested in doing this, and this, and this. And also, working with Igalia, if other engines are happy to include them, but for whatever reason can't find the resources to bring up the Baseline. And they're talking about also announcing what will be in the Baseline. So thinking about it, it is actually, as she explained, related also to Interop. So there will be Interop 2023 and there will be Baseline 2024. And these are just nice, simple-to-grok things we can work on together and understand the same way together.And I think some people will think it's a little too slow, but that's some people. That is really, really important to remember, because you might hear development discussion for sometimes years before there's any implementations. And long lag and then once it's real, nobody knows about it. It will go into all of our release notes and the moment will be missed for the vast majority of people, because there's just so much noise. And so a number of people will only discover this maybe years from now. At least currently that's the case. And that's kind of one of the things I believe that Baseline is intended to help.Because while it might feel slow to you, if we tell everybody, if we spend a year saying, 'This is Baseline 2023,' more people will get it and be able to focus and learn it and push it out into the world in real life, faster. But a good example of this is Grid and Flexbox. It's hard to imagine, for me, a site that you would make that wouldn't involve Grid and/or Flexbox,</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>: They do seem essential these days.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>: And yet, it's not even most websites I don't think.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>: No.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>: Yeah, so it takes a long, long time.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>: Yeah, it certainly can. And I mean, that's understandable. Developers a lot have a long experience of hear about cool thing, wherever they hear about it, CSS Tricks, or Smashing Magazine, or Twitter, or Macedon or whatever. And go try it out and discover that it doesn't work as fully, or as cleanly, or as widely as they would like. And then file it in the, 'Oh, that was a cool idea, but it doesn't work right now. I'll check back in five years,' bin of their head. And maybe they do, maybe they don't check back in a few years. Because that's sort of been the experience, this, 'Oh, cool new CSS thing that just landed in Safari'? I was like, 'Oh, cool. Let me go check that out. And now I want to see in the other brothers. Oh, it doesn't work there, 'cause only Safari, or Firefox, or whoever was first.An example that's immediately coming to my mind, because I was just dealing with a design the other day where I really wanted this is the WebKit has supported the hanging punctuation CSS property since 2016. They're the only one. And we don't have to get into the details of what it does. It helps text line up more nicely if there are lines of texts that start with punctuation. But at any rate, that's been, it's 2023, it's seven years that it's been available, and working, and improving web rendering in WebKit browsers and Safari and other WebKit browsers. And it's not present Chromium or Gecko. And so there's this bit set in the back of my head when it comes to hanging punctuation.That's the, 'Oh, I can do this, but I have to remember that it only works in one of the three main browser engines, and hopefully, someday maybe it will become more widely supported.' And for something like hanging punctuation, that's not a big deal. But if it were something like Grid, if Grid had been like that, and Flexbox kind of was like that for a while, where it was like, 'Oh, I can use this in this browser, but the thing that I did is rendered completely differently in other browsers.' And it took a few years for that to get worked out. And so people have this idea in their head of, 'Oh yeah, cool thing, but I need to check back in later to see if it's actually widely supported.'And ideally, I mean, hopefully, Baseline will keep people from having to keep doing that, sort of set a mental note for themselves to check back. Or unfortunately, I think more often it's like, 'Oh yeah, cool idea, but it doesn't work.' And they just immediately file it under does not work and never update that knowledge.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>: I think that that is really the case historically with a lot of things. You can look at Grid. So Grid did not have that problem. Grid came out kind of everywhere at the same time</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>: Within the space of a month, effectively.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>: It was not super buggy. And so it had every advantage. And it's the kind of thing that everyone needs all the time. There are other things that are not like that. Just for example, if you work in an enterprise, for example, you're dealing with forms all the time. But there are tons and tons and tons of websites you'll build where you won't use forms at all. And so we get some new feature in forms. Maybe you need it. Maybe a huge segment of the population only needs it once every year or two.So basically, that's the only time you're thinking about that. You don't need it right now. You try something. You learn that doesn't work. You probably just learn a way to work around it. And it might be one or two or three cycles before you see somebody give a talk where they're doing something with forms that you tried and you're like, 'But that doesn't work. Oh, wait, no, it does work now.'</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>: Yeah.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>: And it's like, I wish that you could just make everybody instantly informed. I mean, this happens to me too. I don't want to be like, 'Why can't everybody keep up?' I can't keep up. I'm making these complaints from my own perspective. It's really hard to keep up with all these things.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>: Seriously,</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>: Even until maybe 2018 or 2019 I was giving talks, and I would have somebody come up to me and be like, 'Wow, we're doing so much in the web platform now. This query selector thing is amazing.' I'm like, 'Wow, that has been in the platform for a long time now.' It shakes you out of what you think the norm is when you go and talk to a lot of people, 'cause there's a huge, huge variety of what people know and what they use. And plenty of people still just out there using jQuery.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>: Which, nothing against jQuery. It's pretty cool.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>: I mean, it works for them.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>: Sometimes it's nice to know, 'Oh, hey, the thing that I'm still using jQuery for, that's now natively supported and I don't have to load an entire library in order to get this thing that I need.' ~~I mean,~~ similarly, there was that period when it came to Grid where people were saying, 'Hey, you don't have to use X layout framework anymore. You can just do it in Grid.' But how do you notify the entire web community of that? You really, you can't.Like you say, 'There is no evening news that everybody tunes into,' or weekly news, or monthly news, or whatever news, which is interesting. I mean, you would think that there would be some widely-viewed YouTube channel and somebody would just do that. But there really isn't. I'm not about to volunteer, which maybe is a symptom of why there is no such thing, because that takes a lot of effort to produce.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>: Well, I think Rachel and her team are a little bit doing this now with the web.dev. They do a thing where it is basically the evening news, but the only thing is sometimes it does contain, like these things are experimental and stuff too. Which means, it's a little bit harder for you to just tune in and separate the hopes and ambitions from the cold, hard reality of what you can currently use. But I think they're doing a great job over there actually, with that. If you don't subscribe to that, it's a great thing. I think that this has been growing as an idea, that like, 'Boy, there's just a lot to keep up with and keep separate.' And we really need some way to do like you say, put in the brains of everybody like, 'Hey, these are important things that happened or are happening this year, and these are the things to you should know.'There might also be plenty of other things you also think you should know. That's fine. But these ones are kind of they're new landing and interoperable.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>: And when I was talking earlier about this information showing up at MDN, I think I might have left the impression mistakenly that this is on every single page on MDN., and it's not. That may be the eventual outcome, but as we are having this conversation, as an example, if you go to scroll-margin-top, there's no Baseline information for that on MDN. But if you go to the pages for the various Grid properties, there is a little Baseline banner, literally the page title grid. And right below it, 'Baseline widely supported in this particular case.' That's for the grid property.If you do the grid area property, or the grid row property, or the grid row start property, any of those, in those property pages, you'll get a little Baseline banner right at the top of the page. And then at the bottom, you still have that support table that is on every page of MDN, or nearly every page of MDN. So same thing for all the flex properties, they have the Baseline information. So it is limited at this time in terms of what parts of MDN it's on. But you could go today and see what the experiences is and what it does for you. I do hope that this gets onto all the pages sooner rather than later, because there will be those use cases where someone might say, 'Well, okay, it's not widely supported, but it's supported for my use case.'One of the things about Baseline as it stands right now, it does not make the fact that it's two major release versions ago clear in that little banner. So somebody who's familiar with what the Baseline project is and how it's structured, just knows that. But somebody who just lands on an MDN page never having heard of Baseline and sees a little banner, it's like, 'Oh, wow!' But it doesn't say, 'At least the last two versions,' or, 'Since October 2021,' or anything like that. And maybe will in the future. This is not necessarily a done project that is carved in stone. It's absolutely, I think, there are plans for figuring out how is it received as it is now? How could it be improved? What needs to be changed? All that stuff will be figured out. But I feel like it would be nice if it could say, 'Widely supported since...' Blah.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>: Right. That would actually make a lot of sense. We should file that as a issue.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>: But it's nice to see this maturity of information about the platform and about figuring out what it is that developers need. It would be nice to see more and more things like this, sort of more context for the information that's available. I think that's what I'm trying to get at here is that having the information, having a reference page is nice. And having it explained to you how the thing works is great. But giving you a context for, is this thing usable, or is this thing widespread, or is it still being worked on, all that sort of stuff, that's mostly been missing. And Baseline does seem like a really significant step forward in providing more useful context to all the raw information that we have available.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>: So the two major versions thing is a way. It's an arbitrary way. It's imperfect in other ways. There are actually a number of issues already filed against what should be in Baseline and how it should work. Shouldn't you track Safari minor versions? Because they do minor versions. Google and Mozilla, they're on release 1000. And Safari's still in the fairly low double digits.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>: Right. And I mean, it used to be that it made sense to track WebKit major versions, because that was, minor versions used to be basically only security fixes. But that has changed recently, thanks to the WebKit team. Minor versions now have a whole lot of stuff that comes in them and a whole lot of web features.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>: I mean, there are other questions that are open there on the topic too, because like we said, it's just, it's arbitrary. You need some arbitrary thing to really even give people a way to bring all their complaints, and criticisms, and ideas together. So it is a coarse grain, but pretty good, rather simple to articulate way to do it, I guess. But other things track real usage stats, like can I use it has the thing in the upper right-hand corner that's like, 'This represents 98.2% of browsers worldwide,' or something like that. You've seen that, right?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>: Yep. Yep.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>: So some people think that's a much more relevant kind of thing. That gets tricky because honestly, there is not really a way to measure that. Because that's all just self-reported and UA strings and you know how much we lie about UA strings and how easy it is to get confused about them. And basically, the thing that we tell everybody don't do, that is what we're relying on for this data. It's very, very hard to know, what is actually the share of Samsung internet out there? We don't really have a way to know that. We have some approximations that are basically based on the UA string, except that sometimes if Samsung Internet were to tell you the truth, you would cause it to break. So even sometimes Samsung Internet is like, 'Just kidding. I'm grown.' The list of sites to lie to is not infinitely big.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>: Fair enough.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>: It would have to be, enough people would have to complain. A browser wouldn't tell a lie if they could reach out and get you to update it. And if you wanted to update my website or your website, that would be relatively easy. They would just send us an email and we'd be like, 'Oh, crap, let me fix that right away.' But when it comes to Wells Fargo, or Yahoo, or some big site with lots and lots and lots of people who go there...</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>: CNN.com.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>: CNN.com, right. And can we actually reach them? Can we get them to change it? Even worse, for ones that are under the covers, they're the same, but you don't know. They resell, effectively. It's a website's package and it gets very, very hard to know who to reach. They're unresponsive, because they've sort of outsourced their website, really. So there's not always a person you can reach out to. But in the meantime, everybody's going to complain, so they'll lie. And those are the sites really. Those sites are going to be included every time. You know what I mean?The things that we estimate usage on are estimated from looking at the HP requests to lots and lots and lots of websites. And then it's extrapolated from there. But the set of websites is which ones are popularly loaded. And in the grand scheme of things, our websites are not destinations.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>: No, not really. They're destinations for the right people.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>: Sure. That's what I'm saying. Right. But they're not, like everybody on your street doesn't go to that. Everybody on your street might go to</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>: CNN or...</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>: CNN. Right, exactly.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>: Or next door. Whee!</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>: So I think this is really positive. I'm really looking forward to see what happens with this. The chapter that I wrote last year for the Web Almanac specifically stated that it was kind of trying to do this. It was trying to say, 'Look, if you read one thing every year, make it this chapter because we'll tell you what became really interoperable this year. And if you just pay attention to those things, you are going to get a lot out of that.'And it will protect you from exactly the kind of things that we talked about before, where it was like, 'Oh, I tried that five years ago and it didn't work. How am I supposed to know when it got fixed?' This chapter will tell you. The same thing with this baseline. I think it's just a really, really good idea. I'm really, really pleased to see it. I'm glad that Google suggested it in the WebDX Group, and I'm glad that we picked it up and ran with it.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Eric Meyer</cite>: Like I say, hopefully it's a first step into a larger world as Obi-Wan Kenobi once said... Congratulations to everyone who worked on it. And looking forward to seeing what happens in the future.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Brian Kardell</cite>: Me too.</blockquote></li>
+                
+              </ul>
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+<script src="/assets/chat.js"></script>
+
+    </main>
+
+    <footer id="site-footer" role="contentinfo">
+
+  <a class="site-title" href="/">
+    <img src="/assets/i/logo.png" alt="Igalia" />
+  </a>
+
+  <div>
+    <h2>Igalia.com</h2>
+    <ul class="main-menu" role="navigation">
+      
+      <li>
+        <a class="page-link" href="/about" title="About Us">
+          About Us
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/technologies" title="Technologies">
+          Technologies
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/services" title="Services">
+          Services
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/industries" title="Industries">
+          Industries
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/24-7/home" title="24/7">
+          24/7
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/jobs" title="Jobs">
+          Jobs
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/contact" title="Contact">
+          Contact
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div>
+    <h2>Igalia, S.L. © 2023. All rights reserved.</h2>
+    <ul class="footer-menu" role="navigation">
+      
+      <li>
+        <a class="page-link" href="/coc" title="Code of Conduct">
+          Code of Conduct
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/legal" title="Legal Terms">
+          Legal Terms
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/press" title="Press">
+          Press
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/privacy" title="Privacy Policy">
+          Privacy Policy
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/public-funding" title="Public funding (Fondos públicos)">
+          Public funding (Fondos públicos)
+        </a>
+        </li>
+        
+    </ul>
+  </div>
+
+  <div role="contentinfo">
+    <h2>Headquarters</h2>
+    <ul class="contact-list">
+      
+      <li>Bugallal Marchesi, 22, 1º</li>
+      
+      <li>15008 A Coruña</li>
+      
+      <li>Galicia (Spain)</li>
+      
+      <li>Pho.: +34 981 913991</li>
+      
+      <li>
+        <a href="mailto:info(at)igalia.com">
+          info(at)igalia.com
+        </a>
+      </li>
+      
+    </ul>
+    <div class="social">
+      
+      
+
+      <a class="social-link" href="https://twitter.com/igalia" target="_blank" title="twitter" rel="me">
+        <i aria-hidden="true" class="fab fa-twitter"></i>
+        <span hidden>twitter</span>
+      </a>
+      
+      
+
+      <a class="social-link" href="https://floss.social/@igalia" target="_blank" title="mastodon" rel="me">
+        <i aria-hidden="true" class="fab fa-mastodon"></i>
+        <span hidden>mastodon</span>
+      </a>
+      
+      
+
+      <a class="social-link" href="https://youtube.com/igalia" target="_blank" title="youtube" rel="me">
+        <i aria-hidden="true" class="fab fa-youtube"></i>
+        <span hidden>youtube</span>
+      </a>
+      
+    </div>
+
+</footer>
+
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+    <script src="/assets/app.js"></script>
+    
+    
+
+    <!-- Piwik -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+      _paq.push(['disableCookies']);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+         var u="//stats.igalia.com/";
+         _paq.push(['setTrackerUrl', u+'piwik.php']);
+         _paq.push(['setSiteId', '1']);
+         var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+         g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+       })();
+    </script>
+    <noscript><p><img src="//stats.igalia.com/piwik.php?idsite=1&rec=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Piwik Code -->
+
+  </body>
+</html>

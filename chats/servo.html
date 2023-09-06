@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/i/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/i/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/i/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/web-app/site.webmanifest">
+<link rel="mask-icon" href="/assets/i/icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/i/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="msapplication-config" content="/assets/web-app/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+
+  <title>The Novel Engines: Servo (Web Ecosystem Health Part X) | Igalia - Open Source Consultancy and Development</title>
+  <meta name="description" content="Igalia is an open source consultancy specialised in the development of innovative projects and solutions. Our engineers have expertise in a wide range of technological areas, including browsers and client-side web technologies, graphics pipeline, compilers and virtual machines. We have the most WPE, WebKit, Chromium/Blink and Firefox expertise found in the consulting business, including many reviewers and committers. Igalia designs, develops, customises and optimises GNU/Linux-based solutions for companies across the globe. Our work and contributions are present in many projects such as GStreamer, Mesa 3D, WebKit, Chromium, etc.">
+  <meta name="keywords" content="igalia, free software, free software engineering, development, consultancy, webkit consultancy, consulting, webkit consulting, programming, hackers, cooperative organization, organization, company, assembly, igalia.com, igalia sl, webkit, webkitgtk, a11y, v8, jsc, training, GNOME, webkit consultants, chromium consulting, chromium consultants, chromium consultancy, blink consultants, blink consultancy, gstreamer consultancy, gstreamer consulting">
+  <meta name="author" content="Igalia">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" id="main-stylesheet" href="/assets/main.css" data-main="/assets/main.css" data-aria="/assets/aria.css">
+  <link rel="canonical" href="https://www.igalia.com/chats/servo">
+  <link rel="alternate" type="application/rss+xml" title="Igalia" href="/feed.xml">
+
+  
+
+  <!-- Open Graph metadata -->
+  <meta content="Igalia" property="og:site_name">
+  <meta content="The Novel Engines: Servo (Web Ecosystem Health Part X) | Igalia - Open Source Consultancy and Development" property="og:title">
+  <meta content="https://www.igalia.com/assets/i/logo200x200Margin.png" property="og:image">
+  <meta content="https://www.igalia.com/assets/i/logoSimple200x200.png" property="og:logo">
+  
+    <meta content="website" property="og:type">
+  
+  
+    <meta content="Igalia is an open source consultancy specialised in the development of innovative projects and solutions. Our engineers have expertise in a wide range of technological areas, including browsers and client-side web technologies, graphics pipeline, compilers and virtual machines. We have the most WPE, WebKit, Chromium/Blink and Firefox expertise found in the consulting business, including many reviewers and committers. Igalia designs, develops, customises and optimises GNU/Linux-based solutions for companies across the globe. Our work and contributions are present in many projects such as GStreamer, Mesa 3D, WebKit, Chromium, etc." property="og:description">
+  
+  
+    <meta content="https://www.igalia.com/chats/servo" property="og:url">
+  
+  
+</head>
+
+
+  <body class="aria-contrast" data-json-base="/assets/json">
+    <header id="header" role="banner">
+  <div class="container-fluid-1440">
+    <div class="wrapper">
+      
+      
+      
+      <h1 class="site-title logos">
+        <a href="/" title="Igalia">
+          <img src="/assets/i/logo.png" alt="Igalia" />
+        </a>
+      </h1>
+
+      <nav role="navigation" class="site-nav hidden-xs hidden-sm">
+        <ol class="main-menu">
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/about" title="About Us">
+              About Us
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/technologies" title="Technologies">
+              Technologies
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/services" title="Services">
+              Services
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/industries" title="Industries">
+              Industries
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/24-7/home" title="24/7">
+              24/7
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/jobs" title="Jobs">
+              Jobs
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/contact" title="Contact">
+              Contact
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/public-funding" title="Feder">
+              Feder
+            </a>
+          </li>
+          
+        </ol>
+      </nav>
+
+      <div aria-hidden="true" id="menu-toggle-wrapper" class="visible-xs visible-sm">
+        <a href="#" id="menu-toggle" title="Toggle menu">
+          <i aria-hidden="true" class="fas fa-bars"></i>
+          <span hidden>Toggle menu</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div id="mobile-menu-wrapper">
+  <div id="mobile-menu">
+    <ul role="navigation" class="nav">
+      
+      <li>
+        <a class="page-link" href="/about" title="About Us">
+          About Us
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/technologies" title="Technologies">
+          Technologies
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/services" title="Services">
+          Services
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/industries" title="Industries">
+          Industries
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/24-7/home" title="24/7">
+          24/7
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/jobs" title="Jobs">
+          Jobs
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/contact" title="Contact">
+          Contact
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/public-funding" title="Feder">
+          Feder
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+    <main class="page-content" aria-label="Content">
+        <article class="page page--chats">
+  <header class="page-header" style="background-image: url(/assets/i/headers/header-technologies.jpg); ">
+    <div class="container-fluid-1440">
+      <div class="grid-row">
+        <div class="col-xs-12 col-sm-10-center">
+          <h1 class="page-title" itemprop="name headline">The Novel Engines: Servo (Web Ecosystem Health Part X)</h1>
+          
+        </div>
+      </div>
+    </div>
+    <div class="cover"></div>
+  </header>
+
+  <div class="container-fluid-1440">
+    <div class="page-content">
+      <div class="grid-row">
+        <div class="col-xs-12">
+          <div class="grid-row">
+            <div class="col-xs-12 col-lg-8">
+              <h2 class="chat-title">
+                <a href="/24-7/chats" class="chat-title__back">
+                  <img src="/assets/i/arrowBackBlue.png" alt="Back to chats">
+                </a>
+                Igalia&#39;s Brian Kardell and Eric Meyer chat with their colleague Martin Robinson about the recently rejuvenated Servo project.
+              </h2>
+              <div class="chat-date">
+                <time datetime="2023-06-26T00:00:00+00:00" itemprop="datePublished">
+                  
+                  Jun 26, 2023
+                </time>
+              </div>
+              <div class="chat-audio">
+                <div class="chat-audio__player">
+                  <div class="audio-player" data-src="/downloads/interviews/servo.mp3">
+                    <div class="controls">
+                      <div class="play-container">
+                        <div class="toggle-play play">
+                        </div>
+                      </div>
+                      <div class="time-container">
+                        <div class="time">
+                          <div class="current">0:00</div>
+                          <div class="length"></div>
+                        </div>
+                        <div class="timeline">
+                          <div class="progress"></div>
+                        </div>
+                      </div>
+                      <div class="volume-container">
+                        <div class="volume-button">
+                          <div class="volume c-icon-volumeMed"></div>
+                        </div>
+                        <div class="volume-slider">
+                          <div class="volume-percentage"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <ul class="chat-audio__links">
+                  <li><a href="/downloads/interviews/servo.mp3" title="Download Chat" target="_blank"><i class="c-icon-download"></i></a></li>
+                  
+                  <li><a href="/chats.xml" title="Open podcast RSS feed" target="_blank"><i class="c-icon-podcast"></i></a></li>
+                  
+                  
+                  <li><a href="https://youtu.be/_h8n8keZfhI" title="Open in Youtube" target="_blank"><i class="c-icon-youtube"></i></a></li>
+                  
+                  
+                  <li><a href="https://open.spotify.com/show/0XZ4hqB5ogePKOumi4daDm" title="Open in Spotify" target="_blank"><i class="c-icon-spotify"></i></a></li>
+                  
+                  
+                  <li><a href="https://podcasts.apple.com/us/podcast/igalia/id1533323588" title="Open in iTunes" target="_blank"><i class="c-icon-itunes"></i></a></li>
+                  
+                  
+                  <li><a href="https://podcasts.google.com/feed/aHR0cHM6Ly93d3cuaWdhbGlhLmNvbS9jaGF0cy54bWw" title="Open in Google Podcasts" target="_blank"><i class="c-icon-gpod"></i></a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12">
+          <div class="grid-row grid-row--between">
+            <div class="col-xs-12 col-lg-3 col-lg-order-3">
+              <ul class="c-participants">
+                
+                <li class="c-participants__item  c-participants__item--1">
+                  
+                  
+                  <img src="/assets/i/logoSimple.png" alt="Igalian" class="c-participants__igalian">
+                  <a href="/team/bkardell" class="c-participants__link">
+                    <img src="/assets/i/igalians/brian-kardell.jpg"
+                      alt="Brian Kardell's avatar"
+                      class="c-participants__image">
+                    Brian Kardell
+                    <i class="fas fa-plus"></i>
+                  </a>
+                  
+                </li>
+                
+                <li class="c-participants__item  c-participants__item--2">
+                  
+                  
+                  <img src="/assets/i/logoSimple.png" alt="Igalian" class="c-participants__igalian">
+                  <a href="/team/emeyer" class="c-participants__link">
+                    <img src="/assets/i/igalians/emeyer.jpg"
+                      alt="Eric Meyer's avatar"
+                      class="c-participants__image">
+                    Eric Meyer
+                    <i class="fas fa-plus"></i>
+                  </a>
+                  
+                </li>
+                
+                <li class="c-participants__item  c-participants__item--3">
+                  
+                  
+                  <img src="/assets/i/logoSimple.png" alt="Igalian" class="c-participants__igalian">
+                  <a href="/team/mrobinson" class="c-participants__link">
+                    <img src="/assets/i/igalians/martin-robinson.jpg"
+                      alt="Martin Robinson's avatar"
+                      class="c-participants__image">
+                    Martin Robinson
+                    <i class="fas fa-plus"></i>
+                  </a>
+                  
+                </li>
+                
+              </ul>
+            </div>
+            <div class="col-lg-1 col-lg-order-2"></div>
+
+            <div class="col-xs-12 col-lg-8 col-lg-order-1">
+              
+
+
+              <h2 class="chat-subtitle">Transcription</h2>
+              <ul class="c-chat">
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: All right. Hi, I'm Brian Kardell. I'm a developer advocate at Igalia.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: And I'm Eric Meyer, also a developer advocate at Igalia.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: And today we're going to do something interesting that I'm excited about. We have another guest from Igalia.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Hi. Yeah. I'm Martin Robinson. I'm a software engineer at Igalia on the web platform team. And I'm happy to be here.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Yeah. And the reason we invited Martin on is because Martin is working on Servo. And today, we're going to do one of two exciting shows. We're going to do sort of back to back in this whole series on web ecosystem health. We had two presentations, novel engine presentations at the Web Engines Hackfest. We're going to talk about those today. Well, we're going to talk about Servo specifically today. One of the things that I think is really interesting to tie into this is that several times over the course of these nine episodes that we had before, we've made reference to the fact that the three major engines are tens of thousands of person years invested into cumulatively into them and how much they cost to maintain. And it means that you're way more likely to lose contenders than to gain them unless it's by evolution, somehow, by forking them. So people get real excited including me when somebody's talking about a new engine. So let's jump in and cut to some things about Servo. So, when's the new servo browser coming? Martin?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: That's a good question. I wish I knew the answer myself.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Well, maybe we should say, what is Servo like?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Oh yeah.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Where's it come from? What's it doing? What's cool about it?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Yeah. Well, Servo is an experimental web browser engine that was created out of Mozilla research in around 2012. And it's got a lot of novel features. The main thing, I guess, historically that's important is that Servo is sort of a co-project with Rust. In that moment, Rust was quite new and Servo was a way of trying Rust out and feeding back into the Rust development process. And it also used a lot of Rust's novel features in an effort to make the web better. For instance, Rust has type safety much more than a language like C++. So it can guarantee through the type system memory safety. And also, because of the way the type system works, it's also much easier to do things in parallel across different threads in a way that you can make guarantees about the safety as a memory involved. So Rust has that type safety, and Servo also uses Rust's ability to spread things over different threads to implement support for laying out a webpage in parallel, which is something that no other web browser does even today, except in very minor cases.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Okay. So, Rust basically manages all of the multi-threading for you as a programmer, is that?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Yeah. There's different ways of using Rust across different threads, different libraries. For instance, we use something called Rayon to spread work across threads. But all of these build on top of Rust type system, which allows using different primitives like structs and data structures in a way where you can be sure that you aren't losing them or leaking them or writing into memory that doesn't exist anymore, that sort of thing.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: You did work with Rust and Servo before this as well, right?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Mm-hmm. Yeah. I have been involved with Servo off and on since, I want to say, 2014 for stretches of time between six months and a year. So I've had a good window into the evolution of both Rust and Servo through the years.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Yeah. So at some point, I don't actually know the date, I'm trying to think from my memory, maybe 2018 maybe you know. But there was an effort there was code named Quantum that took lots of things from this project and moved them into Firefox proper, right?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Yeah, that's right. So essentially, Servo was a research project. So there were a lot of things that weren't, let's say, fully baked going on. But some things were very productive when they're being made and it was clear that they were an excellent idea and could potentially represent a huge speed-up to the way that Firefox worked at the time.For instance, one of those would be the style system, which in Servo, was written in a way that it was completely parallel as well. So before, in a browser like Gecko, if you wanted to style the page, you had to do it serially and not spread the work over different cores whereas Rust allow you to do it in parallel. And that also goes for things like selector matching. And those bits of Servo that were really successful, let's say style and then also this part called Web Render, which is a rasterization engine for web content were essentially bolted on to Gecko. And that became the source of development for those parts of Servo. And they're still there today. And it's one of the reasons why Quantum was a lot faster when it came out in addition to some other non-Servo related things, I believe like Electrolysis and Compositor thread.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: But then in 2020, Mozilla handed over that research project to the Linux Foundation.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: That's right. Yeah.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: And it's really interesting because in 2012-ish, there was just a lot of excitement. And I looked back at the repo and it's had hundreds of contributors. I mean, like any open source project, there are a much smaller group of herculean contributors that contribute a lot all the time. Presumably, mostly, those are paid people who are working on it for their work. But it's definitely slowed down until we picked it back up in February with some new funding for the work. I think we would love to find some more funding for the work because it is still a relatively small team, right?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Yeah. I would say that was always one of the things about Servo that was quite special. In an open source project, you can have contributors, but you really need really good community management to make that work. And Servo, from its conception, had really great community management. I think those two things, community management and lots of excitement about the project is really what drives contributions. Because even if you have the excitement and you're not managing that excitement properly, there can be a lot of people who just get frustrated and leave, they'll go work in some other open source project. But if you manage the community well and you're able to shepherd contributions in and make it so that people feel like they're actually doing something interesting and contributing code, then it builds up sort of this snowball effect of community contributions. And that's something that Servo always did really well.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Yeah. So Servo right now is wholly separate from Mozilla. But as I understand, I mean, I don't know a lot about Servo actually, but as I understand, it's also more modular in its design than the other engines. Is that ...</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Yeah, that's correct. The different parts of Servo are separated into these things called crates, which are essentially a module in the Rust world. And these are, generally speaking, separate realms of concern. And that's sort of why even today, even though Servo is separate from Mozilla, Gecko is still using those parts of Servo that were shared with Servo. So there's still some links between Gecko and Servo, even though the two are completely separate.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: So if there are updates in our project that would benefit, will they pull those down? Is that an easy thing to do?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Typically speaking, what happened with the parts of Servo that went into Gecko was that a lot of the development work, those became part of Gecko's model repo and almost all the development work on those is happening in Gecko's repository. So, essentially what happened was there was a moment where for Gecko, the upstream was servo, but it flipped. So that now for Servo, its upstream for those particular modules is Gecko.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Oh, okay. So the inverse is true, really, if those get improvements in Firefox, then the other project can get them take advantage of them.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Yeah. And that's actually one of the things that we're working on right now is to re-sync with all the work that's been done in Gecko. And we're already finding places where this is going to help Gecko, in a way, because we're using the crate in a slightly different way, which exposes maybe some shortcomings that can be corrected. Or maybe because of the way Servo was designed, there's a new opportunity for Gecko to have a future optimization.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: That's a really excellent thing to hear because just to throw another layer into this, there are only three, let's call them ready to compete on everything engines, that you can power a browser with. And it can be really, really competitive on everything. And when we're looking to fund work on these novel engines, there is, well, how do you fund it? And then, to me, there's a question of, 'Well, boy, I want to fund ... if I could give money to all these projects, should I give my money to Mozilla for Firefox, or should I give it to Servo for this?'And understanding that they're related in that way is I think really, really helpful. So, you could kind of balance that a little bit. Yeah.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: As far as funding goes, it's really a question of what you're looking for. The way I see it, a project like Servo is a more long-term bet for the future, whereas Gecko is something that you can use right now. And like you said, it's ready to use, ready to compete, but when you're looking further into the future, something like Servo has a lot of potential. But again, there's more risk too that comes along with that because it's unclear where the future will take it, just because of its novelty and the way it does things, I think, it has a great promise as well.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: I think that that interplay between Fire Firefox and Servo helps. Am I wrong? That sort of helps that a little bit? You can feel like if you are investing in Servo, it's not only in Servo necessarily. Some of it would be, obviously, maybe even most of it. But it does have the potential to benefit even Firefox, right?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Yes. That exists, I suppose, with any web engine in the sense that when you work on a web engine, you run into corners of the specification that aren't completely fleshed out yet. So in general, this is a thing that happens when you're implementing the web for the first time in an engine. You almost always run into bugs in spec or places where it's unclear what the spec means and you write a test and then gradually all the other engines come to an agreement about that test, even though the question started in the minor engine. And I think you're right that there's even more chance for, let's say, collaborative enhancement in engine like Servo just because it shares so much with Gecko. And there's potential to share more things in the future, I think.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Yeah. So Eric, you found that amusing.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Yeah. I had to chuckle a little bit at the observation about specs system. Are you implying that the specifications are sometimes under specified? I'm shocked. Shocked, I tell you.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Surely such a thing is.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Yes. But I mean it is an interesting point that coming to some of the specifications, excuse me, fresh and not having necessarily existing code to adapt, but code to implement in order to support a specification is a useful check on the clarity and correctness and completeness of specifications. So things like Servo or other new browser engines, minor engines, if we want to call them that, is a useful sort of, I shouldn't say unit test, but it's sort of like a test for those parts of the specifications. If someone comes in and they don't have 20-year-old or 30-year-old parsing code that they're just trying to graph new stuff onto, is this specification complete enough that you can implement and not run into questions or ambiguities or whatever?And it's interesting to hear that because people generally don't think about that, I think. They figure, 'Oh, well, browser engines, they just add new stuff.' But don't necessarily consider that they're adding stuff to code that's probably many, many staff turnovers before the person who's actually doing the implementation, they have this whole code base that they don't necessarily have complete intimate knowledge of.They have tests and rather than having to write the whole thing, rewrite the whole thing from scratch, they're adding a little bit. They're modifying what's already there. But that's not the case with minor engines.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Yeah, I have to say the experience has been pretty enlightening from the perspective of someone implementing essentially the basics of CSS2, again, not in 2005 or whenever. I mean on one hand ...</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: 1997.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: 1997, yeah. On one hand, we've even found bugs in newer specifications or maybe corner cases that aren't explained properly. And we've had bugs on the flexbox specification recently. But also, as someone who's worked mainly on implementing specifications that are a bit newer, it's interesting how much of CSS2 is just not specified still. There is a lot of, for instance, two things that we're working on now, which are big chunks of work are floating content and tables. And these are two parts of the CSS2 specification, which in general, floats are pretty good, but there's a lot of times where it's like, just do this to make it do that, in the specification where you have to make up what that means inside your engine. And then for tables, I think there's just no specification for how table layout is supposed to work top to bottom.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: To recall to earlier episodes, I know I've heard this in many, many conversations. I think it was said about Microsoft in the previous episode with Rick Byers and Rossen. And I definitely recall it being in the one with the Opera folks. So, how come and Vadim and Bruce Lawson that the trick, they both were very mainstream, very, very competitive browsers. They said that basically they would have a bug line and open bugs and closed bugs. And the goal is to get those two to meet so all the open bugs are closed. And they said you could watch it with a grab over time and even if you had 100 people working on it, they would just continue to get it further and further apart because there is so much in web browsers that it has to work and it's still just not written down accurately. And I think a lot of that stuff is still probably some of the earlier stuff. No matter the fact that we have had so much focus on it, if nobody's building new engines, you're just going to hit a point where other engines have managed to reach really high degree of interoperability on those already and it's still not in the specs. So I think it's really key if we ever want, basically, every engine that you add that exercises those things fresh, makes it easier for the next one in a way.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Yeah.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: I agree. And I think that there are some that are pretty good. The HTML 5 parser I think is really, really strictly specified. And there are not many problems with that. I've heard people have been able to implement that pretty easily. But it's hard to say because if they're not exercising the whole web, then they won't get the complaints, right?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Right.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: But yeah. Let's talk about exercising the whole web and what we talk about when we're the three main premiere ready to fully compete engines and these novel engines, what is the gap? I mean, we said that it was started in 2012 and it's had hundreds of contributors and it should be shipping at, what time today, how close is it? And how close isn't it and why?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Right. So I think it's quite far from being something that could be used as a general purpose engine. And the reason is, I think, that for many years it was just essentially a test bed for Mozilla's research arm. And this means that there was never a huge focus on making it ready to be a replacement for Gecko so much as a way to test out new ideas that could be used in Gecko. And it's only now that when we examine Servo and we decide to work on it, maybe we choose a different path where we want Servo to be more of a general purpose web engine. And there's a lot of work to do to get there and there's different phases of that work. For instance, you start out and you implement what the specification says. You start making web pages look better. But then, you begin to run into problems with things like correctness of the DOM APIs and making sure that events are delivered in the same order as you would expect other browsers to deliver them in. Even something as simple as when you resize an iframe, the events that bubble up from the resizing of that iframe happen in the right order, the mainframe, that kind of thing. And then even once you get to that point, even once the correctness is right, then you need to make a usable web engine, which means that it's performing and that there's no weird lag when you do things. And also that when you go to a page, things load and work when you click on them. And that phase is actually quite large as well. And then, even once you get to that phase, then you have to keep up with all of the new features that are added to the web.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Yeah.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: The one benefit, I guess, from the perspective of Servo is that because it's been around for some time, it has support for some of the new features that other web engines had to gain over time. So, it has some advantages, but there's still a lot of work to do to get to the point where you can pop open Gmail or whatever in Servo and read your email.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: So what is the near term goal? Do you want to talk about that?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Sure. Yeah.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Yeah.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Essentially the goal with the Servo project right now is to make it useful for contained embedded web applications. These are things that maybe you run in a little kiosk, in which case, I think, something like Servo really shines because it's got a lighter footprint than these other big engines. And there's a lot of opportunities for running on any hardware that Rust supports.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Can you build an electron-like thing out of it basically?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: I think you could. Yeah. And then, at that point, it's really like what's in the electron app in line with what Servo provides. If so, then Servo might be a good fit.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: And when you say contained web applications, are you basically saying offline or are you saying that it only really points to very specific things and you can't break out into the wider web?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: I think very much the latter. Servo should work just fine over the network. It's just a question of will that content be something that Servo can render properly?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Can deal with. Yeah. Well, if people build in progressively enhancing ways, then at least you'll get the content. But that's a whole other discussion. What are a couple of use cases that Servo, you think, would be very good in?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: So I think Servo could be really useful right now for something like a little user interface for an embedded device.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Like what kind of embedded device are we talking about? A refrigerator?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Yeah, for instance, I mean, there's a lot of devices that basically embed just a tiny little web engine to show a small UI, household devices, things like that. Right now, I think Servo's a good fit for those.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Yeah. I mean, we have a lot of experience with this from WPE Webkit and also from other Chromium embedding projects. So there's basically everything that you buy today, cars, refrigerators, digital signage, point of sale, rich climate controls. Yeah, it's just about everything that you buy today is built on the web. When we had the show with Hulkam, he is on the board of print xml, which has a rendering engine that's used mainly for print. Amazon internally maintains several engines for stuff like that. I know there was also a WeasyPrint was another one.So, there's many, many, many applications for different parts of the web stack. And so, I think, the idea here is that we can make Servo very useful to segments of those and help build and grow it into more. So, I think it would be probably not ready for prime time, just put a browser shell around it, but probably lots of those other cases, it would be great for actually.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Yeah. When you say a smaller footprint, are there sort of numbers that can go with that?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: We don't have numbers now. But, in general, Servo is a smaller browser engine than both Chromium and Webkit.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: I mentioned this idea on Igalia chats with Hulkum in that episode, do you think that people would use a browser that defaulted to reader mode? Maybe only even supported reader mode. That is a potentially interesting novel target if you could get some people to use it. I would almost be interested in building that myself with Servo when it's to that point that you could do it. It seems like a much, much simpler bar.But Brave actually is doing that. You can turn it on. I don't know if they listen to the show or just it was an idea that was just ready to be had. Also, EPUB now I could see somebody doing something really interesting with that that none of the browsers are working on doing. Microsoft was, but they stopped when they became Edgium. But I wonder, do you see that those are kind of possibilities of potential novel use cases for Servo, that kind of thing or?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Yeah, I suppose any kind of feature which is a limited view of the web where you don't need things to work exactly how they do it on full-fledged browser could be a good target for Servo, something like reader mode or even a browser that's focused just on accessibility. I think those things are really interesting use cases that are really underexplored.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Wow. A browser focused on accessibility just kind of blew my mind. We do have today where you have a browser and it also supports different kinds of accessibility but it has the accessibility tree. By the way, if you want to go back and listen to a previous episode, we did a whole show on accessibility and I had a really good guest. His name was Martin Robinson.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Sounds like a nice guy.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Yeah, he was a good guy, good guy. But it was a really good show. I think you were the second show we ever did. But I enjoyed it a lot and I learned a lot. But you're kind of blowing my mind with that as an idea that why is it that you need sort of a web browser and a screen reader, for example? Could we just not build you a web browser that is a screen reader? I mean, I've never heard of anything like that, but I mean it would work for a very specific set of people. But for a very specific set of people that maybe would be really interesting and maybe you could get a higher quality somehow. I don't know. That's making me think now.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Yeah. I mean theoretically if you're not pushing pixels to the screen at 60 frames a second or more, the battery life that you can get from a browser would be much better.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: When you say much, you mean much, much, much.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Yeah. Yeah, exactly.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Yeah, I mean it's another person that I like to quote sometimes is Eric Meyer and he ...</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Who?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: I love the thing that you said about browsers are 60, well, how does the quote go?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: They're first person scrollers.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: First person scrollers, right.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Because they have the same frame rate constraints that DOOM Eternal or whatever the latest video game is. These AAA video games or they're all supposed to maintain 60 frames per second or more. And web browsers have the same constraint, which is another thing that's still, I mean, I'm used to it now, but it still kind of blows my mind.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Yeah.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Yeah. But it is a really good point about that. That is exactly what I was thinking is the 60 frames per second constraint or goal, it's not ...</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Well, I mean, it's a constraint in terms of landing new features, at least with most ...</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: It's a constraint in terms of our designs. We design features so that it's possible to do that.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Right. I mean that was one of the things that Block has for a while was that no one had found a way to do it and maintain 60 frames per second because of the performance hit. So it's anything that will cause a performance hit deep enough that the browser's rendering lowers below 60 frames per second like the Chromium and WebKit and Gecko teams are not going to accept it.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Right. Yeah. I mean, it's just kind of blowing my mind that sometimes you might not need to render anything. And I wonder if there are interesting benefits to that, right? But I frequently have wanted basically a browser on the server, like a programmatic browser. There are a few things, but none of them are particularly great in my experience. You might not need to actually render something. Having something that had a relatively light footprint and you could do modularly is maybe interesting in so many ways. Can people try it in some way to examine the progress and think about whether it would work for them for applications? I know way back there was a mini browser basically in the Nightly build. Maybe we should explain the concept of a mini browser?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Yes. So when you're implementing a web engine, you often need to test it. And you usually don't test this in a full browser shell. There's usually a small application which oftentimes just has the web view as the main control. Or sometimes, it has the web view and maybe a URL bar to load new URLs. And Servo is not different in this respect. It has a little browser application, which essentially embeds the server web view as the main control. It has no UI outside of the browser itself. So currently, there's no way to, say, type a URL to go there, although we do have plans to implement something like that. And you can try it out in the same way you mentioned just by downloading the Nightly and running it on your machine.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Well with the Nightly you could launch say Google or DuckDuckGo or something like that and then search your way there. I mean, it's almost a Wonder Bar at that point, right?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Yeah, I guess so. I have to say, though, that right now, it's probably pretty broken because we're just switching to a new layout engine. And probably it's not going to look great when you download Servo at the moment.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Sure. But I find that it's really interesting to interrogate it a little bit and look at what it does and doesn't do or have or whatever. There are so many parts to a web engine. There is, like you say, the selector engine basically like CSS matching that has to happen. And then, there is layout and there's rendering and there's a JavaScript engine and there has to be something that coordinates all this.And then, there are so many things that are potentially implemented. One of my favorite examples, like Web Speech, that's not something that you see on every website, but you have it there and Web Audio and Web RTC, there's so many things. What parts of those would be a part of Servo and wouldn't?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: So Servo is kind of funny. I think it's probably the only browser engine with a high speed rasterizer that doesn't have full support for CSS2. So it is kind of a mixed bag in a lot of ways just because of its experimental nature. So for instance, even though we're working on this new layout engine with adding support for basic CSS features, Servo does, on the other hand, support things like Web GPU, WebGL.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Amazing.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Yeah. It's a bit strange, but that's really just due to the way that Servo was used as this research and development platform. I don't think anything's necessarily out of scope for Servo. I think even though we're focused on this embedded test case, I think it's also still a good place to experiment with novel implementations of web technology just because it's new and it's a place where you can do a thing and still make huge changes to the way things work. And probably it will be a progression and not a three-year-long project. So, in that sense, I think, nothing's off the table for Servo, even though our focus is on the basics right now.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Yeah, I mean, it's just like if you go to the index of Can I Use, it's just miles long features. And it's interesting to think about what they have and what they don't and what's really important when. So, I've seen people post things about their engine that is rendering a certain amount of things. But rendering is only one part, right?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Yeah.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: And really it can get really complicated. And so many things can bring it down. I don't know if I told this story before, but also related to the degree to which things were specified. One of the earliest things when I got involved in actually engaging in standards was a discussion in Ecma came out of that with the understanding that properties in JavaScript had, if you were to iterate over them, they would iterate in all engines in insertion order, almost without disagreement in everything that you could throw at it. But the spec said there is no order. And Java, at the time did, the same. Like it said, there's no order. But when Java decided to change that, people had to build and compile and test and they found out that things were broken because of that. But I think Opera or Chrome tried to change that for performance reasons. They found that if you don't have to maintain an insertion order, which the spec says you don't, then we can run faster. And doing so broke Gmail and a bunch of other major sites because they had learned to depend on that you can do that. And that doesn't mean you can't necessarily render Gmail. You probably could render it, but it just won't work.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Yeah, there's a thousand of those things for sure.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Yeah. Yeah. And they're everywhere. I imagine Canvas is in there. Is Canvas one of those things that would ... Where is the split in Canvas between Firefox and Servo? I think Firefox is just shipping right now, OffscreenCanvas. So do we get that for free in Servo or?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: No, unfortunately not. Almost everything that involves a DOM API has to be implemented again. One part of Servo that is shared, which I didn't mention before, is the JavaScript engine. So essentially, Servo is using SpiderMonkey under the covers to run JavaScript. But there's this whole layer of the DOM which sits, essentially all the implementation of the DOM sits on top of the JavaScript engine is implemented in native code. So in Servo, that's all implemented in Rust, whereas in Gecko it's implemented in C++. So we have to re-implement those as well. And then for Canvas, it's a special case too because not only is that a DOM API, but it actually is also a vector rasterization engine. And this is something that Gecko and Servo do completely differently. They share a web content rasterizer but the vector rasterizer is different.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Fascinating. Is there a particular guide to when things should be shared or not shared or that's how it developed?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: I think that's just how it developed. The reasoning is probably just that, well, this is actually a very interesting tangent about GPU rasterization of graphics. But in general, CSS is much easier to rasterize on a GPU than a vector than Canvas. Which is why ...</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Really?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Yes. Because it's only squares and rectangles and rounded rectangles essentially and text. And this is why the CSS engine, the CSS rasterizer in server was good enough to be shared it's just that it's fast in all the cases. Whereas as far as a general purpose vector or rasterizer vector being like you have a path on your canvas and you're trying to rasterize it. That's a much harder task for a GPU to do.And Servo does have a GPU rasterizer for Canvas that it uses, but maybe it's not as fast as the CPU version in all the cases. So, I suspect that most web browser engines at the moment are choosing at runtime what sort of rasterization strategy to use for Canvases.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Yeah, that's so fascinating to me that weird that you would say that CSS is easier to rasterize on the GPU than vector stuff. Because what we always hear, and what I had internalized is that vector stuff is math, right? Effectively, vector graphics are math and GPUs are supposed to be super, super good at math. But CSS is, I mean, yes, there's math involved, but it's a whole lot of there's text and there's boxes and it's not like this purely mathematical thing. And yet that's faster on GPUs. I absolutely would've assumed the other way around.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Yeah, it's interesting. But a webpage looks really complicated. But again, it's just a series of rounded rectangles and some rectangles that have images which are essentially textures applied to them. So, all of the different characters on your page are just different pieces of a texture that's uploaded to the GPU.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Wow.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: In the end, it just fits a lot better with the way GPU's work, whereas a vector rasterizer needs to worry about things like whining rules and compositing operations, which just mean that it can be a lot harder to do.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Wow. Today I learned. Seriously, I mean, I had no idea that that was how it worked. My entire view of that part of the web has been literally inverted.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: I mean, I think you took less time than the rest of the web development community, the web platform development community, because it's taken us a decade and a half to learn this, I think.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--2">
+                  <blockquote><cite>Eric Meyer</cite>: Well, but it's a lot easier for me because you can tell me that, 'After that decade and a half, here's what we found out.' And I'm like, 'Okay, you people are way smarter than I am individually and collectively. And so I could just accept that.' But that, wow. Yeah, mind is still blown. It's going to be blown for the rest of the day, at least.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: That's an interesting thing because I had in my notes, and this ties it in pretty nicely, I'm not sure you did that on purpose or not, but this thing that Eric just said where Eric can learn it in a few minutes because you could tell him, right? He didn't have to suffer through all the pains of a decade of people debating and talking and learning and making mistakes and finding improvements. And I'm curious about the history here because it came out of labs and I think Servo was the first thing to reimagine some of this in a long time, because like we said, basically the only other engine has its roots in KHTML in the late '90s. Since then, though, since 2012 other engines have been working on what they call their next generation rendering engines. And I'm wondering, do you think that they learned things from the Servo effort probably and whether the reverse is true now because now we're coming in and like Layout NG has been completed. Layout NG learned a lot from Edge HTML with their attempt. There's work on better rendering engine stuff in WebKit as well. So, are there opportunities there for us to learn from those and do more quickly and maybe better because we don't have to suffer through the same pains? Or are they just so different that it really, that's not ...</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: That's an interesting question. I think, if anything, the rest of the web browsers have become more similar to Servo as time has gone on. Servo sort of pioneered a lot of things that web browsers do by default now, such as display lists or always using the GPU to render content. In that sense, I think that there are opportunities for learning from other engines because I think they are more similar. And even when it comes down to something like Layout NG or some of the new layout work that's happening in WebKit that even the layout engines look more similar to Servo. Essentially, the fashion nowadays is something that Servo also does is when you implement layout, you implement it as close to the specification as possible. And even the data structures that you use in layout have the same name as what's talked about in the specifications. So there should be more or less a one-to-one mapping between concepts in the spec and in the code itself. So, I think, in that sense, there is this sensation of all of us being sort of on the same path. And we can look at the other engines and see what they're doing compared to Servo. And I mean maybe at some point the opposite will be true as well.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Cool. Eric had asked about when is the decision made? When was the decision made and why was the decision made about which parts would Servo would be upstream or vice versa? And I'm curious, there's a second part of that question that I think is also interesting is there a possibility to reverse some of those decisions?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Maybe in the future maybe the upstream of style would be in the server repository again.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Or vice versa as well. It's not a loaded question, I mean, it could go either way.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Yeah.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: I certainly the idea that work in Servo can benefit Firefox and I also certainly like the idea that sometimes maybe development in Firefox can lower the load toward making a really competitive engine. But I don't know where you draw that line or yeah.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Yeah. I think it would be tough, Gecko has a pretty serious culture of putting everything in the repository and vendoring things in. So I think it would be hard to make it so that Gecko would take from the server repository or some shared repository directly. But, I mean, we could probably imagine a future where there's just a lot of work on, say, the style crate from the outside, from both Servo and Gecko side or some other smaller crate. And maybe in that case, the work would happen in a shared repository or in Servo and then Gecko might pull those changes down when they want them. Yeah, I think it could go either way. As far as taking things from Servo and it might become parts of Gecko again, I think, it could really depend. I suspect that there are cases where Servo could be using a crate that Servo also has this constellation of crates that it uses, that it controls. And some of those are actually used by Gecko and the upstream is still outside the Gecko repository. So, I think there's lots of opportunities for that to continue to expand.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Yeah, I think that would be really, really great. Firefox itself, while a major browser, is a significant underdog. And so, having these two underdog things helping each other somehow is I think really good. I mean, I know that there are people at Mozilla who will still contribute just because they love the project. But I think that also we need people who are paid to work on it to make it actually get somewhere, it would be too much to hope to develop this with purely volunteer efforts. Just managing the community itself is a pretty significant undertaking.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: For sure. There's a lot of work that goes into a web engine.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: One of the really nice things that, I think, we have going for us with Servo is that it is already on web platform tests. You can actually select Servo from the list and you can see the answer to those questions that I was talking about. If you're curious, does it support thing X? You can go in and look. And, I mean, it's not a small number of things it does. There are 1.7 to 1.8 million subtests there and it's passing 1.2, 1.3 million of them. So pretty amazing, actually.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Yeah. I mean, the web platform tests are something that I'm not super clear on the history of the web platform tests, but I know that in 2012, essentially, this ...</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: One percent in 2012, I think.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: One percent?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Covered 1% of the existing web platform in 2012.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Yeah.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Yeah.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: That sounds right. So at the beginning of the history of Servo, web browsers didn't really ... I mean, the web platform tests were not a major part of working on the web browser. Now if you're running a new test for the web platform and it's not on the web platform tests, it's a kind of big red flag like, why isn't this there? And it just made the whole process of working on a web browser much easier because not only are the tests there, but they also represent some shared understanding of what each engine does. If they all pass a test and you don't, then you know that you're not in the consensus opinion about what should happen in this case. So yeah, web platform tests have really changed.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Yeah. It's great. One of the things that we didn't talk about here but is talked about in the talk that was at the Web Engines Hackfest that I would encourage people to go watch because it's just a great talk anyway, but there are two different layout modules. Do you want to talk about this because I find this really, really interesting.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Sure. There's two different layout modules. One is called Layout 2013, and one is called Layout 2020. And these are roughly analogous to the original layout in Link and Layout NG. Essentially, the old engine is more featureful and it supports a much wider swath of the web. But the new engine skews much more closely to the specification and should have support for properly fragmenting content. Fragmentation is this process of taking different parts of the layout tree and spreading them. For instance, when you have a line breaking, each line is a fragment of that particular node in the layout tree. And then, also, if you have multi-column or multi-page, you have to split the render node across different positions. And that's something that would have been very difficult with the old layout tree. So that part at least is similar to the things that other layout engines are doing, sorry, other web engines are doing. And then, also, we have made this change with regard to parallelization. When you're laying out the web, in general, things can be done in parallel, but there are moments where you have to do things in serial. Things like floats or CSS content, specifically CSS counters, can really make it so that certain things that you're laying out have to be done one after another. And then the old engine, it would try to do everything in parallel. And then when it couldn't, it would sort of drop down to this serial layout mode, which was kind of like the fallback mode. But in the new layout system, we've taken this approach where we know ahead of time that some things need to be done serially. So what we can do is as we're walking down the tree, we can do things in parallel till we get to that part that needs serial layout, lay that out serially. And even in the descendants of that serial layout, you can switch back to parallel layout. But then, also, when you come back up and finish the serial layout portion, you can keep laying the rest of the page out in parallel again. So it's like we're getting the benefits of parallelization, but we're not having to do this fallback mode where we lose it in case you use a float or use a CSS counter. Now, things should be as parallel as possible when they can. And this engine we're switching to, we're basically trying to finish off the basics of CSS2 and essentially remove, at a certain point, we'll be able to remove the old one. And the hope is that, in general, it'll be more performant and also much more spec compliant.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: But is it also ragged when we talk about CSS2, CSS2 is hard for legacy reasons, but does it have support for say, CSS grid?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: So there's no support for CSS grid, but it is ragged. It is ragged because it does have basic support for CSS Flexbox.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Right.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: So it's not to say that we're only going to implement CSS2 first. There are other efforts from a lot of basically volunteer contributors to implement other parts of CSS3 as well.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: There's a thing that I would really like to clarify because it is super tricky actually. As we talk about these things, we talk about the rendering engine and the JavaScript engine, and now we're talking about this layout. I think this is a layout engine, right?Basically, can you help clarify these terms? Because we use them on the show as if everyone just understands what we're referring to. And I'm not sure they do or even that I fully do, so.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Yeah, for sure. So, at the top level, we have this idea of a, I guess, you'd say a web engine. And that's everything basically inside the web view. And that web engine would be embedded into a browser with Chrome and URL bars to control the web engine. Inside the web engine, there are different parts that do different things. And all of these parts kind of have interrelation between the other pieces. On one hand, you have a network stack, and that's the thing that's going to be communicating with a socket to get all the data from the network. And then, maybe after that, you have a parser, HTML parser, which takes the data from the socket and turns it into DOM nodes. And these DOM nodes are essentially usually little data structures that are implemented in native code. And they have essentially a representation into the JavaScript, which is all managed by this JavaScript engine. So, this is what's running the script. And every time you touch the DOM, it's going back across the boundary of the JavaScript engine into these DOM nodes, which are in native code. All that said, you also have style and when the style is parsed by the parser, again, it's combined with the DOM nodes return in the native code. And it's given to something called the layout engine, which essentially takes these DOM nodes plus style and turns them into a tree of what are called render objects or layout objects. And this is a tree that's very similar to the DOM but isn't exactly the same. And once you have all those nodes in the layout tree, then you can pass that to the next phase, which is the rendering phase. And typically, that involves something like creating a display list and then passing that display list to a rasterizer, which turns those descriptions of onscreen elements into pixels on your screen. So I'd say those are the main parts of a web engine.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Yeah, that's really cool to have a nice clear distinction because I know ... I've heard other people on even other podcasts like say rendering engine. Well, we very frequently use rendering engine and web engine as interchangeable. But ...</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Yeah, we're a little sloppy sometimes with the terminology.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Servo is really a new web engine, right?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Mm-hmm.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: But I think we refer to it as new rendering engine a lot of times. But it's more than that, I guess.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Mm-hmm, yeah.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Cool. What are you most excited about?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: So I think, for me, the thing I'm most exciting about Servo is just this idea of the feeling like anything is possible in Servo right now. And it's in a nice moment where if you have a great idea about how to implement a core feature of the web, you can test it out in Servo and see if your idea works. And in Servo, it's just going to be a lot less work than in other layout engine because there's just less code and there's less people. And I think that feeling of excitement of being able to try new things, to me, is the most interesting thing and the most exciting thing because yeah, I mean, I think we could see some really novel approaches to web engines.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: I think that because it's Rust that is appealing to a lot of people, it's maybe more accessible than C++. Do you agree?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Yeah, I'd say so.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: So, it's both more exciting and a little bit more accessible. And how can you not be excited about working on a groundbreaking sort of project? If you're looking to start something you want to try to understand and contribute, I would think that this is a great project to go see what you can do and hack around and ...</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Oh yeah, for sure. And we're always happy to help new contributors who are interested in doing things. We can point you in the right direction as far as setting up your development environment. Or if you have a question about what to work on, we have lots of ideas.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: So one of the things they do on a lot of shows is like, how can people give you money and support your work? So, how can people contribute in some way? Is it possible to contribute financially? Where can they go to find the work if they wanted to develop? Is there a get started guide or a contributor's guide or something that you can point them to?</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Yeah. So the best place to get involved either financially or by volunteering time is starting on servo.org. We have a Get Involved section, which talks about how to contribute code, how to get going, the code of conduct, all that stuff. And then, there's also the Zup Chat, which is a great place to come talk to us if you have questions about how anything works in Servo or even just problems getting set up, things you'd like to work on. There's also a sponsorship page if you'd like to give money.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Currently, it links to the Linux Foundation.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: There's a crowdfunding page. And a lot of that money will go toward things like hosting the projects infrastructure, which if you've ever tried to host things on a Cloud platform, that is not cheap. So, yeah, that's another way to help out if you'd like to give.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: And we will actually be launching our own open collective to support separately our work if you want to contribute to the development and maintenance teams and the teams helping manage the community and everything. That will be a separate collective that we'll be launching soon.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Nice.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--1">
+                  <blockquote><cite>Brian Kardell</cite>: Okay, Martin, this is, like I said, the second time you've been on the show, and I love having you on here all the time. I learn a lot every time you're on. And I think you're a great guest. So, thanks for coming on and talking to us about Servo.</blockquote></li>
+                
+                <li class="c-chat__item c-chat__item--3">
+                  <blockquote><cite>Martin Robinson</cite>: Yeah. Thanks for having me on the show. It's been a blast.</blockquote></li>
+                
+              </ul>
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+<script src="/assets/chat.js"></script>
+
+    </main>
+
+    <footer id="site-footer" role="contentinfo">
+
+  <a class="site-title" href="/">
+    <img src="/assets/i/logo.png" alt="Igalia" />
+  </a>
+
+  <div>
+    <h2>Igalia.com</h2>
+    <ul class="main-menu" role="navigation">
+      
+      <li>
+        <a class="page-link" href="/about" title="About Us">
+          About Us
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/technologies" title="Technologies">
+          Technologies
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/services" title="Services">
+          Services
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/industries" title="Industries">
+          Industries
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/24-7/home" title="24/7">
+          24/7
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/jobs" title="Jobs">
+          Jobs
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/contact" title="Contact">
+          Contact
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div>
+    <h2>Igalia, S.L. © 2023. All rights reserved.</h2>
+    <ul class="footer-menu" role="navigation">
+      
+      <li>
+        <a class="page-link" href="/coc" title="Code of Conduct">
+          Code of Conduct
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/legal" title="Legal Terms">
+          Legal Terms
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/press" title="Press">
+          Press
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/privacy" title="Privacy Policy">
+          Privacy Policy
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/public-funding" title="Public funding (Fondos públicos)">
+          Public funding (Fondos públicos)
+        </a>
+        </li>
+        
+    </ul>
+  </div>
+
+  <div role="contentinfo">
+    <h2>Headquarters</h2>
+    <ul class="contact-list">
+      
+      <li>Bugallal Marchesi, 22, 1º</li>
+      
+      <li>15008 A Coruña</li>
+      
+      <li>Galicia (Spain)</li>
+      
+      <li>Pho.: +34 981 913991</li>
+      
+      <li>
+        <a href="mailto:info(at)igalia.com">
+          info(at)igalia.com
+        </a>
+      </li>
+      
+    </ul>
+    <div class="social">
+      
+      
+
+      <a class="social-link" href="https://twitter.com/igalia" target="_blank" title="twitter" rel="me">
+        <i aria-hidden="true" class="fab fa-twitter"></i>
+        <span hidden>twitter</span>
+      </a>
+      
+      
+
+      <a class="social-link" href="https://floss.social/@igalia" target="_blank" title="mastodon" rel="me">
+        <i aria-hidden="true" class="fab fa-mastodon"></i>
+        <span hidden>mastodon</span>
+      </a>
+      
+      
+
+      <a class="social-link" href="https://youtube.com/igalia" target="_blank" title="youtube" rel="me">
+        <i aria-hidden="true" class="fab fa-youtube"></i>
+        <span hidden>youtube</span>
+      </a>
+      
+    </div>
+
+</footer>
+
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+    <script src="/assets/app.js"></script>
+    
+    
+
+    <!-- Piwik -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+      _paq.push(['disableCookies']);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+         var u="//stats.igalia.com/";
+         _paq.push(['setTrackerUrl', u+'piwik.php']);
+         _paq.push(['setSiteId', '1']);
+         var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+         g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+       })();
+    </script>
+    <noscript><p><img src="//stats.igalia.com/piwik.php?idsite=1&rec=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Piwik Code -->
+
+  </body>
+</html>

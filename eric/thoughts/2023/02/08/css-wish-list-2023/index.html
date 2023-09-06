@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head profile="http://gmpg.org/xfn/1">
+<title>CSS Wish List 2023  &#8211;  Eric’s Archived Thoughts</title>
+<meta name="generator" content="WordPress 6.3.1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="shortcut icon" href="/favicon.ico"><link rel="home" href="http://meyerweb.com/" title="Home" ><link rel="openid.server" href="http://www.myopenid.com/server"><link rel="openid.delegate" href="http://emeyer.myopenid.com/"><meta name="google-site-verification" content="I_JFi4WrY6bW7AE2ya5sSlruVvgvrIeRa1IsqO0GB78" /><link rel="alternate" type="application/rss+xml" title="Thoughts From Eric" href="/eric/thoughts/rss2/full"><link rel="alternate" type="application/rss+xml" title="Thoughts From Eric (only technical posts)" href="/eric/thoughts/category/tech/rss2/full"><link rel="alternate" type="application/rss+xml" title="Thoughts From Eric (only personal posts)" href="/eric/thoughts/category/personal/rss2/full"><link rel="alternate" type="application/rss+xml" title="Excuse of the Day" href="/feeds/excuse/rss20.xml"><link rel="stylesheet" href="/ui/meyerweb.css" type="text/css"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@meyerweb"><meta name="twitter:title" content="meyerweb.com"><meta name="twitter:description" content="The web home of Eric A. Meyer, CSS guy; and his wife Kathryn, doctor of nursing."><meta name="twitter:url" content="https://meyerweb.com/"><meta name="twitter:image" content="https://meyerweb.com/ui/i/heart/663399love.png"><meta name="twitter:image:width" content="192"><meta name="twitter:image:height" content="192"><meta property="og:type" content="website"><meta property="og:image" content="https://meyerweb.com/ui/i/hamonshu/fb-og-image.png"><meta name="twitter:description" property="og:description" content="In which I set out to write down a wish or two for CSS in 2023, and ended up with a list of sixt—no, wait, seventeen.">
+<meta name="twitter:title" property="og:title" content="CSS Wish List 2023">
+<meta name="twitter:url" property="og:url" content="https://meyerweb.com/eric/thoughts/2023/02/08/css-wish-list-2023/">
+<link rel="stylesheet" type="text/css" href="https://meyerweb.com/eric/thoughts/wp-content/themes/meyerweb-2020/style.css">
+<link rel="pingback" href="https://meyerweb.com/eric/thoughts/xmlrpc.php">
+</head>
+<body id="www-meyerweb-com" class="arch single">	
+<header role="banner" id="sitemast">
+<a href="/">meyerweb.com</a>
+<nav role="navigation" aria-label="page" id="skiplinks">
+<a href="#main">Main content</a>
+<a href="#navigate">Navigation links</a>
+<a href="#footer">Footer</a>
+</nav>
+</header>
+
+<nav role="navigation" aria-label="site" id="navigate">
+<ul id="navlinks">
+<li id="archLink"><a href="/eric/thoughts/">Post Archives</a></li>
+<li id="cssLink"><a href="/eric/css/">CSS Work</a></li>
+<li id="toolsLink"><a href="/eric/tools/">Toolbox</a></li>
+<li id="writeLink"><a href="/eric/writing.html">Writing</a></li>
+<li id="speakLink"><a href="/eric/talks/">Speaking</a></li>
+<li id="otherLink"><a href="/other/">Other Stuff</a></li>
+<li id="aboutsite"><a href="/ui/about.html">About this site</a></li>
+</ul>
+</nav>
+
+<!--div id="main"-->
+
+<main role="main" id="thoughts">
+				
+	
+<article role="article" class="single entry">
+<header>
+<h1 class="title"><a href="https://meyerweb.com/eric/thoughts/2023/02/08/css-wish-list-2023/" rel="bookmark" title="Permanent Link: CSS Wish List 2023" aria-current="page">CSS Wish List 2023</a></h1>
+<em class="pubtime">Published  6 months, 3 weeks past</em>
+</header>
+
+<div class="text">
+<p><a href="https://daverupert.com/2023/01/css-wishlist-2023/">Dave
+asked people to share their CSS wish lists for 2023</a>, and even though
+it’s well into the second month of the year, I’m going to sprint
+wild-eyed out of the brush along the road, grab the hitch on the back of
+the departing bandwagon, and try to claw my way aboard. 
+At first I thought I had maybe four or five things to put on my list,
+but as I worked on it, I kept thinking of one more thing and one more
+thing until eventually I had a list of (checks notes) sixt&#x202F;—&#x2009;no, <em>SEVENTEEN?!?!?</em>  What the hell.</p>
+
+<p>There’s going to be some overlap with the things being worked on for
+<a href="https://wpt.fyi/interop-2023">Interop 2023</a>, and I’m sure
+there will be overlap with other peoples’ lists.  Regardless, here we
+go.</p>
+
+<hr />
+
+<h3 id="subgrid">Subgrid</h3>
+
+<p>Back in the day, I asserted <a href="https://meyerweb.com/eric/thoughts/2016/01/15/subgrids-considered-essential/">Grid should wait for subgrid</a>.  I was
+probably wrong about that, but I wasn’t wrong about the usefulness of
+and need for subgrid.  Nearly every time I implement a design, I trip
+over the lack of widespread support.</p>
+
+<p>I have a blog post in my head about how I hacked around this problem
+for <a href="https://wpewebkit.org">wpewebkit.org</a> by applying the
+same grid column template to nested containers, and how I could make it
+marginally more efficient with variables.  I keep not writing it, because
+it would show the approach and improvement and then mostly be about the
+limitations, flaws, and annoyances this approach embodies.  The whole 
+idea just depresses me, and I would probably become impolitic.</p>
+
+<p>So instead I’ll just say that I hope those browser engines that have
+yet to catch up with subgrid support will do so in 2023.</p>
+
+<h3 id="masonry-layout">Masonry layout</h3>
+
+<p>Grid layout is great, and you can use it to create a masonry-style
+layout, but having a real <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Masonry_Layout">masonry layout</a> mechanism would be better,
+particularly if you can set it on a per-axis basis.  What I mean is, you
+could define a bunch of fixed (or flexible) columns and then say the
+rows use <code>masonry</code> layout.  It’s not something I’m likely to
+use myself, but I always think the more layout possibilities there are,
+the better.</p>
+
+<h3 id="grid-track-styles">Grid track styles</h3>
+
+<p>For someone who doesn’t do a ton of layout, I find myself wanting to
+style grid lines a surprising amount.  I just want to do something
+like:</p>
+
+<pre><code>display: grid;
+gap: 1em;
+grid-rules-columns: 1px dotted red;</code></pre>
+
+<p>…although it would be much better to be able to style separators for
+a specific grid track, or even an individual grid cell, as well as be 
+able to apply it to an entire grid all at once.</p>
+
+<p>No, I don’t know exactly how this should work.  I’m an idea guy!  But
+that’s what I want.  I want to be able to define what separator lines
+look like between grid tracks, centered on the grid lines.</p>
+
+<h3 id="anchored-positioning">Anchored positioning</h3>
+
+<p>I’ve wanted this in one form or another almost since CSS2 was
+published.  The general idea is, you can position an element in relation
+to the edges of another element that isn’t a containing block.  I wrote
+about this a bit in <a href="https://meyerweb.com/eric/thoughts/2022/10/19/a-dashing-navbar-solution/">my post on connector lines for wpewebkit.org</a>, but
+another place it would have come in handy was with <a
+href="https://meyerweb.com/eric/thoughts/2022/09/12/nuclear-footnotes/">the
+footnotes on <cite>The Effects of Nuclear Weapons</cite></a>.</p>
+
+<p>See, I wanted those to actually be <a href="https://edwardtufte.github.io/tufte-css/#sidenotes">sidenotes, Tufteee-styleee</a>.  Right now, in order to make sidenotes, you have to stick the footnote into the text, right where its footnote reference appears &#x202F;—&#x2009; or, at a minimum, right after the element containing the footnote reference.  Neither was acceptable to me, because it would dork up the source text.</p>
+
+<p>What I <em>wanted</em> to be able to do was collect all the footnotes as
+endnotes at the end of the markup (which we did) and then absolutely
+position each to sit next to the element that referenced them, or
+have it pop up there on click, tap, hover, whatever.  <a href="https://w3c.github.io/csswg-drafts/css-anchor/">Anchored positioning</a> 
+would make that not just possible, but fairly easy to do.</p>
+
+<h3 id="exclusions">Exclusions</h3>
+
+<p>Following on anchored positioning, I’d love to have 
+<a href="https://drafts.csswg.org/css-exclusions/">CSS Exclusions</a>
+finally come to browsers.  Exclusions are a way to mark an element to
+have other content avoid it.  You know how floats move out of the normal
+flow, but normal-flow text avoids overlapping them?  That’s an exclusion.  
+Now imagine being able to position an element by other means, whether
+grid layout or absolute positioning or whatever, and then say “have the
+content of other elements flow around it”.  Exclusions!  See <a
+href="https://v6.robweychert.com/blog/2018/11/css-grid-editorial-layouts/">this
+article by Rob Weychert</a> for a more in-depth explanation of a common
+use case.</p>
+
+<h3 id="element-transitions">Element transitions</h3>
+
+<p>The web is cool and all, but you know how futuristic interfaces in
+movies have pieces of the interface sliding and zooming and popping out and all that
+stuff?  <a href="https://tabatkins.github.io/specs/css-shared-element-transitions/">Element transitions</a>.  You can already <a
+href="https://simple-set-demos.glitch.me/batman-transition/">try them
+out in Chrome Canary, Batman</a>, and I’d love to see them across the
+board.  Even more, I’d love some gentle, easy-to-follow tutorials on how
+to make them work, because even in their single-page form, I found the
+coding requirements basically impossible to work out.  Make them all-CSS,
+and explain them like I’m a newb, and I’m in.</p>
+
+<h3 id="nested-selectors">Nested Selectors</h3>
+
+<p>A lot of people I know are still hanging on to preprocessors solely
+because they permit nested selectors, like:</p>
+
+<pre><code>main {
+	padding: 1em;
+	background: #F1F1F0;
+	
+	h2 {
+		border-block-end: 1px solid gray;
+	}
+	p {
+		text-indent: 2em;
+	}
+}</code></pre>
+
+<p>The CSS Working Group has been wrestling with this for quite some
+time now, because it turns out the CSS parsing rules make it hard to
+just add this, there are a lot of questions about how this should
+interact with pseudo-classes like <code>:is()</code>, there are serious
+concerns about doing this in a way that will be maximally
+future-compatible, <em>and also</em> there has been a whole lot of argument over
+whether it’s okay to clash with Sass syntax or not.</p>
+
+<p>So it’s a difficult thing to make happen in native CSS, and the
+debates are both wide-ranging and slow, but it’s on my (and probably
+nearly everyone else’s) wish list.  You can <a href="https://webkit.org/blog/13813/try-css-nesting-today-in-safari-technology-preview/">try it out in Safari Technology Preview</a> 
+as I write this, so here’s hoping for accelerating adoption!</p>
+
+<h3 id="more-and-better-has">More and better <code>:has()</code></h3>
+
+<p>Okay, since I’m talking about selectors already, I’ll throw in
+universal, full-featured, more optimized support for
+<code>:has()</code>.  One browser doesn’t support compound selectors, for
+example.  I’ve also thought that maybe some combinators would be nice,
+like making <code>a:has(&gt; b)</code> can be made equal to
+<code>a &lt; b</code>.</p>
+
+<p>But I also wish for people to basically go crazy with
+<code>:has()</code>.  There’s <em>SO MUCH THERE</em>.  There are so many
+things we can do with it, and I don’t think we’ve touched even a tiny
+fraction of the possibility space.</p>
+
+<h3 id="more-attr">More <code>attr()</code></h3>
+
+<p>I’ve wanted <code>attr()</code> to be more widely accepted in CSS
+values since, well, I can’t remember.  A <em>long</em> time.  I want to be
+able to do something like:</p>
+
+<pre><code>p[data-size] {width: attr(data-width, rem);}
+
+&lt;p data-size=&quot;27&quot;&gt;…&lt;/p&gt;</code></pre>
+
+<p>Okay, not a great example, but it conveys the idea.  I also talked
+about this in <a
+href="https://meyerweb.com/eric/thoughts/2022/08/15/table-column-alignment-with-variable-transforms/">my
+post about aligning table columns</a>.
+
+I realize adding this would probably lead to
+someone creating a framework called Headgust where all the styling is
+jammed into a million <code>data-*</code>attributes and the whole of the
+framework’s CSS is nothing but <code>property: attr()</code> declarations 
+for every single CSS property known to man, but we shouldn’t let that stop us.</p>
+
+<h3 id="variables-in-media-queries">Variables in media queries</h3>
+
+<p>Basically I want to be able to do this:</p>
+
+<pre class="css"><code>:root {--mobile: 35em;}
+
+@media (min-width: var(--mobile)) {
+	/* non-mobile styles go here */
+}</code></pre>
+
+<p>That’s it.  This was made possible in container queries, I believe, so
+maybe it can spread to media (and feature?) queries.  I sure hope so!</p>
+
+<h3 id="logical-modifiers">Logical modifiers</h3>
+
+<p>You can do this:</p>
+
+<pre class="css"><code>p {margin-block: 1em; margin-inline: 1rem;}</code></pre>
+
+<p>But you can’t do this:</p>
+
+<pre><code>p {margin: logical 1em 1rem;}</code></pre>
+
+<p>I want to be able to do that.  We should <em>all</em> want to be able
+to do that, however it’s made possible.</p>
+
+<h3 id="additive-values">Additive values</h3>
+
+<p>You know how you can set a bunch of values with a comma-separated
+list, but if you want to override just one of them, you have to do the
+whole thing over?  I want to be able to add another thing to the list
+without having to do the whole thing over.  So rather than adding a value
+like this:</p>
+
+<pre class="css"><code>background-clip: content, content, border, padding; /* needed to add padding */</code></pre>
+
+<p>…I want to be able to do something like:</p>
+
+<pre><code>background-clip: add(padding);</code></pre>
+
+<p>No, I don’t know how to figure out where in the list it should be
+added.  I don’t know a lot of things.  I just know I want to be able to do
+this.  And also to remove values from a list in a similar way, since I’m
+pony-wishing.</p>
+
+<h3 id="color-shading-and-blending">Color shading and blending</h3>
+
+<p>Preprocessors already allow you to say you want the color of an
+element to be 30% lighter than it would otherwise be.  Or darker.  Or
+blend two colors together.  Native CSS should have the same power.  <a
+href="https://drafts.csswg.org/css-color-5/#resolving-mix">It’s being
+worked on</a>.  Let’s get it done, browsers.</p>
+
+<h3 id="hanging-punctuation">Hanging punctuation</h3>
+
+<p>Safari has supported <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/hanging-punctuation"><code>hanging-punctuation</code></a> for<em>ever</em> (where “for<em>ever</em>”, 
+in this case, means since 2016) and it’s long past time for other browsers
+to get with the program.  This should be universally supported.
+</p>
+
+<h3 id="cross-boundary-styles">Cross-boundary styles</h3>
+
+<p>I want to be able to apply styles from my external (or even embedded) CSS to a resource like an external SVG.  I realize this sets up all kinds
+of security and privacy concerns.  I still want to be able to do it.  Every time I have to embed an entire inline SVG into a template just so
+I can change the fill color of a logo based on its page context, I grit
+my teeth just that little bit harder.  It <em>tasks</em> me.</p>
+
+<h3 id="scoped-styling-including-imports">Scoped styling (including
+imports)</h3>
+
+<p>The Mirror Universe version of the previous wish is that I want to be
+able to say a bit of CSS, or an entire style sheet (embedded or
+external), only applies to a certain DOM node and all its descendants.
+“But you can do that with descendant selectors!” Not always.  For that
+matter, I’d love to be able to just say:</p>
+
+<pre><code>&lt;div style=&quot;@import(styles.css);&quot;&gt;</code></pre>
+
+<p>…and have that apply to that <code>&lt;div&gt;</code> and its
+descendants, as if it were an <code>&lt;iframe&gt;</code>, while
+<em>not</em> being an <code>&lt;iframe&gt;</code> so styles from the
+document could also apply to it.  Crazy?  Don’t care.  Still want it.</p>
+
+<h3 id="linked-flow-regions">Linked flow regions(?)</h3>
+
+<p>SPECIAL BONUS TENTATIVE WISH: I didn’t particularly like how <a
+href="https://www.w3.org/TR/css-regions-1/">CSS Regions</a> were
+structured, but I really liked the general idea.  It would be really
+great to be able to link elements together, and allow the content to
+flow between them in a “smooth” manner.  Even to allow the content from
+the second region to flow back into the first, if there’s room for it
+and nothing prevents it.  I admit, this is really a “try to recreate
+<a href="https://en.wikipedia.org/wiki/Adobe_PageMaker#Release_history">Aldus PageMaker</a>
+in CSS” thing for me, but the idea still appeals to me,
+and I’d love to see it come to CSS some day.</p>
+
+<hr />
+
+<p>So there you go.  I’d love to hear what you’d like to see added to CSS, either in the comments below or in posts of your own.</p>
+<ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2023/02/08/css-wish-list-2023/">CSS Wish List 2023</cite></a> was published on <time>Wednesday, February 8th, 2023</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/tech/css/" rel="category tag">CSS</a> and <a href="https://meyerweb.com/eric/thoughts/category/tech/standards/" rel="category tag">Standards</a> categories.</li>
+<li class="cmt">There have been <a href="https://meyerweb.com/eric/thoughts/2023/02/08/css-wish-list-2023/#comments">eight replies</a>.</li>
+</ul>
+</div>
+<hr class="fallback">
+</article>
+		
+
+<!-- You can start editing here. -->
+
+<div id="comments">
+<h3>Comments (8)</h3>
+
+	<ol>
+
+	
+		<li class="response comment" id="comment-3872899">
+			
+<div class="text"><p>I. Agree. With. Every. Single. Wish. Of. Yours.</p>
+<p>Dear browser makers, hear this guy out!</p>
+</div><footer>Signed,<br>Sven Kannengiesser<br><a href="#comment-3872899"><time>Wednesday, February 8th, 2023 3:43pm</time></a></footer></li>
+	
+		<li class="response comment kahuna" id="comment-3872937">
+			
+<div class="text"><p><strong>Late-breaking addition:</strong> I forgot to include <code>hanging-punctuation</code> in the original post, so I just now added it.</p>
+</div><footer>Signed,<br><a href="http://www.meyerweb.com/" class="url" rel="ugc external nofollow">Eric Meyer</a><br><a href="#comment-3872937"><time>Wednesday, February 8th, 2023 10:17pm</time></a></footer></li>
+	
+		<li class="response comment" id="comment-3872983">
+			
+<div class="text"><p>Agree with a few things but not all. <code>Element transitions</code>, really ? meh, more of those moving things and devs not bothering to  do something sensible for people sensitive to that… <code></code></p>
+<p>Wish browser makers made it the year where typogrphy is being pushed hard. You mention hanging punctuation, there are a few more, such as <code>initial-letter</code>, <code>leading-trim</code> and a few more. I suspect the developpers at Apple would be more than happy to have some competion in that field.</p>
+<p>Oh and I really really really wish th Safari / Webkit people would nuke their <code>-webkit-scrollbar-*</code> implemetation. Tomorrow, with <em>extreme</em> prejudice.</p>
+</div><footer>Signed,<br>Philippe<br><a href="#comment-3872983"><time>Thursday, February 9th, 2023 7:16am</time></a></footer></li>
+	
+		<li class="response comment" id="comment-3872996">
+			
+<div class="text"><p>While we&#8217;re wishing, I&#8217;ll just add:</p>
+<pre><code>element::toggle { &lt;props&gt; }
+</code></pre>
+<p>In practical terms, I guess this functionality needs very little in the way of description &#8211; <em>toggle</em> an element between two or more states. A simple enough wish, don&#8217;t you think?</p>
+<p>I recall seeing a post by Tab Atkins possibly in the early 00&#8217;s on this topic, and more recently, he has posted an <a href="https://tabatkins.github.io/css-toggle/" rel="nofollow ugc">Unofficial Proposal Draft</a> for <em>CSS Toggle</em> &#8211; an interesting read.</p>
+<p>If I were creating a wish list, a CSS Toggle pseudoclass would certainly be on it.</p>
+<p>Lee James</p>
+</div><footer>Signed,<br>Lee James<br><a href="#comment-3872996"><time>Thursday, February 9th, 2023 9:11am</time></a></footer></li>
+	
+		<li class="response comment" id="comment-3873435">
+			
+<div class="text"><p><a href="https://caniuse.com/?search=run-in" rel="nofollow ugc"><code>display: run-in</code></a> (👈 Link to CanIUse)</p>
+<p>I mean, way back in the day it was <em>THERE</em>, and for some reason browser folks killed it. 😭</p>
+<p>Maybe I was the only one who thought making on-line glossaries was fun? 🤷🏼‍♂️ E.g., my long-dead: <a href="http://stockclerk-glossary-b.blogspot.com/?m=0" rel="nofollow ugc"> </a><a href="http://stockclerk-glossary-b.blogspot.com/?m=0" rel="nofollow ugc">http://stockclerk-glossary-b.blogspot.com/?m=0</a>. (If it looks “meh” on your phone, scroll to the bottom and click “View web version”. Also, you can no longer tap images to view a larger versions, because Google killed Picassa. That’s how old <em>that</em> site is.)</p>
+</div><footer>Signed,<br>iDGS<br><a href="#comment-3873435"><time>Sunday, February 12th, 2023 9:21pm</time></a></footer></li>
+	
+		<li class="response pingback" id="comment-3874289">
+			
+<p><span>Pingback</span> :: <time>Sunday, February 19th, 2023 6:32am</time></p><p><a href="https://stephaniewalter.design/blog/pixels-of-the-week-february-19-2023/" class="url" rel="ugc external nofollow">Pixels of the Week – February 19, 2023 by Stéphanie Walter - UX Researcher &amp; Designer.</a></p><div class="text"><p>[&#8230;] very cool ideas in all those 2023 CSS wish lists from: Eric Meyer, Dave Rupert, Ahmad [&#8230;]</p>
+</div></li>
+	
+		<li class="response pingback" id="comment-3875197">
+			
+<p><span>Pingback</span> :: <time>Saturday, February 25th, 2023 1:20pm</time></p><p><a href="https://www.tobymackenzie.com/blog/2023/02/25/css-wishlist/" class="url" rel="ugc external nofollow">CSS Wishlist - Blog - &lt;toby&gt;</a></p><div class="text"><p>[&#8230;] reading Eric Meyer&#8217;s and Dave Rupert&#8217;s recent CSS Wishlist, I decided to make my own. Working with CSS for many [&#8230;]</p>
+</div></li>
+	
+		<li class="response comment" id="comment-3877379">
+			
+<div class="text"><p>Strongly agree with almost all of those wishes (hanging punctuation — how cool it would be to have?!)</p>
+<p>And want to link back to <a href="https://kizu.dev/anchor-positioning-experiments/#sidenotes-layout" rel="nofollow ugc">my new article</a> in which I explored the usage of anchor positioning for sidenotes — it is kinda possible, and if we would be ok with them behaving just as absolutely positioned elements, then we&#8217;re already covered, but if we&#8217;d want to have a bit more robust behavior, with the sidenotes also depending on other sidenotes, we&#8217;re currently limited and that would require hacks.</p>
+<p>But — also really glad someone bringing the use case of sidenotes up — this was one of my favorite layout tecnhiques that did not have an acceptable solution for a while, so using the anchor positioning for them was one of my first ideas to check.</p>
+</div><footer>Signed,<br><a href="https://kizu.dev/" class="url" rel="ugc external nofollow">Roma Komarov</a><br><a href="#comment-3877379"><time>Wednesday, March 15th, 2023 11:41am</time></a></footer></li>
+	
+	</ol>
+
+ 
+
+
+
+<form action="https://meyerweb.com/eric/thoughts/wp-comments-post.php" method="post" id="commentform">
+
+<header>
+<h3>Add Your Thoughts</h3>
+<ul id="rss-tb">
+<li id="tb"><a href="https://meyerweb.com/eric/thoughts/2023/02/08/css-wish-list-2023/trackback/" title="Trackback URL">Trackback URL</a></li>
+<li><a href="" title="Comments RSS feed">Comments <abbr title="Really Simple Syndication">RSS</abbr> feed'</a></li>
+</ul>
+</header>
+
+<fieldset>
+<div class="chrome-bug-workaround">
+<div id="fields">
+<p>
+<label for="author">Name</label>
+<input type="text" name="author" id="author" class="textarea" value="" size="28"> 
+<input type="hidden" name="comment_post_ID" value="5172">
+<input type="hidden" name="redirect_to" value="/eric/thoughts/2023/02/08/css-wish-list-2023/">
+</p>
+
+<p>
+<label for="email">E-mail <small>(required but not displayed)</small></label>
+<input type="email" name="email" id="email" value="" size="28"> 
+</p>
+
+<p>
+<label for="url"><acronym title="Uniform Resource Identifier">URI</acronym> <small>(optional)</small></label>
+<input type="text" name="url" id="url" value="" size="28"> 
+</p>
+
+</div>
+<div id="form-info">
+<p><strong>Meyerweb dot com reserves the right to edit or remove any comment</strong>, especially when abusive or irrelevant to the topic at hand.</p>
+<p><acronym title="Hypertext Markup Language">HTML</acronym> allowed: <small><code>&lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;s&gt; &lt;strong&gt; &lt;pre class=&quot;&quot;&gt; &lt;kbd&gt; </code></small></p>
+</div>
+<hr class="fallback">
+
+<!--<p><small><strong>XHTML:</strong> You can use these tags: &lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;s&gt; &lt;strong&gt; &lt;pre class=&quot;&quot;&gt; &lt;kbd&gt; </small></p>-->
+
+<section>
+<div id="comment_input">
+<label for="comment">Your Comment <small>(<a href="https://github.com/showdownjs/showdown/wiki/Showdown's-Markdown-syntax">Markdown</a> supported)</small></label>
+<textarea name="comment" id="comment" cols="70" rows="10" onKeyup="run();"></textarea>
+<p>
+<input name="submit" type="submit" id="submit" value="Post your e-pistle" />
+<input type="hidden" name="comment_post_ID" value="5172" />
+<input type="hidden" name="mw_dssb" value="c81f1f833ed7eb7d743ab1d197ecf52b" />
+if you’re satisfied with it.</p>
+</div>
+<div>
+<h4>Comment Preview</h4>
+<div id="comment_preview"></div>
+</div>
+<script type="text/javascript" src="/ui/showdown/dist/showdown.min.js"></script>
+<script type="text/javascript">
+function run() {
+  var text = document.getElementById('comment').value,
+      target = document.getElementById('comment_preview'),
+      converter = new showdown.Converter(),
+      html = converter.makeHtml(text);
+  target.innerHTML = html;
+}
+run();
+</script>
+</section>
+</div>
+</fieldset>
+<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="0dc9203947" /></p><p style="display: none !important;"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="121"/><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form>
+
+
+
+
+</div>
+
+</main>
+
+<div class="prev-next book" id="posts-pn">
+<h4>Browse <a href="/eric/thoughts/">the Archive</a></h4>
+<p class="prev"><a href="https://meyerweb.com/eric/thoughts/2023/01/16/minimal-dark-mode-styling/">Minimal Dark Mode Styling</a></p>
+<p class="next"><a href="https://meyerweb.com/eric/thoughts/2023/02/13/playlist-wishes/">Playlist Wishes</a></p>
+</div>
+
+</div>
+
+<div role="navigation" aria-label="archive" class="panel" id="related">
+<h4>Related Posts</h4>
+<ul><li><a href="https://meyerweb.com/eric/thoughts/2022/08/15/table-column-alignment-with-variable-transforms/">Table Column Alignment with Variable Transforms</a> <time>August 15, 2022</time></li><li><a href="https://meyerweb.com/eric/thoughts/2022/03/14/if-or-when/">When or If</a> <time>March 14, 2022</time></li><li><a href="https://meyerweb.com/eric/thoughts/2021/06/08/back-in-the-csswg/">Back in the CSSWG</a> <time>June 8, 2021</time></li><li><a href="https://meyerweb.com/eric/thoughts/2021/06/02/ancestors-and-descendants/">Ancestors and Descendants</a> <time>June 2, 2021</time></li><li><a href="https://meyerweb.com/eric/thoughts/2021/05/25/25-years-of-css/">25 Years of CSS</a> <time>May 25, 2021</time></li><li><a href="https://meyerweb.com/eric/thoughts/2020/04/09/css-naked-day-2020/">CSS Naked Day 2020</a> <time>April 9, 2020</time></li><li><a href="https://meyerweb.com/eric/thoughts/2020/03/03/css-specification-timelines-updated-and-modernized/">CSS Specification Timelines, Updated and Modernized</a> <time>March 3, 2020</time></li><li><a href="https://meyerweb.com/eric/thoughts/2019/04/25/color-easing-isnt-always-easy/">Color Easing Isn’t Always Easy</a> <time>April 25, 2019</time></li><li><a href="https://meyerweb.com/eric/thoughts/2019/03/29/css4-color-keyword-distribution-visualization/">CSS4 Color Keyword Distribution Visualization</a> <time>March 29, 2019</time></li><li><a href="https://meyerweb.com/eric/thoughts/2016/12/05/css-grid/">CSS Grid!</a> <time>December 5, 2016</time></li></ul><p>Browse posts in the <a href="https://meyerweb.com/eric/thoughts/category/tech/css/" rel="category tag">CSS</a> or <a href="https://meyerweb.com/eric/thoughts/category/tech/standards/" rel="category tag">Standards</a> categories.</p>
+</div>
+
+<div class="panel" id="feeds">
+<h4>Feeds</h4>
+	<p>A dispatch of all posts to “Thoughts From Eric” is available in both <a href="https://meyerweb.com/eric/thoughts/feed/" title="Aggregate posts using RSS"><acronym title="Really Simple Syndication">RSS</acronym> 2.0</a>
+	and <a href="https://meyerweb.com/eric/thoughts/feed/atom/" title="Aggregate posts using Atom">Atom</a>.</p>
+</div>
+
+</div>
+
+<footer id="global">
+
+<div>
+
+<div id="archipelago">
+<h4>Identity Archipelago</h4>
+<ul>
+<li><a rel="me" href="https://twitter.com/meyerweb"><img src="/pix/icons/twitter.png" alt="Twitter"></a></li>
+<li><a rel="me" href="https://mastodon.social/@meyerweb"><img src="/pix/icons/mastodon.svg" alt="Mastodon"></a></li>
+<li><a rel="me" href="https://github.com/meyerweb"><img src="/pix/icons/github.png" alt="GitHub"></a></li>
+<li><a rel="me" href="https://flickr.com/photos/meyerweb/"><img src="/pix/icons/flickr.png" alt="Flickr"></a></li>
+<li><a rel="me" href="https://dribbble.com/meyerweb"><img src="/pix/icons/dribbble.png" alt="Dribbble"></a></li>
+<li><a rel="me" href="https://facebook.com/meyerweb"><img src="/pix/icons/facebook.png" alt="Facebook"></a></li>
+<li><a rel="me" href="https://www.linkedin.com/in/meyerweb"><img src="/pix/icons/linkedin.png" alt="LinkedIn"></a></li>
+</ul>
+</div>
+
+<div id="excuse">
+<div class="panel" id="excuse">
+<h4>The <a href="/feeds/excuse/">excuse of the day</a> is</h4>
+<p>ozone depletion</p>
+</div>
+<!--#include virtual="/feeds/excuse/current.html" -->
+</div>
+
+<div class="sosumi">
+All contents of this site, unless otherwise noted, are &copy;1993-2023<!--#config timefmt="%Y" --><!--#echo var="DATE_LOCAL" --> <strong>Eric A. and Kathryn S. Meyer</strong>.  All Rights Reserved.</div>
+
+<div id="wordpress" class="credits">"<a href="/eric/thoughts/">Thoughts From Eric</a>" is powered by <a href="http://wordpress.org/">WordPress</a>.  Most of the rest of the site is hand-authored.</div>
+
+<div id="design" class="credits">The ink-sketch images used in this site’s design are adapted from <a href="https://archive.org/search.php?query=creator%3A%22Mori%2C+Yu%CC%84zan%2C+-1917%22">Yūzan Mori’s <cite><dfn title="In English: Wave Forms">Hamonshū</dfn></cite>, Volumes 1-3</a>, published in 1903 and made available for public use by the <a href="https://library.si.edu/">Smithsonian Libraries</a> and the <a href="https://archive.org/">Internet Archive</a>.</div>
+
+</div>
+
+</footer>
+<!-- WP stuff follows -->
+</body>
+</html>
+<!-- Dynamic page generated in 0.299 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2023-09-06 02:58:02 -->
+
+<!-- Compression = gzip -->

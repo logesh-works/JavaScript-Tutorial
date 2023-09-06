@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"4c203d12f7",applicationID:"149389314"};;/*! For license information please see nr-loader-rum-1.238.0.min.js.LICENSE.txt */
+(()=>{"use strict";var e,t,n={763:(e,t,n)=>{n.d(t,{P_:()=>f,Mt:()=>p,C5:()=>s,DL:()=>m,OP:()=>j,lF:()=>T,Yu:()=>y,Dg:()=>g,CX:()=>c,GE:()=>b,sU:()=>E});var r=n(632),i=n(567);const o={beacon:r.ce.beacon,errorBeacon:r.ce.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0},a={};function s(e){if(!e)throw new Error("All info objects require an agent identifier!");if(!a[e])throw new Error("Info for ".concat(e," was never set"));return a[e]}function c(e,t){if(!e)throw new Error("All info objects require an agent identifier!");a[e]=(0,i.D)(t,o),(0,r.Qy)(e,a[e],"info")}var d=n(56);const u=()=>{const e={blockSelector:"[data-nr-block]",maskInputOptions:{password:!0}};return{allow_bfcache:!0,privacy:{cookies_enabled:!0},ajax:{deny_list:void 0,block_internal:!0,enabled:!0,harvestTimeSeconds:10},distributed_tracing:{enabled:void 0,exclude_newrelic_header:void 0,cors_use_newrelic_header:void 0,cors_use_tracecontext_headers:void 0,allowed_origins:void 0},session:{domain:void 0,expiresMs:d.oD,inactiveMs:d.Hb},ssl:void 0,obfuscate:void 0,jserrors:{enabled:!0,harvestTimeSeconds:10},metrics:{enabled:!0},page_action:{enabled:!0,harvestTimeSeconds:30},page_view_event:{enabled:!0},page_view_timing:{enabled:!0,harvestTimeSeconds:30,long_task:!1},session_trace:{enabled:!0,harvestTimeSeconds:10},harvest:{tooManyRequestsDelay:60},session_replay:{enabled:!1,harvestTimeSeconds:60,sampleRate:.1,errorSampleRate:.1,maskTextSelector:"*",maskAllInputs:!0,get blockClass(){return"nr-block"},get ignoreClass(){return"nr-ignore"},get maskTextClass(){return"nr-mask"},get blockSelector(){return e.blockSelector},set blockSelector(t){e.blockSelector+=",".concat(t)},get maskInputOptions(){return e.maskInputOptions},set maskInputOptions(t){e.maskInputOptions={...t,password:!0}}},spa:{enabled:!0,harvestTimeSeconds:10}}},l={};function f(e){if(!e)throw new Error("All configuration objects require an agent identifier!");if(!l[e])throw new Error("Configuration for ".concat(e," was never set"));return l[e]}function g(e,t){if(!e)throw new Error("All configuration objects require an agent identifier!");l[e]=(0,i.D)(t,u()),(0,r.Qy)(e,l[e],"config")}function p(e,t){if(!e)throw new Error("All configuration objects require an agent identifier!");var n=f(e);if(n){for(var r=t.split("."),i=0;i<r.length-1;i++)if("object"!=typeof(n=n[r[i]]))return;n=n[r[r.length-1]]}return n}const h={accountID:void 0,trustKey:void 0,agentID:void 0,licenseKey:void 0,applicationID:void 0,xpid:void 0},v={};function m(e){if(!e)throw new Error("All loader-config objects require an agent identifier!");if(!v[e])throw new Error("LoaderConfig for ".concat(e," was never set"));return v[e]}function b(e,t){if(!e)throw new Error("All loader-config objects require an agent identifier!");v[e]=(0,i.D)(t,h),(0,r.Qy)(e,v[e],"loader_config")}const y=(0,r.mF)().o;var w=n(385),A=n(818);const x={buildEnv:A.Re,bytesSent:{},queryBytesSent:{},customTransaction:void 0,disabled:!1,distMethod:A.gF,isolatedBacklog:!1,loaderType:void 0,maxBytes:3e4,offset:Math.floor(w._A?.performance?.timeOrigin||w._A?.performance?.timing?.navigationStart||Date.now()),onerror:void 0,origin:""+w._A.location,ptid:void 0,releaseIds:{},session:void 0,xhrWrappable:"function"==typeof w._A.XMLHttpRequest?.prototype?.addEventListener,version:A.q4,denyList:void 0},D={};function j(e){if(!e)throw new Error("All runtime objects require an agent identifier!");if(!D[e])throw new Error("Runtime for ".concat(e," was never set"));return D[e]}function E(e,t){if(!e)throw new Error("All runtime objects require an agent identifier!");D[e]=(0,i.D)(t,x),(0,r.Qy)(e,D[e],"runtime")}function T(e){return function(e){try{const t=s(e);return!!t.licenseKey&&!!t.errorBeacon&&!!t.applicationID}catch(e){return!1}}(e)}},567:(e,t,n)=>{n.d(t,{D:()=>i});var r=n(50);function i(e,t){try{if(!e||"object"!=typeof e)return(0,r.Z)("Setting a Configurable requires an object as input");if(!t||"object"!=typeof t)return(0,r.Z)("Setting a Configurable requires a model to set its initial properties");const n=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),o=0===Object.keys(n).length?e:n;for(let a in o)if(void 0!==e[a])try{"object"==typeof e[a]&&"object"==typeof t[a]?n[a]=i(e[a],t[a]):n[a]=e[a]}catch(e){(0,r.Z)("An error occurred while setting a property of a Configurable",e)}return n}catch(e){(0,r.Z)("An error occured while setting a Configurable",e)}}},818:(e,t,n)=>{n.d(t,{Re:()=>i,gF:()=>o,q4:()=>r});const r="1.238.0",i="PROD",o="CDN"},385:(e,t,n)=>{n.d(t,{IF:()=>c,Nk:()=>u,Tt:()=>a,_A:()=>o,il:()=>r,pL:()=>s,v6:()=>i,w1:()=>d});const r="undefined"!=typeof window&&!!window.document,i="undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),o=r?window:"undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),a=(o?.location,/iPad|iPhone|iPod/.test(navigator.userAgent)),s=a&&"undefined"==typeof SharedWorker,c=(()=>{const e=navigator.userAgent.match(/Firefox[/\s](\d+\.\d+)/);return Array.isArray(e)&&e.length>=2?+e[1]:0})(),d=Boolean(r&&window.document.documentMode),u=!!navigator.sendBeacon},711:(e,t,n)=>{n.d(t,{w:()=>o});var r=n(50);const i={agentIdentifier:"",ee:void 0};class o{constructor(e){try{if("object"!=typeof e)return(0,r.Z)("shared context requires an object as input");this.sharedContext={},Object.assign(this.sharedContext,i),Object.entries(e).forEach((e=>{let[t,n]=e;Object.keys(i).includes(t)&&(this.sharedContext[t]=n)}))}catch(e){(0,r.Z)("An error occured while setting SharedContext",e)}}}},0:(e,t,n)=>{n.d(t,{L:()=>u,R:()=>c});var r=n(148),i=n(284),o=n(322),a=n(325);const s={};function c(e,t){const n={staged:!1,priority:a.p[t]||0};d(e),s[e].get(t)||s[e].set(t,n)}function d(e){e&&(s[e]||(s[e]=new Map))}function u(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"feature";if(d(e),!e||!s[e].get(t))return a(t);s[e].get(t).staged=!0;const n=[...s[e]];function a(t){const n=e?r.ee.get(e):r.ee,a=o.X.handlers;if(n.backlog&&a){var s=n.backlog[t],c=a[t];if(c){for(var d=0;s&&d<s.length;++d)l(s[d],c);(0,i.D)(c,(function(e,t){(0,i.D)(t,(function(t,n){n[0].on(e,n[1])}))}))}delete a[t],n.backlog[t]=null,n.emit("drain-"+t,[])}}n.every((e=>{let[t,n]=e;return n.staged}))&&(n.sort(((e,t)=>e[1].priority-t[1].priority)),n.forEach((e=>{let[t]=e;a(t)})))}function l(e,t){var n=e[1];(0,i.D)(t[n],(function(t,n){var r=e[0];if(n[0]===r){var i=n[1],o=e[3],a=e[2];i.apply(o,a)}}))}},148:(e,t,n)=>{n.d(t,{A:()=>c,ee:()=>d});var r=n(632),i=n(210),o=n(763);class a{constructor(e){this.contextId=e}}var s=n(117);const c="nr@context:".concat(s.a),d=function e(t,n){var r={},s={},u={},f=!1;try{f=16===n.length&&(0,o.OP)(n).isolatedBacklog}catch(e){}var g={on:h,addEventListener:h,removeEventListener:function(e,t){var n=r[e];if(!n)return;for(var i=0;i<n.length;i++)n[i]===t&&n.splice(i,1)},emit:function(e,n,r,i,o){!1!==o&&(o=!0);if(d.aborted&&!i)return;t&&o&&t.emit(e,n,r);for(var a=p(r),c=v(e),u=c.length,l=0;l<u;l++)c[l].apply(a,n);var f=b()[s[e]];f&&f.push([g,e,n,a]);return a},get:m,listeners:v,context:p,buffer:function(e,t){const n=b();if(t=t||"feature",g.aborted)return;Object.entries(e||{}).forEach((e=>{let[r,i]=e;s[i]=t,t in n||(n[t]=[])}))},abort:l,aborted:!1,isBuffering:function(e){return!!b()[s[e]]},debugId:n,backlog:f?{}:t&&"object"==typeof t.backlog?t.backlog:{}};return g;function p(e){return e&&e instanceof a?e:e?(0,i.X)(e,c,(()=>new a(c))):new a(c)}function h(e,t){r[e]=v(e).concat(t)}function v(e){return r[e]||[]}function m(t){return u[t]=u[t]||e(g,t)}function b(){return g.backlog}}(void 0,"globalEE"),u=(0,r.fP)();function l(){d.aborted=!0,d.backlog={}}u.ee||(u.ee=d)},546:(e,t,n)=>{n.d(t,{E:()=>r,p:()=>i});var r=n(148).ee.get("handle");function i(e,t,n,i,o){o?(o.buffer([e],i),o.emit(e,t,n)):(r.buffer([e],i),r.emit(e,t,n))}},322:(e,t,n)=>{n.d(t,{X:()=>o});var r=n(546);o.on=a;var i=o.handlers={};function o(e,t,n,o){a(o||r.E,i,e,t,n)}function a(e,t,n,i,o){o||(o="feature"),e||(e=r.E);var a=t[o]=t[o]||{};(a[n]=a[n]||[]).push([e,i])}},239:(e,t,n)=>{n.d(t,{bP:()=>s,iz:()=>c,m$:()=>a});var r=n(385);let i=!1,o=!1;try{const e={get passive(){return i=!0,!1},get signal(){return o=!0,!1}};r._A.addEventListener("test",null,e),r._A.removeEventListener("test",null,e)}catch(e){}function a(e,t){return i||o?{capture:!!e,passive:i,signal:t}:!!e}function s(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2],r=arguments.length>3?arguments[3]:void 0;window.addEventListener(e,t,a(n,r))}function c(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2],r=arguments.length>3?arguments[3]:void 0;document.addEventListener(e,t,a(n,r))}},117:(e,t,n)=>{n.d(t,{a:()=>r});const r=(0,n(402).Rl)()},402:(e,t,n)=>{n.d(t,{Rl:()=>a,ky:()=>s});var r=n(385);const i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx";function o(e,t){return e?15&e[t]:16*Math.random()|0}function a(){const e=r._A?.crypto||r._A?.msCrypto;let t,n=0;return e&&e.getRandomValues&&(t=e.getRandomValues(new Uint8Array(31))),i.split("").map((e=>"x"===e?o(t,++n).toString(16):"y"===e?(3&o()|8).toString(16):e)).join("")}function s(e){const t=r._A?.crypto||r._A?.msCrypto;let n,i=0;t&&t.getRandomValues&&(n=t.getRandomValues(new Uint8Array(31)));const a=[];for(var s=0;s<e;s++)a.push(o(n,++i).toString(16));return a.join("")}},56:(e,t,n)=>{n.d(t,{Bq:()=>r,Hb:()=>o,oD:()=>i});const r="NRBA",i=144e5,o=18e5},894:(e,t,n)=>{function r(){return Math.round(performance.now())}n.d(t,{z:()=>r})},50:(e,t,n)=>{function r(e,t){"function"==typeof console.warn&&(console.warn("New Relic: ".concat(e)),t&&console.warn(t))}n.d(t,{Z:()=>r})},587:(e,t,n)=>{n.d(t,{N:()=>c,T:()=>d});var r=n(148),i=n(546),o=n(0),a=n(325);const s={stn:[a.D.sessionTrace],err:[a.D.jserrors,a.D.metrics],ins:[a.D.pageAction],spa:[a.D.spa],sr:[a.D.sessionReplay,a.D.sessionTrace]};function c(e,t){const n=r.ee.get(t);e&&"object"==typeof e&&(Object.entries(e).forEach((e=>{let[t,r]=e;void 0===d[t]&&(s[t]?s[t].forEach((e=>{r?(0,i.p)("feat-"+t,[],void 0,e,n):(0,i.p)("block-"+t,[],void 0,e,n),(0,i.p)("rumresp-"+t,[Boolean(r)],void 0,e,n)})):r&&(0,i.p)("feat-"+t,[],void 0,void 0,n),d[t]=Boolean(r))})),Object.keys(s).forEach((e=>{void 0===d[e]&&(s[e]?.forEach((t=>(0,i.p)("rumresp-"+e,[!1],void 0,t,n))),d[e]=!1)})),(0,o.L)(t,a.D.pageViewEvent))}const d={}},210:(e,t,n)=>{n.d(t,{X:()=>i});var r=Object.prototype.hasOwnProperty;function i(e,t,n){if(r.call(e,t))return e[t];var i=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:i,writable:!0,enumerable:!1}),i}catch(e){}return e[t]=i,i}},284:(e,t,n)=>{n.d(t,{D:()=>r});const r=(e,t)=>Object.entries(e||{}).map((e=>{let[n,r]=e;return t(n,r)}))},351:(e,t,n)=>{n.d(t,{P:()=>o});var r=n(148);const i=()=>{const e=new WeakSet;return(t,n)=>{if("object"==typeof n&&null!==n){if(e.has(n))return;e.add(n)}return n}};function o(e){try{return JSON.stringify(e,i())}catch(e){try{r.ee.emit("internal-error",[e])}catch(e){}}}},960:(e,t,n)=>{n.d(t,{K:()=>a,b:()=>o});var r=n(239);function i(){return"undefined"==typeof document||"complete"===document.readyState}function o(e,t){if(i())return e();(0,r.bP)("load",e,t)}function a(e){if(i())return e();(0,r.iz)("DOMContentLoaded",e)}},632:(e,t,n)=>{n.d(t,{EZ:()=>d,Qy:()=>c,ce:()=>o,fP:()=>a,gG:()=>u,mF:()=>s});var r=n(894),i=n(385);const o={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net"};function a(){return i._A.NREUM||(i._A.NREUM={}),void 0===i._A.newrelic&&(i._A.newrelic=i._A.NREUM),i._A.NREUM}function s(){let e=a();return e.o||(e.o={ST:i._A.setTimeout,SI:i._A.setImmediate,CT:i._A.clearTimeout,XHR:i._A.XMLHttpRequest,REQ:i._A.Request,EV:i._A.Event,PR:i._A.Promise,MO:i._A.MutationObserver,FETCH:i._A.fetch}),e}function c(e,t,n){let i=a();const o=i.initializedAgents||{},s=o[e]||{};return Object.keys(s).length||(s.initializedAt={ms:(0,r.z)(),date:new Date}),i.initializedAgents={...o,[e]:{...s,[n]:t}},i}function d(e,t){a()[e]=t}function u(){return function(){let e=a();const t=e.info||{};e.info={beacon:o.beacon,errorBeacon:o.errorBeacon,...t}}(),function(){let e=a();const t=e.init||{};e.init={...t}}(),s(),function(){let e=a();const t=e.loader_config||{};e.loader_config={...t}}(),a()}},956:(e,t,n)=>{n.d(t,{N:()=>i});var r=n(239);function i(e){let t=arguments.length>1&&void 0!==arguments[1]&&arguments[1],n=arguments.length>2?arguments[2]:void 0,i=arguments.length>3?arguments[3]:void 0;return void(0,r.iz)("visibilitychange",(function(){if(t)return void("hidden"==document.visibilityState&&e());e(document.visibilityState)}),n,i)}},81:(e,t,n)=>{n.d(t,{gF:()=>o,mY:()=>i,t9:()=>r,vz:()=>s,xS:()=>a});const r=n(325).D.metrics,i="sm",o="cm",a="storeSupportabilityMetrics",s="storeEventMetrics"},633:(e,t,n)=>{n.d(t,{Dz:()=>i,OJ:()=>a,qw:()=>o,t9:()=>r});const r=n(325).D.pageViewEvent,i="firstbyte",o="domcontent",a="windowload"},251:(e,t,n)=>{n.d(t,{t:()=>r});const r=n(325).D.pageViewTiming},938:(e,t,n)=>{n.d(t,{W:()=>o});var r=n(763),i=n(148);class o{constructor(e,t,n){this.agentIdentifier=e,this.aggregator=t,this.ee=i.ee.get(e,(0,r.OP)(this.agentIdentifier).isolatedBacklog),this.featureName=n,this.blocked=!1}}},144:(e,t,n)=>{n.d(t,{j:()=>v});var r=n(325),i=n(763),o=n(546),a=n(148),s=n(894),c=n(0),d=n(960),u=n(385),l=n(50),f=n(81),g=n(632);function p(){const e=(0,g.gG)();["setErrorHandler","finished","addToTrace","inlineHit","addRelease","addPageAction","setCurrentRouteName","setPageViewName","setCustomAttribute","interaction","noticeError","setUserId","setApplicationVersion"].forEach((t=>{e[t]=function(){for(var n=arguments.length,r=new Array(n),i=0;i<n;i++)r[i]=arguments[i];return function(t){for(var n=arguments.length,r=new Array(n>1?n-1:0),i=1;i<n;i++)r[i-1]=arguments[i];let o=[];return Object.values(e.initializedAgents).forEach((e=>{e.exposed&&e.api[t]&&o.push(e.api[t](...r))})),o.length>1?o:o[0]}(t,...r)}}))}var h=n(587);function v(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},v=arguments.length>2?arguments[2]:void 0,m=arguments.length>3?arguments[3]:void 0,{init:b,info:y,loader_config:w,runtime:A={loaderType:v},exposed:x=!0}=t;const D=(0,g.gG)();y||(b=D.init,y=D.info,w=D.loader_config),(0,i.Dg)(e,b||{}),(0,i.GE)(e,w||{}),y.jsAttributes??={},u.v6&&(y.jsAttributes.isWorker=!0),(0,i.CX)(e,y);const j=(0,i.P_)(e);A.denyList=[...j.ajax?.deny_list||[],...j.ajax?.block_internal?[y.beacon,y.errorBeacon]:[]],(0,i.sU)(e,A),p();const E=function(e,t){t||(0,c.R)(e,"api");const g={};var p=a.ee.get(e),h=p.get("tracer"),v="api-",m=v+"ixn-";function b(t,n,r,o){const a=(0,i.C5)(e);return null===n?delete a.jsAttributes[t]:(0,i.CX)(e,{...a,jsAttributes:{...a.jsAttributes,[t]:n}}),A(v,r,!0,o||null===n?"session":void 0)(t,n)}function y(){}["setErrorHandler","finished","addToTrace","inlineHit","addRelease"].forEach((e=>g[e]=A(v,e,!0,"api"))),g.addPageAction=A(v,"addPageAction",!0,r.D.pageAction),g.setCurrentRouteName=A(v,"routeName",!0,r.D.spa),g.setPageViewName=function(t,n){if("string"==typeof t)return"/"!==t.charAt(0)&&(t="/"+t),(0,i.OP)(e).customTransaction=(n||"http://custom.transaction")+t,A(v,"setPageViewName",!0)()},g.setCustomAttribute=function(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2];if("string"==typeof e){if(["string","number"].includes(typeof t)||null===t)return b(e,t,"setCustomAttribute",n);(0,l.Z)("Failed to execute setCustomAttribute.\nNon-null value must be a string or number type, but a type of <".concat(typeof t,"> was provided."))}else(0,l.Z)("Failed to execute setCustomAttribute.\nName must be a string type, but a type of <".concat(typeof e,"> was provided."))},g.setUserId=function(e){if("string"==typeof e||null===e)return b("enduser.id",e,"setUserId",!0);(0,l.Z)("Failed to execute setUserId.\nNon-null value must be a string type, but a type of <".concat(typeof e,"> was provided."))},g.setApplicationVersion=function(e){if("string"==typeof e||null===e)return b("application.version",e,"setApplicationVersion",!1);(0,l.Z)("Failed to execute setApplicationVersion. Expected <String | null>, but got <".concat(typeof e,">."))},g.interaction=function(){return(new y).get()};var w=y.prototype={createTracer:function(e,t){var n={},i=this,a="function"==typeof t;return(0,o.p)(m+"tracer",[(0,s.z)(),e,n],i,r.D.spa,p),function(){if(h.emit((a?"":"no-")+"fn-start",[(0,s.z)(),i,a],n),a)try{return t.apply(this,arguments)}catch(e){throw h.emit("fn-err",[arguments,this,e],n),e}finally{h.emit("fn-end",[(0,s.z)()],n)}}}};function A(e,t,n,i){return function(){return(0,o.p)(f.xS,["API/"+t+"/called"],void 0,r.D.metrics,p),i&&(0,o.p)(e+t,[(0,s.z)(),...arguments],n?null:this,i,p),n?void 0:this}}function x(){n.e(75).then(n.bind(n,438)).then((t=>{let{setAPI:n}=t;n(e),(0,c.L)(e,"api")})).catch((()=>(0,l.Z)("Downloading runtime APIs failed...")))}return["actionText","setName","setAttribute","save","ignore","onEnd","getContext","end","get"].forEach((e=>{w[e]=A(m,e,void 0,r.D.spa)})),g.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),(0,o.p)(f.xS,["API/noticeError/called"],void 0,r.D.metrics,p),(0,o.p)("err",[e,(0,s.z)(),!1,t],void 0,r.D.jserrors,p)},u.il?(0,d.b)((()=>x()),!0):x(),g}(e,m);return(0,g.Qy)(e,E,"api"),(0,g.Qy)(e,x,"exposed"),(0,g.EZ)("activatedFeatures",h.T),E}},325:(e,t,n)=>{n.d(t,{D:()=>r,p:()=>i});const r={ajax:"ajax",jserrors:"jserrors",metrics:"metrics",pageAction:"page_action",pageViewEvent:"page_view_event",pageViewTiming:"page_view_timing",sessionReplay:"session_replay",sessionTrace:"session_trace",spa:"spa"},i={[r.pageViewEvent]:1,[r.pageViewTiming]:2,[r.metrics]:3,[r.jserrors]:4,[r.ajax]:5,[r.sessionTrace]:6,[r.pageAction]:7,[r.spa]:8,[r.sessionReplay]:9}}},r={};function i(e){var t=r[e];if(void 0!==t)return t.exports;var o=r[e]={exports:{}};return n[e](o,o.exports,i),o.exports}i.m=n,i.d=(e,t)=>{for(var n in t)i.o(t,n)&&!i.o(e,n)&&Object.defineProperty(e,n,{enumerable:!0,get:t[n]})},i.f={},i.e=e=>Promise.all(Object.keys(i.f).reduce(((t,n)=>(i.f[n](e,t),t)),[])),i.u=e=>"nr-rum.3709cb75-1.238.0.min.js",i.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),e={},t="NRBA-1.238.0.PROD:",i.l=(n,r,o,a)=>{if(e[n])e[n].push(r);else{var s,c;if(void 0!==o)for(var d=document.getElementsByTagName("script"),u=0;u<d.length;u++){var l=d[u];if(l.getAttribute("src")==n||l.getAttribute("data-webpack")==t+o){s=l;break}}s||(c=!0,(s=document.createElement("script")).charset="utf-8",s.timeout=120,i.nc&&s.setAttribute("nonce",i.nc),s.setAttribute("data-webpack",t+o),s.src=n),e[n]=[r];var f=(t,r)=>{s.onerror=s.onload=null,clearTimeout(g);var i=e[n];if(delete e[n],s.parentNode&&s.parentNode.removeChild(s),i&&i.forEach((e=>e(r))),t)return t(r)},g=setTimeout(f.bind(null,void 0,{type:"timeout",target:s}),12e4);s.onerror=f.bind(null,s.onerror),s.onload=f.bind(null,s.onload),c&&document.head.appendChild(s)}},i.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.p="https://js-agent.newrelic.com/",(()=>{var e={50:0,832:0};i.f.j=(t,n)=>{var r=i.o(e,t)?e[t]:void 0;if(0!==r)if(r)n.push(r[2]);else{var o=new Promise(((n,i)=>r=e[t]=[n,i]));n.push(r[2]=o);var a=i.p+i.u(t),s=new Error;i.l(a,(n=>{if(i.o(e,t)&&(0!==(r=e[t])&&(e[t]=void 0),r)){var o=n&&("load"===n.type?"missing":n.type),a=n&&n.target&&n.target.src;s.message="Loading chunk "+t+" failed.\n("+o+": "+a+")",s.name="ChunkLoadError",s.type=o,s.request=a,r[1](s)}}),"chunk-"+t,t)}};var t=(t,n)=>{var r,o,[a,s,c]=n,d=0;if(a.some((t=>0!==e[t]))){for(r in s)i.o(s,r)&&(i.m[r]=s[r]);if(c)c(i)}for(t&&t(n);d<a.length;d++)o=a[d],i.o(e,o)&&e[o]&&e[o][0](),e[o]=0},n=self["webpackChunk:NRBA-1.238.0.PROD"]=self["webpackChunk:NRBA-1.238.0.PROD"]||[];n.forEach(t.bind(null,0)),n.push=t.bind(null,n.push.bind(n))})(),(()=>{var e=i(50);class t{addPageAction(t,n){(0,e.Z)("Call to agent api addPageAction failed. The session trace feature is not currently initialized.")}setPageViewName(t,n){(0,e.Z)("Call to agent api setPageViewName failed. The page view feature is not currently initialized.")}setCustomAttribute(t,n,r){(0,e.Z)("Call to agent api setCustomAttribute failed. The js errors feature is not currently initialized.")}noticeError(t,n){(0,e.Z)("Call to agent api noticeError failed. The js errors feature is not currently initialized.")}setUserId(t){(0,e.Z)("Call to agent api setUserId failed. The js errors feature is not currently initialized.")}setApplicationVersion(t){(0,e.Z)("Call to agent api setApplicationVersion failed. The agent is not currently initialized.")}setErrorHandler(t){(0,e.Z)("Call to agent api setErrorHandler failed. The js errors feature is not currently initialized.")}finished(t){(0,e.Z)("Call to agent api finished failed. The page action feature is not currently initialized.")}addRelease(t,n){(0,e.Z)("Call to agent api addRelease failed. The agent is not currently initialized.")}}var n=i(325),r=i(763);const o=Object.values(n.D);function a(e){const t={};return o.forEach((n=>{t[n]=function(e,t){return!1!==(0,r.Mt)(t,"".concat(e,".enabled"))}(n,e)})),t}var s=i(144);var c=i(546),d=i(385),u=i(0),l=i(938),f=i(960);class g extends l.W{constructor(e,t,n){let r=!(arguments.length>3&&void 0!==arguments[3])||arguments[3];super(e,t,n),this.auto=r,this.abortHandler,this.featAggregate,this.onAggregateImported,r&&(0,u.R)(e,n)}importAggregator(){let t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};if(this.featAggregate||!this.auto)return;const n=d.il&&!0===(0,r.Mt)(this.agentIdentifier,"privacy.cookies_enabled");let o;this.onAggregateImported=new Promise((e=>{o=e}));const a=async()=>{let r;try{if(n){const{setupAgentSession:e}=await i.e(75).then(i.bind(i,228));r=e(this.agentIdentifier)}}catch(t){(0,e.Z)("A problem occurred when starting up session manager. This page will not start or extend any session.",t)}try{if(!this.shouldImportAgg(this.featureName,r))return(0,u.L)(this.agentIdentifier,this.featureName),void o(!1);const{lazyFeatureLoader:e}=await i.e(75).then(i.bind(i,582)),{Aggregate:n}=await e(this.featureName,"aggregate");this.featAggregate=new n(this.agentIdentifier,this.aggregator,t),o(!0)}catch(t){(0,e.Z)("Downloading and initializing ".concat(this.featureName," failed..."),t),this.abortHandler?.(),o(!1)}};d.il?(0,f.b)((()=>a()),!0):a()}shouldImportAgg(e,t){return e!==n.D.sessionReplay||!!r.Yu.MO&&(!1!==(0,r.Mt)(this.agentIdentifier,"session_trace.enabled")&&(!!t?.isNew||!!t?.state.sessionReplay))}}var p=i(633),h=i(894);class v extends g{static featureName=p.t9;constructor(e,t){let i=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];if(super(e,t,p.t9,i),("undefined"==typeof PerformanceNavigationTiming||d.Tt)&&"undefined"!=typeof PerformanceTiming){const t=(0,r.OP)(e);t[p.Dz]=Math.max(Date.now()-t.offset,0),(0,f.K)((()=>t[p.qw]=Math.max((0,h.z)()-t[p.Dz],0))),(0,f.b)((()=>{const e=(0,h.z)();t[p.OJ]=Math.max(e-t[p.Dz],0),(0,c.p)("timing",["load",e],void 0,n.D.pageViewTiming,this.ee)}))}this.importAggregator()}}var m=i(711),b=i(284);class y extends m.w{constructor(e){super(e),this.aggregatedData={}}store(e,t,n,r,i){var o=this.getBucket(e,t,n,i);return o.metrics=function(e,t){t||(t={count:0});return t.count+=1,(0,b.D)(e,(function(e,n){t[e]=w(n,t[e])})),t}(r,o.metrics),o}merge(e,t,n,r,i){var o=this.getBucket(e,t,r,i);if(o.metrics){var a=o.metrics;a.count+=n.count,(0,b.D)(n,(function(e,t){if("count"!==e){var r=a[e],i=n[e];i&&!i.c?a[e]=w(i.t,r):a[e]=function(e,t){if(!t)return e;t.c||(t=A(t.t));return t.min=Math.min(e.min,t.min),t.max=Math.max(e.max,t.max),t.t+=e.t,t.sos+=e.sos,t.c+=e.c,t}(i,a[e])}}))}else o.metrics=n}storeMetric(e,t,n,r){var i=this.getBucket(e,t,n);return i.stats=w(r,i.stats),i}getBucket(e,t,n,r){this.aggregatedData[e]||(this.aggregatedData[e]={});var i=this.aggregatedData[e][t];return i||(i=this.aggregatedData[e][t]={params:n||{}},r&&(i.custom=r)),i}get(e,t){return t?this.aggregatedData[e]&&this.aggregatedData[e][t]:this.aggregatedData[e]}take(e){for(var t={},n="",r=!1,i=0;i<e.length;i++)t[n=e[i]]=x(this.aggregatedData[n]),t[n].length&&(r=!0),delete this.aggregatedData[n];return r?t:null}}function w(e,t){return null==e?function(e){e?e.c++:e={c:1};return e}(t):t?(t.c||(t=A(t.t)),t.c+=1,t.t+=e,t.sos+=e*e,e>t.max&&(t.max=e),e<t.min&&(t.min=e),t):{t:e}}function A(e){return{t:e,min:e,max:e,sos:e*e,c:1}}function x(e){return"object"!=typeof e?[]:(0,b.D)(e,D)}function D(e,t){return t}var j=i(632),E=i(402),T=i(351);var _=i(956),k=i(239),P=i(251);class C extends g{static featureName=P.t;constructor(e,t){let n=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,P.t,n),d.il&&((0,r.OP)(e).initHidden=Boolean("hidden"===document.visibilityState),(0,_.N)((()=>(0,c.p)("docHidden",[(0,h.z)()],void 0,P.t,this.ee)),!0),(0,k.bP)("pagehide",(()=>(0,c.p)("winPagehide",[(0,h.z)()],void 0,P.t,this.ee))),this.importAggregator())}}var I=i(81);class N extends g{static featureName=I.t9;constructor(e,t){let n=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,I.t9,n),this.importAggregator()}}new class extends t{constructor(t){let n=arguments.length>1&&void 0!==arguments[1]?arguments[1]:(0,E.ky)(16);super(),d._A?(this.agentIdentifier=n,this.sharedAggregator=new y({agentIdentifier:this.agentIdentifier}),this.features={},this.desiredFeatures=new Set(t.features||[]),this.desiredFeatures.add(v),Object.assign(this,(0,s.j)(this.agentIdentifier,t,t.loaderType||"agent")),this.start()):(0,e.Z)("Failed to initial the agent. Could not determine the runtime environment.")}get config(){return{info:(0,r.C5)(this.agentIdentifier),init:(0,r.P_)(this.agentIdentifier),loader_config:(0,r.DL)(this.agentIdentifier),runtime:(0,r.OP)(this.agentIdentifier)}}start(){const t="features";try{const r=a(this.agentIdentifier),i=[...this.desiredFeatures];i.sort(((e,t)=>n.p[e.featureName]-n.p[t.featureName])),i.forEach((t=>{if(r[t.featureName]||t.featureName===n.D.pageViewEvent){const i=function(e){switch(e){case n.D.ajax:return[n.D.jserrors];case n.D.sessionTrace:return[n.D.ajax,n.D.pageViewEvent];case n.D.sessionReplay:return[n.D.sessionTrace];case n.D.pageViewTiming:return[n.D.pageViewEvent];default:return[]}}(t.featureName);i.every((e=>r[e]))||(0,e.Z)("".concat(t.featureName," is enabled but one or more dependent features has been disabled (").concat((0,T.P)(i),"). This may cause unintended consequences or missing data...")),this.features[t.featureName]=new t(this.agentIdentifier,this.sharedAggregator)}})),(0,j.Qy)(this.agentIdentifier,this.features,t)}catch(n){(0,e.Z)("Failed to initialize all enabled instrument classes (agent aborted) -",n);for(const e in this.features)this.features[e].abortHandler?.();const r=(0,j.fP)();return delete r.initializedAgents[this.agentIdentifier]?.api,delete r.initializedAgents[this.agentIdentifier]?.[t],delete this.sharedAggregator,r.ee?.abort(),delete r.ee?.get(this.agentIdentifier),!1}}addToTrace(t){(0,e.Z)("Call to agent api addToTrace failed. The page action feature is not currently initialized.")}setCurrentRouteName(t){(0,e.Z)("Call to agent api setCurrentRouteName failed. The spa feature is not currently initialized.")}interaction(){(0,e.Z)("Call to agent api interaction failed. The spa feature is not currently initialized.")}}({features:[v,C,N],loaderType:"lite"})})()})();</script>
+<title>Tantek-Mozilla-Projects - MozillaWiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Tantek-Mozilla-Projects","wgTitle":"Tantek-Mozilla-Projects","wgCurRevisionId":1245923,"wgRevisionId":1245923,"wgArticleId":35698,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Tantek-Mozilla-Projects","wgRelevantArticleId":35698,"wgRequestId":"9cc6cd2aeaf1d128188304c4","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"Tantek-Mozilla-projects","srfFilteredConfig":null,"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":true,"publish":false},"wgPageFormsAutocompleteValues":[],"wgPageFormsAutocompleteOnAllChars":false,"wgPageFormsFieldProperties":[],"wgPageFormsCargoFields":[],"wgPageFormsDependentFields":[],"wgPageFormsGridValues":[],"wgPageFormsGridParams":[],"wgPageFormsShowOnSelect":[],"wgPageFormsScriptPath":"/extensions/PageForms","edgValues":null,"wgPageFormsEDSettings":null,"wgPreferredVariant":"en","wgInternalRedirectTargetUrl":"/Tantek-Mozilla-Projects"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.action.view.redirect","ext.smw.style","mediawiki.page.startup","ext.Bugzilla","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=en&amp;modules=ext.Sandstone.main%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="generator" content="MediaWiki 1.27.4"/>
+<link rel="alternate" media="only screen and (max-width: 720px)" href="https://m.wiki.mozilla.org/Tantek-Mozilla-Projects"/>
+<link rel="alternate" type="application/rdf+xml" title="Tantek-Mozilla-Projects" href="/index.php?title=Special:ExportRDF/Tantek-Mozilla-Projects&amp;xmlmime=rdf"/>
+<link rel="shortcut icon" href="/skins/common/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="MozillaWiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.mozilla.org/api.php?action=rsd"/>
+<link rel="canonical" href="https://wiki.mozilla.org/Tantek-Mozilla-Projects"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Tantek-Mozilla-Projects rootpage-Tantek-Mozilla-Projects skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Tantek-Mozilla-Projects</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From MozillaWiki</div>
+								<div id="contentSub"><span class="mw-redirectedfrom">(Redirected from <a href="/index.php?title=Tantek-Mozilla-projects&amp;redirect=no" title="Tantek-Mozilla-projects">Tantek-Mozilla-projects</a>)</span></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="h-entry hentry">
+<p>This page lists <span class="p-summary"><span class="p-name summary">Mozilla related projects</span> that <span class="p-author author h-card"><abbr title="Tantek Çelik"><a href="/Tantek" title="Tantek">Tantek</a></abbr></span> is working on</span>.
+</p>
+<ul><li> Permalink: <span class="p-url url"><a rel="nofollow" class="external free" href="https://wiki.mozilla.org/Tantek-Mozilla-projects">https://wiki.mozilla.org/Tantek-Mozilla-projects</a></span></li></ul>
+<p>Summary:
+</p>
+<ul><li> <a href="/Standards" title="Standards">Standards</a> Mozilla point of contact:
+<ul><li> <a href="/W3C" title="W3C" class="mw-redirect">W3C</a> Advisory Committee (AC)</li>
+<li> <a rel="nofollow" class="external text" href="https://webwewant.fyi/about/">Web We Want</a> lead</li>
+<li> <a href="/WHATWG" title="WHATWG">WHATWG</a> Steering Group (SG)</li></ul></li>
+<li> <a href="/Standards" title="Standards">Standards</a> projects/groups
+<ul><li> <a rel="nofollow" class="external text" href="https://www.w3.org/wiki/AB">W3C Advisory Board (AB)</a>
+<ul><li> <a rel="nofollow" class="external text" href="https://github.com/w3c/AB-public/tree/main/Vision">W3C Vision</a>(<a rel="nofollow" class="external text" href="https://github.com/w3c/AB-public/issues">issues</a>)</li></ul></li>
+<li> <a href="/CSS" title="CSS">CSS</a> WG, OpenUI, Process CG</li></ul></li>
+<li> <a rel="nofollow" class="external text" href="https://indieweb.org/">IndieWeb community for independent websites</a></li></ul>
+<p>2023-03-24: <b>Major updates coming.</b> Still working on the above, with more to be listed. Watch <a href="/Standards" title="Standards">Standards</a> for updates.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#To_be_updated"><span class="tocnumber">1</span> <span class="toctext">To be updated</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#pages"><span class="tocnumber">2</span> <span class="toctext">pages</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#ideas_to_explore"><span class="tocnumber">3</span> <span class="toctext">ideas to explore</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#additional_potential_CSS_work"><span class="tocnumber">3.1</span> <span class="toctext">additional potential CSS work</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#various_UI_thoughts"><span class="tocnumber">3.2</span> <span class="toctext">various UI thoughts</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#APNG_adoption"><span class="tocnumber">3.3</span> <span class="toctext">APNG adoption</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Critical_areas_of_focus"><span class="tocnumber">4</span> <span class="toctext">Critical areas of focus</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Summary_of_work_items"><span class="tocnumber">5</span> <span class="toctext">Summary of work items</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#inbox"><span class="tocnumber">6</span> <span class="toctext">inbox</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#HTML5"><span class="tocnumber">7</span> <span class="toctext">HTML5</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="#needs_re-consideration"><span class="tocnumber">7.1</span> <span class="toctext">needs re-consideration</span></a>
+<ul>
+<li class="toclevel-3 tocsection-12"><a href="#summary_naming"><span class="tocnumber">7.1.1</span> <span class="toctext">summary naming</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#keeping_crappy_stuff_out"><span class="tocnumber">7.1.2</span> <span class="toctext">keeping crappy stuff out</span></a>
+<ul>
+<li class="toclevel-4 tocsection-14"><a href="#simplify_alt_attribute_guidance"><span class="tocnumber">7.1.2.1</span> <span class="toctext">simplify alt attribute guidance</span></a></li>
+<li class="toclevel-4 tocsection-15"><a href="#remove_meta_Content-Language"><span class="tocnumber">7.1.2.2</span> <span class="toctext">remove meta Content-Language</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-16"><a href="#upgrade_HTML4_features_to_be_more_flexible_and_usable"><span class="tocnumber">7.1.3</span> <span class="toctext">upgrade HTML4 features to be more flexible and usable</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="#restoring_pragmatic_HTML4_things"><span class="tocnumber">7.1.4</span> <span class="toctext">restoring pragmatic HTML4 things</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#improving_new_features"><span class="tocnumber">7.1.5</span> <span class="toctext">improving new features</span></a>
+<ul>
+<li class="toclevel-4 tocsection-19"><a href="#iframe_sandbox_removal"><span class="tocnumber">7.1.5.1</span> <span class="toctext">iframe sandbox removal</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-20"><a href="#lower_priority_improvements"><span class="tocnumber">7.2</span> <span class="toctext">lower priority improvements</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#HTML_next"><span class="tocnumber">7.3</span> <span class="toctext">HTML next</span></a>
+<ul>
+<li class="toclevel-3 tocsection-22"><a href="#nesting_time"><span class="tocnumber">7.3.1</span> <span class="toctext">nesting time</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-23"><a href="#Web_Apps"><span class="tocnumber">8</span> <span class="toctext">Web Apps</span></a>
+<ul>
+<li class="toclevel-2 tocsection-24"><a href="#UI_Styling"><span class="tocnumber">8.1</span> <span class="toctext">UI Styling</span></a>
+<ul>
+<li class="toclevel-3 tocsection-25"><a href="#Styling_HTML5_UI_elements"><span class="tocnumber">8.1.1</span> <span class="toctext">Styling HTML5 UI elements</span></a></li>
+<li class="toclevel-3 tocsection-26"><a href="#Possible_new_HTML5_UI_elements"><span class="tocnumber">8.1.2</span> <span class="toctext">Possible new HTML5 UI elements</span></a>
+<ul>
+<li class="toclevel-4 tocsection-27"><a href="#specific_new_elements"><span class="tocnumber">8.1.2.1</span> <span class="toctext">specific new elements</span></a></li>
+<li class="toclevel-4 tocsection-28"><a href="#CSS_UI_appearance_values"><span class="tocnumber">8.1.2.2</span> <span class="toctext">CSS UI appearance values</span></a>
+<ul>
+<li class="toclevel-5 tocsection-29"><a href="#updated_appearance_value_list"><span class="tocnumber">8.1.2.2.1</span> <span class="toctext">updated appearance value list</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-30"><a href="#CSS_Style_Attributes"><span class="tocnumber">8.1.3</span> <span class="toctext">CSS Style Attributes</span></a>
+<ul>
+<li class="toclevel-4 tocsection-31"><a href="#remaining_tasks"><span class="tocnumber">8.1.3.1</span> <span class="toctext">remaining tasks</span></a></li>
+<li class="toclevel-4 tocsection-32"><a href="#waiting_for"><span class="tocnumber">8.1.3.2</span> <span class="toctext">waiting for</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-33"><a href="#CSS3_UI"><span class="tocnumber">8.1.4</span> <span class="toctext">CSS3 UI</span></a>
+<ul>
+<li class="toclevel-4 tocsection-34"><a href="#remaining_tasks_2"><span class="tocnumber">8.1.4.1</span> <span class="toctext">remaining tasks</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-35"><a href="#CSS4_UI"><span class="tocnumber">8.1.5</span> <span class="toctext">CSS4 UI</span></a></li>
+<li class="toclevel-3 tocsection-36"><a href="#CSS3_Element"><span class="tocnumber">8.1.6</span> <span class="toctext">CSS3 Element</span></a>
+<ul>
+<li class="toclevel-4 tocsection-37"><a href="#element_function"><span class="tocnumber">8.1.6.1</span> <span class="toctext">element function</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-38"><a href="#CSS4_Color"><span class="tocnumber">8.1.7</span> <span class="toctext">CSS4 Color</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-39"><a href="#DOM_API_vendor_prefixing"><span class="tocnumber">8.2</span> <span class="toctext">DOM API vendor prefixing</span></a>
+<ul>
+<li class="toclevel-3 tocsection-40"><a href="#spec_implementation_problem_statement"><span class="tocnumber">8.2.1</span> <span class="toctext">spec implementation problem statement</span></a></li>
+<li class="toclevel-3 tocsection-41"><a href="#existing_solutions"><span class="tocnumber">8.2.2</span> <span class="toctext">existing solutions</span></a>
+<ul>
+<li class="toclevel-4 tocsection-42"><a href="#CSS_vendor_prefixes"><span class="tocnumber">8.2.2.1</span> <span class="toctext">CSS vendor prefixes</span></a></li>
+<li class="toclevel-4 tocsection-43"><a href="#CSS_vendor_prefixes_case_studies"><span class="tocnumber">8.2.2.2</span> <span class="toctext">CSS vendor prefixes case studies</span></a></li>
+<li class="toclevel-4 tocsection-44"><a href="#CSS_vendor_prefixes_successes"><span class="tocnumber">8.2.2.3</span> <span class="toctext">CSS vendor prefixes successes</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-45"><a href="#analysis_of_applicability"><span class="tocnumber">8.2.3</span> <span class="toctext">analysis of applicability</span></a></li>
+<li class="toclevel-3 tocsection-46"><a href="#simple_DOM_vendor_prefixes_proposal"><span class="tocnumber">8.2.4</span> <span class="toctext">simple DOM vendor prefixes proposal</span></a></li>
+<li class="toclevel-3 tocsection-47"><a href="#simple_protocol_scheme_prefixes_proposal"><span class="tocnumber">8.2.5</span> <span class="toctext">simple protocol scheme prefixes proposal</span></a></li>
+<li class="toclevel-3 tocsection-48"><a href="#simple_HTML_attributes_prefixes_proposal"><span class="tocnumber">8.2.6</span> <span class="toctext">simple HTML attributes prefixes proposal</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-49"><a href="#UI_Layout"><span class="tocnumber">8.3</span> <span class="toctext">UI Layout</span></a></li>
+<li class="toclevel-2 tocsection-50"><a href="#Fullscreen"><span class="tocnumber">8.4</span> <span class="toctext">Fullscreen</span></a>
+<ul>
+<li class="toclevel-3 tocsection-51"><a href="#remaining_tasks_3"><span class="tocnumber">8.4.1</span> <span class="toctext">remaining tasks</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-52"><a href="#WebAPI"><span class="tocnumber">8.5</span> <span class="toctext">WebAPI</span></a>
+<ul>
+<li class="toclevel-3 tocsection-53"><a href="#ContactsAPI"><span class="tocnumber">8.5.1</span> <span class="toctext">ContactsAPI</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-54"><a href="#Web_Apps_Waiting_For"><span class="tocnumber">9</span> <span class="toctext">Web Apps Waiting For</span></a>
+<ul>
+<li class="toclevel-2 tocsection-55"><a href="#CSS_Waiting_For"><span class="tocnumber">9.1</span> <span class="toctext">CSS Waiting For</span></a>
+<ul>
+<li class="toclevel-3 tocsection-56"><a href="#CSS3_Backgrounds_and_Borders"><span class="tocnumber">9.1.1</span> <span class="toctext">CSS3 Backgrounds and Borders</span></a>
+<ul>
+<li class="toclevel-4 tocsection-57"><a href="#prefix_removal_from_-moz-border-radius"><span class="tocnumber">9.1.1.1</span> <span class="toctext">prefix removal from -moz-border-radius</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-58"><a href="#Social_and_Identity"><span class="tocnumber">10</span> <span class="toctext">Social and Identity</span></a>
+<ul>
+<li class="toclevel-2 tocsection-59"><a href="#Related_Features"><span class="tocnumber">10.1</span> <span class="toctext">Related Features</span></a></li>
+<li class="toclevel-2 tocsection-60"><a href="#Standards_and_Communities"><span class="tocnumber">10.2</span> <span class="toctext">Standards and Communities</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-61"><a href="#Events"><span class="tocnumber">11</span> <span class="toctext">Events</span></a></li>
+<li class="toclevel-1 tocsection-62"><a href="#Web_Standards_Coordination"><span class="tocnumber">12</span> <span class="toctext">Web Standards Coordination</span></a></li>
+<li class="toclevel-1 tocsection-63"><a href="#See_Also"><span class="tocnumber">13</span> <span class="toctext">See Also</span></a></li>
+<li class="toclevel-1 tocsection-64"><a href="#Reference"><span class="tocnumber">14</span> <span class="toctext">Reference</span></a>
+<ul>
+<li class="toclevel-2 tocsection-65"><a href="#Pages_2"><span class="tocnumber">14.1</span> <span class="toctext">Pages</span></a></li>
+<li class="toclevel-2 tocsection-66"><a href="#Historical"><span class="tocnumber">14.2</span> <span class="toctext">Historical</span></a>
+<ul>
+<li class="toclevel-3 tocsection-67"><a href="#Former_standards_groups"><span class="tocnumber">14.2.1</span> <span class="toctext">Former standards groups</span></a></li>
+<li class="toclevel-3 tocsection-68"><a href="#Former_co-workers"><span class="tocnumber">14.2.2</span> <span class="toctext">Former co-workers</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-69"><a href="#Done"><span class="tocnumber">14.3</span> <span class="toctext">Done</span></a>
+<ul>
+<li class="toclevel-3 tocsection-70"><a href="#Annual_Summaries"><span class="tocnumber">14.3.1</span> <span class="toctext">Annual Summaries</span></a>
+<ul>
+<li class="toclevel-4 tocsection-71"><a href="#2011-06-15_-_2012-06-15"><span class="tocnumber">14.3.1.1</span> <span class="toctext">2011-06-15 - 2012-06-15</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-72"><a href="#Past_Mozilla_Projects"><span class="tocnumber">14.3.2</span> <span class="toctext">Past Mozilla Projects</span></a></li>
+<li class="toclevel-3 tocsection-73"><a href="#Resolved_HTML5_improvements_and_spec_issues"><span class="tocnumber">14.3.3</span> <span class="toctext">Resolved HTML5 improvements and spec issues</span></a>
+<ul>
+<li class="toclevel-4 tocsection-74"><a href="#reject_longdesc"><span class="tocnumber">14.3.3.1</span> <span class="toctext">reject longdesc</span></a></li>
+<li class="toclevel-4 tocsection-75"><a href="#allow_date_only_on_del_ins_datetime_attribute"><span class="tocnumber">14.3.3.2</span> <span class="toctext">allow date only on del ins datetime attribute</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-76"><a href="#CSS"><span class="tocnumber">14.3.4</span> <span class="toctext">CSS</span></a>
+<ul>
+<li class="toclevel-4 tocsection-77"><a href="#CSS_Style_Attributes_2"><span class="tocnumber">14.3.4.1</span> <span class="toctext">CSS Style Attributes</span></a></li>
+<li class="toclevel-4 tocsection-78"><a href="#CSS3_Color"><span class="tocnumber">14.3.4.2</span> <span class="toctext">CSS3 Color</span></a></li>
+<li class="toclevel-4 tocsection-79"><a href="#CSS3_UI_2"><span class="tocnumber">14.3.4.3</span> <span class="toctext">CSS3 UI</span></a>
+<ul>
+<li class="toclevel-5 tocsection-80"><a href="#pointer-events"><span class="tocnumber">14.3.4.3.1</span> <span class="toctext">pointer-events</span></a></li>
+<li class="toclevel-5 tocsection-81"><a href="#text-overflow"><span class="tocnumber">14.3.4.3.2</span> <span class="toctext">text-overflow</span></a></li>
+<li class="toclevel-5 tocsection-82"><a href="#ime-mode"><span class="tocnumber">14.3.4.3.3</span> <span class="toctext">ime-mode</span></a></li>
+<li class="toclevel-5 tocsection-83"><a href="#box-sizing_padding-box"><span class="tocnumber">14.3.4.3.4</span> <span class="toctext">box-sizing padding-box</span></a></li>
+</ul>
+</li>
+<li class="toclevel-4 tocsection-84"><a href="#CSS3_UI_LCWD2"><span class="tocnumber">14.3.4.4</span> <span class="toctext">CSS3 UI LCWD2</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-85"><a href="#Completed_Events"><span class="tocnumber">14.3.5</span> <span class="toctext">Completed Events</span></a>
+<ul>
+<li class="toclevel-4 tocsection-86"><a href="#Events_2010"><span class="tocnumber">14.3.5.1</span> <span class="toctext">Events 2010</span></a></li>
+<li class="toclevel-4 tocsection-87"><a href="#Events_2011"><span class="tocnumber">14.3.5.2</span> <span class="toctext">Events 2011</span></a></li>
+<li class="toclevel-4 tocsection-88"><a href="#Events_2012"><span class="tocnumber">14.3.5.3</span> <span class="toctext">Events 2012</span></a></li>
+<li class="toclevel-4 tocsection-89"><a href="#Events_2013"><span class="tocnumber">14.3.5.4</span> <span class="toctext">Events 2013</span></a></li>
+<li class="toclevel-4 tocsection-90"><a href="#Events_2014"><span class="tocnumber">14.3.5.5</span> <span class="toctext">Events 2014</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="To_be_updated">To be updated</span></h2>
+<hr />
+<p><b>The rest of this page needs a major update.</b> - <a href="/User:Tantek" title="User:Tantek">Tantek</a> (<a rel="nofollow" class="external text" href="https://tantek.com/">tantek.com</a>) 15:53, 3 July 2017 (PDT)
+</p><p>Previously from <a href="/Tantek" title="Tantek">Tantek</a>:
+</p>
+<h2><span class="mw-headline" id="pages">pages</span></h2>
+<p>A few of the pages I've created in the past
+</p>
+<ul><li> <a href="/CSS3" title="CSS3">CSS3</a>
+<ul><li> <a href="/CSS3/color" title="CSS3/color">color module</a></li>
+<li> <a href="/CSS3/ui" title="CSS3/ui">ui module</a></li></ul></li>
+<li> <a href="/HTML5" title="HTML5">HTML5</a>
+<ul><li> <a href="/HTML5/canvas" title="HTML5/canvas" class="mw-redirect">&lt;canvas&gt;</a></li>
+<li> <a href="/HTML5/cite" title="HTML5/cite" class="mw-redirect">&lt;cite&gt;</a></li>
+<li> <a href="/HTML5/del" title="HTML5/del" class="mw-redirect">&lt;del&gt;</a></li>
+<li> ...</li>
+<li> <a href="/HTML5/iframe" title="HTML5/iframe" class="mw-redirect">&lt;iframe&gt;</a></li>
+<li> <a href="/HTML5/img" title="HTML5/img" class="mw-redirect">&lt;img&gt;</a></li>
+<li> <a href="/HTML5/input" title="HTML5/input" class="mw-redirect">&lt;input&gt;</a></li>
+<li> <a href="/HTML5/ins" title="HTML5/ins" class="mw-redirect">&lt;ins&gt;</a></li>
+<li> <a href="/HTML5/meta" title="HTML5/meta" class="mw-redirect">&lt;meta&gt;</a></li>
+<li> <a href="/index.php?title=HTML5/meter&amp;action=edit&amp;redlink=1" class="new" title="HTML5/meter (page does not exist)">&lt;meter&gt;</a></li>
+<li> ...</li>
+<li> <a href="/HTML5/select" title="HTML5/select" class="mw-redirect">&lt;select&gt;</a></li>
+<li> <a href="/HTML5/summary" title="HTML5/summary" class="mw-redirect">&lt;summary&gt;</a></li>
+<li> <a href="/HTML5/time" title="HTML5/time" class="mw-redirect">&lt;time&gt;</a></li>
+<li> ...</li></ul></li>
+<li> <a href="/Events" title="Events">Events</a></li>
+<li> <a href="/SF" title="SF">SF</a></li>
+<li> <a href="/Standards" title="Standards">Standards</a>
+<ul><li> <a href="/Standards/license" title="Standards/license">Standards/license</a></li></ul></li>
+<li> ...</li></ul>
+<h2><span class="mw-headline" id="ideas_to_explore">ideas to explore</span></h2>
+<p>Some ideas to consider exploring. Tantek has not taken on these (yet). This is a place to collect potential tasks.  Feel free to grab any of these and ask Tantek questions about suggested approach(es) etc.
+</p>
+<h3><span class="mw-headline" id="additional_potential_CSS_work">additional potential CSS work</span></h3>
+<ul><li> <b>Proposing -moz- innovations.</b> There are numerous -moz- innovations like selectors (e.g. <a rel="nofollow" class="external text" href="https://developer.mozilla.org/en/CSS/:-moz-broken">:-moz-broken</a>), properties, and values.
+<ul><li> Methodology: if we can document, determine, or hear of (e.g. from web designers/developers) <strong>real world public web use cases</strong> for any particular -moz- innovation, then we should consider pursuing standardization of it. Otherwise, it's better to not standardize so we can change our implementation as needed to match our internal needs (e.g. for UI/themes etc.).</li></ul></li></ul>
+<h3><span class="mw-headline" id="various_UI_thoughts">various UI thoughts</span></h3>
+<ul><li> "about:downloads" to address/bring up a "downloads window" view which would be one way to put the downloads window into a tab (and perhaps even enable that as a default option, downloads in a tab rather than separate window). This seems so obvious that there must be an existing bug / feature request for this.</li></ul>
+<h3><span class="mw-headline" id="APNG_adoption">APNG adoption</span></h3>
+<p>See: <a href="/APNG" title="APNG">APNG</a>
+</p>
+<h2><span class="mw-headline" id="Critical_areas_of_focus">Critical areas of focus</span></h2>
+<ul><li> <b><span class="p-category category"><a href="/IndieWebCamp" title="IndieWebCamp">IndieWeb</a></span></b> - the independent web, providing user-centered freedom, ownership, and control over and above silos and their <abbr title="terms of service">TOSes</abbr>es.</li>
+<li> <b><span class="p-category category"><a href="/Microformats" title="Microformats">Microformats</a></span></b> - open standards for marking up information in HTML, simpler, easier, more maintainable, and higher quality than alternatives (RDFa, microdata), and sidefile efforts (XML, RDF). See also <span class="p-category category"><a href="/HTML5" title="HTML5">HTML5</a></span> and Tantek's <a rel="nofollow" class="external text" href="https://tantek.com/html5now">book on getting started with HTML5</a>.
+<ul><li> <b><a href="/Microformats2-parsing" title="Microformats2-parsing">microformats2-parsing</a></b> in particular landing support in Firefox Toolkit/Platform for Share, Social Bookmarking, Context Menu, Shopping</li></ul></li></ul>
+<p>Working groups and <a href="/Standards" title="Standards">standards</a> communities (representing Mozilla and open web interests)
+</p>
+<ul><li> <span class="p-category category"><a href="/Standards#W3C" title="Standards">W3C</a></span>:
+<ul><li> <span class="p-category category"><a href="/Standards#CSS_.28Cascading_Style_Sheets.29_Working_Group" title="Standards">CSS WG</a></span>, </li>
+<li> <span class="p-category category"><a href="/Standards#Web_Platform_Working_Group" title="Standards">Web Platform WG</a></span></li></ul></li>
+<li> <span class="p-category category"><a href="/Standards#microformats" title="Standards">microformats.org</a></span> (co-founder, admin)</li>
+<li> <span class="p-category category"><a href="/Standards#WHATWG" title="Standards">WHATWG</a></span></li>
+<li> <span class="p-category category"><a href="/Standards#OWF" title="Standards">Open Web Foundation</a></span> (boardmember)</li>
+<li> <span class="p-category category"><a href="/Standards#VCARDDAV" title="Standards">VCARDDAV</a></span></li></ul>
+<p>Web platform specifications (editing, in rough priority order)
+</p>
+<ul><li> <span class="p-category category"><a href="/Tantek-Mozilla-Projects#CSS3_UI" title="Tantek-Mozilla-Projects">CSS3-UI</a></span> (editor, and contributing to <span class="p-category category"><a href="/CSS3" title="CSS3">CSS3</a></span> in general)</li>
+<li> <span class="p-category category"><a href="#HTML5">HTML5</a></span> (contributing)</li>
+<li> <span class="p-category category"><a href="/Microformats2" title="Microformats2">microformats2</a></span> editor of, including <a rel="nofollow" class="external text" href="https://microformats.org/wiki/microformats2-parsing">microformats2 parsing spec</a>, <span class="p-category category"><a href="/HCard" title="HCard" class="mw-redirect">hCard</a></span>, <span class="p-category category"><a href="/HCalendar" title="HCalendar" class="mw-redirect">hCalendar</a></span>, and other vocabularies.</li>
+<li> <span class="p-category category"><a href="/IndieWebCamp" title="IndieWebCamp">IndieWebCamp</a></span> specifications for independent web publishing and peer to peer interactions: <a rel="nofollow" class="external text" href="https://indieweb.org/authorship">authorship</a>, <a rel="nofollow" class="external text" href="https://indieweb.org/vouch">vouch</a>, <a rel="nofollow" class="external text" href="https://indieweb.org/web-sign-in">web-sign-in</a>, and contributor to <a rel="nofollow" class="external text" href="https://indieweb.org/webmention">webmention</a></li>
+<li> Helping out with <a rel="nofollow" class="external text" href="https://compat.spec.whatwg.org/">Compatibility</a> spec (<a rel="nofollow" class="external text" href="https://github.com/whatwg/compat/">github src</a>).</li></ul>
+<p><br />
+Additional projects:
+</p>
+<ul><li> <a href="/Events" title="Events">Events</a>: IndieWebCamp, <a rel="nofollow" class="external text" href="https://indieweb.org/Homebrew_Website_Club">Homebrew Website Club</a>, W3C TPAC and WG <a href="/Standards" title="Standards">standards</a> meetings</li>
+<li> <span class="p-category category"><a href="/WebActions" title="WebActions">WebActions</a></span></li>
+<li> <span class="p-category category"><a href="/Mozillians" title="Mozillians">Mozillians</a></span> (<a href="/Mozillians/Phonebook" title="Mozillians/Phonebook">Phonebook</a>, <a href="/Mozillians/Events_Manager" title="Mozillians/Events Manager">Events Manager</a>)</li>
+<li> Web Literacy: onramping Webmaker to <a href="/IndieWebCamp" title="IndieWebCamp">IndieWebCamp</a></li></ul>
+</div>
+<hr />
+<p>The rest of this page needs a major update. - <a href="/User:Tantek" title="User:Tantek">Tantek</a> (<a rel="nofollow" class="external text" href="https://tantek.com/">tantek.com</a>) 20:04, 27 May 2016 (PDT)
+</p>
+<hr />
+<h2><span class="mw-headline" id="Summary_of_work_items">Summary of work items</span></h2>
+<p><b>(This section is quite out of date - to be updated!)</b>
+</p><p>Summary of work items / general next actions and status:
+</p>
+<ul><li> CSS / <a href="/Tantek-Mozilla-projects#HTML5_spec_improvements" title="Tantek-Mozilla-projects" class="mw-redirect">HTML5</a> / DOM
+<ul><li> <a href="/Tantek-Mozilla-projects#CSS3_UI" title="Tantek-Mozilla-projects" class="mw-redirect">CSS3 UI</a>
+<ul><li> Achieved LCWD2. Next action: collect LCWD comment, produce disposition a new LCCR.</li></ul></li>
+<li> <a href="/Tantek-Mozilla-projects#Full_Screen" title="Tantek-Mozilla-projects" class="mw-redirect">Full Screen</a> - contributing only
+<ul><li> Next: make sure issues are resolved or captured in WHATWG draft</li></ul></li>
+<li> <a href="/Tantek-Mozilla-projects#CSS4_UI" title="Tantek-Mozilla-projects" class="mw-redirect">CSS4 UI</a>: collect ideas, features, pointer-events?, hit-testing?, proposals towards writing a FPWD.</li></ul></li>
+<li> microformats / h-card / hCard / vCard4 / identity
+<ul><li> <a href="/VCard4" title="VCard4">vCard4</a>: review published RFC, document "the good parts" subset.</li>
+<li> <b>hCard 1.1</b> (incorporate resolved issues), <b>h-card</b> update based on microformats 2.0 + vCard4 good parts</li></ul></li>
+<li> <b>Web Applications</b> / <b><a href="/WebActions" title="WebActions">Web Actions</a></b> / <b>Web Activities</b></li>
+<li> <a href="/Standards" title="Standards">Standards</a> groups/community participation
+<ul><li> W3C: SocialWG, CSSWG, AB, HTMLWG, TPAC, FSW
+<ul><li> <a rel="nofollow" class="external text" href="https://www.w3.org/wiki/SpecProd/Restyle">Restyle W3C: Towards a More Usable Spec Template</a></li></ul></li>
+<li> IETF: VCARDDAV (vCard4)</li>
+<li> Community: IndieWeb, microformats, OWF, WHATWG, Portable Contacts, OpenID, OAuth(2)/xAuth, RelMeAuth, Activity Streams</li></ul></li>
+<li> Open Web Standards <a href="/Events" title="Events">Events</a>/Speaking: 
+<ul><li> IndieWebCamp, dConstruct, BarCampBrighton, TPAC, CSSWG f2f meetings</li></ul></li>
+<li> ... with additions and removals as it makes sense.</li></ul>
+<ul><li> Mozilla projects I contribute to sporadically:
+<ul><li> <a href="/Phonebook" title="Phonebook" class="mw-redirect">Phonebook</a>, <a href="/SEO" title="SEO">SEO</a></li></ul></li>
+<li> Mozilla projects that I'm monitoring:
+<ul><li> <a href="/SocialAPI" title="SocialAPI" class="mw-redirect">SocialAPI</a></li>
+<li> <a href="/Webmaker" title="Webmaker">Webmaker</a></li></ul></li></ul>
+<p>Needs review (the following projects need review to determine updated next steps and reprioritize)
+</p>
+<ul><li> CSSWG charter: <a rel="nofollow" class="external free" href="https://wiki.csswg.org/planning#charter-2011">https://wiki.csswg.org/planning#charter-2011</a></li>
+<li> <a href="/Tantek-Mozilla-projects#CSS_Style_Attributes" title="Tantek-Mozilla-projects" class="mw-redirect">CSS Style Attributes</a>: Achieved CR. Next action: test suite to help exit CR.</li>
+<li> <a href="/Tantek-Mozilla-projects#CSS3_Color" title="Tantek-Mozilla-projects" class="mw-redirect">CSS3 Color</a>: Achieved REC, gathering editorial issues for 2nd edition.</li>
+<li> <a href="/Tantek-Mozilla-projects#CSS4_Color" title="Tantek-Mozilla-projects" class="mw-redirect">CSS4 Color</a>: collecting ideas, features, proposals towards writing a FPWD.</li>
+<li> <a href="/Tantek-Mozilla-projects#DOM_API_vendor_prefixing" title="Tantek-Mozilla-projects" class="mw-redirect">DOM API vendor prefixing</a>: discussing internally at Mozilla to build consensus, set a good example.</li></ul>
+<p><br />
+See below for more details on each.
+</p>
+<h2><span class="mw-headline" id="inbox">inbox</span></h2>
+<p>Please note, if you have specific requests for Tantek's time:
+</p>
+<ul><li> <b>IM preferred.</b> Tantek is available on IM to answer open web related questions.</li>
+<li> <b>Email is unreliable.</b> Tantek can't guarantee any particular turnaround on email (see <a rel="nofollow" class="external text" href="http://ttk.me/w/EmailEfail">EmailEfail</a>).</li>
+<li> <b>Works remotely.</b> Tantek is in the SF office typically, in Mountain View occasionally, and often out speaking at a conference or at other W3C etc meetings or Mozilla related <a href="/Events" title="Events">Events</a>.</li></ul>
+<p>Inbox (add stuff here)&#160;:
+</p>
+<ul><li> Review <a rel="nofollow" class="external free" href="https://dev.w3.org/csswg/css-module/Overview.src.html">https://dev.w3.org/csswg/css-module/Overview.src.html</a></li>
+<li> ... add more suggestions here</li></ul>
+<h2><span class="mw-headline" id="HTML5">HTML5</span></h2>
+<p><b>(needs update - 2014-11-20)</b>
+</p><p>As a foundational technology, everything else (microformats, CSS3, WebApps, etc.) depend on getting <a href="/HTML5" title="HTML5">HTML5</a> right, and fixing problems in the <span id="HTML5_spec_improvements">HTML5 spec</span>.
+</p>
+<ul><li> <code>&lt;time&gt;</code> element - from <a rel="nofollow" class="external text" href="https://www.w3.org/wiki/User:Tantekelik#time_element_issues">W3C wiki: time element issues</a>. Just need to keep a watch on these issues in the HTMLWG telcons, <a rel="nofollow" class="external text" href="https://lists.w3.org/Archives/Public/public-html/">list</a>, and make sure the proposals are accepted (if not already), spec changes made (if not already), and issues closed accordingly.
+<ul><li> <a rel="nofollow" class="external text" href="https://www.w3.org/html/wg/tracker/issues/183">Issue 183</a>: <a rel="nofollow" class="external text" href="https://www.w3.org/wiki/User:Tantekelik/time_element">&lt;time&gt; element change proposal</a> (developed on wikimo: <a href="/HTML5/time#expand_time" title="HTML5/time" class="mw-redirect">HTML5/time</a>)
+<ul><li> <a rel="nofollow" class="external text" href="https://dev.w3.org/html5/spec/the-time-element.html#the-time-element">incorporated in spec</a>, awaiting issue closure.</li></ul></li>
+<li> <a rel="nofollow" class="external text" href="https://www.w3.org/html/wg/tracker/issues/184">Issue 184</a>: <a rel="nofollow" class="external text" href="https://www.w3.org/wiki/User:Tantekelik/data_element">&lt;data&gt; element change proposal</a>
+<ul><li> <a rel="nofollow" class="external text" href="https://www.whatwg.org/specs/web-apps/current-work/multipage/text-level-semantics.html#the-data-element">incorporated in WHATWG spec</a>, awaiting inclusion in W3C HTML5 spec, issue closure.</li></ul></li>
+<li> <a rel="nofollow" class="external text" href="https://www.w3.org/html/wg/tracker/issues/185">Issue 185</a>: <a rel="nofollow" class="external text" href="https://www.w3.org/wiki/User:Tantekelik/drop_pubdate">drop pubdate attribute change proposal</a>
+<ul><li> <a rel="nofollow" class="external text" href="https://dev.w3.org/html5/spec/the-time-element.html#the-time-element">incorporated in spec</a> (absence of pubdate), awaiting issue closure.</li></ul></li></ul></li></ul>
+<h3><span class="mw-headline" id="needs_re-consideration">needs re-consideration</span></h3>
+<p>These items need re-evaluation to see if they're still important to get into HTML5, lower priority, or can be postponed to HTML next.
+</p><p>Next: follow-up on each, determining next steps on rejected proposals, and update <a href="/HTML5#spec_issues" title="HTML5">HTML5: spec issues</a> accordingly.
+</p>
+<h4><span class="mw-headline" id="summary_naming">summary naming</span></h4>
+<p>Moved to <a href="/HTML5/summary#summary_naming" title="HTML5/summary" class="mw-redirect">HTML5/summary</a>
+</p>
+<h4><span class="mw-headline" id="keeping_crappy_stuff_out">keeping crappy stuff out</span></h4>
+<h5><span class="mw-headline" id="simplify_alt_attribute_guidance">simplify alt attribute guidance</span></h5>
+<p>Moved to <a href="/HTML5/img#alt_guidance_needs_simplification" title="HTML5/img" class="mw-redirect">HTML5/img</a>.
+</p>
+<h5><span class="mw-headline" id="remove_meta_Content-Language">remove meta Content-Language</span></h5>
+<p>Moved to <a href="/HTML5/meta#remove_meta_Content-Language" title="HTML5/meta" class="mw-redirect">HTML5/meta</a>
+</p>
+<h4><span class="mw-headline" id="upgrade_HTML4_features_to_be_more_flexible_and_usable">upgrade HTML4 features to be more flexible and usable</span></h4>
+<h4><span class="mw-headline" id="restoring_pragmatic_HTML4_things">restoring pragmatic HTML4 things</span></h4>
+<p>Moved to <a href="/HTML5/cite#names_of_speakers" title="HTML5/cite" class="mw-redirect">HTML5/cite</a>.
+</p>
+<h4><span class="mw-headline" id="improving_new_features">improving new features</span></h4>
+<h5><span class="mw-headline" id="iframe_sandbox_removal">iframe sandbox removal</span></h5>
+<p>Moved to <a href="/HTML5/iframe#drop_sandbox_attribute" title="HTML5/iframe" class="mw-redirect">HTML5/iframe</a>.
+</p>
+<h3><span class="mw-headline" id="lower_priority_improvements">lower priority improvements</span></h3>
+<ul><li> <code>&lt;meter&gt;</code> - poorly named. would prefer something like "gauge" but that's potentially hard(er) to spell. this is a bit bikesheddy though so not a high priority.</li></ul>
+<h3><span class="mw-headline" id="HTML_next">HTML next</span></h3>
+<p>Proposals/changes deferred to the next version of HTML (often dependent on more/better use-cases, and/or better implementation of HTML5 as defined so far).
+</p>
+<h4><span class="mw-headline" id="nesting_time">nesting time</span></h4>
+<p>Moved to <a href="/HTML5/time#nesting_time" title="HTML5/time" class="mw-redirect">HTML5/time</a>. am pm handling too.
+</p>
+<h2><span class="mw-headline" id="Web_Apps">Web Apps</span></h2>
+<p><b>(needs update - 2014-11-20)</b>
+</p>
+<h3><span class="mw-headline" id="UI_Styling">UI Styling</span></h3>
+<p>At a high level there are two general clusters of use cases that web pages/apps want/need to solve in terms of user interface fidelity.
+</p><p><b>1. Beautiful Built-in Tweakable Controls.</b> Pages that have some interactivity where the designer wants to use the built-in set of semantic user interface controls/inputs as long as they can just "tweak" them to match their web page/site design, e.g. color, background, typography. As long as the look and feel of built-in controls is beautiful enough both by default and with minor tweaks, then the hypothesis is that web designers will be happy/content to use built-in controls rather than go the extra mile to re-build custom controls with divs and javascript etc.
+</p><p>Some data for this hypothesis: default iPhone/iPad controls are pretty enough that most developers are more than happy to use them - the default controls make their apps look beautiful, polished, without much work/tweaking (modulo layout/sizing etc.)  If we can achieve that same experience with built-in controls, the theory is that most web designers will be happy to stick with built-in controls + CSS.
+</p><p><b>2. Rich native-app-like experiences.</b>  Games.  Media interfaces like WinAmp.  There are always going to be some user interfaces where the developer wants nearly total control of the look and feel. Just take a look at typical Flash or Flex app UIs (note: some of those are egregiously inconsistent with the underlying OS platform just for the sake of being different - hard to avoid that but we can discourage it by making the cluster 1 solution easier and more accessible).   In this case I'd like to see us figure out how to build hybrid controls that:
+</p><p>a) Are built with the closest semantic built-in control for any particular custom control, <em>and</em>
+</p><p>b) Use a &lt;canvas&gt; for drawing custom appearance, with DOM event handlers drawing control-specific state in the canvas, <em>and</em>
+</p><p>c) Have text-based fall-back in the canvas.
+</p><p>Example markup (event attributes/handlers omitted for simplicity)
+</p>
+<pre>&lt;button&gt;&lt;canvas&gt; Play &lt;/canvas&gt;&lt;/button&gt;</pre>
+<p>(Now we just need a way to do that with text inputs too.)
+</p><p>The goal in this second scenario is to enable building rich native-app-like user interfaces where the path of least resistance to building it uses building blocks that in themselves enable accessibility. I think this is both possible, and is a necessary course of action to avoid having to do "bolt-on" accessibility later.
+</p><p>Note that providing facilities for (re)building native-app-like UIs is just one part of what such rich web-apps need to compete with native apps.
+</p><p>For now, the sections below focus on addressing/solving the first cluster of use cases first.
+</p><p>The theory is that by addressing that first that it will become more obvious which specific real-world rich interfaces fall into the second cluster, and therefore we can design for that second cluster based on those specific interfaces.
+</p>
+<h4><span class="mw-headline" id="Styling_HTML5_UI_elements">Styling HTML5 UI elements</span></h4>
+<p>We need to define how Forms and other UI elements can be styled, and to synchronize our work with the W3C.
+</p><p>Working with Mounir Lamouri on this: <a href="/User:Mounir.lamouri/HTML5_Forms" title="User:Mounir.lamouri/HTML5 Forms">User:Mounir.lamouri/HTML5_Forms</a>
+</p><p>Each <a href="/HTML5" title="HTML5">HTML5</a> UI element must be complete to the following criteria:
+</p><p>1. It must include pleasant and working UI, where appropriate.
+</p><p>This is a big design challenge. Take a look at what Opera has done for example (in terms of challenges).  Here is a simple test page which shows default renderings - compare in various browsers and try interacting with the new widgets especially in Opera:
+</p><p><a rel="nofollow" class="external free" href="https://tantek.com/new-inputs.html">https://tantek.com/new-inputs.html</a>
+</p><p>See <a href="/HTML5/input" title="HTML5/input" class="mw-redirect">HTML5/input</a> for more &lt;input&gt; element tests.
+</p>
+<ul><li> Need more sample/test/wiki pages for other HTML5 UI elements.</li></ul>
+<p>2. You must be able to use CSS to style the element, especially the UI that we generate.  This includes any pre-defined pseudo-selectors (invalid, required, icon, etc.)
+</p><p>Whenever there is <i>any</i> custom appearance of a form control, e.g. based on the new types, designers <i>must</i> be able to restyle them to fit in with their design. This means at a minimum:
+</p>
+<ul><li> ability to select specific "pieces" of any compound/composite form control for styling
+<ul><li> feeds into requirements for CSS pseudo-elements</li>
+<li> consider existing <a rel="nofollow" class="external text" href="https://www.w3.org/TR/css3-ui/#pseudo-elements">CSS3-UI pseudo-elements</a>
+<ul><li>&#160;::value can be used for selecting/styling placeholder text (see <a rel="nofollow" class="external text" href="https://bugzilla.mozilla.org/show_bug.cgi?id=457801#c25">bug 457801 comment 25</a>)</li>
+<li>&#160;::choices can theoretically be used to style the popped-up state of a <code>&lt;select&gt;</code> pop-up menu. No known implementations.</li>
+<li>&#160;::repeat-item - no known applicability to HTML(5) form controls, at-risk in CSS3-UI, resolved to be dropped.</li>
+<li>&#160;::repeat-index - no known applicability to HTML(5) form controls, at-risk in CSS3-UI, resolved to be dropped.</li></ul></li>
+<li> consider additional pseudo-elements based on vendor prefixed pseudos
+<ul><li> Safari 5 supports pseudo-elements for restyling overflow scrollbars
+<ul><li>&#160;::webkit-scrollbar-thumb</li>
+<li>&#160;::webkit-scrollbar-track</li>
+<li>&#160;::webkit-scrollbar</li></ul></li></ul></li>
+<li> consider additional pseudo-elements based on web designer requests for stylability of form controls
+<ul><li> <code><a href="/HTML5/select" title="HTML5/select" class="mw-redirect">&lt;select&gt;</a></code>
+<ul><li> <a rel="nofollow" class="external text" href="https://stackoverflow.com/questions/611482/change-color-and-appearance-of-drop-down-arrow">color and appearance of drop down arrow</a></li></ul></li>
+<li> <code><a href="/HTML5/input#type_search" title="HTML5/input" class="mw-redirect">&lt;input type=search&gt;</a></code>
+<ul><li> see examples from Jonas Sicking</li></ul></li></ul></li></ul></li>
+<li> ability to select specific "states" of any form control (may require ability to select states of specific pieces as well - that will be a challenge though as pseudo-elements themselves cannot have pseudo-classes in CSS)
+<ul><li> existing <a rel="nofollow" class="external text" href="https://www.w3.org/TR/css3-selectors/#UIstates">Selectors UI pseudo-classes</a>, and some notes on <a rel="nofollow" class="external text" href="https://www.w3.org/TR/html5/interactive-elements.html#pseudo-classes">how HTML5 DOM property states trigger these pseudo-classes</a>
+<ul><li>&#160;:hover&#160;:active - based on mouse/pointer interactions. the challenge here is to find alternatives for touch based interfaces.</li>
+<li>&#160;:focus - an element which is currently accepting keyboard, pointer, or other input device events.</li>
+<li>&#160;:enabled and&#160;:disabled - based on the state of the "disabled" property on the element.</li>
+<li>&#160;:checked - based on the "checked" property on input types "radio" and "checkbox", and also on the "selected" property on option element.</li>
+<li>&#160;:indeterminate - based on the "indeterminate" property of the input types "radio" and "checkbox".</li>
+<li>&#160;:default - <a rel="nofollow" class="external text" href="https://www.w3.org/TR/html5/interactive-elements.html#selector-default">default buttons or submit buttons</a></li>
+<li>&#160;:valid and&#160;:invalid - input elements that are candidates for constraint validation and either do or don't (respectively) satisfy their constraints.</li>
+<li>&#160;:in-range and&#160;:out-of-range - input elements that are candidates for constraint validation and that are neither under nor overflowing (for&#160;:in-range) or either under/overflowing (for&#160;:out-of-range).</li>
+<li>&#160;:required and&#160;:optional - <a rel="nofollow" class="external text" href="https://www.w3.org/TR/html5/interactive-elements.html#selector-required">see HTML5 description of being required / required attribute</a></li>
+<li>&#160;:read-only and&#160;:read-write - <a rel="nofollow" class="external text" href="https://www.w3.org/TR/html5/interactive-elements.html#selector-read-only">see HTML5 description of read-only vs read-write elements</a>.</li></ul></li>
+<li> additional pseudo-selectors as needed for states/portions included in HTML5 forms elements features
+<ul><li> "placeholder" attribute - needs a new&#160;:-moz-placeholder pseudo-class (<a rel="nofollow" class="external text" href="https://bugzilla.mozilla.org/show_bug.cgi?id=457801">bug 457801</a>)
+<ul><li> <a rel="nofollow" class="external text" href="https://developer.mozilla.org/en/CSS/%3a-moz-placeholder">:placeholder</a> pseudo-class needs to be proposed for CSS3.1 UI/Selectors.</li></ul></li></ul></li></ul></li>
+<li> typography
+<ul><li> font properties</li>
+<li> text properties</li>
+<li> color</li></ul></li>
+<li> box properties
+<ul><li> width</li>
+<li> height</li>
+<li> padding</li>
+<li> border</li>
+<li> margin</li>
+<li> background</li>
+<li> box-shadow</li></ul></li></ul>
+<p><br />
+3. If there's a constraint API the API must be complete.
+</p><p>4. It should be <a href="/Accessibility/HTML5_Forms" title="Accessibility/HTML5 Forms">fully accessible</a>.
+</p>
+<h4><span class="mw-headline" id="Possible_new_HTML5_UI_elements">Possible new HTML5 UI elements</span></h4>
+<p>The new user interface elements in HTML5 cover quite a bit of Web Apps UI scenarios.  There are both requests based on specific user/application scenarios, and there is also the full set of user interface objects represented by the values of the CSS3 UI 'appearance' property
+</p>
+<h5><span class="mw-headline" id="specific_new_elements">specific new elements</span></h5>
+<ul><li> <code>&lt;menubar&gt;</code></li>
+<li> pull-down-menu</li>
+<li> context-menu</li>
+<li> <code>&lt;input type="year"&gt;</code> - based on <code>&lt;time&gt;</code> element use case research</li>
+<li> <code>&lt;input type="month-day"&gt;</code> - based on <code>&lt;time&gt;</code> element use case research</li></ul>
+<h5><span class="mw-headline" id="CSS_UI_appearance_values">CSS UI appearance values</span></h5>
+<p><span id="CSS3_UI_appearance_values">&#160;</span>
+From <a rel="nofollow" class="external text" href="https://www.w3.org/TR/css3-ui/#appearance-val">CSS3 UI 5.1. Appearance values</a>:
+</p><p>Needs:
+</p>
+<ul><li> tab - a button that looks like the browser's tabbed windows tabs.</li>
+<li> menubar - a menu of menus, typically arranged linearly, in a horizontal bar. </li>
+<li> pull-down-menu - a menu where the name of the menu is displayed and the options remain hidden until the user activates the menu. When the user releases or deactivates the menu, the options are hidden again.</li>
+<li> radio-group - a menu where the options are displayed as radio-buttons.</li>
+<li> checkbox-group - a menu where the options are displayed as checkboxes. </li>
+<li> outline-tree - a menu where the options can be shown or hidden with small widgets, often represented by a small triangle or plus and minus signs. might be possible to build one using <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code>.</li>
+<li> combo-box - a field which is accompanied by a menu of preset values that can be used to quickly enter common or typical values. </li>
+<li> signature - a field for entering a signature, e.g. on a touch or tablet device or with a mouse.</li></ul>
+<p>Do we need something equivalent to HTML5's <code>&lt;progress&gt;</code> element?
+</p>
+<h6><span class="mw-headline" id="updated_appearance_value_list">updated appearance value list</span></h6>
+<p>Full updated appearance value list with equivalents:
+</p>
+<ul><li> <b>icon</b> - handled by 'icon' property and HTML5 Drag &amp; Drop</li>
+<li> <b>window</b> - mostly handled outside of elements, except perhaps a <b>tooltip</b> value which could be purely presentational</li>
+<li> <b>button</b> - by default a push-button
+<ul><li> <b>push-button</b> - <code>&lt;input type=button&gt;</code> and <code>&lt;button&gt;</code></li>
+<li> <b>hyperlink</b> - <code>&lt;a href&gt;</code></li>
+<li> <b>radio-button</b> - <code>&lt;input type="radio"&gt;</code></li>
+<li> <b>checkbox</b> - <code>&lt;input type="checkbox"&gt;</code></li>
+<li> <b>menu-item</b> - <code>&lt;option&gt;</code> and <code>&lt;optgroup&gt;</code></li>
+<li> <b>tab</b> - no HTML5 equivalent</li></ul></li>
+<li> <b>menu</b> - by default a pop-up-menu
+<ul><li> <b>menubar</b> - no HTML5 equivalent</li>
+<li> <b>pull-down-menu</b> - no HTML5 equivalent</li>
+<li> <b>pop-up-menu</b> - <code>&lt;select&gt;</code></li>
+<li> <b>list-menu</b> - <code>&lt;select size=n</code> (where n&gt;1)</li>
+<li> <b>radio-group</b> - no HTML5 equivalent</li>
+<li> <b>checkbox-group</b> - no HTML5 equivalent</li>
+<li> <b>outline-tree</b> - no complete HTML5 equivalent but <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> may help.</li>
+<li> <b>range</b> - <code>&lt;input type="range"&gt;</code></li></ul></li>
+<li> <b>field</b> - <code>&lt;input type="text"&gt;</code> and <code>&lt;textarea&gt;</code>
+<ul><li> <b>combo-box</b> - no HTML5 equivalent</li>
+<li> <b>signature</b>  - no HTML5 equivalent</li>
+<li> <b>password</b> - <code>&lt;input type="password"&gt;</code></li></ul></li></ul>
+<h4><span class="mw-headline" id="CSS_Style_Attributes">CSS Style Attributes</span></h4>
+<dl><dt>latest published draft (CR)</dt>
+<dd><a rel="nofollow" class="external free" href="https://www.w3.org/TR/css-style-attr/">https://www.w3.org/TR/css-style-attr/</a></dd>
+<dt>latest development / in progress draft</dt>
+<dd><a rel="nofollow" class="external free" href="https://dev.w3.org/csswg/css-style-attr/">https://dev.w3.org/csswg/css-style-attr/</a></dd>
+<dt>spec source (for editing)</dt>
+<dd><a rel="nofollow" class="external free" href="https://dev.w3.org/csswg/css-style-attr/Overview.src.html">https://dev.w3.org/csswg/css-style-attr/Overview.src.html</a></dd>
+<dt>test suite</dt>
+<dd>TBD</dd>
+<dt>implementation reports of the test suite</dt>
+<dd>TBD</dd>
+<dt>issues list for the current draft</dt>
+<dd><a rel="nofollow" class="external free" href="https://wiki.csswg.org/spec/css-style-attr">https://wiki.csswg.org/spec/css-style-attr</a></dd></dl>
+<h5><span class="mw-headline" id="remaining_tasks">remaining tasks</span></h5>
+<ul><li> test suite 
+<ul><li> expecting to work with Ted O'Connor of Apple on this</li></ul></li>
+<li> implementation reports</li>
+<li> PR draft</li>
+<li> wait for W3C AC review</li>
+<li> REC</li></ul>
+<h5><span class="mw-headline" id="waiting_for">waiting for</span></h5>
+<ul><li> Ted O'Connor answer whether he can help with test suite / implementation reports.
+<ul><li> emailed 2011-080</li></ul></li></ul>
+<p>See also CSSWG wiki task list: <a rel="nofollow" class="external free" href="https://wiki.csswg.org/spec/css-style-attr">https://wiki.csswg.org/spec/css-style-attr</a>
+</p>
+<h4><span class="mw-headline" id="CSS3_UI">CSS3 UI</span></h4>
+<dl><dt>latest published draft</dt>
+<dd><a rel="nofollow" class="external free" href="https://www.w3.org/TR/css3-ui/">https://www.w3.org/TR/css3-ui/</a></dd>
+<dt>latest development / in progress draft</dt>
+<dd><a rel="nofollow" class="external free" href="https://dev.w3.org/csswg/css-ui/">https://dev.w3.org/csswg/css-ui/</a></dd>
+<dt>spec source (for editing)</dt>
+<dd><a rel="nofollow" class="external free" href="https://dev.w3.org/csswg/css-ui/Overview.bs">https://dev.w3.org/csswg/css-ui/Overview.bs</a></dd>
+<dt>test suite</dt>
+<dd><a rel="nofollow" class="external free" href="https://test.csswg.org/suites/css-ui-3_dev/nightly-unstable/">https://test.csswg.org/suites/css-ui-3_dev/nightly-unstable/</a></dd>
+<dt>implementation reports of the test suite</dt>
+<dd>TBD</dd>
+<dt>issues list for the current draft</dt>
+<dd><a rel="nofollow" class="external free" href="https://wiki.csswg.org/spec/css3-ui">https://wiki.csswg.org/spec/css3-ui</a></dd></dl>
+<h5><span class="mw-headline" id="remaining_tasks_2">remaining tasks</span></h5>
+<p>Remaining tasks to get CSS3 UI to PR:
+</p>
+<ul><li> <b>resolve issues</b>. resolve/apply proposals from issues list: <a rel="nofollow" class="external free" href="https://wiki.csswg.org/spec/css3-ui">https://wiki.csswg.org/spec/css3-ui</a> </li>
+<li> <b>collect other tasks</b>
+<ul><li> Extract CSS3-UI related tasks from "mozilla-next-actions.txt" local text document</li>
+<li> And add to <a rel="nofollow" class="external free" href="https://wiki.csswg.org/spec/css3-ui">https://wiki.csswg.org/spec/css3-ui</a> as concrete issues to resolutions and status</li></ul></li>
+<li> <b>text-overflow</b>
+<ul><li> create an implementer FAQ on the W3C wiki re: text-overflow accordingly
+<ul><li> go through local test documents on work laptop</li>
+<li> go through emails on "text-overflow" with fantasai, mats, roc</li></ul></li></ul></li>
+<li> <b>:indeterminate</b> - add an example using <a rel="nofollow" class="external text" href="https://developer.mozilla.org/en/HTML/Element/progress">HTML5 progress element</a> and with input type=checkbox with DOM property set to indeterminate deliberately per <a rel="nofollow" class="external text" href="https://developer.mozilla.org/en/CSS/%3aindeterminate">devmo&#160;:indeterminate example</a>
+<ul><li> Move to W3C wiki, collaborate with Tab &amp; fantasai to incorporate into Selectors4</li></ul></li></ul>
+<ul><li> <b>implementation documentation</b>. document claims of existing implementations on W3C wiki
+<ul><li> Webkit CSS3 UI - <a rel="nofollow" class="external free" href="https://lists.w3.org/Archives/Public/public-html/2009Sep/0060.html">https://lists.w3.org/Archives/Public/public-html/2009Sep/0060.html</a></li>
+<li> Opera CSS3 UI 
+<ul><li> <a rel="nofollow" class="external text" href="https://web.archive.org/web/20160604120040/http://www.opera.com/docs/specs/presto29/css/basicuserinterface/">www.opera.com/docs/specs/presto29/css/basicuserinterface</a> (Internet Archive link)</li>
+<li> <a rel="nofollow" class="external free" href="https://lists.w3.org/Archives/Public/public-html/2009Sep/0202.html">https://lists.w3.org/Archives/Public/public-html/2009Sep/0202.html</a></li></ul></li>
+<li> Mozilla CSS3 UI
+<ul><li> <a rel="nofollow" class="external text" href="https://developer.mozilla.org/en/CSS/:default">:default</a></li>
+<li> <a rel="nofollow" class="external text" href="https://developer.mozilla.org/En/CSS/:indeterminate">:indeterminate</a></li>
+<li> <a rel="nofollow" class="external text" href="https://developer.mozilla.org/En/CSS/::selection">::-moz-selection</a> - needs removal of prefix.</li>
+<li> <a rel="nofollow" class="external text" href="https://developer.mozilla.org/en/CSS/:-moz-placeholder">:-moz-placeholder</a></li>
+<li> more UI related pseudo-classes discussed in <a rel="nofollow" class="external text" href="https://developer.mozilla.org/en/CSS_Reference#Pseudo-classes">devmo CSS Reference</a></li>
+<li> <a rel="nofollow" class="external text" href="https://developer.mozilla.org/en/CSS/-moz-appearance">-moz-appearance</a> - needs analysis to figure out if it complies with intent of 'appearance' property</li>
+<li> <a rel="nofollow" class="external text" href="https://developer.mozilla.org/En/CSS/Box-sizing">-moz-box-sizing</a> - needs unprefixing (<a rel="nofollow" class="external text" href="https://bugzilla.mozilla.org/show_bug.cgi?id=243412">bug 243412</a>). 
+<ul><li> extra value 'padding-box' is implemented - consider adding it to CSS3-UI</li></ul></li>
+<li> 'cursor' - new values
+<ul><li> <a rel="nofollow" class="external text" href="https://developer.mozilla.org/en/CSS/-moz-alias">alias</a> - verify works w/o prefix.</li>
+<li> <a rel="nofollow" class="external text" href="https://developer.mozilla.org/en/CSS/-moz-cell">cell</a> - verify works w/o prefix.</li>
+<li> <a rel="nofollow" class="external text" href="https://developer.mozilla.org/en/CSS/-moz-copy">copy</a> - verify works w/o prefix.</li></ul></li>
+<li> <a rel="nofollow" class="external text" href="https://developer.mozilla.org/en/CSS/outline-offset">outline-offset</a> - </li>
+<li> Remaining related Firefox bugs/development tasks (stub/incomplete). For each of these, figure out who is the right Mozilla developer to work on this and then work with to understand what it will take to get it implemented:
+<ul><li> cursor / border-radius interaction bug: <a rel="nofollow" class="external text" href="https://bugzilla.mozilla.org/show_bug.cgi?id=595652">595652</a>
+<ul><li> if/when fixed, add that detail to spec</li></ul></li>
+<li> cursor on root element applying to viewport: <a rel="nofollow" class="external text" href="https://bugzilla.mozilla.org/show_bug.cgi?id=568450">568450</a> 
+<ul><li> if/when fixed, add that detail to spec</li></ul></li>
+<li> box-sizing prefix drop: <a rel="nofollow" class="external free" href="https://bugzilla.mozilla.org/show_bug.cgi?id=243412">https://bugzilla.mozilla.org/show_bug.cgi?id=243412</a></li>
+<li> move icon support ( <a rel="nofollow" class="external free" href="https://www.w3.org/TR/css3-ui/#element">https://www.w3.org/TR/css3-ui/#element</a> ) to W3C wiki
+<ul><li> 'icon' property</li>
+<li> 'content:icon' value</li></ul></li>
+<li> ...</li></ul></li></ul></li></ul></li></ul>
+<ul><li><ul><li> Internet Explorer 8+ CSS3 UI support -&#160;??? (expect email from johnjan @ MS)</li>
+<li> IE5/Mac CSS3 UI support -&#160;???</li></ul></li></ul>
+<ul><li> put out a call for at least a minimal coverage tests that covers those claims per implementer</li></ul>
+<ul><li> document actual implementation results</li></ul>
+<ul><li> collect/address CSS3 UI LCWD2 issues from www-style [css3-ui], [css-ui]
+<ul><li> respond to all the commenters on issues with proposed resolutions + editor's draft edits (hopefully thus addressing their concerns and resolving the issues accordingly)</li>
+<li> incrementally draft new CSS3-UI CR draft accordingly</li></ul></li></ul>
+<ul><li> edit CSS3-UI CR draft accordingly that is ready for PR
+<ul><li> reduce feature set down to what's been implemented in more than one browser, or in one browser and imminently expected in another browser. mark at risk anything that is not interop in 2+ browser per above tests.</li></ul></li></ul>
+<ul><li> publish CSS3-UI LCCR with minimal test suite and results</li></ul>
+<ul><li> if necessary, write new UI Selectors FPWD editors draft with all new UI selectors (consider limiting to those with at least one implementation, any with less than 2 implementations, mark at risk up front)</li></ul>
+<ul><li> WG processes for taking it to PR</li></ul>
+<h4><span class="mw-headline" id="CSS4_UI">CSS4 UI</span></h4>
+<ul><li> write CSS4 UI FPWD with:
+<ul><li> public requests recorded: <a rel="nofollow" class="external free" href="https://wiki.csswg.org/spec/css4-ui">https://wiki.csswg.org/spec/css4-ui</a>
+<ul><li> the below items should be incorporated into that CSSWG wiki page</li></ul></li>
+<li> previous CSS3-UI features that got dropped
+<ul><li> stuff from CSS3 UI CR that only had one implementation (that we believe is worthy of standardizing, or at least one other implementer expresses interest on)</li>
+<li> stuff from and related to previous CSS3 UI drafts that's been reraised
+<ul><li> 'appearance' (especially 'none' value)
+<ul><li> consider updated <i>appearance</i> property with updated set of native UI controls from Alex Faaborg and incorporating analysis in the <a href="#CSS_UI_appearance_values">CSS UI appearance values</a> section above.</li></ul></li>
+<li> 'user-input'</li>
+<li> 'user-focus'</li>
+<li> 'user-modify'</li>
+<li> 'user-select'
+<ul><li> all suggested to replace 'contentEditable': <a rel="nofollow" class="external text" href="https://lists.w3.org/Archives/Public/www-style/2010Dec/0371.html">www-style: Implementing contentEditable in CSS3 UI</a></li></ul></li></ul></li></ul></li>
+<li> other CSS features that are UI related in other CSS or other W3C specs
+<ul><li> <a rel="nofollow" class="external text" href="https://developer.mozilla.org/en/CSS/%3a-moz-placeholder">:placeholder</a> pseudo-class. related: <a rel="nofollow" class="external text" href="https://bugzilla.mozilla.org/show_bug.cgi?id=457801">bug 457801</a></li>
+<li> <b>overflow-x overflow-y</b>. incorporate <b><a rel="nofollow" class="external text" href="https://developer.mozilla.org/En/CSS/Overflow-x">overflow-x</a></b> and  <b><a rel="nofollow" class="external text" href="https://developer.mozilla.org/En/CSS/Overflow-y">overflow-y</a></b>
+<ul><li> pull-in the entirety of section 16 from
+<ul><li> <a rel="nofollow" class="external free" href="https://www.w3.org/Style/Group/css3-src/css3-box/#overflow">https://www.w3.org/Style/Group/css3-src/css3-box/#overflow</a></li></ul></li>
+<li> sync (incorporated) any updates/changes in 2.1:
+<ul><li> <a rel="nofollow" class="external free" href="https://www.w3.org/Style/Group/css2-src/visufx.html#overflow">https://www.w3.org/Style/Group/css2-src/visufx.html#overflow</a></li></ul></li>
+<li> note examples/behaviors in Gresley's overflow tests
+<ul><li> <a rel="nofollow" class="external free" href="https://css-class.com/test/css/overflow/block-inside-auto-width-float-overflow.htm">https://css-class.com/test/css/overflow/block-inside-auto-width-float-overflow.htm</a></li></ul></li>
+<li> search www-style for issues related to 'overflow-x' and 'overflow-y'
+<ul><li> ask Anne van Kesteren and www-style directly</li></ul></li>
+<li> check that css3-marquee implicitly deals with overflow-x and overflow-y correctly
+<ul><li> <a rel="nofollow" class="external free" href="https://www.w3.org/TR/css3-marquee/#the-overflow-style">https://www.w3.org/TR/css3-marquee/#the-overflow-style</a></li></ul></li>
+<li> investigate discussion of ink overflow vs layout overflow - <a href="/User:Fantasai" title="User:Fantasai">fantasai</a> will get more info on this.  e.g. box-shadow should never trigger scrollbars. do margins? maybe they don't trigger overflow but if there is overflow anyways (something else triggers scrollbars), then margins influence the dimensions of the scrollable area.</li></ul></li>
+<li> <b>outline-radius</b> per implementation: Mozilla supports <a rel="nofollow" class="external text" href="https://developer.mozilla.org/en/CSS/-moz-outline-radius">-moz-outline-radius</a> (no second implementation however - thus in CSS4 UI)</li>
+<li> CSS3 Hyperlink</li>
+<li> <a href="/HTML5" title="HTML5">HTML5</a> inputs/forms features that are presentation related</li></ul></li>
+<li> new features
+<ul><li> CSS portions of <a href="/Gecko:FullScreenAPI" title="Gecko:FullScreenAPI">Gecko:FullScreenAPI</a>, e.g. the new pseudo-classes</li>
+<li> <span id="new-resize-values">new 'resize' values</span> - e.g. <b>grow-vertical</b>, <b>grow-horizontal</b>
+<ul><li> Facebook uses some JS to add rows to text areas when you hit the end of the available space. It feels nicer than a scrollbar because you can see all of what you typed -- the height of the text area just grows and grows as you need it. It would be great to have 'resize' property values that allow the browser to auto-grow a textarea as a user enters data, e.g. 'grow-horizontal', 'grow-vertical'.  'grow-vertical' would emulate the current behavior that FB does with JS. (note from fantasai - this is the behavior you'd get with fixed min-height and auto height, so CSS can do this already if HTML doesn't get in the way)</li>
+<li> Update 2011-032: <a rel="nofollow" class="external text" href="https://twitter.com/LeaVerou/status/32642516146724866">@LeaVerou requested</a> "elastic textarea effect with pure CSS" <a rel="nofollow" class="external text" href="https://twitter.com/LeaVerou/status/32651575688175616">and follow-up</a>: "mostly about height, not width" which sounds like resize:grow-vertical. There's also mention of "-moz-available" (need to research that and link it up).</li></ul></li></ul></li>
+<li> forward reaching properties/values to enable native-like interfaces
+<ul><li> 'spell-check'</li>
+<li> 'grammar-check'
+<ul><li> both suggested by: <a rel="nofollow" class="external text" href="https://lists.w3.org/Archives/Public/www-style/2010Dec/0383.html">www-style: Re: Implementing contentEditable in CSS3 UI</a></li></ul></li>
+<li> more "overflow" extensions: <a rel="nofollow" class="external free" href="https://wiki.csswg.org/spec/css3-overflow">https://wiki.csswg.org/spec/css3-overflow</a></li></ul></li></ul></li></ul>
+<p>Additional CSS3 UI related features in Mozilla to investigate:
+</p>
+<ul><li> <a rel="nofollow" class="external text" href="https://developer.mozilla.org/en/CSS/-moz-user-focus">-moz-user-focus</a></li></ul>
+<h4><span class="mw-headline" id="CSS3_Element">CSS3 Element</span></h4>
+<h5><span class="mw-headline" id="element_function">element function</span></h5>
+<p>Firefox 4 implements background: -moz-element(#foo); to use element with id foo as the background per <a rel="nofollow" class="external free" href="https://hacks.mozilla.org/2010/08/mozelement/">https://hacks.mozilla.org/2010/08/mozelement/</a> 
+</p><p>We're pursuing adding element(#foo) as an "at-risk" feature to CSS3.
+</p><p>Proposal (worked with Tab Atkins)
+</p>
+<ul><li> <a rel="nofollow" class="external free" href="https://lists.w3.org/Archives/Public/www-style/2010Aug/0635.html">https://lists.w3.org/Archives/Public/www-style/2010Aug/0635.html</a></li>
+<li> latest: <a rel="nofollow" class="external text" href="https://dev.w3.org/csswg/css3-images/#element-reference">added to CSS3 Image editor's draft</a></li></ul>
+<p>Threads:
+</p>
+<ul><li> <a rel="nofollow" class="external text" href="https://lists.w3.org/Archives/Public/www-style/2010Aug/thread.html#msg635">element() 2010-08</a></li>
+<li> <a rel="nofollow" class="external text" href="https://lists.w3.org/Archives/Public/www-style/2010Sep/thread.html#msg0">element() 2010-09</a></li></ul>
+<p>Thoughts:
+</p>
+<ul><li> CSS image() value - Tab Atkins has written it up.</li></ul>
+<h4><span class="mw-headline" id="CSS4_Color">CSS4 Color</span></h4>
+<ul><li> collect new features for CSS3.1/4 Color - color-correction - iterate that on CSSWG wiki:
+<ul><li> search www-style archive for css4-color</li>
+<li> <a rel="nofollow" class="external free" href="https://wiki.csswg.org/spec/css4-color">https://wiki.csswg.org/spec/css4-color</a></li></ul></li>
+<li> write a first working draft of CSS3.1/4 Color with collected feature(s) (even if it includes just a new color management property)</li>
+<li> find out where Hixie's tests went (was at <a rel="nofollow" class="external free" href="https://test.csswg.org/source/contributors/hixie/incoming/css3-color/">https://test.csswg.org/source/contributors/hixie/incoming/css3-color/</a> ) and figure out what to do with them.</li></ul>
+<h3><span class="mw-headline" id="DOM_API_vendor_prefixing">DOM API vendor prefixing</span></h3>
+<h4><span class="mw-headline" id="spec_implementation_problem_statement">spec implementation problem statement</span></h4>
+<p>Problem statement: the <b>specification-implementation co-dependency problem</b>.
+</p><p>All standards in development have the challenging seemingly contradictory problems of:
+</p>
+<ol><li> <b>needing some implementation to reality-check</b> that the API/protocol/format "works" as intended, or is workable/usable</li>
+<li> <b>being stuck with a specific (often buggy) implementation</b> once it ships  because there's content/pages/apps out there that depend on it.</li></ol>
+<p>There are three areas of the open web app platform that this has been problematic:
+</p>
+<ol><li> <b>CSS</b>.  In the past, some properties were implemented, either as spec'd (and the spec was buggy), or in a way that made sense but incompatible with the spec (because the spec didn't make sense or was not useful to web authors), and then we got "stuck" with those implementations and were not able to update/fix the spec and the respective properties and/or values. Examples:
+<ol><li> 'clip' property. mis-specified in CSS 2.0. implemented as presumed intended in IE4/Windows etc. but turned out to be buggy.  some content started depending on it. we (CSS WG at the time) were unable to really fix it in a way that implementations could change, though <a rel="nofollow" class="external text" href="https://www.w3.org/TR/CSS21/visufx.html#clipping">CSS 2.1 tries to fix clip</a>.</li>
+<li> 'word-wrap' property. in this case, created/proposed by Microsoft, and <a rel="nofollow" class="external text" href="https://web.archive.org/web/20150308232632/https://msdn.microsoft.com/en-us/library/ms531186.aspx">msdn.microsoft.com/en-us/library/ms531186.aspx implemented as of IE5.5/Windows ca 2000</a> (Internet Archive link), we are again, kind of stuck with the particular implementation. <a rel="nofollow" class="external text" href="https://web.archive.org/web/20160722020847/http://www.codingforums.com/archive/index.php/t-2075.html">www.codingforums.com/archive/index.php/t-2075.html</a> (Internet Archive link) Forum posts as of 2002 were recommending use of the literal word-wrap property]. Though since Microsoft did switch to advocating/supporting a prefixed version '-ms-word-wrap'. Note that it is also <a rel="nofollow" class="external text" href="https://developer.mozilla.org/en/CSS/word-wrap">supported in Firefox 3.5 ca 2009</a>, and it is in the latest (2007) version of the <a rel="nofollow" class="external text" href="https://www.w3.org/TR/2007/WD-css3-text-20070306/#word-wrap">CSS3 Text spec which is just a working draft</a>.
+<ol><li> See related 'word-break' property (<a rel="nofollow" class="external text" href="https://www.w3.org/TR/2007/WD-css3-text-20070306/#word-break">word-break in CSS3 Text WD</a> - latest, 2007), also <a rel="nofollow" class="external text" href="https://web.archive.org/web/20131108081707/http://msdn.microsoft.com:80/en-us/library/ms531184.aspx">msdn.microsoft.com/en-us/library/ms531184.aspx</a> (Internet Archive link) initially (partially) implemented in Internet Explorer 5.x as word-break], and later switched to the prefixed '-ms-word-break'. <a rel="nofollow" class="external text" href="https://web.archive.org/web/20131006173053/http://msdn.microsoft.com:80/en-us/library/cc351024(VS.85).aspx">msdn.microsoft.com/en-us/library/cc351024%28VS.85%29.aspx</a> (Internet Archive link) More on CSS Compatibility and Internet Explorer].</li></ol></li></ol></li>
+<li> <b>HTML</b>. Too many examples to list here. Some browsers are still stuck supporting <code>&lt;blink&gt;</code> and <code>&lt;marquee&gt;</code> (which has many odd details), nevermind the classic example of <code>&lt;table&gt;</code> layout, with tons of odd special cases and error-handling for compat, originally from Netscape's implementation, reverse-engineered by Microsoft in Internet Explorer, which has subsequently been reverse-engineered by every other browser.</li>
+<li> <b>DOM</b>. In particular <a rel="nofollow" class="external text" href="https://www.w3.org/TR/2009/WD-webstorage-20091222/">Web Storage working draft</a> (e.g. the 'localStorage' attribute/property) was implemented in multiple browsers (IE8+, Chrome, Safari, Opera, Mozilla as of 2010 - date order unknown). By the time people discovered it was not threadsafe as specified, it was too late to change the spec to fix that problem - it would have broken too many apps/sites already written which apparently depended on it.</li></ol>
+<h4><span class="mw-headline" id="existing_solutions">existing solutions</span></h4>
+<p>The only one of these areas of technology that has an explicit solution to the specification-implementation co-dependency problem is CSS, through vendor-prefixes.
+</p>
+<h5><span class="mw-headline" id="CSS_vendor_prefixes">CSS vendor prefixes</span></h5>
+<p>In the early 2000s the participants in the CSS working group agreed to formalize a way for implementors to build experimental implementations of new properties and values which were only in a working draft (not yet in a Candidate Recommendation) without saddling the property with implementation specific bugs that content would end up inadvertently depending on.
+</p><p>CSS prefixing is fairly straight forward:
+</p>
+<pre>- abbreviated_vendor_prefix - property_name</pre>
+<p>(spaces added for clarification of the different components)
+</p><p>Examples include:
+</p>
+<ul><li> -moz-opacity</li>
+<li> -o-border-radius</li>
+<li> -webkit-border-radius</li>
+<li> -ms-word-wrap</li></ul>
+<h5><span class="mw-headline" id="CSS_vendor_prefixes_case_studies">CSS vendor prefixes case studies</span></h5>
+<ul><li> <b>border-radius</b>. for a few years now browsers have been implementing <i>vendor prefixed</i> versions of the border-radius properties, web authors have been experimenting on the web, and the spec has iterated/improved based on feedback.  Now we have a well-designed and road-tested 'border-radius' property in a CR spec and implementations are implementing that.</li>
+<li> <b>word-wrap vs whitespace: pre-wrap</b>. interactions between new properties and new values on existing properties.  See this <a rel="nofollow" class="external text" href="https://web.archive.org/web/20161005144300/http://scottonwriting.net/sowBlog/archive/0000/00/00/163005.aspx">scottonwriting.net/sowBlog/archive/0000/00/00/163005.aspx</a> (Internet Archive link) example of the property vs value interaction] between the new 'word-wrap' property and the (sometimes prefixed) new 'pre-wrap' value on the 'whitespace' property. The point is to show how prefixing can actually work across different approaches to evolving CSS.</li></ul>
+<h5><span class="mw-headline" id="CSS_vendor_prefixes_successes">CSS vendor prefixes successes</span></h5>
+<p>Several well known web designers and developers have written at length about the successes of CSS vendor prefixes, and how they have both helped avoid problems from before, and actually improve the evolution of CSS.
+</p>
+<ul><li> <a rel="nofollow" class="external text" href="https://www.alistapart.com/articles/prefix-or-posthack/">A List Apart: Prefix or Posthack</a> by Eric Meyer</li>
+<li> <a rel="nofollow" class="external text" href="https://web.archive.org/web/20151004052842/http://www.webmonkey.com:80/2010/07/advice-from-the-css-guru-embrace-prefixes/">WIRED Webmonkey: Advice From the CSS Guru: Embrace Prefixes</a> (original link www.webmonkey.com/2010/07/advice-from-the-css-guru-embrace-prefixes died at some point) by Michael Calore</li>
+<li> <a rel="nofollow" class="external text" href="https://www.the-haystack.com/2010/03/22/coping-with-css-prefixes/">The Haystack: Coping with CSS vendor prefixes</a> by Stephen Hay</li>
+<li> <a rel="nofollow" class="external text" href="https://snook.ca/archives/html_and_css/not-supported">Snook.ca: NOT SUPPORTED</a> by Jonathan Snook</li>
+<li> <a rel="nofollow" class="external text" href="https://annevankesteren.nl/2010/03/css-vendor-prefix">Anne van Kesteren: In defense of CSS prefixes</a> by Anne van Kesteren</li></ul>
+<h4><span class="mw-headline" id="analysis_of_applicability">analysis of applicability</span></h4>
+<p>Can we apply similar thinking and solutions to HTML and/or DOM?
+</p><p>For HTML (or any markup) the thinking is no - because of the fact that an element only allows one tagname, there is no way to have content first use a vendor prefixed tagname (or tagnames from multiple vendors), and then also use a final unprefixed tagname all at the same time as part of a content evolution/transition strategy.  CSS vendor prefixing works (as illustrated in the case studies) because authors <i>can</i> create style sheets that use multiple versions of a property (vendor prefixed and unprefixed) in one style sheet, together while evolving their content over time.
+</p><p>For DOM, it is not only possible, but there are examples in the wild.
+</p><p><a rel="nofollow" class="external text" href="https://developer.mozilla.org/en/DOM/window.onmozorientation">mozOrientation</a> is a good example of a vendor prefixed DOM interface implementation. (Note mozOrientation needs to be submitted to a W3C working group for standardization/iteration)
+</p>
+<h4><span class="mw-headline" id="simple_DOM_vendor_prefixes_proposal">simple DOM vendor prefixes proposal</span></h4>
+<p>For all DOM interfaces that are:
+</p>
+<ul><li> Proprietary. No standards organization draft yet published. OR</li>
+<li> In a W3C working draft, not yet in a Candidate Recommendation.</li></ul>
+<p>Use vendor prefixed interfaces and values as follows:
+</p>
+<pre>vendor_prefix _ unprefixed_name</pre>
+<p>E.g. in the above example of mozOrientation, we really should be using:
+</p>
+<pre>moz_Orientation</pre>
+<p>This works because standard DOM APIs do not use underscores.
+</p><p>Our goal is to establish a convention (like the above) for all such pre-CR DOM APIs that has the consensus of implementers so that we can avoid creating broken versions of APIs
+</p>
+<h4><span class="mw-headline" id="simple_protocol_scheme_prefixes_proposal">simple protocol scheme prefixes proposal</span></h4>
+<p>The WebSockets specification (and iteration) provides a good example of a W3C Working Draft that has work also going on at the IETF (perhaps primarily), and there is a high likelihood of backwards incompatible changes being made to WebSockets's "ws:" protocol between different versions (-76, -00, -01).
+</p><p>Thus it is worth considering prefixing implementations of the "ws:" protocol in order to break/rev as necessary instead of being locked into a specific draft due to premature reliant adoption.
+</p><p>For all protocol schemes that are:
+</p>
+<ul><li> Proprietary. No standards organization draft yet published. OR</li>
+<li> In a W3C or IETF working draft, not yet in a Candidate Recommendation, or perhaps public last call for IETF drafts (open to suggestions here).</li></ul>
+<p>Use vendor prefixed protocol schemes as follows:
+</p>
+<pre>vendor_prefix - unprefixed_name</pre>
+<p>E.g. WebSockets has a new ws: scheme, and we've implemented it in Firefox 4. We really should be using:
+</p>
+<pre>moz-ws:</pre>
+<p>Our goal is to establish a convention (like the above) for all such pre-CR protocol schemes that has the consensus of implementers so that we can avoid creating broken versions of protocols.
+</p><p><br />
+</p>
+<h4><span class="mw-headline" id="simple_HTML_attributes_prefixes_proposal">simple HTML attributes prefixes proposal</span></h4>
+<p>Implementing prefixes on element names doesn't work because you can't have more than one element name per element, and thus prefixed versions would force developers to choose between unprefixed and a particular prefixed version.
+</p><p>However elements do have multiple attributes, and thus prefixing can work for attributes.
+</p><p>For all HTML attributes that are:
+</p>
+<ul><li> Proprietary. No standards organization draft yet published. OR</li>
+<li> In a W3C working draft (e.g. New in HTML5), not yet in a Candidate Recommendation.</li></ul>
+<p>Use vendor prefixed attributes as follows:
+</p>
+<pre>vendor_prefix _ unprefixed_name</pre>
+<p>E.g. HTML5 has a new <a rel="nofollow" class="external text" href="https://www.w3.org/TR/html5/common-input-element-attributes.html#attr-input-pattern">'pattern' attribute</a>, and we've implemented it in Firefox 4. We really should be using:
+</p>
+<pre>moz_pattern</pre>
+<p>This works because standard HTML attributes do not use underscores.
+</p><p>Our goal is to establish a convention (like the above) for all such pre-CR new HTML5 attributes that has the consensus of implementers so that we can avoid creating broken versions of elements.
+</p>
+<h3><span class="mw-headline" id="UI_Layout">UI Layout</span></h3>
+<p>CSS3 Flex Box and Grid
+</p><p>There are two new CSS3 layout mechanisms being developed that could greatly assist with the layout of user interfaces.
+</p>
+<ul><li> CSS3 Flex Box
+<ul><li> current working draft: <a rel="nofollow" class="external free" href="https://www.w3.org/TR/css3-flexbox/">https://www.w3.org/TR/css3-flexbox/</a></li>
+<li> current editor's draft: <a rel="nofollow" class="external free" href="https://dev.w3.org/csswg/css3-flexbox/">https://dev.w3.org/csswg/css3-flexbox/</a> </li>
+<li> Tab's proposed update: <a rel="nofollow" class="external free" href="https://dev.w3.org/csswg/css3-flexbox/Overview.new.src.html">https://dev.w3.org/csswg/css3-flexbox/Overview.new.src.html</a></li>
+<li> Tab's documentation of differences between editor's draft and his draft: <a rel="nofollow" class="external free" href="https://www.xanthir.com/blog/b48Z0">https://www.xanthir.com/blog/b48Z0</a></li></ul></li></ul>
+<ul><li> CSS3 Grid
+<ul><li> 2007-09-05 (current) working draft: <a rel="nofollow" class="external free" href="https://www.w3.org/TR/css3-grid/">https://www.w3.org/TR/css3-grid/</a></li>
+<li> 2008-01-06 (current) editor's draft: <a rel="nofollow" class="external free" href="https://dev.w3.org/csswg/css3-grid/">https://dev.w3.org/csswg/css3-grid/</a></li></ul></li></ul>
+<ul><li> CSS3 Grid Align - not clear on the relation between Grid and Grid Align
+<ul><li> Alex Mogilevsky's CSS3 Grid Align first draft:  <a rel="nofollow" class="external text" href="https://web.archive.org/web/20101231085657/http://www.interoperabilitybridges.com/css3-grid-align/">www.interoperabilitybridges.com/css3-grid-align</a> (Internet Archive) link
+<ul><li> Alex's www-style email thread announcing his draft: <a rel="nofollow" class="external free" href="https://lists.w3.org/Archives/Public/www-style/2010Oct/thread.html#msg787">https://lists.w3.org/Archives/Public/www-style/2010Oct/thread.html#msg787</a></li></ul></li>
+<li> 2010-11-18 (current) editor's draft: <a rel="nofollow" class="external free" href="https://dev.w3.org/csswg/css3-grid-align/">https://dev.w3.org/csswg/css3-grid-align/</a></li></ul></li></ul>
+<p>Some next-steps:
+</p>
+<ul><li> need to get in touch with Tab Atkins and catch-up on the current state of his Flex Box work vs. existing prefixed partial implementation in Firefox and Safari.
+<ul><li> 2010-155 briefly spoke with Tab about flex box in irc and noted that I'm working on css3-color and css3-ui first.</li></ul></li></ul>
+<h3><span class="mw-headline" id="Fullscreen">Fullscreen</span></h3>
+<p>AKA <span id="Full_Screen">Full Screen</span>
+</p>
+<dl><dt>latest living / development / in progress draft</dt>
+<dd><a rel="nofollow" class="external free" href="https://fullscreen.spec.whatwg.org/">https://fullscreen.spec.whatwg.org/</a></dd>
+<dt>spec source (for editing)</dt>
+<dd><a rel="nofollow" class="external free" href="https://github.com/whatwg/fullscreen/blob/master/Overview.src.html">https://github.com/whatwg/fullscreen/blob/master/Overview.src.html</a></dd>
+<dt>latest snapshot W3C draft</dt>
+<dd><a rel="nofollow" class="external free" href="https://www.w3.org/TR/fullscreen/">https://www.w3.org/TR/fullscreen/</a></dd>
+<dt>latest snapshot W3C TR-ready draft</dt>
+<dd><a rel="nofollow" class="external free" href="https://dvcs.w3.org/hg/fullscreen/raw-file/tip/TR.html">https://dvcs.w3.org/hg/fullscreen/raw-file/tip/TR.html</a></dd>
+<dt>W3C branch snapshot spec source</dt>
+<dd><a rel="nofollow" class="external free" href="https://dvcs.w3.org/hg/fullscreen/raw-file/tip/Overview.html">https://dvcs.w3.org/hg/fullscreen/raw-file/tip/Overview.html</a></dd>
+<dt>test suite</dt>
+<dd>TBD</dd>
+<dt>implementation reports of the test suite</dt>
+<dd>TBD</dd>
+<dt>issues list for the current draft</dt>
+<dd><a rel="nofollow" class="external free" href="https://www.w3.org/Bugs/Public/buglist.cgi?product=WebAppsWG&amp;component=Fullscreen&amp;resolution=---">https://www.w3.org/Bugs/Public/buglist.cgi?product=WebAppsWG&amp;component=Fullscreen&amp;resolution=---</a></dd>
+<dt>wiki page - including FAQ</dt>
+<dd>none currently (perhaps wiki.csswg.org URL when ready)</dd></dl>
+<h4><span class="mw-headline" id="remaining_tasks_3">remaining tasks</span></h4>
+<ul><li> process this for any outstanding issues / FAQs to write-up
+<ul><li> <a rel="nofollow" class="external free" href="https://wiki.mozilla.org/Gecko:FullScreenAPI">https://wiki.mozilla.org/Gecko:FullScreenAPI</a></li></ul></li>
+<li> make sure feedback is incorporated and FAQs written from
+<ul><li> <a rel="nofollow" class="external free" href="https://lists.whatwg.org/pipermail/whatwg-whatwg.org/2010-August/thread.html#27670">https://lists.whatwg.org/pipermail/whatwg-whatwg.org/2010-August/thread.html#27670</a></li>
+<li> <a rel="nofollow" class="external free" href="https://lists.whatwg.org/pipermail/whatwg-whatwg.org/2011-October/thread.html#33503">https://lists.whatwg.org/pipermail/whatwg-whatwg.org/2011-October/thread.html#33503</a></li></ul></li>
+<li> iterate based on feedback / implementer experience</li></ul>
+<h3><span class="mw-headline" id="WebAPI">WebAPI</span></h3>
+<h4><span class="mw-headline" id="ContactsAPI">ContactsAPI</span></h4>
+<ul><li> sync up with <a href="/User:Philikon" title="User:Philikon">User:Philikon</a> on <a href="/WebAPI/ContactsAPI" title="WebAPI/ContactsAPI">WebAPI/ContactsAPI</a> and <a href="/Talk:WebAPI/ContactsAPI" title="Talk:WebAPI/ContactsAPI">his additions and changes</a> (see also <a rel="nofollow" class="external text" href="https://github.com/philikon/webcontacts/tree/master/">his github</a>).
+<ul><li> converge PoCo vs vCard4/hCard4 difference</li>
+<li> fix erroneous singular vs plural property distinctions (in practice, and vCard4 updates, nearly all properties are plural, best to assume as much for all properties, and apply singular semantics at a higher level to the first item in a collection if necessary)</li>
+<li> simplify / minimize (hopefully eliminate) extra levels of API hierarchy (apparently from W3C Contacts API design)</li></ul></li></ul>
+<h2><span class="mw-headline" id="Web_Apps_Waiting_For">Web Apps Waiting For</span></h2>
+<p><b>(needs update - 2014-11-20)</b>
+</p><p>Tasks which are awaiting follow-ups from various standards bodies/lists. Re-ping as necessary to keep moving forward.
+</p>
+<h3><span class="mw-headline" id="CSS_Waiting_For">CSS Waiting For</span></h3>
+<h4><span class="mw-headline" id="CSS3_Backgrounds_and_Borders">CSS3 Backgrounds and Borders</span></h4>
+<p>Waiting for CR of <a rel="nofollow" class="external free" href="https://www.w3.org/TR/css3-background/">https://www.w3.org/TR/css3-background/</a>
+</p><p>And then: outstanding UI related issues:
+</p>
+<h5><span class="mw-headline" id="prefix_removal_from_-moz-border-radius">prefix removal from -moz-border-radius</span></h5>
+<p>Currently Mozilla's border-radius properties are prefixed with -moz- and the following bugs/issues are preventing us from removing the prefix:
+</p>
+<ul><li> <b>% values on border-radius.</b>  There is existing content (themes?) that depend on the legacy moz-border-radius implementation of&#160;% values that depend on the&#160;% of *width* in both dimensions.</li></ul>
+<ul><li> <b>clipping overflow and replaced elements.</b> We don't currently clip overflow hidden and replaced elements (e.g. img, video, canvas) to rounded corners.  We need to do to this for a proper/complete implementation that won't risk creating further legacy/backward compat problems.</li></ul>
+<p>Bugzilla bugs:
+</p>
+<ul><li> <a rel="nofollow" class="external text" href="https://bugzilla.mozilla.org/show_bug.cgi?id=431176">431176</a> -  (border-radius) Tracking bug for remaining issues with CSS3 border-radius</li>
+<li><a rel="nofollow" class="external text" href="https://bugzilla.mozilla.org/show_bug.cgi?id=451134">451134</a> -  change -moz-border-radius* properties to css3-background names</li></ul>
+<h2><span class="mw-headline" id="Social_and_Identity">Social and Identity</span></h2>
+<h3><span class="mw-headline" id="Related_Features">Related Features</span></h3>
+<ul><li> Context Menu
+<ul><li> see related: 2010-05-03 <a rel="nofollow" class="external text" href="https://web.archive.org/web/20101218115210/https://mozillalabs.com/jetpack/2010/05/03/context-menu-module-microformats/">mozillalabs.com/jetpack/2010/05/03/context-menu-module-microformats/</a> (Internet Archive link) The Context Menu Module &amp; Microformats] (JetPack)</li></ul></li>
+<li> ...</li></ul>
+<h3><span class="mw-headline" id="Standards_and_Communities">Standards and Communities</span></h3>
+<p>Standards and communities to engage with (recommended, grouped by related)
+</p><p>identity / profiles / contacts
+</p>
+<ul><li> <a href="/VCard4" title="VCard4">vCard4</a> (IETF vcarddav)</li>
+<li> <a href="/HCard" title="HCard" class="mw-redirect">hCard</a> (microformats.org)</li>
+<li> Portable Contacts</li>
+<li> RelMeAuth</li>
+<li> OpenID</li>
+<li> ...</li></ul>
+<p>social web
+</p>
+<ul><li> OAuth (including OAuth 2, xAuth)</li>
+<li> <a rel="nofollow" class="external text" href="https://activitystrea.ms">Activity Streams</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.w3.org/2005/Incubator/federatedsocialweb/">W3C Federated Social Web Incubator</a> (formerly: federatedsocialweb.net Federated Social Web)</li>
+<li> ...</li></ul>
+<p>communities
+</p>
+<ul><li> WhatWG
+<ul><li> <a rel="nofollow" class="external text" href="https://wiki.whatwg.org/index.php?title=Special:RecentChanges&amp;days=183&amp;from=">WHATWG wiki changes</a> - delete/block spam</li></ul></li></ul>
+<h2><span class="mw-headline" id="Events">Events</span></h2>
+<p>See the <a href="/Events" title="Events">Events</a> page for event that I'm speaking or participating in accordingly.
+</p>
+<h2><span class="mw-headline" id="Web_Standards_Coordination">Web Standards Coordination</span></h2>
+<p>There are a lot of people at Mozilla working with a variety of different standards bodies. With Arun's recent departure, it's more clear than ever that we need to at least have some sort of a directory of standards organizations (and sub-orgs like working groups) listing who at Mozilla is working with each.
+</p>
+<ul><li> <a href="/Standards" title="Standards">Standards</a> - who is working on what standards in what organizations</li></ul>
+<ul><li> W3C Process. Work on improving W3C processes:
+<ul><li> <a rel="nofollow" class="external free" href="https://wiki.csswg.org/spec/process">https://wiki.csswg.org/spec/process</a> (proposal for improving CSSWG processes)</li>
+<li> 2012-02-16 <a rel="nofollow" class="external text" href="https://www.w3.org/2012/02/16-ab-whiteboard">W3C AB Whiteboard on Agility Issues</a> (Member only link, notes of my meeting with the W3C AC on improving proces)</li></ul></li></ul>
+<h2><span class="mw-headline" id="See_Also">See Also</span></h2>
+<ul><li> <a href="/Projects/Sustainability" title="Projects/Sustainability">Projects/Sustainability</a></li></ul>
+<h2><span class="mw-headline" id="Reference">Reference</span></h2>
+<h3><span class="mw-headline" id="Pages_2">Pages</span></h3>
+<p>See <a href="/User:Tantek#pages" title="User:Tantek">reference pages created</a>
+</p>
+<h3><span class="mw-headline" id="Historical">Historical</span></h3>
+<h4><span class="mw-headline" id="Former_standards_groups">Former standards groups</span></h4>
+<p>More in <a href="/index.php?title=Standards/Emeritus&amp;action=edit&amp;redlink=1" class="new" title="Standards/Emeritus (page does not exist)">Standards/Emeritus</a>.
+</p>
+<ul><li> <a href="/Standards/emeritus#Federated_Social_Web_Community_Group" title="Standards/emeritus">FedSocWeb</a></li>
+<li> <a href="/Standards/emeritus#Social_Web_Working_Group" title="Standards/emeritus">Social Web Working Group</a>)</li>
+<li> <a href="/Standards/emeritus#System_Applications_Working_Group" title="Standards/emeritus">SysApps WG</a> </li></ul>
+<h4><span class="mw-headline" id="Former_co-workers">Former co-workers</span></h4>
+<p>See <a href="/User:Tantek#emeritus" title="User:Tantek">User:Tantek#emeritus</a>.
+</p>
+<h3><span class="mw-headline" id="Done">Done</span></h3>
+<p>Completed tasks, projects, events that have no further related active work items. Will likely move to its own page as it grows, in which case, I'll probably just keep *recently* finished items here and regularly archive them.
+</p>
+<h4><span class="mw-headline" id="Annual_Summaries">Annual Summaries</span></h4>
+<h5><span class="mw-headline" id="2011-06-15_-_2012-06-15">2011-06-15 - 2012-06-15</span></h5>
+<ul><li> 2011-06 indiewebcamp.com - Created &amp; co-organized the <a href="/IndieWebCamp" title="IndieWebCamp">IndieWebCamp</a> 2011 event and ongoing community to empower users to own and control their web identities and content.</li>
+<li> 2011-11 W3C TPAC BarCamp - ran first ever W3C TPAC BarCamp day - to great reviews (best TPAC plenary day ever).</li>
+<li> 2011-11 <a href="/HTML5" title="HTML5">HTML5</a> &lt;time&gt; - restored the &lt;time&gt; element in HTML5, enhanced it to fit author needs.</li>
+<li> CSS3-UI LCWD2 - edited/published an updated CSS3 User Interface Module second Last Call Working Draft.</li>
+<li> 2012-02 vendor prefixes - kicked off a rational/scientific discussion of CSS -webkit- vendor prefix issue in the W3C CSS Working Group, and also drove it internally at Mozilla. See: <a href="/Platform/Layout/CSS_Compatibility" title="Platform/Layout/CSS Compatibility">Platform/Layout/CSS_Compatibility</a> for details.</li>
+<li> W3C HTML/CSS/WebApps/AB - represented Mozilla in HTML &amp; CSS WG, WebApps &amp; Advisory Board observer/expert face-to-face meetings</li>
+<li> Invited Speaker - invited to and spoke at numerous conferences on behalf of Mozilla</li>
+<li> <a href="/WebAPI/ContactsAPI" title="WebAPI/ContactsAPI">WebAPI/ContactsAPI</a> - wrote v1 spec for <a href="/WebAPI/ContactsAPI" title="WebAPI/ContactsAPI">WebAPI/ContactsAPI</a>, worked with dev to implement.</li></ul>
+<h4><span class="mw-headline" id="Past_Mozilla_Projects">Past Mozilla Projects</span></h4>
+<p>Past Mozilla-specific projects.
+</p>
+<ul><li> <a href="/WebAPI/ContactsAPI" title="WebAPI/ContactsAPI">ContactsAPI</a> (editor)</li>
+<li> Web Literacy related (~2011-2013)
+<ul><li> Thimble HTML+microformats lessons for Webmaker</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/tantek/make.mozilla.org">make.mozilla.org contributions</a></li>
+<li> Mozilla Hands-on Brown Bags on how to edit wikis</li></ul></li></ul>
+<h4><span class="mw-headline" id="Resolved_HTML5_improvements_and_spec_issues">Resolved HTML5 improvements and spec issues</span></h4>
+<h5><span class="mw-headline" id="reject_longdesc">reject longdesc</span></h5>
+<p>moved to: <a href="/HTML5/img#reject_longdesc" title="HTML5/img" class="mw-redirect">HTML5/img</a>
+</p>
+<h5><span class="mw-headline" id="allow_date_only_on_del_ins_datetime_attribute">allow date only on del ins datetime attribute</span></h5>
+<ul><li> moved to <a href="/HTML5/del#datetime_should_take_date" title="HTML5/del" class="mw-redirect">HTML5/del</a>.</li></ul>
+<h4><span class="mw-headline" id="CSS">CSS</span></h4>
+<h5><span class="mw-headline" id="CSS_Style_Attributes_2">CSS Style Attributes</span></h5>
+<ul><li> CSS Styling Attribute - achieved CR!</li></ul>
+<dl><dt>latest published draft (CR)</dt>
+<dd><a rel="nofollow" class="external free" href="https://www.w3.org/TR/css-style-attr/">https://www.w3.org/TR/css-style-attr/</a></dd>
+<dt>latest development / in progress draft</dt>
+<dd><a rel="nofollow" class="external free" href="https://dev.w3.org/csswg/css-style-attr/">https://dev.w3.org/csswg/css-style-attr/</a></dd>
+<dt>spec source (for editing)</dt>
+<dd><a rel="nofollow" class="external free" href="https://dev.w3.org/csswg/css-style-attr/Overview.src.html">https://dev.w3.org/csswg/css-style-attr/Overview.src.html</a></dd>
+<dt>test suite</dt>
+<dd>TBD</dd>
+<dt>implementation reports of the test suite</dt>
+<dd>TBD</dd>
+<dt>issues list for the current draft</dt>
+<dd><a rel="nofollow" class="external free" href="https://wiki.csswg.org/spec/css-style-attr">https://wiki.csswg.org/spec/css-style-attr</a></dd></dl>
+<ul><li> Hixie update reference to CSS Style Attribute draft in <a rel="nofollow" class="external text" href="https://www.whatwg.org/specs/web-apps/current-work/multipage/references.html#references">HTML5 References</a>
+<ul><li> emailed 2011-080</li>
+<li> fixed 2011-165</li></ul></li></ul>
+<h5><span class="mw-headline" id="CSS3_Color">CSS3 Color</span></h5>
+<ul><li> CSS3 Color draft - achieved PR!</li></ul>
+<dl><dt>latest published draft</dt>
+<dd><a rel="nofollow" class="external free" href="https://www.w3.org/TR/css3-color/">https://www.w3.org/TR/css3-color/</a></dd>
+<dt>latest development / in progress draft</dt>
+<dd><a rel="nofollow" class="external free" href="https://dev.w3.org/csswg/css3-color/">https://dev.w3.org/csswg/css3-color/</a></dd>
+<dt>spec source (for editing)</dt>
+<dd><a rel="nofollow" class="external free" href="https://dev.w3.org/csswg/css3-color/Overview.src.html">https://dev.w3.org/csswg/css3-color/Overview.src.html</a></dd>
+<dt>test suite</dt>
+<dd><a rel="nofollow" class="external free" href="https://www.w3.org/Style/CSS/Test/CSS3/Color/20080721/">https://www.w3.org/Style/CSS/Test/CSS3/Color/20080721/</a></dd>
+<dt>implementation reports of the test suite</dt>
+<dd><a rel="nofollow" class="external free" href="https://www.w3.org/Style/CSS/Test/CSS3/Color/current/reports/">https://www.w3.org/Style/CSS/Test/CSS3/Color/current/reports/</a></dd>
+<dt>issues list for the current last call</dt>
+<dd><a rel="nofollow" class="external free" href="https://wiki.csswg.org/spec/css3-color">https://wiki.csswg.org/spec/css3-color</a></dd></dl>
+<h5><span class="mw-headline" id="CSS3_UI_2">CSS3 UI</span></h5>
+<p>Updated <a rel="nofollow" class="external text" href="https://dev.w3.org/csswg/css3-ui/">CSS3 UI Editor's draft</a> with:
+</p>
+<h6><span class="mw-headline" id="pointer-events">pointer-events</span></h6>
+<ul><li> add <b>pointer-events</b> A way of specifying whether an element is opaque to pointer events (and receives them) or is transparent to them (letting them get handled by what's underneath.
+<ul><li> CSSWG wiki: <a rel="nofollow" class="external free" href="https://wiki.csswg.org/ideas/pointer-events">https://wiki.csswg.org/ideas/pointer-events</a></li>
+<li> <a rel="nofollow" class="external free" href="https://developer.mozilla.org/en/css/pointer-events">https://developer.mozilla.org/en/css/pointer-events</a> - Mozilla spec
+<ul><li> shipped in Firefox 3.6 - demo: <a rel="nofollow" class="external text" href="https://web.archive.org/web/20120410031737/http://demos.hacks.mozilla.org/openweb/pointer-events">demos.hacks.mozilla.org/openweb/pointer-events</a> (Internet Archive link) <a rel="nofollow" class="external text" href="https://bugzilla.mozilla.org/show_bug.cgi?id=380573">bug 380573</a>.</li>
+<li> See also SVG version: <a rel="nofollow" class="external free" href="https://wiki.mozilla.org/SVG:Pointer-events">https://wiki.mozilla.org/SVG:Pointer-events</a></li></ul></li>
+<li> <a rel="nofollow" class="external free" href="https://webkit.org/specs/PointerEventsProperty.html">https://webkit.org/specs/PointerEventsProperty.html</a> - Webkit spec
+<ul><li> shipped in Safari 4.0 (<a rel="nofollow" class="external text" href="https://bugs.webkit.org/show_bug.cgi?id=11395">bug 11395</a>)</li></ul></li>
+<li> <a rel="nofollow" class="external text" href="https://web.archive.org/web/20130830194359/http://people.opera.com/lstorset/TR/pointer-events/">people.opera.com/lstorset/TR/pointer-events</a> (Internet Archive link) Opera proposal
+<ul><li> <a rel="nofollow" class="external text" href="https://lists.w3.org/Archives/Public/www-style/2010Aug/0407.html">email proposing</a></li>
+<li> <a rel="nofollow" class="external text" href="https://web.archive.org/web/20130830194402/http://people.opera.com/lstorset/TR/pointer-events/ED-pointer-events-20100820.html">people.opera.com/lstorset/TR/pointer-events/ED-pointer-events-20100820.html</a> (Internet Archive link) CSS Hit Testing</li></ul></li>
+<li> related: <a href="/SVG:Pointer-events" title="SVG:Pointer-events">SVG:Pointer-events</a></li>
+<li> key issue: precisely define default behavior (auto or visible etc.)</li>
+<li> pointer events should be defined to affect:
+<ul><li> application of cursor property</li>
+<li>&#160;:hover</li>
+<li> mouseevents</li>
+<li> touchevents</li>
+<li> general concept of hit-testing so that elementFromPoint can be defined in terms of it (feedback fron annevk).</li></ul></li></ul></li></ul>
+<h6><span class="mw-headline" id="text-overflow">text-overflow</span></h6>
+<ul><li> <b>text-overflow</b>. incorporated '<a rel="nofollow" class="external text" href="https://developer.mozilla.org/En/CSS/text-overflow">text-overflow</a>', since it's more a UI/overflow thing than a typesetting thing. There are at least 3 implementations (IE, WebKit, Opera), and has a bug against Firefox: <a rel="nofollow" class="external text" href="https://bugzilla.mozilla.org/show_bug.cgi?id=312156">312156</a>
+<ul><li> Wanted for post-FF4; mats will be working on it, needs spec</li>
+<li> W3C: <a rel="nofollow" class="external free" href="https://dev.w3.org/csswg/css3-text/#text-overflow">https://dev.w3.org/csswg/css3-text/#text-overflow</a>
+<ul><li> <a rel="nofollow" class="external free" href="https://www.w3.org/blog/CSS/2009/11/25/resolutions_84">https://www.w3.org/blog/CSS/2009/11/25/resolutions_84</a> for bidi discussions</li></ul></li>
+<li> DevMo: <a rel="nofollow" class="external free" href="https://developer.mozilla.org/En/CSS/text-overflow">https://developer.mozilla.org/En/CSS/text-overflow</a></li>
+<li> Webkit: <a rel="nofollow" class="external free" href="https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/doc/uid/TP30001266-SW24">https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/doc/uid/TP30001266-SW24</a></li>
+<li> Microsoft/IE: <a rel="nofollow" class="external text" href="https://web.archive.org/web/20130112221116/http://msdn.microsoft.com/en-us/library/ms531174(VS.85).aspx">msdn.microsoft.com/en-us/library/ms531174(VS.85).aspx</a> (Internet Archive link)</li>
+<li> write test cases for 'ellipsis' and 'clip' (default value) and confirm cross-browser support.</li>
+<li> Details that <a rel="nofollow" class="external text" href="https://bugzilla.mozilla.org/show_bug.cgi?id=312156#c21">RoC wants</a>:
+<ul><li> What style the ellipsis has (font, color, etc) ... does it come from the text or does it come from the element with text-overflow on it?
+<ul><li> from the element with text-overflow on it, this is what WebKit and Opera do</li>
+<li> need test case to see what Webkit, IE, Opera do</li></ul></li>
+<li> does text-overflow inherit by default or not?
+<ul><li> Inherited: no</li></ul></li>
+<li> how does it work with text-align:right, does the ellipsis go on the left?
+<ul><li> text-align does not affect text-overflow</li></ul></li>
+<li> how does it work with bidi text, e.g. a line of Hebrew?
+<ul><li> it is rendered according to the 'direction' of the element.</li></ul></li>
+<li> What about mixed bidi text e.g. English followed by Hebrew? I'm particuarly interested in the case of an LTR word followed by an RTL word that doesn't fit, e.g. <pre>english WERBEH</pre>where only "english HEB" fits, where should the ellipsis go?
+<ul><li> "english BEH…"</li></ul></li>
+<li> Can bidi text make the ellipsis appear at the beginning of the line? 
+<ul><li> bidi text? no. howevrer, setting 'direction:rtl' on the element will cause any ellipses to be drawn on the left side.</li></ul></li>
+<li> what happens if there's replaced content near the end of the line, say an image?
+<ul><li> the image would wrap to the next line. but if there is white-space:nowrap, then...</li></ul></li>
+<li> Do you get the ellipsis or does the image overflow? 
+<ul><li> Images never cause ellipsis (in current implementations) per <a rel="nofollow" class="external free" href="https://bugzilla.mozilla.org/show_bug.cgi?id=312156#c28">https://bugzilla.mozilla.org/show_bug.cgi?id=312156#c28</a>
+<ul><li> Update: Images treated as atomic inline-display elements, which are treated as characters.</li></ul></li></ul></li>
+<li> If an ellipsis, where does the ellipsis go?
+<ul><li> it goes instead of the image and any text you have to remove in order to make the ellipsis fit.</li></ul></li></ul></li>
+<li> add <img src="https://farm4.static.flickr.com/3635/3571013052_d419aff822_s.jpg" alt="3571013052_d419aff822_s.jpg"/> CSS IS AWESOME examples/tests to the spec</li>
+<li> capture issues and undefined aspects from fantasai/RoC emails as of 2011-031.</li>
+<li> clarify text per emails from fantasai/RoC
+<ul><li> the effect of text-overflow:ellipsis on lines whose line boxes are not direct children of the block box(es) with text-overflow.</li>
+<li> the behavior of text-overflow:ellipsis on a block with 'overflow' of 'scroll' (no good interop, ideal behavior documented, needs screenshots)
+<ul><li> testcase from RoC: <a rel="nofollow" class="external free" href="https://lists.w3.org/Archives/Public/www-style/2011Jan/att-0669/test.html">https://lists.w3.org/Archives/Public/www-style/2011Jan/att-0669/test.html</a></li>
+<li> Safari scrolls the ellipsis ... and doesn't reveal any additional text - this doesn't make sense to me (RoC, nor me Tantek) as a user. If I scroll I should get to see the rest of the content. (Agreed)</li>
+<li> Opera scrolls the text into view until the you can see the end of the text at which point the block scrolls no further (this is ideal beahvior -t). No ellipsis is display on the otherside of the block when you start scrolling characters off the start edge.
+<ul><li> This seems like the best behavior so far, with the exception that as a user (and developer) I'd expect to see the text that scrolled off the start of the block get replaced by an ellipsis rather than simply clipped (agreed precisely with RoC on this and have specified this expected behavior as a SHOULD)</li></ul></li>
+<li> Testing IE9 in standards mode showed same behavior as Safari for scrolling+ellipsis.</li></ul></li>
+<li> behavior of text-overflow:ellipsis on lines containing replaced elements - they're treated as large characters.</li>
+<li> interaction of text-overflow:ellipsis with event handling - does not affect events or layout.</li></ul></li>
+<li> add string and 2-value syntax per CSS WG resolution, but noted as at-risk.</li></ul></li></ul>
+<h6><span class="mw-headline" id="ime-mode">ime-mode</span></h6>
+<ul><li> add <i>ime-mode</i> per Mozilla definitions
+<ul><li> <a rel="nofollow" class="external free" href="https://developer.mozilla.org/en/CSS/ime-mode">https://developer.mozilla.org/en/CSS/ime-mode</a></li>
+<li> It is implemented unprefixed in FF3+ and WinIE5+</li></ul></li></ul>
+<h6><span class="mw-headline" id="box-sizing_padding-box">box-sizing padding-box</span></h6>
+<ul><li> add <i>box-sizing: padding-box</i> per Mozilla definitions</li></ul>
+<h5><span class="mw-headline" id="CSS3_UI_LCWD2">CSS3 UI LCWD2</span></h5>
+<p>publish new CSS3 UI LCWD with new at-risk features based on above implementation evidence (or imminent implementation - kept at risk), and all known outstanding issues resolved. (back to last call because we added features after the CR, and moved some previous features to at-risk).
+</p>
+<h4><span class="mw-headline" id="Completed_Events">Completed Events</span></h4>
+<p>For more details on completed events, see the main <a href="/Events" title="Events">Events</a> page and its archives.
+</p>
+<h5><span class="mw-headline" id="Events_2010">Events 2010</span></h5>
+<ul><li> June 1-3 Open Source Bridge, Portland, OR</li>
+<li> June 28-30 Voices That Matter Web Design in SF <a rel="nofollow" class="external text" href="https://web.archive.org/web/20101012000437/http://www.voicesthatmatter.com/webdesign2010/">www.voicesthatmatter.com/webdesign2010</a> (Internet Archive link)
+<ul><li> <a rel="nofollow" class="external text" href="https://www.flickr.com/photos/bgavin/sets/72157624312745705/">Flickr photoset</a>: <a rel="nofollow" class="external text" href="https://www.flickr.com/photos/bgavin/4768326845/in/album-72157624312745705/">1</a>, <a rel="nofollow" class="external text" href="https://www.flickr.com/photos/bgavin/4768329629/in/album-72157624312745705/">2</a>, <a rel="nofollow" class="external text" href="https://www.flickr.com/photos/bgavin/4768983440/in/album-72157624312745705/">3</a></li></ul></li>
+<li> July 6-10 <a href="/Summit2010" title="Summit2010">Mozilla Summit</a> in Whistler, Canada.</li>
+<li> July 13 <a rel="nofollow" class="external text" href="https://web.archive.org/web/20100815062956/http://www.realestateconnect.com/program/">www.realestateconnect.com/program/</a> (later moved to <a rel="nofollow" class="external text" href="https://web.archive.org/web/20101025001531/http://www.realestateconnect.com/sf10/program/">www.realestateconnect.com/sf10/program/</a>, both Internet Archive links). Real Estate Connect San Francisco. (Original version required a click on "Workshops&#160;»", search for "HTML5") at Hilton San Francisco Union Square, 333 O'Farrell Street, San Francisco, California
+<ul><li> participating in WORKSHOP: ConnectTech / HTML5 Is Coming, Are You Ready?</li></ul></li>
+<li> July 17 <a rel="nofollow" class="external text" href="https://web.archive.org/web/20100705145947/http://openwebcamp.org:80/">openwebcamp.org</a> (Internet Archive link) OpenWebCamp II at Stanford</li>
+<li> July 18 <a rel="nofollow" class="external text" href="https://web.archive.org/web/20100721235242/http://federatedsocialweb.net:80/wiki/Main_Page">federatedsocialweb.net/wiki/Main_Page</a> (Internet Archive link) Federated social web summit (<a rel="nofollow" class="external text" href="https://web.archive.org/web/20100726175723/http://federatedsocialweb.net/wiki/Schedule">federatedsocialweb.net/wiki/Schedule</a> — Internet Archive link for the schedule)
+<ul><li> more info: <a rel="nofollow" class="external text" href="https://web.archive.org/web/20100814132804/http://status.net/2010/06/28/federated-social-web-summit-2010-announced">status.net/2010/06/28/federated-social-web-summit-2010-announced</a> (Internet Archive link) announcement, <a rel="nofollow" class="external text" href="https://web.archive.org/web/20100809183536/http://federatedsocialweb.net/wiki/FedAll2010/Invitations">federatedsocialweb.net/wiki/FedAll2010/Invitations</a> (Internet Archive link for attendees)</li></ul></li>
+<li> August 23-25 <a rel="nofollow" class="external text" href="https://www.w3.org/Style/Group/2010/Oslo">W3C CSS WG f2f in Oslo</a></li>
+<li> September 1-3 <a rel="nofollow" class="external text" href="https://2010.dConstruct.org/">dConstruct in Brighton</a> - web design and development</li>
+<li> September 9 <a rel="nofollow" class="external text" href="https://web.archive.org/web/20110824235723/http://plancast.com/p/27av">plancast.com/p/27av</a> (Internet Archive link) MozPub HTML5 meet, with Tantek Çelik - gather input for HTML5 improvements</li>
+<li> September 21-25 <a rel="nofollow" class="external text" href="https://web.archive.org/web/20101118070934/http://usa10.webdirections.org:80/">usa10.webdirections.org</a> (Internet Archive link) Web Directions USA - represent Mozilla in Browsers panel, gather input for HTML5, CSS3. Atlanta, GA</li>
+<li> 2010-10-01...2010-10-02 Open Video Conference, gather input for HTML5 video/media etc.</li>
+<li> 2010-10-03 OVC hack labs - gather input for HTML5 video/media etc.</li>
+<li> 2010-10-08...2010-10-09 Open Web Foo - discuss/promote "Open Web" ideals with Mitchell</li>
+<li> 2010-10-21...2010-10-22 Front Trends conference - speak on HTML5, gather HTML5 input</li>
+<li> 2010-11-01 OpenID Technology Summit - spearhead identity/profile format convergence</li>
+<li> 2010-11-08...2010-11-10 YUIConf - speak on HTML5, web future panel, gather input</li></ul>
+<p>For more, see: <a href="/Events/2010" title="Events/2010">Events/2010</a>
+</p>
+<h5><span class="mw-headline" id="Events_2011">Events 2011</span></h5>
+<ul><li> 2011-03-07...2011-03-09 CSS Working Group March 2011 meeting</li>
+<li> 2011-03-10...2011-03-20 SXSW - spoke on microformats, gather input for HTML5</li>
+<li> 2011-03-28...2011-03-31 Web 2.0 Expo - spoke on HTML5, gather input.</li>
+<li> 2011-04-10 LinkedGov Data HackCamp - discussed role of microformats/browser in open data</li>
+<li> 2011-04-13...2011-04-15 UX London - gather lots of CSS3-UI input</li>
+<li> 2011-04-19...2011-04-21 Where 2.0 - gather input on GeoLocation additions, browser support for geo apps</li>
+<li> 2011-04-22 WhereCampSF SF 2011 - gather input on browser support for geo apps</li>
+<li> ...</li>
+<li> 2011-07-16 <a rel="nofollow" class="external text" href="https://web.archive.org/web/20110922113459/http://www.openwebcamp.org/">Open Web Camp III</a> (Internet Archive link) - at Stanford, California, United States. 
+<ul><li> speaker - on CASSIS. See also <a rel="nofollow" class="external text" href="https://web.archive.org/web/20110904001618/http://openwebcamp.org/attendees">attendees</a> (Internet Archive link)</li></ul></li></ul>
+<p>For more, see: <a href="/Events/2011" title="Events/2011">Events/2011</a>
+</p>
+<h5><span class="mw-headline" id="Events_2012">Events 2012</span></h5>
+<p>See: <a href="/Events/2012" title="Events/2012">Events/2012</a>
+</p>
+<ul><li> July 14 <a rel="nofollow" class="external text" href="https://web.archive.org/web/20130425064142/http://openwebcamp.org/">openwebcamp.org</a>  (Internet Archive link) OpenWebCamp IV at San Jose, California
+<ul><li> <a rel="nofollow" class="external text" href="https://web.archive.org/web/20130516145144/http://openwebcamp.org/events/56">HTML5 and microformats 2 - the next evolutionary step for web data</a></li></ul></li></ul>
+<h5><span class="mw-headline" id="Events_2013">Events 2013</span></h5>
+<p>See: <a href="/Events/2013" title="Events/2013">Events/2013</a>
+</p>
+<h5><span class="mw-headline" id="Events_2014">Events 2014</span></h5>
+<p>See: <a href="/Events/2014" title="Events/2014">Events/2014</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20230905061342
+Cache expiry: 86400
+Dynamic content: false
+[SMW] In‐text annotation parser time: 0.001 seconds
+CPU time usage: 0.068 seconds
+Real time usage: 0.073 seconds
+Preprocessor visited node count: 488/1000000
+Preprocessor generated node count: 644/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:35698-0!*!0!!en!*!* and timestamp 20230905061342 and revision id 1245923
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://wiki.mozilla.org/index.php?title=Tantek-Mozilla-Projects&amp;oldid=1245923">https://wiki.mozilla.org/index.php?title=Tantek-Mozilla-Projects&amp;oldid=1245923</a>"					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-login"><a href="/index.php?title=Special:UserLogin&amp;returnto=Tantek-Mozilla-Projects" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li><li id="pt-createaccount"><a href="/Special:RequestAccount" title="You are encouraged to create an account and log in; however, it is not mandatory">Request account</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="/Tantek-Mozilla-Projects"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="/index.php?title=Talk:Tantek-Mozilla-Projects&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="/Tantek-Mozilla-Projects" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="/index.php?title=Tantek-Mozilla-Projects&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="/index.php?title=Tantek-Mozilla-Projects&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search" title="Search MozillaWiki [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="/Main_Page"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-Product-releases"><a href="/Releases">Product releases</a></li><li id="n-newpages"><a href="/Special:NewPages">New pages</a></li><li id="n-recentchanges"><a href="/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-Recent-uploads"><a href="/Special:NewFiles">Recent uploads</a></li><li id="n-randompage"><a href="/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-Help"><a href="/MozillaWiki:Help">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-How_to_Contribute' aria-labelledby='p-How_to_Contribute-label'>
+			<h3 id='p-How_to_Contribute-label'>How to Contribute</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-All-hands-meeting"><a href="/WeeklyUpdates">All-hands meeting</a></li><li id="n-Other-meetings"><a href="/Community_Calendar">Other meetings</a></li><li id="n-Contribute-to-Mozilla"><a href="/Contribute">Contribute to Mozilla</a></li><li id="n-Mozilla-Reps"><a href="/ReMo">Mozilla Reps</a></li><li id="n-Community-Portal"><a href="//community.mozilla.org" rel="nofollow">Community Portal</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-MozillaWiki' aria-labelledby='p-MozillaWiki-label'>
+			<h3 id='p-MozillaWiki-label'>MozillaWiki</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-About"><a href="/MozillaWiki:About">About</a></li><li id="n-Team"><a href="/MozillaWiki:Team">Team</a></li><li id="n-Policies"><a href="/MozillaWiki:Policies">Policies</a></li><li id="n-Report-a-wiki-bug"><a href="//bugzilla.mozilla.org/enter_bug.cgi?product=Websites&amp;component=wiki.mozilla.org" rel="nofollow">Report a wiki bug</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-Around_Mozilla' aria-labelledby='p-Around_Mozilla-label'>
+			<h3 id='p-Around_Mozilla-label'>Around Mozilla</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-Mozilla-Support"><a href="//support.mozilla.org/" rel="nofollow">Mozilla Support</a></li><li id="n-Mozilla-Developer-Network"><a href="//developer.mozilla.org/" rel="nofollow">Mozilla Developer Network</a></li><li id="n-Planet-Mozilla"><a href="//planet.mozilla.org/" rel="nofollow">Planet Mozilla</a></li><li id="n-Mozilla-Blog"><a href="//blog.mozilla.org/" rel="nofollow">Mozilla Blog</a></li><li id="n-Research"><a href="//www.mozilla.org/research/" rel="nofollow">Research</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="/Special:WhatLinksHere/Tantek-Mozilla-Projects" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="/Special:RecentChangesLinked/Tantek-Mozilla-Projects" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="/index.php?title=Tantek-Mozilla-Projects&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="/index.php?title=Tantek-Mozilla-Projects&amp;oldid=1245923" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="/index.php?title=Tantek-Mozilla-Projects&amp;action=info" title="More information about this page">Page information</a></li><li id="t-importfrometherpadlink"><a href="/Special:ImportFromEtherpad" rel="importfrometherpad-link">Import an Etherpad</a></li><li id="t-smwbrowselink"><a href="/Special:Browse/:Tantek-2DMozilla-2DProjects" rel="search">Browse properties</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 25 March 2023, at 04:04.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="/MozillaWiki:Privacy_policy" title="MozillaWiki:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="/MozillaWiki:About" title="MozillaWiki:About">About MozillaWiki</a></li>
+											<li id="footer-places-mobileview"><a href="https://m.wiki.mozilla.org/index.php?title=Tantek-Mozilla-Projects&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="//www.mediawiki.org/"><img src="/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a><a href="https://www.semantic-mediawiki.org/wiki/Semantic_MediaWiki"><img src="/extensions/SemanticMediaWiki/includes/../res/images/smw_button.png" alt="Powered by Semantic MediaWiki" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.ImportFromEtherpad.main.init"]);});</script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35433268-22', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+
+</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":79});});</script>
+	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"4c203d12f7","applicationID":"149389314","transactionName":"MVRbZkFTD0MCBkJYXAgeeFFHWw5eTARVRVoJXxZEWlcW","queueTime":0,"applicationTime":86,"atts":"HRNYEAlJHE0=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<rss version="2.0"  xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>meyerweb.com: Excuse of the Day</title>
+    <link>http://www.meyerweb.com/feeds/excuse/</link>
+    <description>The excuse of the day.  Handy for tech support representatives.</description>
+    <language>en-US</language>
+    <copyright></copyright>
+    <dc:creator>Eric A. Meyer</dc:creator>
+    <docs>http://backend.userland.com/rss</docs>
+    <pubDate>06 Sep 2023 00:00:01 +0000</pubDate>
+    <item>
+      <title>The Excuse of the Day for 27 Aug 2023 is...</title>
+      <description>ozone depletion</description>
+      <content:encoded>ozone depletion</content:encoded>
+      <pubDate>27 Aug 2023 00:00:01 +0000</pubDate>
+    </item>
+    <item>
+      <title>The Excuse of the Day for 28 Aug 2023 is...</title>
+      <description>lawyers</description>
+      <content:encoded>lawyers</content:encoded>
+      <pubDate>28 Aug 2023 00:00:01 +0000</pubDate>
+    </item>
+    <item>
+      <title>The Excuse of the Day for 29 Aug 2023 is...</title>
+      <description>Communism</description>
+      <content:encoded>Communism</content:encoded>
+      <pubDate>29 Aug 2023 00:00:01 +0000</pubDate>
+    </item>
+    <item>
+      <title>The Excuse of the Day for 30 Aug 2023 is...</title>
+      <description>a misplaced curly bracket</description>
+      <content:encoded>a misplaced curly bracket</content:encoded>
+      <pubDate>30 Aug 2023 00:00:01 +0000</pubDate>
+    </item>
+    <item>
+      <title>The Excuse of the Day for 31 Aug 2023 is...</title>
+      <description>a squirrel chewed through the cables</description>
+      <content:encoded>a squirrel chewed through the cables</content:encoded>
+      <pubDate>31 Aug 2023 00:00:01 +0000</pubDate>
+    </item>
+    <item>
+      <title>The Excuse of the Day for 01 Sep 2023 is...</title>
+      <description>seasonal packet migrations</description>
+      <content:encoded>seasonal packet migrations</content:encoded>
+      <pubDate>01 Sep 2023 00:00:01 +0000</pubDate>
+    </item>
+    <item>
+      <title>The Excuse of the Day for 02 Sep 2023 is...</title>
+      <description>the Internet is full</description>
+      <content:encoded>the Internet is full</content:encoded>
+      <pubDate>02 Sep 2023 00:00:01 +0000</pubDate>
+    </item>
+    <item>
+      <title>The Excuse of the Day for 03 Sep 2023 is...</title>
+      <description>crazed physicians</description>
+      <content:encoded>crazed physicians</content:encoded>
+      <pubDate>03 Sep 2023 00:00:01 +0000</pubDate>
+    </item>
+    <item>
+      <title>The Excuse of the Day for 04 Sep 2023 is...</title>
+      <description>melting ice caps</description>
+      <content:encoded>melting ice caps</content:encoded>
+      <pubDate>04 Sep 2023 00:00:01 +0000</pubDate>
+    </item>
+    <item>
+      <title>The Excuse of the Day for 05 Sep 2023 is...</title>
+      <description>inaccurate block filters</description>
+      <content:encoded>inaccurate block filters</content:encoded>
+      <pubDate>05 Sep 2023 00:00:01 +0000</pubDate>
+    </item>
+    <item>
+      <title>The Excuse of the Day for 06 Sep 2023 is...</title>
+      <description>ozone depletion</description>
+      <content:encoded>ozone depletion</content:encoded>
+      <pubDate>06 Sep 2023 00:00:01 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

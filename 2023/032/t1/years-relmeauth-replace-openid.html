@@ -1,0 +1,172 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" />
+<title>13 years ago today: created #RelMeAuth with @progrium.com, to replace OpenID 1&amp;2 for *reasons*
+
+* modest proposal: authentication using domain as identity, rel=me link to OAuth profile with rel=me link back^1
+* @progrium.com suggested RelMeAuth name^2 
+* I agreed, and wrote up a draft algorithm^3
+
+All on the same day. A few months later I wrote it up as a draft spec:
+* https://microformats.org/wiki/RelMeAuth (could use some updates)
+More updates and discussion:
+* https://indieweb.org/RelMeAuth
+
+See those links for RelMeAuth implementations in:
+* PHP, Python, Node, Ruby, Go
+
+
+RelMeAuth is simpler for both publishers &amp; parsers (consuming code) than OpenID.
+
+There are now more sites that support RelMeAuth (and the complementary IndieAuth) than OpenID (which is largely abandoned^4).
+
+
+And today, @Github.com rolled out support for multiple rel=me profile links!^5
+
+This means you can now use @Github.com’s OAuth (and their multifactor login etc.) to authenticate as your own domain via RelMeAuth on even more services.
+
+E.g. see my profile https://tantek.com/github (not a typo^6). The left sidebar links to my personal site, Twitter, and https://micro.blog/t all with rel=me markup.
+
+
+This is day 26 of #100DaysOfIndieWeb #100Days
+
+← Day 25: https://tantek.com/2023/029/t1/indieweb-beyond-blogging
+→ Day 27: https://tantek.com/2023/033/t1/twitter-api-log-in-web-sign-in-relmeauth
+
+
+^1 https://tantek.com/2010/032/t5/modest-proposal-authentication-oauth-twitter-rel-me
+^2 https://twitter.com/progrium/status/8521001762 
+^3 https://tantek.com/2010/032/t6/relmeauth-oauth-rel-me-auto-fallback-authentication
+^4 OpenID 1&amp;2 were abandoned for OIDC (OpenID Connect), a supposed update/replacement, despite dropping the goal of domain as identity, the use-case for OpenID in the first place, so the #IndieWeb picked up that use-case with RelMeAuth &amp; IndieAuth.
+^5 https://web.archive.org/web/20230314223136/https://hachyderm.io/@nova/109790530971147702
+^6 https://tantek.com/2022/144/t1/redirected-github-ownyourlinks - Tantek</title>
+<link rel="icon" href="/logo.jpg" />
+<meta name="viewport" content="initial-scale=0.7"/>
+<link rel="webmention" href="//webmention.io/tantek.com/webmention" />
+<style type="text/css">/*<![CDATA[*/ 
+@import "/2023/simple.css";
+form.search { width:34%; float:right; white-space:nowrap; font-size:1.3em; text-align:right }
+input,button { font-size:1em }
+button { margin: 0 0.5em 0 0; padding:0 0.5em }
+form.search input[type=search] { width:62% }
+/*]]>*/</style>
+</head>
+<body class=" post hentry h-entry as-note">
+<header><div class="header">
+<h1><a href="/" rel="author home">tantek.com</a></h1>
+
+<form class="search" action="https://duckduckgo.com/html/" method="get">
+<input type="hidden" name="type" value="list" />
+<input type="search" value="site:tantek.com " name="q" />
+<button type="submit">Search</button>
+</form>
+
+</div></header>
+
+<div class="sidestuff">
+<ul class="snav">
+<li><a href="/2023/029/t1/indieweb-beyond-blogging" id="previtem" title="View the previous (older) item in the stream." rel="prev"><abbr>&#x2190;</abbr></a></li><li><a href="/2023/033/t1/twitter-api-log-in-web-sign-in-relmeauth" id="nextitem" title="View the next (newer) item in the stream" rel="next"><abbr>&#x2192;</abbr></a></li>
+</ul>
+</div>
+<span class="p-author h-card"><a href="/" class="u-url author-icon" rel="author" title="Tantek Çelik"><img class="u-photo p-name" src="/logo.jpg" alt="Tantek Çelik" /></a></span>
+
+<a href="https://fed.brid.gy/" aria-hidden="true"></a> <p class="p-name entry-title e-content entry-content article">13 years ago today: created <a href="https://indieweb.social/tags/RelMeAuth" class="auto-link-hashtag">#<span class="p-category auto-tag">RelMeAuth</span></a> with <a class="auto-link" href="https://progrium.com">@progrium.com</a>, to replace OpenID 1&amp;2 for *reasons*<br class="auto-break"/><br class="auto-break"/>* modest proposal: authentication using domain as identity, rel=me link to OAuth profile with rel=me link back<a id="t5P91_ref-1" href="#t5P91_note-1">¹</a><br class="auto-break"/>* <a class="auto-link" href="https://progrium.com">@progrium.com</a> suggested RelMeAuth name<a id="t5P91_ref-2" href="#t5P91_note-2">²</a> <br class="auto-break"/>* I agreed, and wrote up a draft algorithm<a id="t5P91_ref-3" href="#t5P91_note-3">³</a><br class="auto-break"/><br class="auto-break"/>All on the same day. A few months later I wrote it up as a draft spec:<br class="auto-break"/>* <a class="auto-link" href="https://microformats.org/wiki/RelMeAuth">https://microformats.org/wiki/RelMeAuth</a> (could use some updates)<br class="auto-break"/>More updates and discussion:<br class="auto-break"/>* <a class="auto-link" href="https://indieweb.org/RelMeAuth">https://indieweb.org/RelMeAuth</a><br class="auto-break"/><br class="auto-break"/>See those links for RelMeAuth implementations in:<br class="auto-break"/>* PHP, Python, Node, Ruby, Go<br class="auto-break"/><br class="auto-break"/><br class="auto-break"/>RelMeAuth is simpler for both publishers &amp; parsers (consuming code) than OpenID.<br class="auto-break"/><br class="auto-break"/>There are now more sites that support RelMeAuth (and the complementary IndieAuth) than OpenID (which is largely abandoned<a id="t5P91_ref-4" href="#t5P91_note-4">⁴</a>).<br class="auto-break"/><br class="auto-break"/><br class="auto-break"/>And today, <a class="auto-link" href="https://Github.com">@Github.com</a> rolled out support for multiple rel=me profile links!<a id="t5P91_ref-5" href="#t5P91_note-5">⁵</a><br class="auto-break"/><br class="auto-break"/>This means you can now use <a class="auto-link" href="https://Github.com">@Github.com</a>’s OAuth (and their multifactor login etc.) to authenticate as your own domain via RelMeAuth on even more services.<br class="auto-break"/><br class="auto-break"/>E.g. see my profile <a class="auto-link" href="https://tantek.com/github">https://tantek.com/github</a> (not a typo<a id="t5P91_ref-6" href="#t5P91_note-6">⁶</a>). The left sidebar links to my personal site, Twitter, and <a class="auto-link" href="https://micro.blog/t">https://micro.blog/t</a> all with rel=me markup.<br class="auto-break"/><br class="auto-break"/><br class="auto-break"/>This is day 26 of <a href="https://indieweb.social/tags/100DaysOfIndieWeb" class="auto-link-hashtag">#<span class="p-category auto-tag">100DaysOfIndieWeb</span></a> <a href="https://indieweb.social/tags/100Days" class="auto-link-hashtag">#<span class="p-category auto-tag">100Days</span></a><br class="auto-break"/><br class="auto-break"/>← Day 25: <a class="auto-link" href="https://tantek.com/2023/029/t1/indieweb-beyond-blogging">https://tantek.com/2023/029/t1/indieweb-beyond-blogging</a><br class="auto-break"/>→ Day 27: <a class="auto-link" href="https://tantek.com/2023/033/t1/twitter-api-log-in-web-sign-in-relmeauth">https://tantek.com/2023/033/t1/twitter-api-log-in-web-sign-in-relmeauth</a><br class="auto-break"/><br class="auto-break"/><br class="auto-break"/><a id="t5P91_note-1" href="#t5P91_ref-1">¹</a> <a class="auto-link" href="https://tantek.com/2010/032/t5/modest-proposal-authentication-oauth-twitter-rel-me">https://tantek.com/2010/032/t5/modest-proposal-authentication-oauth-twitter-rel-me</a><br class="auto-break"/><a id="t5P91_note-2" href="#t5P91_ref-2">²</a> <a class="auto-link" href="https://twitter.com/progrium/status/8521001762">https://twitter.com/progrium/status/8521001762</a> <br class="auto-break"/><a id="t5P91_note-3" href="#t5P91_ref-3">³</a> <a class="auto-link" href="https://tantek.com/2010/032/t6/relmeauth-oauth-rel-me-auto-fallback-authentication">https://tantek.com/2010/032/t6/relmeauth-oauth-rel-me-auto-fallback-authentication</a><br class="auto-break"/><a id="t5P91_note-4" href="#t5P91_ref-4">⁴</a> OpenID 1&amp;2 were abandoned for OIDC (OpenID Connect), a supposed update/replacement, despite dropping the goal of domain as identity, the use-case for OpenID in the first place, so the <a href="https://indieweb.social/tags/IndieWeb" class="auto-link-hashtag">#<span class="p-category auto-tag">IndieWeb</span></a> picked up that use-case with RelMeAuth &amp; IndieAuth.<br class="auto-break"/><a id="t5P91_note-5" href="#t5P91_ref-5">⁵</a> <a class="auto-link" href="https://web.archive.org/web/20230314223136/https://hachyderm.io/@nova/109790530971147702">https://web.archive.org/web/20230314223136/https://hachyderm.io/@nova/109790530971147702</a><br class="auto-break"/><a id="t5P91_note-6" href="#t5P91_ref-6">⁶</a> <a class="auto-link" href="https://tantek.com/2022/144/t1/redirected-github-ownyourlinks">https://tantek.com/2022/144/t1/redirected-github-ownyourlinks</a></p><span class="info footer">
+  <span class="dt-published published dt-updated updated">
+  <time class="value" datetime="14:34-0800">14:34</time> on <time class="value">2023-02-01</time>  </span>
+ <span class="lt">
+ (ttk.me t5P91) </span>
+  using <span class="using">BBEdit</span> </span> 
+<div class="info footer">
+<form action="//tantek.com/2023/032/t1/years-relmeauth-replace-openid"><div>
+<label><span class="lt">URL:</span>
+<input class="u-url url u-uid uid bookmark" type="url" size="70" style="max-width:100%" value="https://tantek.com/2023/032/t1/years-relmeauth-replace-openid" />
+</label>
+</div></form>
+</div>
+<div class="info footer">
+<a class="u-syndication" rel="syndication" style="float:right; clear:right; height:2em"
+   href="https://twitter.com/t/status/1620947323827421184">
+   <img src="/icon/twitter.png" style="vertical-align:-30%;margin:-3px -6px -4px 0" alt=""/> 
+   View 
+      on Twitter
+</a><div style="line-height:2.6em; font-size:1em;">
+<indie-action do="like" with="//tantek.com/2023/032/t1/years-relmeauth-replace-openid">
+<a class="action favorite" target="_blank" href="https://twitter.com/intent/favorite?tweet_id=1620947323827421184">♥ Like</a>
+</indie-action>
+<indie-action do="repost" with="//tantek.com/2023/032/t1/years-relmeauth-replace-openid">
+<a class="action reply" target="_blank" href="https://twitter.com/intent/retweet?tweet_id=1620947323827421184">♺ Repost</a>
+</indie-action>
+<indie-action do="reply" with="//tantek.com/2023/032/t1/years-relmeauth-replace-openid">
+<a class="action reply" target="_blank" href="https://twitter.com/intent/tweet?in_reply_to=1620947323827421184">↵ Reply</a>
+</indie-action>
+</div>
+
+</div>
+ </li>
+<script type="text/javascript">/*<![CDATA[*/
+function select_all(e) {
+ e = e ? e : window.event;
+ var el = targetelement(e);
+ el.focus();
+ /* el.select(); // fails in Mobile Safari */
+ el.selectionStart=0;
+ el.selectionEnd=el.value.length;
+}
+
+var fs = document.forms, i = 0, j = 0, es;
+for (i = 0; i<fs.length; i++) {
+  es = document.forms[i].elements;
+  if (es) {
+    for (j=0;j<es.length;j++) {
+      switch (es[j].type) {
+      case "text":
+      case "url":
+        es[j].onclick = select_all;
+      }
+    }
+  }
+}
+
+
+document.onkeyup = keyup;
+
+function clearactive() {
+  var e = document.getElementById("previtem");
+  if (e) { e.className = ""; }
+  e = document.getElementById("nextitem");
+  if (e) { e.className = ""; }
+}
+
+function keyup(e)
+{
+   var kid = (window.event) ? event.keyCode : e.keyCode;
+   var nid = "";
+   if (document.activeElement !== document.body) {
+     return;
+   }
+   switch(kid) {
+    case 37:
+    case 74:
+      nid = "previtem";
+      break;
+    case 39:
+    case 75:
+      nid = "nextitem";
+      break;
+   }
+   if (nid!="") {
+      ne = document.getElementById(nid);
+      if (ne) {
+        ne.className = "active";
+        doevent(ne,"click");
+        window.onunload = clearactive;
+        return false;
+      }
+   }
+}
+
+/*]]>*/</script>
+<script src="/fragmention.min.js"></script>
+<script src="/scripts/indieconfig.js"></script> 
+<script src="/scripts/webaction.js"></script>
+<script src="cassis.js"></script>
+</body>
+</html>

@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head profile="http://gmpg.org/xfn/1">
+<title>Eric’s Archived Thoughts</title>
+<meta name="generator" content="WordPress 6.3.1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="shortcut icon" href="/favicon.ico"><link rel="home" href="http://meyerweb.com/" title="Home" ><link rel="openid.server" href="http://www.myopenid.com/server"><link rel="openid.delegate" href="http://emeyer.myopenid.com/"><meta name="google-site-verification" content="I_JFi4WrY6bW7AE2ya5sSlruVvgvrIeRa1IsqO0GB78" /><link rel="alternate" type="application/rss+xml" title="Thoughts From Eric" href="/eric/thoughts/rss2/full"><link rel="alternate" type="application/rss+xml" title="Thoughts From Eric (only technical posts)" href="/eric/thoughts/category/tech/rss2/full"><link rel="alternate" type="application/rss+xml" title="Thoughts From Eric (only personal posts)" href="/eric/thoughts/category/personal/rss2/full"><link rel="alternate" type="application/rss+xml" title="Excuse of the Day" href="/feeds/excuse/rss20.xml"><link rel="stylesheet" href="/ui/meyerweb.css" type="text/css"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@meyerweb"><meta name="twitter:title" content="meyerweb.com"><meta name="twitter:description" content="The web home of Eric A. Meyer, CSS guy; and his wife Kathryn, doctor of nursing."><meta name="twitter:url" content="https://meyerweb.com/"><meta name="twitter:image" content="https://meyerweb.com/ui/i/heart/663399love.png"><meta name="twitter:image:width" content="192"><meta name="twitter:image:height" content="192"><meta property="og:type" content="website"><meta property="og:image" content="https://meyerweb.com/ui/i/hamonshu/fb-og-image.png"><meta name="twitter:description" property="og:description" content="In which I set out to write down a wish or two for CSS in 2023, and ended up with a list of sixt—no, wait, seventeen.">
+<meta name="twitter:title" property="og:title" content="CSS Wish List 2023">
+<meta name="twitter:url" property="og:url" content="https://meyerweb.com/eric/thoughts/2023/02/08/css-wish-list-2023/">
+<link rel="stylesheet" type="text/css" href="https://meyerweb.com/eric/thoughts/wp-content/themes/meyerweb-2020/style.css">
+<link rel="pingback" href="https://meyerweb.com/eric/thoughts/xmlrpc.php">
+</head>
+<body id="www-meyerweb-com" class="arch">	
+<header role="banner" id="sitemast">
+<a href="/">meyerweb.com</a>
+<nav role="navigation" aria-label="page" id="skiplinks">
+<a href="#main">Main content</a>
+<a href="#navigate">Navigation links</a>
+<a href="#footer">Footer</a>
+</nav>
+</header>
+
+<nav role="navigation" aria-label="site" id="navigate">
+<ul id="navlinks">
+<li id="archLink"><a href="/eric/thoughts/">Post Archives</a></li>
+<li id="cssLink"><a href="/eric/css/">CSS Work</a></li>
+<li id="toolsLink"><a href="/eric/tools/">Toolbox</a></li>
+<li id="writeLink"><a href="/eric/writing.html">Writing</a></li>
+<li id="speakLink"><a href="/eric/talks/">Speaking</a></li>
+<li id="otherLink"><a href="/other/">Other Stuff</a></li>
+<li id="aboutsite"><a href="/ui/about.html">About this site</a></li>
+</ul>
+</nav>
+
+<!--div id="main"-->
+
+<main role="main" id="thoughts">
+
+<h1 class="pagetitle"><em>Thoughts From Eric</em> Archive</h1>
+
+
+<article role="article" class="entry">
+<header>
+<h2 class="title"><a href="https://meyerweb.com/eric/thoughts/2023/02/08/css-wish-list-2023/" rel="bookmark" title="Permanent Link: CSS Wish List 2023">CSS Wish List 2023</a></h2>
+<em class="pubtime">Published  6 months, 3 weeks past</em>
+</header>
+
+<div class="text">
+<p><a href="https://daverupert.com/2023/01/css-wishlist-2023/">Dave
+asked people to share their CSS wish lists for 2023</a>, and even though
+it’s well into the second month of the year, I’m going to sprint
+wild-eyed out of the brush along the road, grab the hitch on the back of
+the departing bandwagon, and try to claw my way aboard. 
+At first I thought I had maybe four or five things to put on my list,
+but as I worked on it, I kept thinking of one more thing and one more
+thing until eventually I had a list of (checks notes) sixt&#x202F;—&#x2009;no, <em>SEVENTEEN?!?!?</em>  What the hell.</p>
+
+<p>There’s going to be some overlap with the things being worked on for
+<a href="https://wpt.fyi/interop-2023">Interop 2023</a>, and I’m sure
+there will be overlap with other peoples’ lists.  Regardless, here we
+go.</p>
+
+<hr />
+
+<h3 id="subgrid">Subgrid</h3>
+
+<p>Back in the day, I asserted <a href="https://meyerweb.com/eric/thoughts/2016/01/15/subgrids-considered-essential/">Grid should wait for subgrid</a>.  I was
+probably wrong about that, but I wasn’t wrong about the usefulness of
+and need for subgrid.  Nearly every time I implement a design, I trip
+over the lack of widespread support.</p>
+
+<p>I have a blog post in my head about how I hacked around this problem
+for <a href="https://wpewebkit.org">wpewebkit.org</a> by applying the
+same grid column template to nested containers, and how I could make it
+marginally more efficient with variables.  I keep not writing it, because
+it would show the approach and improvement and then mostly be about the
+limitations, flaws, and annoyances this approach embodies.  The whole 
+idea just depresses me, and I would probably become impolitic.</p>
+
+<p>So instead I’ll just say that I hope those browser engines that have
+yet to catch up with subgrid support will do so in 2023.</p>
+
+<h3 id="masonry-layout">Masonry layout</h3>
+
+<p>Grid layout is great, and you can use it to create a masonry-style
+layout, but having a real <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Masonry_Layout">masonry layout</a> mechanism would be better,
+particularly if you can set it on a per-axis basis.  What I mean is, you
+could define a bunch of fixed (or flexible) columns and then say the
+rows use <code>masonry</code> layout.  It’s not something I’m likely to
+use myself, but I always think the more layout possibilities there are,
+the better.</p>
+
+<h3 id="grid-track-styles">Grid track styles</h3>
+
+<p>For someone who doesn’t do a ton of layout, I find myself wanting to
+style grid lines a surprising amount.  I just want to do something
+like:</p>
+
+<pre><code>display: grid;
+gap: 1em;
+grid-rules-columns: 1px dotted red;</code></pre>
+
+<p>…although it would be much better to be able to style separators for
+a specific grid track, or even an individual grid cell, as well as be 
+able to apply it to an entire grid all at once.</p>
+
+<p>No, I don’t know exactly how this should work.  I’m an idea guy!  But
+that’s what I want.  I want to be able to define what separator lines
+look like between grid tracks, centered on the grid lines.</p>
+
+<h3 id="anchored-positioning">Anchored positioning</h3>
+
+<p>I’ve wanted this in one form or another almost since CSS2 was
+published.  The general idea is, you can position an element in relation
+to the edges of another element that isn’t a containing block.  I wrote
+about this a bit in <a href="https://meyerweb.com/eric/thoughts/2022/10/19/a-dashing-navbar-solution/">my post on connector lines for wpewebkit.org</a>, but
+another place it would have come in handy was with <a
+href="https://meyerweb.com/eric/thoughts/2022/09/12/nuclear-footnotes/">the
+footnotes on <cite>The Effects of Nuclear Weapons</cite></a>.</p>
+
+<p>See, I wanted those to actually be <a href="https://edwardtufte.github.io/tufte-css/#sidenotes">sidenotes, Tufteee-styleee</a>.  Right now, in order to make sidenotes, you have to stick the footnote into the text, right where its footnote reference appears &#x202F;—&#x2009; or, at a minimum, right after the element containing the footnote reference.  Neither was acceptable to me, because it would dork up the source text.</p>
+
+<p>What I <em>wanted</em> to be able to do was collect all the footnotes as
+endnotes at the end of the markup (which we did) and then absolutely
+position each to sit next to the element that referenced them, or
+have it pop up there on click, tap, hover, whatever.  <a href="https://w3c.github.io/csswg-drafts/css-anchor/">Anchored positioning</a> 
+would make that not just possible, but fairly easy to do.</p>
+
+<h3 id="exclusions">Exclusions</h3>
+
+<p>Following on anchored positioning, I’d love to have 
+<a href="https://drafts.csswg.org/css-exclusions/">CSS Exclusions</a>
+finally come to browsers.  Exclusions are a way to mark an element to
+have other content avoid it.  You know how floats move out of the normal
+flow, but normal-flow text avoids overlapping them?  That’s an exclusion.  
+Now imagine being able to position an element by other means, whether
+grid layout or absolute positioning or whatever, and then say “have the
+content of other elements flow around it”.  Exclusions!  See <a
+href="https://v6.robweychert.com/blog/2018/11/css-grid-editorial-layouts/">this
+article by Rob Weychert</a> for a more in-depth explanation of a common
+use case.</p>
+
+<h3 id="element-transitions">Element transitions</h3>
+
+<p>The web is cool and all, but you know how futuristic interfaces in
+movies have pieces of the interface sliding and zooming and popping out and all that
+stuff?  <a href="https://tabatkins.github.io/specs/css-shared-element-transitions/">Element transitions</a>.  You can already <a
+href="https://simple-set-demos.glitch.me/batman-transition/">try them
+out in Chrome Canary, Batman</a>, and I’d love to see them across the
+board.  Even more, I’d love some gentle, easy-to-follow tutorials on how
+to make them work, because even in their single-page form, I found the
+coding requirements basically impossible to work out.  Make them all-CSS,
+and explain them like I’m a newb, and I’m in.</p>
+
+<h3 id="nested-selectors">Nested Selectors</h3>
+
+<p>A lot of people I know are still hanging on to preprocessors solely
+because they permit nested selectors, like:</p>
+
+<pre><code>main {
+	padding: 1em;
+	background: #F1F1F0;
+	
+	h2 {
+		border-block-end: 1px solid gray;
+	}
+	p {
+		text-indent: 2em;
+	}
+}</code></pre>
+
+<p>The CSS Working Group has been wrestling with this for quite some
+time now, because it turns out the CSS parsing rules make it hard to
+just add this, there are a lot of questions about how this should
+interact with pseudo-classes like <code>:is()</code>, there are serious
+concerns about doing this in a way that will be maximally
+future-compatible, <em>and also</em> there has been a whole lot of argument over
+whether it’s okay to clash with Sass syntax or not.</p>
+
+<p>So it’s a difficult thing to make happen in native CSS, and the
+debates are both wide-ranging and slow, but it’s on my (and probably
+nearly everyone else’s) wish list.  You can <a href="https://webkit.org/blog/13813/try-css-nesting-today-in-safari-technology-preview/">try it out in Safari Technology Preview</a> 
+as I write this, so here’s hoping for accelerating adoption!</p>
+
+<h3 id="more-and-better-has">More and better <code>:has()</code></h3>
+
+<p>Okay, since I’m talking about selectors already, I’ll throw in
+universal, full-featured, more optimized support for
+<code>:has()</code>.  One browser doesn’t support compound selectors, for
+example.  I’ve also thought that maybe some combinators would be nice,
+like making <code>a:has(&gt; b)</code> can be made equal to
+<code>a &lt; b</code>.</p>
+
+<p>But I also wish for people to basically go crazy with
+<code>:has()</code>.  There’s <em>SO MUCH THERE</em>.  There are so many
+things we can do with it, and I don’t think we’ve touched even a tiny
+fraction of the possibility space.</p>
+
+<h3 id="more-attr">More <code>attr()</code></h3>
+
+<p>I’ve wanted <code>attr()</code> to be more widely accepted in CSS
+values since, well, I can’t remember.  A <em>long</em> time.  I want to be
+able to do something like:</p>
+
+<pre><code>p[data-size] {width: attr(data-width, rem);}
+
+&lt;p data-size=&quot;27&quot;&gt;…&lt;/p&gt;</code></pre>
+
+<p>Okay, not a great example, but it conveys the idea.  I also talked
+about this in <a
+href="https://meyerweb.com/eric/thoughts/2022/08/15/table-column-alignment-with-variable-transforms/">my
+post about aligning table columns</a>.
+
+I realize adding this would probably lead to
+someone creating a framework called Headgust where all the styling is
+jammed into a million <code>data-*</code>attributes and the whole of the
+framework’s CSS is nothing but <code>property: attr()</code> declarations 
+for every single CSS property known to man, but we shouldn’t let that stop us.</p>
+
+<h3 id="variables-in-media-queries">Variables in media queries</h3>
+
+<p>Basically I want to be able to do this:</p>
+
+<pre class="css"><code>:root {--mobile: 35em;}
+
+@media (min-width: var(--mobile)) {
+	/* non-mobile styles go here */
+}</code></pre>
+
+<p>That’s it.  This was made possible in container queries, I believe, so
+maybe it can spread to media (and feature?) queries.  I sure hope so!</p>
+
+<h3 id="logical-modifiers">Logical modifiers</h3>
+
+<p>You can do this:</p>
+
+<pre class="css"><code>p {margin-block: 1em; margin-inline: 1rem;}</code></pre>
+
+<p>But you can’t do this:</p>
+
+<pre><code>p {margin: logical 1em 1rem;}</code></pre>
+
+<p>I want to be able to do that.  We should <em>all</em> want to be able
+to do that, however it’s made possible.</p>
+
+<h3 id="additive-values">Additive values</h3>
+
+<p>You know how you can set a bunch of values with a comma-separated
+list, but if you want to override just one of them, you have to do the
+whole thing over?  I want to be able to add another thing to the list
+without having to do the whole thing over.  So rather than adding a value
+like this:</p>
+
+<pre class="css"><code>background-clip: content, content, border, padding; /* needed to add padding */</code></pre>
+
+<p>…I want to be able to do something like:</p>
+
+<pre><code>background-clip: add(padding);</code></pre>
+
+<p>No, I don’t know how to figure out where in the list it should be
+added.  I don’t know a lot of things.  I just know I want to be able to do
+this.  And also to remove values from a list in a similar way, since I’m
+pony-wishing.</p>
+
+<h3 id="color-shading-and-blending">Color shading and blending</h3>
+
+<p>Preprocessors already allow you to say you want the color of an
+element to be 30% lighter than it would otherwise be.  Or darker.  Or
+blend two colors together.  Native CSS should have the same power.  <a
+href="https://drafts.csswg.org/css-color-5/#resolving-mix">It’s being
+worked on</a>.  Let’s get it done, browsers.</p>
+
+<h3 id="hanging-punctuation">Hanging punctuation</h3>
+
+<p>Safari has supported <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/hanging-punctuation"><code>hanging-punctuation</code></a> for<em>ever</em> (where “for<em>ever</em>”, 
+in this case, means since 2016) and it’s long past time for other browsers
+to get with the program.  This should be universally supported.
+</p>
+
+<h3 id="cross-boundary-styles">Cross-boundary styles</h3>
+
+<p>I want to be able to apply styles from my external (or even embedded) CSS to a resource like an external SVG.  I realize this sets up all kinds
+of security and privacy concerns.  I still want to be able to do it.  Every time I have to embed an entire inline SVG into a template just so
+I can change the fill color of a logo based on its page context, I grit
+my teeth just that little bit harder.  It <em>tasks</em> me.</p>
+
+<h3 id="scoped-styling-including-imports">Scoped styling (including
+imports)</h3>
+
+<p>The Mirror Universe version of the previous wish is that I want to be
+able to say a bit of CSS, or an entire style sheet (embedded or
+external), only applies to a certain DOM node and all its descendants.
+“But you can do that with descendant selectors!” Not always.  For that
+matter, I’d love to be able to just say:</p>
+
+<pre><code>&lt;div style=&quot;@import(styles.css);&quot;&gt;</code></pre>
+
+<p>…and have that apply to that <code>&lt;div&gt;</code> and its
+descendants, as if it were an <code>&lt;iframe&gt;</code>, while
+<em>not</em> being an <code>&lt;iframe&gt;</code> so styles from the
+document could also apply to it.  Crazy?  Don’t care.  Still want it.</p>
+
+<h3 id="linked-flow-regions">Linked flow regions(?)</h3>
+
+<p>SPECIAL BONUS TENTATIVE WISH: I didn’t particularly like how <a
+href="https://www.w3.org/TR/css-regions-1/">CSS Regions</a> were
+structured, but I really liked the general idea.  It would be really
+great to be able to link elements together, and allow the content to
+flow between them in a “smooth” manner.  Even to allow the content from
+the second region to flow back into the first, if there’s room for it
+and nothing prevents it.  I admit, this is really a “try to recreate
+<a href="https://en.wikipedia.org/wiki/Adobe_PageMaker#Release_history">Aldus PageMaker</a>
+in CSS” thing for me, but the idea still appeals to me,
+and I’d love to see it come to CSS some day.</p>
+
+<hr />
+
+<p>So there you go.  I’d love to hear what you’d like to see added to CSS, either in the comments below or in posts of your own.</p>
+<ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2023/02/08/css-wish-list-2023/">CSS Wish List 2023</cite></a> was published on <time>Wednesday, February 8th, 2023</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/tech/css/" rel="category tag">CSS</a> and <a href="https://meyerweb.com/eric/thoughts/category/tech/standards/" rel="category tag">Standards</a> categories.</li>
+<li class="cmt">There have been <a href="https://meyerweb.com/eric/thoughts/2023/02/08/css-wish-list-2023/#comments">eight replies</a>.</li>
+</ul>
+</div>
+<hr class="fallback">
+</article>
+
+
+<article role="article" class="entry">
+<header>
+<h2 class="title"><a href="https://meyerweb.com/eric/thoughts/2023/01/16/minimal-dark-mode-styling/" rel="bookmark" title="Permanent Link: Minimal Dark Mode Styling">Minimal Dark Mode Styling</a></h2>
+<em class="pubtime">Published  7 months, 2 weeks past</em>
+</header>
+
+<div class="text">
+<p>Spurred by <a href="https://home.social/@AppalachianCrochet/109699115126655523">a toot in reply</a> to <a href="https://mastodon.social/@Meyerweb/109670774892464159">a goofy dev joke I made</a>, I’ve set up a dirty-rough Dark Mode handler for meyerweb:</p>
+
+<pre class="css"><code>@media (prefers-color-scheme: dark) {
+	html body {filter: invert(1);}
+	/* the following really should be managed by a cascade layer */
+	html img, 
+	html img.book.cover, 
+	html img.book.cover.big, 
+	html #archipelago a:hover img {filter: invert(1);}
+	html #thoughts figure.standalone img {
+	  box-shadow: 0.25em 0.25em 0.67em #FFF8;
+	}
+}</code></pre>
+
+<p>It’s the work of about five minutes’ thought and typing, so I suspect it’s teetering on the edge of Minimum Viable Product, but I’m not sure which side of that line it lands on.</p>
+
+<p>Other than restructuring things so that I can use Cascade Layers to handle the Light and Dark Mode styling, what am I missing or overlooking?  <code>&lt;video&gt;</code> elements, I suppose, but anything else jump out at you as in need of correction?  Let me know!</p>
+
+<p>(P.S. “Use only classes, never IDs” is <em>not</em> something that needs to be corrected.  Yes, I know why people think that, and this situation seems to be an argument in favor of that view, but I have a different view and will not be converting IDs to classes.  Thanks in advance for your forbearance.)</p>
+<ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2023/01/16/minimal-dark-mode-styling/">Minimal Dark Mode Styling</cite></a> was published on <time>Monday, January 16th, 2023</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/tech/css/" rel="category tag">CSS</a> category.</li>
+<li class="cmt">There have been <a href="https://meyerweb.com/eric/thoughts/2023/01/16/minimal-dark-mode-styling/#comments">five replies</a>.</li>
+</ul>
+</div>
+<hr class="fallback">
+</article>
+
+
+<article role="article" class="entry">
+<header>
+<h2 class="title"><a href="https://meyerweb.com/eric/thoughts/2022/12/29/styling-a-pre-that-contains-a-code/" rel="bookmark" title="Permanent Link: Styling a &#8216;pre&#8217; That Contains a &#8216;code&#8217;">Styling a &#8216;pre&#8217; That Contains a &#8216;code&#8217;</a></h2>
+<em class="pubtime">Published  8 months, 1 week past</em>
+</header>
+
+<div class="text">
+<p>I’ve just committed my first <code>:has()</code> selector to production CSS and want to share it, so I will!  But first, a little context that will feel familiar to nerds like me who post snippets of computer code to the Web, and have markup with this kind of tree structure (not raw source; we’d never allow this much formatting whitespace inside a <code>&lt;pre&gt;</code>):</p>
+
+<pre class="html"><code>&lt;pre&gt;
+	&lt;code&gt;
+		{{content goes here}}
+	&lt;/code&gt;
+&lt;/pre&gt;</code></pre>
+
+<p>It’s nicely semantic, indicating that the contents of the <code>&lt;pre&gt;</code> are in fact code of some kind, as opposed to just plain preformatted text like, say, output from a shell script or npm job, which isn’t code and thus should, perhaps, be styled in a distinct way.</p>
+
+<p>Given cases like that, you’ve probably written rules that go a little something like this:</p>
+
+<pre class="css"><code>pre &gt; code {
+	display: block;
+	background: #f1f1f1;
+	padding: 1.33em;
+	border-radius: 0.33em;
+}</code></pre>
+
+<p>Which says: if a <code>&lt;code&gt;</code> element is the child of a <code>&lt;pre&gt;</code> element, then turn the <code>&lt;code&gt;</code> into a block box and give it some background color, padding, etc.</p>
+
+<p>It works out fine, but it always feels a little fragile.  What if there are already <code>&lt;pre&gt;</code> styles that throw off the intended effect on code blocks?  Do we get into specificity wars between those rules and the code-block rules?  Find other ways to figure out what should be adjusted in which cases?  Those are probably manageable problems, but it would be better not to have them.</p>
+
+<p>It’s also, when you step back for a moment, a little weird.  The <code>&lt;pre&gt;</code> is already a block box and the container for the code; why aren’t we styling that?  Because unless you wrote some scripting, whether server-side or client-side, to add a <code>class</code> to the <code>&lt;pre&gt;</code> in scenarios like this, there wasn’t a way to address it directly based on its structural contents.</p>
+
+<p>There is now:</p>
+
+<pre class="css"><code>pre:has(&gt; code) {
+	background: #f1f1f1;
+	padding: 1.33em;
+	border-radius: 0.33em;
+}</code></pre>
+
+<p>Now I’m styling any <code>&lt;pre&gt;</code> that has a <code>&lt;code&gt;</code> as a child, which is why I took out the <code>display: block</code>.  I don’t need it any more!</p>
+
+<p>But suppose you have a framework or ancient script or something that inserts classed <code>&lt;span&gt;</code> elements between the <code>&lt;pre&gt;</code> and the <code>&lt;code&gt;</code>, like
+this:</p>
+
+<pre class="html"><code>&lt;pre&gt;
+	&lt;span class=&quot;pref&quot;&gt;
+		&lt;code&gt;
+			{{content goes here}}
+		&lt;/code&gt;
+	&lt;/span&gt;
+&lt;/pre&gt;</code></pre>
+
+<p>First of all, ew, address the root problem here if at all possible.  But if that isn’t possible for whatever reason, you can still style the <code>&lt;pre&gt;</code> based on the presence of a <code>&lt;code&gt;</code> by removing the child combinator from the selector.  In other words:</p>
+
+<pre class="css"><code>pre:has(code) {
+	background: #f1f1f1;
+	padding: 1.33em;
+	border-radius: 0.33em;
+}</code></pre>
+
+<p>Now I’m styling any <code>&lt;pre&gt;</code> that has a <code>&lt;code&gt;</code> as a <em>descendant</em> &#x202F;—&#x2009; child, grandchild, great-great-great-great grandchild, whatever.</p>
+
+<p>Which is not only more robust, it’s a lot more future-proof: even if some hot new front-end framework that sticks in <code>&lt;span&gt;</code> elements or something gets added to the site next year, this style will just keep chugging along, styling <code>&lt;pre&gt;</code> elements that contain <code>&lt;code&gt;</code> elements until long after that hot new framework has cooled to ash and been chucked into the bit-bucket.</p>
+
+<p>There is one thing to keep in mind here, as pointed out by <a href="http://emmanuel.clement.free.fr/">Emmanuel</a> over on Mastodon: if you have a scenario where <code>&lt;pre&gt;</code> elements can contain child text nodes in addition to <code>&lt;code&gt;</code> blocks, the <code>&lt;pre&gt;</code> will still be styled in its entirely.  Consider:</p>
+
+<pre class="html"><code>&lt;pre&gt;
+	{{some text is here}}
+	&lt;code&gt;
+		{{content goes here}}
+	&lt;/code&gt;
+	{{or text is here}}
+&lt;/pre&gt;</code></pre>
+
+<p><code>pre:has(&gt; code)</code> and <code>pre:has(code)</code> will still match the <code>&lt;pre&gt;</code> element here, which means all of the text (both inside and outside the <code>&lt;code&gt;</code> elements)  will sit inside the light-gray box with the rounded corners.  If that’s fine for your use case, great!  If not, then don’t use <code>:has()</code> in this scenario, and stick with the <code>pre &gt; code {…}</code> or <code>pre code {…}</code> approach of yore.  That will style just the <code>&lt;code&gt;</code> elements instead of the whole <code>&lt;pre&gt;</code>, as in the example at the beginning of this article.</p>
+
+<p>As I write this, the code hasn’t gone into production on <a href="https://wpewebkit.org">wpewebkit.org</a> yet, but I think it will within the next week or two, and will be my first wide-production use of <code>:has()</code>.  I feel like it’s a great way to close out 2022 and kick off 2023, because I <em>am</em> that kind of nerd.  If you are too, I hope you enjoyed this quick dive into the world of <code>:has()</code>.</p>
+<ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2022/12/29/styling-a-pre-that-contains-a-code/">Styling a &#8216;pre&#8217; That Contains a &#8216;code&#8217;</cite></a> was published on <time>Thursday, December 29th, 2022</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/tech/css/" rel="category tag">CSS</a> and <a href="https://meyerweb.com/eric/thoughts/category/tech/web/" rel="category tag">Web</a> categories.</li>
+<li class="cmt">There have been <a href="https://meyerweb.com/eric/thoughts/2022/12/29/styling-a-pre-that-contains-a-code/#comments">five replies</a>.</li>
+</ul>
+</div>
+<hr class="fallback">
+</article>
+
+
+<article role="article" class="entry">
+<header>
+<h2 class="title"><a href="https://meyerweb.com/eric/thoughts/2022/12/14/highlighting-image-accessibility-on-mastodon/" rel="bookmark" title="Permanent Link: Highlighting Image Accessibility on Mastodon">Highlighting Image Accessibility on Mastodon</a></h2>
+<em class="pubtime">Published  8 months, 3 weeks past</em>
+</header>
+
+<div class="text">
+<p>Some time ago, I published <a href="https://meyerweb.com/eric/thoughts/2021/01/01/highlighting-accessible-twitter-content/">user styles to visually highlight images on Twitter that didn’t have <code>alt</code> text</a> &#x202F;—&#x2009; this was in the time
+before the “ALT” badge and the much improved accessibility features
+Twitter deployed in the pre-Musk era.</p>
+
+<p>With the mass Mastodon migration currently underway in the circles I
+frequent, I spend more time there, and I missed the quick visual
+indication of images having alt text, as well as my de-emphasis styles
+for those images that don’t have useful alt text.  So I put the two together and
+wrote a new user stylesheet, which I apply via the <a href="https://add0n.com/stylus.html">Stylus browser extension</a>.  If you’d like to also use it, please do so!</p>
+
+<pre class="css"><code>/* ==UserStyle==
+@name           mastodon.social - 12/14/2022, 9:37:56 AM
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    Styles images posted on mastodon.social based on whether or not they have alt text.
+@author         @Meyerweb@mastodon.social, https://meyerweb.com/
+==/UserStyle== */
+
+@-moz-document regexp(".*\.social.*") {
+	.media-gallery__item-thumbnail img:not([alt]) {
+		filter: grayscale(1) contrast(0.5);
+	}
+	.media-gallery__item-thumbnail img:not([alt]):hover {
+		filter: none;
+	}
+	.media-gallery__item-thumbnail:has(img[alt]) {
+		position: relative;
+	}
+	.media-gallery__item-thumbnail:has(img[alt])::after {
+		content: "ALT";
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		border-radius: 5px 0 0 0;
+		border: 1px solid #FFF3;
+		color: #FFFD;
+		background: #000A;
+		border-width: 1px 0 0 1px;
+		padding-block: 0.5em 0.4em;
+		padding-inline: 0.7em 0.8em;
+		font: bold 90% sans-serif;
+	}
+}</code></pre>
+
+<p>Because most of my (admittedly limited and sporadic) Mastodon time is
+spent on <a href="https://mastodon.social">mastodon.social</a>, the styles I wrote are attuned to
+mastodon.social’s markup.  I set things up so these styles should be
+applied to any <code>*.social</code> site, but only those who use the
+same markup mastodon.social uses will get the benefits.  <a href="https://pinafore.social">pinafore.social</a>,
+for example, has different markup (I think they’re using Svelte).</p>
+
+<p>You can always adapt the selectors to fit the markup of whatever
+Mastodon instance you use, if you’re so inclined.  Please feel free to share your
+changes in the comments, or in posts of your own.  And with any luck,
+this will be a temporary solution before Mastodon adds these sorts of
+things natively, just as Twitter eventually did.</p>
+
+<hr />
+
+<p>Addendum: <a href="https://i.calckey.cloud/notes/98rnf3llwt">It was rightly pointed out to me</a> that Firefox does not, as of this writing, support <code>:has()</code> by default.  If you want to use this in Firefox, as I do, set the <code>layout.css.has-selector.enabled</code> flag in <code>about:config</code> to <code>true</code>.</p>
+<ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2022/12/14/highlighting-image-accessibility-on-mastodon/">Highlighting Image Accessibility on Mastodon</cite></a> was published on <time>Wednesday, December 14th, 2022</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/tech/css/" rel="category tag">CSS</a> category.</li>
+<li class="cmt">There have been <a href="https://meyerweb.com/eric/thoughts/2022/12/14/highlighting-image-accessibility-on-mastodon/#comments">two replies</a>.</li>
+</ul>
+</div>
+<hr class="fallback">
+</article>
+
+
+<article role="article" class="entry">
+<header>
+<h2 class="title"><a href="https://meyerweb.com/eric/thoughts/2022/11/30/how-to-verify-site-ownership-on-mastodon-profiles/" rel="bookmark" title="Permanent Link: How to Verify Site Ownership on Mastodon Profiles">How to Verify Site Ownership on Mastodon Profiles</a></h2>
+<em class="pubtime">Published  9 months, 5 days past</em>
+</header>
+
+<div class="text">
+<p>Like many of you, I’ve been checking out Mastodon and finding more and more things I like.  Including the use of <a href="https://gmpg.org/xfn">XFN (XHTML Friends Network)</a> semantics to verify ownership of sites you link from your profile’s metadata!  What that means is, you can add up to four links in your profile, and if you have an XFN-compliant link on that URL pointing to your Mastodon profile, it will show up as verified as actually being your site.</p>
+
+<p>Okay, that probably also comes off a little confusing.  Let me walk through the process.</p>
+
+<p>First, go to your home Mastodon server and edit your profile.  On servers like <a href="https://mastodon.social/">mastodon.social</a>, there should be an “Edit profile” link under your user avatar.</p>
+
+<figure>
+<a href="https://meyerweb.com/eric/thoughts/wp-content/uploads/xfn-mastodon-profile-edit.png"><img decoding="async" src="https://meyerweb.com/eric/thoughts/wp-content/uploads/xfn-mastodon-profile-edit.png" alt="" /></a>
+<figcaption>Here’s what it looks like for me.  Yes, I prefer Light Mode.  No, I don’t want to have a debate about it.</figcaption>
+</figure>
+
+<p>I saw the same thing on another Mastodon server where I have an account, so it seems to be common to Mastodon in general.  I can’t know what every Mastodon server does, though, so you might have to root around to find how you edit your profile.  (Similarly, I can’t be sure that everything will be exactly as I depict it below, but hopefully it will be at least reasonably close.)</p>
+
+<p>Under “Appearance” in the profile editing screen, which I believe is the default profile editing page, there should be a section called “Profile metadata”.  You’ll probably have to scroll a bit to reach it.  You can add up to four labels with content, and a very common label is “Web” or “Homepage” with the URL of your personal server.  They don’t all have to be links to sites; you could add your favorite color or relationship preference(s) or whatever</p>
+
+<figure class="standalone">
+<a href="https://meyerweb.com/eric/thoughts/wp-content/uploads/xfn-mastodon-profile-metadata.png"><img decoding="async" src="https://meyerweb.com/eric/thoughts/wp-content/uploads/xfn-mastodon-profile-metadata.png" alt="" /></a>
+<figcaption>I filled a couple of these in for demonstration purposes, but now they’re officially part of my profile.  No, I don’t want to debate indentation preferences, either.</figcaption>
+</figure>
+
+<p>But look, over there next to the table, there’s a “Verification” section, with a little bit of explanation and a field containing some markup you can copy, but it’s cut off before the end of the markup.  Here’s what mine looks like in full:</p>
+
+<pre class="html"><code>&lt;a rel=&quot;me&quot; href=&quot;https://mastodon.social/@Meyerweb&quot;&gt;Mastodon&lt;/a&gt;</code></pre>
+
+<p>If I take this markup and add it to any URL I list in my metadata, then that entry in my metadata table will get special treatment, because it will mean I’ve verified it.</p>
+
+<p>The important part is the <code>rel="me"</code>, which establishes a shared identity.  Here’s how it’s (partially) described by <a href="https://gmpg.org/xfn/11">XFN 1.1</a>:</p>
+
+<blockquote>
+<p>A link to yourself at a different URL. Exclusive of all other XFN values. Required symmetric.</p>
+</blockquote>
+
+<p>I admit, that’s written in terse spec-speak, so let’s see how this works out in practice.</p>
+
+<p>First, let’s look at the markup in <a href="https://mastodon.social/@Meyerweb">my Mastodon profile’s page</a>.  Any link to another site in the table of profile metadata has a <code>me</code> value in the <code>rel</code> attribute, like so:</p>
+
+<pre class="html"><code>&lt;a href=&quot;https://meyerweb.com/&quot; rel=&quot;nofollow noopener noreferrer me&quot;&gt;</code></pre>
+
+<p>That means I’ve claimed via Mastodon that <code>meyerweb.com</code> is me at another URL.</p>
+
+<p>But that’s not enough, because I could point at the home page of, say, Wikipedia as if it were mine.  That’s why XFN requires the relationship to be symmetric, which is to say, there needs to be a <code>rel="me"</code> annotated link on each end.  (On both ends.  However you want to say that.)</p>
+
+<p>So on the page being pointed to, which in my case is <code>https://meyerweb.com/</code>, I need to include a link back to my Mastodon profile page, and that link <em>also</em> has to have <code>rel="me"</code>.  That’s the markup Mastodon provided for me to copy, which we saw before and I’ll repeat here:</p>
+
+<pre class="html"><code>&lt;a rel=&quot;me&quot; href=&quot;https://mastodon.social/@Meyerweb&quot;&gt;Mastodon&lt;/a&gt;</code></pre>
+
+<p>Again, the important part is that the <code>href</code> points to my Mastodon profile page, and there’s a <code>rel</code> attribute containing <code>me</code>.  It can contain other things, like <code>noreferrer</code>, but needs to have <code>me</code> for the verfiication to work.  Note that the content of the link element doesn’t have to be the text “Mastodon”.  <a href="https://meyerweb.com/#archipelago">In my case</a>, I’m using a Mastodon logo, with the markup looking like this:</p>
+
+<pre class="html"><code>&lt;a rel=&quot;me&quot; href=&quot;https://mastodon.social/@Meyerweb&quot;&gt;
+ 	&lt;img src=&quot;/pix/icons/mastodon.svg&quot; alt=&quot;Mastodon&quot;&gt;
+&lt;/a&gt;</code></pre>
+
+<p>With that in place, there’s a “me” link pointing to a page that contains a “me” link.  That’s a symmetric relationship, as XFN requires, and it verifies that the two pages have a shared owner.  Who is me!</p>
+
+<p>Thus, if you go to <a href="https://mastodon.social/@Meyerweb">my Mastodon profile page</a>, in the table of my profile metadata, the entry for my homepage is specially styled to indicate it’s been verified as actually belonging to me.</p>
+
+<figure class="standalone">
+<a href="https://meyerweb.com/eric/thoughts/wp-content/uploads/xfn-mastodon-profile-table.png"><img decoding="async" src="https://meyerweb.com/eric/thoughts/wp-content/uploads/xfn-mastodon-profile-table.png" alt="" /></a>
+<figcaption>The table as it appears on my profile page for me.  Your colors may vary.</figcaption>
+</figure>
+
+<p>And that’s how it works.</p>
+
+<p>Next question: how can I verify my GitHub page?  At the moment, I’d have to put my Mastodon profile page’s URL into the one open field for URLs in GitHub profiles, because GitHub also does the <code>rel="me"</code> thing for its profile links.  But if I do that, I’d have to remove the link to my homepage, which I don’t want to do.</p>
+
+<p>Until GitHub either provides a dedicated Mastodon profile field the way it provides a dedicated Twitter profile field, or else allows people to add multiple URLs to their profiles the way Mastodon does, I won’t be able to verify my GitHub page on Mastodon.  Not a huge deal for me, personally, but in general it would be nice to see GitHub become more flexible in this area.  Very smart people <a href="https://fedi.simonwillison.net/@simon/109299951474378922">are also asking for this</a>, so hopefully that will happen soon(ish).</p> <ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2022/11/30/how-to-verify-site-ownership-on-mastodon-profiles/">How to Verify Site Ownership on Mastodon Profiles</cite></a> was published on <time>Wednesday, November 30th, 2022</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/tech/microformats/" rel="category tag">Microformats</a> and <a href="https://meyerweb.com/eric/thoughts/category/tech/web/" rel="category tag">Web</a> categories.</li>
+<li class="cmt">There have been <a href="https://meyerweb.com/eric/thoughts/2022/11/30/how-to-verify-site-ownership-on-mastodon-profiles/#comments">five replies</a>.</li>
+</ul>
+</div>
+<hr class="fallback">
+</article>
+
+
+<article role="article" class="entry">
+<header>
+<h2 class="title"><a href="https://meyerweb.com/eric/thoughts/2022/10/27/masked-gradient-dashed-lines/" rel="bookmark" title="Permanent Link: Masked Gradient Dashed Lines">Masked Gradient Dashed Lines</a></h2>
+<em class="pubtime">Published  10 months, 1 week past</em>
+</header>
+
+<div class="text">
+<p>I talked in my last post about <a href="https://meyerweb.com/eric/thoughts/2022/10/19/a-dashing-navbar-solution/">how I used linear gradients to recreate dashed lines</a> for the navlinks and navbar of <a href="https://wpewebkit.org">wpewebkit.org</a>, but that wasn’t the last instance of dashing gradients in the design.  I had occasion to use that technique again, except this time as a way to create a gradient dash.  I mean, a dashed line that has a visible gradient from one color to another, as well as a dashed line that’s constructed using a linear gradient.  Only this time, the dashed gradient is used to create the gaps, not the dashes.</p>
+<p>To set the stage, here’s the bit of the design I had to create:</p>
+
+<figure class="standalone">
+<a href="https://meyerweb.com/eric/thoughts/wp-content/uploads/wpe-connect-01.png"><img decoding="async" src="https://meyerweb.com/eric/thoughts/wp-content/uploads/wpe-connect-01.png" alt="" /></a>
+<figcaption>
+Design!
+</figcaption>
+</figure>
+
+<p>The vertical dashed line down the left side of the design is a dashed linear gradient, but that’s not actually relevant.  It could have been a dashed border style, or an SVG, or really anything.  And that image on the right is a PNG, but that’s also not really relevant.  What’s relevant is I had to make sure the image was centered in the content column, and yet its dashed line connected to the left-side dashed line, regardless of where the image landed in the actual content.</p>
+<p>Furthermore, the colors of the two dashed lines were different at the point I was doing the implementation: the left-side line was flat black, and the line in the image was more of a dark gray.  I could have just connected a dark gray line to the black, but it didn’t look right.  A color transition was needed, while still being a dashed line.</p>
+<p>Ideally, I was looking for a solution that would allow a smooth color fade over the connecting line’s length while <em>also</em> allowing the page background color to show through.  Because the page background might sometimes be white and sometimes be a light blue and might in the future be lime green wavy pattern or something, who knows.</p>
+<p>So I used a dashed linear gradient as a mask.  The CSS goes like this:</p>
+
+<pre class="css"><code>.banner::before {
+	content: &#39;&#39;;
+	position: absolute;
+	top: 50%;
+	left: -5rem;
+	width: 5rem;
+	height: 1px;
+	background: linear-gradient(90deg, #222, #888);
+	mask-image: repeating-linear-gradient(
+		270deg, transparent, #999 1px 3px, transparent 4px 7px);
+}</code></pre>
+
+<p>Please allow me to break it down a step at a time.</p>
+<p>First, there’s the positioning of the pseudo-element, reaching leftward <code>5rem</code> from the left edge of the content column, which here I’ve annotated with a red outline. (I prefer outlines to borders because outlines don’t participate in layout, so they can’t shift things around.)</p>
+
+<pre class="css"><code>.banner::before {
+	content: &#39;&#39;;
+	position: absolute;
+	top: 50%;
+	left: -5rem;
+	width: 5rem;
+	height: 1px;
+}</code></pre>
+
+<figure class="standalone">
+<a href="https://meyerweb.com/eric/thoughts/wp-content/uploads/wpe-connect-02.png"><img decoding="async" src="https://meyerweb.com/eric/thoughts/wp-content/uploads/wpe-connect-02.png" alt="" /></a>
+<figcaption>
+The very skinny-short red box is where the connecting line needs to be
+drawn.
+</figcaption>
+</figure>
+
+<p>To that pseudo-element, I added a 90-degree-pointing linear gradient from black to gray to its background.</p>
+
+<pre class="css"><code>	…
+	background: linear-gradient(90deg, #222, #888);
+}</code></pre>
+
+<figure class="standalone">
+<a href="https://meyerweb.com/eric/thoughts/wp-content/uploads/wpe-connect-03.png"><img decoding="async" src="https://meyerweb.com/eric/thoughts/wp-content/uploads/wpe-connect-03.png" alt="" /></a>
+<figcaption>
+The gradient filling the entire background of the pseudo-element.
+</figcaption>
+</figure>
+
+<p>The pseudo-element does happen to touch the end of one of the vertical dashes, but that’s purely by coincidence.  It could have landed anywhere, including between two dashes.</p>
+<p>So now it was time for a mask.  CSS Masks are images used to hide parts of an element based on the contents of the masking image, usually its alpha channel. (Using luminosity to define transparency levels via the <code>mask-mode</code> property is also an option, but <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/mask-mode#browser_compatibility">Chrome doesn’t support that</a> as yet.)  For example, you can use small images to clip off the corners of an element.</p>
+<p>In this case, I defined a repeating linear gradient because I knew what size the dashes should be, and I didn’t want to mess with <code>mask-size</code> and <code>mask-repeat</code> (ironically enough, as you’ll see in a bit).  This way, the mask is 100% the size of the element’s box, and I just need to repeat the gradient pattern however many times are necessary to cross the entire width of the element’s background.</p>
+<p>Given the design constraints, I wanted the dash pattern to start from the right side, the one next to the image, and repeat leftward, to ensure that the dash pattern would look unbroken.  Thus I set its direction to be 270 degrees.  Here I’ll have it alternate between red and transparent, because the actual color used for the opaque parts of the mask doesn’t matter, only its opacity:</p>
+
+<pre class="css"><code>	…
+	mask-image: repeating-linear-gradient(
+		270deg, transparent, red 1px 3px, transparent 4px 7px);
+}</code></pre>
+
+<figure class="standalone">
+<a href="https://meyerweb.com/eric/thoughts/wp-content/uploads/wpe-connect-04.png"><img decoding="async" src="https://meyerweb.com/eric/thoughts/wp-content/uploads/wpe-connect-04.png" alt=""  /></a>
+<figcaption>
+The pseudo-element being masked over and over again to create a dashed
+line that allows the backdrop to show through.
+</figcaption>
+</figure>
+
+<p>The way the mask works, the transparent parts of the masking image cause the corresponding parts of the element to be transparent &#x202F;—&#x2009; to be clipped away, in effect.  The opaque parts, whatever color they actually have, cause the corresponding parts of the element to be drawn.  Thus, the parts of the background’s black-to-gray gradient that line up with the opaque parts of the mask are rendered, and the rest of the gradient is not.  Thus, a color-fading dashed line.</p>
+<p>This is actually why I separated the ends of the color stops by a pixel: by defining a one-pixel distance for the transition from transparent to opaque (and vice versa), the browser fills those pixels in with something partway between those two states.  It’s probably 50% opaque, but that’s really up to the browser.</p>
+
+<figure class="standalone">
+<a href="https://meyerweb.com/eric/thoughts/wp-content/uploads/wpe-connect-05.png"><img decoding="async" src="https://meyerweb.com/eric/thoughts/wp-content/uploads/wpe-connect-05.png" alt="" /></a>
+<figcaption>
+The pixels of the repeating gradient pattern, shown here in the reading
+order of the CSS value.  In practice, this pattern is flipped
+horizontally, since its gradient arrow points to 270 degrees (leftward).
+</figcaption>
+</figure>
+
+<p>The result is a softening effect, which matches well with the dashed line in the image itself and doesn’t look out of place when it meets up with the left-hand vertical dashed line.</p>
+<p>At least, everything I just showed you is what happens in Firefox, which proudly supports all the masking properties.  In Chromium and WebKit browsers, you need vendor prefixes for masking to work.  So here’s how the CSS turned out:</p>
+
+<pre class="css"><code>.banner::before {
+	content: &#39;&#39;;
+	position: absolute;
+	top: 50%;
+	left: -5rem;
+	width: 5rem;
+	height: 1px;
+	background: linear-gradient(90deg, #222, #888);
+	-webkit-mask-image: repeating-linear-gradient(
+		270deg, transparent, red 1px 3px, transparent 4px 7px);
+	mask-image: repeating-linear-gradient(
+		270deg, transparent, red 1px 3px, transparent 4px 7px);
+}</code></pre>
+
+<p>And that’s where we were at launch.</p>
+<p>It still bugged me a little, though, because the dashes I created were one pixel tall, but the dashes in the image weren’t.  They were more like a pixel and a half tall once you take the aliasing into account, so they probably started out 2 (or more)  pixels tall and then got scaled down.  The transition from those visually-slightly-larger dashes to the crisply-one-pixel-tall pseudo-element didn’t look quite right.</p>
+<p>I’d hoped that just increasing the height of the pseudo-element to <code>2px</code> would work, but that made the line look too thick.  That meant I’d have to basically recreate the aliasing myself.</p>
+<p>At first I considered leaving the mask as it was and setting up two linear gradients, the existing one on the bottom and a lighter one on top.  Instead, I chose to keep the single background gradient and set up two masks, the original on the bottom and a more transparent one on top.  Which meant I’d have to size and place them, and keep them from tiling.  So, despite my earlier avoidance, I had to mess with mask sizing and repeating anyway.</p>
+
+<pre class="css"><code>mask-image:
+	repeating-linear-gradient(
+		270deg, transparent, #89A4 1px 3px, transparent 4px 7px),
+	repeating-linear-gradient(
+		270deg, transparent, #89A 1px 3px, transparent 4px 7px);
+	mask-size: 100% 1px;
+	mask-repeat: no-repeat;
+	mask-position: 100% 0%, 100% 100%;</code></pre>
+
+<figure class="standalone">
+<a href="https://meyerweb.com/eric/thoughts/wp-content/uploads/wpe-connect-06.png"><img decoding="async" src="https://meyerweb.com/eric/thoughts/wp-content/uploads/wpe-connect-06.png" alt=""  /></a>
+<figcaption>
+Two masks, one effect.
+</figcaption>
+</figure>
+
+<p>And that’s how it stands as of today.</p>
+<p>In the end, this general technique is pretty much infinitely adaptable, in that you could define any dash pattern you like and have it repeat over a gradient, background image, or even just a plain background color.  It could be used to break up an element containing text, so it looks like the text has been projected onto a thick dashed line, or put some diagonal slashes through text, or an image, or a combination.</p>
+
+<figure class="standalone">
+<div
+style="background: linear-gradient(270deg,dodgerblue,25%,palegoldenrod)">
+<div
+style="padding-block: 0.15em 0; font: bold 3em sans-serif; text-align: center; -webkit-mask: repeating-linear-gradient(123deg,black 0 0.13em,#0003 0.15em 0.18em, #000 0.2em);">
+SLASHED TEXT
+</div>
+</div>
+<figcaption>
+No PNG, no SVG, just text and CSS.
+</figcaption>
+</figure>
+
+<p>Or use a tiled radial gradient to make your own dotted line, one that’s fully responsive without ever clipping a dot partway through.  Wacky line patterns with tiled, repeated conic gradients?  Sure, why not?</p>
+<p>The point being, masks let you break up the rectangularity of elements, which can go a long way toward making designs feel more alive.  Give ’em a try and see what you come up with!</p>
+<ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2022/10/27/masked-gradient-dashed-lines/">Masked Gradient Dashed Lines</cite></a> was published on <time>Thursday, October 27th, 2022</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/tech/css/" rel="category tag">CSS</a> and <a href="https://meyerweb.com/eric/thoughts/category/tech/web/" rel="category tag">Web</a> categories.</li>
+<li class="cmt">There has been <a href="https://meyerweb.com/eric/thoughts/2022/10/27/masked-gradient-dashed-lines/#comments">one reply</a>.</li>
+</ul>
+</div>
+<hr class="fallback">
+</article>
+
+
+<article role="article" class="entry">
+<header>
+<h2 class="title"><a href="https://meyerweb.com/eric/thoughts/2022/10/19/a-dashing-navbar-solution/" rel="bookmark" title="Permanent Link: A Dashing Navbar Solution">A Dashing Navbar Solution</a></h2>
+<em class="pubtime">Published  10 months, 2 weeks past</em>
+</header>
+
+<div class="text">
+<style type="text/css">
+#thoughts figure.standalone img {
+box-shadow: 0.25em 0.25em 0.67em #0008;
+margin-block-end: 0.5em;
+}
+</style>
+<p>One of the many things <a href="https://igalia.com/">Igalia</a> does is maintain an official port of WebKit for embedded devices called WPE WebKit, and as you might expect, it has <a href="https://wpewebkit.org/">a web site</a>.  The design had gotten a little stale since its launch a few years ago, so we asked Denis Radenković at <a href="http://38one.com/">38one</a> to come up with a new design, which we launched yesterday.  And I got to turn it into HTML and CSS!  Which was mostly normal stuff, margins and font sizing and all that, but also had some bits that called for some creativity.</p>
+<p>There was one aspect of the design that I honestly thought wasn’t going to be possible, which was the way the “current page” link in the site navbar connected up to the rest of the page’s design via a dashed line. You can see it on the site, or in this animation about how each navlink was designed to appear.</p>
+
+<figure class="standalone">
+<a href="https://meyerweb.com/eric/thoughts/wp-content/uploads/wpe-navbar-anim.gif"><img decoding="async" src="https://meyerweb.com/eric/thoughts/wp-content/uploads/wpe-navbar-anim.gif" alt=""/></a>
+<figcaption>
+Navigation link styles, not including the Home button, which is essentially the same but not nearly as obvious because of its specific layout.
+</figcaption>
+</figure>
+
+<p>I thought about using bog-standard dashed element borders: one on a filler element or pseudo-element that spanned the mostly-empty left side of the navbar, and one on each navlink before the current one, and then… I don’t know. I didn’t get that far, because I realized the dashed borders would almost certainly stutter, visually. What I mean is, the dashes wouldn’t follow a regular on-off pattern, which would look fairly broken.</p>
+<p>My next thought was to figure out how to size a filler element or pseudo-element so that it was the exact width needed to reach the middle of the active navlink. Maybe there’s a clever way to do that with just HTML and CSS, but I couldn’t think of a way to do it that wasn’t either structurally nauseating or dependent on me writing clever JavaScript. So I tossed that idea, though I’ll return to it at the end of the post.</p>
+<p>In the end, it was the interim development styles that eventually got me there. See, while building out other parts of the design, I just threw a dashed border on the bottom of the navbar, which (as is the way of borders) spanned its entire bottom edge. At some point I glanced up at it and thought, <em>If only I could figure out a mask that would clip off the part of the border I don’t need.</em> And slowly, I realized that with a little coding sleight-of-hand, I could almost exactly do that.</p>
+<p>First, I removed the bottom border from the navbar and replaced it with a dashed linear gradient background, like this:</p>
+
+<pre class="css"><code>nav.global {
+	background-image: linear-gradient(
+		90deg,
+		currentColor 25%,
+		transparent 25% 75%,
+		currentColor 75%
+	);
+	background-position: 0 100%;
+	background-size: 8px 1px;
+	background-repeat: repeat-x;
+}</code></pre>
+
+<p>(Okay, I actually used the <code>background</code> shorthand form of the above&#x202F;—&#x2009;<code>linear-gradient(…) 0 100% / 8px 1px repeat-x</code>&#x202F;—&#x2009;but the result is the same.)</p>
+<p>I thought about using <code>repeating-linear-gradient</code>, which would have let me skip having to declare a <code>background-repeat</code>, but would have required me to size the gradient’s color stops using length units instead of percentages. I liked how, with the above, I could set the color stops with percentages, and then experiment with the size of the image using <code>background-size</code>. (<code>7px 1px</code>? <code>9px 1px</code>? <code>8px 1.33px</code>? Tried ’em all, and then some.) But that’s mostly a personal preference, not based in any obvious performance or clarity win, so if you want to try this with a repeating gradient, go for it.</p>
+<p>But wait. What was the point of recreating the border’s built-in dash effect with a gradient background? Well, as I said, it made it easier to experiment with different sizes. It also allowed me to create a dash pattern that would be very consistent across browsers, which <code>border-style</code> dashes very much are not.</p>
+<p>But primarily, I wanted the dashes to be in the background of the navbar because I could then add small solid-color gradients to the backgrounds of the navlinks that come after the active one.</p>
+
+<pre class="css"><code>nav.global li.currentPage ~ li {
+	background: linear-gradient(0deg, #FFF 2px, transparent 2px);
+}</code></pre>
+<p>That selects all the following-sibling list items of the
+<code>currentPage</code>-classed list item, which here is the “Learn
+&amp; Discover” link.</p>
+<pre class="html"><code>&lt;ul class=&quot;about off&quot;&gt;
+	&lt;li&gt;&lt;a class=&quot;nav-link&quot; href=&quot;…&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+	&lt;li class=&quot;currentPage&quot;&gt;&lt;a class=&quot;nav-link&quot; href=&quot;…&quot;&gt;Learn &amp;amp; Discover&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;nav-link&quot; href=&quot;…&quot;&gt;Blog&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;nav-link&quot; href=&quot;…&quot;&gt;Developers&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a class=&quot;btn cta&quot; href=&quot;…&quot;&gt;Get Started&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+<p>Here’s the result, with the gradient set to be visible with a pinkish fill instead of <code>#FFF</code> so we can see it:</p>
+
+<figure class="standalone">
+<a href="https://meyerweb.com/eric/thoughts/wp-content/uploads/wpe-navbar-1.gif"><img decoding="async" src="https://meyerweb.com/eric/thoughts/wp-content/uploads/wpe-navbar-1.gif" alt=""/></a>
+<figcaption>
+The “masking” gradients, here set to be a nicely rosy pink instead of the usual solid white.
+</figcaption>
+</figure>
+
+<p>You can see how the pink hides the dashes. In the actual styles, because the <code>#FFF</code> is the same as the design’s page background, those list items’ background gradients are placed over top of (and thus hide) the navbar’s background dash.</p>
+<p>I should point out that the color stop on the white solid gradient could have been at <code>1px</code> rather than <code>2px</code> and still worked, but I decided to give myself a little bit of extra coverage, just for peace of mind. I should also point out that I didn’t
+just fill the backgrounds of the list items with <code>background-color: #FFF</code> because the navbar has a semitransparent white background fill and a blurring <code>background-filter</code>, so the page content can be hazily visible through the navbar, as shown here.</p>
+
+<figure class="standalone">
+<a href="https://meyerweb.com/eric/thoughts/wp-content/uploads/wpe-navbar-2.gif"><img decoding="async" src="https://meyerweb.com/eric/thoughts/wp-content/uploads/wpe-navbar-2.gif" alt=""/></a>
+<figcaption>
+The backdrop-blurring of content behind the navbar, not blurring nearly as much as I thought they should, but oh well.
+</figcaption>
+</figure>
+
+<p>The white line is slightly suboptimal in this situation, but it doesn’t really stand out and does add a tiny bit of visual accent to the navbar’s edge, so I was willing to go with it.</p>
+<p>The next step was a little trickier: there needs to be a vertical dashed line “connecting” to the navbar’s dashed line at the horizontal center of the link, <em>and also</em> the navbar’s dashed line needs to be hidden, but only to the right of the vertical dashed line. I thought about doing two background gradients on the list item, one for the vertical dashed line and one for the white “mask”, but I realized that constraining the vertical dashed line to be half the height of the list item while also getting the repeating pattern correct was too much for my brain to figure out.</p>
+<p>Instead, I positioned and sized a generated pseudo-element like this:</p>
+
+<pre class="css"><code>nav.global ul li.currentPage {
+	position: relative;
+}
+nav.global ul li.currentPage::before {
+	content: &#39;&#39;;
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	bottom: 0;
+	left: 50%;
+	right: 0;
+	background:
+		linear-gradient(180deg,
+			currentColor 25%,
+			transparent 25% 75%, 
+			currentColor 75%) 0 0 / 1px 8px repeat-y, 
+		linear-gradient(0deg, #FFFF 2px, transparent 2px);
+	background-size: 1px 0.5em, auto;
+}</code></pre>
+
+<p>That has the generated pseudo-element fill the bottom right quadrant of the active link’s list item, with a vertical dashed linear gradient running along its left edge and a solid white two-pixel gradient along its bottom edge, with the solid white below the vertical dash. Here it is, with the background pinkishly filled in to be visible behind the two gradients.</p>
+
+<figure class="standalone">
+<a href="https://meyerweb.com/eric/thoughts/wp-content/uploads/wpe-navbar-3-1.gif"><img decoding="async" src="https://meyerweb.com/eric/thoughts/wp-content/uploads/wpe-navbar-3-1.gif" alt=""/></a>
+<figcaption>
+That’s the <code>::before</code> with its background filled in a rosy pink instead of the usual transparency.
+</figcaption>
+</figure>
+
+<p>With that handled, the last step was to add the dash across the bottom of the current-page link and then mask the vertical line with a background color, like so:</p>
+
+<pre class="css"><code>nav.global ul li.currentPage a {
+	position: relative;
+	z-index: 2;
+	background: var(--dashH); /* converted the dashes to variables */
+	background-size: 0.5em 1px;
+	background-position: 50% 100%;
+	background-color: #FFF;
+}</code></pre>
+
+<p>And that was it. Now, any of the navbar links can be flagged as the current page (with a <code>class</code> of <code>currentPage</code> on the enclosing list item) and will automatically link up with the dashes across the bottom of the navbar, with the remainder of that navbar dash hidden by the various solid white gradient background images.</p>
+
+<figure class="standalone">
+<a href="https://meyerweb.com/eric/thoughts/wp-content/uploads/wpe-navbar-anim.gif"><img decoding="async" src="https://meyerweb.com/eric/thoughts/wp-content/uploads/wpe-navbar-anim.gif" alt=""/></a>
+<figcaption>
+An animation of the link styles, only now you know how they work.
+</figcaption>
+</figure>
+
+<p>So, it’s kind of a hack, and I wish there were a cleaner way to do this. And maybe there is! I pondered setting up a fine-grained grid and adding an SVG with a dashed path, or maybe a filler <code>&lt;span&gt;</code>, to join the current link to the line. That also feels like a hack, but maybe less of one. Or maybe not!</p>
+<p>What I believe I want are the capabilities promised by the <a href="http://tabatkins.github.io/specs/css-anchor-position/">Anchored Positioning</a> proposal. I <em>think</em> I could have done something like:</p>
+
+<pre class="css"><code>nav.global {position: relative;}
+nav.global .currentPage {anchor-name: --navLink;}
+nav.global::before {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	right: var(--center);
+	--center: anchor(--navLink 50%);
+	top: anchor(--navLink bottom);
+}</code></pre>
+
+<p>…and then used that to run the dashed line over from the left side of the page to underneath the midpoint of the current link, and then up to the bottom edge of that link. Which would have done away with the need for the <code>li ~ li</code> overlaid-background hack, and nearly all the other hackery. I mean, I enjoy hackery as much as the next codemonaut, but I’m happier when the hacks are more elegant and minimal.</p>
+
+
+
+
+<ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2022/10/19/a-dashing-navbar-solution/">A Dashing Navbar Solution</cite></a> was published on <time>Wednesday, October 19th, 2022</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/tech/css/" rel="category tag">CSS</a> and <a href="https://meyerweb.com/eric/thoughts/category/tech/web/" rel="category tag">Web</a> categories.</li>
+<li class="cmt">There have been <a href="https://meyerweb.com/eric/thoughts/2022/10/19/a-dashing-navbar-solution/#comments">two replies</a>.</li>
+</ul>
+</div>
+<hr class="fallback">
+</article>
+
+
+<article role="article" class="entry">
+<header>
+<h2 class="title"><a href="https://meyerweb.com/eric/thoughts/2022/09/12/nuclear-footnotes/" rel="bookmark" title="Permanent Link: Nuclear Targeted Footnotes">Nuclear Targeted Footnotes</a></h2>
+<em class="pubtime">Published  11 months, 3 weeks past</em>
+</header>
+
+<div class="text">
+<p>One of the more interesting design challenges of <a href="https://meyerweb.com/eric/thoughts/2022/08/09/recreating-the-effects-of-nuclear-weapons-for-the-web/"><cite>The Effects of Nuclear Weapons</cite></a> was the fact that, like many technical texts, it has footnotes.  Not a huge number, and in fact one chapter has none at all, but they couldn’t be ignored.  And I didn’t want them to be inline between paragraphs or stuck into the middle of the text.</p>
+
+<p>This was actually a case where Chris and I decided to depart a bit from the print layout, because in print a chapter has many pages, but online it has a single page.  So we turned the footnotes into endnotes, and collected them all near the end of each chapter.</p>
+
+<p>Originally I had thought about putting footnotes off to one side in desktop views, such as in the right-hand grid gutter.  After playing with some rough prototypes, I realized this wasn’t going to go the way I wanted it to, and would likely make life difficult in a variety of display sizes between the “big desktop monitor” and “mobile device” realms.  I don’t know, maybe I gave up too easily, but Chris and I had already decided that endnotes were an acceptable adaptation and I decided to roll with that.</p>
+
+<p>So here’s how the footnotes work.  First off, in the main-body text, a footnote marker is wrapped in a <code>&lt;sup&gt;</code> element and is a link that points at a named anchor in the endnotes. (I may go back and replace all the superscript elements with styled <code>&lt;mark&gt;</code> elements, but for now, they’re superscript elements.)  Here’s <a href="https://atomicarchive.com/resources/documents/effects/glasstone-dolan/chapter1.html#%C2%A71.01">an example from the beginning of Chapter I</a>, which also has a cross-reference link in it, classed as such even though we don’t actually style them any differently than other links.</p>
+
+<pre class="html"><code>This is true for a conventional “high explosive,” such as TNT, as well as for a nuclear (or atomic) explosion,&lt;sup&gt;&lt;a href=&quot;#fnote01&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; although the energy is produced in quite different ways (&lt;a href=&quot;#§1.11&quot; class=&quot;xref&quot;&gt;§ 1.11&lt;/a&gt;).</code></pre>
+
+<p>Then, down near the end of the document, there’s a section that contains an ordered list.  Inside that list are the endnotes, which are in part marked up like this:</p>
+
+<pre class="html"><code>&lt;li id=&quot;fnote01&quot;&gt;&lt;sup&gt;1&lt;/sup&gt; The terms “nuclear” and atomic” may be used interchangeably so far as weapons, explosions, and energy are concerned, but “nuclear” is preferred for the reason given in &lt;a href=&quot;#§1.11&quot; class=&quot;xref&quot;&gt;§ 1.11&lt;/a&gt;.</code></pre>
+
+<p>The list item markers are switched off with CSS, and superscripted numbers stand in their place.  I do it that way because the footnote numbers are important to the content, but also have specific presentation demands that are difficult &#x202F;—&#x2009; nay, impossible&#x202F;—&#x2009;to pull off with normal markers, like raising them superscript-style. (List markers are only affected by <a href="https://drafts.csswg.org/css-lists-3/#marker-properties">a very limited set of properties</a>.)</p>
+
+<p>In order to get the footnote text to align along the start (left) edge of their content and have the numbers hang off the side, I elected to use the old negative-text-indent-positive-padding trick:</p>
+
+<pre class="css"><code>.endnotes li {
+	padding-inline-start: 0.75em;
+	text-indent: -0.75em;
+}</code></pre>
+
+<p>That works great as long as there are never any double-digit footnote numbers, which was indeed the case… until <a href="https://atomicarchive.com/resources/documents/effects/glasstone-dolan/chapter8.html">Chapter VIII</a>.  Dang it.</p>
+
+<p>So, for any footnote number above 9, I needed a different set of values for the indent-padding trick, and I didn’t feel like adding in a bunch of <code>greater-than-nine</code> classes. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_combinator">Following-sibling combinator</a> to the rescue!</p>
+
+<pre class="css"><code>.endnotes li:nth-of-type(9) ~ li {
+	margin-inline-start: -0.33em;
+	padding-inline-start: 1.1em;
+	text-indent: -1.1em;
+}</code></pre>
+
+<p>The extra negative start margin is necessary solely to get the text in the list items to align horizontally, though unnecessary if you don’t care about that sort of thing.</p>
+
+<p>Okay, so the endnotes looked right when seen in their list, but I needed a way to get back to the referring paragraph after reading a footnote.  Thus, some “backjump” links got added to each footnote, pointing back to the paragraph that referred to them.</p>
+
+<pre class="html"><code>&lt;span class=&quot;backjump&quot;&gt;[ref. &lt;a href=&quot;#§1.01&quot;&gt;§ 1.01&lt;/a&gt;]&lt;/span&gt;</code></pre>
+
+<p>With that, a reader can click/tap a footnote number to jump to the corresponding footnote, then click/tap the reference link to get back to where they started.  Which is fine, as far as it goes, but that idea of having footnotes appear in context hadn’t left me.  I decided I’d make them happen, one way or another.</p>
+
+<p>(Throughout all this, I wished more than once <a href="https://www.w3.org/MarkUp/html3/footnotes.html">the HTML 3.0 proposal for <code>&lt;fn&gt;</code></a> had gone somewhere other than the dustbin of history and the industry’s collective memory hole.  Ah, well.)</p>
+
+<p>I was thinking I’d need some kind of JavaScript thing to swap element nodes around when it occurred to me that clicking a footnote number would make the corresponding footnote list item a target, and if an element is a target, it can be styled using the <code>:target</code> pseudo-class.  Making it appear in context could be a simple matter of positioning it in the viewport, rather than with relation to the document.  And so:</p>
+
+<pre class="css"><code>.endnotes li:target {
+	position: fixed;
+	bottom: 0;
+	padding-block: 2em 4em;
+	padding-inline: 2em;
+	margin-inline: -2em 0;
+	border-top: 1px solid;
+	background: #FFF;
+	box-shadow: 0 0 3em 3em #FFF;
+	max-width: 45em;
+}</code></pre>
+
+<p>That is to say, when an endnote list item is targeted, it’s fixedly positioned against the bottom of the viewport and given some padding and background and a top border and a box shadow, so it has a bit of a halo above it that sets it apart from the content it’s overlaying.  It actually looks pretty sweet, if I do say so myself, and allows the reader to see footnotes without having to jump back and forth on the page.  Now all I needed was a way to make the footnote go away.</p>
+
+<p>Again I thought about going the JavaScript route, but I’m trying to keep to <a href="https://adactio.com/articles/16334#World%20Wide%20Web">the Web’s slower pace layers</a> as much as possible in this project for maximum compatibility over time and technology.  Thus, every footnote gets a “close this” link right after the backjump link, marked up like this:</p>
+
+<pre class="html"><code>&lt;a href=&quot;#fnclosed&quot; class=&quot;close&quot;&gt;X&lt;/a&gt;&lt;/li&gt;</code></pre>
+
+<p>(I realize that probably looks a little weird, but hang in there and hopefully I can clear it up in the next few paragraphs.)</p>
+
+<p>So every footnote ends with two links, one to jump to the paragraph (or heading) that referred to it, which is unnecessary when the footnote has popped up due to user interaction; and then, one to make the footnote go away, which is unnecessary when looking at the list of footnotes at the end of the chapter.  It was time to juggle display and visibility values to make each appear only when necessary.</p>
+
+<pre class="css"><code>.endnotes li .close {
+	display: none;
+	visibility: hidden;
+}
+.endnotes li:target .close {
+	display: block;
+	visibility: visible;
+}
+.endnotes li:target .backjump {
+	display: none;
+	visibility: hidden;
+}</code></pre>
+
+<p>Thus, the “close this” links are hidden by default, and revealed when the list item is targeted and thus pops up.  By contrast, the backjump links are shown by default, and hidden when the list item is targeted.</p>
+
+<p>As it now stands, this approach has some upsides and some downsides.  One upside is that, since a URL with an identifier fragment is distinct from the URL of the page itself, you can dismiss a popped-up footnote with the browser’s Back button.  On kind of the same hand, though, one downside is that since a URL with an identifier fragment is distinct from the URL of the page itself, if you consistently use the “close this” link to dismiss a popped-up footnote, the browser history gets cluttered with the opened and closed states of various footnotes.</p>
+
+<p>This is bad because you can get partway through a chapter, look at a few footnotes, and then decide you want to go back one page by hitting the Back button, at which point you discover have to go back through all those footnote states in the history before you actually go back one page.</p>
+
+<p>I feel like this is a thing I can (probably should) address by layering progressively-enhancing JavaScript over top of all this, but I’m still not quite sure how best to go about it.  Should I add event handlers and such so the fragment-identifier stuff is suppressed and the URL never actually changes?  Should I add listeners that will silently rewrite the browser history as needed to avoid this?  Ya got me.  Suggestions or pointers to live examples of solutions to similar problems are welcomed in the comments below.</p>
+
+<p>Less crucially, the way the footnote just appears and disappears bugs me a little, because it’s easy to miss if you aren’t looking in the right place.  My first thought was that it would be nice to have the footnote unfurl from the bottom of the page, but it’s basically impossible (so far as I can tell) to animate the height of an element from <code>0</code> to <code>auto</code>.  You also can’t animate something like <code>bottom: calc(-1 * calculated-height)</code> to <code>0</code> because there is no CSS keyword (so far as I know) that returns the calculated height of an element.  And you can’t really animate from <code>top: 100vh</code> to <code>bottom: 0</code> because animations are of a property’s values, not across properties.</p>
+
+<p>I’m currently considering a quick animation from something like <code>bottom: -50em</code> to <code>0</code>, going on the assumption that no footnote will ever be more than 50 em tall, regardless of the display environment.  But that means short footnotes will slide in later than tall footnotes, and probably appear to move faster.  Maybe that’s okay?  Maybe I should do more of a fade-and-scale-in thing instead, which will be visually consistent regardless of footnote size.  Or I could have them 3D-pivot up from the bottom edge of the viewport!  Or maybe this is another place to layer a little JS on top.</p>
+
+<p>Or maybe I’ve overlooked something that will let me unfurl the way I first envisioned with just HTML and CSS, a clever new technique I’ve missed or an old solution I’ve forgotten.  As before, comments with suggestions are welcome.</p>
+
+<ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2022/09/12/nuclear-footnotes/">Nuclear Targeted Footnotes</cite></a> was published on <time>Monday, September 12th, 2022</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/tech/css/" rel="category tag">CSS</a>, <a href="https://meyerweb.com/eric/thoughts/category/design/" rel="category tag">Design</a>, and <a href="https://meyerweb.com/eric/thoughts/category/personal/projects/" rel="category tag">Projects</a> categories.</li>
+<li class="cmt">There have been <a href="https://meyerweb.com/eric/thoughts/2022/09/12/nuclear-footnotes/#comments">eleven replies</a>.</li>
+</ul>
+</div>
+<hr class="fallback">
+</article>
+
+
+<div class="prev-next book" id="posts-pn">
+<h4>Browse <a href="/eric/thoughts/">the Archive</a></h4>
+<p class="prev"><a href="https://meyerweb.com/eric/thoughts/page/3/" >Earlier Entries</a></p>
+<p class="next"><a href="https://meyerweb.com/eric/thoughts/" >Later Entries</a></p>
+</div>
+
+
+</div>
+
+</main>
+</div>
+
+<div class="panel" id="feeds">
+<h4>Feeds</h4>
+	<p>A dispatch of all posts to “Thoughts From Eric” is available in both <a href="https://meyerweb.com/eric/thoughts/feed/" title="Aggregate posts using RSS"><acronym title="Really Simple Syndication">RSS</acronym> 2.0</a>
+	and <a href="https://meyerweb.com/eric/thoughts/feed/atom/" title="Aggregate posts using Atom">Atom</a>.</p>
+</div>
+
+<div class="panel" id="categories">
+<h4>Categories</h4>
+<ul>
+	<li class="cat-item cat-item-48"><a href="https://meyerweb.com/eric/thoughts/category/commentary/">Commentary</a> (55)
+</li>
+	<li class="cat-item cat-item-64"><a href="https://meyerweb.com/eric/thoughts/category/design/">Design</a> (28)
+</li>
+	<li class="cat-item cat-item-1"><a href="https://meyerweb.com/eric/thoughts/category/general/">General</a> (79)
+</li>
+	<li class="cat-item cat-item-53"><a href="https://meyerweb.com/eric/thoughts/category/guide/">Guide</a> (10)
+</li>
+	<li class="cat-item cat-item-56"><a href="https://meyerweb.com/eric/thoughts/category/hacks/">Hacks</a> (11)
+</li>
+	<li class="cat-item cat-item-15"><a href="https://meyerweb.com/eric/thoughts/category/humor/">Humor</a> (78)
+</li>
+	<li class="cat-item cat-item-41"><a href="https://meyerweb.com/eric/thoughts/category/links/">Links</a> (1)
+</li>
+	<li class="cat-item cat-item-49"><a href="https://meyerweb.com/eric/thoughts/category/observations/">Observations</a> (17)
+</li>
+	<li class="cat-item cat-item-4"><a href="https://meyerweb.com/eric/thoughts/category/personal/">Personal</a> (752)
+<ul class='children'>
+	<li class="cat-item cat-item-59"><a href="https://meyerweb.com/eric/thoughts/category/personal/adoption/">Adoption</a> (5)
+</li>
+	<li class="cat-item cat-item-10"><a href="https://meyerweb.com/eric/thoughts/category/personal/books/">Books</a> (57)
+</li>
+	<li class="cat-item cat-item-60"><a href="https://meyerweb.com/eric/thoughts/category/personal/cancer/">Cancer</a> (56)
+</li>
+	<li class="cat-item cat-item-20"><a href="https://meyerweb.com/eric/thoughts/category/personal/carolyn/">Carolyn</a> (34)
+</li>
+	<li class="cat-item cat-item-29"><a href="https://meyerweb.com/eric/thoughts/category/personal/cleveland/">Cleveland</a> (16)
+</li>
+	<li class="cat-item cat-item-30"><a href="https://meyerweb.com/eric/thoughts/category/personal/consulting/">Consulting</a> (8)
+</li>
+	<li class="cat-item cat-item-26"><a href="https://meyerweb.com/eric/thoughts/category/personal/culture/">Culture</a> (62)
+</li>
+	<li class="cat-item cat-item-37"><a href="https://meyerweb.com/eric/thoughts/category/personal/food/">Food</a> (11)
+</li>
+	<li class="cat-item cat-item-17"><a href="https://meyerweb.com/eric/thoughts/category/personal/history/">History</a> (25)
+</li>
+	<li class="cat-item cat-item-21"><a href="https://meyerweb.com/eric/thoughts/category/personal/interviews/">Interviews</a> (24)
+</li>
+	<li class="cat-item cat-item-54"><a href="https://meyerweb.com/eric/thoughts/category/personal/joshua/">Joshua</a> (7)
+</li>
+	<li class="cat-item cat-item-55"><a href="https://meyerweb.com/eric/thoughts/category/personal/parenting/">Parenting</a> (35)
+</li>
+	<li class="cat-item cat-item-5"><a href="https://meyerweb.com/eric/thoughts/category/personal/politics/">Politics</a> (71)
+</li>
+	<li class="cat-item cat-item-19"><a href="https://meyerweb.com/eric/thoughts/category/personal/projects/">Projects</a> (68)
+</li>
+	<li class="cat-item cat-item-51"><a href="https://meyerweb.com/eric/thoughts/category/personal/rebecca/">Rebecca</a> (72)
+</li>
+	<li class="cat-item cat-item-50"><a href="https://meyerweb.com/eric/thoughts/category/personal/science/">Science</a> (1)
+</li>
+	<li class="cat-item cat-item-7"><a href="https://meyerweb.com/eric/thoughts/category/personal/speaking/">Speaking</a> (114)
+</li>
+	<li class="cat-item cat-item-28"><a href="https://meyerweb.com/eric/thoughts/category/personal/technovertigo/">Technovertigo</a> (8)
+</li>
+	<li class="cat-item cat-item-31"><a href="https://meyerweb.com/eric/thoughts/category/personal/travel/">Travel</a> (51)
+</li>
+	<li class="cat-item cat-item-74"><a href="https://meyerweb.com/eric/thoughts/category/personal/woodworking/">Woodworking</a> (2)
+</li>
+	<li class="cat-item cat-item-32"><a href="https://meyerweb.com/eric/thoughts/category/personal/work/">Work</a> (17)
+</li>
+	<li class="cat-item cat-item-11"><a href="https://meyerweb.com/eric/thoughts/category/personal/writing/">Writing</a> (76)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-47"><a href="https://meyerweb.com/eric/thoughts/category/questions/">Questions</a> (9)
+</li>
+	<li class="cat-item cat-item-42"><a href="https://meyerweb.com/eric/thoughts/category/rants/">Rants</a> (14)
+</li>
+	<li class="cat-item cat-item-73"><a href="https://meyerweb.com/eric/thoughts/category/reviews/">Reviews</a> (1)
+</li>
+	<li class="cat-item cat-item-16"><a href="https://meyerweb.com/eric/thoughts/category/tech/">Tech</a> (778)
+<ul class='children'>
+	<li class="cat-item cat-item-35"><a href="https://meyerweb.com/eric/thoughts/category/tech/xhtml/">(X)HTML</a> (36)
+</li>
+	<li class="cat-item cat-item-72"><a href="https://meyerweb.com/eric/thoughts/category/tech/accessibility/">Accessibility</a> (4)
+</li>
+	<li class="cat-item cat-item-40"><a href="https://meyerweb.com/eric/thoughts/category/tech/an-event-apart/">An Event Apart</a> (35)
+</li>
+	<li class="cat-item cat-item-13"><a href="https://meyerweb.com/eric/thoughts/category/tech/browsers/">Browsers</a> (117)
+</li>
+	<li class="cat-item cat-item-3"><a href="https://meyerweb.com/eric/thoughts/category/tech/css/">CSS</a> (309)
+</li>
+	<li class="cat-item cat-item-38"><a href="https://meyerweb.com/eric/thoughts/category/tech/dom/">DOM</a> (8)
+</li>
+	<li class="cat-item cat-item-70"><a href="https://meyerweb.com/eric/thoughts/category/tech/grid/">Grid</a> (11)
+</li>
+	<li class="cat-item cat-item-52"><a href="https://meyerweb.com/eric/thoughts/category/tech/html5/">HTML5</a> (13)
+</li>
+	<li class="cat-item cat-item-39"><a href="https://meyerweb.com/eric/thoughts/category/tech/javascript/">JavaScript</a> (9)
+</li>
+	<li class="cat-item cat-item-14"><a href="https://meyerweb.com/eric/thoughts/category/tech/mac/">Mac</a> (41)
+</li>
+	<li class="cat-item cat-item-36"><a href="https://meyerweb.com/eric/thoughts/category/tech/microformats/">Microformats</a> (9)
+</li>
+	<li class="cat-item cat-item-27"><a href="https://meyerweb.com/eric/thoughts/category/tech/redesign/">Redesign</a> (28)
+</li>
+	<li class="cat-item cat-item-25"><a href="https://meyerweb.com/eric/thoughts/category/tech/rss/">RSS</a> (5)
+</li>
+	<li class="cat-item cat-item-34"><a href="https://meyerweb.com/eric/thoughts/category/tech/s5/">S5</a> (29)
+</li>
+	<li class="cat-item cat-item-24"><a href="https://meyerweb.com/eric/thoughts/category/tech/semantic-web/">semantic web</a> (8)
+</li>
+	<li class="cat-item cat-item-2"><a href="https://meyerweb.com/eric/thoughts/category/tech/standards/">Standards</a> (163)
+</li>
+	<li class="cat-item cat-item-69"><a href="https://meyerweb.com/eric/thoughts/category/tech/svg/">SVG</a> (5)
+</li>
+	<li class="cat-item cat-item-22"><a href="https://meyerweb.com/eric/thoughts/category/tech/tools/">Tools</a> (84)
+</li>
+	<li class="cat-item cat-item-6"><a href="https://meyerweb.com/eric/thoughts/category/tech/w3c/">W3C</a> (22)
+</li>
+	<li class="cat-item cat-item-8"><a href="https://meyerweb.com/eric/thoughts/category/tech/web/">Web</a> (141)
+</li>
+	<li class="cat-item cat-item-33"><a href="https://meyerweb.com/eric/thoughts/category/tech/wordpress/">WordPress</a> (29)
+</li>
+	<li class="cat-item cat-item-18"><a href="https://meyerweb.com/eric/thoughts/category/tech/xfn/">XFN</a> (16)
+</li>
+	<li class="cat-item cat-item-23"><a href="https://meyerweb.com/eric/thoughts/category/tech/xslt/">XSLT</a> (7)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-58"><a href="https://meyerweb.com/eric/thoughts/category/the-web-behind/">The Web Behind</a> (6)
+</li>
+	<li class="cat-item cat-item-77"><a href="https://meyerweb.com/eric/thoughts/category/today-i-learned/">Today I Learned</a> (2)
+</li>
+</ul>
+</div>
+
+<div id="monthly" class="panel">
+<h4>Archives</h4>
+<ul role="navigation" aria-label="archive">
+	<li><h5><a href="https://meyerweb.com/eric/thoughts/2023/">2023</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2023/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2023/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2023/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2023/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2023/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2023/08">August</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2022/">2022</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2022/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2022/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2022/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2022/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2022/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2022/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2022/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2022/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2021/">2021</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2021/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2021/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2021/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2021/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2021/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2021/06">June</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2020/">2020</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2020/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2020/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2020/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2020/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2020/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2020/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2020/09">September</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2019/">2019</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2019/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2019/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2019/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2019/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2018/">2018</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2018/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2018/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2018/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2018/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2018/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2018/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2018/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2018/09">September</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2017/">2017</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2017/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2017/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2017/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2017/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2017/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2017/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2017/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2017/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2017/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2017/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2016/">2016</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2016/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2016/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2016/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2016/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2016/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2016/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2016/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2016/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2016/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2016/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2016/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2016/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2015/">2015</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2015/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2015/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2015/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2015/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2015/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2015/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2015/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2015/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2015/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2015/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2015/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2015/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2014/">2014</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2014/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2014/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2014/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2014/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2014/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2014/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2014/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2014/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2014/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2014/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2014/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2013/">2013</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2013/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2013/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2013/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2013/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2013/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2013/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2013/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2013/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2013/11">November</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2012/">2012</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2012/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2012/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2012/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2012/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2012/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2012/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2012/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2012/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2012/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2012/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2011/">2011</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2011/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2011/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2011/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2011/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2011/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2011/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2011/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2011/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2011/11">November</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2010/">2010</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2010/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2010/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2010/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2010/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2010/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2010/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2010/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2010/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2010/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2009/">2009</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2009/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2009/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2009/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2009/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2009/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2009/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2009/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2009/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2009/11">November</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2008/">2008</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2008/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2008/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2008/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2008/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2008/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2008/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2008/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2008/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2008/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2008/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2008/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2008/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2007/">2007</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2007/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2007/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2007/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2007/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2007/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2007/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2007/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2007/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2007/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2007/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2007/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2007/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2006/">2006</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2006/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2006/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2006/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2006/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2006/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2006/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2006/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2006/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2006/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2006/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2006/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2006/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2005/">2005</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2005/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2005/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2005/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2005/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2005/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2005/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2005/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2005/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2005/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2005/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2005/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2005/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2004/">2004</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2004/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2004/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2004/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2004/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2004/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2004/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2004/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2004/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2004/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2004/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2004/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2004/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2003/">2003</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2003/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2003/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2003/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2003/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2003/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2003/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2003/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2003/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2003/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2003/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2003/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2003/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2002/">2002</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2002/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2002/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2002/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2002/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2002/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2002/06">June</a></li><li><a href="https://meyerweb.com/eric/thoughts/2002/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2002/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2002/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2002/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2002/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2002/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2001/">2001</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2001/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2001/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2001/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2001/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2001/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2001/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2001/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2001/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2001/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2001/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/2000/">2000</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/2000/01">January</a></li><li><a href="https://meyerweb.com/eric/thoughts/2000/02">February</a></li><li><a href="https://meyerweb.com/eric/thoughts/2000/03">March</a></li><li><a href="https://meyerweb.com/eric/thoughts/2000/04">April</a></li><li><a href="https://meyerweb.com/eric/thoughts/2000/05">May</a></li><li><a href="https://meyerweb.com/eric/thoughts/2000/07">July</a></li><li><a href="https://meyerweb.com/eric/thoughts/2000/08">August</a></li><li><a href="https://meyerweb.com/eric/thoughts/2000/09">September</a></li><li><a href="https://meyerweb.com/eric/thoughts/2000/10">October</a></li><li><a href="https://meyerweb.com/eric/thoughts/2000/11">November</a></li><li><a href="https://meyerweb.com/eric/thoughts/2000/12">December</a></li></ul></li><li><h5><a href="https://meyerweb.com/eric/thoughts/1999/">1999</a></h5><ul><li><a href="https://meyerweb.com/eric/thoughts/1999/12">December</a></li></ul></li></ul>
+</div>
+		
+</div>
+
+<footer id="global">
+
+<div>
+
+<div id="archipelago">
+<h4>Identity Archipelago</h4>
+<ul>
+<li><a rel="me" href="https://twitter.com/meyerweb"><img src="/pix/icons/twitter.png" alt="Twitter"></a></li>
+<li><a rel="me" href="https://mastodon.social/@meyerweb"><img src="/pix/icons/mastodon.svg" alt="Mastodon"></a></li>
+<li><a rel="me" href="https://github.com/meyerweb"><img src="/pix/icons/github.png" alt="GitHub"></a></li>
+<li><a rel="me" href="https://flickr.com/photos/meyerweb/"><img src="/pix/icons/flickr.png" alt="Flickr"></a></li>
+<li><a rel="me" href="https://dribbble.com/meyerweb"><img src="/pix/icons/dribbble.png" alt="Dribbble"></a></li>
+<li><a rel="me" href="https://facebook.com/meyerweb"><img src="/pix/icons/facebook.png" alt="Facebook"></a></li>
+<li><a rel="me" href="https://www.linkedin.com/in/meyerweb"><img src="/pix/icons/linkedin.png" alt="LinkedIn"></a></li>
+</ul>
+</div>
+
+<div id="excuse">
+<div class="panel" id="excuse">
+<h4>The <a href="/feeds/excuse/">excuse of the day</a> is</h4>
+<p>ozone depletion</p>
+</div>
+<!--#include virtual="/feeds/excuse/current.html" -->
+</div>
+
+<div class="sosumi">
+All contents of this site, unless otherwise noted, are &copy;1993-2023<!--#config timefmt="%Y" --><!--#echo var="DATE_LOCAL" --> <strong>Eric A. and Kathryn S. Meyer</strong>.  All Rights Reserved.</div>
+
+<div id="wordpress" class="credits">"<a href="/eric/thoughts/">Thoughts From Eric</a>" is powered by <a href="http://wordpress.org/">WordPress</a>.  Most of the rest of the site is hand-authored.</div>
+
+<div id="design" class="credits">The ink-sketch images used in this site’s design are adapted from <a href="https://archive.org/search.php?query=creator%3A%22Mori%2C+Yu%CC%84zan%2C+-1917%22">Yūzan Mori’s <cite><dfn title="In English: Wave Forms">Hamonshū</dfn></cite>, Volumes 1-3</a>, published in 1903 and made available for public use by the <a href="https://library.si.edu/">Smithsonian Libraries</a> and the <a href="https://archive.org/">Internet Archive</a>.</div>
+
+</div>
+
+</footer>
+<!-- WP stuff follows -->
+</body>
+</html>
+<!-- Dynamic page generated in 0.453 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2023-09-06 02:09:45 -->
+
+<!-- Compression = gzip -->

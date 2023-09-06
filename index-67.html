@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/i/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/i/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/i/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/web-app/site.webmanifest">
+<link rel="mask-icon" href="/assets/i/icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/i/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="msapplication-config" content="/assets/web-app/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+
+  <title>Igalia - Open Source Consultancy and Development</title>
+  <meta name="description" content="Igalia is an open source consultancy specialised in the development of innovative projects and solutions. Our engineers have expertise in a wide range of technological areas, including browsers and client-side web technologies, graphics pipeline, compilers and virtual machines. We have the most WPE, WebKit, Chromium/Blink and Firefox expertise found in the consulting business, including many reviewers and committers. Igalia designs, develops, customises and optimises GNU/Linux-based solutions for companies across the globe. Our work and contributions are present in many projects such as GStreamer, Mesa 3D, WebKit, Chromium, etc.">
+  <meta name="keywords" content="igalia, free software, free software engineering, development, consultancy, webkit consultancy, consulting, webkit consulting, programming, hackers, cooperative organization, organization, company, assembly, igalia.com, igalia sl, webkit, webkitgtk, a11y, v8, jsc, training, GNOME, webkit consultants, chromium consulting, chromium consultants, chromium consultancy, blink consultants, blink consultancy, gstreamer consultancy, gstreamer consulting">
+  <meta name="author" content="Igalia">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" id="main-stylesheet" href="/assets/main.css" data-main="/assets/main.css" data-aria="/assets/aria.css">
+  <link rel="canonical" href="https://www.igalia.com/index">
+  <link rel="alternate" type="application/rss+xml" title="Igalia" href="/feed.xml">
+
+  
+
+  <!-- Open Graph metadata -->
+  <meta content="Igalia" property="og:site_name">
+  <meta content="Igalia - Open Source Consultancy and Development" property="og:title">
+  <meta content="https://www.igalia.com/assets/i/logo200x200Margin.png" property="og:image">
+  <meta content="https://www.igalia.com/assets/i/logoSimple200x200.png" property="og:logo">
+  
+    <meta content="website" property="og:type">
+  
+  
+    <meta content="Igalia is an open source consultancy specialised in the development of innovative projects and solutions. Our engineers have expertise in a wide range of technological areas, including browsers and client-side web technologies, graphics pipeline, compilers and virtual machines. We have the most WPE, WebKit, Chromium/Blink and Firefox expertise found in the consulting business, including many reviewers and committers. Igalia designs, develops, customises and optimises GNU/Linux-based solutions for companies across the globe. Our work and contributions are present in many projects such as GStreamer, Mesa 3D, WebKit, Chromium, etc." property="og:description">
+  
+  
+    <meta content="https://www.igalia.com/index" property="og:url">
+  
+  
+</head>
+
+
+  <body class="aria-contrast" data-json-base="/assets/json">
+    <header id="header" role="banner">
+  <div class="container-fluid-1440">
+    <div class="wrapper">
+      
+      
+      
+      <h1 class="site-title logos">
+        <a href="/" title="Igalia">
+          <img src="/assets/i/logo.png" alt="Igalia" />
+        </a>
+      </h1>
+
+      <nav role="navigation" class="site-nav hidden-xs hidden-sm">
+        <ol class="main-menu">
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/about" title="About Us">
+              About Us
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/technologies" title="Technologies">
+              Technologies
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/services" title="Services">
+              Services
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/industries" title="Industries">
+              Industries
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/24-7/home" title="24/7">
+              24/7
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/jobs" title="Jobs">
+              Jobs
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/contact" title="Contact">
+              Contact
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/public-funding" title="Feder">
+              Feder
+            </a>
+          </li>
+          
+        </ol>
+      </nav>
+
+      <div aria-hidden="true" id="menu-toggle-wrapper" class="visible-xs visible-sm">
+        <a href="#" id="menu-toggle" title="Toggle menu">
+          <i aria-hidden="true" class="fas fa-bars"></i>
+          <span hidden>Toggle menu</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div id="mobile-menu-wrapper">
+  <div id="mobile-menu">
+    <ul role="navigation" class="nav">
+      
+      <li>
+        <a class="page-link" href="/about" title="About Us">
+          About Us
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/technologies" title="Technologies">
+          Technologies
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/services" title="Services">
+          Services
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/industries" title="Industries">
+          Industries
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/24-7/home" title="24/7">
+          24/7
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/jobs" title="Jobs">
+          Jobs
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/contact" title="Contact">
+          Contact
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/public-funding" title="Feder">
+          Feder
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+    <main class="page-content" aria-label="Content">
+        <div class="home">
+
+  <div class="front-head">
+  <div class="wrapper">
+    <div class="container-fluid-1440 content">
+      <div class="grid-vertical-center header-title">
+        <h2>We are an <strong>open source consultancy</strong> developing innovative projects & solutions.</h2>
+      </div>
+      <div class="header-left-col">
+        
+        
+        <article class="card highlight">
+  <header class="card-header" style="background-image: url(/assets/i/highlights/tech-1.jpg), linear-gradient(#CCC, #333); ">
+    <a href="/technology/browsers">
+      <label class="card-tag tag-technologies">
+        technologies
+      </label>
+      <h3>Browsers and Client-side Web Technologies</h3>
+    </a>
+  </header>
+  <div class="card-summary">
+    <p>Igalia has the most WebKit, WPE, Chromium/Blink and Firefox expertise found in the consulting business, including many reviewers and committers.</p>
+
+  </div>
+  
+  <div class="card-bottom">
+    <a class="learn-more" aria-hidden="true" tabindex="-1" href="/technology/browsers">Learn more <img src="/assets/i/blue-arrow.svg" /></a>
+  </div>
+  
+  
+</article>
+
+        
+        <article class="card highlight">
+  <header class="card-header" style="background-image: url(/assets/i/highlights/wolvic.jpg), linear-gradient(#CCC, #333); ">
+    <a href="https://wolvic.com/blog/oculus_store/">
+      <label class="card-tag tag-news">
+        news
+      </label>
+      <h3>Wolvic in the Oculus Store</h3>
+    </a>
+  </header>
+  <div class="card-summary">
+    <p>Igalia’s XR browser has exited the experimental App Lab program and passed store review to be a publicly available app for Meta Quest and Quest Pro.</p>
+
+  </div>
+  
+  <div class="card-bottom">
+    <a class="learn-more" aria-hidden="true" tabindex="-1" href="https://wolvic.com/blog/oculus_store/">Learn more <img src="/assets/i/blue-arrow.svg" /></a>
+  </div>
+  
+  
+</article>
+
+        
+      </div>
+      <div class="header-mid-col">
+        
+        
+        <article class="card highlight">
+  <header class="card-header" style="background-image: url(/assets/i/highlights/tech-2.jpg), linear-gradient(#CCC, #333); ">
+    <a href="/project/wpe">
+      <label class="card-tag tag-technologies">
+        technologies
+      </label>
+      <h3>The high performance WebKit port for embedded</h3>
+    </a>
+  </header>
+  <div class="card-summary">
+    <p>WPE WebKit is being adopted in a wide range of industries, from cable operators to consumer electronic device manufacturers, with tens of millions of devices using it worldwide. Igalia can help you get the maximum performance out of your hardware by optimizing WPE WebKit for your needs.</p>
+
+  </div>
+  
+  <div class="card-bottom">
+    <a class="learn-more" aria-hidden="true" tabindex="-1" href="/project/wpe">Learn more <img src="/assets/i/blue-arrow.svg" /></a>
+  </div>
+  
+  
+</article>
+
+        
+      </div>
+      <div class="header-right-col">
+        
+        
+        <article class="card highlight">
+  <header class="card-header" style="background-image: url(/assets/i/highlights/event2023.jpg), linear-gradient(#CCC, #333); background-position: 50% 0%;">
+    <a href="https://gstreamer.freedesktop.org/conference/2023/">
+      <label class="card-tag tag-upcoming-event">
+        upcoming event
+      </label>
+      <h3>GStreamer Conference 2023</h3>
+    </a>
+  </header>
+  <div class="card-summary">
+    <p>We’re proud to sponsor this year’s GStreamer conference being held this September in A Coruña, Spain!</p>
+
+  </div>
+  
+  <div class="card-bottom">
+    <a class="learn-more" aria-hidden="true" tabindex="-1" href="https://gstreamer.freedesktop.org/conference/2023/">Learn more <img src="/assets/i/blue-arrow.svg" /></a>
+  </div>
+  
+  
+  <div class="card-extra events">
+    <h4>Come Meet Us At…</h4>
+    <ul>
+      
+        <li><a href="https://www.aweasia.com/">AWE Asia → <time>August 30–31</time></a></li>
+      
+        <li><a href="https://www.w3.org/2023/09/TPAC/">TPAC → <time>September 11–15</time></a></li>
+      
+        <li><a href="https://india.cityjsconf.org/">CityJS India → <time>September 15–16</time></a></li>
+      
+        <li><a href="https://show.ibc.org/">IBC2023 → <time>September 15–18</time></a></li>
+      
+        <li><a href="https://events.linuxfoundation.org/open-source-summit-europe/">Open Source Summit Europe → <time>September 19–21</time></a></li>
+      
+        <li><a href="https://conference2023.gosim.org/">GOSIM 2023 → <time>September 23–26</time></a></li>
+      
+        <li><a href="https://gstreamer.freedesktop.org/conference/2023/">GStreamer 2023 → <time>September 25–26</time></a></li>
+      
+        <li><a href="https://kernel-recipes.org/en/2023/">Kernel Recipes 2023 → <time>September 25–27</time></a></li>
+      
+        <li><a href="https://embedded-recipes.org/2023/">Embedded Recipes 2023 → <time>September 28–29</time></a></li>
+      
+    </ul> 
+	</div>
+	<style>
+		.home .card div.card-summary {padding-block-end: 0;}
+		.home .card div.card-bottom {padding-block-end: 2rem;}
+		.home .card div.card-extra {font-size: 0.9rem;}
+		.home .card div.card-extra h4 {color: #0009; padding-block: 0.25em 0.1em; padding-inline: 2rem 0.5rem; margin-block-end: 0; font-size: 1.25em;}
+		.home .card div.card-extra :is(ul,li) {margin-inline: 0; padding-inline: 0; list-style: none;}
+		.home .card div.card-extra ul {margin-block-end: 1em;}
+		.home .card div.card-extra li a {display: block; justify-content: start; padding-block: 0.33em 0.167em; padding-inline: 3rem 2rem; gap: 0 0.5em; line-height: 1.2; text-indent: -1rem;}
+		.home .card div.card-extra li a time {white-space: nowrap;}
+		.home .card div.card-extra li a:is(:hover,:focus) {background: url(/assets/i/blue-arrow.svg) 0.8rem 50% / 0.8rem auto no-repeat;}
+	</style>
+  
+</article>
+
+        
+        <article class="card highlight">
+  <header class="card-header" style="background-image: url(/assets/i/highlights/tech-3.jpg), linear-gradient(#CCC, #333); ">
+    <a href="/technology/multimedia">
+      <label class="card-tag tag-technologies">
+        technologies
+      </label>
+      <h3>GStreamer development</h3>
+    </a>
+  </header>
+  <div class="card-summary">
+    <p>We have a strong multimedia team with many experienced GStreamer developers. GStreamer hosts many of our contributions to different layers of the stack from the kernel up to the end-user application.</p>
+
+  </div>
+  
+  <div class="card-bottom">
+    <a class="learn-more" aria-hidden="true" tabindex="-1" href="/technology/multimedia">Learn more <img src="/assets/i/blue-arrow.svg" /></a>
+  </div>
+  
+  
+</article>
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="front-tech-services">
+  <div class="container-fluid-1440">
+    <div class="titles">
+      <div class="container">
+        <h2>
+          Technologies, Industries & Services
+        </h2>
+        <p>
+          Igalia offers in-depth knowledge across the software stack and a broad selection of cutting-edge industries.
+        </p>
+      </div>
+    </div>
+    <section class="tech-industries-services">
+      <div class="container">
+        <h3>Technologies</h3>
+        <p>
+          Igalia is a highly-specialized company developing innovative open source solutions for a large set of software
+          and
+          hardware platforms.
+        </p>
+        <p class="btn-p">
+          <a class="btn-card" href="/technologies">Learn More <img src='/assets/i/blue-arrow.svg' /></a>
+        </p>
+      </div>
+      <div class="cards">
+        
+        
+        <div class="card">
+          <div class="technology-card">
+  <a class="link" href="/technology/browsers" title="Browsers and Client-side Web Technologies">
+    <header class="card-header gradient-browsers">
+      <img src="/assets/i/technologies/icon-browsers.svg" class="icon" alt="Browsers and Client-side Web Technologies"/>
+    </header>
+  </a>
+  <div class="card-summary">
+    <h4 class="title matchHeightTitle">
+      <a class="link" aria-hidden="true" tabindex="-1" href="/technology/browsers"
+        title="Browsers and Client-side Web Technologies">
+        Browsers and Client-side Web Technologies
+      </a>
+    </h4>
+    <p>
+      Igalia is a key contributor to each of the Web engines and often leads the development of many feature implementations. We are also the maintainers of WPE WebKit, the official WebKit port for embedded devices.
+    </p>
+  </div>
+</div>
+        </div>
+        
+        <div class="card">
+          <div class="technology-card">
+  <a class="link" href="/technology/multimedia" title="Multimedia">
+    <header class="card-header gradient-multimedia">
+      <img src="/assets/i/technologies/icon-multimedia.svg" class="icon" alt="Multimedia"/>
+    </header>
+  </a>
+  <div class="card-summary">
+    <h4 class="title matchHeightTitle">
+      <a class="link" aria-hidden="true" tabindex="-1" href="/technology/multimedia"
+        title="Multimedia">
+        Multimedia
+      </a>
+    </h4>
+    <p>
+      Igalia has a strong multimedia team with experience ranging from hardware acceleration to end-user applications for a wide variety of clients.
+    </p>
+  </div>
+</div>
+        </div>
+        
+        <div class="card">
+          <div class="technology-card">
+  <a class="link" href="/technology/accessibility" title="Accessibility Tools and Technologies">
+    <header class="card-header gradient-accessibility">
+      <img src="/assets/i/technologies/icon-accessibility.svg" class="icon" alt="Accessibility Tools and Technologies"/>
+    </header>
+  </a>
+  <div class="card-summary">
+    <h4 class="title matchHeightTitle">
+      <a class="link" aria-hidden="true" tabindex="-1" href="/technology/accessibility"
+        title="Accessibility Tools and Technologies">
+        Accessibility Tools and Technologies
+      </a>
+    </h4>
+    <p>
+      At Igalia, we are committed to making access to software and information possible for all users.
+    </p>
+  </div>
+</div>
+        </div>
+        
+        <div class="card">
+          <div class="technology-card">
+  <a class="link" href="/technology/compilers" title="Compilers and Programming languages">
+    <header class="card-header gradient-compilers">
+      <img src="/assets/i/technologies/icon-compilers.svg" class="icon" alt="Compilers and Programming languages"/>
+    </header>
+  </a>
+  <div class="card-summary">
+    <h4 class="title matchHeightTitle">
+      <a class="link" aria-hidden="true" tabindex="-1" href="/technology/compilers"
+        title="Compilers and Programming languages">
+        Compilers and Programming languages
+      </a>
+    </h4>
+    <p>
+      Igalia is the most experienced JavaScript Virtual Machine consultancy around, with upstream contributions to V8, JavaScriptCore, and Spidermonkey.
+    </p>
+  </div>
+</div>
+        </div>
+        
+        <div class="card">
+          <div class="technology-card">
+  <a class="link" href="/technology/virtualization" title="Virtualization and Cloud">
+    <header class="card-header gradient-cloud">
+      <img src="/assets/i/technologies/icon-virtualization-cloud.svg" class="icon" alt="Virtualization and Cloud"/>
+    </header>
+  </a>
+  <div class="card-summary">
+    <h4 class="title matchHeightTitle">
+      <a class="link" aria-hidden="true" tabindex="-1" href="/technology/virtualization"
+        title="Virtualization and Cloud">
+        Virtualization and Cloud
+      </a>
+    </h4>
+    <p>
+      Igalia has a team specialized in hypervisors, system virtualization, and cloud technologies, and has actively contributed to both QEMU and Ceph.
+    </p>
+  </div>
+</div>
+        </div>
+        
+        <div class="card">
+          <div class="technology-card">
+  <a class="link" href="/technology/embedded-linux" title="Embedded Linux and Device Drivers">
+    <header class="card-header gradient-embedded-linux">
+      <img src="/assets/i/technologies/icon-linux.svg" class="icon" alt="Embedded Linux and Device Drivers"/>
+    </header>
+  </a>
+  <div class="card-summary">
+    <h4 class="title matchHeightTitle">
+      <a class="link" aria-hidden="true" tabindex="-1" href="/technology/embedded-linux"
+        title="Embedded Linux and Device Drivers">
+        Embedded Linux and Device Drivers
+      </a>
+    </h4>
+    <p>
+      Igalia has worked with Linux-based distributions since their inception and spent years working in the lower layers of the Linux stack with a strong focus in embedded technologies.
+    </p>
+  </div>
+</div>
+        </div>
+        
+        <div class="card">
+          <div class="technology-card">
+  <a class="link" href="/technology/graphics" title="Graphics Pipeline and Rendering Technologies">
+    <header class="card-header gradient-graphics">
+      <img src="/assets/i/technologies/icon-graphics.svg" class="icon" alt="Graphics Pipeline and Rendering Technologies"/>
+    </header>
+  </a>
+  <div class="card-summary">
+    <h4 class="title matchHeightTitle">
+      <a class="link" aria-hidden="true" tabindex="-1" href="/technology/graphics"
+        title="Graphics Pipeline and Rendering Technologies">
+        Graphics Pipeline and Rendering Technologies
+      </a>
+    </h4>
+    <p>
+      At Igalia we have been creating high-performance user interfaces and middleware for the past decade.
+    </p>
+  </div>
+</div>
+        </div>
+        
+        <div class="card">
+          <div class="technology-card">
+  <a class="link" href="/technology/kernel" title="Linux Kernel">
+    <header class="card-header gradient-kernel">
+      <img src="/assets/i/technologies/icon-linux-kernel.svg" class="icon" alt="Linux Kernel"/>
+    </header>
+  </a>
+  <div class="card-summary">
+    <h4 class="title matchHeightTitle">
+      <a class="link" aria-hidden="true" tabindex="-1" href="/technology/kernel"
+        title="Linux Kernel">
+        Linux Kernel
+      </a>
+    </h4>
+    <p>
+      Igalia has been improving and optimizing the Linux kernel, by providing consultancy for companies in all kernel-related domains.
+    </p>
+  </div>
+</div>
+        </div>
+        
+      </div>
+      <hr />
+      <div class="container">
+        <h3>Industries</h3>
+        <p>
+          Igalia is a highly-specialized company developing innovative open source solutions for a large set of software
+          and hardware platforms.
+        </p>
+        <p class="btn-p">
+          <a class="btn-card" href="/industries">Learn More <img src='/assets/i/blue-arrow.svg' /></a>
+        </p>
+      </div>
+      <div class="industries cards">
+        
+        
+        <div class="card">
+          <article class="industry industry-simple">
+  <header role="banner" style="background-image: url(/assets/i/pe-industries/mini-tv.jpg), linear-gradient(#505050, white);background-blend-mode: multiply;
+  background-size: cover;">
+  </header>
+  <a class="link title" href="/industry/digital-tv">
+    Digital TV
+  </a>
+</article>
+
+        </div>
+        
+        <div class="card">
+          <article class="industry industry-simple">
+  <header role="banner" style="background-image: url(/assets/i/pe-industries/mini-software.jpg), linear-gradient(#505050, white);background-blend-mode: multiply;
+  background-size: cover;">
+  </header>
+  <a class="link title" href="/industry/software-it">
+    Software / IT
+  </a>
+</article>
+
+        </div>
+        
+        <div class="card">
+          <article class="industry industry-simple">
+  <header role="banner" style="background-image: url(/assets/i/pe-industries/mini-embedded.jpg), linear-gradient(#505050, white);background-blend-mode: multiply;
+  background-size: cover;">
+  </header>
+  <a class="link title" href="/industry/embedded-systems">
+    Embedded Systems
+  </a>
+</article>
+
+        </div>
+        
+        <div class="card">
+          <article class="industry industry-simple">
+  <header role="banner" style="background-image: url(/assets/i/pe-industries/mini-silicon.jpg), linear-gradient(#505050, white);background-blend-mode: multiply;
+  background-size: cover;">
+  </header>
+  <a class="link title" href="/industry/silicon">
+    Silicon
+  </a>
+</article>
+
+        </div>
+        
+        <div class="card">
+          <article class="industry industry-simple">
+  <header role="banner" style="background-image: url(/assets/i/pe-industries/mini-auto.jpg), linear-gradient(#505050, white);background-blend-mode: multiply;
+  background-size: cover;">
+  </header>
+  <a class="link title" href="/industry/automotive">
+    Automotive
+  </a>
+</article>
+
+        </div>
+        
+        <div class="card">
+          <article class="industry industry-simple">
+  <header role="banner" style="background-image: url(/assets/i/pe-industries/mini-mobile.jpg), linear-gradient(#505050, white);background-blend-mode: multiply;
+  background-size: cover;">
+  </header>
+  <a class="link title" href="/industry/mobile-devices">
+    Mobile Devices
+  </a>
+</article>
+
+        </div>
+        
+        <div class="card">
+          <article class="industry industry-simple">
+  <header role="banner" style="background-image: url(/assets/i/pe-industries/mini-telcos.jpg), linear-gradient(#505050, white);background-blend-mode: multiply;
+  background-size: cover;">
+  </header>
+  <a class="link title" href="/industry/telcos">
+    Telcos
+  </a>
+</article>
+
+        </div>
+        
+      </div>
+      <hr />
+      <div class="container">
+        <h3>Services</h3>
+        <p>
+          Igalia is a highly-specialized company developing innovative open source solutions for a large set of software
+          and hardware platforms.
+        </p>
+        <p class="btn-p">
+          <a class="btn-card" href="/services">Learn More <img src='/assets/i/blue-arrow.svg' /></a>
+        </p>
+      </div>
+      <div class="services grid-row">
+        
+        
+        <div class="col-xs-12 col-md-6 card technology-card service">
+  <a class="link gradient-consultancy" href="/services#technical-strategy" title="Technical strategy and feasibility analysis">
+    <img src="/assets/i/services/icon-services-strategy.png" alt="" />
+    <span>Technical strategy and feasibility analysis</span>
+  </a>
+</div>
+
+        
+        <div class="col-xs-12 col-md-6 card technology-card service">
+  <a class="link gradient-consultancy" href="/services#standards-definition" title="Standards definition, compliance, and certification">
+    <img src="/assets/i/services/icon-services-standards.png" alt="" />
+    <span>Standards definition, compliance, and certification</span>
+  </a>
+</div>
+
+        
+        <div class="col-xs-12 col-md-6 card technology-card service">
+  <a class="link gradient-development" href="/services#software-development" title="Software development, optimization, and maintenance">
+    <img src="/assets/i/services/icon-services-soft-dev.png" alt="" />
+    <span>Software development, optimization, and maintenance</span>
+  </a>
+</div>
+
+        
+        <div class="col-xs-12 col-md-6 card technology-card service">
+  <a class="link gradient-upstream" href="/services#upstream-integration" title="Upstream Integration support">
+    <img src="/assets/i/services/icon-services-integration.png" alt="" />
+    <span>Upstream Integration support</span>
+  </a>
+</div>
+
+        
+        <div class="col-xs-12 col-md-6 card technology-card service">
+  <a class="link gradient-upstream" href="/services#quality-assurance" title="Quality Assurance">
+    <img src="/assets/i/services/icon-services-quality-assurance.png" alt="" />
+    <span>Quality Assurance</span>
+  </a>
+</div>
+
+        
+        <div class="col-xs-12 col-md-6 card technology-card service">
+  <a class="link gradient-upstream" href="/services#hardware-enablement" title="Hardware Enablement and Packaging">
+    <img src="/assets/i/services/icon-services-packaging.png" alt="" />
+    <span>Hardware Enablement and Packaging</span>
+  </a>
+</div>
+
+        
+      </div>
+    </section>
+  </div>
+
+
+  <div class="news">
+  <div class="container-fluid-1440">
+    <div class="titles">
+      <div class="container">
+        <h2>
+          Latest From Igalia
+        </h2>
+        <p>
+          We love hearing from you, so be sure to follow us and join the conversation on our networks. If you want to
+          know more about us, you can also meet the team here.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid-1440">
+    
+    
+    <div class="block-content grid-row">
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 card">
+        <article class="post post-teaser">
+  <div class="meta-date">
+    Aug 31, 2023
+  </div>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/2023/08/31/September-Conference-News.html" title="September Conference News">
+      September Conference News
+    </a>
+  </h4>
+
+  <p>
+    <a href="/2023/08/31/September-Conference-News.html">
+      After a quiet few months on the conference scene, mid-to-late September gets us firmly back into the swing of things with eight events where you can find us: TPAC, September...
+    </a>
+  </p>
+  <a href="/2023/08/31/September-Conference-News.html" class="read-more" title="September Conference News">
+    Continue reading &gt;
+  </a>
+
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 card">
+        <article class="post post-teaser">
+  <div class="meta-date">
+    Aug 14, 2023
+  </div>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/2023/08/14/Analyzing-Codebase-Contributions.html" title="Analyzing Codebase Contributions">
+      Analyzing Codebase Contributions
+    </a>
+  </h4>
+
+  <p>
+    <a href="/2023/08/14/Analyzing-Codebase-Contributions.html">
+      Over the years, Igalia has become a significant contributor to multiple browser engines, standards, and test suites. Just recently, Igalian Brian Kardell put some numbers to that effort in a...
+    </a>
+  </p>
+  <a href="/2023/08/14/Analyzing-Codebase-Contributions.html" class="read-more" title="Analyzing Codebase Contributions">
+    Continue reading &gt;
+  </a>
+
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 card">
+        <article class="post post-teaser">
+  <div class="meta-date">
+    Aug 3, 2023
+  </div>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/2023/08/03/August-Conference-News.html" title="August Conference News">
+      August Conference News
+    </a>
+  </h4>
+
+  <p>
+    <a href="/2023/08/03/August-Conference-News.html">
+      August has arrived, which usually means most of Europe taking the month off. This is no less true for Igalians, and for conferences in general. That’s why this August, we’ll...
+    </a>
+  </p>
+  <a href="/2023/08/03/August-Conference-News.html" class="read-more" title="August Conference News">
+    Continue reading &gt;
+  </a>
+
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 card">
+        <article class="post post-teaser">
+  <div class="meta-date">
+    Aug 1, 2023
+  </div>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/2023/08/01/GStreamer-Conference-2023.html" title="GStreamer Conference 2023">
+      GStreamer Conference 2023
+    </a>
+  </h4>
+
+  <p>
+    <a href="/2023/08/01/GStreamer-Conference-2023.html">
+      Igalia is proud to be a Platinum sponsor of the GStreamer Conference 2023, which will be taking place September 25-26 in our home town of A Coruña, Spain. To quote...
+    </a>
+  </p>
+  <a href="/2023/08/01/GStreamer-Conference-2023.html" class="read-more" title="GStreamer Conference 2023">
+    Continue reading &gt;
+  </a>
+
+</article>
+
+      </div>
+      
+    </div>
+    
+    <p class="btn-p">
+      <a class="btn-card" href="/24-7/news">Read All News <img src='/assets/i/blue-arrow.svg' /></a>
+    </p>
+  </div>
+</div>
+
+
+  <div class="wrapper">
+  <section class="about-us container-fluid-1440">
+    <h2>About Us</h2>
+    <p>
+      Igalia is a Free Software consultancy with headquarters in Spain and developers all around the world. We are
+      passionate about our work, active in our communities, eager to learn, and happy to contribute our knowledge. In
+      short, we are inspired to make the world a better place through Free Software.
+    </p>
+    <p>
+      <a class="btn-card" href="/about">Learn More <img src='/assets/i/blue-arrow.svg' /></a>
+    </p>
+  </section>
+</div>
+
+
+  <div class="community wrapper">
+  <header class="community-header">
+    <img class="masthead" src="/assets/i/20background.jpg" />
+  </header>
+</div>
+<div class="community-content wrapper">
+  <section class="container-fluid-1440">
+    <div class="content">
+      <header class="community-section-header">
+        <h2>Igalia Community</h2>
+        <div class="view-more-wrapper">
+          <a href="/24-7/home"><img src='/assets/i/arrow.svg' /></a>
+        </div>
+      </header>
+      <hr />
+      <section class="articles">
+        <header class="community-section-header">
+        
+        
+          <h3>Articles</h3>
+          <div class="view-more-wrapper">
+            <a href="/24-7/posts">All articles <img src='/assets/i/arrow.svg' /></a>
+           </div>
+        </header>
+        <div class="grid-row">
+          
+          <div class="col-xs-12 col-md-3 card">
+            
+            <header class="card-header">
+              <time>
+                Aug 27, 2023
+              </time>
+              <h4>
+                <a class="post-link" href="https://bkardell.com/blog/cars.html">
+                  Completely Random Car and Design Stuff
+                </a>
+              </h4>
+              <a class="avatar" href="/team/bkardell">
+                <img
+                  src="/assets/i/igalians/brian-kardell_50x50.jpg"
+                  alt="Brian Kardell" />
+              </a>
+            </header>
+            <p>
+              <a class="post-link" href="https://bkardell.com/blog/cars.html">
+                Completely Random Car and Design Stuff This is a kind of "off brand" post for me. It's very, very random and just for fun. It's just a whole bunch of...
+              </a>
+            </p>
+          </div>
+          
+          <div class="col-xs-12 col-md-3 card">
+            
+            <header class="card-header">
+              <time>
+                Aug 23, 2023
+              </time>
+              <h4>
+                <a class="post-link" href="https://www.bassi.io/articles/2023/08/23/the-mirror/">
+                  The Mirror
+                </a>
+              </h4>
+              <a class="avatar" href="/team/ebassi">
+                <img
+                  src="/assets/i/igalians/ebassi_50x50.jpg"
+                  alt="Emmanuele Bassi" />
+              </a>
+            </header>
+            <p>
+              <a class="post-link" href="https://www.bassi.io/articles/2023/08/23/the-mirror/">
+                The GObject type system has been serving the GNOME community for more than 20 years. We have based an entire application development platform on top of the features it provides,...
+              </a>
+            </p>
+          </div>
+          
+          <div class="col-xs-12 col-md-3 card">
+            
+            <header class="card-header">
+              <time>
+                Aug 21, 2023
+              </time>
+              <h4>
+                <a class="post-link" href="https://melissawen.github.io/blog/2023/08/21/amd-steamdeck-colors">
+                  AMD Driver-specific Properties for Color Management on Linux (Part 1)
+                </a>
+              </h4>
+              <a class="avatar" href="/team/mwen">
+                <img
+                  src="/assets/i/igalians/mwen_50x50.jpg"
+                  alt="Melissa Wen" />
+              </a>
+            </header>
+            <p>
+              <a class="post-link" href="https://melissawen.github.io/blog/2023/08/21/amd-steamdeck-colors">
+                TL;DR: Color is a visual perception. Human eyes can detect a broader range of colors than any devices in the graphics chain. Since each device can generate, capture or reproduce...
+              </a>
+            </p>
+          </div>
+          
+          <div class="col-xs-12 col-md-3 card">
+            
+            <header class="card-header">
+              <time>
+                Aug 10, 2023
+              </time>
+              <h4>
+                <a class="post-link" href="https://bkardell.com/blog/2023-Mid-Season-Power-Rankings.html">
+                  Igalia: Mid-season Power Rankings
+                </a>
+              </h4>
+              <a class="avatar" href="/team/bkardell">
+                <img
+                  src="/assets/i/igalians/brian-kardell_50x50.jpg"
+                  alt="Brian Kardell" />
+              </a>
+            </header>
+            <p>
+              <a class="post-link" href="https://bkardell.com/blog/2023-Mid-Season-Power-Rankings.html">
+                Igalia: Mid-season Power Rankings Let’s take a look at how the year is stacking up in terms of Open Source contributions. If this were an episode of Friends its title...
+              </a>
+            </p>
+          </div>
+          
+          
+          
+
+        </div>
+        
+      </section>
+      <section class="tweets">
+        
+        
+        <header class="community-section-header">
+          <h3>Tweets & Toots</h3>
+          <div class="view-more-wrapper">
+            <a href="/24-7/tweets">All tweets & toots <img src='/assets/i/arrow.svg' /></a>
+          </div>
+        </header>
+        <div class="grid-row">
+          
+          <div class="col-xs-12 col-sm-2 card">
+            
+            <header class="card-header">
+              <a class="avatar" href="/team/emeyer">
+                <img
+                  src="/assets/i/igalians/emeyer_50x50.jpg"
+                  alt="Eric Meyer" />
+              </a>
+              <a class="author" href="https://mastodon.social/@Meyerweb">
+                Eric Meyer
+              </a>
+              <time>
+                2 weeks and 1 day ago
+              </time>
+            </header>
+            <p>
+              <a href="https://mastodon.social/@Meyerweb/110933634435717458">
+                📝 I designed a logo for the Igalia Chats podcast (of which I’m also a co-host) and wrote a little...
+              </a>
+            </p>
+          </div>
+          
+          <div class="col-xs-12 col-sm-2 card">
+            
+            <header class="card-header">
+              <a class="avatar" href="/team/bkardell">
+                <img
+                  src="/assets/i/igalians/brian-kardell_50x50.jpg"
+                  alt="Brian Kardell" />
+              </a>
+              <a class="author" href="https://toot.cafe/@bkardell">
+                Brian Kardell
+              </a>
+              <time>
+                2 weeks and 6 days ago
+              </time>
+            </header>
+            <p>
+              <a href="https://toot.cafe/@bkardell/110906906123931174">
+                seems like I&#39;ve asked this a lot of times, but anyone interested in studying this with me and maybe helping...
+              </a>
+            </p>
+          </div>
+          
+          <div class="col-xs-12 col-sm-2 card">
+            
+            <header class="card-header">
+              <a class="avatar" href="/team/emeyer">
+                <img
+                  src="/assets/i/igalians/emeyer_50x50.jpg"
+                  alt="Eric Meyer" />
+              </a>
+              <a class="author" href="https://mastodon.social/@Meyerweb">
+                Eric Meyer
+              </a>
+              <time>
+                3 weeks ago
+              </time>
+            </header>
+            <p>
+              <a href="https://mastodon.social/@Meyerweb/110900184116207830">
+                I’ve just started experimenting with #CSS anchored positioning in Chrome, and found that if `anchor` attributes are present in the...
+              </a>
+            </p>
+          </div>
+          
+          <div class="col-xs-12 col-sm-2 card">
+            
+            <header class="card-header">
+              <a class="avatar" href="/">
+                <img
+                  src="/assets/i/igalians/igalia.png"
+                  alt="Igalia" />
+              </a>
+              <a class="author" href="https://floss.social/@igalia">
+                Igalia
+              </a>
+              <time>
+                3 weeks and 5 days ago
+              </time>
+            </header>
+            <p>
+              <a href="https://floss.social/@igalia/110872055046442348">
+                🎙️On the latest Igalia Chats podcast, @Meyerweb and @bkardell talk with CNET Principal writer @stshank about the undersea cables that...
+              </a>
+            </p>
+          </div>
+          
+          <div class="col-xs-12 col-sm-2 card">
+            
+            <header class="card-header">
+              <a class="avatar" href="/team/bkardell">
+                <img
+                  src="/assets/i/igalians/brian-kardell_50x50.jpg"
+                  alt="Brian Kardell" />
+              </a>
+              <a class="author" href="https://toot.cafe/@bkardell">
+                Brian Kardell
+              </a>
+              <time>
+                1 month and 1 day ago
+              </time>
+            </header>
+            <p>
+              <a href="https://toot.cafe/@bkardell/110843844404260816">
+                Wow this is like @WolvicXR but irl. That city should partner with Wolvic or  something https://elk.zone/mastodon.social/@torgo/110843612686859020
+              </a>
+            </p>
+          </div>
+          
+          <div class="col-xs-12 col-sm-2 card">
+            
+            <header class="card-header">
+              <a class="avatar" href="/">
+                <img
+                  src="/assets/i/igalians/igalia.png"
+                  alt="Igalia" />
+              </a>
+              <a class="author" href="https://floss.social/@igalia">
+                Igalia
+              </a>
+              <time>
+                1 month and 4 days ago
+              </time>
+            </header>
+            <p>
+              <a href="https://floss.social/@igalia/110826154128844919">
+                Igalia is proud to be a Platinum Sponsor of the GStreamer Conference 2023, coming this September to A Coruña, Spain....
+              </a>
+            </p>
+          </div>
+          
+          
+          
+        </div>
+        
+      </section>
+      <section class="media">
+        
+        
+        <header class="community-section-header">
+          <h3>Media</h3>
+        </header>
+        <div class="block-content grid-row">
+          
+          <div class="col-xs-12 col-md-4 card">
+            <article class="media media-teaser">
+
+  <div class="responsive-embed-wrapper">
+      <amp-youtube
+      data-videoid="JXpkNm77K2c"
+      layout="responsive"
+      width="480" height="270"></amp-youtube>
+    <!-- frame width="560" height="315" src="https://www.youtube.com/embed/JXpkNm77K2c?rel=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen title="Igalia Chats: Web Applications 1.0"></iframe -->
+  </div>
+
+  <h4>
+    <a class="post-link" href="https://www.youtube.com/watch?v=JXpkNm77K2c">
+      Igalia Chats: Web Applications 1.0
+    </a>
+  </h4>
+  <time>
+    Sep 1, 2023
+  </time>
+</article>
+
+          </div>
+          
+          <div class="col-xs-12 col-md-4 card">
+            <article class="media media-teaser">
+
+  <div class="responsive-embed-wrapper">
+      <amp-youtube
+      data-videoid="nNc4GYGlMZk"
+      layout="responsive"
+      width="480" height="270"></amp-youtube>
+    <!-- frame width="560" height="315" src="https://www.youtube.com/embed/nNc4GYGlMZk?rel=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen title="Igalia Chats: Polypane"></iframe -->
+  </div>
+
+  <h4>
+    <a class="post-link" href="https://www.youtube.com/watch?v=nNc4GYGlMZk">
+      Igalia Chats: Polypane
+    </a>
+  </h4>
+  <time>
+    Aug 22, 2023
+  </time>
+</article>
+
+          </div>
+          
+          <div class="col-xs-12 col-md-4 card">
+            <article class="media media-teaser">
+
+  <div class="responsive-embed-wrapper">
+      <amp-youtube
+      data-videoid="X7LXMsSVB5E"
+      layout="responsive"
+      width="480" height="270"></amp-youtube>
+    <!-- frame width="560" height="315" src="https://www.youtube.com/embed/X7LXMsSVB5E?rel=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen title="Igalia Chats: Undersea Infrastructure"></iframe -->
+  </div>
+
+  <h4>
+    <a class="post-link" href="https://www.youtube.com/watch?v=X7LXMsSVB5E">
+      Igalia Chats: Undersea Infrastructure
+    </a>
+  </h4>
+  <time>
+    Aug 10, 2023
+  </time>
+</article>
+
+          </div>
+          
+          
+          
+        </div>
+        
+      </section>
+    </div>
+  </section>
+</div>
+
+
+</div>
+
+    </main>
+
+    <footer id="site-footer" role="contentinfo">
+
+  <a class="site-title" href="/">
+    <img src="/assets/i/logo.png" alt="Igalia" />
+  </a>
+
+  <div>
+    <h2>Igalia.com</h2>
+    <ul class="main-menu" role="navigation">
+      
+      <li>
+        <a class="page-link" href="/about" title="About Us">
+          About Us
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/technologies" title="Technologies">
+          Technologies
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/services" title="Services">
+          Services
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/industries" title="Industries">
+          Industries
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/24-7/home" title="24/7">
+          24/7
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/jobs" title="Jobs">
+          Jobs
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/contact" title="Contact">
+          Contact
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div>
+    <h2>Igalia, S.L. © 2023. All rights reserved.</h2>
+    <ul class="footer-menu" role="navigation">
+      
+      <li>
+        <a class="page-link" href="/coc" title="Code of Conduct">
+          Code of Conduct
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/legal" title="Legal Terms">
+          Legal Terms
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/press" title="Press">
+          Press
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/privacy" title="Privacy Policy">
+          Privacy Policy
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/public-funding" title="Public funding (Fondos públicos)">
+          Public funding (Fondos públicos)
+        </a>
+        </li>
+        
+    </ul>
+  </div>
+
+  <div role="contentinfo">
+    <h2>Headquarters</h2>
+    <ul class="contact-list">
+      
+      <li>Bugallal Marchesi, 22, 1º</li>
+      
+      <li>15008 A Coruña</li>
+      
+      <li>Galicia (Spain)</li>
+      
+      <li>Pho.: +34 981 913991</li>
+      
+      <li>
+        <a href="mailto:info(at)igalia.com">
+          info(at)igalia.com
+        </a>
+      </li>
+      
+    </ul>
+    <div class="social">
+      
+      
+
+      <a class="social-link" href="https://twitter.com/igalia" target="_blank" title="twitter" rel="me">
+        <i aria-hidden="true" class="fab fa-twitter"></i>
+        <span hidden>twitter</span>
+      </a>
+      
+      
+
+      <a class="social-link" href="https://floss.social/@igalia" target="_blank" title="mastodon" rel="me">
+        <i aria-hidden="true" class="fab fa-mastodon"></i>
+        <span hidden>mastodon</span>
+      </a>
+      
+      
+
+      <a class="social-link" href="https://youtube.com/igalia" target="_blank" title="youtube" rel="me">
+        <i aria-hidden="true" class="fab fa-youtube"></i>
+        <span hidden>youtube</span>
+      </a>
+      
+    </div>
+
+</footer>
+
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+    <script src="/assets/app.js"></script>
+    
+    
+
+    <!-- Piwik -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+      _paq.push(['disableCookies']);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+         var u="//stats.igalia.com/";
+         _paq.push(['setTrackerUrl', u+'piwik.php']);
+         _paq.push(['setSiteId', '1']);
+         var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+         g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+       })();
+    </script>
+    <noscript><p><img src="//stats.igalia.com/piwik.php?idsite=1&rec=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Piwik Code -->
+
+  </body>
+</html>

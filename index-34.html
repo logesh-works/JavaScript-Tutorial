@@ -1,0 +1,97 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>ASIN.cc: Amazon Link Shortener</title>
+<style type="text/css">
+@import "elementica.css";
+label#output {display:block}
+a.favelet:link,a.favelet:visited {
+  white-space:nowrap;
+  font-size:smaller; 
+  color:#000;
+  background-color:#CCC;
+  padding:.2em 2em;
+  border-radius:1em; -moz-border-radius:1em; -webkit-border-radius:1em; 
+  border: 1px solid #CCC;
+  cursor:default
+}
+</style>
+<script type="text/javascript" src="cassis.js"></script>
+<script type="text/javascript">
+function updateurl() {
+ var d = asintorsxg(document.getElementById('asin').value);
+ var u = document.getElementById('url');
+ if (d!="~") {
+   u.value = strcat("https://ASIN.cc/",d);
+   document.getElementById('output').style.visibility="visible";
+   u.focus();
+   u.select();
+ }
+ return false;
+}
+
+/* addLoadEvent from http://simonwillison.net/2004/May/26/addLoadEvent/ */
+function addLoadEvent(func) {
+  var oldonload = window.onload;
+  if (typeof window.onload != 'function') {
+    window.onload = func;
+  } else {
+    window.onload = function() {
+      if (oldonload) {
+        oldonload();
+      }
+      func();
+    }
+  }
+}
+
+/* unobtrusive javascript: set event handler attributes in script, not markup */
+addLoadEvent(function() {
+ document.forms[0].onsubmit = updateurl;
+ document.getElementById('asin').onblur = function(){updateurl()};
+ document.getElementById('submit').onblur = updateurl;
+});
+
+</script>
+</head>
+<body>
+<hgroup>
+<h1><a href="/">ASIN.cc</a></h1>
+<h2 class="h6">Your source for even shorter Amazon links.</h2>
+</hgroup>
+
+<form action="/"><div>
+<label class="asin" for="asin">ASIN or ISBN-10:</label> <input type="text" name="asin" id="asin" size="20" value="" autofocus="autofocus" /> <button type="submit" id="submit">Shortlink</button>
+<label id="output" style="visibility:hidden" >Your ASIN.cc shortlink: <input type="text" id="url" size="28"  /></label>
+</div></form>
+
+<p>Enter an Amazon <dfn title="Ten alphanumeric digits typically starting with B00... ">ASIN</dfn> (e.g. <kbd>B000VWEFP8</kbd>) or an <dfn title="10 digit ISBN code, hyphens optional">ISBN-10</dfn> (e.g. <kbd>0881791326</kbd>) and use the ASIN.cc link.<p>
+
+<p>Follow <a href="https://twitter.com/asindotcc">@asindotcc</a> for status updates. 
+</p>
+
+<div class="favelet" id="browser-button">
+<h2 class="h6">Create ASIN shortlinks from your browser</h2>
+<p>
+Drag this link: 
+<a id="shortenASIN" class="favelet" title="Create an ASIN.cc shortlink for the  current Amazon.com page." href="javascript:void(location.href='https://ASIN.cc/?asin='+escape(location.href))">ASIN.cc shortlink</a> 
+to your browser's <dfn title='sometimes called a "Bookmarks Toolbar"'>links toolbar</dfn> and then create ASIN.cc shortlinks directly from Amazon.com pages you're viewing by clicking it in your toolbar.
+</p>
+</div>
+
+<h2 class="h6">Computed shortlinks</h2>
+<p><strong>ASIN.cc</strong> shortlinks are <em>computed</em> rather than stuck in a fragile opaque <em>database</em> (what typical generic URL shorteners do). Computed shortlinks are superior because anyone (e.g. browsers, other applications, sites) can programmatically determine where they go. Computed shortlinks are thus more robust, being inherently repairable by inspection, while database shortlinks break irreparably when their site is down.</p>
+<p>Given an ASIN.cc shortlink path p (the part of an ASIN.cc URL after the last slash "/"), here is how you convert it to an ASIN (including ISBN-10) :</p>
+<ol><li>if p starts with a "~", convert the portion after from <a href="http://tantek.pbworks.com/NewBase60">New Base 60 sexagesimal</a> to decimal, left-pad with 0s to nine digits, compute and append the ISBN-10 final checksum digit.</li>
+    <li>otherwise if p is less than eight characters, convert it from New Base 60 sexagesimal to conventional alphanumeric hexatridecimal, left-pad it with 0s to nine digits, and prepend the letter "B".</li>
+    <li>otherwise if it has dashes, filter them out, and use the result  directly as an ISBN.</li>
+    <li>otherwise treat p directly as an ASIN.</li>
+</ol>
+
+<footer>
+<div class="footer">
+
+<p class="about">ASIN.cc implementation, <a href="http://tantek.pbworks.com/CassisProject">CASSIS project</a>, <a href="http://tantek.pbworks.com/NewBase60">New Base 60</a> numbering system,  and site design by <span class="vcard"><a class="fn url" href="http://tantek.com">Tantek Çelik</a></span>, inspired by <a href="http://tantek.com/asin/B000VWEFP8">Helvetica</a>.
+</p>
+</div>
+</footer>
+
+</body>
+</html>

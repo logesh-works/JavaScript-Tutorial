@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>URL design - IndieWeb</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"6ad1969c4bbfd9f599e841ff","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"URL_design","wgTitle":"URL design","wgCurRevisionId":81818,"wgRevisionId":81818,"wgArticleId":3131,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"URL_design","wgRelevantArticleId":3131,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]};RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready","user.options":
+"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1i9g4",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});</script>
+<link rel="stylesheet" href="/wiki/load.php?lang=en&amp;modules=skins.vector.styles.legacy&amp;only=styles&amp;skin=vector"/>
+<script async="" src="/wiki/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/wiki/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.38.4"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0"/>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/wiki/opensearch_desc.php" title="IndieWeb (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="https://indieweb.org/wiki/api.php?action=rsd"/>
+<link rel="license" href="/IndieWebCamp:Copyrights"/>
+<link rel="alternate" type="application/atom+xml" title="IndieWeb Atom feed" href="/wiki/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+<link rel="webmention" href="https://webmention.io/indiewebcamp/webmention">
+
+<link rel="pingback" href="https://webmention.io/indiewebcamp/xmlrpc">
+
+<script src="https://cdn.usefathom.com/script.js" site="ZPHFRYAA" defer></script>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-URL_design rootpage-URL_design skin-vector action-view skin--responsive skin-vector-legacy"><div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body h-entry" role="main">
+	<a id="top"></a>
+	<div id="siteNotice"></div>
+	<div class="mw-indicators">
+	</div>
+	<span class="p-name"><h1 id="firstHeading" class="firstHeading mw-first-heading">URL design</h1></span>
+	<div id="bodyContent" class="vector-body">
+		<div id="siteSub" class="noprint">From IndieWeb</div>
+		<div id="contentSub"></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+		<a class="mw-jump-link" href="#searchInput">Jump to search</a>
+		<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr"><div class="mw-parser-output"> <p class="plainlinks template_stub" style="text-indent: 2em; font-style: italic;"> <b>This article is a <a href="/stub" title="stub">stub</a>.</b> You can help the IndieWeb wiki by <a class="external text" href="https://indieweb.org/wiki/index.php?title=URL_design&amp;action=edit">expanding it</a>. </p> 
+<p><br />
+<span class="p-summary"><b><dfn>URL design</dfn></b> is the practice of deliberately <a href="/design" title="design">designing</a> URLs, in particular, <a href="/permalinks" class="mw-redirect" title="permalinks">permalinks</a>, typically for a better <a href="/UX" class="mw-redirect" title="UX">UX</a> for everyone who <a href="/create" title="create">creates</a>, <a href="/read" title="read">reads</a>, and <a href="/share" title="share">shares</a> content.</span> The guidance on this page refers specifically to designing URLs for personal social content.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Why"><span class="tocnumber">1</span> <span class="toctext">Why</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#How"><span class="tocnumber">2</span> <span class="toctext">How</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#More_Usable"><span class="tocnumber">2.1</span> <span class="toctext">More Usable</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Dates"><span class="tocnumber">2.2</span> <span class="toctext">Dates</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="#Non-publication_dates"><span class="tocnumber">2.2.1</span> <span class="toctext">Non-publication dates</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#DRY_violation"><span class="tocnumber">2.2.2</span> <span class="toctext">DRY violation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-7"><a href="#Topic"><span class="tocnumber">2.3</span> <span class="toctext">Topic</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Content_Type"><span class="tocnumber">2.4</span> <span class="toctext">Content Type</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Ordinal"><span class="tocnumber">2.5</span> <span class="toctext">Ordinal</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Author"><span class="tocnumber">2.6</span> <span class="toctext">Author</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Avoid"><span class="tocnumber">3</span> <span class="toctext">Avoid</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#Long_URLs"><span class="tocnumber">3.1</span> <span class="toctext">Long URLs</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#IndieWeb_Examples"><span class="tocnumber">4</span> <span class="toctext">IndieWeb Examples</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Perspectives_and_Experience"><span class="tocnumber">5</span> <span class="toctext">Perspectives and Experience</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#Aaron_Parecki"><span class="tocnumber">5.1</span> <span class="toctext">Aaron Parecki</span></a>
+<ul>
+<li class="toclevel-3 tocsection-16"><a href="#Pre-2012"><span class="tocnumber">5.1.1</span> <span class="toctext">Pre-2012</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="#2012-2015"><span class="tocnumber">5.1.2</span> <span class="toctext">2012-2015</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#2016-Present"><span class="tocnumber">5.1.3</span> <span class="toctext">2016-Present</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-19"><a href="#Ryan_Barrett"><span class="tocnumber">5.2</span> <span class="toctext">Ryan Barrett</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-20"><a href="#FAQ"><span class="tocnumber">6</span> <span class="toctext">FAQ</span></a>
+<ul>
+<li class="toclevel-2 tocsection-21"><a href="#Why_Not_US_Date_Order"><span class="tocnumber">6.1</span> <span class="toctext">Why Not US Date Order</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Time"><span class="tocnumber">6.2</span> <span class="toctext">Time</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#Why_not_AM_PM"><span class="tocnumber">6.3</span> <span class="toctext">Why not AM PM</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#Why_not_content_type_first"><span class="tocnumber">6.4</span> <span class="toctext">Why not content type first</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#URL_in_a_URL"><span class="tocnumber">6.5</span> <span class="toctext">URL in a URL</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-26"><a href="#Articles"><span class="tocnumber">7</span> <span class="toctext">Articles</span></a></li>
+<li class="toclevel-1 tocsection-27"><a href="#Brainstorming"><span class="tocnumber">8</span> <span class="toctext">Brainstorming</span></a>
+<ul>
+<li class="toclevel-2 tocsection-28"><a href="#Posting_UI"><span class="tocnumber">8.1</span> <span class="toctext">Posting UI</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#URL_Template"><span class="tocnumber">8.2</span> <span class="toctext">URL Template</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-30"><a href="#See_Also"><span class="tocnumber">9</span> <span class="toctext">See Also</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Why">Why</span></h2>
+<p>By deliberately designing your URLs and URL structure, especially permalinks, you can: 
+</p>
+<ul><li>make them more usable</li>
+<li>communicate rough topic of publication</li>
+<li>make it easier for you to change your permalink policies over time (without breaking, or even having to change past years)</li>
+<li>communicate date of publication (if desired; debatable)</li></ul>
+<h2><span class="mw-headline" id="How">How</span></h2>
+<h3><span class="mw-headline" id="More_Usable">More Usable</span></h3>
+<p>Make your permalinks more usable by:
+</p>
+<ul><li>keeping your URLs <b>human readable</b> for simpler conveyance of information with URLs</li>
+<li>keeping your URLs <b>short</b> for easier sharing, reducing mental overload, greater reliability<a class="external autonumber" href="https://aaronparecki.com/articles/2015/08/29/1/why-i-live-in-irc##Long%20URLs">[1]</a></li>
+<li><b>Avoid giant long strings of numbers or characters</b>, i.e. <a href="/database" title="database">database</a> IDs</li></ul>
+<h3><span class="mw-headline" id="Dates">Dates</span></h3>
+<p>Many people communicate date of publication by using a top-level structure that starts with a date:
+</p>
+<ul><li><code>/YYYY/MM/DD/</code> - the date in order of hierarchical significance</li>
+<li><code>/YYYY/DDD/</code> - ISO ordinal date order, saves two characters (shorter is better, though may not be immediately understood by human readers), and communicates a linearity to your year of posts.</li></ul>
+<p>Avoid the "literal" ISO 8601 date patterns of use <code>/YYYY-MM-DD/</code> or <code>/YYYYMMDD/</code> because by omitting path separators they are are less URL friendly (less hackable), e.g., <a class="external text" href="https://chat.indieweb.org/2015-07-26">https://chat.indieweb.org/2015-07-26</a>.
+</p><p>This is a very common practice for permalinks, but possibly more of an implementation detail and convenience than recommended design. 
+</p><p>Publication date can be useful at a glance, but should be communicated in the page itself regardless. It's probably not so critical that it <i>needs</i> to be in the URL, especially if even the more useful <a href="#Topic">topic</a> is considered optional. In particular, some pages are "evergreen" and regularly updated, e.g. the list of books you've read, so their publication date isn't very interesting.
+</p><p>As an implementation detail, if you use date (<a href="/bim" title="bim">bim</a>, etc) to identify your posts and URLs and ignore any slug, it's easier to change the slug (and your internal identifier) later. You can redirect old slug to new ones without doing this, though. The important thing is that you create and maintain the redirects so that your permalinks keep working. <i>How</i> you do it is less important.
+</p>
+<h4><span class="mw-headline" id="Non-publication_dates">Non-publication dates</span></h4>
+<p>Though the predominant default in date-based URLs is the publication date of the page, there are some notable exceptions:
+</p><p><b>Issue date</b>: magazines/periodicals typically identify a specific issue with a date (or month) that is often in the future. E.g. as of 2020-11-27, the following pages are valid and viewable
+</p>
+<ul><li><a class="external free" href="https://www.newyorker.com/magazine/2020/11/30/how-venture-capitalists-are-deforming-capitalism">https://www.newyorker.com/magazine/2020/11/30/how-venture-capitalists-are-deforming-capitalism</a>
+<ul><li>The date in the URL indicates the "November 30th 2020" issue of The New Yorker; the page itself has an explicit visible publication date of 2020-11-23.</li>
+<li>This makes the URL "hackable" down to just the date to then display all the articles from that issue, e.g.: <a class="external free" href="https://www.newyorker.com/magazine/1939/01/07">https://www.newyorker.com/magazine/1939/01/07</a></li></ul></li>
+<li><a class="external free" href="https://www.theatlantic.com/magazine/archive/2020/12/can-history-predict-future/616993/">https://www.theatlantic.com/magazine/archive/2020/12/can-history-predict-future/616993/</a>
+<ul><li>For the "December 2020" issue of The Atlantic.</li>
+<li>Similarly, by trimming the URL down to <a class="external free" href="https://www.theatlantic.com/magazine/archive/2020/12/">https://www.theatlantic.com/magazine/archive/2020/12/</a>, it redirects to <a class="external free" href="https://www.theatlantic.com/magazine/toc/2020/12/">https://www.theatlantic.com/magazine/toc/2020/12/</a> which displays a nice overview of that issue of the magazine</li></ul></li></ul>
+<h4><span class="mw-headline" id="DRY_violation">DRY violation</span></h4>
+<p>Though useful, putting the date in the URL for a post which contains its publication date in visible text is a <a href="/DRY" title="DRY">DRY</a> violation, and thus vulnerable to inconsistencies, e.g.
+</p>
+<ul><li><a class="external free" href="https://blueskyweb.xyz/blog/3-6-2022-a-self-authenticating-social-protocol">https://blueskyweb.xyz/blog/3-6-2022-a-self-authenticating-social-protocol</a>
+<ul><li>URL says "3-6-2022" implying a <b>March</b> 6th 2022 publication date, however</li>
+<li>Actual content says "Apr 6, 2022" which is correct, as <b>April</b> 6th 2022 was when the post was actually published</li></ul></li></ul>
+<p>If you put the date of your posts in your permalinks, please take extra care to keep it accurate, and in the case of errors, make sure to fix the permalink and redirect from the errant version.
+</p>
+<h3><span class="mw-headline" id="Topic">Topic</span></h3>
+<p>Communicate topic by using a <span id="slug">"<a href="/slug" title="slug">slug</a>"</span> somewhere after the date, e.g.
+</p>
+<ul><li><code>../tag1-tag2-tag3</code></li></ul>
+<p>Also:
+</p>
+<ul><li>Many put the slug at the end of their permalinks</li>
+<li>Make the slug <b>optional</b> for identifying the post (i.e. not a required part of a permalink) if at all possible, since
+<ul><li>it contains human written/readable/editable content</li>
+<li>you may want to change it after the fact without any need for maintenance or URL redirects,</li>
+<li>it may be inadvertently truncated (like in email, or <a class="external text" href="https://chat.indieweb.org/2017-04-14/1492199805969000">in IRC</a>).</li>
+<li>it may be inadvertently <i>extended</i> by a bad autolinker that is errantly including a subsequent character, like a "." or a ","</li></ul></li>
+<li>Some have chosen to make the slug required:
+<ul><li><span class="h-card" style="white-space:nowrap"><img src="https&#58;//gregorlove.com/site/assets/files/6268/profile-2021-square.300x0.jpg" class="" style="height:1.1em;vertical-align:-.1em" alt="" />  <a href="/User:Gregorlove.com" title="User:Gregorlove.com">gRegor Morrill</a></span>: I like the method of slugs being optional and redirecting to the canonical URL, but I thought about it for a while and decided that I preferred having only the year and month in my URL hierarchy. If, in rare situations, a URL slug gets truncated, I plan to perform a search on the partial slug and present possible matches on the 404 error page.</li></ul></li></ul>
+<h3><span class="mw-headline" id="Content_Type">Content Type</span></h3>
+<p>Individuals with large quantities of different content types may want to differentiate in the URL what type of content to expect, as it primes the user for the subsequent interactions with the content. For example, take this comparison:
+</p>
+<ul><li><code>/2014/11/10/url-design</code> - This URL could be anything about "URL design." It could be an <a href="/article" title="article">article</a>, a <a href="/favorite" title="favorite">favorite</a>, a <a href="/reply" title="reply">reply</a>, or even a <a href="/photo" title="photo">photo</a> about "URL design."</li>
+<li><code>/2014/11/10/reply/url-design</code> - This URL would be give the reader of the URL immediate understanding of the content to expect at that URL: a <a href="/reply" title="reply">reply</a>. If a person was not looking for this type of content, it would allow them the ability to skip over this content or be ready for a threaded conversation around "URL design."</li></ul>
+<h3><span class="mw-headline" id="Ordinal">Ordinal</span></h3>
+<p>One of the drawbacks of having an optional topic slug as mentioned above is that a lot of posts could become difficult to pinpoint when posting multiple times per day. Adding a time-relative ordinal to the end of a given Date allows for better pinpointing while still maintaining relevancy to readers of the URL. Take the two Dates formats listed above and simply add the ordinal at the end (N). This maintains hierarchical significance in both types of Date URL structure.
+</p>
+<ul><li><code>/YYYY/MM/DD/N/</code></li>
+<li><code>/YYYY/DDD/N/</code></li></ul>
+<h3><span class="mw-headline" id="Author">Author</span></h3>
+<p>As web publishers began to publish more and more "snackable content," or short meme driven content, the feeds became overwhelming. Few publishers offer an author feed if you want to add specific journalist and avoid clickbait content. 
+</p>
+<ul><li>BuzzFeed articles urls follow content type, author, and then article title.</li></ul>
+<p><code>/article/alexkantrowitz/how-the-retweet-ruined-the-internet</code>However each author's page does not have a corresponding RSS feed.
+</p>
+<h2><span class="mw-headline" id="Avoid">Avoid</span></h2>
+<p>See everything listed in this article and expand here inline:
+</p>
+<ul><li><span class="h-cite"><span class="dt-published">2011-03-05</span>&#32;<span class="p-author"><a class="external text" href="https://manas.tungare.name">Manas Tungare</a></span>:&#32;<cite><a class="external u-url p-name" href="https://manas.tungare.name/blog/url-design-sins-16-things-that-dont-belong-in-urls">URL Design Sins: 16 things that don't belong in URLs</a></cite>&#32;(<a href="http://web.archive.org/web/20170130094644/http://manas.tungare.name:80/blog/url-design-sins-16-things-that-dont-belong-in-urls/" class="external u-url">archived</a>)</span></li></ul>
+<h3><span class="mw-headline" id="Long_URLs">Long URLs</span></h3>
+<p>Long URLs are fragile and break in many places, e.g.
+</p>
+<ul><li>email - auto-wrapping at 70chars etc.</li>
+<li><a href="/IRC" title="IRC">IRC</a> / terminal UIs<a class="external autonumber" href="https://aaronparecki.com/articles/2015/08/29/1/why-i-live-in-irc##Long%20URLs">[2]</a></li>
+<li>...</li></ul>
+<p>Long URLs look less trustworthy, especially when they have a bunch of <code><a href="/utm" title="utm">utm_</a>...</code> tracking parameters.
+</p><p>Long URLs look ugly when copy/pasted into IM/PM/DMs.
+</p>
+<h2><span class="mw-headline" id="IndieWeb_Examples">IndieWeb Examples</span></h2>
+<p>See: <a href="/permalinks#IndieWeb_Examples" class="mw-redirect" title="permalinks">permalinks#IndieWeb_Examples</a>
+</p>
+<h2><span class="mw-headline" id="Perspectives_and_Experience">Perspectives and Experience</span></h2>
+<h3><span class="mw-headline" id="Aaron_Parecki">Aaron Parecki</span></h3>
+<p>I've tried a number of different permalink formats over the years. Below is a list of some of my past attempts as well as a description of why I eventually moved away from it.
+</p>
+<h4><span class="mw-headline" id="Pre-2012">Pre-2012</span></h4>
+<p><code>/{year}/{ordinal day}/{type}/{sequence}/{optional slug}</code>
+</p><p>Examples:
+</p>
+<ul><li><code>/2011/203/article/1/enabling-ssh-on-the-seagate-blackarmor-nas-220</code></li>
+<li><code>/2011/203/note/9</code></li></ul>
+<p>Issues: 
+</p>
+<ul><li>The type in the middle of the permalink is a strange mixing of hierarchy. The original intent was to provide a hint at the content to expect at the URL in case there was no slug</li>
+<li>The ordinal day is not easily readable</li></ul>
+<h4><span class="mw-headline" id="2012-2015">2012-2015</span></h4>
+<p><code>/{type}/{year}/{month}/{day}/{sequence}/{optional slug}</code>
+</p><p>Examples:
+</p>
+<ul><li><code>/notes/2015/12/23/1/h-card</code></li>
+<li><code>/notes/2015/12/23/1</code></li></ul>
+<p>I originally had the type first to be able to create a feed for specific post types without querying a database, just reading the files on disk, since all notes were stored in a folder called "notes", articles in "articles", etc. The addition of a database as an index meant that this was no longer solving a problem. Moral of the story is: don't let implementation detail affect URL design.
+</p>
+<h4><span class="mw-headline" id="2016-Present">2016-Present</span></h4>
+<p><code>/{year}/{month}/{day}/{sequence}/{optional slug}</code>
+</p><p>Examples:
+</p>
+<ul><li><code>/2015/12/23/1/h-card</code></li>
+<li><code>/2015/12/23/1</code></li></ul>
+<h3><span class="mw-headline" id="Ryan_Barrett">Ryan Barrett</span></h3>
+<p><a class="external text" href="https://snarfed.org/">snarfed.org</a> has two main types of URLs:
+</p>
+<ul><li><b>posts</b> are prefixed with date, eg <code><a class="external text" href="https://snarfed.org/2019-05-26_raymond-t-lahar">/2019-05-26_raymond-t-lahar</a></code></li>
+<li><b>pages</b> are not, eg <code><a class="external text" href="https://snarfed.org/about">/about</a></code></li></ul>
+<p>(Both have created and updated timestamps in the page contents themselves.)
+</p>
+<h2><span class="mw-headline" id="FAQ">FAQ</span></h2>
+<h3><span class="mw-headline" id="Why_Not_US_Date_Order">Why Not US Date Order</span></h3>
+<p>Q: Why not US date order like <samp>/march/15/2014/</samp>&#160;?
+</p><p>A: Lots of problems with this:
+</p>
+<ol><li>US-centric - the web is world-wide</li>
+<li>English-centric month name "march" is not international friendly (again, *world-wide* web)</li>
+<li>does not follow hierarchical significance - "march" and "15" are less significant than 2014.</li>
+<li>makes it harder to change URL policies every year (since the year is the 3rd component instead of the first.</li></ol>
+<h3><span class="mw-headline" id="Time">Time</span></h3>
+<p>Q: What is a good way to represent time in a URL?
+</p><p>A: There are several reasonable approaches. Using zero-padded hours HH (24hr), minutes MM, and seconds SS:
+</p>
+<ol><li>Immediately after the date with separators, e.g. <blockquote><p><code>/YYYY/MM/DD/HH/MM/SS</code></p></blockquote> or even <blockquote><p><code>/YYYY/MM/DD/HH:MM:SS</code></p></blockquote></li>
+<li>Immediately after the date without separators - less readable but ok <blockquote><p><code>/YYYY/MM/DD/HHMMSS</code></p></blockquote></li></ol><p>
+Omitting the seconds SS is ok too if you don't find yourself posting more than once a minute. </p><blockquote><p><code>/YYYY/MM/DD/HH:MM</code></p></blockquote><p>
+Alternatively if you post more than once a second (e.g. automatic metrics), you may want to include a digit or two of decimal seconds. </p><blockquote><p><code>/YYYY/MM/DD/HH:MM:SS.ss</code></p></blockquote>
+<h3><span class="mw-headline" id="Why_not_AM_PM">Why not AM PM</span></h3>
+<p>Q: Why not times with AM and PM like <samp>/12:57pm/</samp>?
+</p><p>A: Some problems with this:
+</p>
+<ol><li>AM/PM are easily confused / misread (bad for usability)</li>
+<li>makes the URL longer unnecessarily (compared to 24hr time)</li>
+<li>less international - 24hr time is more readily recognized when reading world-wide.</li></ol>
+<h3><span class="mw-headline" id="Why_not_content_type_first">Why not content type first</span></h3><p>
+Q: Why not put the type of content first in the URL structure, e.g. </p><blockquote><p><code>/reply/2014/11/10</code></p></blockquote><p>&#160;?
+</p><p>A: Many reasons:
+</p>
+<ol><li><b>The more known/stable aspect should go first.</b> Dates are much more well understood (stable) and well known than "kinds" of <a href="/posts" title="posts">posts</a>, which are still squishy and growing. Permalinks and URLs in general are supposed to be stable, thus putting the more stable pieces first makes sense. Less change if you do have to change the squishy parts.</li>
+<li><b>Year first allows changing URL policies</b> more easily, like once a year. If your year is first, you can set a policy for how your URLs work each year and change it, not having to go back and change past years.</li>
+<li><b>Keeps the URL distinct from type implementation.</b> The type usually has to be defined somewhere in the implementation of a site or in a list of allowed types. Changes to the names, classification, or implementation of types can be made without changing the URL.</li>
+<li><b>Makes it easier to experiment with new <a href="/post_kinds" class="mw-redirect" title="post kinds">post kinds</a>.</b> If the type is not in the URL it is easier to change the type of a posts type later. For example, a new post could originally be published as a note and later changed to a more specific type like an <a href="/RSVP" class="mw-redirect" title="RSVP">RSVP</a>.</li>
+<li><b>Experience.</b> <span class="h-card" style="white-space:nowrap"><img src="https&#58;//aaronparecki.com/images/profile.jpg" class="" style="height:1.1em;vertical-align:-.1em" alt="" /> <a href="/User:Aaronparecki.com" title="User:Aaronparecki.com">Aaron Parecki</a></span> in particular started with a type-first URL structure, and is now having to convert it all to date first because of various scaling, storage, and other reasons.<a class="external autonumber" href="http://indiewebcamp.com/irc/2014-10-30#t1414695058382">[3]</a> <span class="h-card"><img src="https&#58;//secure.gravatar.com/avatar/17d306899b5f20953440eca1d65d34e0.jpg" class="" style="height:1.1em;vertical-align:-.1em" alt="" /> <a href="/User:Www.ciccarello.me" title="User:Www.ciccarello.me">Anthony Ciccarello</a></span> also started with type first when the kinds of posts were more distinct but changed to a generic /posts root once he added more types. <a class="external autonumber" href="https://chat.indieweb.org/dev/2022-03-30/1648681217368800">[4]</a></li></ol>
+<p>Alternatively:
+</p>
+<ol><li><span class="h-card"><a href="http://ben.thatmustbe.me" class="external u-url"><img src="https&#58;//ben.thatmustbe.me/image/static/icon_64.jpg" class="" style="height:1.1em;vertical-align:-.1em" alt="" /></a> <span class="p-name p-nickname"><a href="/User:Ben.thatmustbe.me" title="User:Ben.thatmustbe.me">Ben Roberts</a></span></span> puts content type first as a user feature /note/2015/8/12/4/ but do not depend on it for identifying posts (the problem <span class="h-card" style="white-space:nowrap"><img src="https&#58;//aaronparecki.com/images/profile.jpg" class="" style="height:1.1em;vertical-align:-.1em" alt="" /> <a href="/User:Aaronparecki.com" title="User:Aaronparecki.com">Aaron Parecki</a></span> was having).  Putting in an incorrect type will automatically redirect to the correct URL.  This allows for more intuitive URLs for streams of type specific posts.  /note/ will list all notes, /photo/ only photos, etc.</li></ol>
+<h3><span class="mw-headline" id="URL_in_a_URL">URL in a URL</span></h3>
+<p>Q: How can I put a URL within a URL as in <code>http://example.com/other/http://example.org/post</code>?
+</p><p>Aside: note common use-cases for a URL within a URL:
+</p>
+<ul><li>Syndicating in some content from another site, e.g. sites that accept content submissions like <a href="/IndieNews" title="IndieNews">IndieNews</a></li>
+<li>Archiving a copy of content from another site, e.g. <a href="/Internet_Archive" title="Internet Archive">Internet Archive</a> Wayback Machine, or personal sites that archive/serve a copy of content from defunct or <a href="/lost_sites" title="lost sites">lost sites</a> or <a href="/zombie" title="zombie">zombies</a>.</li></ul>
+<p><b>A: Current best practice: remove the protocol part of the second URL as <code>http://example.com/other/example.org/post</code>.</b> For example:
+</p>
+<ul><li><a class="external free" href="https://news.indieweb.org/en/boffosocko.com/2022/01/28/indiewebcamp-personal-libraries-pop-up-session/">https://news.indieweb.org/en/boffosocko.com/2022/01/28/indiewebcamp-personal-libraries-pop-up-session/</a></li></ul>
+<p>The problem with the example  in the question is that URLs should have only one instance of <code>http://</code> in them for readability. 
+</p><p>Alternatives:
+</p>
+<ul><li>Pass the second URL as an encoded parameter. Disadvantage: URL encoded parameters are uglier and somewhat obfuscate the other URL.</li>
+<li>Keep the protocol part. Disadvantage: this makes your URL uglier (and may confuse some <a href="/autolink" title="autolink">autolinkers</a>). E.g. <code>https://web.archive.org/save/http://example.org/post/</code> will save a snapshot of the given URL to the <a href="/Wayback_Machine" title="Wayback Machine">Wayback Machine</a>.</li></ul>
+<h2><span class="mw-headline" id="Articles">Articles</span></h2>
+<p>More thoughts on (potentially additional aspects of) URL design:
+</p>
+<ul><li><a class="external free" href="http://manas.tungare.name/blog/url-design-sins-16-things-that-dont-belong-in-urls">http://manas.tungare.name/blog/url-design-sins-16-things-that-dont-belong-in-urls</a></li>
+<li><a class="external free" href="http://warpspire.com/posts/url-design">http://warpspire.com/posts/url-design</a></li>
+<li><a class="external free" href="http://www.smashingmagazine.com/2014/05/02/responsive-design-begins-with-the-url/">http://www.smashingmagazine.com/2014/05/02/responsive-design-begins-with-the-url/</a></li>
+<li><a class="external free" href="http://www.creativebloq.com/design/design-perfect-url-1126509">http://www.creativebloq.com/design/design-perfect-url-1126509</a></li>
+<li><a class="external free" href="http://www.webmonkey.com/2011/01/a-guide-to-designing-cool-urls/">http://www.webmonkey.com/2011/01/a-guide-to-designing-cool-urls/</a></li>
+<li><a class="external free" href="http://philarcher.org/diary/2013/uripersistence">http://philarcher.org/diary/2013/uripersistence</a></li></ul>
+<p>Semantic Web related:
+</p>
+<ul><li><a class="external free" href="http://www.w3.org/TR/cooluris/">http://www.w3.org/TR/cooluris/</a></li></ul>
+<p>See also <a href="/permalinks" class="mw-redirect" title="permalinks">permalinks</a> e.g. for why 
+</p>
+<ul><li><a class="external text" href="http://www.w3.org/Provider/Style/URI">Cool URIs don't change</a></li></ul>
+<h2><span class="mw-headline" id="Brainstorming">Brainstorming</span></h2>
+<h3><span class="mw-headline" id="Posting_UI">Posting UI</span></h3>
+<ul><li>I use /new (or /new/note , /new/checkin) for my posting UI.  <span class="h-card" style="white-space:nowrap"><img src="https&#58;//tantek.com/logo.jpg" class="" style="height:1.1em;vertical-align:-.1em" alt="" /> <a href="/User:Tantek.com" title="User:Tantek.com">Tantek Çelik</a></span> asked why not /create instead of /new.  The URL is slightly shorter but I normally use /create for the internal site call to actually create the object, not  show the creation UI.  Additionally I feel this follows the naming scheme for text editors ("New Document") and "create" is more a software action. <span class="h-card"><a href="http://ben.thatmustbe.me" class="external u-url"><img src="https&#58;//ben.thatmustbe.me/image/static/icon_64.jpg" class="" style="height:1.1em;vertical-align:-.1em" alt="" /></a> <span class="p-name p-nickname"><a href="/User:Ben.thatmustbe.me" title="User:Ben.thatmustbe.me">Ben Roberts</a></span></span></li></ul>
+<h3><span class="mw-headline" id="URL_Template">URL Template</span></h3>
+<p>Consider creating a <a class="external text" href="https://tools.ietf.org/html/rfc6570">URI Template</a> for your site.
+</p><p>E.g.
+</p>
+<ul><li><a class="external free" href="http://csarven.ca/linked-sdmx-data#uri-patterns">http://csarven.ca/linked-sdmx-data#uri-patterns</a></li></ul>
+<h2><span class="mw-headline" id="See_Also">See Also</span></h2>
+<ul><li><a href="/design" title="design">design</a></li>
+<li><a href="/redirect" title="redirect">redirect</a></li>
+<li><span class="h-cite"><span class="p-author">Google</span>:&#32;<cite><a class="external u-url p-name" href="https://support.google.com/webmasters/answer/76329?hl=en">Keep a simple URL structure</a></cite>&#32;(<a href="https://web.archive.org/web/20180114223452/https://support.google.com/webmasters/answer/76329?hl=en" class="external u-url">archived</a>)</span>, some good (quotable?) advise. Also a source for Google’s recommendation of hyphens instead of underscores.</li>
+<li><a class="external text" href="https://www.flickr.com/photos/tantek/tags/URL">Tantek's flickr tag URL</a> with examples of domain names as branding and identity.</li>
+<li>2016-05-29 Daniel Appelquist: <a class="external text" href="https://medium.com/@torgo/in-defense-of-the-url-adbec59c7cf4">In defense of the URL</a></li>
+<li>Supporting accidentally truncated URLs is mentioned, but some URLs may have <a class="external text" href="https://chat.indieweb.org/dev/2018-10-10#t1539205141722300">additional text</a> like punctuation marks.</li>
+<li>Some reasons why good URL design matters: <a class="external text" href="https://www.sonniesedge.co.uk/posts/amp-urls">The mysterious case of missing URLs and Google's AMP</a></li>
+<li><a class="external free" href="http://tantek.com/2013/104/t2/urls-readable-speakable-listenable-retypable">http://tantek.com/2013/104/t2/urls-readable-speakable-listenable-retypable</a> ( <a class="external free" href="https://twitter.com/t/status/323487484216483840">https://twitter.com/t/status/323487484216483840</a> ) (incorporate into the scattered thoughts on short URLs which are good for similar reasons, and cover the typing aspect)
+<ul><li>"URLs should be readable, speakable, listenable, and unambiguously retypable, e.g. from print: tantek.com/w/ShortURLPrintExample #UX" <a class="external text" href="http://tantek.com/">@Tantek Çelik</a> April 14, 2013</li></ul></li>
+<li>Brainstorming: consider re-using Flickr-style tags URLs as a method of filtering a collection/archive of posts on a specific tag, e.g. <a class="external free" href="https://flickr.com/photos/tags/indiewebcamp">https://flickr.com/photos/tags/indiewebcamp</a></li>
+<li>use literal user names in URLs. Better to make a list of disallowed usernames and only use the literal username in a URL path (e.g. Micro.blog and Twitter style),  than pollute the URL with an extra character like ~ (classic Unix, Tildetown) or @ (Medium, also bad because it apparently confuses some auto-linking regexes)</li>
+<li><a href="/URL_in_print" title="URL in print">URL in print</a></li>
+<li>Threat: 2020-08-13 <a class="external text" href="https://www.androidpolice.com/2020/08/13/google-resumes-its-senseless-attack-on-the-url-bar-hides-full-addresses-on-chrome-canary/">Google resumes its attack on the URL bar, hides full addresses on Chrome 86</a> and Hacker News discussion with many points about good URL design: <a class="external free" href="https://news.ycombinator.com/item?id=24156986">https://news.ycombinator.com/item?id=24156986</a></li>
+<li>Why slugs MUST NOT be a required part of your permalinks, good example of a Guardian article URL being broken when copy/pasted from a browser address bar into Slack: <a class="external free" href="https://chat.indieweb.org/2021-03-15#t1615849807595000">https://chat.indieweb.org/2021-03-15#t1615849807595000</a>
+<ul><li>"^ this is a great example of why your slug should not be an essential part of your permalink" <a class="external text" href="http://Tantek.com">@[tantek</a>] March 15, 2021</li></ul></li>
+<li>Considerations for using numbers in your domain and URLs: 2014-05-02 The New Republic: <a class="external text" href="https://newrepublic.com/article/117608/chinese-number-websites-secret-meaning-urls">The Secret Messages Inside Chinese URLs</a></li>
+<li>On using only custom short slugs for every page: <span class="h-cite"><span class="dt-published">2022-05-08</span>&#32;<span class="p-author"><a class="external text" href="https://sive.rs/">Derek Sivers</a></span>:&#32;<cite><a class="external u-url p-name" href="https://sive.rs/su">Short URLs: why and how</a></cite>&#32;(<a href="https://web.archive.org/web/20220606144729/https://sive.rs/su" class="external u-url">archived</a>)</span>
+<ul><li>From the comments, a similar article from 11 years earlier: <span class="h-cite"><span class="dt-published">2011-05-10</span>&#32;<span class="p-author"><a class="external text" href="https://qntm.org/">qntm</a></span>:&#32;<cite><a class="external u-url p-name" href="https://qntm.org/urls">On short URLs</a></cite>&#32;(<a href="https://web.archive.org/web/20220606144632/https://qntm.org/urls" class="external u-url">archived</a>)</span></li></ul></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20230905172051
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.039 seconds
+Real time usage: 0.096 seconds
+Preprocessor visited node count: 399/1000000
+Post‐expand include size: 3987/2097152 bytes
+Template argument size: 1867/2097152 bytes
+Highest expansion depth: 7/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 1523/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   60.387      1 -total
+ 19.48%   11.766      1 Template:gRegor
+ 16.77%   10.124      2 Template:user
+ 14.85%    8.965      1 Template:aciccarello
+ 14.83%    8.954      4 Template:citation
+ 12.44%    7.512      2 Template:aaronpk
+ 10.58%    6.391      1 Template:stub
+ 10.04%    6.061      6 Template:sparkline
+  9.53%    5.757      1 Template:t
+-->
+
+<!-- Saved in parser cache with key indieweb_wiki:pcache:idhash:3131-0!canonical and timestamp 20230905172051 and revision id 81818. Serialized with JSON.
+ -->
+</div>
+<div class="printfooter">Retrieved from "<a dir="ltr" href="https://indieweb.org/wiki/index.php?title=URL_design&amp;oldid=81818">https://indieweb.org/wiki/index.php?title=URL_design&amp;oldid=81818</a>"</div></div>
+		<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Navigation menu</h2>
+	<div id="mw-head">
+		
+<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-user-menu-legacy vector-menu" aria-labelledby="p-personal-label" role="navigation" 
+	 >
+	<label id="p-personal-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Personal tools</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="pt-login" class="mw-list-item"><a href="https://sso.indieweb.org/login?url=https%3A%2F%2Findieweb.org%2FURL_design" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o"><span>Log in</span></a></li></ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			
+<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu vector-menu-tabs" aria-labelledby="p-namespaces-label" role="navigation" 
+	 >
+	<label id="p-namespaces-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Namespaces</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="ca-nstab-main" class="selected mw-list-item"><a href="/URL_design" title="View the content page [c]" accesskey="c"><span>Page</span></a></li><li id="ca-talk" class="new mw-list-item"><a href="/wiki/index.php?title=Talk:URL_design&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li></ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown-noicon vector-menu vector-menu-dropdown" aria-labelledby="p-variants-label" role="navigation" 
+	 >
+	<input type="checkbox"
+		id="p-variants-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-variants"
+		class="vector-menu-checkbox" aria-labelledby="p-variants-label" />
+	<label id="p-variants-label" aria-label="Change language variant" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">English</span>
+			<span class="vector-menu-checkbox-expanded">expanded</span>
+			<span class="vector-menu-checkbox-collapsed">collapsed</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			
+<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu vector-menu-tabs" aria-labelledby="p-views-label" role="navigation" 
+	 >
+	<label id="p-views-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Views</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="ca-view" class="selected mw-list-item"><a href="/URL_design"><span>Read</span></a></li><li id="ca-viewsource" class="mw-list-item"><a href="/wiki/index.php?title=URL_design&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e"><span>View source</span></a></li><li id="ca-history" class="mw-list-item"><a href="/wiki/index.php?title=URL_design&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li></ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown-noicon vector-menu vector-menu-dropdown" aria-labelledby="p-cactions-label" role="navigation"  title="More options"
+	 >
+	<input type="checkbox"
+		id="p-cactions-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-cactions"
+		class="vector-menu-checkbox" aria-labelledby="p-cactions-label" />
+	<label id="p-cactions-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">More</span>
+			<span class="vector-menu-checkbox-expanded">expanded</span>
+			<span class="vector-menu-checkbox-collapsed">collapsed</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<div>
+			<h3 >
+				<label for="searchInput">Search</label>
+			</h3>
+		<form action="/wiki/index.php" id="searchform"
+			class="vector-search-box-form">
+			<div id="simpleSearch"
+				class="vector-search-box-inner"
+				 data-search-loc="header-navigation">
+				<input class="vector-search-box-input"
+					 type="search" name="search" placeholder="Search IndieWeb" aria-label="Search IndieWeb" autocapitalize="none" title="Search IndieWeb [f]" accesskey="f" id="searchInput"
+				/>
+				<input type="hidden" name="title" value="Special:Search"/>
+				<input id="mw-searchButton"
+					 class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Search the pages for this text" value="Search" />
+				<input id="searchButton"
+					 class="searchButton" type="submit" name="go" title="Go to a page with this exact name if it exists" value="Go" />
+			</div>
+		</form>
+	</div>
+</div>
+
+		</div>
+	</div>
+	
+
+<div id="mw-panel">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="/Main_Page"
+			title="Visit the main page"></a>
+	</div>
+	
+<nav id="p-Recent_&amp;_Upcoming" class="mw-portlet mw-portlet-Recent_Upcoming vector-menu vector-menu-portal portal" aria-labelledby="p-Recent_&amp;_Upcoming-label" role="navigation" 
+	 >
+	<label id="p-Recent_&amp;_Upcoming-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Recent &amp; Upcoming</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-🎁-2022-Gift-Calendar!" class="mw-list-item"><a href="/IndieWeb_Gift_Calendar"><span>🎁 2022 Gift Calendar!</span></a></li><li id="n-✨-2023-Commitments!" class="mw-list-item"><a href="/2023-01-01-commitments"><span>✨ 2023 Commitments!</span></a></li><li id="n-📰News-Podcast-Video" class="mw-list-item"><a href="/Posts_about_the_IndieWeb"><span>📰News Podcast Video</span></a></li><li id="n-📅-Events" class="mw-list-item"><a href="https://events.indieweb.org/"><span>📅 Events</span></a></li><li id="n-👥--Next-HWCs:-2023-09-06" class="mw-list-item"><a href="https://events.indieweb.org/tag/hwc"><span>👥  Next HWCs: 2023-09-06</span></a></li><li id="n-Camps-&amp;-Pop-ups:" class="mw-list-item"><a href="/IndieWebCamps"><span>Camps &amp; Pop-ups:</span></a></li><li id="n-🎪-Summit-2023" class="mw-list-item"><a href="/2023"><span>🎪 Summit 2023</span></a></li><li id="n-❤️-Sponsor" class="mw-list-item"><a href="/how-to-sponsor"><span>❤️ Sponsor</span></a></li></ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-Resources" class="mw-portlet mw-portlet-Resources vector-menu vector-menu-portal portal" aria-labelledby="p-Resources-label" role="navigation" 
+	 >
+	<label id="p-Resources-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Resources</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-🌈-Code-of-conduct" class="mw-list-item"><a href="/code-of-conduct"><span>🌈 Code of conduct</span></a></li><li id="n-💬-Discuss" class="mw-list-item"><a href="/discuss"><span>💬 Discuss</span></a></li><li id="n-📜-Chat-log" class="mw-list-item"><a href="https://chat.indieweb.org/"><span>📜 Chat log</span></a></li><li id="n-🎉-Get-started" class="mw-list-item"><a href="/Getting_Started"><span>🎉 Get started</span></a></li><li id="n-ℹ️-FAQ" class="mw-list-item"><a href="/FAQ"><span>ℹ️ FAQ</span></a></li><li id="n-🧰-Standards" class="mw-list-item"><a href="https://spec.indieweb.org/"><span>🧰 Standards</span></a></li><li id="n-✳️-Recent-changes" class="mw-list-item"><a href="/Special:RecentChanges"><span>✳️ Recent changes</span></a></li><li id="n-🎲-Random-page" class="mw-list-item"><a href="/Special:Random"><span>🎲 Random page</span></a></li><li id="n-©-Wiki-content-is-CC0" class="mw-list-item"><a href="/IndieWebCamp:Copyrights"><span>© Wiki content is CC0</span></a></li></ul>
+		
+	</div>
+</nav>
+
+<nav id="p-Developers" class="mw-portlet mw-portlet-Developers vector-menu vector-menu-portal portal" aria-labelledby="p-Developers-label" role="navigation" 
+	 >
+	<label id="p-Developers-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Developers</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-🔩-building-blocks" class="mw-list-item"><a href="/Category:building-blocks"><span>🔩 building blocks</span></a></li><li id="n-📑-projects" class="mw-list-item"><a href="/Projects"><span>📑 projects</span></a></li><li id="n-🗽-principles" class="mw-list-item"><a href="/principles"><span>🗽 principles</span></a></li></ul>
+		
+	</div>
+</nav>
+
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu vector-menu-portal portal" aria-labelledby="p-tb-label" role="navigation" 
+	 >
+	<label id="p-tb-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Tools</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="t-whatlinkshere" class="mw-list-item"><a href="/Special:WhatLinksHere/URL_design" title="A list of all wiki pages that link here [j]" accesskey="j"><span>What links here</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/Special:RecentChangesLinked/URL_design" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k"><span>Related changes</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q"><span>Special pages</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Printable version of this page [p]" accesskey="p"><span>Printable version</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/wiki/index.php?title=URL_design&amp;oldid=81818" title="Permanent link to this revision of the page"><span>Permanent link</span></a></li><li id="t-info" class="mw-list-item"><a href="/wiki/index.php?title=URL_design&amp;action=info" title="More information about this page"><span>Page information</span></a></li></ul>
+		
+	</div>
+</nav>
+
+	
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" role="contentinfo" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> This page was last edited on 6 June 2022, at 07:48.</li>
+	<li id="footer-info-copyright">Content is available under <a href="/IndieWebCamp:Copyrights" class="mw-redirect" title="IndieWebCamp:Copyrights">a CC0 public domain dedication</a> unless otherwise noted.</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="/IndieWeb:Privacy_policy" class="mw-redirect" title="IndieWeb:Privacy policy">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="/IndieWeb:About" class="mw-redirect" title="IndieWeb:About">About IndieWeb</a></li>
+	<li id="footer-places-disclaimer"><a href="/IndieWeb:General_disclaimer" title="IndieWeb:General disclaimer">Disclaimers</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="http://creativecommons.org/publicdomain/zero/1.0/"><img src="https://i.creativecommons.org/p/zero/1.0/88x31.png" alt="a CC0 public domain dedication" width="88" height="31" loading="lazy"/></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img src="/wiki/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/wiki/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /wiki/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" loading="lazy"/></a></li>
+</ul>
+
+
+
+
+
+
+<style type="text/css">
+.sponsor-logo-block {
+	margin-left: -12px;
+	margin-top: 50px;
+	margin-right: -12px;
+}
+@media screen and (min-width: 982px) {
+	.sponsor-logo-block {
+		margin-left: -1.25em;
+		margin-right: -1.25em;
+	}
+}
+@media screen and (max-width: 720px) {
+	.sponsor-logo-block {
+		margin-top: 0;
+	}  
+}
+.sponsor-logo-block .inner {
+	background-color: #d9d9d9; 
+	padding: 30px;
+}
+
+.page-Main_Page .sponsor-logo-block {
+	background-color: #d9d9d9; 
+	padding-left: 30px;
+}
+.page-Main_Page .sponsor-logo-block .inner {
+	border: 0;
+}
+
+div#footer {
+	background-image: none;
+}
+
+.sponsor-logo-block .logo {
+	float: left;
+	margin: 10px;
+	height: 70px;
+	zoom: 0.5;
+	-moz-transform: scale(0.5);
+}
+.page-Main_Page .sponsor-logo-block .logo {
+	zoom: 1;
+	-moz-transform: scale(1);
+}
+.sponsor-logo-block .logo div {
+	padding: 6px;
+	background-color: #d9d9d9;
+	border-radius: 0;
+}
+.sponsor-logo-block .thanks {
+	color: #777;
+	font-size: 16px;
+	font-weight: bold;
+}
+.sponsor-logo-block .thanks.small {
+	font-size: 14px;
+	text-align: right;
+}
+.sponsor-logo-block .thanks.small a {
+	color: #777;
+}
+</style>
+<div class="sponsor-logo-block"><div class="inner">
+	<div class="thanks">Thank you to our sponsors of IndieWeb events!</div>
+	<div ><div><a href="http://mozilla.org/"><img src="/sponsor-logos/mozilla.png" alt="Mozilla"></a></div></div>
+	<div ><div><a href="https://developer.okta.com/"><img src="/sponsor-logos/okta.png" alt="Okta"></a></div></div>
+	<div ><div><a href="http://sipgate.de/"><img src="/sponsor-logos/sipgate.png" alt="sipgate"></a></div></div>
+	<div ><div><a href="https://www.brid.gy/"><img src="/sponsor-logos/bridgy.png" alt="Bridgy"></a></div></div>
+	<div ><div><a href="https://beyondtellerrand.com"><img src="/sponsor-logos/beyondtellerrand.png" alt="Beyond Tellerrand"></a></div></div>
+	<div ><div><a href="http://tollwerk.de/"><img src="/sponsor-logos/tollwerk.png" alt="Tollwerk"></a></div></div>
+	<div ><div><a href="https://www.opensuse.org/"><img src="/sponsor-logos/opensuse.png" alt="OpenSuse"></a></div></div>
+	<div ><div><a href="http://idno.co/"><img src="/sponsor-logos/idno.png" alt="Idno"></a></div></div>
+	<div ><div><a href="http://google.com"><img src="/sponsor-logos/google.png" alt="Google"></a></div></div>
+	<div ><div><a href="http://clearleft.com/"><img src="/sponsor-logos/clearleft.png" alt="ClearLeft"></a></div></div>
+	<div ><div><a href="https://cgi.com/"><img src="/sponsor-logos/cgi.png" alt="CGI"></a></div></div>
+
+	<div style="clear: both;"></div>
+	<div class="thanks small"><a href="https://opencollective.com/indieweb">become a supporter!</a></div>
+</div></div>
+
+
+</footer>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.039","walltime":"0.096","ppvisitednodes":{"value":399,"limit":1000000},"postexpandincludesize":{"value":3987,"limit":2097152},"templateargumentsize":{"value":1867,"limit":2097152},"expansiondepth":{"value":7,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":1523,"limit":5000000},"timingprofile":["100.00%   60.387      1 -total"," 19.48%   11.766      1 Template:gRegor"," 16.77%   10.124      2 Template:user"," 14.85%    8.965      1 Template:aciccarello"," 14.83%    8.954      4 Template:citation"," 12.44%    7.512      2 Template:aaronpk"," 10.58%    6.391      1 Template:stub"," 10.04%    6.061      6 Template:sparkline","  9.53%    5.757      1 Template:t"]},"cachereport":{"timestamp":"20230905172051","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":570});});</script>
+</body>
+</html>

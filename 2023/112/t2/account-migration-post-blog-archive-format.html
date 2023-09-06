@@ -1,0 +1,202 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" />
+<title>One of the pretty neat innovations from #Mastodon has been actual, functional, and fairly reliable (from all accounts I’ve seen) distributed system account migration, with the notable exception of post migration, which has additional challenges worth exploring.
+
+To be clear, as far as I know, no other blogging (or chat) software, system, or even protocol comes close to achieving the level of functionality described in Mastodon’s documentation:
+
+https://docs.joinmastodon.org/user/moving/#migration
+
+In short, moving:
+* all your profile information
+* moving all your followers &amp; followings, transparently 
+* redirecting your old account to your new one
+
+More at that link. From the docs, it’s clear that quite a bit of thought &amp; consideration went into the design &amp; implementation.
+
+Once I had setup #BridgyFed to #federate posts from my own site^1, I myself made use of the this Mastodon feature to migrate from my try-it-out @t@xoxo.zone account to my #IndieWeb @tantek.com (move destination handled by BridgyFed).
+
+For me the migration experience was 100%, because I had not posted anything @t@xoxo.zone.
+
+The challenge of post migration is not unique to Mastodon, though I believe it goes beyond “simple” export &amp; import support, which is still a good place to start.
+
+Mastodon has two forms of posts “export” currently:
+* RSS feeds, which will get you some number of recent posts, by adding &quot;.rss&quot; to the end of any Mastodon profile URL, e.g. https://indieweb.social/@tchambers.rss
+* Activity Streams 2.0 JSON, per https://docs.joinmastodon.org/user/moving/#export (note: it currently says “ActivityPub JSON format”, but there is no such thing, #ActivityPub uses the #ActivityStreams 2.0 JSON format and I’ve filed a PR^2 to fix this in the docs)
+
+Lots of software &amp; services import RSS, e.g. #WordPress.
+
+As far as I know, nothing (not even Mastodon itself) actually supports importing Activity Streams 2.0.
+
+There is a more complete format (with specification!) for exporting &amp; importing blog content:
+
+Blog Archive Format (.bar), first specified here with example file:
+* https://www.manton.org/2017/11/24/blog-archive-format.html
+More details and another example file:
+* https://www.manton.org/2021/12/27/importing-blog-archive.html
+
+Blog Archive Format has the very nice features of:
+* portable HTML feed (h-feed) and JSON Feed
+* photos and other media
+* locally browsable post archive
+
+Naturally, https://micro.blog/ supports both exporting &amp; importing Blog Archive Format.
+
+There’s an interesting opportunity here for an open source converter 
+* from Activity Streams 2.0 
+* to Blog Archive Format
+
+Such a library would make an excellent drop-in addition to any #ActivityPub implementation, allowing both export of posts, and also a browsable archive format, so you could visually double check when importing to another service that these were the old posts you were looking for.
+
+This would be a good first step, using an open standard, towards Mastodon itself supporting post migration^3.
+
+Ideally, similar to account migration, the old posts server should also at least:
+* redirect old permalinks to the new permalinks
+* redirect any replies being delivered by ActivityPub to the new location
+* provide #Webmention discovery forwarding from the old URLs to the new URLs (e.g. using HTTP LINK headers)
+for some amount of time.
+
+Want to add support for Blog Archive Format or got questions or feedback?
+
+Join in the development conversations: https://chat.indieweb.org/dev
+
+
+This is day 39 of #100DaysOfIndieWeb. #100Days
+
+← Day 38: https://tantek.com/2023/110/t2/beyond-mastodon-indieweb-own-domain
+→ Day 40: https://tantek.com/2023/114/t1/venues-reviews-personal-pages
+
+
+Glossary
+
+account migration
+ https://indieweb.org/account_migration
+blog archive format
+ https://indieweb.org/blog_archive_format
+h-feed
+ https://microformats.org/wiki/h-feed
+JSON Feed
+ https://www.jsonfeed.org/
+post migration
+ https://indieweb.org/post_migration
+Webmention
+ https://indieweb.org/Webmention
+
+References
+
+^1 https://tantek.com/2022/301/t1/twittermigration-bridgyfed-mastodon-indieweb
+^2 https://github.com/mastodon/documentation/pull/1202
+^3 https://github.com/mastodon/mastodon/issues/12423 - Tantek</title>
+<link rel="icon" href="/logo.jpg" />
+<meta name="viewport" content="initial-scale=0.7"/>
+<link rel="webmention" href="//webmention.io/tantek.com/webmention" />
+<style type="text/css">/*<![CDATA[*/ 
+@import "/2023/simple.css";
+form.search { width:34%; float:right; white-space:nowrap; font-size:1.3em; text-align:right }
+input,button { font-size:1em }
+button { margin: 0 0.5em 0 0; padding:0 0.5em }
+form.search input[type=search] { width:62% }
+/*]]>*/</style>
+</head>
+<body class=" post hentry h-entry as-note">
+<header><div class="header">
+<h1><a href="/" rel="author home">tantek.com</a></h1>
+
+<form class="search" action="https://duckduckgo.com/html/" method="get">
+<input type="hidden" name="type" value="list" />
+<input type="search" value="site:tantek.com " name="q" />
+<button type="submit">Search</button>
+</form>
+
+</div></header>
+
+<div class="sidestuff">
+<ul class="snav">
+<li><a href="/2023/112/t1/" id="previtem" title="View the previous (older) item in the stream." rel="prev"><abbr>&#x2190;</abbr></a></li><li><a href="/2023/113/t1/" id="nextitem" title="View the next (newer) item in the stream" rel="next"><abbr>&#x2192;</abbr></a></li>
+</ul>
+</div>
+<span class="p-author h-card"><a href="/" class="u-url author-icon" rel="author" title="Tantek Çelik"><img class="u-photo p-name" src="/logo.jpg" alt="Tantek Çelik" /></a></span>
+
+<a href="https://fed.brid.gy/" aria-hidden="true"></a> <p class="p-name entry-title e-content entry-content article">One of the pretty neat innovations from <a href="https://indieweb.social/tags/Mastodon" class="auto-link-hashtag">#<span class="p-category auto-tag">Mastodon</span></a> has been actual, functional, and fairly reliable (from all accounts I’ve seen) distributed system account migration, with the notable exception of post migration, which has additional challenges worth exploring.<br class="auto-break"/><br class="auto-break"/>To be clear, as far as I know, no other blogging (or chat) software, system, or even protocol comes close to achieving the level of functionality described in Mastodon’s documentation:<br class="auto-break"/><br class="auto-break"/><a class="auto-link" href="https://docs.joinmastodon.org/user/moving/#migration">https://docs.joinmastodon.org/user/moving/#migration</a><br class="auto-break"/><br class="auto-break"/>In short, moving:<br class="auto-break"/>* all your profile information<br class="auto-break"/>* moving all your followers &amp; followings, transparently <br class="auto-break"/>* redirecting your old account to your new one<br class="auto-break"/><br class="auto-break"/>More at that link. From the docs, it’s clear that quite a bit of thought &amp; consideration went into the design &amp; implementation.<br class="auto-break"/><br class="auto-break"/>Once I had setup <a href="https://indieweb.social/tags/BridgyFed" class="auto-link-hashtag">#<span class="p-category auto-tag">BridgyFed</span></a> to <a href="https://indieweb.social/tags/federate" class="auto-link-hashtag">#<span class="p-category auto-tag">federate</span></a> posts from my own site<a id="t5QV2_ref-1" href="#t5QV2_note-1">¹</a>, I myself made use of the this Mastodon feature to migrate from my try-it-out <a class="auto-link" href="https://xoxo.zone/@t">@t@xoxo.zone</a> account to my <a href="https://indieweb.social/tags/IndieWeb" class="auto-link-hashtag">#<span class="p-category auto-tag">IndieWeb</span></a> <a class="auto-link" href="https://tantek.com">@tantek.com</a> (move destination handled by BridgyFed).<br class="auto-break"/><br class="auto-break"/>For me the migration experience was 100%, because I had not posted anything <a class="auto-link" href="https://xoxo.zone/@t">@t@xoxo.zone</a>.<br class="auto-break"/><br class="auto-break"/>The challenge of post migration is not unique to Mastodon, though I believe it goes beyond “simple” export &amp; import support, which is still a good place to start.<br class="auto-break"/><br class="auto-break"/>Mastodon has two forms of posts “export” currently:<br class="auto-break"/>* RSS feeds, which will get you some number of recent posts, by adding &quot;.rss&quot; to the end of any Mastodon profile URL, e.g. <a class="auto-link" href="https://indieweb.social/@tchambers.rss">https://indieweb.social/@tchambers.rss</a><br class="auto-break"/>* Activity Streams 2.0 JSON, per <a class="auto-link" href="https://docs.joinmastodon.org/user/moving/#export">https://docs.joinmastodon.org/user/moving/#export</a> (note: it currently says “ActivityPub JSON format”, but there is no such thing, <a href="https://indieweb.social/tags/ActivityPub" class="auto-link-hashtag">#<span class="p-category auto-tag">ActivityPub</span></a> uses the <a href="https://indieweb.social/tags/ActivityStreams" class="auto-link-hashtag">#<span class="p-category auto-tag">ActivityStreams</span></a> 2.0 JSON format and I’ve filed a PR<a id="t5QV2_ref-2" href="#t5QV2_note-2">²</a> to fix this in the docs)<br class="auto-break"/><br class="auto-break"/>Lots of software &amp; services import RSS, e.g. <a href="https://indieweb.social/tags/WordPress" class="auto-link-hashtag">#<span class="p-category auto-tag">WordPress</span></a>.<br class="auto-break"/><br class="auto-break"/>As far as I know, nothing (not even Mastodon itself) actually supports importing Activity Streams 2.0.<br class="auto-break"/><br class="auto-break"/>There is a more complete format (with specification!) for exporting &amp; importing blog content:<br class="auto-break"/><br class="auto-break"/>Blog Archive Format (.bar), first specified here with example file:<br class="auto-break"/>* <a class="auto-link" href="https://www.manton.org/2017/11/24/blog-archive-format.html">https://www.manton.org/2017/11/24/blog-archive-format.html</a><br class="auto-break"/>More details and another example file:<br class="auto-break"/>* <a class="auto-link" href="https://www.manton.org/2021/12/27/importing-blog-archive.html">https://www.manton.org/2021/12/27/importing-blog-archive.html</a><br class="auto-break"/><br class="auto-break"/>Blog Archive Format has the very nice features of:<br class="auto-break"/>* portable HTML feed (h-feed) and JSON Feed<br class="auto-break"/>* photos and other media<br class="auto-break"/>* locally browsable post archive<br class="auto-break"/><br class="auto-break"/>Naturally, <a class="auto-link" href="https://micro.blog/">https://micro.blog/</a> supports both exporting &amp; importing Blog Archive Format.<br class="auto-break"/><br class="auto-break"/>There’s an interesting opportunity here for an open source converter <br class="auto-break"/>* from Activity Streams 2.0 <br class="auto-break"/>* to Blog Archive Format<br class="auto-break"/><br class="auto-break"/>Such a library would make an excellent drop-in addition to any <a href="https://indieweb.social/tags/ActivityPub" class="auto-link-hashtag">#<span class="p-category auto-tag">ActivityPub</span></a> implementation, allowing both export of posts, and also a browsable archive format, so you could visually double check when importing to another service that these were the old posts you were looking for.<br class="auto-break"/><br class="auto-break"/>This would be a good first step, using an open standard, towards Mastodon itself supporting post migration<a id="t5QV2_ref-3" href="#t5QV2_note-3">³</a>.<br class="auto-break"/><br class="auto-break"/>Ideally, similar to account migration, the old posts server should also at least:<br class="auto-break"/>* redirect old permalinks to the new permalinks<br class="auto-break"/>* redirect any replies being delivered by ActivityPub to the new location<br class="auto-break"/>* provide <a href="https://indieweb.social/tags/Webmention" class="auto-link-hashtag">#<span class="p-category auto-tag">Webmention</span></a> discovery forwarding from the old URLs to the new URLs (e.g. using HTTP LINK headers)<br class="auto-break"/>for some amount of time.<br class="auto-break"/><br class="auto-break"/>Want to add support for Blog Archive Format or got questions or feedback?<br class="auto-break"/><br class="auto-break"/>Join in the development conversations: <a class="auto-link" href="https://chat.indieweb.org/dev">https://chat.indieweb.org/dev</a><br class="auto-break"/><br class="auto-break"/><br class="auto-break"/>This is day 39 of <a href="https://indieweb.social/tags/100DaysOfIndieWeb" class="auto-link-hashtag">#<span class="p-category auto-tag">100DaysOfIndieWeb</span></a>. <a href="https://indieweb.social/tags/100Days" class="auto-link-hashtag">#<span class="p-category auto-tag">100Days</span></a><br class="auto-break"/><br class="auto-break"/>← Day 38: <a class="auto-link" href="https://tantek.com/2023/110/t2/beyond-mastodon-indieweb-own-domain">https://tantek.com/2023/110/t2/beyond-mastodon-indieweb-own-domain</a><br class="auto-break"/>→ Day 40: <a class="auto-link" href="https://tantek.com/2023/114/t1/venues-reviews-personal-pages">https://tantek.com/2023/114/t1/venues-reviews-personal-pages</a><br class="auto-break"/><br class="auto-break"/><br class="auto-break"/>Glossary<br class="auto-break"/><br class="auto-break"/>account migration<br class="auto-break"/>&#xA0;<a class="auto-link" href="https://indieweb.org/account_migration">https://indieweb.org/account_migration</a><br class="auto-break"/>blog archive format<br class="auto-break"/>&#xA0;<a class="auto-link" href="https://indieweb.org/blog_archive_format">https://indieweb.org/blog_archive_format</a><br class="auto-break"/>h-feed<br class="auto-break"/>&#xA0;<a class="auto-link" href="https://microformats.org/wiki/h-feed">https://microformats.org/wiki/h-feed</a><br class="auto-break"/>JSON Feed<br class="auto-break"/>&#xA0;<a class="auto-link" href="https://www.jsonfeed.org/">https://www.jsonfeed.org/</a><br class="auto-break"/>post migration<br class="auto-break"/>&#xA0;<a class="auto-link" href="https://indieweb.org/post_migration">https://indieweb.org/post_migration</a><br class="auto-break"/>Webmention<br class="auto-break"/>&#xA0;<a class="auto-link" href="https://indieweb.org/Webmention">https://indieweb.org/Webmention</a><br class="auto-break"/><br class="auto-break"/>References<br class="auto-break"/><br class="auto-break"/><a id="t5QV2_note-1" href="#t5QV2_ref-1">¹</a> <a class="auto-link" href="https://tantek.com/2022/301/t1/twittermigration-bridgyfed-mastodon-indieweb">https://tantek.com/2022/301/t1/twittermigration-bridgyfed-mastodon-indieweb</a><br class="auto-break"/><a id="t5QV2_note-2" href="#t5QV2_ref-2">²</a> <a class="auto-link" href="https://github.com/mastodon/documentation/pull/1202">https://github.com/mastodon/documentation/pull/1202</a><br class="auto-break"/><a id="t5QV2_note-3" href="#t5QV2_ref-3">³</a> <a class="auto-link" href="https://github.com/mastodon/mastodon/issues/12423">https://github.com/mastodon/mastodon/issues/12423</a></p><span class="info footer">
+  <span class="dt-published published dt-updated updated">
+  <time class="value" datetime="17:40-0700">17:40</time> on <time class="value">2023-04-22</time>  </span>
+ <span class="lt">
+ (ttk.me t5QV2) </span>
+  using <span class="using">BBEdit</span> </span> 
+<div class="info footer">
+<form action="//tantek.com/2023/112/t2/account-migration-post-blog-archive-format"><div>
+<label><span class="lt">URL:</span>
+<input class="u-url url u-uid uid bookmark" type="url" size="70" style="max-width:100%" value="https://tantek.com/2023/112/t2/account-migration-post-blog-archive-format" />
+</label>
+</div></form>
+</div>
+</li>
+<script type="text/javascript">/*<![CDATA[*/
+function select_all(e) {
+ e = e ? e : window.event;
+ var el = targetelement(e);
+ el.focus();
+ /* el.select(); // fails in Mobile Safari */
+ el.selectionStart=0;
+ el.selectionEnd=el.value.length;
+}
+
+var fs = document.forms, i = 0, j = 0, es;
+for (i = 0; i<fs.length; i++) {
+  es = document.forms[i].elements;
+  if (es) {
+    for (j=0;j<es.length;j++) {
+      switch (es[j].type) {
+      case "text":
+      case "url":
+        es[j].onclick = select_all;
+      }
+    }
+  }
+}
+
+
+document.onkeyup = keyup;
+
+function clearactive() {
+  var e = document.getElementById("previtem");
+  if (e) { e.className = ""; }
+  e = document.getElementById("nextitem");
+  if (e) { e.className = ""; }
+}
+
+function keyup(e)
+{
+   var kid = (window.event) ? event.keyCode : e.keyCode;
+   var nid = "";
+   if (document.activeElement !== document.body) {
+     return;
+   }
+   switch(kid) {
+    case 33:
+    case 37:
+    case 74:
+      nid = "previtem";
+      break;
+    case 34:
+    case 39:
+    case 75:
+      nid = "nextitem";
+      break;
+   }
+   if (nid!="") {
+      ne = document.getElementById(nid);
+      if (ne) {
+        ne.className = "active";
+        doevent(ne,"click");
+        window.onunload = clearactive;
+        return false;
+      }
+   }
+}
+
+/*]]>*/</script>
+<script src="/fragmention.min.js"></script>
+<script src="/scripts/indieconfig.js"></script> 
+<script src="/scripts/webaction.js"></script>
+<script src="cassis.js"></script>
+</body>
+</html>

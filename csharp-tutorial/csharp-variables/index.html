@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+    
+            <script>
+            (() => {
+                let theme = localStorage.getItem("theme");
+                document.querySelector("html").dataset.theme = theme ? theme : "light";
+            })();
+        </script>
+    
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v20.10 - https://yoast.com/wordpress/plugins/seo/ -->
+	<link media="all" href="https://www.csharptutorial.net/wp-content/cache/autoptimize/css/autoptimize_a4ad8824780e92ead34b8d084ef538f5.css" rel="stylesheet"><link media="print" href="https://www.csharptutorial.net/wp-content/cache/autoptimize/css/autoptimize_b5360d8fe28af112b0854d10ad4c9c05.css" rel="stylesheet"><title>C# Variables</title>
+	<meta name="description" content="In this tutorial, you&#039;ll learn about C# variables including declaring variables, assigning values to variables, and displaying variables." />
+	<link rel="canonical" href="https://www.csharptutorial.net/csharp-tutorial/csharp-variables/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="C# Variables" />
+	<meta property="og:description" content="In this tutorial, you&#039;ll learn about C# variables including declaring variables, assigning values to variables, and displaying variables." />
+	<meta property="og:url" content="https://www.csharptutorial.net/csharp-tutorial/csharp-variables/" />
+	<meta property="og:site_name" content="C# Tutorial" />
+	<meta property="article:modified_time" content="2022-12-29T08:06:39+00:00" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.csharptutorial.net/csharp-tutorial/csharp-variables/","url":"https://www.csharptutorial.net/csharp-tutorial/csharp-variables/","name":"C# Variables","isPartOf":{"@id":"https://www.csharptutorial.net/#website"},"datePublished":"2021-12-22T04:25:18+00:00","dateModified":"2022-12-29T08:06:39+00:00","description":"In this tutorial, you'll learn about C# variables including declaring variables, assigning values to variables, and displaying variables.","breadcrumb":{"@id":"https://www.csharptutorial.net/csharp-tutorial/csharp-variables/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.csharptutorial.net/csharp-tutorial/csharp-variables/"]}]},{"@type":"BreadcrumbList","@id":"https://www.csharptutorial.net/csharp-tutorial/csharp-variables/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.csharptutorial.net/"},{"@type":"ListItem","position":2,"name":"C# Tutorial","item":"https://www.csharptutorial.net/"},{"@type":"ListItem","position":3,"name":"C# Variables"}]},{"@type":"WebSite","@id":"https://www.csharptutorial.net/#website","url":"https://www.csharptutorial.net/","name":"C# Tutorial","description":"Learn C# Programming from Scratch","publisher":{"@id":"https://www.csharptutorial.net/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.csharptutorial.net/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://www.csharptutorial.net/#organization","name":"C# Tutorial","url":"https://www.csharptutorial.net/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.csharptutorial.net/#/schema/logo/image/","url":"https://www.csharptutorial.net/wp-content/uploads/2021/06/cropped-favicon.png","contentUrl":"https://www.csharptutorial.net/wp-content/uploads/2021/06/cropped-favicon.png","width":512,"height":512,"caption":"C# Tutorial"},"image":{"@id":"https://www.csharptutorial.net/#/schema/logo/image/"}}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+
+
+
+
+
+
+
+
+<link rel='stylesheet' id='ev-google-fonts-css' href='https://fonts.googleapis.com/css2?family=Roboto+Mono%3Awght%40400&#038;display=swap&#038;ver=1.0.0' type='text/css' media='all' />
+
+
+
+
+<link rel="https://api.w.org/" href="https://www.csharptutorial.net/wp-json/" /><link rel="alternate" type="application/json" href="https://www.csharptutorial.net/wp-json/wp/v2/pages/95" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.csharptutorial.net/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.3.1" />
+<link rel='shortlink' href='https://www.csharptutorial.net/?p=95' />
+<link rel="alternate" type="application/json+oembed" href="https://www.csharptutorial.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.csharptutorial.net%2Fcsharp-tutorial%2Fcsharp-variables%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.csharptutorial.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.csharptutorial.net%2Fcsharp-tutorial%2Fcsharp-variables%2F&#038;format=xml" />
+<style>html{--logo-url:url("https://www.csharptutorial.net/wp-content/uploads/2021/06/csharptutorial.svg");--logo-width:116px;--logo-height:50px;--icon-copy-url:url("https://www.csharptutorial.net/wp-content/themes/evolution/img/copy-light.svg");--icon-check-url:url("https://www.csharptutorial.net/wp-content/themes/evolution/img/check-light.svg");--feature-image-bg-color:#fff}html[data-theme="dark"]{--logo-url:url("https://www.csharptutorial.net/wp-content/uploads/2021/06/csharptutorial-dark.svg");--logo-width:116px;--logo-height:50px}html[data-theme="dark"]{color-scheme:dark;--body-bg-color:#171717;--text-color:#e3e3e3;--primary-color:#4db2ff;--header-bg-color:#171717;--header-border-color:#454545;--heading-color:#e3e3e3;--link-color:#4db2ff;--link-color-hover:#0091ff;--title-color:#e3e3e3;--list-item-color:#e3e3e3;--badge-bg-color:#e3e3e3;--badge-color:#323330;--code-badge-color:#fff;--footer-bg-color:#2e2e2e;--footer-color:#e3e3e3;--footer-link-color:#e3e3e3;--footer-link-color-hover:#c7c7c7;--ads-label-color:#e3e3e3;--down-icon:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');--hamburger-icon:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/></svg>');--x-icon:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="white"  viewBox="0 0 16 16"><path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/></svg>');--current-color:#e3e3e3;--menu-color:#e3e3e3;--border-color:#454545;--hover-background-color:#242424;--menu-background-color:#171717;--submenu-bg-color:#2e2e2e;--toggle-color:#242424;--button-bg-color:#282828;--button-color:#e3e3e3;--button-bg-color-hover:#323330;--button-color-hover:#e3e3e3;--button-border-color:#282828;--section-border-color:#454545;--inline-code-bg-color:#454545;--inline-code-color:#e3e3e3;--input-bg-color:#2e2e2e;--input-color:#e3e3e3;--input-border-color:#e3e3e3;--input-border-focus-color:#4db2ff;--image-filter:grayscale(50%);--themeable-image-filter:invert(1) sepia(0) saturate(1) hue-rotate(0deg);--svg-color:#f4f4f4;--page-nav-bg-color:inherit;--mark-bg-color:#454545;--feature-image-bg-color:#282828;--feature-image-filter:grayscale(50%);--fancy-list-color:#e3e3e3;--output-bg-color:#2e2e2e;--output-border-color:#2e2e2e;--svg-image-filter:invert(100%)}</style><style media="print">.site-main:before{content:url("https://www.csharptutorial.net/wp-content/uploads/2021/06/csharptutorial.svg");display:block;margin-right:auto;margin-left:auto;text-align:center;max-width:200px}</style><!-- Ad+ -->
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+
+<!-- GA -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NTLJDGRHQ3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NTLJDGRHQ3');
+</script><link rel="icon" href="https://www.csharptutorial.net/wp-content/uploads/2021/06/cropped-favicon-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://www.csharptutorial.net/wp-content/uploads/2021/06/cropped-favicon-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.csharptutorial.net/wp-content/uploads/2021/06/cropped-favicon-180x180.png" />
+<meta name="msapplication-TileImage" content="https://www.csharptutorial.net/wp-content/uploads/2021/06/cropped-favicon-270x270.png" />
+
+</head>
+
+<body class="page-template-default page page-id-95 page-child parent-pageid-7">
+        <div id="page" class="site">
+        <a class="skip-link screen-reader-text" href="#primary">Skip to content</a>
+
+        <header id="masthead" class="site-header">
+            <div class="wrap header-wrapper">
+                <div class="site-branding">
+                    <a href="https://www.csharptutorial.net" rel="home" aria-current="page"  aria-label="Go to the homepage">
+                    </a>
+                </div><!-- .site-branding -->
+
+                <nav id="site-navigation" class="site-navigation">
+
+                    <ul id="primary-menu" class="site-menu"><li id="menu-item-10" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-page-ancestor menu-item-10"><a href="https://www.csharptutorial.net/">Home</a></li>
+<li id="menu-item-794" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-794"><a href="https://www.csharptutorial.net/csharp-concurrency/">Concurrency</a></li>
+<li id="menu-item-938" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-938"><a href="https://www.csharptutorial.net/csharp-linq/">LINQ</a></li>
+<li id="menu-item-2274" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2274"><a href="https://www.csharptutorial.net/entity-framework-core-tutorial/">EF Core</a></li>
+<li id="menu-item-1292" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1292"><a href="https://www.csharptutorial.net/csharp-file/">File I/O</a></li>
+<li id="menu-item-1652" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1652"><a href="https://www.csharptutorial.net/csharp-design-patterns/">Design Patterns</a></li>
+<li id="menu-item-1969" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1969"><a href="https://www.csharptutorial.net/csharp-regular-expression/">Regex</a></li>
+</ul>
+                                            <a aria-label="Change Theme" class="switch-theme">
+                            <svg class="dark-mode-icon" role="img" width="1rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <title>Dark Mode</title>
+                                <path fill="currentColor" d="M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z">
+                                </path>
+                            </svg>
+                            <svg class="light-mode-icon" role="img" width="1rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <title>Light Mode</title>
+                                <path fill="currentColor" d="M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z">
+                                </path>
+                            </svg>
+                        </a>
+                                        <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="Primary Menu"></button>
+                </nav><!-- #site-navigation -->
+
+            </div> <!-- .header-wrapper -->
+        </header><!-- #masthead --><div class="site-inner wrap">
+    <main id="primary" class="site-main">
+
+        <p class="breadcrumbs"><span><span><a href="https://www.csharptutorial.net/">Home</a></span> » <span><a href="https://www.csharptutorial.net/">C# Tutorial</a></span> » <span class="breadcrumb_last" aria-current="page">C# Variables</span></span></p>
+        
+<article id="post-95" class="post-95 page type-page status-publish hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">C# Variables</h1>    </header><!-- .entry-header -->
+
+    <div class="entry-content">
+        <div class="ad ad-336">
+<div id="Ad.Plus-336x280-1">
+    <script>
+        window.googletag = window.googletag || { cmd: [] }; googletag.cmd.push(function () {
+            googletag.defineSlot('/21849154601,22306944310/Ad.Plus-336x280', [[336, 280], [200, 200], [320, 100], [240, 133], [300, 100], [120, 240], [180, 150], [320, 250], [250, 250], [300, 250], [300, 75]], 'Ad.Plus-336x280-1').addService(googletag.pubads())
+                .setTargeting('site', ['csharptutorial.net']);
+            googletag.enableServices(); googletag.display('Ad.Plus-336x280-1');
+        });</script>
+</div>
+</div>
+<p><strong>Summary</strong>: in this tutorial, you&#8217;ll learn about C# variables including declaring variables, assigning values to variables, and displaying variables in the console.</p>
+
+
+
+<h2 class="wp-block-heading">Introduction to the C# variables</h2>
+
+
+
+<p>Programs process data. Typically, They work as follows:</p>
+
+
+
+<ul>
+<li>First, get data from user inputs, files, or third-party API.</li>
+
+
+
+<li>Second, process the data. </li>
+
+
+
+<li>Third, output the result to the screen or save it to data storage such as a file or database.</li>
+</ul>
+
+
+
+<p>To store data during the execution of the program, you use variables. </p>
+
+
+
+<p>By definition, variables are identifiers whose values can change during the program&#8217;s execution. When the program ends, the values stored in the variables are also gone.</p>
+
+
+
+<h3 class="wp-block-heading">Declare variables</h3>
+
+
+
+<p>Before using a variable, you need to declare it using the following syntax:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="C#" data-shcb-language-slug="cs"><span><code class="hljs language-cs">type variableName;</code></span><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">C#</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">cs</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>In this syntax: </p>
+
+
+
+<ul>
+<li>The <code>type</code> can be any C# built-in type or custom type. For example, the <code>int</code> built-in type represents the integers, and the <code>string</code> built-in type represents the text strings. Note that you&#8217;ll learn about the custom types later.</li>
+
+
+
+<li>The <code>variableName</code> is a valid identifier that starts with a character or underscore (_) and is followed by other characters.</li>
+</ul>
+
+
+
+<p>The following table illustrates the most commonly used built-in types:</p>
+
+
+
+<figure class="wp-block-table"><table><thead><tr><th>Type</th><th>Meaning</th><th>Examples</th></tr></thead><tbody><tr><td>int</td><td>Integers</td><td>1, 2, 3</td></tr><tr><td>float</td><td>Single-precision floating-point numbers </td><td>1.1F</td></tr><tr><td>double</td><td>Double-precision floating-point numbers</td><td>2.5</td></tr><tr><td>string</td><td>Text strings</td><td>&#8220;Hi&#8221;</td></tr><tr><td>char</td><td>Characters</td><td>&#8216;a&#8217;, &#8216;b&#8217;,&#8217;c&#8217;</td></tr><tr><td>bool</td><td>boolean values</td><td>true, false</td></tr></tbody></table></figure>
+
+
+
+<p>By convention, variable names are in the camel case and start with a letter. For example <code>color</code>, <code>textColor</code>, and <code>backgroundColor</code>.</p>
+
+
+
+<p>The following example declares a variable <code>age</code> with the type <code>int</code>:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="C#" data-shcb-language-slug="cs"><span><code class="hljs language-cs"><span class="hljs-keyword">int</span> age;</code></span><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">C#</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">cs</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>When you declare a variable, it is initially unassigned. If you attempt to read from an unassigned variable, the compiler will issue an error. </p>
+
+
+
+<p>After declaring a variable, you can assign a value to it using the assignment operator (<code>=</code>), like this:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="C#" data-shcb-language-slug="cs"><span><code class="hljs language-cs"><span class="hljs-keyword">int</span> age;
+age = <span class="hljs-number">18</span>;</code></span><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">C#</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">cs</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>And you can do both steps using one statement:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="C#" data-shcb-language-slug="cs"><span><code class="hljs language-cs"><span class="hljs-keyword">int</span> age = <span class="hljs-number">18</span>;</code></span><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">C#</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">cs</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>The following increases the value of the age variable by one:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="C#" data-shcb-language-slug="cs"><span><code class="hljs language-cs"><span class="hljs-keyword">int</span> age = <span class="hljs-number">18</span>;
+age = age + <span class="hljs-number">1</span>;</code></span><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">C#</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">cs</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>After the second statement, the value of age is 19.</p>
+
+
+
+<p>C# is a type-safe language. It means that the compiler will ensure that the variable will always store a value of the declared type. </p>
+
+
+
+<p>In the above example, the age variable will always store an integer. If you assign it a string, the compiler will issue an error.</p>
+
+
+
+<p>The following code will result in an error when compiling:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="C#" data-shcb-language-slug="cs"><span><code class="hljs language-cs"><span class="hljs-keyword">int</span> age;
+age = <span class="hljs-string">"one"</span>;</code></span><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">C#</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">cs</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Error:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="C#" data-shcb-language-slug="cs"><span><code class="hljs language-cs">error CS0029: Cannot implicitly convert type <span class="hljs-string">'string'</span> to <span class="hljs-string">'int'</span></code></span><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">C#</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">cs</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h3 class="wp-block-heading">Display variables</h3>
+
+
+
+<p>To output the <code>age</code> variable to the console, you use the <code>Console.WriteLine</code> method as follows:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="C#" data-shcb-language-slug="cs"><span><code class="hljs language-cs"><span class="hljs-keyword">int</span> age = <span class="hljs-number">18</span>;
+Console.WriteLine(age);</code></span><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">C#</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">cs</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Output:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-9" data-shcb-language-name="C#" data-shcb-language-slug="cs"><span><code class="hljs language-cs">The age <span class="hljs-keyword">is</span> <span class="hljs-number">18</span></code></span><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">C#</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">cs</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>To embed the <code>age</code> variable in a string and display it, you use the following statement:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="C#" data-shcb-language-slug="cs"><span><code class="hljs language-cs">Console.WriteLine(<span class="hljs-string">$"The age is <span class="hljs-subst">{age}</span>"</span>);</code></span><small class="shcb-language" id="shcb-language-10"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">C#</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">cs</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>In this statement:</p>
+
+
+
+<ul>
+<li>First, prefix the string with the <code>$</code> symbol.</li>
+
+
+
+<li>Second, place the variable (<code>age</code>) inside the curly braces <code>{}</code>.</li>
+</ul>
+
+
+
+<p>When the compiler sees a string with the $ prefix, it&#8217;ll replace all the variables in the curly braces with their corresponding values.</p>
+
+
+
+<h3 class="wp-block-heading">Declare multiple variables</h3>
+
+
+
+<p>To declare multiple variables, you use multiple statements:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-11" data-shcb-language-name="C#" data-shcb-language-slug="cs"><span><code class="hljs language-cs"><span class="hljs-keyword">double</span> weight = <span class="hljs-number">60.5</span>;
+<span class="hljs-keyword">double</span> height = <span class="hljs-number">1.72</span>;</code></span><small class="shcb-language" id="shcb-language-11"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">C#</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">cs</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Note that the <code>double</code> type represents the double-precision floating-point numbers.</p>
+
+
+
+<p>If variables have the same type, you can declare them in one statement and use a comma (,) to separate two variables like this:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-12" data-shcb-language-name="C#" data-shcb-language-slug="cs"><span><code class="hljs language-cs"><span class="hljs-keyword">double</span> weight = <span class="hljs-number">60.5</span>,
+       height = <span class="hljs-number">1.72</span>;
+
+Console.WriteLine(<span class="hljs-string">$"The weight is <span class="hljs-subst">{weight}</span>kg and height is <span class="hljs-subst">{height}</span>m"</span>);</code></span><small class="shcb-language" id="shcb-language-12"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">C#</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">cs</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Output:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-13" data-shcb-language-name="plaintext" data-shcb-language-slug="plaintext"><span><code class="hljs language-plaintext">The weight is 60.5kg and height is 1.72m</code></span><small class="shcb-language" id="shcb-language-13"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">plaintext</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">plaintext</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h2 class="wp-block-heading">C# variable example</h2>
+
+
+
+<p>The following program illustrates how to use variables to calculate the <a href="https://en.wikipedia.org/wiki/Body_mass_index" target="_blank" rel="noreferrer noopener">body mass index</a>:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-14" data-shcb-language-name="C#" data-shcb-language-slug="cs"><span><code class="hljs language-cs"><span class="hljs-keyword">double</span> weight = <span class="hljs-number">60.5</span>,
+       height = <span class="hljs-number">1.72</span>,
+       bmi;
+
+<span class="hljs-comment">// calculate BMI</span>
+bmi = weight / (height * height);
+
+<span class="hljs-comment">// output</span>
+Console.WriteLine(<span class="hljs-string">"Calculate Body Mass Index (BMI)"</span>);
+Console.WriteLine(<span class="hljs-string">$"Weight: <span class="hljs-subst">{weight}</span>kg"</span>);
+Console.WriteLine(<span class="hljs-string">$"Height: <span class="hljs-subst">{height}</span>m"</span>);
+Console.WriteLine(<span class="hljs-string">$"BMI: <span class="hljs-subst">{bmi:<span class="hljs-number">0.</span>#}</span>"</span>);</code></span><small class="shcb-language" id="shcb-language-14"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">C#</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">cs</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Output:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-15" data-shcb-language-name="plaintext" data-shcb-language-slug="plaintext"><span><code class="hljs language-plaintext">Calculate Body Mass Index (BMI)
+Weight: 60.5kg
+Height: 1.72m
+BMI: 20.5</code></span><small class="shcb-language" id="shcb-language-15"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">plaintext</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">plaintext</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>How it works.</p>
+
+
+
+<p>First, declare three variables <code>weight</code>, <code>height</code>, and <code>bmi</code>:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-16" data-shcb-language-name="C#" data-shcb-language-slug="cs"><span><code class="hljs language-cs"><span class="hljs-keyword">double</span> weight = <span class="hljs-number">60.5</span>,
+       height = <span class="hljs-number">1.72</span>,
+       bmi;</code></span><small class="shcb-language" id="shcb-language-16"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">C#</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">cs</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Second, calculate the body mass index (BMI) and store the result in the <code>bmi</code> variable:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-17" data-shcb-language-name="C#" data-shcb-language-slug="cs"><span><code class="hljs language-cs"><span class="hljs-comment">// calculate BMI</span>
+bmi = weight / (height * height);</code></span><small class="shcb-language" id="shcb-language-17"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">C#</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">cs</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Third, show the output:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-18" data-shcb-language-name="C#" data-shcb-language-slug="cs"><span><code class="hljs language-cs"><span class="hljs-comment">// output</span>
+Console.WriteLine(<span class="hljs-string">"Calculate Body Mass Index (BMI)"</span>);
+Console.WriteLine(<span class="hljs-string">$"Weight: <span class="hljs-subst">{weight}</span>kg"</span>);
+Console.WriteLine(<span class="hljs-string">$"Height: <span class="hljs-subst">{height}</span>m"</span>);
+Console.WriteLine(<span class="hljs-string">$"BMI: <span class="hljs-subst">{bmi:<span class="hljs-number">0.</span>#}</span>"</span>);</code></span><small class="shcb-language" id="shcb-language-18"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">C#</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">cs</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Note that the following syntax formats the BMI value that will show one digit after the decimal point:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-19" data-shcb-language-name="C#" data-shcb-language-slug="cs"><span><code class="hljs language-cs">{bmi:<span class="hljs-number">0.</span><span class="hljs-meta">#}</span></code></span><small class="shcb-language" id="shcb-language-19"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">C#</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">cs</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>If you want to format a number with more digits after the decimal point, you can add more of the <code>#</code> symbol. Each <code>#</code> symbol represents a number.</p>
+
+
+
+<h2 class="wp-block-heading">Summary</h2>
+
+
+
+<ul>
+<li>Variables are identifiers whose values change during the execution of a program.</li>
+
+
+
+<li>By convention, variable names are in the camel case.</li>
+
+
+
+<li>Use variables to store data in the program.</li>
+</ul>
+<div class="helpful-block-content" data-title="">
+	<header>
+		<div class="wth-question">Was this tutorial helpful ?</div>
+		<div class="wth-thumbs">
+			<button
+				data-post="95"
+				data-post-url="https://www.csharptutorial.net/csharp-tutorial/csharp-variables/"
+				data-post-title="C# Variables"
+				data-response="1"
+				class="wth-btn-rounded wth-yes-btn"
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					class="feather feather-thumbs-up block w-full h-full"
+				>
+					<path
+						d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"
+					></path>
+				</svg>
+				<span class="sr-only"> Yes </span>
+			</button>
+
+			<button
+				data-response="0"
+				data-post="95"
+				data-post-url="https://www.csharptutorial.net/csharp-tutorial/csharp-variables/"
+				data-post-title="C# Variables"
+				class="wth-btn-rounded wth-no-btn"
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				>
+					<path
+						d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"
+					></path>
+				</svg>
+				<span class="sr-only"> No </span>
+			</button>
+		</div>
+	</header>
+
+	<div class="wth-form hidden">
+		<div class="wth-form-wrapper">
+			<div class="wth-title"></div>
+			<textarea class="wth-message"></textarea>
+			<input type="button" name="wth-submit" class="wth-btn wth-btn-submit" id="wth-submit" />
+			<input type="button" class="wth-btn wth-btn-cancel" value="Cancel" />
+		</div>
+	</div>
+</div>
+<div class="ad ad-336">
+<div id="Ad.Plus-336x280-2">
+    <script>
+        window.googletag = window.googletag || { cmd: [] }; googletag.cmd.push(function () {
+            googletag.defineSlot('/21849154601,22306944310/Ad.Plus-336x280', [[336, 280], [200, 200], [320, 100], [240, 133], [300, 100], [120, 240], [180, 150], [320, 250], [250, 250], [300, 250], [300, 75]], 'Ad.Plus-336x280-2').addService(googletag.pubads())
+                .setTargeting('site', ['csharptutorial.net']);
+            googletag.enableServices(); googletag.display('Ad.Plus-336x280-2');
+        });</script>
+</div>
+</div>
+    </div><!-- .entry-content -->
+
+    </article><!-- #post-95 -->
+        <div class="page-nav">
+        <div class="prev-page">
+        <a class="prev-page-anchor" href="https://www.csharptutorial.net/csharp-tutorial/csharp-syntax/"
+            title="C# Syntax">
+            <div class="page-nav-arrow">
+                <img src="https://www.csharptutorial.net/wp-content/themes/evolution/img/left.svg" height="32" width="32" class="icon-prev-page"
+                    alt="C# Syntax">
+            </div>
+            <div class="page-nav-main page-nav-first">
+                <div class="page-nav-title">Previously</div>
+                <div class="page-title">C# Syntax</div>
+            </div>
+        </a>
+    </div>
+        <div class="next-page">
+        <link rel="prerender" href="https://www.csharptutorial.net/csharp-tutorial/csharp-integer/">
+        <a href="https://www.csharptutorial.net/csharp-tutorial/csharp-integer/" title="C# Integers"
+            class="next-page-anchor">
+            <div class="page-nav-main page-nav-second">
+                <div class="page-nav-title">Up Next</div>
+                <div class="page-title">C# Integers</div>
+            </div>
+            <div class="page-nav-arrow">
+                <img src="https://www.csharptutorial.net/wp-content/themes/evolution/img/right.svg" height="32" width="32" class="icon-next-page"
+                    alt="C# Integers">
+            </div>
+        </a>
+    </div>
+    </div>
+
+    </main><!-- #main -->
+
+    
+<aside id="secondary" class="widget-area">
+	          <section id="textblockswidget-2" class="widget widget_textblockswidget">              				<div class="text-block sidebar-top"><div id="Ad.Plus-300x250-1">
+    <script>
+        window.googletag = window.googletag || { cmd: [] }; googletag.cmd.push(function () {
+            googletag.defineSlot('/21849154601,22306944310/Ad.Plus-300x250', [[300, 250], [250, 250], [200, 200]],
+                'Ad.Plus-300x250-1').addService(googletag.pubads())
+                .setTargeting('site', ['csharptutorial.net']);
+            googletag.enableServices(); googletag.display('Ad.Plus-300x250-1');
+        });</script>
+</div></div>
+          </section>        <section id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="https://www.csharptutorial.net/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form></section><section id="nav_menu-3" class="widget widget_nav_menu"><h2 class="widget-title">Getting Started</h2><div class="menu-c-tutorial-getting-started-container"><ul id="menu-c-tutorial-getting-started" class="menu"><li id="menu-item-38" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38"><a href="https://www.csharptutorial.net/csharp-tutorial/what-is-csharp/">What is C#</a></li>
+<li id="menu-item-78" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-78"><a href="https://www.csharptutorial.net/csharp-tutorial/install-visual-studio/">Install Visual Studio</a></li>
+<li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-hello-world/">C# Hello World</a></li>
+<li id="menu-item-79" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-79"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-syntax/">C# Syntax</a></li>
+</ul></div></section><section id="nav_menu-4" class="widget widget_nav_menu"><h2 class="widget-title">Variables &#038; Types</h2><div class="menu-c-tutorial-variables-value-types-container"><ul id="menu-c-tutorial-variables-value-types" class="menu"><li id="menu-item-135" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-95 current_page_item menu-item-135"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-variables/" aria-current="page">Variables</a></li>
+<li id="menu-item-133" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-133"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-integer/">Integers</a></li>
+<li id="menu-item-132" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-132"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-float/">Float</a></li>
+<li id="menu-item-131" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-131"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-string/">string</a></li>
+<li id="menu-item-134" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-134"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-bool/">bool</a></li>
+<li id="menu-item-473" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-473"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-var/">var keyword</a></li>
+</ul></div></section><section id="nav_menu-5" class="widget widget_nav_menu"><h2 class="widget-title">Control Flow</h2><div class="menu-c-tutorial-control-flow-container"><ul id="menu-c-tutorial-control-flow" class="menu"><li id="menu-item-164" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-164"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-if/">if</a></li>
+<li id="menu-item-163" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-163"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-if-else/">if else</a></li>
+<li id="menu-item-162" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-162"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-if-else-if/">if else if</a></li>
+<li id="menu-item-215" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-215"><a href="https://www.csharptutorial.net/csharp-tutorial/c-switch/">switch</a></li>
+<li id="menu-item-214" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-214"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-while/">while</a></li>
+<li id="menu-item-213" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-213"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-do-while/">do while</a></li>
+<li id="menu-item-212" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-212"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-for-loop/">for</a></li>
+<li id="menu-item-211" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-211"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-break/">break</a></li>
+<li id="menu-item-210" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-210"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-continue/">continue</a></li>
+</ul></div></section><section id="nav_menu-6" class="widget widget_nav_menu"><h2 class="widget-title">Functions</h2><div class="menu-c-functions-container"><ul id="menu-c-functions" class="menu"><li id="menu-item-232" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-232"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-functions/">Functions</a></li>
+<li id="menu-item-231" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-231"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-default-parameters/">Default Parameters</a></li>
+</ul></div></section><section id="nav_menu-7" class="widget widget_nav_menu"><h2 class="widget-title">Arrays</h2><div class="menu-c-tutorial-arrays-container"><ul id="menu-c-tutorial-arrays" class="menu"><li id="menu-item-261" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-261"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-array/">Arrays</a></li>
+<li id="menu-item-260" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-260"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-multidimensional-array/">Multidimensional Arrays</a></li>
+<li id="menu-item-259" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-259"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-foreach/">foreach</a></li>
+</ul></div></section><section id="nav_menu-8" class="widget widget_nav_menu"><h2 class="widget-title">Classes</h2><div class="menu-c-tutorial-class-container"><ul id="menu-c-tutorial-class" class="menu"><li id="menu-item-287" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-287"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-class/">Class &#038; Object</a></li>
+<li id="menu-item-286" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-286"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-this/">this Keyword</a></li>
+<li id="menu-item-285" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-285"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-public-private/">Public vs. Private</a></li>
+<li id="menu-item-330" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-330"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-constructors/">Constructor</a></li>
+<li id="menu-item-329" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-329"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-property/">Property</a></li>
+<li id="menu-item-328" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-328"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-constants/">Constant</a></li>
+<li id="menu-item-337" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-337"><a href="https://www.csharptutorial.net/csharp-tutorial/c-indexer/">Indexer</a></li>
+<li id="menu-item-384" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-384"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-object-initializer/">Object Initializer</a></li>
+<li id="menu-item-383" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-383"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-expression-bodied-members/">Expression-Bodied Members</a></li>
+</ul></div></section><section id="nav_menu-11" class="widget widget_nav_menu"><h2 class="widget-title">Static Members &#038; Classes</h2><div class="menu-c-tutorial-static-container"><ul id="menu-c-tutorial-static" class="menu"><li id="menu-item-524" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-524"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-static-field-property/">Static Field &#038; Property</a></li>
+<li id="menu-item-523" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-523"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-static-method/">Static Method</a></li>
+<li id="menu-item-522" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-522"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-static-constructor/">Static Constructor</a></li>
+<li id="menu-item-521" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-521"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-static-classes/">Static Class</a></li>
+</ul></div></section>          <section id="textblockswidget-4" class="widget widget_textblockswidget">              				<div class="text-block sidebar-middle"><div id="Ad.Plus-300x250-2">
+    <script>
+        window.googletag = window.googletag || { cmd: [] }; googletag.cmd.push(function () {
+            googletag.defineSlot('/21849154601,22306944310/Ad.Plus-300x250', [[300, 250], [250, 250], [200, 200]],
+                'Ad.Plus-300x250-2').addService(googletag.pubads())
+                .setTargeting('site', ['csharptutorial.net']);
+            googletag.enableServices(); googletag.display('Ad.Plus-300x250-2');
+        });</script>
+</div></div>
+          </section>        <section id="nav_menu-9" class="widget widget_nav_menu"><h2 class="widget-title">Inheritance</h2><div class="menu-c-tutorial-inheritance-container"><ul id="menu-c-tutorial-inheritance" class="menu"><li id="menu-item-386" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-386"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-inheritance/">Inheritance</a></li>
+<li id="menu-item-385" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-385"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-inheritance-constructor/">Inheritance &#038; Constructor</a></li>
+<li id="menu-item-411" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-411"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-new-modifier/">new Modifier</a></li>
+<li id="menu-item-409" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-409"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-sealed/">sealed Modifier</a></li>
+<li id="menu-item-410" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-410"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-virtual/">virtual Modifier</a></li>
+<li id="menu-item-424" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-424"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-casting/">Casting</a></li>
+<li id="menu-item-423" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-423"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-abstract-class/">Abstract Class</a></li>
+<li id="menu-item-1328" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1328"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-object/">Object</a></li>
+<li id="menu-item-1327" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1327"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-anonymous-type/">Anonymous Types</a></li>
+</ul></div></section><section id="nav_menu-20" class="widget widget_nav_menu"><h2 class="widget-title">Exception Handling</h2><div class="menu-c-tutorial-exception-handling-container"><ul id="menu-c-tutorial-exception-handling" class="menu"><li id="menu-item-1355" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1355"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-try-catch/">try&#8230;catch</a></li>
+<li id="menu-item-1354" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1354"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-try-catch-finally/">try&#8230;catch&#8230;finally</a></li>
+<li id="menu-item-1382" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1382"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-throw-exception/">Throwing Exceptions: throw</a></li>
+<li id="menu-item-1361" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1361"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-rethrow-exception/">Rethrowing Exceptions</a></li>
+<li id="menu-item-1383" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1383"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-custom-exceptions/">Creating Custom Exceptions</a></li>
+<li id="menu-item-1369" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1369"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-unhandledexception/">Handling Global Unhandled Exceptions</a></li>
+</ul></div></section><section id="nav_menu-10" class="widget widget_nav_menu"><h2 class="widget-title">Interface</h2><div class="menu-c-tutorial-interface-container"><ul id="menu-c-tutorial-interface" class="menu"><li id="menu-item-450" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-450"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-interface/">Interface</a></li>
+<li id="menu-item-449" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-449"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-interface-default-implementation/">Interface with Default Implementation</a></li>
+<li id="menu-item-1352" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1352"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-explicit-interface-implementation/">Explicit Interface Implementation</a></li>
+<li id="menu-item-458" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-458"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-extend-interface/">Extend interface</a></li>
+<li id="menu-item-1339" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1339"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-abstract-class-and-interface/">Abstract Classes and Interfaces</a></li>
+</ul></div></section><section id="nav_menu-12" class="widget widget_nav_menu"><h2 class="widget-title">Generics</h2><div class="menu-c-tutorial-generics-container"><ul id="menu-c-tutorial-generics" class="menu"><li id="menu-item-631" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-631"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-generics/">Generics</a></li>
+<li id="menu-item-630" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-630"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-generic-classes/">Generic Classes</a></li>
+<li id="menu-item-629" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-629"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-generic-constraints/">Generic Constraints</a></li>
+<li id="menu-item-1397" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1397"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-covariance/">Covariance</a></li>
+<li id="menu-item-1396" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1396"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-contravariance/">Contravariance</a></li>
+</ul></div></section><section id="nav_menu-13" class="widget widget_nav_menu"><h2 class="widget-title">Delegates &#038; Events</h2><div class="menu-c-tutorial-delegates-events-container"><ul id="menu-c-tutorial-delegates-events" class="menu"><li id="menu-item-633" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-633"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-delegate/">Delegates</a></li>
+<li id="menu-item-657" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-657"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-anonymous-methods/">Anonymous Methods</a></li>
+<li id="menu-item-656" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-656"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-lambda-expression/">Lambda Expressions</a></li>
+<li id="menu-item-632" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-632"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-events/">Events</a></li>
+<li id="menu-item-1424" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1424"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-method-group-conversion-to-delegate/">Method Group Conversion to Delegate</a></li>
+</ul></div></section><section id="nav_menu-18" class="widget widget_nav_menu"><h2 class="widget-title">Extension Methods</h2><div class="menu-c-tutorial-extension-methods-container"><ul id="menu-c-tutorial-extension-methods" class="menu"><li id="menu-item-1065" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1065"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-extension-methods/">Extension Methods</a></li>
+</ul></div></section><section id="nav_menu-25" class="widget widget_nav_menu"><h2 class="widget-title">C# Date &#038; Time</h2><div class="menu-c-tutorial-datetime-container"><ul id="menu-c-tutorial-datetime" class="menu"><li id="menu-item-1845" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1845"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-datetime/">DateTime</a></li>
+<li id="menu-item-1844" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1844"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-datetime-parse/">Datime.Parse</a></li>
+<li id="menu-item-1843" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1843"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-datetime-parseexact/">DateTime.ParseExact</a></li>
+<li id="menu-item-1851" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1851"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-timespan/">TimeSpan</a></li>
+<li id="menu-item-1842" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1842"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-datetimeoffset/">DateTimeOffset</a></li>
+<li id="menu-item-2328" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2328"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-dateonly/">DateOnly</a></li>
+<li id="menu-item-2327" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2327"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-timeonly/">TimeOnly</a></li>
+</ul></div></section><section id="nav_menu-19" class="widget widget_nav_menu"><h2 class="widget-title">C# 11 New Features</h2><div class="menu-c-11-new-features-container"><ul id="menu-c-11-new-features" class="menu"><li id="menu-item-1307" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1307"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-raw-string/">Raw Strings</a></li>
+<li id="menu-item-1306" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1306"><a href="https://www.csharptutorial.net/csharp-tutorial/csharp-list-patterns/">List Patterns</a></li>
+</ul></div></section>          <section id="textblockswidget-3" class="widget widget_textblockswidget">              				<div class="text-block sidebar-bottom"><div id="Ad.Plus-300x250-3">
+    <script>
+        window.googletag = window.googletag || { cmd: [] }; googletag.cmd.push(function () {
+            googletag.defineSlot('/21849154601,22306944310/Ad.Plus-300x250', [[300, 250], [250, 250], [200, 200]],
+                'Ad.Plus-300x250-3').addService(googletag.pubads())
+                .setTargeting('site', ['csharptutorial.net']);
+            googletag.enableServices(); googletag.display('Ad.Plus-300x250-3');
+        });</script>
+</div></div>
+          </section>        </aside><!-- #secondary -->
+</div>
+
+	<footer id="colophon" class="site-footer">
+		<div class="wrap">
+			<div class="site-footer-widgets">
+				<div class="site-footer-sidebar widget">
+					<h2 class="widget-title">About C# Tutorial</h2><div class="textwidget custom-html-widget">C# tutorial website helps you learn C# programming from scratch with practical examples and real-world applications.</div>				</div>
+				<div class="site-footer-sidebar widget">
+					<h2 class="widget-title">Latest C# Tutorials</h2><ul><li><a href="https://www.csharptutorial.net/csharp-collections/csharp-queue/" title="C# Queue&lt;T&gt;">C# Queue&lt;T&gt;</a></li><li><a href="https://www.csharptutorial.net/csharp-collections/csharp-stack/" title="C# Stack&lt;T&gt;">C# Stack&lt;T&gt;</a></li><li><a href="https://www.csharptutorial.net/csharp-collections/" title="C# Collections">C# Collections</a></li><li><a href="https://www.csharptutorial.net/csharp-string-methods/csharp-string-insert/" title="C# String Insert">C# String Insert</a></li><li><a href="https://www.csharptutorial.net/csharp-string-methods/csharp-string-concat/" title="C# String Concat">C# String Concat</a></li></ul>				</div>
+				<div class="site-footer-sidebar widget">
+					<h2 class="widget-title">Site Links</h2><div class="menu-site-links-container"><ul id="menu-site-links" class="menu"><li id="menu-item-19" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-page-ancestor menu-item-19"><a href="https://www.csharptutorial.net/">Home</a></li>
+<li id="menu-item-21" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21"><a href="https://www.csharptutorial.net/about/">About</a></li>
+<li id="menu-item-20" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20"><a href="https://www.csharptutorial.net/contact/">Contact</a></li>
+<li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-22"><a rel="privacy-policy" href="https://www.csharptutorial.net/privacy-policy/">Privacy</a></li>
+</ul></div>				</div>
+			</div>
+
+			<div class="site-info">
+					<div class="textwidget custom-html-widget">Copyright &copy; 2023 - by <a href="https://www.csharptutorial.net/"  title="C# tutorial">csharptutorial.net</a>. All Rights Reserved.</div> 
+				
+			</div><!-- .site-info -->
+		</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+
+
+
+
+
+
+
+<script id='wth-frontend-js-extra'>
+var wth_js_lang = {"ajax_url":"https:\/\/www.csharptutorial.net\/wp-admin\/admin-ajax.php","nonce":"a1385d0647","confirm":"Are you sure to delete item?","positive_feedback":null,"positive_feedback_option":"feedback_messege","positive_feedback_required":null,"negative_feedback":"true","negative_feedback_required":"true","wth_title_nothank":"What was wrong? Please help us.","wth_title_yesthank":"Well Done! Please leave your positive feedback.","wth_thank_you":"Thank You for your feedback.","submit_text":"Submit","wth_ga_enable":"","wth_ga_category":"Was This Helpful?","wth_ga_positive":"Positive Reviews","wth_ga_negative":"Negative Reviews","wth_share_ask":"Awesome, share it:","wth_fb_share":"Share","wth_twitter_share":"Tweet"};
+</script>
+
+
+
+<script defer src="https://www.csharptutorial.net/wp-content/cache/autoptimize/js/autoptimize_3f28600dca2033db1c78ab27d1bddd2b.js"></script></body>
+</html>

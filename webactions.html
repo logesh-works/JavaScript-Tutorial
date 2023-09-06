@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>webactions - IndieWeb</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"9b686e79e3bc3e6ea4f1c9d2","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"webactions","wgTitle":"webactions","wgCurRevisionId":85937,"wgRevisionId":85937,"wgArticleId":156,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["building-blocks"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"webactions","wgRelevantArticleId":156,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]};RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready",
+"user.options":"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1i9g4",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});</script>
+<link rel="stylesheet" href="/wiki/load.php?lang=en&amp;modules=skins.vector.styles.legacy&amp;only=styles&amp;skin=vector"/>
+<script async="" src="/wiki/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/wiki/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.38.4"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0"/>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/wiki/opensearch_desc.php" title="IndieWeb (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="https://indieweb.org/wiki/api.php?action=rsd"/>
+<link rel="license" href="/IndieWebCamp:Copyrights"/>
+<link rel="alternate" type="application/atom+xml" title="IndieWeb Atom feed" href="/wiki/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+<link rel="webmention" href="https://webmention.io/indiewebcamp/webmention">
+
+<link rel="pingback" href="https://webmention.io/indiewebcamp/xmlrpc">
+
+<script src="https://cdn.usefathom.com/script.js" site="ZPHFRYAA" defer></script>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-webactions rootpage-webactions skin-vector action-view skin--responsive skin-vector-legacy"><div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body h-entry" role="main">
+	<a id="top"></a>
+	<div id="siteNotice"></div>
+	<div class="mw-indicators">
+	</div>
+	<span class="p-name"><h1 id="firstHeading" class="firstHeading mw-first-heading">webactions</h1></span>
+	<div id="bodyContent" class="vector-body">
+		<div id="siteSub" class="noprint">From IndieWeb</div>
+		<div id="contentSub"></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+		<a class="mw-jump-link" href="#searchInput">Jump to search</a>
+		<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr"><div class="mw-parser-output"><p><span class="p-summary">A <b><dfn>web action</dfn></b> is the interface and user experience of taking a specific discrete action, across the web, from one site to another site or application, like a cross-site <a href="/follow" title="follow">follow</a> button, or a <a href="/reply" title="reply">reply</a> button on a post, which when activated, allows you to reply using your own site instead of the site you are viewing.</span>
+</p>
+<ul><li>Introductory article: <a class="external text" href="http://tantek.com/2011/220/b1/web-actions-a-new-building-block">Web Actions: Identifying A New Building Block For The Web</a></li></ul>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Why"><span class="tocnumber">1</span> <span class="toctext">Why</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Why_event_specific"><span class="tocnumber">1.1</span> <span class="toctext">Why event specific</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Why_fallback_silo_webactions"><span class="tocnumber">1.2</span> <span class="toctext">Why fallback silo webactions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#How"><span class="tocnumber">2</span> <span class="toctext">How</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#How_to_markup"><span class="tocnumber">2.1</span> <span class="toctext">How to markup</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#Wrap_tweet_or_share"><span class="tocnumber">2.1.1</span> <span class="toctext">Wrap tweet or share</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Wrap_multiple_silo_post_actions"><span class="tocnumber">2.1.2</span> <span class="toctext">Wrap multiple silo post actions</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#Wrap_favorite_reply_retweet"><span class="tocnumber">2.1.3</span> <span class="toctext">Wrap favorite reply retweet</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#action_markup"><span class="tocnumber">2.1.4</span> <span class="toctext">action markup</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#action_do_verbs"><span class="tocnumber">2.1.5</span> <span class="toctext">action do verbs</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#with_URL"><span class="tocnumber">2.1.6</span> <span class="toctext">with URL</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-12"><a href="#How_to_polyfill_web_action_buttons"><span class="tocnumber">2.2</span> <span class="toctext">How to polyfill web action buttons</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#How_to_handle_web_actions"><span class="tocnumber">2.3</span> <span class="toctext">How to handle web actions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#IndieWeb_Examples"><span class="tocnumber">3</span> <span class="toctext">IndieWeb Examples</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#Barnaby_Walters"><span class="tocnumber">3.1</span> <span class="toctext">Barnaby Walters</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Laurent"><span class="tocnumber">3.2</span> <span class="toctext">Laurent</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Tantek"><span class="tocnumber">3.3</span> <span class="toctext">Tantek</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Indienews"><span class="tocnumber">3.4</span> <span class="toctext">Indienews</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Barry_Frost"><span class="tocnumber">3.5</span> <span class="toctext">Barry Frost</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Glenn_Jones"><span class="tocnumber">3.6</span> <span class="toctext">Glenn Jones</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Kyle_Mahan"><span class="tocnumber">3.7</span> <span class="toctext">Kyle Mahan</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Scott_Gilbertson"><span class="tocnumber">3.8</span> <span class="toctext">Scott Gilbertson</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#Michael_Owens"><span class="tocnumber">3.9</span> <span class="toctext">Michael Owens</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#Pelle_Wessman"><span class="tocnumber">3.10</span> <span class="toctext">Pelle Wessman</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#Jeremy_Keith"><span class="tocnumber">3.11</span> <span class="toctext">Jeremy Keith</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#David_Shanske"><span class="tocnumber">3.12</span> <span class="toctext">David Shanske</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#Malcolm_Blaney"><span class="tocnumber">3.13</span> <span class="toctext">Malcolm Blaney</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-28"><a href="#Software_Examples"><span class="tocnumber">4</span> <span class="toctext">Software Examples</span></a>
+<ul>
+<li class="toclevel-2 tocsection-29"><a href="#Mastodon"><span class="tocnumber">4.1</span> <span class="toctext">Mastodon</span></a>
+<ul>
+<li class="toclevel-3 tocsection-30"><a href="#Remote_Follow"><span class="tocnumber">4.1.1</span> <span class="toctext">Remote Follow</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-31"><a href="#Use_Cases"><span class="tocnumber">5</span> <span class="toctext">Use Cases</span></a>
+<ul>
+<li class="toclevel-2 tocsection-32"><a href="#Action_Buttons"><span class="tocnumber">5.1</span> <span class="toctext">Action Buttons</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="#Inline_Comment_UI"><span class="tocnumber">5.2</span> <span class="toctext">Inline Comment UI</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="#Quote_This"><span class="tocnumber">5.3</span> <span class="toctext">Quote This</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-35"><a href="#Brainstorming"><span class="tocnumber">6</span> <span class="toctext">Brainstorming</span></a>
+<ul>
+<li class="toclevel-2 tocsection-36"><a href="#emoji_text_labels"><span class="tocnumber">6.1</span> <span class="toctext">emoji text labels</span></a></li>
+<li class="toclevel-2 tocsection-37"><a href="#which_actions"><span class="tocnumber">6.2</span> <span class="toctext">which actions</span></a>
+<ul>
+<li class="toclevel-3 tocsection-38"><a href="#note"><span class="tocnumber">6.2.1</span> <span class="toctext">note</span></a></li>
+<li class="toclevel-3 tocsection-39"><a href="#article"><span class="tocnumber">6.2.2</span> <span class="toctext">article</span></a></li>
+<li class="toclevel-3 tocsection-40"><a href="#event"><span class="tocnumber">6.2.3</span> <span class="toctext">event</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-41"><a href="#how_many_actions"><span class="tocnumber">6.3</span> <span class="toctext">how many actions</span></a></li>
+<li class="toclevel-2 tocsection-42"><a href="#what_order"><span class="tocnumber">6.4</span> <span class="toctext">what order</span></a></li>
+<li class="toclevel-2 tocsection-43"><a href="#action_fallbacks"><span class="tocnumber">6.5</span> <span class="toctext">action fallbacks</span></a></li>
+<li class="toclevel-2 tocsection-44"><a href="#which_silo_buttons"><span class="tocnumber">6.6</span> <span class="toctext">which silo buttons</span></a></li>
+<li class="toclevel-2 tocsection-45"><a href="#conditional_fallbacks"><span class="tocnumber">6.7</span> <span class="toctext">conditional fallbacks</span></a></li>
+<li class="toclevel-2 tocsection-46"><a href="#clientside_conditionals"><span class="tocnumber">6.8</span> <span class="toctext">clientside conditionals</span></a></li>
+<li class="toclevel-2 tocsection-47"><a href="#minimum_silo_buttons"><span class="tocnumber">6.9</span> <span class="toctext">minimum silo buttons</span></a></li>
+<li class="toclevel-2 tocsection-48"><a href="#silo_button_variance"><span class="tocnumber">6.10</span> <span class="toctext">silo button variance</span></a></li>
+<li class="toclevel-2 tocsection-49"><a href="#silo_button_examples"><span class="tocnumber">6.11</span> <span class="toctext">silo button examples</span></a></li>
+<li class="toclevel-2 tocsection-50"><a href="#icons_reflecting_current_state"><span class="tocnumber">6.12</span> <span class="toctext">icons reflecting current state</span></a></li>
+<li class="toclevel-2 tocsection-51"><a href="#as_part_of_post_h-entry"><span class="tocnumber">6.13</span> <span class="toctext">as part of post h-entry</span></a>
+<ul>
+<li class="toclevel-3 tocsection-52"><a href="#reader_upgrading_webactions_to_micropub"><span class="tocnumber">6.13.1</span> <span class="toctext">reader upgrading webactions to micropub</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-53"><a href="#sites_upgrading_webactions_to_micropub"><span class="tocnumber">6.14</span> <span class="toctext">sites upgrading webactions to micropub</span></a></li>
+<li class="toclevel-2 tocsection-54"><a href="#follow_with_fallback"><span class="tocnumber">6.15</span> <span class="toctext">follow with fallback</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-55"><a href="#Verbs"><span class="tocnumber">7</span> <span class="toctext">Verbs</span></a></li>
+<li class="toclevel-1 tocsection-56"><a href="#Web_Action_Browser_Support"><span class="tocnumber">8</span> <span class="toctext">Web Action Browser Support</span></a>
+<ul>
+<li class="toclevel-2 tocsection-57"><a href="#Web_Action_Hero_Toolbelt"><span class="tocnumber">8.1</span> <span class="toctext">Web Action Hero Toolbelt</span></a></li>
+<li class="toclevel-2 tocsection-58"><a href="#Greasemonkey_Script"><span class="tocnumber">8.2</span> <span class="toctext">Greasemonkey Script</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-59"><a href="#Website_Action_URL_Support"><span class="tocnumber">9</span> <span class="toctext">Website Action URL Support</span></a></li>
+<li class="toclevel-1 tocsection-60"><a href="#Drop_Social_Buttons"><span class="tocnumber">10</span> <span class="toctext">Drop Social Buttons</span></a>
+<ul>
+<li class="toclevel-2 tocsection-61"><a href="#Privacy_concerns"><span class="tocnumber">10.1</span> <span class="toctext">Privacy concerns</span></a></li>
+<li class="toclevel-2 tocsection-62"><a href="#Adblock_Plus_blocking"><span class="tocnumber">10.2</span> <span class="toctext">Adblock Plus blocking</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-63"><a href="#Drop_Delegated_Logins"><span class="tocnumber">11</span> <span class="toctext">Drop Delegated Logins</span></a></li>
+<li class="toclevel-1 tocsection-64"><a href="#Real-World_Candidates_for_Web_Actions"><span class="tocnumber">12</span> <span class="toctext">Real-World Candidates for Web Actions</span></a></li>
+<li class="toclevel-1 tocsection-65"><a href="#Delegate_URLs"><span class="tocnumber">13</span> <span class="toctext">Delegate URLs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-66"><a href="#Apps_which_submit_to_to_delegate_URLs"><span class="tocnumber">13.1</span> <span class="toctext">Apps which submit to to delegate URLs</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-67"><a href="#Issues"><span class="tocnumber">14</span> <span class="toctext">Issues</span></a>
+<ul>
+<li class="toclevel-2 tocsection-68"><a href="#leaks_info_to_the_target_website"><span class="tocnumber">14.1</span> <span class="toctext">leaks info to the target website</span></a></li>
+<li class="toclevel-2 tocsection-69"><a href="#action_button_design_doesn&#39;t_match_website"><span class="tocnumber">14.2</span> <span class="toctext">action button design doesn't match website</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-70"><a href="#History"><span class="tocnumber">15</span> <span class="toctext">History</span></a>
+<ul>
+<li class="toclevel-2 tocsection-71"><a href="#2012"><span class="tocnumber">15.1</span> <span class="toctext">2012</span></a></li>
+<li class="toclevel-2 tocsection-72"><a href="#2011"><span class="tocnumber">15.2</span> <span class="toctext">2011</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-73"><a href="#Sessions"><span class="tocnumber">16</span> <span class="toctext">Sessions</span></a></li>
+<li class="toclevel-1 tocsection-74"><a href="#Articles"><span class="tocnumber">17</span> <span class="toctext">Articles</span></a></li>
+<li class="toclevel-1 tocsection-75"><a href="#See_Also"><span class="tocnumber">18</span> <span class="toctext">See Also</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Why">Why</span></h2>
+<p>You should put web action buttons (or links) on your posts so that users can quickly interact with them and perform common actions such as:
+</p>
+<ul><li><a href="/like" title="like">like</a> (or <a href="/favorite" title="favorite">favorite</a>)</li>
+<li><a href="/repost" title="repost">repost</a></li>
+<li><a href="/reply" title="reply">reply</a></li>
+<li><a href="/follow" title="follow">follow</a></li></ul>
+<p>You should also consider putting web action buttons on your posts even when inline in a <a href="/stream" title="stream">stream</a> (<a href="/composite_stream" title="composite stream">composite</a>, home page, or archive pages), so that users can quickly interact with your posts while reading through a collection of them (without having to dive into and out of each post to interact with it).
+</p><p>Any button in the UI of a post which creates a <a href="/response" class="mw-redirect" title="response">response</a> to that post should be a webaction.
+</p><p>Similarly, consider putting a cross-site <a href="/follow" title="follow">follow</a> button on your home page or profile.
+</p>
+<h3><span class="mw-headline" id="Why_event_specific">Why event specific</span></h3>
+<p>You should put <a href="/RSVP" class="mw-redirect" title="RSVP">RSVP</a> and <a href="/invitation" title="invitation">invitation</a> web action buttons (or links) on your <a href="/event" title="event">event</a> posts so that users can quickly RSVP to events that you post with common replies like:
+</p>
+<ul><li>RSVP yes - [ Going ]</li>
+<li>RSVP maybe - [ Maybe ]</li>
+<li>RSVP no - [ Can't go ]</li>
+<li>RSVP interested - [ Save ]</li></ul>
+<p>Clicking any of those should trigger the RSVP post creation handler on the user's own site to post the respective RSVP post.
+</p>
+<ul><li>Invitation - [ Invite ]</li></ul>
+<p>Clicking that button should trigger the Invitation post creation handler on the user's own site to post an invitation post.
+</p><p>For example see the RSVP webaction buttons that Facebook provides users on event posts:
+</p>
+<ul><li><a class="external free" href="http://microformats.org/wiki/rsvp-examples#2015_RSVP_buttons_update">http://microformats.org/wiki/rsvp-examples#2015_RSVP_buttons_update</a></li></ul>
+<h3><span class="mw-headline" id="Why_fallback_silo_webactions">Why fallback silo webactions</span></h3>
+<p>If you <a href="/POSSE" title="POSSE">POSSE</a> your posts to one or more <a href="/silos" class="mw-redirect" title="silos">silos</a>, you should consider providing fallback webaction buttons for one or more of those silos, since the user may have navigated to your post from its POSSE copy (which you could potentially detect via referer [sic] and provide fallbacks accordingly).
+</p>
+<h2><span class="mw-headline" id="How">How</span></h2>
+<h3><span class="mw-headline" id="How_to_markup">How to markup</span></h3>
+<p>How to markup web actions on your posts:
+</p>
+<h4><span class="mw-headline" id="Wrap_tweet_or_share">Wrap tweet or share</span></h4>
+<p>Use the <code>&lt;indie-action&gt;</code> tag to wrap any third party / <a href="/silo" title="silo">silo</a> action buttons/links you might already have on your site, e.g. "Tweet" / share / +1 buttons. Here is an example of wrapping an existing Tweet button (from <a class="external text" href="http://tantek.com/2014/179/b1/indiewebcamp-thoughts-before-gathering">an actual blog post</a>), whitespace/indenting added for readability.
+</p>
+<pre>&lt;indie-action do="post" 
+ with="http://tantek.com/2014/179/b1/indiewebcamp-thoughts-before-gathering"&gt;
+ &lt;span class="tweet-button"&gt;
+  &lt;a href="http://twitter.com/share" 
+     class="twitter-share-button" 
+     data-url="http://tantek.com/2014/179/b1/indiewebcamp-thoughts-before-gathering" 
+     data-text="IndieWebCamp 2014 — Thoughts Before The Gathering:" 
+     data-count="horizontal" 
+     data-via="t" data-related="html5now:microformats"&gt;Tweet&lt;/a&gt;
+  &lt;script type="text/javascript" src="http://platform.twitter.com/widgets.js"&gt;&lt;/script&gt;
+ &lt;/span&gt;
+&lt;/indie-action&gt;
+</pre>
+<p>Note that everything inside the <code>&lt;span class="tweet-button"&gt;</code> is markup from Twitter, including the javascript. It's not required for web actions, just the markup that was there from before.
+</p><p>The <code>&lt;indie-action&gt;</code> element is an example of a <a class="external text" href="http://w3c.github.io/webcomponents/spec/custom/">custom element</a>, part of the <a class="external text" href="https://www.webcomponents.org/">web components</a> family of technologies. The element was initially <code>&lt;action&gt;</code>, but <a class="external text" href="http://w3c.github.io/webcomponents/spec/custom/#dfn-custom-element">custom elements require a dash in the element name</a>, hence <code>&lt;indie-action&gt;</code>.
+</p>
+<h4><span class="mw-headline" id="Wrap_multiple_silo_post_actions">Wrap multiple silo post actions</span></h4>
+<p>You can also wrap multiple silo actions meaning the same thing in a single webaction. Note this example also provides simpler silo action markup <em>without javascript</em>.
+</p>
+<pre style="white-space:prewrap">&lt;indie-action do="post" with="http://tantek.com/2014/179/b1/indiewebcamp-thoughts-before-gathering"&gt;
+  &lt;a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Ftantek.com%2F2014%2F179%2Fb1%2Findiewebcamp-thoughts-before-gathering&amp;text=IndieWebCamp%202014%20Thoughts%20Before%20The%20Gathering"&gt;
+   Tweet&lt;/a&gt;
+  &lt;a href="https://www.facebook.com/sharer/sharer.php?u=http://tantek.com/2014/179/b1/indiewebcamp-thoughts-before-gathering&amp;title=IndieWebCamp%202014%20Thoughts%20Before%20The%20Gathering"&gt;
+   Facebook&lt;/a&gt; 
+  &lt;a href="https://plus.google.com/share?url=http://tantek.com/2014/179/b1/indiewebcamp-thoughts-before-gathering"&gt;
+   Google+&lt;/a&gt;
+&lt;/indie-action&gt;
+</pre>
+<h4><span class="mw-headline" id="Wrap_favorite_reply_retweet">Wrap favorite reply retweet</span></h4>
+<p>If you have Twitter "Favorite", "Reply", "Retweet" tweet action links, you can wrap those in  <code>&lt;indie-action&gt;</code> tags so that those with <code>&lt;indie-action&gt;</code> tag support will be able to automatically interact using their own site rather than a silo. Here's some sample markup (again <a class="external text" href="http://tantek.com/2014/175/t1/pdf14-why-need-indieweb-video-slides">from an actual post</a>), note that text verbs have been updated to use the general <a href="/like" title="like">like</a>, <a href="/reply" title="reply">reply</a>, <a href="/repost" title="repost">repost</a> terms rather than Twitter's terms. Again whitespace added for wrapping/readability (and non-essential attributes removed)
+</p>
+<pre>&lt;indie-action do="like" 
+ with="http://tantek.com/2014/175/t1/pdf14-why-need-indieweb-video-slides"&gt;
+ &lt;a target="" 
+  href="https://twitter.com/intent/favorite?tweet_id=481682185359880192"&gt;
+  &lt;img src="http://si0.twimg.com/images/dev/cms/intents/icons/favorite_hover.png" alt=""/&gt; 
+  Like
+ &lt;/a&gt;
+&lt;/indie-action&gt;
+&lt;indie-action do="repost" 
+ with="http://tantek.com/2014/175/t1/pdf14-why-need-indieweb-video-slides"&gt;
+ &lt;a target="" 
+  href="https://twitter.com/intent/retweet?tweet_id=481682185359880192"&gt;
+  &lt;img src="http://si0.twimg.com/images/dev/cms/intents/icons/retweet_hover.png" alt=""/&gt; 
+  Repost
+ &lt;/a&gt;
+&lt;/indie-action&gt;
+&lt;indie-action do="reply" 
+ with="http://tantek.com/2014/175/t1/pdf14-why-need-indieweb-video-slides"&gt;
+ &lt;a target="" 
+  href="https://twitter.com/intent/tweet?in_reply_to=481682185359880192"&gt;
+  &lt;img src="http://si0.twimg.com/images/dev/cms/intents/icons/reply_hover.png" alt=""/&gt; 
+  Reply
+ &lt;/a&gt;
+&lt;/indie-action&gt;
+</pre>
+<h4><span class="mw-headline" id="action_markup">action markup</span></h4>
+<p>1. Be sure to include these scripts (once per page is sufficient) to polyfill the <code>&lt;indie-action&gt;</code> tags in the <code>&lt;head&gt;</code> element of your site:
+</p>
+<pre>&lt;script type="text/javascript" src="/path/to/indieconfig.js"&gt;&lt;/script&gt; 
+&lt;!-- download from https://github.com/voxpelli/voxpelli.github.com/blob/master/js/indieconfig.js --&gt;
+&lt;script type="text/javascript" src="/path/to/webaction.js"&gt;&lt;/script&gt;
+&lt;!-- download from https://github.com/voxpelli/voxpelli.github.com/blob/master/js/webaction.js --&gt;
+</pre>
+<p>See: <a href="/indie-config#How_to_consume" title="indie-config">indie-config#How_to_consume</a> for more details on the scripts (what each does etc.).
+</p><p><br />
+2. Here is a simple outline of <code>&lt;indie-action&gt;</code> markup to use for each web action button:
+</p>
+<pre>  &lt;indie-action do="post" with="permalink"&gt;
+   &lt;a href=twitter&gt;..&lt;/a&gt;
+   &lt;a href=pinterest&gt;...&lt;/a&gt;
+   ...
+  &lt;/indie-action&gt;
+</pre>
+<h4><span class="mw-headline" id="action_do_verbs">action do verbs</span></h4>
+<p><b><code>do</code></b> takes a verb (could allow multiple verbs) - we can create a common verb registry like the <a class="external text" href="http://microformats.org/wiki/existing-rel-values">rel registry</a>. A few possible common verbs (from analysis in "<a class="external text" href="http://tantek.com/2011/220/b1/web-actions-a-new-building-block#web-action-motivations">Web Action Motivations and Clusters</a>") - though these should be iterated based on user experience design iterations (names, how many in particular, what specific meanings).
+</p>
+<ul><li><b><code>post</code></b> - more specific than "share", more general than "comment", or "tweet"/"reply", though those might show up in a UI where a reader expected a Twitter-like experience</li>
+<li><b><code>reply</code></b> - specifically to reply to the current URL. Twitter uses a different icon. IndieNews and Barnaby.co.uk both have reply actions.</li>
+<li><b><code>repost</code></b> - generalization or Twitter's "retweet", Tumblr's "reblog" ("retumbl?"),  Pinterest "repin"</li>
+<li><b><code>like</code></b> - generalization of Twitter "favorite", Facebook "like", GooglePlus "+1". Alternatively, could split this up into separate verbs for "favorite" and "like", or further specialize: "heart" (Instagram "like"), "star" (Flickr "favorite" and Twitter "favorite"). It's not clear which approach (general or specific) is better. People do assign different meanings to favoriting vs. liking. (there's a photo on flic.kr/tantek with a conversation about this but can't find it now)</li></ul>
+<p>See also: <a href="/webactions-verbs-brainstorming" title="webactions-verbs-brainstorming">webactions-verbs-brainstorming</a>
+</p>
+<h4><span class="mw-headline" id="with_URL">with URL</span></h4>
+<p><b><code>with</code></b> takes a URL that represents a direct object for the verb to act on. The <code>with</code> attribute MUST be processed as a URL attribute in the same way that <code>href</code> is, by resolving relative URLs per document context.
+</p><p>For most actions (e.g. reply, repost, like), the URL should resolve to a post permalink.
+</p><p>Some actions may apply to a user / whole site (e.g. follow, add friend, invite), and those will likely thus resolve to a home page.
+</p><p>Some actions may apply to any URL (e.g. bookmark).
+</p>
+<h3><span class="mw-headline" id="How_to_polyfill_web_action_buttons">How to polyfill web action buttons</span></h3>
+<div style="text-indent:2em;font-style:italic">Main article: <a href="/indie-config#How_to_consume" title="indie-config">indie-config#How_to_consume</a></div>
+<p>Until browsers have native support for handling web actions, you can make them work on your site with the consuming half of the <a href="/indie-config" title="indie-config">indie-config</a> polyfill.
+</p><p>In short, add to the head of your pages with web actions:
+</p>
+<blockquote><code><p>&lt;script type="text/javascript" src="/path/to/indieconfig.js"&gt;&lt;/script&gt;<br />
+&lt;script type="text/javascript" src="/path/to/webaction.js"&gt;&lt;/script&gt;
+</p></code><p><code>
+</code></p></blockquote>
+<p>See <a href="/indie-config#How_to_consume" title="indie-config">indie-config: How to consume</a> for more details.
+</p>
+<h3><span class="mw-headline" id="How_to_handle_web_actions">How to handle web actions</span></h3>
+<p>To set up your site to handle web actions, that is, to respond when you activate web actions buttons, you can use the "publish" half of the <a href="/indie-config" title="indie-config">indie-config</a> poly-fill. "Publish" in the context of indie-config refers to the act of your site "publishing" that it can handle web actions.
+</p><p>See <a href="/indie-config#How_to_publish" title="indie-config">indie-config: How to publish</a> for details of how to set this up on your site.
+</p>
+<h2><span class="mw-headline" id="IndieWeb_Examples">IndieWeb Examples</span></h2>
+<p><span id="Action_tag_examples_in_the_wild">Examples of real world web sites</span> using the <code>&lt;indie-action&gt;</code> tag.
+</p>
+<h3><span class="mw-headline" id="Barnaby_Walters">Barnaby Walters</span></h3>
+<p><b><a href="/User:Waterpigs.co.uk" title="User:Waterpigs.co.uk">Barnaby Walters</a></b> on notes <a class="external text" href="http://waterpigs.co.uk/notes/1123/">since at least 2013-03-15</a>, e.g. 
+</p>
+<ul><li><a class="external free" href="http://waterpigs.co.uk/notes/1123/">http://waterpigs.co.uk/notes/1123/</a></li>
+<li>have <code>&lt;action&gt;</code> tags with verbs: <code>post</code>, <code>reply</code>, <code>bookmark</code></li></ul>
+<h3><span class="mw-headline" id="Laurent">Laurent</span></h3>
+<p><b><a href="/User:Eschnou.com" title="User:Eschnou.com">Laurent</a></b> (all posts?) since&#160;????-??-??, e.g. 
+</p>
+<ul><li><a class="external free" href="http://eschnou.com/entry/on-silos-vs-an-open-social-web-indieweb---by-t-62-24891.html">http://eschnou.com/entry/on-silos-vs-an-open-social-web-indieweb---by-t-62-24891.html</a></li>
+<li>have <code>&lt;action&gt;</code> tags with verb: <code>post</code></li></ul>
+<h3><span class="mw-headline" id="Tantek">Tantek</span></h3>
+<p><b><a href="/User:Tantek.com" title="User:Tantek.com">Tantek</a>'</b>s posts on tantek.com have the following web actions (using <a href="/Falcon" title="Falcon">Falcon</a>) <a class="external text" href="http://tantek.com/2013/251/t1/indieweb-reply-favorite-retweet-notes">since 2013-09-08</a>:
+</p>
+<ul><li><a href="/articles" class="mw-redirect" title="articles">articles</a>, e.g.:
+<ul><li><a class="external free" href="http://tantek.com/2013/073/b1/silos-vs-open-social-web#silos-vs-open-social-web-elsewhere">http://tantek.com/2013/073/b1/silos-vs-open-social-web#silos-vs-open-social-web-elsewhere</a></li>
+<li>have <code>&lt;indie-action&gt;</code> tags with verb: <b><code>post</code></b> with Tweet action fallback inside on each article post</li></ul></li>
+<li><a href="/notes" class="mw-redirect" title="notes">notes</a>, e.g.:
+<ul><li class="mw-empty-elt"></li>
+<li>have <code>&lt;indie-action&gt;</code> tags with verbs <b><code>like</code>, <code>repost</code>, <code>reply</code></b> with Tweet action fallback inside on each note post, and Twitter wording/icons (since the notes are primarily POSSEd to Twitter), e.g.: <a class="external text" href="http://tantek.com/2013/250/t1/demonstrating-falcon-indiewebcampuk-text-editor"><img src="http://indiewebcamp.com/images/d/d2/tantek-com-demo-note-2013-251.png" alt="tantek-com-demo-note-2013-251.png" /></a></li></ul></li>
+<li>Since then updated (2014) to:
+<ul><li><samp> Like Repost Reply </samp> with the same icons as before.</li></ul></li>
+<li>2014-09-07 updated from <code>&lt;action&gt;</code> (2013-09-08..2014-09.06) to <code>&lt;indie-action&gt;</code> tags per <span class="h-card" style="white-space:nowrap"><img src="https&#58;//adactio.com/icon.png" class="" style="height:1.1em;vertical-align:-.1em" alt="" /> <a href="/User:Adactio.com" title="User:Adactio.com">Jeremy Keith</a></span> suggestion and web components convention.</li></ul>
+<h3><span class="mw-headline" id="Indienews">Indienews</span></h3>
+<p><b>Indienews</b> comments pages, e.g.
+</p>
+<ul><li><a class="external free" href="http://news.indiewebcamp.com/post/shawfactor.com/2013/08/06/thoughts-on-extending-webmentions/">http://news.indiewebcamp.com/post/shawfactor.com/2013/08/06/thoughts-on-extending-webmentions/</a></li>
+<li>had <code>&lt;action inline&gt;</code> elements with <code>reply</code> verbs enabling in-context commenting (<a class="external text" href="http://waterpigs.co.uk/notes/4RRNLz/">demo</a>)</li>
+<li>No longer the case as retrieved 2019-12-04</li></ul>
+<h3><span class="mw-headline" id="Barry_Frost">Barry Frost</span></h3>
+<p>Some of Barry Frost's post have webactions as of 2013-10-01<a class="external autonumber" href="http://barryfrost.com/posts/38">[1]</a>, e.g.:
+</p>
+<ul><li><a class="external free" href="http://barryfrost.com/posts/38">http://barryfrost.com/posts/38</a>, <a class="external free" href="http://barryfrost.com/posts/50">http://barryfrost.com/posts/50</a></li>
+<li>have <code>&lt;action&gt;</code> elements with bookmark, post, reply verbs and Twitter tweet action fallbacks.</li>
+<li>As retrieved 2019-12-04, have <code>&lt;indie-action&gt;</code> elements</li></ul>
+<h3><span class="mw-headline" id="Glenn_Jones">Glenn Jones</span></h3>
+<p><b><a href="/User:Glennjones.net" title="User:Glennjones.net">Glenn Jones</a></b> notes, e.g. 
+</p>
+<ul><li><a class="external free" href="http://glennjones.net/notes/">http://glennjones.net/notes/</a></li>
+<li>have <code>&lt;action&gt;</code> element and fallback to Twitter actions.</li>
+<li>Site was not retrievable at all on 2019-12-04</li></ul>
+<h3><span class="mw-headline" id="Kyle_Mahan">Kyle Mahan</span></h3>
+<p><span class="h-card"><img src="https&#58;//kylewm.com/photo.jpg" class="" style="height:1.1em;vertical-align:-.1em" alt="" /> <a href="/User:Kylewm.com" title="User:Kylewm.com">Kyle Mahan</a></span> all posts on <a class="external free" href="http://kylewm.com">http://kylewm.com</a> have "reply", "repost", and "favorite" webaction links as of 2014-05-15 <a class="external autonumber" href="https://github.com/kylewm/redwind/commit/4ceb0e7d5a3efb3b68060df28761c56e7e49802d">[2]</a>
+</p>
+<ul><li>Links fallback to Twitter Reply, Retweet, Favorite if a Twitter syndication URL exists</li></ul>
+<p>Then at some point (2014-??-??) Kyle dropped webactions when he rebuilt/simplified his site theme
+</p><p>As of 2015-02-05, all post permalinks have "Reply" and "Like" <a href="/webaction" class="mw-redirect" title="webaction">webaction</a> links, and supporting loading <a href="/indie-config" title="indie-config">indie-config</a> so anyone's site that registers an indie-config can use his webaction links to reply/like using their own site! E.g.
+</p>
+<ul><li><a class="external free" href="https://kylewm.com/2015/02/digitalocean-known-indieweb-publishing-platform-https">https://kylewm.com/2015/02/digitalocean-known-indieweb-publishing-platform-https</a></li></ul>
+<p>Site no longer active as retrieved 2019-12-04
+</p>
+<h3><span class="mw-headline" id="Scott_Gilbertson">Scott Gilbertson</span></h3>
+<p><a href="/User:Luxagraf.net" title="User:Luxagraf.net">Scott Gilbertson</a> posts <a href="/notes" class="mw-redirect" title="notes">notes</a> with "Reply" "Retweet" and "Favourite" webaction links <a class="external text" href="http://indiewebcamp.com/wiki/index.php?title=User:Luxagraf.net&amp;diff=prev&amp;oldid=9962">since ~2014-06-09</a>. Links fallback to <a href="/Twitter" title="Twitter">Twitter</a> reply, retweet, favorite tweet actions. Example:
+</p>
+<ul><li><a class="external free" href="https://luxagraf.net/field-notes/2014/06/people">https://luxagraf.net/field-notes/2014/06/people</a></li>
+<li>Older posts still have this, however current posts as of 2019-12-04 do not.</li></ul>
+<h3><span class="mw-headline" id="Michael_Owens">Michael Owens</span></h3>
+<p><b><a href="/User:Mowens.com" title="User:Mowens.com">Michael Owens</a>'</b>s notes on mowens.com have the following web actions since 2014-08-14 (verified by <span class="h-card" style="white-space:nowrap"><img src="https&#58;//tantek.com/logo.jpg" class="" style="height:1.1em;vertical-align:-.1em" alt="" /> <a href="/User:Tantek.com" title="User:Tantek.com">Tantek Çelik</a></span>, possibly earlier)
+</p>
+<ul><li><a href="/notes" class="mw-redirect" title="notes">notes</a>, e.g. <a class="external free" href="https://mowens.com/notes/2014/07/01/2/">https://mowens.com/notes/2014/07/01/2/</a>
+<ul><li>have <code>&lt;action&gt;</code> tags with verbs <b><code>reply</code>, <code>favorite</code>, <code>bookmark</code>, <code>repost</code></b> with mowens.com/interact fallback links which provide the following fallbacks as an inline progressive disclosure UI:</li>
+<li>Reply: a <a href="/webmention" class="mw-redirect" title="webmention">webmention</a> UI with form field to enter a URL of a reply</li>
+<li>Favorite: placeholder text (presumably for links) to
+<ul><li>"Favorite using * Twitter or * Facebook"</li></ul></li>
+<li>Bookmark: placeholder text (presumably for links) to
+<ul><li>"Bookmark using * Instapaper or * Delicious"</li></ul></li>
+<li>Repost: <a href="/citation" title="citation">citation</a> UI text fields to copy/paste
+<ul><li>"Short URL: [https://mowens.com/n/4Ws2]"</li>
+<li>"Permalink: [https://mowens.com/2014/...]"</li></ul></li></ul></li>
+<li>Site not retrievable as of 2019-12-04</li></ul>
+<h3><span class="mw-headline" id="Pelle_Wessman">Pelle Wessman</span></h3>
+<p><b><a href="/User:Kodfabrik.se" title="User:Kodfabrik.se">Pelle Wessman</a></b> on posts since 2014-09-07 (deployed at <a href="/2014/UK" title="2014/UK">IndieWebCampUK</a> hack day!) e.g. 
+</p>
+<ul><li><a class="external free" href="http://voxpelli.com/2013/12/webmentions-for-static-pages/">http://voxpelli.com/2013/12/webmentions-for-static-pages/</a></li>
+<li>have <code>&lt;indie-action&gt;</code> tags with verbs: <code>post</code>, <code>like</code>, <code>tip</code></li>
+<li>This is still accurate as of 2019-12-04</li></ul>
+<h3><span class="mw-headline" id="Jeremy_Keith">Jeremy Keith</span></h3>
+<p><b><span class="h-card" style="white-space:nowrap"><img src="https&#58;//adactio.com/icon.png" class="" style="height:1.1em;vertical-align:-.1em" alt="" /> <a href="/User:Adactio.com" title="User:Adactio.com">Jeremy Keith</a></span></b> on post permalinks and in-stream on home page <a class="external text" href="http://adactio.com/notes/7408/">since 2014-09-07</a> (deployed at <a href="/2014/UK" title="2014/UK">IndieWebCampUK</a> hack day!) e.g. 
+</p>
+<ul><li><a class="external free" href="http://adactio.com/notes/7408/">http://adactio.com/notes/7408/</a></li>
+<li>have <code>&lt;indie-action&gt;</code> tags with verbs: <code>reply</code>, <code>repost</code>, <code>like</code>; with tweet action fallback links inside.</li></ul>
+<h3><span class="mw-headline" id="David_Shanske">David Shanske</span></h3>
+<p><b><span class="h-card" style="white-space:nowrap"><img src="https&#58;//david.shanske.com/avatar/dshanske" class="" style="height:1.1em;vertical-align:-.1em" alt="" /> <a href="/User:David.shanske.com" title="User:David.shanske.com">David Shanske</a></span></b> used to post this on comments since 2015, but discontinued in 2017.
+</p>
+<h3><span class="mw-headline" id="Malcolm_Blaney">Malcolm Blaney</span></h3>
+<p><span class="h-card" style="white-space:nowrap"><img src="https&#58;//mblaney.xyz/public/profile_thumb.png" class="" style="height:1.1em;vertical-align:-.1em" alt="" /> <a href="/User:Mblaney.xyz" title="User:Mblaney.xyz">Malcolm Blaney</a></span> on posts since 2015-09-08
+</p>
+<ul><li>Default text "Want to share this? Click to choose a site:" and a settings link.</li>
+<li>Clicking the link opens a dialog box which allows the user to input their web address, which will be used to discover their <a href="/webaction_handler" title="webaction handler">webaction handler</a>, or the url for the handler can be entered directly.</li>
+<li>If the user has a webaction handler, their config is fetched and used to display webaction links on the page.</li>
+<li>The webaction config is stored in local storage and is used instead of the dialog the next time the page is loaded.</li>
+<li>If a webaction handler is not found the dialog allows the user to choose other default options instead (this is also saved in local storage).</li></ul>
+<h2><span class="mw-headline" id="Software_Examples">Software Examples</span></h2>
+<h3><span class="mw-headline" id="Mastodon">Mastodon</span></h3>
+<h4><span class="mw-headline" id="Remote_Follow">Remote Follow</span></h4>
+<p><a href="/Mastodon" title="Mastodon">Mastodon</a> has a feature called <dfn>remote follow</dfn> where when you click a follow button on a Mastodon profile or post permalink, if you’re not logged into that instance, it acts as a webaction and you’re presented with a remote follow pop-up window to complete the action on your site:
+</p><p>E.g. here is such a Follow button on <a class="external text" href="https://mastodon.cloud/@stopdesign/109682403420055263">a post permalink</a> in a Mastodon <a class="external text" href="https://web.archive.org/web/20230113172359/https://mastodon.cloud/about/more">v3.4.6</a> installation:
+</p><p><a href="/File:2023-01-13-mastodon-permalink-follow-button.png" class="image"><img alt="2023-01-13-mastodon-permalink-follow-button.png" src="/images/d/d5/2023-01-13-mastodon-permalink-follow-button.png" decoding="async" width="1352" height="524" /></a>
+</p><p>Click that button opens the following <a class="external text" href="https://mastodon.cloud/users/stopdesign/remote_follow">popup window</a>:
+</p><p><a href="/File:2023-01-13-mastodon-remote-follow.png" class="image"><img alt="2023-01-13-mastodon-remote-follow.png" src="/images/e/ed/2023-01-13-mastodon-remote-follow.png" decoding="async" width="1114" height="1562" /></a>
+That is at a specific URL of: (profile-URL)/remote_follow.
+</p>
+<ul><li>https://mastodon.cloud/users/stopdesign/remote_follow</li></ul>
+<h2><span class="mw-headline" id="Use_Cases">Use Cases</span></h2>
+<p>There are at least two key use cases that are worthy of exploring for webactions:
+</p>
+<h3><span class="mw-headline" id="Action_Buttons">Action Buttons</span></h3>
+<p>1. Provide the familiar buttons UI of <a href="/Twitter" title="Twitter">Twitter</a>, so that <a href="/notes" class="mw-redirect" title="notes">notes</a> on your own site feel "at least as useful" as syndicated tweet copies. This is for the scenario where a reader of your tweets clicks a permalink on the tweet copy, navigates back to the original on your own site (perhaps to read more or view better embedded images / video), the reader can still favorite/reply/retweet/tweet etc. your note (all verbs/buttons which will act on the tweet copy of that note).
+</p><p>There's been some demand for this in response to <a href="/POSSE" title="POSSE">POSSEing</a> out to Twitter:
+</p>
+<blockquote><p>Oops, the page I clicked thru to doesn't amplify the tweet, it simply repeats it. Bad UX. But there's more.<a class="external autonumber" href="https://twitter.com/zeldman/status/24224559787941888">[3]</a></p><p>If I want to reply to t's tweet, I can't do it from his site. I have to back-button back to Twitter. Lotta clicks.<a class="external autonumber" href="https://twitter.com/zeldman/status/24224682530050048">[4]</a></p><p>(and my (<a href="/User:Tantek.com" title="User:Tantek.com">Tantek</a>) followup: <a class="external free" href="http://tantek.com/2011/009/t4/falcon-needs-reply-buttons-fave-rt-coming">http://tantek.com/2011/009/t4/falcon-needs-reply-buttons-fave-rt-coming</a>, referenced in the broader post: <a class="external free" href="http://tantek.com/2011/010/b1/owning-your-data">http://tantek.com/2011/010/b1/owning-your-data</a>)</p></blockquote> 
+<h3><span class="mw-headline" id="Inline_Comment_UI">Inline Comment UI</span></h3>
+<p>2. Provide a UI for indieweb users to comment / link-blog your notes/articles on their own site
+</p><p>By designing, developing for these two particular use cases, it may provide us a with a constrained enough design-space that we can come up with simple uses/guidelines for webactions that produce a good user experience on indieweb posts.
+</p>
+<h3><span class="mw-headline" id="Quote_This">Quote This</span></h3>
+<p>3. Additionally, some news articles include "Tweet this" links <em>inside</em> an article, inline with the content, or quotes. Such "Tweet this" links appear to be contextually handcrafted, including an elided version of the text they're adjacent to, along with a permalink to the article, and a "via @-name" where @-name is the article author or publisher's Twitter account. E.g.:
+</p>
+<ul><li><a class="external free" href="http://gigaom.com/2013/11/05/how-jack-dorsey-approached-the-payments-market-as-a-buyer/">http://gigaom.com/2013/11/05/how-jack-dorsey-approached-the-payments-market-as-a-buyer/</a> (cropped screenshots of "Tweet this" inline in context welcome)</li></ul>
+<p>Generically, "Quote this" is a better non-silo-specific phrase for this functionality.
+</p>
+<h2><span class="mw-headline" id="Brainstorming">Brainstorming</span></h2>
+<h3><span class="mw-headline" id="emoji_text_labels">emoji text labels</span></h3>
+<p>Visual design of web action buttons can minimally (and perhaps as a fallback) be represented using emoji/unicode and plain text labels, e.g.:
+</p>
+<pre>♥ Like  ♺ Repost  ↵ Reply</pre>
+<p>Consider using CSS generated content to create the labels, e.g. 
+<code style="display:block">.reply-web-action::before { content: '↵ '; }<br />.reply-web-action { white-space:nowrap; }</code>
+The first rule avoids having the emoji/unicode symbols be unnecessarily read out loud by a screen reader, and the second rule avoids a linebreak between the symbol and the text label.
+</p>
+<h3><span class="mw-headline" id="which_actions">which actions</span></h3>
+<p>There are many possible web actions to place on / above / in a post. Here are some suggestions.
+</p><p>In general, successful interfaces have very few web actions on a piece of content, e.g.:
+</p>
+<ul><li><a href="/Twitter" title="Twitter">Twitter</a> tweets: header: 1 action (follow), footer: 3 actions (reply, retweet, favorite) plus "(...) More" for embedding/emailing tweets.</li>
+<li><a href="/Instagram" title="Instagram">Instagram</a> photos: 2 actions (like, comment) plus (...) for various other lesser actions.</li>
+<li><a href="/Facebook" title="Facebook">Facebook</a> posts: 2 actions (like, comment)</li></ul>
+<h4><span class="mw-headline" id="note">note</span></h4>
+<p>A <a href="/note" title="note">note</a> is most similar to a Twitter tweet, thus the following actions are recommended as buttons to be placed in the footer of a note, after info about the note such as date published, location:
+</p>
+<ul><li>like/favorite/heart/props</li>
+<li>repost/retweet</li>
+<li>reply</li></ul>
+<p>If you <a href="/POSSE" title="POSSE">POSSE</a> to Twitter, providing familiar verbs (even wording and icons) provides a more comfortable and lower cognitive load actions interface to your readers.
+</p>
+<h4><span class="mw-headline" id="article">article</span></h4>
+<p>An <a href="/article" title="article">article</a> is worthy of posting as a headline (article name) and permalink to anyone doing indie-bookmark posts, and as a short post on any number of services, and thus at a minimum it makes sense to include
+</p>
+<ul><li>post</li></ul>
+<h4><span class="mw-headline" id="event">event</span></h4>
+<p>For <a href="/event" title="event">event</a> posts in particular: 
+</p>
+<ul><li>RSVP popup (Going, Maybe, Can't Go)</li>
+<li>Invite</li></ul>
+<p><a href="/Facebook" title="Facebook">Facebook</a> examples: <a class="external free" href="http://microformats.org/wiki/rsvp-examples#2015_RSVP_buttons_update">http://microformats.org/wiki/rsvp-examples#2015_RSVP_buttons_update</a>
+</p>
+<h3><span class="mw-headline" id="how_many_actions">how many actions</span></h3>
+<p>To minimize the cognitive load of an interface, minimize the options for the user to consider. E.g.
+</p>
+<ul><li>2 options: <a href="/Facebook" title="Facebook">Facebook</a>: Like, Comment</li>
+<li>3 options: <a href="/Instagram" title="Instagram">Instagram</a>: Like, Comment, (...)</li>
+<li>4 options: <a href="/Twitter" title="Twitter">Twitter</a>: Reply, Retweet, Favorite, (...) More</li></ul>
+<p>Thus consider having at most 4 actions on a post. Perhaps only 3 at most since the (...) button is not a web action (but rather a method of hiding the far more uncommon actions).
+</p>
+<h3><span class="mw-headline" id="what_order">what order</span></h3>
+<p>By analyzing <a href="/silo" title="silo">silo</a> designs we see some patterns for what order actions are displayed. These patterns of convergence are slowly educating users and making them familiar with a certain order. There are likely reasons behind such convergence as well such as
+</p>
+<ul><li>ordered by increasing cognitive load</li>
+<li>most commonly taken action(s) first</li>
+<li>the last thing a user might want to do as last</li></ul>
+<ol><li><b>like/favorite/props.</b> <a href="/Facebook" title="Facebook">Facebook</a> and <a href="/Instagram" title="Instagram">Instagram</a> put "Like" first, <a href="/Flickr" title="Flickr">Flickr</a> puts "Favorite" first, and <a href="/Google%2B" class="mw-redirect" title="Google+">Google+</a> puts +1 first. The reason for this is that it is likely both:
+<ul><li>The most common action taken</li>
+<li>The action that has the lowest impact, and thus lowest cognitive load of consideration.</li></ul></li>
+<li><b>repost/retweet.</b> <a href="/Twitter" title="Twitter">Twitter</a> puts retweet second. In addition, retweeting takes a bit more consideration than favorite (i.e. "Do I really want to send this to all my followers?"), and yet, requires less thinking than a comment (i.e. "What should I to say/add to this text?"), thus it makes sense to put (if at all) "repost" after "like" but before "reply".</li>
+<li><b>reply/comment.</b> <a href="/Facebook" title="Facebook">Facebook</a> and <a href="/Instagram" title="Instagram">Instagram</a> both put "Comment" last (second, immediately after like). <a href="/Twitter" title="Twitter">Twitter</a> is an exception here and puts it first, likely to encourage the generation of more content on Twitter itself, since original tweets are the primary currency of Twitter (they don't do much to surface favorites in their UI). It makes sense to place "reply" at the end as commenting on a post requires the most cognitive load and thus is something a user would want to do <em>after</em> they've considered (and perhaps done) lower cognitive load options.</li></ol>
+<p>The "(...) More" button/link in <a href="/Instagram" title="Instagram">Instagram</a> and <a href="/Twitter" title="Twitter">Twitter</a> is not a web action itself, but rather a way of hiding "other" much less common actions from the UI (progressive disclosure). 
+</p><p>It's also typically placed away from the other buttons, often right-aligned with the content that it applies to (and thus out of the way).
+</p>
+<h3><span class="mw-headline" id="action_fallbacks">action fallbacks</span></h3>
+<p>Inside the <code>&lt;action&gt;</code> element the publisher can place hardcoded markup for the equivalent existing provider-specific web actions which would then work as they do today.
+</p>
+<h3><span class="mw-headline" id="which_silo_buttons">which silo buttons</span></h3>
+<p>You should add provider-specific / silo-specific buttons only for the silos that your site <a href="/POSSE" title="POSSE">POSSEs</a> to.
+</p><p>A lot of the design/UX we do on the indieweb is driven by doing the right thing for our friends to read and use our content.
+</p><p>For example: one of your friends who reads your posts from a silo happens to click through on the permashortlink to your post, then reads the full post on your site, then wants to reply/favorite/like/repost, and should be able to click those buttons right there on your site, rather than clicking back to go to the silo, and looking for and clicking a button there. (e.g. this real-world complaint from <a class="external text" href="https://twitter.com/zeldman/status/24224682530050048">@zeldman re: having to click back to Twitter to reply</a>.)
+</p><p>Such buttons also help your site and your permalinks become a better (more complete) replacement for the silo-UIs your friends are used to interacting with.
+</p><p>We should encourage our friends to interact more with our own sites than with silos.
+</p><p>For <a href="/event" title="event">event</a> posts in particular, if you're POSSEing your indie events to Facebook, consider providing fallback buttons to that POSSE copy, e.g.  RSVP popup (Going, Maybe, Can't Go), Invite
+</p>
+<ul><li>See <a class="external text" href="http://microformats.org/wiki/rsvp-examples#2015_RSVP_buttons_update">Facebook example events with buttons</a></li></ul>
+<h3><span class="mw-headline" id="conditional_fallbacks">conditional fallbacks</span></h3>
+<p>Provide hardcoded markup for silo-specific web actions <em>only</em> when the HTTP referer [sic] shows that the user came from that silo.
+</p><p>No need to direct any traffic to <a href="/silos" class="mw-redirect" title="silos">silos</a> that didn't come from them.
+</p><p>No need to pollute your user interface (a la <a href="/NASCAR_problem" title="NASCAR problem">NASCAR problem</a>) with silo buttons unless your user came from that silo and would appreciate even expect those silo buttons.
+</p><p>The whole point to start with is to support (provide a better user experience for) readers who are coming <em>from</em> the silos you've <a href="/POSSE" title="POSSE">POSSE</a>'d to. Make them feel at home (even <em>more</em> comfortable) on your own site, than they do on the silo they came from.
+</p>
+<h3><span class="mw-headline" id="clientside_conditionals">clientside conditionals</span></h3>
+<p>Conditional showing of silo buttons could even be done in clientside javascript, because non-JS useragents certainly do not care about silo buttons (<code>&lt;action&gt;</code> markup should be sufficient for any crawlers etc. to infer general UI semantics).
+</p><p>E.g. on the serverside, always provide a <a href="/u-syndication" title="u-syndication">u-syndication</a> ("View on ..silo-name..") link to <a href="/POSSE" title="POSSE">POSSE</a> copies of posts, because they are useful for <a href="/original-post-discovery" title="original-post-discovery">original-post-discovery</a> and POSSE threading (e.g. threading POSSE tweets) and other <a href="/syndication-link-use-cases" title="syndication-link-use-cases">syndication-link-use-cases</a>.
+</p><p>Then in JS on the clientside, replace the ("View on ..silo-name..") link with web action buttons (using <code>&lt;action&gt;</code> tags), with respective silo-specific fallback inside (perhaps referrer conditionally as noted above).
+</p><p>Perhaps consider keeping (instead of replacing) the ("View on ..silo-name..") visible link (in addition to the web actions) if you think the silo POSSE copy of your post provides sufficient additional value to offset the cost of UI clutter and directing your readers to a silo.
+</p><p>More advantages of dynamically adding silo buttons in clientside JS:
+</p>
+<ul><li><b>page size</b>. omitting all that silo button markup in the HTML that is returned reduces initial retrieval page size which has numerous advantages, from performance to better search relevance (silo button markup only dilutes the relevance of semantic terms/headings/markup etc. in the page).</li>
+<li><b>overall performance</b>. check in JS whether the page appears to be rendered via a "slow" connection (however you want to define "slow", and using whatever technique you wish), and if so then don't load the 3rd party scripts at all (which would likely hurt page performance much more than any value they add).</li>
+<li><b>potential privacy</b>. Your clientside JS could also decide (e.g. based on a cookie) to not load 3rd party scripts for privacy/do-no-track reasons.</li></ul>
+<h3><span class="mw-headline" id="minimum_silo_buttons">minimum silo buttons</span></h3>
+<p>Is there a minimal recommended silo button set for each <a href="/silo" title="silo">silo</a> that indieweb sites choose to <a href="/POSSE" title="POSSE">POSSE</a> to?
+</p><p>E.g.:
+</p>
+<ul><li><a href="/Twitter" title="Twitter">Twitter</a>
+<ul><li>favorite(?) - as evidenced by users actually favoriting POSSE tweets (<a href="/User:Tantek.com" title="User:Tantek.com">Tantek</a>)</li>
+<li>retweet(?) - similarly by users actually retweeting POSSE tweet (<a href="/User:Tantek.com" title="User:Tantek.com">Tantek</a>)</li>
+<li>reply<a class="external autonumber" href="https://twitter.com/zeldman/status/24224682530050048">[5]</a></li></ul></li>
+<li><a href="/Facebook" title="Facebook">Facebook</a>
+<ul><li>Like - as evidenced by users liking things far more often than doing anything else with them on FB.</li></ul></li>
+<li>...</li></ul>
+<p>To be clear, this is not advocating for adding any more silo-specific buttons than you already have for whatever reasons you decided. Help figure out what are minimum sensible sets of silo-buttons for each silo and contribute to the above lists.
+</p>
+<h3><span class="mw-headline" id="silo_button_variance">silo button variance</span></h3>
+<p>It's expected that indieweb sites will likely all end up with slightly different sets of action tags and silo buttons inside, based on:
+</p>
+<ul><li>personal preferences for UI/UX</li>
+<li>whatever silos we choose to POSSE to (already a personal preference)</li></ul>
+<h3><span class="mw-headline" id="silo_button_examples">silo button examples</span></h3>
+<p>This article<a class="external autonumber" href="https://briankoberlein.com/2014/10/25/older-universe/">[6]</a> has a collection of hyperlink-only silo buttons/links that we can use to create our own silo button fallbacks. <b>generic</b> webaction (with silo-specific label in parentheses) is for each silo-specific web action URL endpoint. Here are a few from that article, feel free to add more silo-specific web action endpoints as you find them. Add more different per-silo web action URLs as you find them!
+</p>
+<ul><li><a href="/Facebook" title="Facebook">Facebook</a>
+<ul><li><b>post</b> (share): http://www.facebook.com/sharer.php?u=https://indiewebcamp.com/permalink&amp;t=permalink%20-%20IndieWebCamp</li>
+<li>... like?</li>
+<li>for event posts:
+<ul><li>... Going?</li>
+<li>... Maybe?</li>
+<li>... Can't Go?</li>
+<li>... Invite?</li></ul></li></ul></li></ul>
+<ul><li><a href="/Google%2B" class="mw-redirect" title="Google+">Google+</a>
+<ul><li><b>post</b> (share): https://plus.google.com/share?url=https://indiewebcamp.com/permalink</li>
+<li>... +1&#160;?</li></ul></li></ul>
+<ul><li><a href="/Pinterest" title="Pinterest">Pinterest</a>
+<ul><li><b>bookmark</b> (pin): http://pinterest.com/pin/create/button/?url=https%3A%2F%2Findiewebcamp.com%2Fpermalink&amp;description=permalink%20-%20IndieWebCamp&amp;media=https%3A%2F%2Findiewebcamp.com%2F7favicon.ico</li>
+<li>...&#160;?</li></ul></li></ul>
+<ul><li><a href="/Reddit" title="Reddit">Reddit</a>
+<ul><li><b>bookmark</b> (submit)&#160;: http://reddit.com/submit?url=https://indiewebcamp.com/permalink&amp;title=permalink%20-%20IndieWebCamp</li>
+<li>...?</li></ul></li></ul>
+<ul><li><a href="/Tumblr" title="Tumblr">Tumblr</a>
+<ul><li><b>post</b> (share)&#160;: http://www.tumblr.com/share/link?url=https%3A%2F%2Findiewebcamp.com%2Fpermalink&amp;name=permalink%20-%20IndieWebCamp&amp;description=A%20permalink%20is%20a%20URL%20which%20typically%20represents%20and%20retrieves%20a%20single%20post.</li>
+<li>...&#160;?</li></ul></li></ul>
+<ul><li><a href="/Twitter" title="Twitter">Twitter</a>
+<ul><li><b>post</b> (share): https://twitter.com/share?text=permalink%20-%20IndieWebCamp&amp;url=https://indiewebcamp.com/permalink</li>
+<li>... favorite</li>
+<li>... reply</li>
+<li>... retweet</li></ul></li></ul>
+<h3><span class="mw-headline" id="icons_reflecting_current_state">icons reflecting current state</span></h3>
+<p>Both <a href="/wiki/index.php?title=reader_readers&amp;action=edit&amp;redlink=1" class="new" title="reader readers (page does not exist)">reader readers</a> and webactions on permalink posts should ideally be aware of that status of likes, reposts, and replys to a post.  Per our [<a class="external text" href="http://indiewebcamp.com/irc/2015-02-04#t1423086313956">discussion on IRC</a>] we have come up with 4 states and thus 4 options for each button. 
+</p><p>Using Like as an example we have
+</p>
+<ul><li>Unknown if user has liked post or not</li>
+<li>User has not liked post</li>
+<li>User has tried to like the post but the post is not displaying the like for one of many possible reasons</li>
+<li>User has liked post and the post is displaying the like</li></ul>
+<p>Each of these could map to a different version of the icon.
+</p>
+<ul><li>Gray icon for unknown state</li>
+<li>Empty / outline only for not liked</li>
+<li>Combination of colors/strips/half and half for attempted to like but not confirmed</li>
+<li>Solid color for confirmed like</li></ul>
+<h3><span class="mw-headline" id="as_part_of_post_h-entry">as part of post h-entry</span></h3>
+<p>If webaction buttons were somehow properties (nested objects?) of their <a href="/h-entry" title="h-entry">h-entry</a>, then indie <a href="/readers" class="mw-redirect" title="readers">readers</a> and other h-entry consuming code could parse/extrac the webactions for a post, and then display them as part of their UI for that post.
+</p>
+<h4><span class="mw-headline" id="reader_upgrading_webactions_to_micropub">reader upgrading webactions to micropub</span></h4>
+<p>If we do define how to publish / parse webactions, then <a href="/readers" class="mw-redirect" title="readers">readers</a> can *upgrade* those webaction buttons to <a href="/micropub" class="mw-redirect" title="micropub">micropub</a> if the user is signed into the reader with micropub (as is often the case today).
+</p>
+<h3><span class="mw-headline" id="sites_upgrading_webactions_to_micropub">sites upgrading webactions to micropub</span></h3>
+<p>Note that we've had discussions where we already decided we don't want to make (or teach!) users to give their micropub credentials to every site they read, so for other sites (e.g. indieweb sites in general showing posts), they should:
+</p><p>When displaying a post:
+</p>
+<ul><li>if the user is not logged into your site (e.g. via indieauth)
+<ul><li>show webaction buttons and handle them via <a href="/indie-config" title="indie-config">indie-config</a> as you would</li></ul></li>
+<li>if the user is logged into your site (<a href="/indieauth" class="mw-redirect" title="indieauth">indieauth</a>)
+<ul><li>webaction buttons directly linking to endpoints on that logged in site.</li></ul></li>
+<li>if the user is logged into your site with micropub auth (should only be the owner of the site themselves)
+<ul><li>webaction buttons that do micropub directly</li></ul></li></ul>
+<h3><span class="mw-headline" id="follow_with_fallback">follow with fallback</span></h3>
+<p>As noted in <b><a href="/webactions-verbs-brainstorming#New_Verbs" title="webactions-verbs-brainstorming">webactions-verbs-brainstorming#New_Verbs</a></b> and <b><a href="/follow#Follow_Webaction" title="follow">follow#Follow_Webaction</a></b>, follow makes sense as a webaction and should be implementable.
+</p><p>Gotta try marking it up so others can experiment with the consuming side.
+</p>
+<ul><li>verb: follow</li>
+<li>with: home page (or other subscribable page with <a href="/h-feed" title="h-feed">h-feed</a> to follow) URL</li></ul>
+<p>Example:
+</p>
+<pre>  &lt;indie-action do="follow" with="http://tantek.com/"&gt;
+   &lt;a href="https://twitter.com/intent/follow?screen_name=t"&gt;
+   Follow
+   &lt;/a&gt;
+  &lt;/indie-action&gt;
+</pre>
+<p>IndieWeb Examples:
+</p>
+<ul><li><span class="h-card" style="white-space:nowrap"><img src="https&#58;//tantek.com/logo.jpg" class="" style="height:1.1em;vertical-align:-.1em" alt="" /> <a href="/User:Tantek.com" title="User:Tantek.com">Tantek Çelik</a></span> has a "+ Follow" webaction on his home page (since 2017-09-26)</li>
+<li>...</li></ul>
+<h2><span class="mw-headline" id="Verbs">Verbs</span></h2>
+<p>We need a registry of common verbs to use with web actions. This should be built based on research into real world usage and brainstorming on top of that:
+</p>
+<ul><li><a href="/webactions-verbs-research" title="webactions-verbs-research">webactions-verbs-research</a></li>
+<li><a href="/webactions-verbs-brainstorming" title="webactions-verbs-brainstorming">webactions-verbs-brainstorming</a></li></ul>
+<h2><span class="mw-headline" id="Web_Action_Browser_Support">Web Action Browser Support</span></h2>
+<p>If you install a browser (or browser extension) that implements the action tag, you can click on action buttons on other sites (e.g. like those listed in the examples in the wild above), and then have the actions direct to your own site.
+</p><p>Current implementations:
+</p>
+<h3><span class="mw-headline" id="Web_Action_Hero_Toolbelt">Web Action Hero Toolbelt</span></h3>
+<ul><li>The <a class="external text" href="https://github.com/barnabywalters/web-action-hero-toolbelt">web action hero toolbelt</a> cross-browser extension allows you to use web actions right now in Firefox, Safari, Chrome or Opera.</li></ul>
+<h3><span class="mw-headline" id="Greasemonkey_Script">Greasemonkey Script</span></h3>
+<ul><li>This is a bare-bones <a class="external text" href="https://kylewm.com/article/2014/09/09/1/greasemonkey-script-to-replace-indie-actions-with-links-to-my-site">Greasemonkey script</a> that will replace the content of action and indie-action tags with a link to the "intent" urls specified at the top of the script.</li></ul>
+<h2><span class="mw-headline" id="Website_Action_URL_Support">Website Action URL Support</span></h2>
+<div style="text-indent:2em;font-style:italic">Main article: <a href="/Web_Action_URL_APIs" title="Web Action URL APIs">Web Action URL APIs</a></div>
+<p>IndieWeb Support in particular:
+</p>
+<ul><li><a href="/User:Aaronparecki.com" title="User:Aaronparecki.com">Aaron Parecki</a> has a URL endpoint for posting new notes/replies which he forces twitter to use for him.</li>
+<li><a href="/User:Waterpigs.co.uk" title="User:Waterpigs.co.uk">Barnaby Walters</a> has a URL API for creating new notes, which accepts several query string params, inReplyTo, text and tags.</li>
+<li>...</li></ul>
+<h2><span class="mw-headline" id="Drop_Social_Buttons">Drop Social Buttons</span></h2>
+<p>The always insightful @IA wrote up a post explaining why we should consider dropping social buttons (perhaps currently the largest / most popular set of web actions)
+</p>
+<ul><li><a class="external free" href="http://informationarchitects.net/blog/sweep-the-sleaze/">http://informationarchitects.net/blog/sweep-the-sleaze/</a></li></ul>
+<p>Follow-ups:
+</p>
+<ul><li><a class="external free" href="http://www.netmagazine.com/news/drop-social-media-buttons-call-121990">http://www.netmagazine.com/news/drop-social-media-buttons-call-121990</a></li>
+<li><a class="external free" href="http://www.netmagazine.com/features/big-question-should-we-drop-social-media-buttons">http://www.netmagazine.com/features/big-question-should-we-drop-social-media-buttons</a></li></ul>
+<p>Some statics on sharing button use:
+</p>
+<ul><li><a class="external free" href="http://css-tricks.com/poll-results-sharing-buttons/">http://css-tricks.com/poll-results-sharing-buttons/</a></li></ul>
+<h3><span class="mw-headline" id="Privacy_concerns">Privacy concerns</span></h3>
+<p>The social buttons used by a variety of silos often come with tracking cookies, meaning that the social networking services are alerted to the fact that logged-in readers have been reading content even if they do not actually take any actions (sharing, retweeting, +1ing/faveing). Depending on the nature of the content on your site, this may be a breach of your ethical standards and the reasonable standards of privacy. For instance, visits to sexuality, health and political sites may then lead tracking cookie organisations to draw unwanted or undesirable inferences that breach a users privacy.
+</p><p>In 2010, the British developer Mischa Tuffield noted that Facebook and Google tracking cookies were used on the NHS Choices website, which is used by people to look up health conditions. See <a class="external text" href="http://mmt.me.uk/blog/2010/11/21/nhs-and-tracking/">here</a>.
+</p><p>Wikipedia has rejected the introduction of social share buttons partly on the grounds of privacy (<a class="external text" href="https://en.wikipedia.org/wiki/Wikipedia:Perennial_proposals#Share_pages_on_Facebook.2C_Twitter_etc.">Wikipedia:Perennial proposals</a>).
+</p>
+<h3><span class="mw-headline" id="Adblock_Plus_blocking">Adblock Plus blocking</span></h3>
+<p>The browser extension "Adblock Plus" as of version 2.6.3 (possibly earlier) is known to block some social share buttons, even just Twitter tweet action hyperlinks!
+</p><p>The following Adblock Plus filters appear to be at least blocking follow, tweet, and retweet links:
+</p>
+<pre>##a[href^="https://twitter.com/intent/follow?"]
+##a[href^="https://twitter.com/intent/retweet?tweet_id"]
+##a[href^="https://twitter.com/intent/tweet?"]
+</pre>
+<p>If you're using Tweet Actions as silo-specific fallbacks for web actions, be aware that your fallbacks may not show up on users' machines with Ad Block plus installed.
+</p><p>If you're a user of Adblock Plus, you can re-enable these by:
+</p>
+<ul><li>go to a page which has them (e.g. <a class="external free" href="http://tantek.com/2014/164/t1/web-idealists-have-a-point">http://tantek.com/2014/164/t1/web-idealists-have-a-point</a> )</li>
+<li>choose "Open blockable items" from the red "ABP" stop icon in the toolbar</li>
+<li>note the blocked items in red in the list that opens in a pane below the web page (same window)</li>
+<li>right-click / ctrl-click on each red item and choose "Disable Filter"</li>
+<li>reload the page - the buttons / tweet actions should show up.</li></ul>
+<h2><span class="mw-headline" id="Drop_Delegated_Logins">Drop Delegated Logins</span></h2>
+<p>While delegated logins aren't necessarily seen as a web action, they are at least superficially similar, in that they typically consist of a button with a particular social site brand. <a href="/MailChimp" title="MailChimp">MailChimp</a> decided to drop theirs, read why:
+</p>
+<ul><li><a class="external free" href="http://blog.mailchimp.com/social-login-buttons-arent-worth-it/">http://blog.mailchimp.com/social-login-buttons-arent-worth-it/</a></li></ul>
+<h2><span class="mw-headline" id="Real-World_Candidates_for_Web_Actions">Real-World Candidates for Web Actions</span></h2>
+<p>Add links to/screenshots of existing website UIs which a web actions UI could replace
+</p>
+<ul><li><a class="external text" href="http://photos.waterpigs.co.uk/p/mn">Cognition Blog Post Response CTA</a></li>
+<li><a class="external text" href="http://cweiske.de/tagebuch/phorkie-0.3.1.htm#federation">phorkie federated forks</a> using rel=vcs-* to discover repo URLs for a website. Sites could have <code>&lt;action do="fork"&gt;</code> which UAs then redirect to the code hosting service of the user’s choice</li>
+<li>… Add more here, move to a separate page once there are too many</li></ul>
+<h2><span class="mw-headline" id="Delegate_URLs">Delegate URLs</span></h2>
+<p><i>See Also: <a href="/Web_Action_URL_APIs" title="Web Action URL APIs">Web_Action_URL_APIs</a></i>
+</p><p>Web action delegate URLs are URLs which present a configurable UI for performing an action, which can be customized via query parameters in the URL. They're kind of like a callback URL but presenting a UI to help perform an action instead of performing it automatically with no user intervention.
+</p><p>The web action delegate URL pattern is the practice of software allowing a user to set these custom URLs as delegates for certain actions within an application, probably with URL template placeholders which are auto-filled depending on the context of the delegation.
+</p><p>Benefits:
+</p>
+<ul><li><b>No need to communicate directly between applications</b>, avoiding all the auth/security complexity which comes with doing so (e.g. OAuth)</li>
+<li>Apps <b>only need to submit the data they know about</b>; any other data can be provided at the second step. * Encourages <b>tiny, focused UIs</b></li>
+<li>reduces the need to update UIs when the delegated system changes</li></ul>
+<h3><span class="mw-headline" id="Apps_which_submit_to_to_delegate_URLs">Apps which submit to to delegate URLs</span></h3>
+<ul><li><b><a class="external text" href="http://waterpigs.co.uk/pushups">pushups</a></b> is a simple, standalone HTML+JS+CSS (download to clone) nose-activated pushup counting UI. Give it a URL, and when you’re done it delegates the data to the URL you provide, which is remembered using localstorage.</li></ul>
+<h2><span class="mw-headline" id="Issues">Issues</span></h2>
+<h3><span class="mw-headline" id="leaks_info_to_the_target_website">leaks info to the target website</span></h3>
+<p>The target website hosts the <code>&lt;indie-action&gt;</code> tag, and the browser replaces that tag with the UI of the user's choosing, so it all takes place under the domain of the target website. This means Javascript on the site can inspect what happened to the indie-action tag and learn information about the visitor. This takes place before the visitor has clicked on any buttons.
+</p><p>Example target page:
+</p>
+<pre>&lt;div id="follow-button"&gt;
+  &lt;indie-action do="follow" with="http://scratch.dev/"&gt;Follow&lt;/indie-action&gt;
+&lt;/div&gt;</pre>
+<p>Then the following Javascript can be used to get the name of the button to learn what service the visitor uses:
+</p>
+<pre>document.querySelector("#follow-button button").title</pre>
+<p>This is based on the assumption that the browser will replace the indie-action tag with something containing a button, but it wouldn't be hard to do some more detailed inspection.
+</p><p>Even worse is the fact that Javascript on the page can just run the "click" event of the button, opening up the target UI without the visitor clicking anything!
+</p>
+<pre>document.querySelector("#follow-button button").click()</pre>
+<h3><span id="action_button_design_doesn.27t_match_website"></span><span class="mw-headline" id="action_button_design_doesn't_match_website">action button design doesn't match website</span></h3>
+<p>Since the browser plugin is responsible for turning the indie-action tag into something clickable, the UI of the clickable action will almost certainly not match the UI of the target website. For example, this is Tantek's home page with his "follow" button where the fallback of the indie-action tag contains a "follow" link matching the style of the rest of his website.
+</p><p><a href="/File:tantek-follow-webaction-fallback.png" class="image"><img alt="tantek-follow-webaction-fallback.png" src="/images/8/83/tantek-follow-webaction-fallback.png" decoding="async" width="333" height="168" /></a>
+</p><p>With the <a class="external text" href="https://github.com/barnabywalters/web-action-hero-toolbelt">Web Action Hero Toolbelt</a> installed, this is replaced with a button and looks like this:
+</p><p><a href="/File:tantek-follow-webaction-button.png" class="image"><img alt="tantek-follow-webaction-button.png" src="/images/4/40/tantek-follow-webaction-button.png" decoding="async" width="336" height="170" /></a>
+</p><p>The extension replaced the <code>&lt;a&gt;</code> with a button, although a different extension may have left the <code>&lt;a&gt;</code> or replaced it with something else entirely. 
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="History">History</span></h2>
+<h3><span class="mw-headline" id="2012">2012</span></h3>
+<p>Web actions were presented and discussed at OSBridge 2012.
+</p><p>The 2012-06-28 OSBridge "Web Actions" presentation <a class="external text" href="http://tantek.com/presentations/2012/06/osb12-web-actions/#slide15">proposed</a> the <code>&lt;action&gt;</code> tag as follows:
+</p>
+<pre>  &lt;action do="post" with="permalink"&gt;
+   &lt;a href=twitter&gt;..&lt;/a&gt;
+   &lt;a href=pinterest&gt;...&lt;/a&gt;
+   ...
+  &lt;/action&gt;
+</pre>
+<p>But this has been updated as of <a href="/2014/UK" title="2014/UK">IndieWebCampUK 2014</a> to use <code>&lt;indie-action&gt;</code>, and due to sufficient rough consensus of running code, upgrade beyond brainstorm to actual how to markup. See earlier "How To" section above.
+</p>
+<pre>  &lt;indie-action do="post" with="permalink"&gt;
+   &lt;a href=twitter&gt;..&lt;/a&gt;
+   &lt;a href=pinterest&gt;...&lt;/a&gt;
+   ...
+  &lt;/indie-action&gt;
+</pre>
+<h3><span class="mw-headline" id="2011">2011</span></h3>
+<p>The concept of "web actions" was introduced to both capture the emergence of this new type of web interaction (e.g. the spread of "Blog this, Digg, Read later, Follow, Like, Share, Tweet, +1" buttons across pages<a class="external autonumber" href="http://tantek.com/2011/220/b1/web-actions-a-new-building-block">[7]</a>), and as a user-centric reframing of the previous developer-centric notion of "<a href="/web_intents" title="web intents">web intents</a>".
+</p><p>At IndieWebCamp 2011, both <a href="/Standardizing_Web_Intents" class="mw-redirect" title="Standardizing Web Intents">discussions</a> and a <a href="/2011/Demos#web_intents_user_experience" title="2011/Demos">UX effort</a> demonstrated that the term "web intents" was too confusing and too abstract to effectively do user centered research and design in the area. The term "web action" is based on the fact that from the user's perspective, they think they are taking an <b>action</b> when they click these buttons. When the term was tried out with others creating designs/UX in the space, it seemed to work much better to convey understanding.
+</p>
+<h2><span class="mw-headline" id="Sessions">Sessions</span></h2>
+<p>Session notes from events where web actions have been discussed:
+</p>
+<ul><li>2019-12-07: <a href="/2019/SF/webactions" title="2019/SF/webactions">Webactions session</a> at <a href="/2019/SF" title="2019/SF">IndieWebCamp SF 2019</a></li>
+<li>2012-06-28: <a class="external text" href="http://tantek.com/presentations/2012/06/osb12-web-actions/">Web Actions</a> session at OSBridge</li>
+<li>2011-09-18 WordCampPDX session</li>
+<li>2011-09-10 <a class="external text" href="https://web.archive.org/web/20111113170933/http://lanyrd.com/2011/bcb6/shgxk/">Web Actions at BarCampBrighton6</a></li>
+<li>2011-06-25..26 at <a href="/2011" title="2011">IndieWebCamp 2011</a>
+<ul><li>Session: <a href="/2011/How_the_Indie_Web_Hooks_into_Hosted_Communities" title="2011/How the Indie Web Hooks into Hosted Communities">How the Indie Web Hooks into Hosted Communities</a></li>
+<li>Session: <a href="/2011/Standardizing_Web_Intents" title="2011/Standardizing Web Intents">Standardizing Web Intents</a></li>
+<li>Demo: <a href="/2011/Demos#web_intents_user_experience" title="2011/Demos">Web intents user experience</a></li></ul></li></ul>
+<h2><span class="mw-headline" id="Articles">Articles</span></h2>
+<ul><li>2011-220 <a href="/User:Tantek.com" title="User:Tantek.com">Tantek</a>'s <a class="external text" href="http://tantek.com/2011/220/b1/web-actions-a-new-building-block">Web Actions: Identifying A New Building Block For The Web</a></li>
+<li>2012-09-26 <a href="/User:Waterpigs.co.uk" title="User:Waterpigs.co.uk">Barnaby Walters</a>’ <a class="external text" href="http://waterpigs.co.uk/articles/web-actions">post on Web Actions</a></li></ul>
+<h2><span class="mw-headline" id="See_Also">See Also</span></h2>
+<ul><li>A list of currently available <a href="/Web_Action_URL_APIs" title="Web Action URL APIs">Web Action URL APIs</a></li>
+<li><a class="external free" href="https://wiki.mozilla.org/WebActions">https://wiki.mozilla.org/WebActions</a></li>
+<li>The <a class="external text" href="http://tagboard.com/webactions">#webactions tagboard</a></li>
+<li><a href="/indie-config" title="indie-config">indie-config</a></li>
+<li><a href="/action_button" title="action button">action button</a></li>
+<li><a class="external free" href="https://developer.twitter.com/en/docs/twitter-for-websites/web-intents/overview.html">https://developer.twitter.com/en/docs/twitter-for-websites/web-intents/overview.html</a></li>
+<li>Related user interface with respect to Twitter and utilizing commentpara.de and <a href="/Quill" title="Quill">Quill</a>: <a class="external free" href="https://boffosocko.com/2019/11/26/55759937/">https://boffosocko.com/2019/11/26/55759937/</a></li>
+<li><a href="/Web_Share_API" title="Web Share API">Web Share API</a></li>
+<li><a href="/Web_Share_API" title="Web Share API">Web Share API</a></li>
+<li>Cross-site follow action being attempted for Mastodon: <a class="external text" href="https://github.com/mastodon/mastodon/issues/19954">#19954 1 click follow</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20230906000704
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.083 seconds
+Real time usage: 0.172 seconds
+Preprocessor visited node count: 563/1000000
+Post‐expand include size: 2033/2097152 bytes
+Template argument size: 214/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 4924/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   71.685      1 -total
+ 22.41%   16.065      2 Template:adactio
+ 18.78%   13.464      1 Template:gwg
+ 16.93%   12.137      1 Template:mblaney
+ 14.47%   10.375      2 Template:main
+ 13.86%    9.939      1 Template:kylewm
+ 12.06%    8.647      2 Template:t
+ 11.13%    7.982      5 Template:sparkline
+-->
+
+<!-- Saved in parser cache with key indieweb_wiki:pcache:idhash:156-0!canonical and timestamp 20230906000704 and revision id 85937. Serialized with JSON.
+ -->
+</div>
+<div class="printfooter">Retrieved from "<a dir="ltr" href="https://indieweb.org/wiki/index.php?title=webactions&amp;oldid=85937">https://indieweb.org/wiki/index.php?title=webactions&amp;oldid=85937</a>"</div></div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="/Category:building-blocks" title="Category:building-blocks">building-blocks</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Navigation menu</h2>
+	<div id="mw-head">
+		
+<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-user-menu-legacy vector-menu" aria-labelledby="p-personal-label" role="navigation" 
+	 >
+	<label id="p-personal-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Personal tools</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="pt-login" class="mw-list-item"><a href="https://sso.indieweb.org/login?url=https%3A%2F%2Findieweb.org%2Fwebactions" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o"><span>Log in</span></a></li></ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			
+<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu vector-menu-tabs" aria-labelledby="p-namespaces-label" role="navigation" 
+	 >
+	<label id="p-namespaces-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Namespaces</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="ca-nstab-main" class="selected mw-list-item"><a href="/webactions" title="View the content page [c]" accesskey="c"><span>Page</span></a></li><li id="ca-talk" class="new mw-list-item"><a href="/wiki/index.php?title=Talk:webactions&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li></ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown-noicon vector-menu vector-menu-dropdown" aria-labelledby="p-variants-label" role="navigation" 
+	 >
+	<input type="checkbox"
+		id="p-variants-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-variants"
+		class="vector-menu-checkbox" aria-labelledby="p-variants-label" />
+	<label id="p-variants-label" aria-label="Change language variant" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">English</span>
+			<span class="vector-menu-checkbox-expanded">expanded</span>
+			<span class="vector-menu-checkbox-collapsed">collapsed</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			
+<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu vector-menu-tabs" aria-labelledby="p-views-label" role="navigation" 
+	 >
+	<label id="p-views-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Views</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="ca-view" class="selected mw-list-item"><a href="/webactions"><span>Read</span></a></li><li id="ca-viewsource" class="mw-list-item"><a href="/wiki/index.php?title=webactions&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e"><span>View source</span></a></li><li id="ca-history" class="mw-list-item"><a href="/wiki/index.php?title=webactions&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li></ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown-noicon vector-menu vector-menu-dropdown" aria-labelledby="p-cactions-label" role="navigation"  title="More options"
+	 >
+	<input type="checkbox"
+		id="p-cactions-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-cactions"
+		class="vector-menu-checkbox" aria-labelledby="p-cactions-label" />
+	<label id="p-cactions-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">More</span>
+			<span class="vector-menu-checkbox-expanded">expanded</span>
+			<span class="vector-menu-checkbox-collapsed">collapsed</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<div>
+			<h3 >
+				<label for="searchInput">Search</label>
+			</h3>
+		<form action="/wiki/index.php" id="searchform"
+			class="vector-search-box-form">
+			<div id="simpleSearch"
+				class="vector-search-box-inner"
+				 data-search-loc="header-navigation">
+				<input class="vector-search-box-input"
+					 type="search" name="search" placeholder="Search IndieWeb" aria-label="Search IndieWeb" autocapitalize="none" title="Search IndieWeb [f]" accesskey="f" id="searchInput"
+				/>
+				<input type="hidden" name="title" value="Special:Search"/>
+				<input id="mw-searchButton"
+					 class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Search the pages for this text" value="Search" />
+				<input id="searchButton"
+					 class="searchButton" type="submit" name="go" title="Go to a page with this exact name if it exists" value="Go" />
+			</div>
+		</form>
+	</div>
+</div>
+
+		</div>
+	</div>
+	
+
+<div id="mw-panel">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="/Main_Page"
+			title="Visit the main page"></a>
+	</div>
+	
+<nav id="p-Recent_&amp;_Upcoming" class="mw-portlet mw-portlet-Recent_Upcoming vector-menu vector-menu-portal portal" aria-labelledby="p-Recent_&amp;_Upcoming-label" role="navigation" 
+	 >
+	<label id="p-Recent_&amp;_Upcoming-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Recent &amp; Upcoming</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-🎁-2022-Gift-Calendar!" class="mw-list-item"><a href="/IndieWeb_Gift_Calendar"><span>🎁 2022 Gift Calendar!</span></a></li><li id="n-✨-2023-Commitments!" class="mw-list-item"><a href="/2023-01-01-commitments"><span>✨ 2023 Commitments!</span></a></li><li id="n-📰News-Podcast-Video" class="mw-list-item"><a href="/Posts_about_the_IndieWeb"><span>📰News Podcast Video</span></a></li><li id="n-📅-Events" class="mw-list-item"><a href="https://events.indieweb.org/"><span>📅 Events</span></a></li><li id="n-👥--Next-HWCs:-2023-09-06" class="mw-list-item"><a href="https://events.indieweb.org/tag/hwc"><span>👥  Next HWCs: 2023-09-06</span></a></li><li id="n-Camps-&amp;-Pop-ups:" class="mw-list-item"><a href="/IndieWebCamps"><span>Camps &amp; Pop-ups:</span></a></li><li id="n-🎪-Summit-2023" class="mw-list-item"><a href="/2023"><span>🎪 Summit 2023</span></a></li><li id="n-❤️-Sponsor" class="mw-list-item"><a href="/how-to-sponsor"><span>❤️ Sponsor</span></a></li></ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-Resources" class="mw-portlet mw-portlet-Resources vector-menu vector-menu-portal portal" aria-labelledby="p-Resources-label" role="navigation" 
+	 >
+	<label id="p-Resources-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Resources</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-🌈-Code-of-conduct" class="mw-list-item"><a href="/code-of-conduct"><span>🌈 Code of conduct</span></a></li><li id="n-💬-Discuss" class="mw-list-item"><a href="/discuss"><span>💬 Discuss</span></a></li><li id="n-📜-Chat-log" class="mw-list-item"><a href="https://chat.indieweb.org/"><span>📜 Chat log</span></a></li><li id="n-🎉-Get-started" class="mw-list-item"><a href="/Getting_Started"><span>🎉 Get started</span></a></li><li id="n-ℹ️-FAQ" class="mw-list-item"><a href="/FAQ"><span>ℹ️ FAQ</span></a></li><li id="n-🧰-Standards" class="mw-list-item"><a href="https://spec.indieweb.org/"><span>🧰 Standards</span></a></li><li id="n-✳️-Recent-changes" class="mw-list-item"><a href="/Special:RecentChanges"><span>✳️ Recent changes</span></a></li><li id="n-🎲-Random-page" class="mw-list-item"><a href="/Special:Random"><span>🎲 Random page</span></a></li><li id="n-©-Wiki-content-is-CC0" class="mw-list-item"><a href="/IndieWebCamp:Copyrights"><span>© Wiki content is CC0</span></a></li></ul>
+		
+	</div>
+</nav>
+
+<nav id="p-Developers" class="mw-portlet mw-portlet-Developers vector-menu vector-menu-portal portal" aria-labelledby="p-Developers-label" role="navigation" 
+	 >
+	<label id="p-Developers-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Developers</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-🔩-building-blocks" class="mw-list-item"><a href="/Category:building-blocks"><span>🔩 building blocks</span></a></li><li id="n-📑-projects" class="mw-list-item"><a href="/Projects"><span>📑 projects</span></a></li><li id="n-🗽-principles" class="mw-list-item"><a href="/principles"><span>🗽 principles</span></a></li></ul>
+		
+	</div>
+</nav>
+
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu vector-menu-portal portal" aria-labelledby="p-tb-label" role="navigation" 
+	 >
+	<label id="p-tb-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Tools</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="t-whatlinkshere" class="mw-list-item"><a href="/Special:WhatLinksHere/webactions" title="A list of all wiki pages that link here [j]" accesskey="j"><span>What links here</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/Special:RecentChangesLinked/webactions" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k"><span>Related changes</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q"><span>Special pages</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Printable version of this page [p]" accesskey="p"><span>Printable version</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/wiki/index.php?title=webactions&amp;oldid=85937" title="Permanent link to this revision of the page"><span>Permanent link</span></a></li><li id="t-info" class="mw-list-item"><a href="/wiki/index.php?title=webactions&amp;action=info" title="More information about this page"><span>Page information</span></a></li></ul>
+		
+	</div>
+</nav>
+
+	
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" role="contentinfo" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> This page was last edited on 13 January 2023, at 10:30.</li>
+	<li id="footer-info-copyright">Content is available under <a href="/IndieWebCamp:Copyrights" class="mw-redirect" title="IndieWebCamp:Copyrights">a CC0 public domain dedication</a> unless otherwise noted.</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="/IndieWeb:Privacy_policy" class="mw-redirect" title="IndieWeb:Privacy policy">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="/IndieWeb:About" class="mw-redirect" title="IndieWeb:About">About IndieWeb</a></li>
+	<li id="footer-places-disclaimer"><a href="/IndieWeb:General_disclaimer" title="IndieWeb:General disclaimer">Disclaimers</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="http://creativecommons.org/publicdomain/zero/1.0/"><img src="https://i.creativecommons.org/p/zero/1.0/88x31.png" alt="a CC0 public domain dedication" width="88" height="31" loading="lazy"/></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img src="/wiki/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/wiki/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /wiki/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" loading="lazy"/></a></li>
+</ul>
+
+
+
+
+
+
+<style type="text/css">
+.sponsor-logo-block {
+	margin-left: -12px;
+	margin-top: 50px;
+	margin-right: -12px;
+}
+@media screen and (min-width: 982px) {
+	.sponsor-logo-block {
+		margin-left: -1.25em;
+		margin-right: -1.25em;
+	}
+}
+@media screen and (max-width: 720px) {
+	.sponsor-logo-block {
+		margin-top: 0;
+	}  
+}
+.sponsor-logo-block .inner {
+	background-color: #d9d9d9; 
+	padding: 30px;
+}
+
+.page-Main_Page .sponsor-logo-block {
+	background-color: #d9d9d9; 
+	padding-left: 30px;
+}
+.page-Main_Page .sponsor-logo-block .inner {
+	border: 0;
+}
+
+div#footer {
+	background-image: none;
+}
+
+.sponsor-logo-block .logo {
+	float: left;
+	margin: 10px;
+	height: 70px;
+	zoom: 0.5;
+	-moz-transform: scale(0.5);
+}
+.page-Main_Page .sponsor-logo-block .logo {
+	zoom: 1;
+	-moz-transform: scale(1);
+}
+.sponsor-logo-block .logo div {
+	padding: 6px;
+	background-color: #d9d9d9;
+	border-radius: 0;
+}
+.sponsor-logo-block .thanks {
+	color: #777;
+	font-size: 16px;
+	font-weight: bold;
+}
+.sponsor-logo-block .thanks.small {
+	font-size: 14px;
+	text-align: right;
+}
+.sponsor-logo-block .thanks.small a {
+	color: #777;
+}
+</style>
+<div class="sponsor-logo-block"><div class="inner">
+	<div class="thanks">Thank you to our sponsors of IndieWeb events!</div>
+	<div ><div><a href="http://mozilla.org/"><img src="/sponsor-logos/mozilla.png" alt="Mozilla"></a></div></div>
+	<div ><div><a href="https://developer.okta.com/"><img src="/sponsor-logos/okta.png" alt="Okta"></a></div></div>
+	<div ><div><a href="http://sipgate.de/"><img src="/sponsor-logos/sipgate.png" alt="sipgate"></a></div></div>
+	<div ><div><a href="https://www.brid.gy/"><img src="/sponsor-logos/bridgy.png" alt="Bridgy"></a></div></div>
+	<div ><div><a href="https://beyondtellerrand.com"><img src="/sponsor-logos/beyondtellerrand.png" alt="Beyond Tellerrand"></a></div></div>
+	<div ><div><a href="http://tollwerk.de/"><img src="/sponsor-logos/tollwerk.png" alt="Tollwerk"></a></div></div>
+	<div ><div><a href="https://www.opensuse.org/"><img src="/sponsor-logos/opensuse.png" alt="OpenSuse"></a></div></div>
+	<div ><div><a href="http://idno.co/"><img src="/sponsor-logos/idno.png" alt="Idno"></a></div></div>
+	<div ><div><a href="http://google.com"><img src="/sponsor-logos/google.png" alt="Google"></a></div></div>
+	<div ><div><a href="http://clearleft.com/"><img src="/sponsor-logos/clearleft.png" alt="ClearLeft"></a></div></div>
+	<div ><div><a href="https://cgi.com/"><img src="/sponsor-logos/cgi.png" alt="CGI"></a></div></div>
+
+	<div style="clear: both;"></div>
+	<div class="thanks small"><a href="https://opencollective.com/indieweb">become a supporter!</a></div>
+</div></div>
+
+
+</footer>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.083","walltime":"0.172","ppvisitednodes":{"value":563,"limit":1000000},"postexpandincludesize":{"value":2033,"limit":2097152},"templateargumentsize":{"value":214,"limit":2097152},"expansiondepth":{"value":4,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":4924,"limit":5000000},"timingprofile":["100.00%   71.685      1 -total"," 22.41%   16.065      2 Template:adactio"," 18.78%   13.464      1 Template:gwg"," 16.93%   12.137      1 Template:mblaney"," 14.47%   10.375      2 Template:main"," 13.86%    9.939      1 Template:kylewm"," 12.06%    8.647      2 Template:t"," 11.13%    7.982      5 Template:sparkline"]},"cachereport":{"timestamp":"20230906000704","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":512});});</script>
+</body>
+</html>

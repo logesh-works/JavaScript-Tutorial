@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/i/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/i/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/i/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/web-app/site.webmanifest">
+<link rel="mask-icon" href="/assets/i/icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/i/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="msapplication-config" content="/assets/web-app/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+
+  <title>24/7 - Chats | Igalia - Open Source Consultancy and Development</title>
+  <meta name="description" content="Igalia is an open source consultancy specialised in the development of innovative projects and solutions. Our engineers have expertise in a wide range of technological areas, including browsers and client-side web technologies, graphics pipeline, compilers and virtual machines. We have the most WPE, WebKit, Chromium/Blink and Firefox expertise found in the consulting business, including many reviewers and committers. Igalia designs, develops, customises and optimises GNU/Linux-based solutions for companies across the globe. Our work and contributions are present in many projects such as GStreamer, Mesa 3D, WebKit, Chromium, etc.">
+  <meta name="keywords" content="igalia, free software, free software engineering, development, consultancy, webkit consultancy, consulting, webkit consulting, programming, hackers, cooperative organization, organization, company, assembly, igalia.com, igalia sl, webkit, webkitgtk, a11y, v8, jsc, training, GNOME, webkit consultants, chromium consulting, chromium consultants, chromium consultancy, blink consultants, blink consultancy, gstreamer consultancy, gstreamer consulting">
+  <meta name="author" content="Igalia">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" id="main-stylesheet" href="/assets/main.css" data-main="/assets/main.css" data-aria="/assets/aria.css">
+  <link rel="canonical" href="https://www.igalia.com/24-7/chats">
+  <link rel="alternate" type="application/rss+xml" title="Igalia" href="/feed.xml">
+
+  
+
+  <!-- Open Graph metadata -->
+  <meta content="Igalia" property="og:site_name">
+  <meta content="24/7 - Chats | Igalia - Open Source Consultancy and Development" property="og:title">
+  <meta content="https://www.igalia.com/assets/i/logo200x200Margin.png" property="og:image">
+  <meta content="https://www.igalia.com/assets/i/logoSimple200x200.png" property="og:logo">
+  
+    <meta content="website" property="og:type">
+  
+  
+    <meta content="Igalia is an open source consultancy specialised in the development of innovative projects and solutions. Our engineers have expertise in a wide range of technological areas, including browsers and client-side web technologies, graphics pipeline, compilers and virtual machines. We have the most WPE, WebKit, Chromium/Blink and Firefox expertise found in the consulting business, including many reviewers and committers. Igalia designs, develops, customises and optimises GNU/Linux-based solutions for companies across the globe. Our work and contributions are present in many projects such as GStreamer, Mesa 3D, WebKit, Chromium, etc." property="og:description">
+  
+  
+    <meta content="https://www.igalia.com/24-7/chats" property="og:url">
+  
+  
+</head>
+
+
+  <body class="aria-contrast" data-json-base="/assets/json">
+    <header id="header" role="banner">
+  <div class="container-fluid-1440">
+    <div class="wrapper">
+      
+      
+      
+      <h1 class="site-title logos">
+        <a href="/" title="Igalia">
+          <img src="/assets/i/logo.png" alt="Igalia" />
+        </a>
+      </h1>
+
+      <nav role="navigation" class="site-nav hidden-xs hidden-sm">
+        <ol class="main-menu">
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/about" title="About Us">
+              About Us
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/technologies" title="Technologies">
+              Technologies
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/services" title="Services">
+              Services
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/industries" title="Industries">
+              Industries
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link active" href="/24-7/home" title="24/7">
+              24/7
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/jobs" title="Jobs">
+              Jobs
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/contact" title="Contact">
+              Contact
+            </a>
+          </li>
+          
+            
+
+          
+            
+
+            
+
+            
+
+            
+
+            
+
+          <li>
+            <a class="page-link " href="/public-funding" title="Feder">
+              Feder
+            </a>
+          </li>
+          
+        </ol>
+      </nav>
+
+      <div aria-hidden="true" id="menu-toggle-wrapper" class="visible-xs visible-sm">
+        <a href="#" id="menu-toggle" title="Toggle menu">
+          <i aria-hidden="true" class="fas fa-bars"></i>
+          <span hidden>Toggle menu</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div id="mobile-menu-wrapper">
+  <div id="mobile-menu">
+    <ul role="navigation" class="nav">
+      
+      <li>
+        <a class="page-link" href="/about" title="About Us">
+          About Us
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/technologies" title="Technologies">
+          Technologies
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/services" title="Services">
+          Services
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/industries" title="Industries">
+          Industries
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/24-7/home" title="24/7">
+          24/7
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/jobs" title="Jobs">
+          Jobs
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/contact" title="Contact">
+          Contact
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/public-funding" title="Feder">
+          Feder
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+    <main class="page-content" aria-label="Content">
+        <article class="page page-247 page-24-7-chats" data-igalian="">
+  <header class="page-header" style="background-image: url(/assets/i/headers/header-chats.jpg); ">
+    <div class="container-fluid-1440">
+      <div class="grid-row">
+        <div class="col-xs-12 col-sm-10-center">
+          <h1 class="page-title" itemprop="name headline">24/7: Chats</h1>
+        </div>
+      </div>
+    </div>
+    <div class="cover"></div>
+  </header>
+
+  <div class="submenu-wrapper">
+  <div class="container-fluid-1440">
+    <div class="grid-row">
+      <div class="col-xs-12">
+        <div class="grid-row grid-row-no-margins">
+          <div class="col-xs-12 col-sm-8 col-lg-10">
+            <ul class="submenu">
+              
+              
+              
+                
+                
+
+                <li class="">
+                  <a class="btn btn-outline btn-sxs" href="/24-7/home" title="Home 24/7">
+                    Home 24/7
+                  </a>
+                </li>
+              
+                
+                
+
+                <li class="">
+                  <a class="btn btn-outline btn-sxs" href="/24-7/news" title="News">
+                    News
+                  </a>
+                </li>
+              
+                
+                
+
+                <li class="">
+                  <a class="btn btn-outline btn-sxs" href="/24-7/posts" title="Posts">
+                    Posts
+                  </a>
+                </li>
+              
+                
+                
+
+                <li class="">
+                  <a class="btn btn-outline btn-sxs" href="/24-7/tweets" title="Tweets and Toots">
+                    Tweets and Toots
+                  </a>
+                </li>
+              
+                
+                
+
+                <li class="">
+                  <a class="btn btn-outline btn-sxs" href="/24-7/commits" title="Commits">
+                    Commits
+                  </a>
+                </li>
+              
+                
+                
+
+                <li class="active">
+                  <a class="btn btn-outline btn-sxs" href="/24-7/chats" title="Chats">
+                    Chats
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-lg-2">
+            <a href="http://planet.igalia.com/" class="btn btn-outline btn-sxs">
+              Planet Igalia
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="igalians-header">
+  <div class="container-fluid-1440">
+    <h2 class="page-subtitle-alt">
+      News about <strong>Igalia</strong>
+    </h2>
+    <div class="grid-row">
+      <div class="col-xs-12 col-sm-10">
+        <h4>
+          We love hearing from you, so be sure to follow us and join the conversation on our
+          networks.
+          If you want to know more about us, you can also <a href="/team">meet the team here</a>.
+        </h4>
+      </div>
+      
+      <div class="col-xs-12 col-sm-2">
+        <div class="rss-icon social">
+          <a href="/chats.xml">
+            <i class="fas fa-rss"></i>
+            <span>RSS Feed</span>
+          </a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+  <div class="page-content">
+    <div class="lastest-posts">
+  <div class="container-fluid-1440">
+    <h3 class="block-title">Chats</h3>
+    <div class="block-content grid-row">
+      
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    Sep 1, 2023
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/2004">
+      Igalia Chats: Web Applications 1.0
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Igalia's Brian Kardell and Eric Meyer look back on things developing in WHATWG specs in 2004 and chat about what we've gotten and what remains outstanding.
+  </div>
+
+  <a href="/chats/2004" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    Aug 22, 2023
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/polypane">
+      Igalia Chats: Polypane
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Igalia's Brian Kardell and Eric Meyer chat with Kilian Valkhof about his Chromium-based web development app Polypane.
+  </div>
+
+  <a href="/chats/polypane" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    Aug 11, 2023
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/undersea">
+      Igalia Chats: Undersea Infrastructure
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Igalia's Brian Kardell and Eric Meyer chat with CNET Principal writer Stephen Shankland about the undersea cables that help power the internet
+  </div>
+
+  <a href="/chats/undersea" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    Jul 27, 2023
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/zach">
+      Igalia Chats: 11ty, Open Source and Funding
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Igalia's Brian Kardell and Eric Meyer chat with 11ty creator Zach Leatherman about the project's shift from hobby work to a sponsor-funded full-time job and back again to hobby work,...
+  </div>
+
+  <a href="/chats/zach" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    Jul 12, 2023
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/ian-fps">
+      Igalia Chats:First Person Scrollers
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Igalia's Eric Meyer and Brian Kardell chat with Chromium Layout engineer Ian Kilpatrick about performance
+  </div>
+
+  <a href="/chats/ian-fps" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    Jul 6, 2023
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/ladybird">
+      The Novel Engines: Ladybird (Web Ecosystem Health Part XI)
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Igalia's Eric Meyer and Brian Kardell chat with Andreas Kling about Ladybird and developing a new, novel browser engine
+  </div>
+
+  <a href="/chats/ladybird" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    Jun 26, 2023
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/servo">
+      The Novel Engines: Servo (Web Ecosystem Health Part X)
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Igalia's Brian Kardell and Eric Meyer chat with their colleague Martin Robinson about the recently rejuvenated Servo project.
+  </div>
+
+  <a href="/chats/servo" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    May 22, 2023
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/baseline">
+      Igalia Chats: Baseline
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Igalia's Brian Kardell and Eric Meyer chat about the new Baseline effort announced at Google IO
+  </div>
+
+  <a href="/chats/baseline" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    May 15, 2023
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/steam-powered-open-source">
+      Igalia Chats: Steam Powered Open Source
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Eric Meyer and Brian Kardell sit down to chat with fellow Igalians Samuel Iglesias and Clayton Craft about the Steam Deck and interesting work that Igalia does to power it....
+  </div>
+
+  <a href="/chats/steam-powered-open-source" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    Apr 4, 2023
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/safari-16">
+      Igalia Chats: Mega Safari Release
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Igalia's Brian Kardell and Eric Meyer chat about the mega packed 16.4 Safari release
+  </div>
+
+  <a href="/chats/safari-16" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    Mar 29, 2023
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/interop2023">
+      Igalia Chats: Interop 2023
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Igalia's Brian Kardell and Eric Meyer chat with Google's Philip Jägenstedt about Interop 2023
+  </div>
+
+  <a href="/chats/interop2023" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    Mar 14, 2023
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/debates">
+      Igalia Chats: The Debates
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Igalia's Brian Kardell and Eric Meyer chat about the stories and debates that capture our attention
+  </div>
+
+  <a href="/chats/debates" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    Feb 16, 2023
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/shoptalk-health-ix">
+      Igalia Chats: Web Ecosystem Health Part IX: economics
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Igalia chats/Shop Talk crossover - Brian Kardell and Eric Meyer chat with Chris Coyier and Dave Rupert from the Shop Talk Show about the economics of browsers and engines
+  </div>
+
+  <a href="/chats/shoptalk-health-ix" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    Jan 4, 2023
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/mathml-release">
+      Igalia Chats: MathML-Core Release
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Igalia's Brian Kardell chats with Rick Byers, Ian Kilpatrick and Neil Soiffer as Chrome 109 releases support for MathML-Core
+  </div>
+
+  <a href="/chats/mathml-release" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    Nov 22, 2022
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/history-eric">
+      Igalia Chats: Web History Part V
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Igalia's Brian Kardell and Eric Meyer chat about Web History
+  </div>
+
+  <a href="/chats/history-eric" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    Nov 10, 2022
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/brad-frost">
+      Igalia Chats: Web Components with Brad Frost
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Igalia's Brian Kardell and Eric Meyer chat with Brad Frost about Web Components, UI and design systems
+  </div>
+
+  <a href="/chats/brad-frost" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    Aug 25, 2022
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/progress002">
+      Igalia Chats: The Latest From the CSS Working Group
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Igalia's Brian Kardell and Eric Meyer talk about discussions and decisions of the CSS Working Group’s latest face to face meeting.
+  </div>
+
+  <a href="/chats/progress002" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    Jul 11, 2022
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/alice-and-rob">
+      Igalia Chats: The history of :focus-visible and inert
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Igalia's Brian Kardell sits down to chat with Alice Boxhall and Rob Dodson
+  </div>
+
+  <a href="/chats/alice-and-rob" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    May 31, 2022
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/progress">
+      Igalia Chats: Web Progress Excitement
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Igalia's Brian Kardell and Eric Meyer chat about recent excitement and progress in the web platform
+  </div>
+
+  <a href="/chats/progress" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    May 24, 2022
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/history-iv">
+      Igalia Chats: Web History Part IV
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Stephanie Rewis, Senior Director at Salesforce, is interviewed by Brian Kardell, Developer Advocate at Igalia, in Part 4 of our History of the Web series designed to tell the story...
+  </div>
+
+  <a href="/chats/history-iv" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    Mar 29, 2022
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/ua-chat">
+      Igalia Chats: The UA String
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Igalia's Brian Kardell, Eric Meyer and Alexander Dunaev chat about the history of the UA String and look at the substantial costs and complexities created by its evolution.
+  </div>
+
+  <a href="/chats/ua-chat" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    Dec 8, 2021
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/blinkon-15-history">
+      Igalia Chats: Web History Pt 3
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Special edition from BlinkOn 15: Igalia's Brian Kardell sits down to chat with Chris Wilson about Web History
+  </div>
+
+  <a href="/chats/blinkon-15-history" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    Oct 7, 2021
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/mathml-core-collective">
+      Igalia Chats: Web Ecosystem Health: The MathML-Core Support Collective
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Igalia's Brian Kardell and Eric Meyer discuss and explain the recently announced MathML-Core Support Collective.
+  </div>
+
+  <a href="/chats/mathml-core-collective" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    Aug 25, 2021
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/comms-with-eric">
+      Igalia Chats: Web Ecosystem Health Part VII
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Igalia's Brian Kardell and Eric Meyer chat about how the communications channels in the web ecosystem are working and how this affects things.
+  </div>
+
+  <a href="/chats/comms-with-eric" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    Jun 21, 2021
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/ecosystem-health-vi">
+      Igalia Chats: Web Ecosystem Health Part VI
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Igalia's Brian Kardell sits down to chat with Miriam Suzanne and Rachel Andrew about who works on standards
+  </div>
+
+  <a href="/chats/ecosystem-health-vi" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    Jun 3, 2021
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/blinkon-14-history">
+      Igalia Chats: Web History Pt 2
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Special edition from BlinkOn 14: Igalia's Brian Kardell sits down to chat with Ben Galbraith and Dion Almaer about Web History
+  </div>
+
+  <a href="/chats/blinkon-14-history" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    Apr 27, 2021
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/Temporal">
+      Igalia Chats: Temporal
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Igalia's Brian Kardell sits down to chat with Maggie Johnson-Pint (moment.js/Azure), Philipp ('Pip') Dunkel (Bloomberg Tech) and Philip Chimento (Igalia Compilers Team) about the challenges of time-related programming and the...
+  </div>
+
+  <a href="/chats/Temporal" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    Feb 4, 2021
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/ecosystem-health-v">
+      Igalia Chats: Web Ecosystem Health Part V: Open Source
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Igalia's Brian Kardell sits down to chat with Pia Mancini and Jory Burson about the health of the Web Ecosystem and the larger Open Source Environment.
+  </div>
+
+  <a href="/chats/ecosystem-health-v" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    Dec 2, 2020
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/blinkon-13-history">
+      Igalia Chats: Web History Pt 1
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Special edition from BlinkOn 13: Igalia's Brian Kardell sits down to chat with Ben Goodger and Darin Fisher about Web History
+  </div>
+
+  <a href="/chats/blinkon-13-history" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    Oct 21, 2020
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/ecosystem-health-iv">
+      Igalia Chats: Web Ecosystem Health Part IV
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Daniel Appelquist from Samsung Internet and co-chair of the W3C's Technical Architecture Group
+  </div>
+
+  <a href="/chats/ecosystem-health-iv" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    Sep 11, 2020
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/ecosystem-health-iii">
+      Igalia Chats: Web Ecosystem Health Part III
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Igalia's Brian Kardell sits down to chat with Håkon Wium Lie, Bruce Lawson and Vadim Makeev
+  </div>
+
+  <a href="/chats/ecosystem-health-iii" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    Jul 6, 2020
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/ecosystem-health-ii">
+      Igalia Chats: Web Ecosystem Health Part II
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Igalia's Brian Kardell sits down to chat with Google's Rick Byers and Microsoft's Rossen Atanassov to continue our discussion of rendering engine diversity and ecosystem health.
+  </div>
+
+  <a href="/chats/ecosystem-health-ii" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    Jun 15, 2020
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/ecosystem-health">
+      Igalia Chats: Web Ecosystem Health
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Igalia's Brian Kardell sits down with Jeremy Keith and Stuart Langridge to chat about rendering engine diversity, history and the health of the web browser ecosystem.
+  </div>
+
+  <a href="/chats/ecosystem-health" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    Apr 15, 2020
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/Igalia-Chats-Niko-SVG-WPE">
+      Igalia Chats: WebKit, SVG and WPE
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Igalia's Brian Kardell and Nikolas Zimmermann talk about the history of SVG and Web browsers, and how WPE and embedded systems are bringing new developments
+  </div>
+
+  <a href="/chats/Igalia-Chats-Niko-SVG-WPE" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    Feb 7, 2020
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/accessibility-with-brian-kardell-and-martin-robinson">
+      Igalia Chats: Accessibility
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Igalia's Brian Kardell and Martin Robinson sit down to chat about accessibility.
+  </div>
+
+  <a href="/chats/accessibility-with-brian-kardell-and-martin-robinson" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <article class="post post-teaser">
+  <h6 class="meta-date">
+    Dec 3, 2019
+  </h6>
+
+  <h4 class="title matchHeightTitle">
+    <a class="post-link" href="/chats/MathML-1">
+      Igalia Chats with Neil Soiffer on MathML
+    </a>
+  </h4>
+
+  <div class="body matchHeightBody">
+    Igalia’s Brian Kardell sat down with Neil Soiffer, long time MathML advocate and chair of the current MathML Refresh Community Group to chat about MathML, it’s history, challenges and what’s...
+  </div>
+
+  <a href="/chats/MathML-1" class="read-more">
+    Continue reading &gt;
+  </a>
+</article>
+
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+  </div>
+</article>
+    </main>
+
+    <footer id="site-footer" role="contentinfo">
+
+  <a class="site-title" href="/">
+    <img src="/assets/i/logo.png" alt="Igalia" />
+  </a>
+
+  <div>
+    <h2>Igalia.com</h2>
+    <ul class="main-menu" role="navigation">
+      
+      <li>
+        <a class="page-link" href="/about" title="About Us">
+          About Us
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/technologies" title="Technologies">
+          Technologies
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/services" title="Services">
+          Services
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/industries" title="Industries">
+          Industries
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/24-7/home" title="24/7">
+          24/7
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/jobs" title="Jobs">
+          Jobs
+        </a>
+      </li>
+      
+      <li>
+        <a class="page-link" href="/contact" title="Contact">
+          Contact
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div>
+    <h2>Igalia, S.L. © 2023. All rights reserved.</h2>
+    <ul class="footer-menu" role="navigation">
+      
+      <li>
+        <a class="page-link" href="/coc" title="Code of Conduct">
+          Code of Conduct
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/legal" title="Legal Terms">
+          Legal Terms
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/press" title="Press">
+          Press
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/privacy" title="Privacy Policy">
+          Privacy Policy
+        </a>
+        </li>
+        
+      <li>
+        <a class="page-link" href="/public-funding" title="Public funding (Fondos públicos)">
+          Public funding (Fondos públicos)
+        </a>
+        </li>
+        
+    </ul>
+  </div>
+
+  <div role="contentinfo">
+    <h2>Headquarters</h2>
+    <ul class="contact-list">
+      
+      <li>Bugallal Marchesi, 22, 1º</li>
+      
+      <li>15008 A Coruña</li>
+      
+      <li>Galicia (Spain)</li>
+      
+      <li>Pho.: +34 981 913991</li>
+      
+      <li>
+        <a href="mailto:info(at)igalia.com">
+          info(at)igalia.com
+        </a>
+      </li>
+      
+    </ul>
+    <div class="social">
+      
+      
+
+      <a class="social-link" href="https://twitter.com/igalia" target="_blank" title="twitter" rel="me">
+        <i aria-hidden="true" class="fab fa-twitter"></i>
+        <span hidden>twitter</span>
+      </a>
+      
+      
+
+      <a class="social-link" href="https://floss.social/@igalia" target="_blank" title="mastodon" rel="me">
+        <i aria-hidden="true" class="fab fa-mastodon"></i>
+        <span hidden>mastodon</span>
+      </a>
+      
+      
+
+      <a class="social-link" href="https://youtube.com/igalia" target="_blank" title="youtube" rel="me">
+        <i aria-hidden="true" class="fab fa-youtube"></i>
+        <span hidden>youtube</span>
+      </a>
+      
+    </div>
+
+</footer>
+
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+    <script src="/assets/app.js"></script>
+    
+    <script src="/assets/pagination.js"></script>
+    
+    
+
+    <!-- Piwik -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+      _paq.push(['disableCookies']);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+         var u="//stats.igalia.com/";
+         _paq.push(['setTrackerUrl', u+'piwik.php']);
+         _paq.push(['setSiteId', '1']);
+         var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+         g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+       })();
+    </script>
+    <noscript><p><img src="//stats.igalia.com/piwik.php?idsite=1&rec=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Piwik Code -->
+
+  </body>
+</html>

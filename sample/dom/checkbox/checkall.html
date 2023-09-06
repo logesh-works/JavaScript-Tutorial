@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Check/uncheck checkboxes</title>
+</head>
+
+<body>
+    <p>
+        <button id="btn">Check / Uncheck All</button>
+    </p>
+    <label for="c1"><input type="checkbox" name="color" value="red" id="c1"> Red</label>
+    <label for="c2"><input type="checkbox" name="color" value="green" id="c2"> Green</label>
+    <label for="c3"> <input type="checkbox" name="color" value="blue" id="c3">Blue</label>
+
+    <script>
+        function check(checked = true) {
+            const checkboxes = document.querySelectorAll('input[name="color"]');
+            checkboxes.forEach((checkbox) => {
+                checkbox.checked = checked;
+            });
+        }
+
+        const btn = document.querySelector('#btn');
+        btn.onclick = checkAll;
+
+        function checkAll() {
+            check();
+            this.onclick = uncheckAll;
+        }
+
+        function uncheckAll() {
+            check(false);
+            this.onclick = checkAll;
+        }
+    </script>
+
+</body>
+
+</html>
