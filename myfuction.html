@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Concepts Tutorial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .code {
+            background-color: #f2f2f2;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Concepts Tutorial</h1>
+
+    <h2>1. Function</h2>
+    <p>A function is a block of reusable code that can be called to perform a specific task.</p>
+    <div class="code">
+        <!-- Example 1: A simple function -->
+        <pre>
+function greet(name) {
+    return "Hello, " + name + "!";
+}
+
+const greeting = greet("John");
+console.log(greeting); // Output: "Hello, John!"
+        </pre>
+    </div>
+
+    <h2>2. Function Parameters and Arguments</h2>
+    <p>Parameters are variables defined in a function's declaration. Arguments are values passed into a function when it's called.</p>
+    <div class="code">
+        <!-- Example 2: Function parameters and arguments -->
+        <pre>
+function add(a, b) {
+    return a + b;
+}
+
+const result = add(5, 3);
+console.log(result); // Output: 8
+        </pre>
+    </div>
+
+<!-- ... Previous content ... -->
+
+<h2>3. Default Parameter</h2>
+<p>Default parameters provide default values for function parameters if no argument is provided.</p>
+<div class="code">
+    <!-- Example 3: Default parameters -->
+    <pre>
+function greet(name = "Guest") {
+    return "Hello, " + name + "!";
+}
+
+const greeting = greet();
+console.log(greeting); // Output: "Hello, Guest"
+    </pre>
+</div>
+
+<h2>4. Rest Parameter</h2>
+<p>The rest parameter allows you to pass an arbitrary number of arguments to a function as an array.</p>
+<div class="code">
+    <!-- Example 4: Rest parameter -->
+    <pre>
+function sum(...numbers) {
+    return numbers.reduce((total, num) => total + num, 0);
+}
+
+const result = sum(1, 2, 3, 4, 5);
+console.log(result); // Output: 15
+    </pre>
+</div>
+
+<h2>5. Spread Parameter</h2>
+<p>The spread parameter allows you to expand an array or object into individual elements or properties.</p>
+<div class="code">
+    <!-- Example 5: Spread parameter -->
+    <pre>
+const numbers = [1, 2, 3];
+const newNumbers = [...numbers, 4, 5];
+console.log(newNumbers); // Output: [1, 2, 3, 4, 5]
+    </pre>
+</div>
+
+<h2>6. Arrow Function</h2>
+<p>Arrow functions provide a concise syntax for defining functions.</p>
+<div class="code">
+    <!-- Example 6: Arrow function -->
+    <pre>
+const multiply = (a, b) => a * b;
+console.log(multiply(2, 3)); // Output: 6
+    </pre>
+</div>
+
+<h2>7. Nested Function</h2>
+<p>Nested functions are functions defined within other functions.</p>
+<div class="code">
+    <!-- Example 7: Nested function -->
+    <pre>
+function outer() {
+    function inner() {
+        console.log("Inside inner function.");
+    }
+    
+    console.log("Inside outer function.");
+    inner();
+}
+
+outer();
+    </pre>
+</div>
+
+<h2>8. Function Scope</h2>
+<p>Function scope refers to the visibility and accessibility of variables within a function.</p>
+<div class="code">
+    <!-- Example 8: Function scope -->
+    <pre>
+function exampleScope() {
+    const x = 10;
+    
+    if (x > 5) {
+        const y = 20;
+        console.log(x); // Output: 10
+        console.log(y); // Output: 20
+    }
+    
+    console.log(x); // Output: 10
+    // console.log(y); // Error: y is not defined
+}
+
+exampleScope();
+    </pre>
+</div>
+
+<h2>9. Closures</h2>
+<p>Closures are functions that have access to variables from their outer (enclosing) function's scope.</p>
+<div class="code">
+    <!-- Example 9: Closures -->
+    <pre>
+function outer() {
+    const message = "Hello, ";
+
+    function inner(name) {
+        return message + name;
+    }
+
+    return inner;
+}
+
+const greetJohn = outer();
+console.log(greetJohn("John")); // Output: "Hello, John"
+    </pre>
+</div>
+
+<!-- Add examples and explanations for the remaining topics here -->
+
+<!-- ... Remaining content ... -->
+
+<!-- ... Previous content ... -->
+
+<h2>10. Callback Function</h2>
+<p>A callback function is a function passed as an argument to another function and executed later.</p>
+<div class="code">
+    <!-- Example 10: Callback function -->
+    <pre>
+function greet(name, callback) {
+    const message = "Hello, " + name + "!";
+    callback(message);
+}
+
+function displayMessage(message) {
+    console.log(message);
+}
+
+greet("Sarah", displayMessage); // Output: "Hello, Sarah!"
+    </pre>
+</div>
+
+<h2>11. Higher-Order Function</h2>
+<p>Higher-order functions are functions that take other functions as arguments or return them.</p>
+<div class="code">
+    <!-- Example 11: Higher-order function -->
+    <pre>
+function multiplyBy(factor) {
+    return function (number) {
+        return number * factor;
+    };
+}
+
+const double = multiplyBy(2);
+console.log(double(5)); // Output: 10
+    </pre>
+</div>
+
+<h2>12. Pure Function</h2>
+<p>A pure function always produces the same output for the same input and doesn't have side effects.</p>
+<div class="code">
+    <!-- Example 12: Pure function -->
+    <pre>
+function add(a, b) {
+    return a + b;
+}
+
+console.log(add(2, 3)); // Output: 5
+console.log(add(2, 3)); // Output: 5 (Same input, same output)
+    </pre>
+</div>
+
+<h2>13. IIFE (Immediately Invoked Function Expression)</h2>
+<p>An IIFE is a self-executing function that runs immediately after being defined.</p>
+<div class="code">
+    <!-- Example 13: IIFE -->
+    <pre>
+(function () {
+    const message = "I am an IIFE!";
+    console.log(message);
+})(); // Output: "I am an IIFE!"
+    </pre>
+</div>
+
+<h2>14. Call Stack</h2>
+<p>The call stack is a data structure that keeps track of function calls in a program.</p>
+<div class="code">
+    <!-- Example 14: Call stack -->
+    <pre>
+function first() {
+    console.log("First function");
+    second();
+}
+
+function second() {
+    console.log("Second function");
+}
+
+first();
+    </pre>
+</div>
+
+<h2>15. Recursion Function</h2>
+<p>Recursion is a programming technique where a function calls itself to solve a problem.</p>
+<div class="code">
+    <!-- Example 15: Recursion -->
+    <pre>
+function factorial(n) {
+    if (n === 0) {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+
+console.log(factorial(5)); // Output: 120
+    </pre>
+</div>
+
+<!-- ... Remaining content ... -->
+
+</body>
+</html>
